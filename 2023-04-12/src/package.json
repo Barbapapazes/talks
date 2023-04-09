@@ -6,5 +6,9 @@
     "build": "slidev build --base /2023/unpoly/ --out ../../dist/2023/unpoly",
     "export": "slidev export --per-slide --output ../2023-04-23-unpoly.pdf",
     "play": "slidev --remote --tunnel"
+  },
+  "devDependencies": {
+    "@iconify-json/logos": "^1.1.24",
+    "@iconify-json/simple-icons": "^1.1.48"
   }
 }

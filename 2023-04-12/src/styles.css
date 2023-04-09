@@ -1,0 +1,13 @@
+.dark #slide-content {
+  background-color: black !important;
+}
+
+/* Transitions */
+.slidev-vclick-target {
+  transition: opacity 400ms ease;
+}
+
+.slidev-vclick-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
