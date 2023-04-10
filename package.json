@@ -18,6 +18,6 @@
     "extends": "@antfu"
   },
   "dependencies": {
-    "rimraf": "^4.4.1"
+    "rimraf": "^5.0.0"
   }
 }
