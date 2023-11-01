@@ -6,7 +6,7 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.35.3",
+    "@antfu/eslint-config": "^1.0.0",
     "@slidev/cli": "^0.40.6",
     "@slidev/theme-default": "^0.21.2",
     "eslint": "^8.37.0",
