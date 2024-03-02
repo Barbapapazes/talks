@@ -10,10 +10,6 @@ transition: fade-out
 title: Unpoly pour reprendre le contrôle !
 ---
 
-<!-- TODO: reprendre chacun des slides se poser la question de ce qu'elle apporte -->
-<!-- TODO: écrire la mise en place de la démo -->
-<!-- TODO: vérifier les todo à faire  -->
-
 <h1 relative z-1>
   <div text-primary font-semibold>
     Unpoly
@@ -24,7 +20,7 @@ title: Unpoly pour reprendre le contrôle !
 </h1>
 
 <div uppercase text-lg tracking-wider>
-  Estéban Soubiran  
+  Estéban Soubiran
 </div>
 
 <div abs-br class="-right-12 -bottom-12">
@@ -98,7 +94,7 @@ layout: intro
 <!--
 Avant de commencer qui suis-je ?
 
-Je m'appelle Estéban Soubiran. Je suis actuellement 
+Je m'appelle Estéban Soubiran. Je suis actuellement
 - Élève ingénieur en cybersécurité à l'INSA Centre Val de Loire
 - Développeur web chez Aneo, une agence en transformation digital
 - Responsable du Classement des Associations, une aventure pour les associations étudiantes aux travers différents évènements en ligne et physique qui a pour objectif de rassembler, promouvoir et valoriser la vie associative étudiante.
@@ -129,7 +125,6 @@ layout: section
   </div>
 </v-click>
 
-
 <!--
 Tout au long de cette présentation, nous allons avoir un fil rouge.
 
@@ -155,7 +150,7 @@ name: Atom et son application
   <li>Permettre à chacun de voter avec une adresse mail</li>
   <li>Visualiser sur des graphiques le nombre de vote par jour</li>
   <li>Être SEO friendly</li>
-  <li>Avoir une expérience utilisateur rapide et moderne</li> 
+  <li>Avoir une expérience utilisateur rapide et moderne</li>
   <li>Être maintenable et peu complexe</li>
 </ul>
 
@@ -251,8 +246,6 @@ name: Le parcours d'Atom - API JSON
   </div>
 </h1>
 
-
-
 <div mt-12 grid="~ cols-5" gap-y-8>
   <div relative>
     <img src="/atom.png" absolute h-30 scale-x--100 class="top-1/2 left-1/2 transform translate--1/2" />
@@ -299,7 +292,7 @@ name: Le parcours d'Atom - API JSON
       API
     </div>
     <div mt-2 opacity-80 text-sm>
-      Gérer les requêtes (filtres, pagination, etc.) 
+      Gérer les requêtes (filtres, pagination, etc.)
     </div>
   </div>
   <div v-click col-start-2 row-start-2 flex="~ row" justify-center items-center>
@@ -506,7 +499,6 @@ Ensuite, il aimerait bien ajouter des fonctionnalités au cours du temps pour am
 Et si le simple fait d'ajouter quelques fonctionnalités est déjà compliqué, alors imaginer devoir maintenir l'application pendant plusieurs années, c'est carrément impossible. Sauf que le Classement des Associations, ça fait 11 ans qu'il existe et que la plateforme de vote va devoir tenir dans le temps.
 -->
 
-
 ---
 name: La solution
 layout: section
@@ -563,7 +555,7 @@ Du coup, commençons par comprendre ce que les applications rendus côté serveu
 - Large choix d'outils matures et éprouvés comme Laravel, Symfony, Rails, Adonis...
 - Technologie peu complexe puisque vous faites votre rendu côté serveur donc pas besoin de dupliquer le travail côté client.
 - Accès aux données de manière synchrone, pas besoin de faire des requêtes AJAX.
-- Temps du premier rendu (FCP) plus rapide car le navigateur n'a pas besoin de télécharger le JavaScript pour afficher la page (ou alors de compliquer le code du client pour y faire du rendu côté serveur).	
+- Temps du premier rendu (FCP) plus rapide car le navigateur n'a pas besoin de télécharger le JavaScript pour afficher la page (ou alors de compliquer le code du client pour y faire du rendu côté serveur).
 - Fonctionne sur tous les types d'appareils puisque c'est directement de l'HTML qui arrive dans le navigateur.
 -->
 
@@ -701,7 +693,6 @@ name: Normal page flow
 Le flux classique des pages est le suivant. À chaque changement de page, l'intégralité de la page est rechargé. Le CSS est parsé à nouveau et le JavaScript est ré-exécuté. Les états qui ne sont pas dans l'URL sont perdus.
 -->
 
-
 ---
 name: Flux Unpoly des pages
 ---
@@ -806,16 +797,16 @@ name: Sources
   <li>
     <a href="https://en.wikipedia.org/wiki/Progressive_enhancement"> Progressive enhancement</a> par Wikipedia
   </li>
-  <li> 
+  <li>
     <a href="https://github.com/adonisjs-community/polls-app">Polls App</a> par AdonisJS
   </li>
-  <li> 
+  <li>
     <a href="https://github.com/adonisjs-community/polls-app">Remix Jokes</a> par AdonisJS
   </li>
-  <li> 
+  <li>
     <a href="https://github.com/thetutlage">Harminder Virk</a>
   </li>
-  <li> 
+  <li>
     <a href="https://github.com/romainlanz">Romain Lanz</a>
   </li>
 </ul>
