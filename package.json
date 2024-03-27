@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@8.15.5",
   "scripts": {
     "build": "rm -rf dist && pnpm -r run build",
     "dev": "jiti scripts/select-deck.ts dev --open",
@@ -13,7 +13,7 @@
     "@iconify-json/logos": "^1.1.42",
     "@iconify-json/simple-icons": "^1.1.93",
     "@iconify-json/vscode-icons": "^1.1.33",
-    "@slidev/cli": "^0.47.5",
+    "@slidev/cli": "^0.48.0",
     "@slidev/theme-default": "^0.25.0",
     "@types/node": "^20.11.24",
     "@types/prompts": "^2.4.9",
