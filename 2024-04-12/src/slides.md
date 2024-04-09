@@ -471,7 +471,7 @@ Système unifié de plugins pour Vite, Rollup, Webpack, esbuild, rolldown, etc.
 </div>
 
 <!--
-Vite s'impose dans le développement web front-end. Pour autant, il existe encore des usages ou des impossibilités de migrer qui font que webpack est encore utilisé. Parfois, Vite, n'est pas adapté et esbuild et rollup, plus bas niveau, sont plus pertinent.
+Vite s'impose dans le développement web front-end. Pour autant, il existe encore des usages ou des impossibilités de migrer qui font que webpack est encore utilisé. Dans le même temps, Vite, n'est pas adapté et esbuild et rollup, plus bas niveau, sont plus pertinent.
 
 Le problème, c'est que tous ces outils ont une interface différentes pour les étendre, pour créer des plugins. Unplugin vient unifier tout cela en créant une interface commune. Vous écrivez un plugin avec unplugin et il est compatible avec tous ces outils. Pour le développeur, c'est un gain de temps, d'énergie et de maintenance. Dans le même temps, il peut toucher beaucoup plus de monde avec un unique paquet npm et unifier les communautés.
 -->
