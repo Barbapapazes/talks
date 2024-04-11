@@ -27,7 +27,7 @@ Bonjour à tous !
 
 J'espère que vous allez bien, que vous êtes en forme parce que les prochaines 20 minutes que nous allons passer ensemble s'annoncent intenses.
 
-Nous allons découvrir ensemble [click] ce qu'est UnJS. On va le faire ensemble pour au moins deux raisons. La première, vous pouvez poser des questions à tout moment. On est en petit comité, pas de pression. La seconde, c'est parce que vous allez choisir ce dont on va parler.
+Nous allons découvrir ensemble [click] ce qu'est UnJS. On va le faire ensemble pour au moins deux raisons. La première, vous pouvez poser des questions à tout moment. On est en petit comité, pas de pression. La seconde, c'est parce que c'est vous qui allez choisir ce dont on va parler.
 
 Préparez vos téléphones parce qu'il y aura des QR codes à scanner.
  -->
@@ -358,7 +358,7 @@ En 2020, il devient framework architect de [click] Nuxt3 et avec cette nouvelle 
 
 Pour cela, il est décidé d'extraire des parties du code de Nuxt pour les rendre agnostiques du runtime et du provider. Ça permettra en faciliter la maintenance et poser des bases solides et unifiées pour les autres auteurs de paquets qui souhaiterait se lancer dans l'aventure de l'edge.
 
-C'est ainsi [click] qu'UnJS est né en 2022. Aujourd'hui, il ne s'agit que d'une organisation sur GitHub.
+C'est ainsi [click] qu'UnJS est né en 2022, d'une fusion des outils de Pooya et de certaines parties de Nuxt. Aujourd'hui, UnJS est une organisation sur GitHub.
 
 Depuis, il a bien évolué et compte désormais [click] 63 paquets, plus de 50 000 étoiles, 400 millions de téléchargements par mois et 150 contributeurs.
 -->
@@ -400,9 +400,9 @@ name: Compose the Talk
 </Suspense>
 
 <!--
-On a vu ce l'historique d'UnJS, sa cible et ce qu'il propose dans les très grandes lignes. Il serait peut-être temps de se plonger un peu plus dans les paquets.
+On a vu l'historique d'UnJS, sa cible et ce qu'il propose dans les très grandes lignes. Il serait peut-être temps de se plonger un peu plus dans les paquets.
 
-Le truc, c'est qu'il y a peut-être des paquets d'UnJS que vous avez vu passer en lisant du code, ou que vous avez déjà entendu le nom sans savoir qu'il faisait parti d'UnJS, mais que vous savez pas trop ce qu'ils font, le problème qu'ils essaient de résoudre.
+Le truc, c'est qu'il y a peut-être des paquets d'UnJS que vous avez vu passer en lisant du code, ou que vous avez déjà entendu le nom sans savoir qu'il faisait parti d'UnJS, mais que vous ne savez pas trop ce qu'ils font, le problème qu'ils essaient de résoudre.
 
 Ce que je vous propose ce soir, c'est qu'on compose le talk ensemble. Vous pouvez scanner le QR code pour choisir les paquets que nous allons aborder.
 
