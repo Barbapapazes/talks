@@ -19,7 +19,7 @@ title: Découvrons ensemble l'écosystème UnJS
 
 <div abs-br mx-10 my-11 flex="~ col gap-4 items-end" text-left>
   <span>StrasbourgJS</span>
-  <div text-xs opacity-75 mt--4>29 mars 2024</div>
+  <div text-xs opacity-75 mt--4>12 avril 2024</div>
 </div>
 
 <!--
@@ -75,15 +75,16 @@ name: Knowing UnJS
 
 <Suspense>
   <InteractiveTalks
-    talkSlug=""
-    questionSlug=""
+    :slide="3"
+    talkSlug="decouvrons-ensemble-l'ecosysteme-unjs"
+    questionSlug="connaissez-vous-unjs"
   />
 </Suspense>
 
 <!--
 Avant d'aller plus loin, je suis curieux de savoir qui parmi vous connaît l'écosystème.
 
-Pour cela, je vous invite à sortir votre téléphone, scanner le QR code et répondre à la question.
+Pour cela, je vous invite à sortir votre téléphone, scanner le QR code et répondre à la question "Connaissez vous UnJS ?".
 
 Si l'écosystème ne vous parle pas trop, c'est parce qu'il est finalement assez récent. Il a à peine plus de deux ans.
 
@@ -356,11 +357,11 @@ name: History
 
 En 2020, il devient framework architect de [click] Nuxt3 et avec cette nouvelle version, il naît une volonté de faire de Nuxt un framework compatible avec l'edge.
 
-Pour cela, il est décidé d'extraire des parties du code de Nuxt pour les rendre agnostiques du runtime et du provider. Ça permettra en faciliter la maintenance et poser des bases solides et unifiées pour les autres auteurs de paquets qui souhaiterait se lancer dans l'aventure de l'edge.
+Pour cela, il est décidé d'extraire des parties du code de Nuxt pour les rendre agnostiques du runtime et du provider. Cette pratique permet en faciliter la maintenance et poser des bases solides et unifiées pour les autres auteurs de paquets qui souhaiterait se lancer dans l'aventure de l'edge. Les utilitaires sont fait et pensés pour l'edge même si vous pouvez les utiliser dans n'import quel projet.
 
-C'est ainsi [click] qu'UnJS est né en 2022, d'une fusion des outils de Pooya et de certaines parties de Nuxt. Aujourd'hui, UnJS est une organisation sur GitHub.
+C'est ainsi [click] qu'UnJS est né en 2022, d'une fusion des outils de Pooya et de certaines parties de Nuxt. Aujourd'hui, UnJS est une organisation à part entière sur GitHub et qui est utilisé par beaucoup de gros projets.
 
-Depuis, il a bien évolué et compte désormais [click] 63 paquets, plus de 50 000 étoiles, 400 millions de téléchargements par mois et 150 contributeurs.
+Depuis 2022, l'écosystème a bien évolué et compte désormais [click] 63 paquets, plus de 50 000 étoiles, 400 millions de téléchargements par mois et 150 contributeurs.
 -->
 
 ---
@@ -370,8 +371,9 @@ name: Creating Package
 
 <Suspense>
   <InteractiveTalks
-    talkSlug=""
-    questionSlug=""
+    :slide="5"
+    talkSlug="decouvrons-ensemble-l'ecosysteme-unjs"
+    questionSlug="avez-vous-deja-construit-des-paquets-npm"
   />
 </Suspense>
 
@@ -394,8 +396,9 @@ name: Compose the Talk
 
 <Suspense>
   <InteractiveTalks
-    talkSlug=""
-    questionSlug=""
+    :slide="6"
+    talkSlug="decouvrons-ensemble-l'ecosysteme-unjs"
+    questionSlug="de-quoi-on-parle-ce-soir"
   />
 </Suspense>
 
@@ -404,12 +407,10 @@ On a vu l'historique d'UnJS, sa cible et ce qu'il propose dans les très grandes
 
 Le truc, c'est qu'il y a peut-être des paquets d'UnJS que vous avez vu passer en lisant du code, ou que vous avez déjà entendu le nom sans savoir qu'il faisait parti d'UnJS, mais que vous ne savez pas trop ce qu'ils font, le problème qu'ils essaient de résoudre.
 
-Ce que je vous propose ce soir, c'est qu'on compose le talk ensemble. Vous pouvez scanner le QR code pour choisir les paquets que nous allons aborder.
+Ce que je vous propose ce soir, c'est qu'on compose le talk ensemble. Vous pouvez scanner le QR code pour choisir les paquets que nous vous aimeriez qu'on aborde.
 
-Je vous invite, une nouvelle fois, à flasher le QR code, et choisir les 3 paquets dont vous aimeriez absolument avoir une présentation ce soir.
-
-C'est important de rappeler que UnJS compte plus de 63 paquets et que évidemment, on ne pourra pas tous les voir aujourd'hui. L'idée, c'est de répondre à un maximum de vos interrogations, vous donner la vision la plus large possible et simplement vous donner envie de vous plonger dans l'écosystème !
- -->
+C'est important de rappeler que UnJS compte plus de 63 paquets et que évidemment, on ne pourra pas tous les voir aujourd'hui, d'ailleurs, je vous ai déjà une sélection. L'idée, c'est de répondre à un maximum de vos interrogations, vous donner la vision la plus large possible et simplement vous donner envie de vous plonger dans l'écosystème ! Si vous avez des questions, à tout moment, ne pas hésiter.
+-->
 
 ---
 layout: two-cols
@@ -433,21 +434,23 @@ import fsDriver from 'unstorage/drivers/fs'
 // Default to in-memory storage
 const storage = createStorage({})
 
-storage.mount('/output', fsDriver({ base: './output' }))
+storage.mount('/out', fsDriver({ base: './out' }))
 
-//  Writes to ./output/test file
-await storage.setItem('/output/test', 'works')
+//  Writes to ./out/test file
+await storage.setItem('/out/test', 'works')
 
 // Adds value to in-memory storage
 await storage.setItem('/foo', 'bar')
 ```
 
 <!--
-Deux points importants pour bien comprendre l'outil.
+Deux points importants pour bien comprendre unstorage.
 
 Le premier, entre le développement et la production, le stockage clé-valeur n'est pas nécessairement le même. Un FS peut suffire sur votre machine mais utiliser le service de votre cloud provider peut-être plus intéressant.
 
 Le second, c'est qu'il n'est pas rare d'avoir plusieurs points de stockage avec des services différents derrières.
+
+Point bonus, c'est un outil pour l'edge.
 
 Unstorage vient gommer tout cela en créant une interface unique. Vous écrivez le code une fois et ensuite, via de la configuration, vous pouvez changer simplement et sans toucher votre code de pilotes.
 
@@ -463,17 +466,19 @@ class: flex flex-col items-start justify-center
 
 Système unifié de plugins pour Vite, Rollup, Webpack, esbuild, rolldown, etc.
 
-<div abs-bl p-8 right-0  flex="~ justify-between items-center">
-  <span class="i-devicon-plain-vitejs?mask" inline-block h-24 w-24></span>
-  <span class="i-devicon-plain-rollup?mask" inline-block h-24 w-24></span>
-  <span class="i-devicon-plain-webpack?mask" inline-block h-24 w-24></span>
-  <span class="i-simple-icons-esbuild?mask" inline-block h-24 w-24></span>
+<div abs-bl p-24 right-0  flex="~ justify-between items-center">
+  <span class="i-logos-vitejs" inline-block h-16 w-16></span>
+  <span class="i-logos-rollupjs" inline-block h-16 w-16></span>
+  <span class="i-logos-webpack" inline-block h-16 w-16></span>
+  <span class="i-logos-esbuild" inline-block h-16 w-16></span>
 </div>
 
 <!--
 Vite s'impose dans le développement web front-end. Pour autant, il existe encore des usages ou des impossibilités de migrer qui font que webpack est encore utilisé. Dans le même temps, Vite, n'est pas adapté et esbuild et rollup, plus bas niveau, sont plus pertinent.
 
-Le problème, c'est que tous ces outils ont une interface différentes pour les étendre, pour créer des plugins. Unplugin vient unifier tout cela en créant une interface commune. Vous écrivez un plugin avec unplugin et il est compatible avec tous ces outils. Pour le développeur, c'est un gain de temps, d'énergie et de maintenance. Dans le même temps, il peut toucher beaucoup plus de monde avec un unique paquet npm et unifier les communautés.
+Le problème, c'est que tous ces outils ont une interface différentes pour les étendre, pour créer des plugins. Unplugin vient unifier tout cela en créant une interface commune. Vous écrivez un plugin avec unplugin et il est compatible avec tous ces outils. Pour le développeur, c'est un gain de temps, d'énergie et de maintenance puisqu'il n'a plus que un repo et une code base. Dans le même temps, il peut toucher beaucoup plus de monde avec un unique paquet npm et unifier les communautés autour d'un même paquet.
+
+// mettre les logos en couleurs et plus petits
 -->
 
 ---
@@ -530,7 +535,7 @@ Citty, c'est un outil pour construire des CLI, des _commande line interface_.
 
 Dans le processus de développer un paquet npm, il n'est pas rare de vouloir fournir plusieurs interfaces pour le développeur. La première, c'est du code, c'est le paquet en lui même. La seconde peut être via un CLI pour lancer un server, générer un fichier ou autre.
 
-Citty vous permet de faire des CLI.
+Citty vous permet de faire des CLI avec des features très intéressante.
 
 Dans l'example, on voit qu'on défini les arguments sous la forme d'un objet. Cette objet, il est récupéré par TypeScript et permet de typer l'objet `args`. Du coup, `friendly` est typé comme un boolean dans ce code.
 
@@ -578,7 +583,7 @@ const config = loadConfig({
 <!--
 Quand on crée un outil comme un CLI ou un framework, on veut que le développeur puisse le configurer pour l'adapter à son utilisation. C12 vous permet cela simplement en cherchant, chargeant et fusionant un ensemble de fichiers.
 
-Par example, on lui demande de charger la configuration `strasbourg`. Il va chercher les fichiers `strasbourg.config.{js,ts,json,yml}`. Il va aussi regarder dans le `package.json` une clée `strasbourg` et fusionner tout cela avec defu [defu doit être le prochain package].
+Dans cette example, on lui demande de charger la configuration `strasbourg`. Il va chercher les fichiers `strasbourg.config.{js,ts,json,yml}`. Il va aussi regarder dans le `package.json` une clée `strasbourg` et fusionner tout cela avec defu [defu doit être le prochain package].
 
 Il est même en mesure d'aller chercher des fichiers `.rc` à la racine de la machine pour permettre de partager une configuration entre plusieurs projets. C'est utilisé pour désactiver globalement des options des outils par example. Vous dites non une fois et ensuite, tous les projets savent que c'est non. Mais si dans un projet spécifique vous dites oui, alors ça va sur-écrire la valeur globale.
 
@@ -603,7 +608,7 @@ export const counter = ref(0)
 <!--
 Unimport est clivant, certains adorent, d'autres détestent. Ce qui est certain, c'est que si vous aimez écrire et lire les import du haut des fichiers, il y a peu de chances que vous aimiez.
 
-L'idée est de réduire la friction, d'accéder rapidement au code qui compte et se passer des dizaines de lignes d'import. Ça fonctionne grâce à TypeScript qui lit des types générés par le plugin. Unimport est un plugin unplugin qui viendra modifier les fichiers pour ajouter les imports nécessaires.
+L'idée est de réduire la friction, d'accéder rapidement au code qui compte et se passer des dizaines de lignes d'import. Ça fonctionne grâce à TypeScript qui lit des types générés par le plugin. Unimport est un plugin unplugin qui viendra modifier les fichiers pour ajouter les imports nécessaires ce qui permet de profiter du tree-shaking.
 
 Le problème c'est que vous devez avoir tout votre projet en tête pour comprendre les références implicites et que pour une personne arrivant sur le projet, ça peut être complexe de s'y retrouver.
 -->
@@ -639,7 +644,7 @@ await writeFile(mod, 'config.js')
 ```
 
 <!--
-Celui là, il n'a que une fonction, modifier du code source JavaScript ou TypeScript programmatiquement. Mais qu'est ce que ça veut dire ?
+Celui là, il n'a que une utilité, modifier du code source JavaScript ou TypeScript programmatiquement. Mais qu'est ce que ça veut dire ?
 
 Prenons l'example d'un CLI avec une commande `add` qui va installer une dépendance puis l'ajouter dans un tableau qui contiendrait tous les plugins de l'application. En terme de DX, c'est super. Mais à développer, c'est un peu plus complexe parce que vous allez devoir passer par une regexp ou de la manipulation de chaînes de caractères ce qui peut devenir délicat surtout si votre fichier évolue.
 
@@ -698,13 +703,8 @@ name: consola
 ```ts
 consola.info('Using consola 3.0.0')
 consola.start('Building project...')
-consola.warn('A new version of consola is available: 3.0.1')
+consola.warn('A new version is available')
 consola.success('Project built!')
-consola.error(new Error('This is an example error. Everything is fine!'))
-consola.box('I am a simple box')
-await consola.prompt('Deploy to the production?', {
-  type: 'confirm',
-})
 ```
 
 ![](/consola.png)
@@ -712,7 +712,7 @@ await consola.prompt('Deploy to the production?', {
 <!--
 Dans sa manière la plus simple, consola, c'est exactement comme le `Console` qu'on connait tous sauf que c'est plus joli dans la console ou le navigateur.
 
-Il devient intéressant parce que vous pouvez créer des instances personnalisées de Consola. C'est à dire que vous pouvez le paramétrer, comme vous le souhaitez pour qu'il affiche des informations spécifiques, avec une reporteur personnalisé, un autre niveau de logs et encore beaucoup d'autres options.
+Il devient intéressant parce que vous pouvez créer des instances personnalisées de Consola. C'est à dire que vous pouvez le paramétrer, comme vous le souhaitez pour qu'il affiche des informations spécifiques, avec une rapporteur personnalisé, un autre niveau de logs et encore beaucoup d'autres options.
 
 Mais c'est vraiment très avancé comme usage. Pour la plupart des cas, vous allez simplement l'utiliser comme un `Console` amélioré.
 -->
@@ -1045,7 +1045,7 @@ Utilitaires JavaScript indépendants du runtime.
 <!--
 AWS, Azure, Cloudflare, Netlify ou Vercel, vous savez ce qu'ils n'ont pas en commun ? La manière de les configurer pour déployer votre application.
 
-Pour permettre le déploiement sans configuration de Nitro, std-env est en mesure de détecter le provider et le runtime grâce à plusieurs indices pour mettre à jour la configuration. Le développeur n'a rien à faire ni à réfléchir.
+Pour permettre le déploiement sans configuration de Nitro, std-env est en mesure de détecter le provider et le runtime grâce à plusieurs indices pour mettre à jour la configuration dynamiquement. Le développeur n'a rien à faire ni à réfléchir.
 
 Il permet d'améliorer la DX de ses outils en adaptant le comportement à l'environnement.
 -->
@@ -1082,7 +1082,7 @@ Si on avait la possibilité de les écrire avec du langage naturel, des mots qui
 
 Là, sur l'example, tout le monde peut me dire ce que fait la regexp ? Des mots qui font sens, ensemble.
 
-Beh, c'est ça magic-regexp, tout simplement.
+Beh, c'est ça magic-regexp, tout simplement. C'est des mots qui font sens ensemble.
 
 En cadeau, le type de la fonction `createRegExp`vous montre la regexp générée et les groupes capturés sont typés. Magique !
 
@@ -1093,6 +1093,16 @@ Attention quand même, ce n'est pas une raison pour mettre des regexp partout !
 name: So much more!
 ---
 
+<Suspense>
+  <SoMuchMore />
+</Suspense>
+
 <!--
-Et tellement plus !
+Et voilà ! Ce que vous venez de voir n'est qu'un aperçu de tout ce que propose UnJS et de tout ce qu'il est possible de faire.
+
+Par example, il y a ...
+
+Votez pour votre paquet préféré et si vous avez des questions, c'est le moment.
+
+Merci à tous.
 -->
