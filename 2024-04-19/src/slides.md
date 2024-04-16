@@ -88,7 +88,7 @@ Pour cela, je vous invite à flasher le QR code et tout simplement répondre à 
 
 Si l'écosystème ne vous parle pas trop, c'est parce qu'il est finalement assez récent. Il a à peine plus de deux ans.
 
-Dans le même temps, il est principalement orienté pour les développeurs JavaScript de paquets npm.
+Dans le même temps, il cible principalement les développeurs JavaScript aui publient des paquets sur npm.
 
 Pour autant, on verra que c'est un vrai couteau suisse et qu'il pourrait vous être très pratique dans vos prochains projets JavaScript.
 
@@ -355,7 +355,7 @@ name: history
 </div>
 
 <!--
-[click] Pour la petite histoire, ça, c'est Pooya Parsa. Depuis des années, il développe des outils pour faciliter sa vie de développeur.
+Pour la petite histoire, ça [click], c'est Pooya Parsa. Depuis des années, il développe des outils pour faciliter sa vie de développeur.
 
 En 2020, il devient framework architect de [click] Nuxt3 et avec cette nouvelle version, il naît une volonté de faire de Nuxt un framework indépendant à la fois des runtimes et des cloud providers.
 
@@ -418,6 +418,43 @@ Utiliser `ofetch` permet d'avoir une API consistante entre le serveur et le clie
 
 ---
 layout: two-cols
+name: nypm
+---
+
+<PackageTitle name="nypm" />
+
+Le gestionnaire de paquets unifié<br /> pour Node.js et Bun.
+
+- Détection automatique
+- Interface pour interagir programmatiquement
+
+::right::
+
+<span op50> CLI </span>
+
+```bash
+# ✨ Auto-detect
+npx nypm i my-super-dep
+```
+
+<span op50> Programmatiquement </span>
+
+```ts
+import { addDependency } from 'nypm'
+```
+
+<!--
+npm, yarn, yarn version 2, pnpm et maintenant bun, ça commence à faire beaucoup de package manager. Et ça devient d'autant plus complexe quand on passe notre journée à sauter de projet en projet, de reproduction en reproduction et qu'il faut à chaque fois trouver le bon pour installer les dépendances.
+
+L'idée de nypm, c'est de ne plus avoir à réfléchir quand vous _cloner_ un projet ou que vous faites un _pull_ parce qu'il est une couche au dessus. En fonction de différents indices comme votre _lock file_, `nypm` va choisir le bon gestionnaire de paquets pour executer la bonne commande. Et ça, c'est génial, vous n'avez plus que un paquet et une commande pour les gouverner tous.
+
+Dans le même temps, son architecture modulaire fait qu'il peut être utilisé programmatiquement, dans un CLI ou un script par example.
+
+Le paquet expose toutes ses fonctions utilitaires. Cette philosophie, c'est vraiment l'esprit UnJS, pour vous permettre de construire par dessus, de l'étendre, avec des bases solides et valables quelque soit l'environnement.
+-->
+
+---
+layout: two-cols
 name: unbuild
 ---
 
@@ -459,45 +496,6 @@ Je me souviens quand j'ai commencé à vouloir publier mes premiers paquets npm,
 Avec ce unbuild, fini les maux de tête. Il suffit d'écrire correctement son `package.json` copié depuis le readme d'unbuild, lançer `npx unbuild` et le tour est joué. Votre paquet est prêt à être publié avec ses types, compatible CommonJS et ESM.
 
 Dessous, c'est du `rollup` et donc ça reste customisable.
-
-// mettre après nypm pour l'avoir avant changelogen et faire une liaison plus fluide
--->
-
----
-layout: two-cols
-name: nypm
----
-
-<PackageTitle name="nypm" />
-
-Le gestionnaire de paquets unifié<br /> pour Node.js et Bun.
-
-- Détection automatique
-- Interface pour interagir programmatiquement
-
-::right::
-
-<span op50> CLI </span>
-
-```bash
-# ✨ Auto-detect
-npx nypm i my-super-dep
-```
-
-<span op50> Programmatiquement </span>
-
-```ts
-import { addDependency } from 'nypm'
-```
-
-<!--
-npm, yarn, yarn version 2, pnpm et maintenant bun, ça commence à faire beaucoup de package manager. Et ça devient d'autant plus complexe quand on passe notre journée à sauter de projet en projet, de reproduction en reproduction et qu'il faut à chaque fois trouver le bon pour installer les dépendances.
-
-L'idée de nypm, c'est de ne plus avoir à réfléchir quand vous _cloner_ un projet ou que vous faites un _pull_ parce qu'il est une couche au dessus. En fonction de différents indices comme votre _lock file_, `nypm` va choisir le bon gestionnaire de paquets pour executer la bonne commande. Et ça, c'est génial, vous n'avez plus que un paquet, une commande pour les gouverner tous.
-
-Dans le même temps, son architecture modulaire fait qu'il peut être utilisé programmatiquement, dans un CLI par example.
-
-Le paquet expose toutes ses fonctions utilitaires, cette philosophie, c'est vraiment l'esprit UnJS, pour vous permettre de construire par dessus avec des bases solides et valables quelque soit l'environnement.
 -->
 
 ---
@@ -599,7 +597,7 @@ Le plus souvent, on accepte un object et puis on merge l'un dans l'autre. Mais q
 
 À la main ou récursivement, sur tous les objets et les sous objets mais c'est souvent la galère et on se retrouve à dupliquer du code de projet en projet.
 
-Defu vient régler exactement ce problème en mergeant récursivement des objets et des tableaux. Sur ce petit example, on voit que nos 2 tableaux ne font plus que un et que nos 2 objets ont été unifié.
+Defu vient régler exactement ce problème en mergeant récursivement objets et tableaux. Sur ce petit example, on voit que nos 2 tableaux ne font plus que un et que nos 2 objets ont été unifié.
 -->
 
 ---
@@ -633,7 +631,7 @@ export default defineEventHandler(async (event) => {
 ```
 
 <!--
-H3, c'est comme Express mais entièrement tree shakable et en plus moderne. Dans votre bundle final, vous n'aurez que ce que vous utilisez.
+H3, c'est comme Express mais entièrement tree shakable et en plus moderne. Dans votre bundle final, vous n'aurez que ce que vous utilisez. Et on le verra, ça a son importance.
 
 L'API est pensée pour être hyper intuitive et facile avec des composables. Par example, vous pouvez vous assurer de la méthode de la requête, récupérer le body ou la query avec de simple composables. Vous pouvez même throw une erreur ou retourner du json, tout est géré !
 
@@ -729,9 +727,9 @@ createRegExp(
 <!--
 Les regexp, ça vous parle ? Ça peut vite devenir technique et difficile à maintenir.
 
-Maintenant, imaginez si on avait la possibilité de les écrire avec du langage naturel, des mots qui font sens, on prendrait peut être un peu plus de plaisir. Ouais, je suis bien d'accord avec ça aussi.
+Maintenant, imaginez si on avait la possibilité de les écrire avec du langage naturel et des mots qui font sens, on prendrait peut être un peu plus de plaisir. Moi en tout cas, je suis bien d'accord avec ça.
 
-Là, sur l'example, tout le monde peut me dire ce que fait la regexp ? Des mots qui font sens, ensemble.
+Là, sur l'example, tout le monde peut me dire ce que fait la regexp ? Des mots simpes qui font sens, ensemble.
 
 Beh, c'est ça magic-regexp, tout simplement, des mots simples qui ensemble font sens pour vous aider à constuire et maintenir vos regexp.
 
@@ -747,7 +745,7 @@ Et tellement plus !
 (il faut penser à ajouter le lien vers le site d'unjs et son X et de dire aux gens d'aller voir)
 
 <!--
-Et voilà ! Ce que vous venez de voir n'est qu'un aperçu de tout ce que propose UnJS et de tout ce qu'il est possible de faire.
+Et voilà ! Ce que vous venez de voir n'est qu'un aperçu de tout ce que propose UnJS et de tout ce qu'il est possible de faire avec.
 
 Par example, il y a unplugin pour développer des plugins pour Vite, Webpack, Rollup, Rspack, Rolldown avec une API unique, il y a citty pour créer des CLI simplement, c12 pour la gestion facilité de la configuration, uqr pour faire des QR code comme celui-ci et encore beaucoup beaucoup d'autres.
 
