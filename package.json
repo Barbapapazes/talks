@@ -18,7 +18,7 @@
     "@types/node": "^20.11.24",
     "@types/prompts": "^2.4.9",
     "eslint": "^8.57.0",
-    "execa": "^8.0.1",
+    "execa": "^9.0.0",
     "jiti": "^1.21.0",
     "playwright-chromium": "^1.42.1",
     "prompts": "^2.4.2",
