@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "build": "rm -rf dist && pnpm -r run build",
     "dev": "jiti scripts/select-deck.ts dev --open",
