@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2024/unjs-strasbougjs/ --out ../../dist/2024/unjs-strasbougjs",
+    "export": "slidev export --per-slide --output ../2024-04-12-unjs-strasbourgjs.pdf"
+  }
+}

@@ -48,12 +48,12 @@ Membre d'<span v-mark.yellow.underline="{at:2,padding:-2,seed:2,strokeWidth:2}">
 </div>
 
 <div my-10 w-min flex="~ gap-1" items-center justify-center>
-  <div i-ph-link-duotone opacity-50 ma text-xl />
-  <div><a href="https://esteban-soubiran.site" target="_blank" class="border-none! font-300">esteban&#8209;soubiran.site</a></div>
+  <div i-simple-icons-x opacity-50 ma text-xl />
+  <div><a href="https://twitter.com/soubiran_" target="_blank" class="border-none! font-300">soubiran_</a></div>
   <div i-ph-github-logo-duotone opacity-50 ma text-xl ml4/>
   <div><a href="https://github.com/barbapapazes" target="_blank" class="border-none! font-300">barbapapazes</a></div>
-  <div i-simple-icons-x opacity-50 ma text-xl ml4 />
-  <div><a href="https://twitter.com/soubiran_" target="_blank" class="border-none! font-300">soubiran_</a></div>
+  <div i-ph-link-duotone opacity-50 ma text-xl ml4 />
+  <div><a href="https://esteban-soubiran.site" target="_blank" class="border-none! font-300">esteban&#8209;soubiran.site</a></div>
 </div>
 
 <!--
@@ -66,8 +66,6 @@ Actuellement, je suis développeur web chez [click] Infomaniak, un cloud provide
 Dans mon temps libre, j'adore écrire du code, des articles, partager ce que j'apprends, échanger et participer à divers projets open-source. C'est comme ça que depuis 8 mois, j'ai intégré l'équipe [click] d'UnJS.
 
 Si vous voulez voir un peu tout ce que je fais, vous pouvez me suivre sur X, c'est là où je suis le plus actif.
-
-changer le ligne du bas (x en premier et soubiran.dev)
 -->
 
 ---
@@ -76,7 +74,8 @@ grow: bottom
 
 <Suspense>
   <InteractiveTalks
-    talkSlug="discover-unjs"
+    :slide="3"
+    talkSlug="unifie-et-universel-le-javascript-avec-unjs"
     questionSlug="connaissez-vous-unjs"
   />
 </Suspense>
@@ -359,7 +358,7 @@ Pour la petite histoire, ça [click], c'est Pooya Parsa. Depuis des années, il 
 
 En 2020, il devient framework architect de [click] Nuxt3 et avec cette nouvelle version, il naît une volonté de faire de Nuxt un framework indépendant à la fois des runtimes et des cloud providers.
 
-Pour cela, il est décidé d'extraire des parties du code de Nuxt. Cette opération, elle a pour but de faciliter la maintenance et de poser des bases solides et unifiées pour les autres auteurs de paquets npm et tous ces meta-frameworks front-end  de l'écosystème s'essayant au back-end.
+Pour cela, il est décidé d'extraire des parties du code de Nuxt. Cette opération, elle a pour but de faciliter la maintenance et de poser des bases solides et unifiées pour les autres auteurs de paquets npm et tous ces meta-frameworks front-end de l'écosystème s'essayant au back-end.
 
 C'est ainsi [click] qu'UnJS est né en 2022. Aujourd'hui, il ne s'agit que d'une organisation sur GitHub, indépendante de Nuxt.
 
@@ -589,11 +588,11 @@ defu({
 ```
 
 <!--
-Oooh, defu. Simple mais pratique et depuis que je l'ai essayé, je l'ai adopté partout.
+Oooh, defu. Simple mais tellement pratique et depuis que je l'ai essayé, je l'ai adopté partout.
 
 Quand on crée des outils, que ce soit un framework ou un petit utilitaire, c'est nécessaire de laisser le développeur les configurer en passant des options.
 
-Le plus souvent, on accepte un object et puis on merge l'un dans l'autre. Mais quand l'objet est sur plusieurs niveaux ou qu'il y a des tableaux, comment on gère ?
+Le plus souvent, on accepte un objet que l'on merge avec la configuration par défaut. Mais quand l'objet est sur plusieurs niveaux ou qu'il y a des tableaux, comment on gère ?
 
 À la main ou récursivement, sur tous les objets et les sous objets mais c'est souvent la galère et on se retrouve à dupliquer du code de projet en projet.
 
@@ -635,7 +634,7 @@ H3, c'est comme Express mais entièrement tree shakable et en plus moderne. Dans
 
 L'API est pensée pour être hyper intuitive et facile avec des composables. Par example, vous pouvez vous assurer de la méthode de la requête, récupérer le body ou la query avec de simple composables. Vous pouvez même throw une erreur ou retourner du json, tout est géré !
 
-Cette approche, dans la conception de h3, d'avoir une grande modularité, permet d'avoir un temps de démarrage, le fameux cold start dans l'edge, sous la barre des 2ms. C'est vraiment rapide.
+Cette approche, dans la conception de h3, d'avoir une grande modularité, permet d'avoir un temps de démarrage, le fameux cold start dans l'edge, sous la barre des 2ms et ça c'est vraiment rapide.
 -->
 
 ---
@@ -660,7 +659,7 @@ name: nitro
 <!--
 H3, c'est sympa mais ça reste bas niveau et quand on veut faire des choses sérieuses, Nitro devient le compagnon idéal.
 
-Nitro, c'est à la fois un framework pour construire des un backend dans l'edge et un toolkit pour le prochain framework full-stack. C'est lui qui propule Nuxt, Analog, Vinxi et bientôt TanStack Start.
+Nitro, c'est à la fois un framework pour construire un backend dans l'edge et un toolkit pour le prochain framework full-stack. C'est lui qui propule Nuxt, Analog, Vinxi et bientôt TanStack Start.
 
 Je pourrais en parler 1h, je n'ai pas vraiment le temps et je vous invite sincèrement à le découvrir et l'explorer. Il repose sur tout ce que j'ai pu vous présenter jusque là.
 
@@ -694,7 +693,7 @@ Utilitaires JavaScript indépendants du runtime.
 <!--
 AWS, Azure, Cloudflare, Netlify ou Vercel, vous savez ce qu'ils n'ont pas en commun ? La manière de les configurer pour déployer votre application.
 
-Pour permettre le déploiement sans configuration de Nitro, std-env est en mesure de détecter le provider et le runtime grâce à plusieurs indices pour mettre à jour la configuration. Le développeur n'a rien à faire ni à réfléchir.
+Pour permettre le déploiement sans configuration de Nitro, std-env est en mesure de détecter le provider et le runtime grâce à plusieurs indices pour mettre à jour la configuration. Le développeur n'a rien à faire ni à réfléchir lorsqu'il déploie son application.
 
 Ainsi, vous pouvez améliorer la DX de vos outils en adaptant le comportement à l'environnement.
 -->
@@ -739,17 +738,35 @@ Attention quand même, ce n'est pas une raison pour mettre des regexp partout !
 -->
 
 ---
+name: Et tellement plus
+---
 
-Et tellement plus !
+<Suspense>
+  <SoMuchMore />
+</Suspense>
 
-(il faut penser à ajouter le lien vers le site d'unjs et son X et de dire aux gens d'aller voir)
+<div abs-br pr-10 pb-10 flex="~ col gap-1" items-start>
+  <div flex="~ gap-1" items-center>
+    <div i-simple-icons-x opacity-50 text-xl/>
+    <div><a href="https://twitter.com/soubiran_" target="_blank" class="border-none! font-300">soubiran_</a></div>
+    </div>
+  <div flex="~ gap-1" items-center>
+    <div i-ph-github-logo-duotone opacity-50 text-xl />
+   <div><a href="https://github.com/barbapapazes" target="_blank" class="border-none! font-300">barbapapazes</a></div>
+  </div>
+  <div flex="~ gap-1" items-center>
+    <div i-ph-link-duotone opacity-50 text-xl />
+    <div><a href="https://esteban-soubiran.site" target="_blank" class="border-none! font-300">esteban&#8209;soubiran.site</a></div>
+  </div>
+</div>
+
 
 <!--
 Et voilà ! Ce que vous venez de voir n'est qu'un aperçu de tout ce que propose UnJS et de tout ce qu'il est possible de faire avec.
 
 Par example, il y a unplugin pour développer des plugins pour Vite, Webpack, Rollup, Rspack, Rolldown avec une API unique, il y a citty pour créer des CLI simplement, c12 pour la gestion facilité de la configuration, uqr pour faire des QR code comme celui-ci et encore beaucoup beaucoup d'autres.
 
-J'espère vous avoir donné envie de l'explorer avec cette courte introduction.
+J'espère vous avoir donné envie d'explorer l'écosystème avec cette courte introduction.
 
 Dites moi quels sont vos paquets préféré en flashant le QR code et si vous avez des questions, c'est le moment !
 
