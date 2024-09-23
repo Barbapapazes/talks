@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { fdir as Fdir } from 'fdir'
 import { join } from 'pathe'
 
-async function generateRedirects() {
+function generateRedirects() {
   const packagesJSON = new Fdir()
     .withBasePath()
     .glob('./**/package.json')

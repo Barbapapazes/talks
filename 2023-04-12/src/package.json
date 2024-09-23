@@ -1,5 +1,6 @@
 {
   "name": "devoxxfr",
+  "event": "Devoxx France",
   "private": true,
   "scripts": {
     "dev": "slidev",

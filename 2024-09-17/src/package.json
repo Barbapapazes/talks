@@ -1,5 +1,6 @@
 {
   "name": "pragvue",
+  "event": "PragVue",
   "private": true,
   "scripts": {
     "dev": "slidev",
