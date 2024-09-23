@@ -3,7 +3,8 @@
   "private": true,
   "packageManager": "pnpm@9.9.0",
   "scripts": {
-    "build": "rm -rf dist && pnpm -r run build",
+    "build": "rm -rf dist && pnpm -r run build && cp _redirects dist",
+    "export": "pnpm -r run export",
     "dev": "jiti scripts/select-deck.ts dev --open",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
