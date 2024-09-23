@@ -7,7 +7,10 @@ fonts:
   mono: Consolas
 themeConfig:
   primary: '#00DC82'
+colorSchema: dark
 transition: slide-left
+addons:
+  - ../../inalia-slidev
 name: "You've dreamed it? Create full-stack apps with Nuxt!"
 title: "You've dreamed it? Create full-stack apps with Nuxt!"
 ---
@@ -79,15 +82,15 @@ Freelance web developer and open-source enthusiast.
 name: Have you heard of Nitro?
 ---
 
-<!--
-
-Poll using Interalia
-
-- I know exactly what it is
-- I've heard of it but I don't know what it is
-- I have no idea what it is
-
--->
+<Inalia
+  question="Have you heard of Nitro?"
+  type="single_select"
+  :answers="[
+    { label: 'I know exactly what it is', value: 13, color: '#70ffc6' },
+    { label: 'I\'ve heard of it but I don\'t know what it is', value: 5, color: '#00dc82' },
+    { label: 'I have no idea what it is', value: 6, color: '#07603e'}
+  ]"
+/>
 
 ---
 name: Nitro
@@ -225,14 +228,18 @@ layout: center
 name: Do you know the edge?
 ---
 
+<Inalia
+  question="Do you know the edge?"
+  type="single_select"
+  :answers="[
+    { label: 'I know exactly what it is', value: 9, color: '#ffc6a8' },
+    { label: 'I\'ve heard of it but I don\'t know what it is', value: 5, color: '#FCAD41' },
+    { label: 'I have no idea what it is', value: 11, color: '#F6821E'}
+  ]"
+/>
+
 <!--
-
-Poll using Interalia
-
-- I know exactly what it is
-- I've heard of it but I don't know what it is
-- I have no idea what it is
-
+https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/
 -->
 
 ---
@@ -315,14 +322,12 @@ name: Conclusion
 layout: center
 ---
 
-<h1 font="serif" text="center" leading="!16">
-  New Features
-  <br>
-  New Possibilities
+<h1 font="serif" text="center">
+  Full-stack apps with Nuxt<br>is now a reality
 </h1>
 
 <div v-click op="60" text="center">
-  But also new challenges
+  And it's just the beginning
 </div>
 
 <!--
@@ -355,3 +360,7 @@ Freelance web developer and open-source enthusiast.
 <hr border="slate-800" m="y-12" />
 
 <h1 text="center" font="serif">Thank you!</h1>
+
+<!--
+Thank you! I hope you enjoyed the talk, it's been a pleasure to share this with you.
+-->
