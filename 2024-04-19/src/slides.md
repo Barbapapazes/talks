@@ -8,6 +8,8 @@ themeConfig:
   primary: '#fde047'
 fonts:
   sans: Nunito
+addons:
+  - slidev-addon-inalia
 growSeed: 7
 title: Unifié et Universel, le JavaScript avec UnJS
 ---
@@ -74,12 +76,15 @@ changer le ligne du bas (x en premier et soubiran.dev)
 grow: bottom
 ---
 
-<Suspense>
-  <InteractiveTalks
-    talkSlug="discover-unjs"
-    questionSlug="connaissez-vous-unjs"
-  />
-</Suspense>
+<Inalia
+  question="Connaissez-vous UnJS ?"
+  type="single_select"
+  :answers="[
+    { label: 'Je l\'utilise régulièrement', value: 0, color: '#4ade80' },
+    { label: 'Oui mais de nom', value: 5, color: '#16a34a' },
+    { label: 'Non', value: 20, color: '#166534' }
+  ]"
+/>
 
 <!--
 Avant d'aller plus loin, je suis curieux de savoir qui parmi vous connaît UnJS.
@@ -739,17 +744,32 @@ Attention quand même, ce n'est pas une raison pour mettre des regexp partout !
 -->
 
 ---
+name: Et tellement plus
+---
 
-Et tellement plus !
+<SoMuchMore />
 
-(il faut penser à ajouter le lien vers le site d'unjs et son X et de dire aux gens d'aller voir)
+<div abs-br pr-10 pb-10 flex="~ col gap-1" items-start>
+  <div flex="~ gap-1" items-center>
+    <div i-simple-icons-x opacity-50 text-xl/>
+    <div><a href="https://twitter.com/soubiran_" target="_blank" class="border-none! font-300">soubiran_</a></div>
+    </div>
+  <div flex="~ gap-1" items-center>
+    <div i-ph-github-logo-duotone opacity-50 text-xl />
+   <div><a href="https://github.com/barbapapazes" target="_blank" class="border-none! font-300">barbapapazes</a></div>
+  </div>
+  <div flex="~ gap-1" items-center>
+    <div i-ph-link-duotone opacity-50 text-xl />
+    <div><a href="https://esteban-soubiran.site" target="_blank" class="border-none! font-300">esteban&#8209;soubiran.site</a></div>
+  </div>
+</div>
 
 <!--
 Et voilà ! Ce que vous venez de voir n'est qu'un aperçu de tout ce que propose UnJS et de tout ce qu'il est possible de faire avec.
 
 Par example, il y a unplugin pour développer des plugins pour Vite, Webpack, Rollup, Rspack, Rolldown avec une API unique, il y a citty pour créer des CLI simplement, c12 pour la gestion facilité de la configuration, uqr pour faire des QR code comme celui-ci et encore beaucoup beaucoup d'autres.
 
-J'espère vous avoir donné envie de l'explorer avec cette courte introduction.
+J'espère vous avoir donné envie d'explorer l'écosystème avec cette courte introduction.
 
 Dites moi quels sont vos paquets préféré en flashant le QR code et si vous avez des questions, c'est le moment !
 

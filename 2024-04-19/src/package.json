@@ -1,0 +1,9 @@
+{
+  "name": "devoxxfr",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2024-04-19/devoxxfr/ --out ../../dist/2024-04-19/devoxxfr",
+    "export": "slidev export --per-slide --output ../2024-04-19-devoxxfr.pdf"
+  }
+}
