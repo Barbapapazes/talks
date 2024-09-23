@@ -1,4 +1,4 @@
-import { read, readFileSync, writeFileSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
 import { fdir as Fdir } from 'fdir'
 import { join } from 'pathe'
 
