@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@unovis/vue": "1.4.3-beta.0",
-    "slidev-addon-inalia": "^0.1.6"
+    "slidev-addon-inalia": "^0.1.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.4.1",
