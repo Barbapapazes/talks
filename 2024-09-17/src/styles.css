@@ -17,3 +17,11 @@
 .slidev-layout .slidev-vclick-hidden[notification=centered] {
   transform: translate(50%, 100%);
 }
+
+.slidev-layout a[notification] {
+  border-bottom: 0;
+}
+
+.slidev-layout a[notification]:hover {
+  color: #000000;
+}

@@ -74,7 +74,7 @@ Freelance web developer and open-source enthusiast.
 
 </div>
 
-<div v-click="7" absolute right="14" bottom="8" text="sm black" font="serif" p="x-4 y-2" rounded bg="primary" tracking="wider" notification>
+<div v-click="7" absolute right="14" bottom="8" text-sm text-black font="serif" p="x-4 y-2" rounded bg="primary" tracking="wider" notification>
   <span op="80">And more to come</span>
 </div>
 
@@ -103,11 +103,10 @@ layout: center
   Powering the Nuxt Server
 </div>
 
-<!-- TODO: link to the repo with correct branch -->
-<div v-click absolute right="1/2" bottom="10" text="sm black" bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
+<a href="https://github.com/Barbapapazes/pragvue-2024/tree/01-nitro" target="_blank" v-click absolute block right="1/2" bottom="10" text-sm text-black bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
   <span>Let me show you</span>
   <span i-ph-file-code-light w="4" h="4" inline-block></span>
-</div>
+</a>
 
 ---
 name: More than an app and a server
@@ -115,7 +114,7 @@ name: More than an app and a server
 
 <img src="/nuxt=vue+nitro.svg" w="1/2" m="t-12" mx="auto" />
 
-<div v-click absolute right="1/2" bottom="10" text="sm black" bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
+<div v-click absolute right="1/2" bottom="10" text-sm text-black bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
   <span>More features</span>
   <span i-ph-flask-light w="4" h="4" inline-block></span>
 </div>
@@ -147,11 +146,10 @@ npx nuxi module add hub
 
 </v-click>
 
-<!-- TODO: link to the repo with correct branch -->
-<div v-click absolute right="1/2" bottom="10" text="sm black" bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
+<a href="https://github.com/Barbapapazes/pragvue-2024/tree/02-database" target="_blank" v-click absolute block right="1/2" bottom="10" text-sm text-black bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
   <span>Let me show you</span>
   <span i-ph-database-light w="4" h="4" inline-block></span>
-</div>
+</a>
 
 <!--
 First, show the `useDatabase` function from Nitro.
@@ -165,7 +163,7 @@ name: State of our full-stack app
 
 <img src="/nuxt=vue+nitro+database.svg" w="1/2" m="t-12" mx="auto" />
 
-<div v-click absolute right="1/2" bottom="10" text="sm black" bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
+<div v-click absolute right="1/2" bottom="10" text-sm text-black bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
   <span>More features</span>
   <span i-ph-flask-light w="4" h="4" inline-block></span>
 </div>
@@ -191,11 +189,10 @@ npx nuxi module add auth-utils
 
 </v-click>
 
-<!-- TODO: link to the repo with correct branch -->
-<div v-click absolute right="1/2" bottom="10" text="sm black" bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
+<a href="https://github.com/Barbapapazes/pragvue-2024/tree/03-authentication" target="_blank" v-click absolute block right="1/2" bottom="10" text-sm text-black bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
   <span>Let me show you</span>
   <span i-ph-database-light w="4" h="4" inline-block></span>
-</div>
+</a>
 
 ---
 name: State of our full-stack app
@@ -269,11 +266,10 @@ npx nuxthub deploy
 
 </v-click>
 
-<!--  TODO: link to the repo with correct branch -->
-<div v-click absolute right="1/2" bottom="10" text="sm black" bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
+<a href="https://github.com/Barbapapazes/pragvue-2024/tree/04-deployment" target="_blank" v-click absolute block right="1/2" bottom="10" text-sm text-black bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
   <span>Let me show you</span>
   <span i-ph-rocket-light w="4" h="4" inline-block></span>
-</div>
+</a>
 
 ---
 name: Dashboard
@@ -289,14 +285,13 @@ layout: center
 <hr v-click border="slate-800" m="y-8" />
 
 <p v-click text="sm center">
-  <a href="https://admin.hub.nuxt.com" op="60" font="serif">admin.hub.nuxt.com</a>
+  <a href="https://admin.hub.nuxt.com" target="_blank" op="60" font="serif">admin.hub.nuxt.com</a>
 </p>
 
-<!--  TODO: link to the repo with correct branch -->
-<div v-click absolute right="1/2" bottom="10" text="sm black" bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
+<a href="https://admin.hub.nuxt.com" target="_blank" v-click absolute block right="1/2" bottom="10" text-sm text-black bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
   <span>Let me show you</span>
   <span i-ph-eye-light w="4" h="4" inline-block></span>
-</div>
+</a>
 
 ---
 name: State of our full-stack app
