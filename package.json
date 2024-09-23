@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "pnpm@9.9.0",
   "scripts": {
-    "build": "rm -rf dist && pnpm -r run build && cp _redirects dist",
+    "build": "rm -rf dist && pnpm -r run build && jiti scripts/generate-redirects.ts",
     "export": "pnpm -r run export",
     "dev": "jiti scripts/select-deck.ts dev --open",
     "lint": "eslint .",
@@ -24,7 +24,9 @@
     "@types/prompts": "^2.4.9",
     "eslint": "^9.10.0",
     "execa": "^9.3.1",
+    "fdir": "^6.3.0",
     "jiti": "^1.21.6",
+    "pathe": "^1.1.2",
     "playwright-chromium": "^1.47.0",
     "prompts": "^2.4.2",
     "typescript": "^5.5.4"

@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@unovis/vue':
         specifier: 1.4.3-beta.0
-        version: 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.3(typescript@5.5.4))
+        version: 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.8(typescript@5.5.4))
       slidev-addon-inalia:
         specifier: ^0.1.7
         version: 0.1.7(@babel/parser@7.25.6)(@nuxt/kit@3.13.1(rollup@4.21.2)(webpack-sources@3.2.3))(@types/markdown-it@14.1.2)(@types/node@20.16.5)(@vue/compiler-sfc@3.5.8)(playwright-chromium@1.47.0)(postcss@8.4.47)(rollup@4.21.2)(typescript@5.5.4)(vue-template-compiler@2.7.16)(webpack-sources@3.2.3)
@@ -45,9 +45,15 @@ importers:
       execa:
         specifier: ^9.3.1
         version: 9.3.1
+      fdir:
+        specifier: ^6.3.0
+        version: 6.3.0(picomatch@4.0.2)
       jiti:
         specifier: ^1.21.6
         version: 1.21.6
+      pathe:
+        specifier: ^1.1.2
+        version: 1.1.2
       playwright-chromium:
         specifier: ^1.47.0
         version: 1.47.0
@@ -6231,11 +6237,6 @@ snapshots:
       tslib: 2.7.0
     transitivePeerDependencies:
       - supports-color
-
-  '@unovis/vue@1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.3(typescript@5.5.4))':
-    dependencies:
-      '@unovis/ts': 1.4.3-beta.0
-      vue: 3.5.3(typescript@5.5.4)
 
   '@unovis/vue@1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.8(typescript@5.5.4))':
     dependencies:

@@ -1,4 +1,5 @@
 {
+  "name": "pragvue",
   "private": true,
   "scripts": {
     "dev": "slidev",
