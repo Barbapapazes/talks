@@ -23,7 +23,7 @@ async function generateRedirects() {
     const date = packageJSON.split('/')[0]
     const name = content.name
 
-    redirects.push(`/${date}/${name}/pdf https://github.com/Barbapapazes/talks/tree/main/${date}/${date}-${name}.pdf?raw=true 302`)
+    redirects.push(`/${date}/${name}/pdf https://github.com/Barbapapazes/talks/blob/main/${date}/${date}-${name}.pdf?raw=true 302`)
     redirects.push(`/${date}/${name}/src https://github.com/Barbapapazes/talks/tree/main/${date} 302`)
   }
 
