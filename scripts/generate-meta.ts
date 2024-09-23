@@ -19,15 +19,18 @@ function generateMeta() {
     name: string
     date: string
     event: string
+    url: string
   }[]
 
   for (const packageJSON of packagesJSON) {
     const date = packageJSON.split('/')[0]
 
     const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as {
+      name: string
       event: string
     }
     const event = content.event
+    const url = `https://talks.soubiran.dev/${date}/${content.name}`
 
     const path = packageJSON.split('/').slice(0, -1).join('/')
     const slidesContent = readFileSync(join(path, 'slides.md'), 'utf-8')
@@ -42,6 +45,7 @@ function generateMeta() {
       name,
       event,
       date,
+      url,
     })
   }
 
