@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "slidev",
-    "build": "slidev build --base /2024/pragvue/ --out ../../dist/2024-09-17/pragvue",
+    "build": "slidev build --base /2024-09-17/pragvue/ --out ../../dist/2024-09-17/pragvue",
     "export": "slidev export --per-slide --output ../2024-09-17-pragvue.pdf"
   }
 }
