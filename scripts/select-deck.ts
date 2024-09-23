@@ -1,14 +1,14 @@
 import fs from 'node:fs/promises'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
-import prompts from 'prompts'
 import { execa } from 'execa'
+import prompts from 'prompts'
 
 async function startSelectDeck(args: string[]) {
   const folders = (await fs.readdir(new URL('..', import.meta.url), { withFileTypes: true }))
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name)
-    .filter(folder => folder.match(/^[0-9]{4}-/))
+    .filter(folder => folder.match(/^\d{4}-/))
     .sort((a, b) => -a.localeCompare(b))
 
   const result = await prompts([
