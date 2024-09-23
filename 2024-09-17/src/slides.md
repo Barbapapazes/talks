@@ -10,7 +10,7 @@ themeConfig:
 colorSchema: dark
 transition: slide-left
 addons:
-  - ../../inalia-slidev
+  - slidev-addon-inalia
 name: "You've dreamed it? Create full-stack apps with Nuxt!"
 title: "You've dreamed it? Create full-stack apps with Nuxt!"
 ---
