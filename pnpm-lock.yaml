@@ -12,8 +12,8 @@ importers:
         specifier: 1.4.3-beta.0
         version: 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.3(typescript@5.5.4))
       slidev-addon-inalia:
-        specifier: ^0.1.5
-        version: 0.1.5(@babel/parser@7.25.6)(@nuxt/kit@3.13.1(rollup@4.21.2)(webpack-sources@3.2.3))(@types/markdown-it@14.1.2)(@types/node@20.16.5)(@vue/compiler-sfc@3.5.8)(playwright-chromium@1.47.0)(postcss@8.4.47)(rollup@4.21.2)(typescript@5.5.4)(vue-template-compiler@2.7.16)(webpack-sources@3.2.3)
+        specifier: ^0.1.6
+        version: 0.1.6(@babel/parser@7.25.6)(@nuxt/kit@3.13.1(rollup@4.21.2)(webpack-sources@3.2.3))(@types/markdown-it@14.1.2)(@types/node@20.16.5)(@vue/compiler-sfc@3.5.8)(playwright-chromium@1.47.0)(postcss@8.4.47)(rollup@4.21.2)(typescript@5.5.4)(vue-template-compiler@2.7.16)(webpack-sources@3.2.3)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^3.4.1
@@ -3822,8 +3822,8 @@ packages:
   slashes@3.0.12:
     resolution: {integrity: sha512-Q9VME8WyGkc7pJf6QEkj3wE+2CnvZMI+XJhwdTPR8Z/kWQRXi7boAWLDibRPyHRTUTPx5FaU7MsyrjI3yLB4HA==}
 
-  slidev-addon-inalia@0.1.5:
-    resolution: {integrity: sha512-cu/bYDkoQbVapb66lGUloFyni/ixwVO9/Clc2iKUqyeD7pXf/l/BUBDCjBHpe+BCi7197A+KoCkc0wYq3HxlLA==}
+  slidev-addon-inalia@0.1.6:
+    resolution: {integrity: sha512-n26m4aVTuJqsaf37b6z/BNJimW8qXiwaYHFU5w/3qzVy/KCXJ+kN9tFl0zv/jzATRssk6tG1Cj/UKQwhsPXh3w==}
     engines: {slidev: '>=0.49.29'}
 
   source-map-js@1.2.1:
@@ -8982,7 +8982,7 @@ snapshots:
 
   slashes@3.0.12: {}
 
-  slidev-addon-inalia@0.1.5(@babel/parser@7.25.6)(@nuxt/kit@3.13.1(rollup@4.21.2)(webpack-sources@3.2.3))(@types/markdown-it@14.1.2)(@types/node@20.16.5)(@vue/compiler-sfc@3.5.8)(playwright-chromium@1.47.0)(postcss@8.4.47)(rollup@4.21.2)(typescript@5.5.4)(vue-template-compiler@2.7.16)(webpack-sources@3.2.3):
+  slidev-addon-inalia@0.1.6(@babel/parser@7.25.6)(@nuxt/kit@3.13.1(rollup@4.21.2)(webpack-sources@3.2.3))(@types/markdown-it@14.1.2)(@types/node@20.16.5)(@vue/compiler-sfc@3.5.8)(playwright-chromium@1.47.0)(postcss@8.4.47)(rollup@4.21.2)(typescript@5.5.4)(vue-template-compiler@2.7.16)(webpack-sources@3.2.3):
     dependencies:
       '@slidev/cli': 0.49.29(@babel/parser@7.25.6)(@nuxt/kit@3.13.1(rollup@4.21.2)(webpack-sources@3.2.3))(@types/markdown-it@14.1.2)(@types/node@20.16.5)(@vue/compiler-sfc@3.5.8)(playwright-chromium@1.47.0)(postcss@8.4.47)(rollup@4.21.2)(vue-template-compiler@2.7.16)(webpack-sources@3.2.3)
       '@slidev/theme-default': 0.25.0
