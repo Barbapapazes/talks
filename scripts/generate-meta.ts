@@ -30,6 +30,7 @@ function generateMeta() {
     const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as {
       name: string
       event: string
+      recording?: string
     }
     const event = content.event
     const url = `https://talks.soubiran.dev/${date}/${content.name}`
@@ -51,7 +52,7 @@ function generateMeta() {
       date,
       url,
       pdf_url,
-      recording_url,
+      recording_url: content.recording ? recording_url : undefined,
     })
   }
 
