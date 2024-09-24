@@ -1,6 +1,7 @@
 {
   "name": "devoxxfr",
   "event": "Devoxx France",
+  "recording": "https://youtu.be/MIM6E_XMRHQ",
   "private": true,
   "scripts": {
     "dev": "slidev",

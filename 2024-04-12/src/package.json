@@ -1,6 +1,7 @@
 {
   "name": "strasbourgjs",
   "event": "StrasbourgJS",
+  "recording": "https://youtu.be/mPcJXqaBLFM",
   "private": true,
   "scripts": {
     "dev": "slidev",

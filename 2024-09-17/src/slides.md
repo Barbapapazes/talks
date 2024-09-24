@@ -2,8 +2,6 @@
 htmlAttrs:
   lang: en
   dir: ltr
-htmlAttrs:
-  lang: en
 fonts:
   sans: Noto Sans
   serif: Noto Serif

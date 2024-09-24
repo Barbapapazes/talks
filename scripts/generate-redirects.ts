@@ -18,13 +18,17 @@ function generateRedirects() {
   const redirects = [] as string[]
 
   for (const packageJSON of packagesJSON) {
-    const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as { name: string }
+    const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as { name: string, recording?: string}
 
     const date = packageJSON.split('/')[0]
     const name = content.name
 
     redirects.push(`/${date}/${name}/pdf https://github.com/Barbapapazes/talks/blob/main/${date}/${date}-${name}.pdf?raw=true 302`)
     redirects.push(`/${date}/${name}/src https://github.com/Barbapapazes/talks/tree/main/${date} 302`)
+
+    if (content.recording) {
+      redirects.push(`/${date}/${name}/recording ${content.recording} 302`)
+    }
   }
 
   const localRedirects = readFileSync(join('.', '_redirects'), 'utf-8')

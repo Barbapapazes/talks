@@ -20,6 +20,8 @@ function generateMeta() {
     date: string
     event: string
     url: string
+    pdf_url: string
+    recording_url?: string
   }[]
 
   for (const packageJSON of packagesJSON) {
@@ -31,6 +33,8 @@ function generateMeta() {
     }
     const event = content.event
     const url = `https://talks.soubiran.dev/${date}/${content.name}`
+    const pdf_url = `${url}/pdf`
+    const recording_url = `${url}/recording`
 
     const path = packageJSON.split('/').slice(0, -1).join('/')
     const slidesContent = readFileSync(join(path, 'slides.md'), 'utf-8')
@@ -46,6 +50,8 @@ function generateMeta() {
       event,
       date,
       url,
+      pdf_url,
+      recording_url,
     })
   }
 
