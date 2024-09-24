@@ -2,6 +2,7 @@
   "extends": "../tsconfig.json",
   "include": [
     "src/**/*.ts",
+    "src/**/*.vue",
     "../node_modules/slidev-addon-inalia"
   ]
 }
