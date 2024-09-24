@@ -1,0 +1,27 @@
+.dark #slide-content {
+  background-color: #020420;
+}
+
+.slidev-layout .slidev-vclick-target[notification] {
+  transition: all 500ms ease;
+}
+
+.slidev-layout .slidev-vclick-hidden[notification] {
+  transform: translate(0, 100%);
+}
+
+.slidev-layout .slidev-vclick-target[notification=centered] {
+    transform: translate(50%, 0);
+}
+
+.slidev-layout .slidev-vclick-hidden[notification=centered] {
+  transform: translate(50%, 100%);
+}
+
+.slidev-layout a[notification] {
+  border-bottom: 0;
+}
+
+.slidev-layout a[notification]:hover {
+  color: #000000;
+}

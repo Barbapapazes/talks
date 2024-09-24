@@ -1,27 +1,36 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
-    "build": "rm -rf dist && pnpm -r run build",
+    "build": "rm -rf dist && pnpm -r run build && jiti scripts/generate-redirects.ts && jiti scripts/generate-meta.ts",
+    "export": "pnpm -r run export",
     "dev": "jiti scripts/select-deck.ts dev --open",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
+  "dependencies": {
+    "@formkit/auto-animate": "^0.8.2",
+    "@unovis/vue": "1.4.3-beta.0",
+    "seedrandom": "^3.0.5",
+    "slidev-addon-inalia": "^0.1.9"
+  },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.6.4",
-    "@iconify-json/logos": "^1.1.42",
-    "@iconify-json/simple-icons": "^1.1.93",
-    "@iconify-json/vscode-icons": "^1.1.33",
-    "@slidev/cli": "^0.47.5",
+    "@antfu/eslint-config": "^3.4.1",
+    "@iconify-json/logos": "^1.2.0",
+    "@iconify-json/simple-icons": "^1.2.1",
+    "@iconify-json/vscode-icons": "^1.2.0",
+    "@slidev/cli": "^0.49.29",
     "@slidev/theme-default": "^0.25.0",
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.16.5",
     "@types/prompts": "^2.4.9",
-    "eslint": "^8.57.0",
-    "execa": "^8.0.1",
-    "jiti": "^1.21.0",
-    "playwright-chromium": "^1.42.1",
+    "eslint": "^9.10.0",
+    "execa": "^9.3.1",
+    "fdir": "^6.3.0",
+    "jiti": "^1.21.6",
+    "pathe": "^1.1.2",
+    "playwright-chromium": "^1.47.0",
     "prompts": "^2.4.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.5.4"
   }
 }

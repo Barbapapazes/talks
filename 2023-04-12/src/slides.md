@@ -6,6 +6,8 @@ highlighter: shiki
 css: unocss
 name: Unpoly pour reprendre le contrôle !
 colorSchema: dark
+themeConfig:
+   primary: '#0de07d'
 transition: fade-out
 title: Unpoly pour reprendre le contrôle !
 ---

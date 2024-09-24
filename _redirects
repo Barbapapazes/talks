@@ -1,0 +1,4 @@
+/ https://soubiran.dev/talks 302
+
+/2023/unpoly             /2023-04-12/devoxxfr   301
+/2023/unpoly/*           /2023-04-12/devoxxfr/:splat 301
