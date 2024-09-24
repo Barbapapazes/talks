@@ -1,4 +1,7 @@
 ---
+htmlAttrs:
+  lang: fr-FR
+  dir: ltr
 layout: cover
 highlighter: shiki
 css: unocss
@@ -15,6 +18,9 @@ inalia:
     barWidth: 120
 growSeed: 7
 title: Découvrons ensemble l'écosystème UnJS
+titleTemplate: '%s - Estéban Soubiran'
+author: Estéban Soubiran
+keywords: unjs,web,strasbourgjs,development
 ---
 
 <h1 flex="~ col">

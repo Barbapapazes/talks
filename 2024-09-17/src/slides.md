@@ -1,6 +1,9 @@
 ---
 htmlAttrs:
   lang: en
+  dir: ltr
+htmlAttrs:
+  lang: en
 fonts:
   sans: Noto Sans
   serif: Noto Serif
@@ -11,8 +14,10 @@ colorSchema: dark
 transition: slide-left
 addons:
   - slidev-addon-inalia
-name: You've dreamed it? Create full-stack apps with Nuxt!
 title: You've dreamed it? Create full-stack apps with Nuxt!
+titleTemplate: '%s - Estéban Soubiran'
+author: Estéban Soubiran
+keywords: nuxt,nuxthub,full-stack,apps,web,development
 ---
 
 <div op="60" font="400">

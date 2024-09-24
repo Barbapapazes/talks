@@ -1,4 +1,7 @@
 ---
+htmlAttrs:
+  lang: fr-FR
+  dir: ltr
 layout: cover
 highlighter: shiki
 css: unocss
@@ -12,6 +15,9 @@ addons:
   - slidev-addon-inalia
 growSeed: 7
 title: Unifié et Universel, le JavaScript avec UnJS
+titleTemplate: '%s - Estéban Soubiran'
+author: Estéban Soubiran
+keywords: unjs,web,devoxxfr,development
 ---
 
 <h1 flex="~ col">

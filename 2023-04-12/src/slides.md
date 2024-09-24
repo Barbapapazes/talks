@@ -1,6 +1,7 @@
 ---
 htmlAttrs:
   lang: fr-FR
+  dir: ltr
 layout: cover
 highlighter: shiki
 css: unocss
@@ -10,6 +11,9 @@ themeConfig:
    primary: '#0de07d'
 transition: fade-out
 title: Unpoly pour reprendre le contrôle !
+titleTemplate: '%s - Estéban Soubiran'
+author: Estéban Soubiran
+keywords: unpoly,web,devoxxfr,development
 ---
 
 <h1 relative z-1>
