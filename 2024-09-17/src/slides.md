@@ -11,8 +11,8 @@ colorSchema: dark
 transition: slide-left
 addons:
   - slidev-addon-inalia
-name: "You've dreamed it? Create full-stack apps with Nuxt!"
-title: "You've dreamed it? Create full-stack apps with Nuxt!"
+name: You've dreamed it? Create full-stack apps with Nuxt!
+title: You've dreamed it? Create full-stack apps with Nuxt!
 ---
 
 <div op="60" font="400">
