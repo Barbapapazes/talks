@@ -85,6 +85,7 @@ name: Have you heard of Nitro?
 <Inalia
   question="Have you heard of Nitro?"
   type="single_select"
+  chart="donut"
   :answers="[
     { label: 'I know exactly what it is', value: 13, color: '#70ffc6' },
     { label: 'I\'ve heard of it but I don\'t know what it is', value: 5, color: '#00dc82' },
@@ -228,6 +229,7 @@ name: Do you know the edge?
 <Inalia
   question="Do you know the edge?"
   type="single_select"
+  chart="donut"
   :answers="[
     { label: 'I know exactly what it is', value: 9, color: '#ffc6a8' },
     { label: 'I\'ve heard of it but I don\'t know what it is', value: 5, color: '#FCAD41' },

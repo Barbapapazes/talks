@@ -79,6 +79,7 @@ grow: bottom
 <Inalia
   question="Connaissez-vous UnJS ?"
   type="single_select"
+  chart="donut"
   :answers="[
     { label: 'Je l\'utilise régulièrement', value: 0, color: '#4ade80' },
     { label: 'Oui mais de nom', value: 5, color: '#16a34a' },

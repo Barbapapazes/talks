@@ -8,6 +8,7 @@ import MostLoved from './MostLoved.vue'
     v-slot="{ question, answers }"
     question="Votre paquet préféré ?"
     type="single_select"
+    chart="donut"
     :answers="[
       {
         label: 'changelogen',

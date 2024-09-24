@@ -13,7 +13,7 @@
     "@formkit/auto-animate": "^0.8.2",
     "@unovis/vue": "1.4.3-beta.0",
     "seedrandom": "^3.0.5",
-    "slidev-addon-inalia": "^0.1.8"
+    "slidev-addon-inalia": "^0.1.9"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.4.1",
