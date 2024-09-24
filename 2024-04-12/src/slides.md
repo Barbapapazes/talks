@@ -8,6 +8,11 @@ themeConfig:
   primary: '#fde047'
 fonts:
   sans: Nunito
+addons:
+  - slidev-addon-inalia
+inalia:
+  bar:
+    barWidth: 120
 growSeed: 7
 title: Découvrons ensemble l'écosystème UnJS
 ---
@@ -70,16 +75,18 @@ Si vous voulez voir un peu tout ce que je fais, vous pouvez me suivre sur X, c'e
 
 ---
 grow: bottom
-name: Knowing UnJS
 ---
 
-<Suspense>
-  <InteractiveTalks
-    :slide="3"
-    talkSlug="decouvrons-ensemble-l'ecosysteme-unjs"
-    questionSlug="connaissez-vous-unjs"
-  />
-</Suspense>
+<Inalia
+  question="Connaissez-vous UnJS ?"
+  type="single_select"
+  chart="donut"
+  :answers="[
+    { label: 'Je l\'utilise régulièrement', value: 5, color: '#4ade80' },
+    { label: 'Oui mais de nom', value: 7, color: '#16a34a' },
+    { label: 'Non', value: 14, color: '#166534' }
+  ]"
+/>
 
 <!--
 Avant d'aller plus loin, je suis curieux de savoir qui parmi vous connaît l'écosystème.
@@ -369,13 +376,17 @@ grow: bottom
 name: Creating Package
 ---
 
-<Suspense>
-  <InteractiveTalks
-    :slide="5"
-    talkSlug="decouvrons-ensemble-l'ecosysteme-unjs"
-    questionSlug="avez-vous-deja-construit-des-paquets-npm"
-  />
-</Suspense>
+<Inalia
+  question="Avez-vous déjà construit des paquets pour npm ?"
+  type="single_select"
+  chart="bar"
+  :answers="[
+    { label: 'Régulièrement', value: 2, color: '#3730a3' },
+    { label: 'De temps en temps', value: 2, color: '#4f46e5' },
+    { label: 'Rarement', value: 10, color: '#818cf8' },
+    { label: 'Jamais', value: 7, color: '#c7d2fe' }
+  ]"
+/>
 
 <!--
 Comme on vient de le voir, UnJS est plutôt orienté pour les développeurs de paquets npm. Du coup, qui parmi-vous a déjà publié des paquets sur npm ?
@@ -391,16 +402,106 @@ Alors, qu'est-ce que nous donne ce graphique ? [improviser]
 
 ---
 grow: bottom
+class: compose-the-talk
 name: Compose the Talk
+inalia:
+  bar:
+    height: 280
+    barWidth: 20
 ---
 
-<Suspense>
-  <InteractiveTalks
-    :slide="6"
-    talkSlug="decouvrons-ensemble-l'ecosysteme-unjs"
-    questionSlug="de-quoi-on-parle-ce-soir"
-  />
-</Suspense>
+<Inalia
+  question="Quels paquets d'UnJS aimeriez-vous qu'on aborde ?"
+  type="single_select"
+  chart="bar"
+  :answers="[
+    {
+      color: '#b91c1c',
+      label: 'unstorage',
+      value: 5
+    },
+    {
+      color: '#ba531c',
+      label: 'unplugin',
+      value: 5
+    },
+    {
+      color: '#ba8b1c',
+      label: 'citty',
+      value: 1
+    },
+    {
+      color: '#b2ba1c',
+      label: 'c12',
+      value: 2
+    },
+    {
+      color: '#7bba1c',
+      label: 'unimport',
+      value: 4
+    },
+    {
+      color: '#43ba1c',
+      label: 'magicast',
+      value: 2
+    },
+    {
+      color: '#1cba2c',
+      label: 'scule',
+      value: 0
+    },
+    {
+      color: '#1cba63',
+      label: 'consola',
+      value: 1
+    },
+    {
+      color: '#1cba9b',
+      label: 'ofetch',
+      value: 2
+    },
+    {
+      color: '#1ca3ba',
+      label: 'unbuild',
+      value: 3
+    },
+    {
+      color: '#1c6bba',
+      label: 'nypm',
+      value: 4
+    },
+    {
+      color: '#1c34ba',
+      label: 'changelogen',
+      value: 4
+    },
+    {
+      color: '#3c1cba',
+      label: 'defu',
+      value: 1
+    },
+    {
+      color: '#731cba',
+      label: 'h3',
+      value: 6
+    },
+    {
+      color: '#ab1cba',
+      label: 'nitro',
+      value: 10
+    },
+    {
+      color: '#ba1c93',
+      label: 'std-env',
+      value: 2
+    },
+    {
+      color: '#ba1c5b',
+      label: 'magic-regexp',
+      value: 4
+    }
+  ]"
+/>
 
 <!--
 On a vu l'historique d'UnJS, sa cible et ce qu'il propose dans les très grandes lignes. Il serait peut-être temps de se plonger un peu plus dans les paquets.
@@ -1090,19 +1191,34 @@ Attention quand même, ce n'est pas une raison pour mettre des regexp partout !
 -->
 
 ---
-name: So much more!
+name: Et tellement plus
 ---
 
-<Suspense>
-  <SoMuchMore />
-</Suspense>
+<SoMuchMore />
+
+<div abs-br pr-10 pb-10 flex="~ col gap-1" items-start>
+  <div flex="~ gap-1" items-center>
+    <div i-simple-icons-x opacity-50 text-xl/>
+    <div><a href="https://twitter.com/soubiran_" target="_blank" class="border-none! font-300">soubiran_</a></div>
+    </div>
+  <div flex="~ gap-1" items-center>
+    <div i-ph-github-logo-duotone opacity-50 text-xl />
+   <div><a href="https://github.com/barbapapazes" target="_blank" class="border-none! font-300">barbapapazes</a></div>
+  </div>
+  <div flex="~ gap-1" items-center>
+    <div i-ph-link-duotone opacity-50 text-xl />
+    <div><a href="https://esteban-soubiran.site" target="_blank" class="border-none! font-300">esteban&#8209;soubiran.site</a></div>
+  </div>
+</div>
 
 <!--
-Et voilà ! Ce que vous venez de voir n'est qu'un aperçu de tout ce que propose UnJS et de tout ce qu'il est possible de faire.
+Et voilà ! Ce que vous venez de voir n'est qu'un aperçu de tout ce que propose UnJS et de tout ce qu'il est possible de faire avec.
 
-Par example, il y a ...
+Par example, il y a unplugin pour développer des plugins pour Vite, Webpack, Rollup, Rspack, Rolldown avec une API unique, il y a citty pour créer des CLI simplement, c12 pour la gestion facilité de la configuration, uqr pour faire des QR code comme celui-ci et encore beaucoup beaucoup d'autres.
 
-Votez pour votre paquet préféré et si vous avez des questions, c'est le moment.
+J'espère vous avoir donné envie d'explorer l'écosystème avec cette courte introduction.
+
+Dites moi quels sont vos paquets préféré en flashant le QR code et si vous avez des questions, c'est le moment !
 
 Merci à tous.
 -->
