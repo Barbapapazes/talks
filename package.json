@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.12.1",
   "scripts": {
     "build": "rm -rf dist && pnpm -r run build && jiti scripts/generate-redirects.ts && jiti scripts/generate-meta.ts",
     "export": "pnpm -r run export",
