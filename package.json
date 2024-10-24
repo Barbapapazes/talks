@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.12.2",
   "scripts": {
     "build": "rm -rf dist && pnpm -r run build && jiti scripts/generate-redirects.ts && jiti scripts/generate-meta.ts",
     "export": "pnpm -r run export",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
-    "@unovis/vue": "1.4.3-beta.0",
+    "@unovis/vue": "1.4.4",
     "seedrandom": "^3.0.5",
     "slidev-addon-inalia": "^0.1.11"
   },
