@@ -70,7 +70,7 @@
       <img src="/nuxthub-admin-cache-dark.svg" class="rounded h-full w-full object-cover object-top-left">
     </div>
 
-    <div class="col-start-1 col-end-5 grid mt-2 row-start-9 row-end-13 grid-cols-2 grid-rows-3">
+    <div class="col-start-1 col-end-5 grid grid-cols-2 mt-2 row-start-9 row-end-13 grid-rows-3">
       <div v-click class="flex flex-col gap-2 items-center justify-center duration-800 delay-200">
         <div class="size-4 i-lucide-git-branch text-primary!" />
         <div class="text-xxs op-60">
