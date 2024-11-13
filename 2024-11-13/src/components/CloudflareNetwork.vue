@@ -44,7 +44,7 @@ const locations = [
 </script>
 
 <template>
-  <div class="absolute bottom-0 grid top-0 left-12 right-12 place-content-center grid-cols-2 gap-x-94 gap-y-12">
+  <div class="absolute bottom-0 grid grid-cols-2 top-0 left-12 right-12 place-content-center gap-x-94 gap-y-12">
     <LatencyCard
       v-for="(location, index) in locations"
       :key="location.name"
