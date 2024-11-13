@@ -1,10 +1,10 @@
 {
-  "name": "nuxtnations",
-  "event": "NuxtNations",
+  "name": "nuxtnation",
+  "event": "Nuxt Nation",
   "private": true,
   "scripts": {
     "dev": "slidev",
-    "build": "slidev build --base /2024-11-13/nuxtnations/ --out ../../dist/2024-11-13/nuxtnations",
-    "export": "slidev export --per-slide --output ../2024-11-13-nuxtnations.pdf"
+    "build": "slidev build --base /2024-11-13/nuxtnation/ --out ../../dist/2024-11-13/nuxtnation",
+    "export": "slidev export --per-slide --output ../2024-11-13-nuxtnation.pdf"
   }
 }
