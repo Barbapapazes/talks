@@ -87,10 +87,10 @@ grow: bottom
   question="Connaissez-vous UnJS ?"
   type="single_select"
   chart="donut"
-  :answers="[
-    { label: 'Je l\'utilise régulièrement', value: 5, color: '#4ade80' },
-    { label: 'Oui mais de nom', value: 7, color: '#16a34a' },
-    { label: 'Non', value: 14, color: '#166534' }
+  :data="[
+    { label: 'Je l\'utilise régulièrement', count: 5, color: '#4ade80' },
+    { label: 'Oui mais de nom', count: 7, color: '#16a34a' },
+    { label: 'Non', count: 14, color: '#166534' }
   ]"
 />
 
@@ -386,11 +386,11 @@ name: Creating Package
   question="Avez-vous déjà construit des paquets pour npm ?"
   type="single_select"
   chart="bar"
-  :answers="[
-    { label: 'Régulièrement', value: 2, color: '#3730a3' },
-    { label: 'De temps en temps', value: 2, color: '#4f46e5' },
-    { label: 'Rarement', value: 10, color: '#818cf8' },
-    { label: 'Jamais', value: 7, color: '#c7d2fe' }
+  :data="[
+    { label: 'Régulièrement', count: 2, color: '#3730a3' },
+    { label: 'De temps en temps', count: 2, color: '#4f46e5' },
+    { label: 'Rarement', count: 10, color: '#818cf8' },
+    { label: 'Jamais', count: 7, color: '#c7d2fe' }
   ]"
 />
 
@@ -420,91 +420,91 @@ inalia:
   question="Quels paquets d'UnJS aimeriez-vous qu'on aborde ?"
   type="single_select"
   chart="bar"
-  :answers="[
+  :data="[
     {
       color: '#b91c1c',
       label: 'unstorage',
-      value: 5
+      count: 5
     },
     {
       color: '#ba531c',
       label: 'unplugin',
-      value: 5
+      count: 5
     },
     {
       color: '#ba8b1c',
       label: 'citty',
-      value: 1
+      count: 1
     },
     {
       color: '#b2ba1c',
       label: 'c12',
-      value: 2
+      count: 2
     },
     {
       color: '#7bba1c',
       label: 'unimport',
-      value: 4
+      count: 4
     },
     {
       color: '#43ba1c',
       label: 'magicast',
-      value: 2
+      count: 2
     },
     {
       color: '#1cba2c',
       label: 'scule',
-      value: 0
+      count: 0
     },
     {
       color: '#1cba63',
       label: 'consola',
-      value: 1
+      count: 1
     },
     {
       color: '#1cba9b',
       label: 'ofetch',
-      value: 2
+      count: 2
     },
     {
       color: '#1ca3ba',
       label: 'unbuild',
-      value: 3
+      count: 3
     },
     {
       color: '#1c6bba',
       label: 'nypm',
-      value: 4
+      count: 4
     },
     {
       color: '#1c34ba',
       label: 'changelogen',
-      value: 4
+      count: 4
     },
     {
       color: '#3c1cba',
       label: 'defu',
-      value: 1
+      count: 1
     },
     {
       color: '#731cba',
       label: 'h3',
-      value: 6
+      count: 6
     },
     {
       color: '#ab1cba',
       label: 'nitro',
-      value: 10
+      count: 10
     },
     {
       color: '#ba1c93',
       label: 'std-env',
-      value: 2
+      count: 2
     },
     {
       color: '#ba1c5b',
       label: 'magic-regexp',
-      value: 4
+      count: 4
     }
   ]"
 />

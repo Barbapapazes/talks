@@ -18,7 +18,7 @@ function generateRedirects() {
   const redirects = [] as string[]
 
   for (const packageJSON of packagesJSON) {
-    const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as { name: string, recording?: string}
+    const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as { name: string, recording?: string }
 
     const date = packageJSON.split('/')[0]
     const name = content.name

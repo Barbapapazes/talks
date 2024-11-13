@@ -89,10 +89,10 @@ name: Have you heard of Nitro?
   question="Have you heard of Nitro?"
   type="single_select"
   chart="donut"
-  :answers="[
-    { label: 'I know exactly what it is', value: 13, color: '#70ffc6' },
-    { label: 'I\'ve heard of it but I don\'t know what it is', value: 5, color: '#00dc82' },
-    { label: 'I have no idea what it is', value: 6, color: '#07603e'}
+  :data="[
+    { label: 'I know exactly what it is', count: 13, color: '#70ffc6' },
+    { label: 'I\'ve heard of it but I don\'t know what it is', count: 5, color: '#00dc82' },
+    { label: 'I have no idea what it is', count: 6, color: '#07603e'}
   ]"
 />
 
@@ -233,10 +233,10 @@ name: Do you know the edge?
   question="Do you know the edge?"
   type="single_select"
   chart="donut"
-  :answers="[
-    { label: 'I know exactly what it is', value: 9, color: '#ffc6a8' },
-    { label: 'I\'ve heard of it but I don\'t know what it is', value: 5, color: '#FCAD41' },
-    { label: 'I have no idea what it is', value: 11, color: '#F6821E'}
+  :data="[
+    { label: 'I know exactly what it is', count: 9, color: '#ffc6a8' },
+    { label: 'I\'ve heard of it but I don\'t know what it is', count: 5, color: '#FCAD41' },
+    { label: 'I have no idea what it is', count: 11, color: '#F6821E'}
   ]"
 />
 
