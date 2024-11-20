@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="text-xxs leading-tight op-60">
+  <div class="op-60 text-xxs leading-tight">
     <slot />
   </div>
 </template>
