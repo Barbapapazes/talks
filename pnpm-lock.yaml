@@ -17,8 +17,8 @@ importers:
         specifier: ^0.8.2
         version: 0.8.2
       '@unovis/vue':
-        specifier: 1.4.3-beta.0
-        version: 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.8(typescript@5.6.3))
+        specifier: 1.4.4
+        version: 1.4.4(@unovis/ts@1.4.3-beta.0)(vue@3.5.8(typescript@5.6.3))
       cobe:
         specifier: ^0.6.3
         version: 0.6.3(patch_hash=7sacydfjikwz5zqh5rcgyqgyny)
@@ -1555,6 +1555,12 @@ packages:
     resolution: {integrity: sha512-QwaYb4I7lbEh2Ldv/cazGU05+Jrl/B9zakLnTRO4GMT6IVnD5faV07l83eK+fAurQNV9x8t5aPcHrQ/F7Lf3Gw==}
     peerDependencies:
       '@unovis/ts': 1.4.3-beta.0
+      vue: ^3
+
+  '@unovis/vue@1.4.4':
+    resolution: {integrity: sha512-19xdi/0+18NzUyRh4sK0GCIv5JbqSMSEqXaMio4Vya8I/8JYU0Sgyo4jwr+O60Rl8fSOXScL9NJQHxPHJeTcMg==}
+    peerDependencies:
+      '@unovis/ts': 1.4.4
       vue: ^3
 
   '@vitejs/plugin-vue-jsx@4.0.1':
@@ -6392,6 +6398,11 @@ snapshots:
       - supports-color
 
   '@unovis/vue@1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.8(typescript@5.6.3))':
+    dependencies:
+      '@unovis/ts': 1.4.3-beta.0
+      vue: 3.5.8(typescript@5.6.3)
+
+  '@unovis/vue@1.4.4(@unovis/ts@1.4.3-beta.0)(vue@3.5.8(typescript@5.6.3))':
     dependencies:
       '@unovis/ts': 1.4.3-beta.0
       vue: 3.5.8(typescript@5.6.3)
