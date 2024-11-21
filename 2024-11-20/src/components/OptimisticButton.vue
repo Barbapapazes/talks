@@ -13,7 +13,7 @@ setInterval(() => {
 </script>
 
 <template>
-  <button type="button" class="relative py-2 bg-primary rounded shadow flex items-center px-6 disabled:op-60 text-yellow-400">
+  <button type="button" class="relative py-2 bg-primary rounded shadow flex items-center disabled:op-60 px-6 text-yellow-400">
     <span
       class="inline-block size-5 transition duration-150 ease-in" :class="{
         'i-heroicons-star': !isLoading,
