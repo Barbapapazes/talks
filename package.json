@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
-    "@unovis/vue": "1.4.3-beta.0",
+    "@unovis/vue": "1.4.4",
     "cobe": "^0.6.3",
     "seedrandom": "^3.0.5",
     "slidev-addon-inalia": "^0.1.16"
