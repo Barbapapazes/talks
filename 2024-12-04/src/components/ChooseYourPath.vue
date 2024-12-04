@@ -14,7 +14,7 @@ const redSlide = computed(() => {
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-16 items-center h-full">
+  <div class="grid grid-cols-2 items-center h-full gap-16">
     <Card
       class="flex flex-col items-center gap-2 text-center cursor-pointer bg-blue-500/10"
       @click="go(blueSlide.no)"

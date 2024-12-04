@@ -62,15 +62,15 @@ withDefaults(defineProps<{
       <img src="/nuxthub-admin-deployment-dark.svg" class="rounded h-full w-full object-cover object-top">
     </div>
 
-    <div v-after="clicks" class="mr-1 col-start-1 col-end-3 row-start-8 row-end-10 border border-gray-800 rounded shadow duration-800 delay-200">
+    <div v-after="clicks" class="col-start-1 col-end-3 row-start-8 border border-gray-800 rounded shadow duration-800 delay-200 mr-1 row-end-10">
       <img src="/nuxthub-admin-database-dark.svg" class="rounded h-full w-full object-cover object-top-left">
     </div>
 
-    <div v-after="clicks" class="ml-1 col-start-3 col-end-5 row-start-8 row-end-10 border border-gray-800 rounded shadow duration-800 delay-400">
+    <div v-after="clicks" class="col-end-5 row-start-8 row-end-10 border border-gray-800 rounded shadow duration-800 delay-400 ml-1 col-start-3">
       <img src="/nuxthub-admin-blob-dark.svg" class="rounded h-full w-full object-cover object-top-left">
     </div>
 
-    <div v-after="clicks" class="mt-2 col-start-1 col-end-5 row-start-10 border border-gray-800 rounded shadow duration-800 row-end-13 delay-600">
+    <div v-after="clicks" class="mt-2 col-start-1 col-end-5 border border-gray-800 rounded shadow duration-800 row-end-13 delay-600 row-start-10">
       <img src="/nuxthub-admin-cache-dark.svg" class="rounded h-full w-full object-cover object-top-left">
     </div>
 

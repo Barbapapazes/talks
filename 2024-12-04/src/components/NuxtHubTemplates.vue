@@ -34,7 +34,7 @@ const templates = [
 </script>
 
 <template>
-  <div class="grid grid-rows-2 grid-cols-3 gap-x-2 gap-y-6 max-h-full items-center">
+  <div class="grid grid-cols-3 items-center grid-rows-2 gap-x-2 gap-y-6 max-h-full">
     <div v-click class="sr-only" />
     <template v-for="(template, index) in templates" :key="template.name">
       <div :style="{ '--delay': `${(index + 1) * 75}ms` }">
@@ -44,7 +44,7 @@ const templates = [
             <div class="mt-2 text-sm">
               {{ template.name }}
             </div>
-            <div class="mt-1 text-xs op-60">
+            <div class="text-xs op-60 mt-1">
               {{ template.description }}
             </div>
           </div>
