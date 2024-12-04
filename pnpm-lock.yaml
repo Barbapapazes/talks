@@ -16,9 +16,6 @@ importers:
       '@formkit/auto-animate':
         specifier: ^0.8.2
         version: 0.8.2
-      '@slidev/client':
-        specifier: 0.49.29
-        version: 0.49.29(@nuxt/kit@3.13.1(rollup@4.21.2))(@vue/compiler-sfc@3.5.13)(postcss@8.4.49)(rollup@4.21.2)(vite@5.4.3(@types/node@22.10.1))(vue-template-compiler@2.7.16)(webpack-sources@3.2.3)
       '@unovis/vue':
         specifier: 1.4.3-beta.0
         version: 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.8(typescript@5.7.2))
