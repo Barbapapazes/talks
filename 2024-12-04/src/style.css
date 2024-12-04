@@ -1,0 +1,52 @@
+.dark #slide-content {
+  background-color: #020420;
+}
+
+.slidev-vclick-target {
+  transition: all 400ms cubic-bezier(0.47, 0, 0.745, 0.715);
+  transform-origin: center;
+}
+
+.slidev-vclick-hidden {
+  opacity: 0;
+  transform: translateY(1.4rem) scale(0.99);
+}
+
+.fade-out-leave-active {
+  transition:
+    opacity calc(var(--slidev-transition-duration) * 0.6) ease-out,
+    filter 200ms ease;
+}
+
+.fade-out-enter-active {
+  transition:
+    opacity calc(var(--slidev-transition-duration) * 0.8) ease-in,
+    filter 200ms ease;
+  transition-delay: calc(var(--slidev-transition-duration) * 0.6);
+}
+
+.weightless {
+  animation-name: weightless;
+  animation-delay: var(--animation-delay, 0);
+  animation-duration: var(--animation-duration, 10s);
+  animation-timing-function: var(--animation-timing-function, linear);
+  animation-iteration-count: var(--animation-iteration-count, infinite);
+  animation-direction: var(--animation-direction, alternate);
+}
+
+.zoom-enter-active {
+  transition: transform 2s;
+}
+
+.zoom-enter-from {
+  transform: scale(4);
+}
+
+@keyframes weightless {
+  0%, 100% {
+    transform: rotate(0) translateY(0) scale(1)
+  }
+  50% {
+    transform: rotate(2deg) translateY(-2%) scale(1.02)
+  }
+}
