@@ -54,7 +54,7 @@
       </Card>
     </div>
 
-    <div v-click class="border border-gray-800 rounded shadow row-start-1 overflow-hidden col-start-5 duration-800 mx-4 row-end-6 col-end-11">
+    <div v-click class="rounded row-start-1 overflow-hidden col-start-5 duration-800 border border-gray-800 shadow mx-4 row-end-6 col-end-11">
       <img src="/nuxthub-admin-deployment-dark.svg" class="rounded h-full w-full object-cover object-top">
     </div>
 

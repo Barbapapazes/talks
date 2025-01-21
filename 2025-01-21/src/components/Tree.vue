@@ -21,12 +21,12 @@ const props = defineProps<TreeProps>()
 <template>
   <TreeRoot
     v-slot="{ flattenItems }"
-    class="not-content list-none select-none flex flex-col gap-0.5 bg-neutral-800 rounded-md text-xs font-light p-2"
+    class="select-none flex flex-col text-xs p-2 not-content list-none gap-0.5 bg-neutral-800 rounded-md font-light"
     :items="props.items"
     :get-key="(item) => item.id || item.title"
     :default-expanded="props.defaultExpanded"
   >
-    <h2 class="mb-2 font-semibold text-sm">
+    <h2 class="mb-2 text-sm font-semibold">
       {{ props.name ?? 'Directory Structure' }}
     </h2>
     <TreeItem

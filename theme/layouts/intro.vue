@@ -34,7 +34,7 @@ const links = [website, ...socials]
         <template v-for="(item, index) in technologies" :key="item.text">
           <component :is="index === 0 ? VClick : VAfter">
             <div
-              class="py-2 flex items-center gap-2 forward:delay-[--delay] px-4 rounded-md bg-neutral-800 text-neutral-400 text-base"
+              class="py-2 flex items-center gap-2 forward:delay-[--delay] rounded-md bg-neutral-800 px-4 text-neutral-400 text-base"
               :style="{ '--delay': `${index * 50}ms` }"
             >
               <span :class="item.icon" class="inline-block size-4 shrink-0" />
@@ -55,7 +55,7 @@ const links = [website, ...socials]
               :style="{ '--delay': `calc(${(index % 2/** x */) + (Math.floor(index / 2)/** y */)} * 50ms)` }"
             >
               <a :href="article.url" target="_blank">
-                <h2 class="text-base text-neutral-200 font-semibold">{{ article.title }}</h2>
+                <h2 class="text-base font-semibold text-neutral-200">{{ article.title }}</h2>
                 <span class="absolute inset-0" />
               </a>
             </div>

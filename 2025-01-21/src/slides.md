@@ -291,6 +291,8 @@ layout: center-y
 node ace make:controller posts
 ```
 
+<!-- eslint no-empty-pattern: 0 -->
+
 ```ts [app/controllers/http/posts_controller.ts]
 import type { HttpContext } from '@adonisjs/core/http'
 
