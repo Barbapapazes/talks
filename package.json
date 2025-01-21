@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "pnpm@9.15.4",
   "scripts": {
-    "build": "rm -rf dist && pnpm -r run build && jiti scripts/generate-redirects.ts && jiti scripts/generate-meta.ts",
+    "build": "rm -rf dist && pnpm --filter=!slidev-theme-personal -r run build  && jiti scripts/generate-redirects.ts && jiti scripts/generate-meta.ts",
     "export": "pnpm -r run export",
     "dev": "jiti scripts/select-deck.ts dev --open",
     "lint": "eslint .",

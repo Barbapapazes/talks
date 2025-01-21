@@ -39,7 +39,12 @@ name: "Inalia: Frontend, Backend ou Fullstack"
 ---
 
 <Inalia
-  :questionId="1"
+  question="Frontend, Backend ou Full-stack ?"
+  type="single_select"
+  chart="bar"
+  :data="[
+    { label: 'Frontend', count: 13, color: '#2563eb' }, { label: 'Backend', count: 8, color: '#dc2626' }, { label: 'Full-stack', count: 31, color: '#9333ea' }
+  ]"
 />
 
 ---
@@ -47,7 +52,12 @@ name: "Inalia: Langages Backend"
 ---
 
 <Inalia
-  :questionId="2"
+  question="Language utilisé pour le backend ?"
+  type="multiple_select"
+  chart="donut"
+  :data="[
+    { label: 'Python', count: 8, color: '#dc2626' }, { label: 'Java', count: 7, color: '#ea580c' }, { label: 'C#', count: 3, color: '#ca8a04' }, { label: 'PHP', count: 6, color: '#65a30d' }, { label: 'JavaScript', count: 20, color: '#059669' }, { label: 'TypeScript', count: 36, color: '#0891b2' }, { label: 'Go', count: 6, color: '#2563eb' }, { label: 'C++', count: 0, color: '#4f46e5' }, { label: 'Kotlin', count: 3, color: '#9333ea' }, { label: 'Ruby', count: 1, color: '#d946ef' }, { label: 'Rust', count: 6, color: '#e11d48' }
+  ]"
 />
 
 ---
@@ -241,16 +251,6 @@ layout: center
     <span>Tuyau</span>
   </div>
 </div>
-
----
-name: "Inalia: Adonis ?"
----
-
-<!--
-
-Question Inalia sur qui connait Adonis et en a déjà fait
-
- -->
 
 ---
 name: Concrètement, à quoi ça ressemble ?
@@ -678,7 +678,12 @@ name: "Inalia: Et maintenant, envie d'essayer Adonis ?"
 ---
 
 <Inalia
-  :questionId="3"
+  question="Et maintenant, envie d'essayer Adonis ?"
+  type="single_select"
+  chart="donut"
+  :data="[
+    { label: 'Oui', count: 38, color: '#2563eb' }, { label: 'Non', count: 6, color: '#dc2626' }
+  ]"
 />
 
 ---
