@@ -109,7 +109,7 @@
       </div>
     </div>
 
-    <div v-click class="op-60 text-xs col-end-11 flex col-start-9 items-end">
+    <div v-click class="op-60 col-end-11 flex text-xs col-start-9 items-end">
       So much more...
     </div>
 
