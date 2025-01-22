@@ -7,7 +7,7 @@ function generateRedirects() {
     .withBasePath()
     .glob('./**/package.json')
     .exclude((dirName) => {
-      return dirName.startsWith('.') || dirName.startsWith('node_modules')
+      return dirName.startsWith('.') || dirName.startsWith('node_modules') || dirName.startsWith('theme')
     })
     .filter((dirName) => {
       return !dirName.startsWith('package.json')

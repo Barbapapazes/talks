@@ -1,0 +1,23 @@
+h1 {
+  @apply text-neutral-200 font-bold text-xl;
+}
+
+h1 + :is(p, ul, ol) {
+  @apply mt-4;
+}
+
+p, ul, ol {
+  @apply text-neutral-400;
+}
+
+ul:not(:where(.not-content, .not-content *)) {
+  @apply list-disc ml-6;
+}
+
+ol:not(:where(.not-content, .not-content *)) {
+  @apply list-decimal ml-6;
+}
+
+ a:not(:where(footer, footer *)) {
+  @apply font-semibold border-b border-b-neutral-700 transition-colors duration-300 ease-out hover:border-b-neutral-500
+}
