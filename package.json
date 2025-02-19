@@ -29,7 +29,7 @@
     "@slidev/theme-default": "^0.25.0",
     "@types/node": "^22.10.7",
     "@types/prompts": "^2.4.9",
-    "@unocss/eslint-plugin": "^65.4.2",
+    "@unocss/eslint-plugin": "^66.0.0",
     "eslint": "^9.18.0",
     "execa": "^9.5.2",
     "fdir": "^6.4.3",
