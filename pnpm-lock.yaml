@@ -119,6 +119,12 @@ importers:
         specifier: link:../../theme
         version: link:../../theme
 
+  2025-03-05/src:
+    dependencies:
+      slidev-theme-personal:
+        specifier: link:../../theme
+        version: link:../../theme
+
   theme:
     dependencies:
       reka-ui:
