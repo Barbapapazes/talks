@@ -8,11 +8,11 @@
   transition:
     opacity calc(var(--slidev-transition-duration) * 0.8) ease-in,
     filter 200ms ease;
-  transition-delay: calc(var(--slidev-transition-duration) * 0.6);
+  transition-delay: calc(var(--slidev-transition-duration) * 0.2);
 }
 
 .fade-out-enter-from,
 .fade-out-leave-to {
   opacity: 0;
-  filter: blur(4px);
+  filter: blur(2px);
 }

@@ -1,11 +1,15 @@
 #slide-content {
-  @apply bg-neutral-900;
+  --at-apply: text-neutral-950;
 }
 
 .slidev-layout {
-  @apply px-14 h-full py-10 text-[1.1rem];
+  --at-apply: px-14 h-full py-10 text-[1.1rem];
 }
 
 .slidev-layout.cover h1 {
-  @apply text-4xl;
+  --at-apply: text-5xl;
+}
+
+.dark #slide-content {
+  --at-apply: text-neutral-200;
 }

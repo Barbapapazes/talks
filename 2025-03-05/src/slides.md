@@ -83,7 +83,7 @@ Merci à tous, c'était Estéban.
 ---
 name: Présentation
 layout: intro
-intro: Développeur web full-stack à Maïa Space
+intro: Développeur web full-stack à <span class="i-custom-maiaspace inline-block size-5 align-text-top"></span> Maiaspace
 ---
 
 ---
@@ -96,48 +96,50 @@ name: "Inalia: Qui êtes-vous ?"
 
 ---
 name: Les Plateformes de Déploiement
-layout: center
+layout: center-card
+img: https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-<div class="flex flex-col gap-8 text-4xl font-medium">
-  <div v-click :class="{ 'slidev-vclick-target slidev-vclick-hidden': $clicks > 1 }" class="flex flex-row gap-2 items-center">
-    <span class="i-vscode-icons-file-type-netlify inline-block size-8"></span>
-      Netlify
+<div class="grid grid-cols-[60px_1fr] gap-8 text-4xl font-medium">
+  <div v-click :class="{ 'opacity-20': $clicks > 1 }" class="col-span-2 grid grid-cols-subgrid gap-2 items-center">
+    <span class="i-vscode-icons-file-type-netlify inline-block size-14"></span>
+    <span>Netlify</span>
   </div>
-  <div v-click :class="{ 'slidev-vclick-target slidev-vclick-hidden': $clicks > 2 }"  class="flex flex-row gap-2 items-center">
-    <span class="i-vscode-icons-file-type-vercel inline-block size-8"></span>
-    Vercel
+  <div v-click :class="{ 'opacity-20': $clicks > 2 }" class="col-span-2 grid grid-cols-subgrid gap-2 items-center">
+    <span class="i-vscode-icons-file-type-light-vercel dark:i-vscode-icons-file-type-vercel inline-block size-10"></span>
+    <span>Vercel</span>
   </div>
-  <div v-click class="flex flex-row gap-2 items-center">
-    <span class="i-logos-cloudflare-icon inline-block size-8"></span>
-    Cloudflare
+  <div v-click :class="{ 'opacity-20': $clicks > 3 }" class="col-span-2 grid grid-cols-subgrid gap-2 items-center">
+    <span class="i-logos-cloudflare-icon inline-block size-12"></span>
+    <span>Cloudflare</span>
   </div>
 </div>
 
 ---
 name: Les Packages Managers
-layout: center
+layout: center-card
+img: https://images.unsplash.com/photo-1722440814333-51292da1c59f?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-<div class="flex flex-col gap-8 text-4xl font-medium">
-  <div v-click :class="{ 'slidev-vclick-target slidev-vclick-hidden': $clicks > 1 }" class="flex flex-row gap-2 items-center">
-    <span class="i-vscode-icons-file-type-npm inline-block size-8"></span>
+<div class="grid grid-cols-[60px_1fr] gap-8 text-4xl font-medium">
+  <div v-click :class="{ 'opacity-20': $clicks > 1 }" class="col-span-2 grid grid-cols-subgrid gap-2 items-center">
+    <span class="i-vscode-icons-file-type-npm inline-block size-14"></span>
       npm
   </div>
-  <div v-click :class="{ 'slidev-vclick-target slidev-vclick-hidden': $clicks > 2 }"  class="flex flex-row gap-2 items-center">
-    <span class="i-vscode-icons-file-type-yarn inline-block size-8"></span>
+  <div v-click :class="{ 'opacity-20': $clicks > 2 }"  class="col-span-2 grid grid-cols-subgrid gap-2 items-center">
+    <span class="i-vscode-icons-file-type-yarn inline-block size-12"></span>
     Yarn
   </div>
-  <div v-click :class="{ 'slidev-vclick-target slidev-vclick-hidden': $clicks > 3 }"  class="flex flex-row gap-2 items-center">
-    <span class="i-vscode-icons-file-type-pnpm inline-block size-8"></span>
+  <div v-click :class="{ 'opacity-20': $clicks > 3 }" class="col-span-2 grid grid-cols-subgrid gap-2 items-center">
+    <span class="i-vscode-icons-file-type-light-pnpm dark:i-vscode-icons-file-type-pnpm inline-block size-10"></span>
     pnpm
   </div>
-  <div v-click :class="{ 'slidev-vclick-target slidev-vclick-hidden': $clicks > 4 }" class="flex flex-row gap-2 items-center">
-    <span class="i-simple-icons-bun inline-block size-8"></span>
+  <div v-click :class="{ 'opacity-20': $clicks > 4 }" class="col-span-2 grid grid-cols-subgrid gap-2 items-center">
+    <span class="i-vscode-icons-file-type-bun inline-block size-12"></span>
     Bun
   </div>
-   <div v-click class="flex flex-row gap-2 items-center">
-    <span class="i-vscode-icons-file-type-pnpm inline-block size-8"></span>
+  <div v-click class="col-span-2 grid grid-cols-subgrid gap-2 items-center">
+    <span class="i-vscode-icons-file-type-light-pnpm dark:i-vscode-icons-file-type-pnpm inline-block size-10"></span>
     pnpm
   </div>
 </div>
@@ -157,7 +159,9 @@ class: text-center
 
 <v-click>
 
-# YAGNI
+<h1 class="text-6xl font-bold">
+  YAGNI
+</h1>
 
 </v-click>
 
@@ -176,53 +180,39 @@ Finalement, c'est se mettre en mode lazy, comme le lazy loading, c'est pareil, s
 -->
 
 ---
-name: Watch Mode - Les API Node.js
-layout: center
+name: Les API Node.js
+layout: bottom-left-card
+img: https://images.unsplash.com/photo-1558556990-16d9896511ab?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-# `node --watch`
+# Les nouvelles API Node.js
 
----
-name: Test - Les API Node.js
-layout: center
----
-
-# `node:test`
-
----
-name: parseArgs - Les API Node.js
-layout: center
----
-
-# `parseArgs`
-
----
-name: Chargement d'un .env - Les API Node.js
-layout: center
----
-
-# `node --env-file=.env app.js`
-
----
-name: SQLite - Les API Node.js
-layout: center
----
-
-# `node:sqlite`
+- `node --watch`
+- `node:test`
+- `parseArgs`
+- `node --env-file=.env`
+- `node:sqlite`
 
 ---
 name: Les Frameworks et les Runtimes
-layout: center
+layout: bottom-left-card
+img: https://images.unsplash.com/photo-1480497490787-505ec076689f?q=80&w=2500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-# Et si on extrapolait ?
+# Voyons plus large
+
+- Les Frameworks
+- Les Runtimes
+- Les IDEs
 
 ---
 name: Soit-disant Mieux, Plus Rapide, Plus Simple
 layout: center
 ---
 
-# Mieux, plus rapide, plus simple ?
+<h1>
+  Soit-disant Mieux, Plus Rapide, Plus Simple
+</h1>
 
 <!--
 La réalité, c'est que la fidélité paie en programmation.

@@ -41,23 +41,28 @@ export const socials = [
 
 export const technologies = [
   {
+    icon: 'i-logos-laravel',
+    text: 'Laravel',
+    href: 'https://laravel.com',
+  },
+  {
     icon: 'i-logos-vitejs',
     text: 'Vite',
+    href: 'https://vite.dev',
   },
   {
     icon: 'i-logos-vue',
     text: 'Vue',
-  },
-  {
-    icon: 'i-logos-unjs',
-    text: 'UnJS',
+    href: 'https://vuejs.org',
   },
   {
     icon: 'i-logos-nuxt-icon',
     text: 'Nuxt',
+    href: 'https://nuxt.com',
   },
   {
-    icon: 'i-logos-laravel',
-    text: 'Laravel',
+    icon: 'i-logos-unjs',
+    text: 'UnJS',
+    href: 'https://unjs.io',
   },
 ]
