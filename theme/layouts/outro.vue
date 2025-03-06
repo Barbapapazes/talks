@@ -11,7 +11,7 @@ const links = [website, talks, ...socials]
     <div class="w-full my-auto">
       <slot />
 
-      <div class="absolute font-light flex flex-col text-neutral-600 text-xs top-14 right-10 text-end">
+      <div class="absolute font-light flex flex-col text-xs text-neutral-600 top-14 right-10 text-end">
         <span>Estéban Soubiran</span>
         <span> esteban@soubiran.dev </span>
       </div>

@@ -3,7 +3,7 @@ import Footer from '../components/Footer.vue'
 import FooterItem from '../components/FooterItem.vue'
 
 interface CoverProps {
-event: string
+  event: string
   date: string
 }
 

@@ -35,7 +35,7 @@ const links = [website, ...socials]
           <template v-for="(item, index) in technologies" :key="item.text">
             <component :is="index === 0 ? VClick : VAfter">
               <div
-                class="relative py-2 flex items-center gap-2 forward:delay-[--delay] rounded-md bg-white dark:bg-neutral-800 px-4 text-neutral-700 dark:text-neutral-400 text-base border border-neutral-200 dark:border-neutral-600 hover:dark:border-neutral-500 hover:border-neutral-400 transition duration-300 ease-out"
+                class="relative py-2 flex items-center gap-2 forward:delay-[--delay] rounded-md bg-white dark:bg-neutral-800 border transition px-4 text-neutral-700 dark:text-neutral-400 text-base border-neutral-200 dark:border-neutral-600 hover:dark:border-neutral-500 hover:border-neutral-400 duration-300 ease-out"
                 :style="{ '--delay': `${index * 50}ms` }"
               >
                 <span :class="item.icon" class="inline-block size-4 shrink-0" />
