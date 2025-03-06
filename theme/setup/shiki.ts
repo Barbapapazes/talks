@@ -4,6 +4,7 @@ export default defineShikiSetup(() => {
   return {
     themes: {
       dark: 'github-dark',
+      light: 'github-light',
     },
   }
 })

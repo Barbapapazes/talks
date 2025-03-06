@@ -17,45 +17,50 @@ const links = [website, ...socials]
 
 <template>
   <div class="slidev-layout intro">
-    <div class="my-auto">
-      <div class="flex flex-col gap-4">
-        <img src="https://github.com/barbapapazes.png" class="size-24">
+    <div class="flex flex-col h-full">
+      <div class="flex flex-row justify-between items-center">
+        <div class="flex flex-col gap-4">
+          <img src="https://github.com/barbapapazes.png" class="size-24">
 
-        <div>
-          <h1>Estéban Soubiran</h1>
+          <div>
+            <h1>Estéban Soubiran</h1>
 
-          <VClick>
-            <p v-html="props.intro" />
-          </VClick>
+            <VClick>
+              <p v-html="props.intro" />
+            </VClick>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <template v-for="(item, index) in technologies" :key="item.text">
+            <component :is="index === 0 ? VClick : VAfter">
+              <div
+                class="relative py-2 flex items-center gap-2 forward:delay-[--delay] rounded-md bg-white dark:bg-neutral-800 border transition px-4 text-neutral-700 dark:text-neutral-400 text-base border-neutral-200 dark:border-neutral-600 hover:dark:border-neutral-500 hover:border-neutral-400 duration-300 ease-out"
+                :style="{ '--delay': `${index * 50}ms` }"
+              >
+                <span :class="item.icon" class="inline-block size-4 shrink-0" />
+                <a :href="item.href" target="_blank" class="border-0 font-normal">
+                  <span>{{ item.text }}</span>
+                  <span class="absolute inset-0" />
+                </a>
+              </div>
+            </component>
+          </template>
         </div>
       </div>
 
-      <div class="flex gap-4 mt-6">
-        <template v-for="(item, index) in technologies" :key="item.text">
-          <component :is="index === 0 ? VClick : VAfter">
-            <div
-              class="py-2 flex items-center gap-2 forward:delay-[--delay] rounded-md bg-neutral-800 px-4 text-neutral-400 text-base"
-              :style="{ '--delay': `${index * 50}ms` }"
-            >
-              <span :class="item.icon" class="inline-block size-4 shrink-0" />
-              <span>{{ item.text }}</span>
-            </div>
-          </component>
-        </template>
-      </div>
-
-      <div class="mt-6 grid grid-cols-2 gap-4">
+      <div class="my-auto grid grid-cols-2 gap-4">
         <template
           v-for="(article, index) in LatestArticles"
           :key="article.id"
         >
           <component :is="index === 0 ? VClick : VAfter">
             <div
-              class="relative p-4 rounded-md border transition forward:delay-[--delay] border-neutral-600 duration-300 ease-out hover:border-neutral-400"
+              class="relative p-4 rounded-md border transition forward:delay-[--delay] dark:border-neutral-600 duration-300 ease-out border-neutral-200 hover:border-neutral-400 hover:dark:border-neutral-500"
               :style="{ '--delay': `calc(${(index % 2/** x */) + (Math.floor(index / 2)/** y */)} * 50ms)` }"
             >
               <a :href="article.url" target="_blank">
-                <h2 class="text-base font-semibold text-neutral-200">{{ article.title }}</h2>
+                <h2 class="text-base font-semibold text-neutral-950 dark:text-neutral-200">{{ article.title }}</h2>
                 <span class="absolute inset-0" />
               </a>
             </div>

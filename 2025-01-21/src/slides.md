@@ -8,7 +8,6 @@ fonts:
   mono: Consolas
 themeConfig:
   primary: white
-colorSchema: dark
 codeCopy: false
 glowSeed: 213
 transition: fade-out
@@ -31,7 +30,7 @@ Présenté par Estéban Soubiran
 ---
 name: Présentation
 layout: intro
-intro: Développeur web full-stack à Maïa Space
+intro: Développeur web full-stack à <span class="i-custom-maiaspace inline-block size-5 align-text-top"></span> Maiaspace
 ---
 
 ---
