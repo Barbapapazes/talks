@@ -1,6 +1,7 @@
 {
   "name": "paris-typescript",
   "event": "Paris TypeScript",
+  "recording": "https://youtu.be/xKrok6ZtHUk",
   "private": true,
   "scripts": {
     "dev": "slidev",

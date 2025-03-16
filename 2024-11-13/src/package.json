@@ -1,6 +1,7 @@
 {
   "name": "nuxtnation",
   "event": "Nuxt Nation",
+  "recording": "https://youtu.be/I4-YfEn8K0w",
   "private": true,
   "scripts": {
     "dev": "slidev",
