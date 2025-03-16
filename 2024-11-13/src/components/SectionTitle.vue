@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="font-medium text-sm font-serif">
+  <div class="text-sm font-medium font-serif">
     <slot />
   </div>
 </template>
