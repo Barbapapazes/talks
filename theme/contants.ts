@@ -37,6 +37,12 @@ export const socials = [
     text: 'Barbapapazes',
     href: 'https://github.com/barbapapazes',
   },
+  {
+    icon: 'i-simple-icons-discord size-3',
+    label: 'Discord',
+    text: 'Estéban\'s Open Source',
+    href: 'https://discord.gg/q2ghCGUuFR',
+  },
 ]
 
 export const technologies = [
@@ -60,9 +66,9 @@ export const technologies = [
     text: 'Nuxt',
     href: 'https://nuxt.com',
   },
-  {
-    icon: 'i-logos-unjs',
-    text: 'UnJS',
-    href: 'https://unjs.io',
-  },
+  // {
+  //   icon: 'i-logos-unjs',
+  //   text: 'UnJS',
+  //   href: 'https://unjs.io',
+  // },
 ]
