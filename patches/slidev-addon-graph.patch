@@ -1,0 +1,47 @@
+diff --git a/components/SlidevGraph.vue b/components/SlidevGraph.vue
+index 9baefad4eddd42d642ef8bc256adc8e00917d60f..bf5df0102d02965e5f292e0b685235ea2cff2743 100644
+--- a/components/SlidevGraph.vue
++++ b/components/SlidevGraph.vue
+@@ -36,7 +36,7 @@ const isEditing = ref(false)
+ 
+ const saved = computed<SavedPositions>(() => ALL_POS[props.id] || {})
+ const backgroundColor = computed(() => props.backgroundColor || (isDark.value ? '#050505' : '#ffff'))
+-const luminance = computed(() => isDark.value ? 0.7 : 0.6)
++const luminance = computed(() => isDark.value ? 0.7 : 0.5)
+ 
+ function toNode(project: DataItem, focus = false) {
+   const color = chroma(project.color || '#888')
+@@ -60,15 +60,15 @@ function toNode(project: DataItem, focus = false) {
+       color: getColor(project.faded ? 0.75 : 1),
+     },
+     color: {
+-      border: getColor(project.faded ? 0.05 : project.dashed ? 0.2 : 0.5),
+-      background: getColor(project.faded ? 0.02 : project.dashed ? 0.05 : 0.05),
++      border: getColor(project.faded ? 0.05 : project.dashed ? 0.2 : 1),
++      background: getColor(project.faded ? 0.02 : project.dashed ? 0.05 : 0.8),
+       highlight: {
+-        border: getColor((project.dashed || project.faded) ? 0.2 : 0.5),
++        border: getColor((project.dashed || project.faded) ? 0.2 : 1),
+         background: getColor(0.1),
+       },
+       hover: {
+-        border: getColor((project.dashed || project.faded) ? 0.2 : 0.5),
+-        background: getColor(0.07),
++        border: getColor((project.dashed || project.faded) ? 0.2 : 1),
++        background: getColor(0.8),
+       },
+     },
+     borderWidth: focus ? 4 : 1,
+@@ -369,10 +369,12 @@ onMounted(() => {
+ .slidev-graph {
+   --uno: border border-transparent min-h-20;
+ }
++
+ .slidev-graph div,
+ .slidev-graph button {
+   outline: none !important;
+ }
++
+ .slidev-graph.editing {
+   --uno: border border-dashed border-gray/50 rounded;
+ }
