@@ -10,10 +10,10 @@ const isClicked = ref(false)
 </script>
 
 <template>
-  <table class="table-fixed w-full">
+  <table class="w-full table-fixed">
     <thead>
       <tr>
-        <th class="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-center font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200" />
+        <th class="p-4 text-center font-medium border-b border-gray-200 pt-0 pb-3 pl-8 text-gray-400 dark:border-gray-600 dark:text-gray-200" />
         <th class="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-center font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">
           A
         </th>
@@ -27,15 +27,15 @@ const isClicked = ref(false)
     </thead>
     <tbody>
       <tr>
-        <td class="p-4 border-b border-gray-100 text-gray-400 dark:border-gray-700 dark:text-gray-200">
+        <td class="p-4 border-b text-gray-400 dark:text-gray-200 border-gray-100 dark:border-gray-700">
           1
         </td>
-        <td class="p-4 border-b border-gray-100 text-gray-500 dark:border-gray-700 dark:text-gray-400 text-right">
+        <td class="p-4 border-b border-gray-100 dark:border-gray-700 text-gray-500 dark:text-gray-400 text-right">
           Quantité
         </td>
         <td class="border-b border-gray-100 text-gray-500 dark:border-gray-700 dark:text-gray-400 text-right">
           <div class="p-4 border-2 border-transparent data-[clicked=true]:border-blue-500 dark:data-[clicked=true]:border-blue-400" :data-clicked="isClicked">
-            <input v-model.number="quantity" type="text" class="w-full focus:outline-none text-right bg-transparent">
+            <input v-model.number="quantity" type="text" class="w-full text-right bg-transparent focus:outline-none">
           </div>
         </td>
         <td class="p-4 border-b border-gray-100 text-gray-500 dark:border-gray-700 dark:text-gray-400 text-right" />

@@ -282,7 +282,6 @@ instance.scope.off()
 
 <!-- slide de fin -->
 
-
 <!--
 
 - un code très simple et le code, concret de la library (pour expliquer le fonctionnement de la library)
