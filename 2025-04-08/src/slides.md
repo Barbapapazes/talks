@@ -62,7 +62,6 @@ I'm Estéban and I been using Nuxt for years now. I create some [click] modules 
 
 ---
 
-
 <!-- TODO: Inalia: Do you know Nuxt? -->
 
 ---
@@ -88,7 +87,6 @@ v3 en november 2022
 v4 coming (soon?)
 
  -->
-
 
 ---
 layout: center

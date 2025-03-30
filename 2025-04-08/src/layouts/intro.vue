@@ -21,7 +21,7 @@ const links = [website, ...socials]
 
             <VClick>
               <p>
-                Avonics Software Engineer at <span class="i-custom-maiaspace inline-block size-5 align-text-top" /> Maiaspace
+                Avonics Software Engineer at <span class="inline-block size-5 i-custom-maiaspace align-text-top" /> Maiaspace
               </p>
             </VClick>
           </div>
@@ -45,7 +45,7 @@ const links = [website, ...socials]
         </div>
       </div>
 
-      <div class="my-auto grid grid-cols-2 gap-4">
+      <div class="grid grid-cols-2 gap-4 my-auto">
         <template
           v-for="(article, index) in LatestArticles"
           :key="article.id"
@@ -56,7 +56,7 @@ const links = [website, ...socials]
               :style="{ '--delay': `calc(${(index % 2/** x */) + (Math.floor(index / 2)/** y */)} * 50ms)` }"
             >
               <a :href="article.url" target="_blank">
-                <h2 class="text-base! font-semibold text-neutral-950 dark:text-neutral-200">{{ article.title }}</h2>
+                <h2 class="font-semibold text-base! text-neutral-950 dark:text-neutral-200">{{ article.title }}</h2>
                 <span class="absolute inset-0" />
               </a>
             </Card>
