@@ -61,32 +61,41 @@ I'm Estéban and I been using Nuxt for years now. I create some [click] modules 
 -->
 
 ---
-
-<!-- TODO: Inalia: Do you know Nuxt? -->
-
+name: Do you know Nuxt?
+transition: slide-up
 ---
 
-<!-- TODO: what is Nuxt -->
+<Inalia
+  :questionId="1"
+/>
+
+---
+name: What is Nuxt?
+---
+
+<div class="absolute bottom-12 left-14">
+  <h1 class="text-4xl font-serif">What is <span class="text-primary">Nuxt</span>?</h1>
+
+  <ul class="list-disc!">
+    <li>A progressive framework built on Vue.js and Nitro</li>
+    <li>Zero-effort with great DX</li>
+    <li>Best practices built-in</li>
+    <li>Fully configurable & easily extensible</li>
+  </ul>
+</div>
 
 <!--
+Explain the Nitro part because it's an important one.
 
-ref: https://www.youtube.com/watch?v=ajUJ1ZNiaZ8
+Reference: https://www.youtube.com/watch?v=ajUJ1ZNiaZ8
 
-- a progressive framework built on Vue.js and Nitro
-- zero-effort with great DX
-- best practices built-in
-- fully configurable & easily extensible
-
-avec une timeline
-
-first commit en ocotver 2026
-v1 en january 2018
-v2 en september 2018
-v3 first commit en july 2020
-v3 en november 2022
-v4 coming (soon?)
-
- -->
+- **October 2016**: First commit for Nuxt.js.
+- **January 2018**: Release of Nuxt.js v1.
+- **September 2018**: Release of Nuxt.js v2.
+- **July 2020**: First commit for Nuxt.js v3.
+- **November 2022**: Release of Nuxt.js v3.
+- **Coming Soon**: Nuxt.js v4.
+-->
 
 ---
 layout: center
@@ -121,12 +130,7 @@ transition: fade
 ---
 
 <Inalia
-  question="What are the essential needs for a web application?"
-  type="multiple_select"
-  chart="donut"
-  :data="[
-    { label: 'Database', count: 25, color: '#aeffde' }, { label: 'KV Store', count: 12, color: '#2bfda7' }, { label: 'Blob Storage', count: 6, color: '#00c06d' }, { label: 'Queue', count: 8, color: '#009658' }, { label: 'Mailer', count: 10, color: '#07603e' }
-  ]"
+  :questionId="2"
 />
 
 <!--
@@ -138,7 +142,7 @@ This question will ensure we're all on the same page, and it'll help us understa
 
 Hmm, very interesting results.
 
-And the answer is... all of them! Every web application needs a database, a KV store, a blob storage, a queue, and a mailer. Without one of these, creating a serious web application becomes very difficult. Interestingly, in a traditional app, you might consolidate your KV store and queue into the database to simplify your architecture.
+And the answer is... all of them! Every web application needs a database, a KV store, a blob storage, a queue, and a mailer. Without one of these, creating a serious web application becomes very difficult.
 -->
 
 ---
@@ -171,6 +175,7 @@ And unlike traditional providers with regions like 'eu-west-3' or 'us-east-1,' C
 
 ---
 layout: center
+clicks: 10
 ---
 
 <div class="relative">
@@ -207,7 +212,9 @@ layout: center
   </Card>
 </v-click>
 
-<CloudflareNetworkGlobe v-click class="absolute -z-1 left-1/2 top-2/5 transform -translate-x-1/2 op-60" :size="600" />
+<Transition name="fade">
+  <CloudflareNetworkGlobe v-if="$clicks === 10" class="absolute -z-1 left-1/2 top-2/5 transform -translate-x-1/2" :size="600" />
+</Transition>
 
 <!--
 
@@ -269,37 +276,25 @@ And the best part ? [click] You can get started today, for free!
 -->
 
 ---
-layout: center
+layout: outro
 class: relative
 ---
 
-<!--
+<h1 class="text-4xl font-serif">
+  Looking for more?
+</h1>
 
-TODO: refaire cette slide
-
-Pour finalement en faire 2, une sur la fin du talk et ce qu'il faut retenir (comme daniel)
-et une autre sur les questions et ce que les gens ont pensé du talk
-
- -->
-
-<!-- <h1 text="center" font="serif">Thank you!</h1>
-
-<hr class="border-slate-800 my-12" />
-
-<Card class="flex flex-col p-6">
-  <img src="https://github.com/barbapapazes.png" class="mx-auto size-20" />
-
-  <span class="mt-6 text-center text-xl font-serif font-medium">
-    Estéban Soubiran
-  </span>
-
-  <span class="mt-1 text-center text-sm op-60">
-    Freelance web developer and open-source enthusiast.
-  </span>
-
-  <Socials class="mt-8" />
-</Card> -->
+<ul class="op-80">
+  <li>Check out the docs on <a href="https://hub.nuxt.com" target="_blank">hub.nuxt.com</a></li>
+  <li>Deploy your first app in minutes on <a href="https://admin.hub.nuxt.com" target="_blank">admin.hub.nuxt.com</a></li>
+  <li>Follow <a href="https://twitter.com/atinux" target="_blank">Sébastien (@atinux)</a> on X</li>
+  <li>Join the <a href="https://discord.gg/vW89dsVqBF" target="_blank">Nuxt Hub Discord</a></li>
+</ul>
 
 <!--
 Thank you! I really hope you enjoyed this presentation. And if you have any questions, feel free to ask in the chat.
 -->
+
+---
+# layout: Rate the talk
+---
