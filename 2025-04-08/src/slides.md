@@ -45,7 +45,7 @@ And prepare your phone, you'll have a QR code to scan in a few slides.
  -->
 
 ---
-# layout: overview
+layout: inalia-overview
 ---
 
 ---
@@ -296,5 +296,5 @@ Thank you! I really hope you enjoyed this presentation. And if you have any ques
 -->
 
 ---
-# layout: Rate the talk
+layout: inalia-feedback
 ---
