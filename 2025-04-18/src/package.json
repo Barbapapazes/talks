@@ -1,0 +1,10 @@
+{
+  "name": "devoxxfr",
+  "event": "Devoxx France",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2025-04-18/devoxxfr/ --out ../../dist/2025-04-18/devoxxfr",
+    "export": "slidev export --per-slide --output ../2025-04-18-devoxxfr.pdf"
+  }
+}

@@ -28,11 +28,11 @@
     "@iconify-json/ph": "^1.2.2",
     "@iconify-json/simple-icons": "^1.2.33",
     "@iconify-json/vscode-icons": "^1.2.19",
-    "@slidev/cli": "^51.0.1",
+    "@slidev/cli": "51.5.0",
     "@slidev/theme-default": "^0.25.0",
     "@types/node": "^22.14.1",
     "@types/prompts": "^2.4.9",
-    "@unocss/eslint-plugin": "^65.4.2",
+    "@unocss/eslint-plugin": "^65.5.0",
     "eslint": "^9.25.1",
     "execa": "^9.5.2",
     "fdir": "^6.4.4",
@@ -41,13 +41,16 @@
     "pathe": "^2.0.3",
     "playwright-chromium": "^1.52.0",
     "prompts": "^2.4.2",
+    "slidev-addon-graph": "^0.1.0",
+    "slidev-theme-personal": "link:./theme",
     "taze": "^19.0.4",
     "typescript": "^5.8.3"
   },
   "pnpm": {
     "patchedDependencies": {
       "cobe": "patches/cobe.patch",
-      "@slidev/cli": "patches/@slidev__cli.patch"
+      "@slidev/cli": "patches/@slidev__cli.patch",
+      "slidev-addon-graph": "patches/slidev-addon-graph.patch"
     }
   }
 }

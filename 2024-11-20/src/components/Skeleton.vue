@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="bg-[#EE0C6F]/10 backdrop-blur border shadow-sm rounded p-4 w-full mx-auto border-[#EE0C6F]/20 max-w-sm">
+  <div class="bg-[#EE0C6F]/10 backdrop-blur border shadow-sm rounded w-full mx-auto p-4 border-[#EE0C6F]/20 max-w-sm">
     <div class="flex animate-pulse space-x-4">
       <div class="rounded-full bg-[#EE0C6F] h-10 w-10" />
       <div class="py-1 flex-1 space-y-6">

@@ -11,10 +11,12 @@ const links = [website, talks, ...socials]
     <div class="w-full my-auto">
       <slot />
 
-      <div class="absolute font-light flex flex-col text-xs top-14 right-10 text-end text-neutral-600">
+      <div class="absolute font-light flex flex-col text-xs top-14 text-end right-14 text-neutral-600">
         <span>Estéban Soubiran</span>
         <span> esteban@soubiran.dev </span>
       </div>
+
+      <Feedback v-click class="absolute right-14 top-28" />
 
       <Footer class="flex flex-row gap-2">
         <FooterLink

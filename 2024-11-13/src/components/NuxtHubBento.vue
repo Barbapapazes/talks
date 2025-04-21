@@ -10,7 +10,7 @@
       The Nuxt full-stack companion.
     </div>
 
-    <Card v-click class="flex flex-row gap-2 col-start-1 col-end-5 row-start-1 row-end-3 justify-center items-center mb-2">
+    <Card v-click class="flex flex-row gap-2 justify-center items-center col-start-1 col-end-5 row-start-1 row-end-3 mb-2">
       <span class="i-simple-icons-github size-5 inline-block" />
       <span class="font-medium">nuxt-hub/<span class="font-bold">core</span></span>
     </Card>
