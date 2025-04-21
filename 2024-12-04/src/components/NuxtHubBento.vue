@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 withDefaults(defineProps<{
-  clicks: boolean
+  clicks?: boolean
 }>(), {
   clicks: true,
 })

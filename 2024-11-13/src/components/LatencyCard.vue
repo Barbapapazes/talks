@@ -16,7 +16,7 @@ defineProps<{
         {{ city }}
       </span>
     </div>
-    <span class="rounded text-xs text-green-400 bg-green-950 px-1.5 py-px">200</span>
+    <span class="text-xs rounded text-green-400 bg-green-950 px-1.5 py-px">200</span>
     <span
       class="text-xs rounded px-1.5 py-px"
       :class="latency > 300 ? 'text-amber-400 bg-amber-950' : 'text-green-400 bg-green-950'"

@@ -35,11 +35,11 @@ const links = [website, ...socials]
           <template v-for="(item, index) in technologies" :key="item.text">
             <component :is="index === 0 ? VClick : VAfter">
               <div
-                class="relative py-2 flex items-center gap-2 forward:delay-[--delay] rounded-md bg-white dark:bg-neutral-800 border transition px-4 text-neutral-700 dark:text-neutral-400 text-base border-neutral-200 dark:border-neutral-600 hover:dark:border-neutral-500 hover:border-neutral-400 duration-300 ease-out"
+                class="relative py-2 flex items-center gap-2 forward:delay-[--delay] rounded-md bg-white dark:bg-neutral-800 border transition duration-300 ease-out px-4 text-neutral-700 dark:text-neutral-400 text-base border-neutral-200 dark:border-neutral-600 hover:dark:border-neutral-500 hover:border-neutral-400"
                 :style="{ '--delay': `${index * 50}ms` }"
               >
                 <span :class="item.icon" class="inline-block size-4 shrink-0" />
-                <a :href="item.href" target="_blank" class="border-0 font-normal">
+                <a :href="item.href" target="_blank" class="font-normal border-0">
                   <span>{{ item.text }}</span>
                   <span class="absolute inset-0" />
                 </a>
