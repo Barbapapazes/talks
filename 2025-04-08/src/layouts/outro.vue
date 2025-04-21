@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-import Footer from '../components/Footer.vue'
-import FooterLink from '../components/FooterLink.vue'
-import { socials, talks, website } from '../contants'
+import { socials, website } from '../contants'
 
-const links = [website, talks, ...socials]
+const links = [website, ...socials]
 </script>
 
 <template>
@@ -11,7 +9,7 @@ const links = [website, talks, ...socials]
     <div class="w-full my-auto">
       <slot />
 
-      <div class="absolute font-light flex flex-col text-xs top-14 right-10 text-end text-neutral-600">
+      <div class="absolute font-light flex flex-col text-xs text-gray-600 top-14 right-10 text-end">
         <span>Estéban Soubiran</span>
         <span> esteban@soubiran.dev </span>
       </div>
