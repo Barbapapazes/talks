@@ -25,6 +25,43 @@ date: 17 avril 2025
 
 # La réactivité et les signaux :<br> démystifions la magie du frontend
 
+<!-- TODO: faire les questions dans Inalia -->
+<!-- TODO: finir la mise en place des tests -->
+
+---
+name: Overview
+layout: inalia-overview
+---
+
+---
+name: Quel framework pour le frontend ?
+---
+
+<Inalia
+  :questionId="1"
+/>
+
+<!--
+
+Profiter de la question pour évoquer que chaque framework a une manière différente de gérer la réactivité et aujourd'hui, on va en voir une mais qui est celle vers laquelle les frameworks tendent. Même Angular fait des signaux.
+
+- Différents systèmes de réactivité
+https://www.youtube.com/watch?v=XB993rQ-5DY
+https://www.builder.io/blog/reactivity-across-frameworks
+  - Dirty checking
+  - Observable
+  - Signals
+
+-->
+
+---
+name: Qui s'est déjà questionné sur le fonctionnement profond de la réactivité de son framework ?
+---
+
+<Inalia
+  :questionId="2"
+/>
+
 ---
 name: L'équation
 layout: center
@@ -36,6 +73,13 @@ clicks: 1
   <span :class="{ 'text-red-500 dark:text-red-400': $clicks === 1 }">ui</span> = <span :class="{ 'text-purple-500 dark:text-purple-400': $clicks === 1 }">fn</span>(<span :class="{ 'text-blue-500 dark:text-blue-400': $clicks === 1 }">state</span>)
 </h1>
 
+<!--
+
+On peut faire un parallèle avec notre réactivité. `fn` peut-être perçue comme une boite noire, un système dis réactif dans notre cas qui va muter l'interface utilisateur en fonction de l'état de l'application et automatiquement.
+
+Et le plus simple, pour illustrer ça [click], c'est de sortir un Excel.
+-->
+
 ---
 name: L'Excel
 layout: center-top-card
@@ -45,6 +89,12 @@ imgClass: object-bottom
 ---
 
 <Excel />
+
+<!--
+
+Parler de la notion de propagation de changement.
+
+-->
 
 ---
 name: Alien Signals
@@ -68,10 +118,22 @@ effect(() => {
 //
 ```
 
+<!--
+
+On y retrouve exactement notre Excel.
+
+Et pourquoi Alien Signals ? Tout simplement parce que c'est agnostique du framework (et même du language) et que c'est tellement bas niveau, qu'est il possible de refaire la réactivité de certains frameworks et d'implémenter la RFC du TC39 sur les signaux.
+
+Développé par Johnson Chu pour répondre à ces besoins dans Volar, le framework d'extension pour LSP.
+
+Finalement, c'est une implémentation qui permet de faire évoluer celle de Vue 3 donc ce n'est pas un petit projet random.
+
+-->
+
 ---
 name: Présentation
 layout: intro
-intro: Ingénieur logiciel chez <span class="i-custom-maiaspace inline-block size-5 align-text-top"></span> Maiaspace
+intro: Ingénieur logiciel Avionique chez <span class="i-custom-maiaspace inline-block size-5 align-text-top"></span> Maiaspace
 ---
 
 ---
@@ -96,6 +158,12 @@ effect(() => {
 quantity(3)
 ```
 
+<!--
+
+Mais on n'est pas là pour parler de moi. Aujourd'hui, on est là pour parler d'Alien Signals et plus précisément, on est là pour comprendre comment `effect` sait qu'il doit ré-executer sa fonction de callback lorsque l'une de ses dépendances, direct ou non, comme `quantity` ou `price`, change.
+
+-->
+
 ---
 name: Théorie des graphes
 transition: slide-up
@@ -105,6 +173,16 @@ clicks: 4
 
 <GraphTheory class="absolute inset-4" />
 
+<!-- théorie des graphs avec les noeuds, les liens
+
+un graph est une structure mathématique aui permet de représenter des relations entre des objets
+
+graph orienté
+
+on ne peut accéder aux noeuds suivant que en ayant parcouru les noeuds précédents
+
+-->
+
 ---
 name: Liste doublement chaînée
 class: relative
@@ -112,6 +190,14 @@ clicks: 3
 ---
 
 <DoubleLinkedList class="absolute inset-4" />
+
+---
+name: Vous suivez encore ? 🫣
+---
+
+<Inalia
+  :questionId="3"
+/>
 
 ---
 name: Le lien entre les graphes et la réactivité
@@ -146,6 +232,7 @@ effect(() => {
 ---
 layout: bottom-left-card
 transition: slide-up
+cardClass: w-80
 img: https://images.unsplash.com/photo-1447433819943-74a20887a81e?q=80&w=2292&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
@@ -159,14 +246,21 @@ effect(() => {})
 effectScope(() => {})
 ```
 
+<!--
+
+Expliquer la notion de subscriber et de dependency pour chacun des éléments
+
+-->
+
 ---
 name: Signals finally explained
+transition: slide-up
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=3611&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
-```ts
+```ts {*}{lines:true}
 export function signal<T>(): WriteableSignal<T | undefined>
 export function signal<T>(oldValue: T): WriteableSignal<T>
 export function signal<T>(oldValue?: T): WriteableSignal<T | undefined> {
@@ -177,7 +271,7 @@ export function signal<T>(oldValue?: T): WriteableSignal<T | undefined> {
   }) as WriteableSignal<T | undefined>
 }
 ```
-```ts
+```ts {*}{lines:true}
 function signalGetterSetter<T>(this: Signal<T>, ...value: [T]): T | void {
   if (value.length) {
     if (this.currentValue !== (this.currentValue = value[0])) {
@@ -198,7 +292,7 @@ function signalGetterSetter<T>(this: Signal<T>, ...value: [T]): T | void {
   }
 }
 ```
-```ts
+```ts {*}{lines:true}
 function computedGetter<T>(this: Computed<T>): T {
   const flags = this.flags;
   if (flags & (SubscriberFlags.Dirty | SubscriberFlags.PendingComputed)) {
@@ -212,7 +306,7 @@ function computedGetter<T>(this: Computed<T>): T {
   return this.currentValue!;
 }
 ```
-```ts
+```ts {*}{lines:true}
 function runEffect(e: Effect): void {
   const prevSub = activeSub;
   activeSub = e;
@@ -225,7 +319,7 @@ function runEffect(e: Effect): void {
   }
 }
 ```
-```ts
+```ts {*}{lines:true}
 const quantity = signal(0)
 const price = signal(15)
 
@@ -236,6 +330,27 @@ effect(() => {
 })
 ```
 ````
+
+<!-- TODO:  -->
+<!-- expliquer les choses dans les détails dès l'explication sur les signaux-->
+<!-- parler du fait qu'on a tout un éventail de type de fonctionnement de la réactivité (c'est au moment du propagate, pull, push, pull-push) -->
+
+---
+name: Problèmes
+layout: center-card
+img: https://images.unsplash.com/photo-1706211306896-92c4abb298d7?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+---
+
+<div class="font-semibold text-xl leading-10">
+  <div v-click :class="{ 'opacity-20': $clicks > 1 }">Glitches</div>
+  <div v-click :class="{ 'opacity-20': $clicks > 2 }">Cyclic dependencies</div>
+  <div v-click :class="{ 'opacity-20': $clicks > 3 }">Interaction with mutable state</div>
+  <div v-click>Dynamic updating of the graph of dependencies</div>
+</div>
+
+<!-- TODO:  -->
+<!-- l'une des complexités résides dans 4 règles à respecter -->
+<!-- parler du diamant problème ? ça peut faire un truc très concret hyper intéressant sur les 4 problèmes qui peuvent se poser  -->
 
 ---
 name: Construire son framework
@@ -254,11 +369,14 @@ effect(() => {
 count(count() + 1)
 ```
 
-<!-- réactivité dans le frontend avec un effect qui render un html -->
-
+<!-- réactivité dans le frontend avec un effect qui render un html on vit de faire note ui=fn(state)-->
+<!-- on peut reset le compteur des frameworks -->
+<!-- c'est littéralement comme ça que fonctionne le mode vapor -->
 ---
 name: Dans Vue
-layout: center
+layout: center-card
+imgClass: object-start
+img: https://images.unsplash.com/photo-1558244661-d248897f7bc4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ```ts
@@ -267,80 +385,38 @@ const effect = (instance.effect = new ReactiveEffect(componentUpdateFn))
 instance.scope.off()
 ```
 
-<!-- réactivité chez Vue, concrètement -->
+<!-- TODO: conclure sur le fait qu'on est au niveau composant et qu'un projet comme Vue Vapor va permettre d'être au niveau des éléments du DOM donc beaucoup plus performant.
+
+https://www.youtube.com/watch?v=2ZahQhb98-E
+
+-->
+
+<!-- réactivité chez Vue, concrètement et  -->
 <!-- voir si on peut pousser davantage et expliquer vapor aussi (avec du code compilé) -->
 <!-- réactivité dans le paysage du frontend -->
 <!-- ou alors avoir une ouverture avec cette notion pour un potentiel épisode 2 -->
 
----
-
-<div>
-
-</div>
+<!-- faire une conclusion sur le fait que tous les frameworks sont différents mais que la logique est là -->
 
 ---
+layout: outro
+---
 
-<!-- slide de fin -->
+<h1 class="text-4xl font-serif">
+  Looking for more?
+</h1>
 
-<!--
-
-- un code très simple et le code, concret de la library (pour expliquer le fonctionnement de la library)
-
-- explication de l'ensemble des manière de la réactivité dans le frontend (de react à solid)
-- et puis comment concrètement ça fonctionne dans Vue
-- et puis finalement, le fine grained reactivity avec vue vapor
-
- -->
-
-<!--
-
-- [ ] ajouter une slide à la fin pour demander aux gens ce qu'ils ont pensé de la conférence (via inalia ofc)
-- [ ] une page récap de tous les liens dans inalia ? et ça s'active au fur et à mesure
-- [ ] il faut garder les liens pour les mettre dans les slides
-- [ ] continuer à bosser les slides et commencer la un paquet pour tout et pour rien
-
-Plan
-
-- ui = fn(state)
-utilisé à la base pour décrire react puisque dans un react, vous avez les props en entrée et l'output de la function est le DOM, finalement ça veut dire que l'interface est pilotée par l'état de l'application
-
-mais cette équation est en réalité tout aussi valable pour la réactivité où fn est une boite noire, dans notre cas, un système de réactivité
-
-- démo concrète avec un tableau Excel (parce que ça fonctionne exactement pareil)
-- démo de ce dont on va parler (un truc rapide) avec un monaco-run (en mode on va parler de alien-signals parce que c'est aujourd'hui l'implémentation la plus efficiente et bas niveau que l'on peut trouver) et puis c'est du concret parce que ça alimente le système de réactivité de Vue (lui aussi complètement indépendant de Vue) et réimplémentée dans pleins de languages
-
-- introduction (ne mettre que Laravel, Vite et Vue) (et ajouter discord)
-
-- parler un peu en mode personnel du fait que ça ressemble à de la magie et comment à partir d'un langage pas du tout réactif on arrive à faire du réactif
-(se mettre dans un modèle où on construit un système de réactivité pour expliquer comment ça fonctionne) (et que j'ai fait du vue 2 avec un plain object javascript puis de l'angular avec les observables et que tout ça a pété mon crane parce que dans le javascript pur, il n'y a rien de tout ça)
-
-Théorie des graphes
-- un graph est une structure mathématique aui permet de représenter des relations entre des objets
-
-- fonctionnement d'alien signals
-  - remettre l'example pour expliquer ce que l'on va voir ensemble
-
-- un peu de théorie d'abord et ensuite, on va lier ça à la pratique
-théorie des graphs dans un premier temps puis théorie de la réactivité
-
-- Différents systèmes de réactivité
-https://www.youtube.com/watch?v=XB993rQ-5DY
-https://www.builder.io/blog/reactivity-across-frameworks
-  - Dirty checking
-  - Observable
-  - Signals
-
-- Précisément dans Vue (et du coup, il faut potentiellement l'expliquer)
-instance.scope.on() (pour capturer les effets => devient l'effet scope actif)
-const effect = (instance.effect = new ReactiveEffect(componentUpdateFn)) => watch pour mettre à jour le DOM lorsque l'une des dépendances change (et trigger les parents via les emit)
-instance.scope.off() (restore l'effet scope actif par le précédent)
-
-https://www.youtube.com/watch?v=2ZahQhb98-E
-
-et un coup sur Vue Vapor parce que du coup, on n'as pas de Virtual DOM et un effectScope autour de chacun des éléments du dom qui doivent être réactif
-
-et comme ça, on aura fait le tour de la réactivité dans le frontend
-
-et à la fin, ajouter toutes les questions et tout (avec Inalia qu'il faut continuer à développer)
-
- -->
+<ul class="op-80">
+  <li>
+    Explore the <a href="https://github.com/stackblitz/alien-signals" target="_blank">Align Signals</a> source code
+  </li>
+  <li>
+    Watch <a href="https://www.youtube.com/watch?v=XB993rQ-5DY" target="_blank">Reactivity across frameworks</a>
+  </li>
+  <li>
+    Read <a href="https://www.builder.io/blog/reactivity-across-frameworks" target="_blank">Unveiling the Magic: Exploring Reactivity Across Various Frameworks</a>
+  </li>
+  <li>
+    Stay curious and keep learning!
+  </li>
+</ul>

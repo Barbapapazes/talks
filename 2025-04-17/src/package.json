@@ -8,6 +8,7 @@
     "export": "slidev export --per-slide --output ../devoxxfr.pdf"
   },
   "dependencies": {
+    "slidev-addon-graph": "^0.1.0",
     "slidev-theme-personal": "link:../../theme"
   },
   "devDependencies": {
