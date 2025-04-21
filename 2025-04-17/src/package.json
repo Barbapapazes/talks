@@ -12,6 +12,6 @@
     "slidev-theme-personal": "link:../../theme"
   },
   "devDependencies": {
-    "alien-signals": "^1.0.4"
+    "alien-signals": "^1.0.13"
   }
 }

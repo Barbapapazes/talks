@@ -150,7 +150,7 @@ importers:
         version: link:../../theme
     devDependencies:
       alien-signals:
-        specifier: ^1.0.4
+        specifier: ^1.0.13
         version: 1.0.13
 
   2025-04-18/src: {}
