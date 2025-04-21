@@ -9,7 +9,7 @@ const { talk } = useInaliaTalk()
 <template>
   <div v-if="talk" class="flex justify-center items-center flex-col space-y-2">
     <div
-      class="overflow-hidden inalia shrink-0 rounded-lg size-40"
+      class="overflow-hidden shrink-0 inalia rounded-lg size-40"
     >
       <InaliaQR
         :url="talk.urls.tiny_feedback" class="block"

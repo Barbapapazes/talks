@@ -3,8 +3,8 @@ import Card from '../components/Card.vue'
 </script>
 
 <template>
-  <div class="slidev-layout bottom-left-card relative grid mx-auto grid items-center justify-center">
-    <img :src="$frontmatter.img" alt="Presentation Image" class="absolute left--0 top-0 w-full h-full object-cover" :class="$frontmatter.imgClass">
+  <div class="slidev-layout relative grid mx-auto grid items-center justify-center bottom-left-card">
+    <img :src="$frontmatter.img" alt="Presentation Image" class="absolute top-0 w-full h-full object-cover left--0" :class="$frontmatter.imgClass">
     <Card class="relative">
       <slot />
     </Card>

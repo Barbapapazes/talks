@@ -13,7 +13,7 @@ const isClicked = ref(false)
   <table class="w-full table-fixed">
     <thead>
       <tr>
-        <th class="p-4 text-center font-medium border-b border-gray-200 pt-0 pb-3 pl-8 text-gray-400 dark:border-gray-600 dark:text-gray-200" />
+        <th class="p-4 text-center font-medium text-gray-400 border-b border-gray-200 pt-0 pb-3 pl-8 dark:border-gray-600 dark:text-gray-200" />
         <th class="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-center font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">
           A
         </th>
