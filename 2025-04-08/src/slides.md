@@ -66,7 +66,15 @@ transition: slide-up
 ---
 
 <Inalia
-  :questionId="1"
+  question="Do you know Nuxt?"
+  type="single_select"
+  chart="donut"
+  :data="[
+    { label: 'I\'ve heard of it', count: 13, color: '#98F1CC' },
+    { label: 'I am a beginner', count: 1, color: '#00DB82' },
+    { label: 'I use it regularly', count: 2, color: '#00613A' },
+    { label: 'I\'m an expert', count: 1, color: '#002E1B' }
+  ]"
 />
 
 ---
@@ -130,7 +138,16 @@ transition: fade
 ---
 
 <Inalia
-  :questionId="2"
+  question="What are the essential needs for a web application?"
+  type="multiple_select"
+  chart="donut"
+  :data="[
+    { label: 'Database', count: 10, color: '#E5FBF2' },
+    { label: 'KV Store', count: 4, color: '#98F1CC' },
+    { label: 'Blob Storage', count: 5, color: '#4DE6A8' },
+    { label: 'Queue', count: 3, color: '#00C776' },
+    { label: 'Mailer', count: 5, color: '#00854F' }
+  ]"
 />
 
 <!--

@@ -6,10 +6,5 @@
     "dev": "slidev",
     "build": "slidev build --base /2025-04-08/human-talks/ --out ../../dist/2025-04-08/human-talks",
     "export": "slidev export --per-slide --output ../human-talks.pdf"
-  },
-  "dependencies": {
-    "@tsparticles/engine": "^3.8.1",
-    "@tsparticles/slim": "^3.8.1",
-    "@vue/tsconfig": "^0.7.0"
   }
 }

@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
+    "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/slim": "^3.8.1",
     "@unovis/vue": "1.4.3-beta.0",
     "cobe": "^0.6.3",
     "seedrandom": "^3.0.5",
-    "slidev-addon-inalia": "^0.1.17"
+    "slidev-addon-inalia": "^0.1.19"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.14.0",

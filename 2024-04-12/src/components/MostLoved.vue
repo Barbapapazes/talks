@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import type { Question, SelectData } from 'slidev-addon-inalia/types'
+import type { SelectData } from 'slidev-addon-inalia/types/data'
+import type { Question } from 'slidev-addon-inalia/types/question'
 import type { DeepReadonly } from 'vue'
 import { useAutoAnimate } from '@formkit/auto-animate/vue'
 import { computed } from 'vue'
