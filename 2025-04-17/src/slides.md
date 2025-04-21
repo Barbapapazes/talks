@@ -25,9 +25,6 @@ date: 17 avril 2025
 
 # La réactivité et les signaux :<br> démystifions la magie du frontend
 
-<!-- TODO: faire les questions dans Inalia -->
-<!-- TODO: finir la mise en place des tests -->
-
 ---
 name: Overview
 layout: inalia-overview
@@ -38,7 +35,19 @@ name: Quel framework pour le frontend ?
 ---
 
 <Inalia
-  :questionId="1"
+  question="Quel framework pour le frontend ?"
+  type="multiple_select"
+  chart="bar"
+  :data="[
+    { label: 'Vue', count: 23, color: '#40B07F' },
+    { label: 'Angular', count: 132, color: '#A422EC' },
+    { label: 'React', count: 47, color: '#5AC5DD' },
+    { label: 'Svelte', count: 6, color: '#FF3D00' },
+    { label: 'Solid', count: 1, color: '#568DC8' },
+    { label: 'Qwik', count: 1, color: '#AE80F4' },
+    { label: 'Aucun', count: 5, color: '#000000' },
+    { label: 'Un autre', count: 6, color: '#D65C60' }
+  ]"
 />
 
 <!--
@@ -59,7 +68,12 @@ name: Qui s'est déjà questionné sur le fonctionnement profond de la réactivi
 ---
 
 <Inalia
-  :questionId="2"
+  question="Qui s'est déjà questionné sur le fonctionnement profond de la réactivité de son framework ?"
+  type="single_select"
+  chart="donut"
+  :data="[
+    { label: 'Oui', count: 153, color: '#F9C3C5' }, { label: 'Non', count: 38, color: '#D65C60' }
+  ]"
 />
 
 ---
@@ -196,7 +210,14 @@ name: Vous suivez encore ? 🫣
 ---
 
 <Inalia
-  :questionId="3"
+  question="Vous suivez encore ? 🧣"
+  type="single_select"
+  chart="donut"
+  :data="[
+    { label: 'Oui, évidemment', count: 93, color: '#F9C3C5' },
+    { label: 'Oui, enfin je crois', count: 59, color: '#EF676C' },
+    { label: 'Non, là c\'est trop 🤯', count: 6, color: '#8F3D40' }
+  ]"
 />
 
 ---
