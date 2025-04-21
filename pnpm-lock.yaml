@@ -141,13 +141,6 @@ importers:
   2025-04-08/src: {}
 
   2025-04-17/src:
-    dependencies:
-      slidev-addon-graph:
-        specifier: ^0.1.0
-        version: 0.1.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@51.5.0(@nuxt/kit@3.16.2)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)(vite@6.3.2(@types/node@22.14.1)(jiti@2.4.2)(yaml@2.7.1)))(component-emitter@1.3.1)(keycharm@0.4.0)(typescript@5.8.3)(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))(vite@6.3.2(@types/node@22.14.1)(jiti@2.4.2)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
-      slidev-theme-personal:
-        specifier: link:../../theme
-        version: link:../../theme
     devDependencies:
       alien-signals:
         specifier: ^1.0.13
