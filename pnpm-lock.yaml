@@ -11,9 +11,6 @@ patchedDependencies:
   cobe:
     hash: d933c317a81e4d20c691cfe083898d3ef67fde9cda63d68eecde493962d77f43
     path: patches/cobe.patch
-  slidev-addon-graph:
-    hash: 7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7
-    path: patches/slidev-addon-graph.patch
 
 importers:
 
@@ -69,7 +66,7 @@ importers:
         specifier: ^1.2.19
         version: 1.2.19
       '@slidev/cli':
-        specifier: 51.5.0
+        specifier: ^51.0.1
         version: 51.5.0(patch_hash=9f114ddd3e8e1c926d899dc1b202b4cec8b1a5f3fee4e7809a97d30cd2530c0d)(@babel/parser@7.27.0)(@nuxt/kit@3.13.1(rollup@4.30.1))(@types/markdown-it@14.1.2)(@types/node@22.14.1)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(playwright-chromium@1.52.0)(postcss@8.5.3)(rollup@4.30.1)(tsx@4.19.2)(vue-template-compiler@2.7.16)
       '@slidev/theme-default':
         specifier: ^0.25.0
@@ -107,12 +104,6 @@ importers:
       prompts:
         specifier: ^2.4.2
         version: 2.4.2
-      slidev-addon-graph:
-        specifier: ^0.1.0
-        version: 0.1.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@51.5.0(@nuxt/kit@3.13.1(rollup@4.30.1))(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)(rollup@4.30.1)(vite@6.2.5(@types/node@22.14.1)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.1))(vue-template-compiler@2.7.16))(component-emitter@1.3.1)(keycharm@0.4.0)(typescript@5.8.3)(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))(vite@6.2.5(@types/node@22.14.1)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
-      slidev-theme-personal:
-        specifier: link:./theme
-        version: link:theme
       taze:
         specifier: ^19.0.4
         version: 19.0.4
@@ -139,21 +130,6 @@ importers:
   2025-03-05/src: {}
 
   2025-04-08/src: {}
-
-  2025-04-17/src:
-    dependencies:
-      slidev-addon-graph:
-        specifier: ^0.1.0
-        version: 0.1.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@51.5.0(@nuxt/kit@3.13.1(rollup@4.30.1))(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)(rollup@4.30.1)(vite@6.2.5(@types/node@22.14.1)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.1))(vue-template-compiler@2.7.16))(component-emitter@1.3.1)(keycharm@0.4.0)(typescript@5.8.3)(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))(vite@6.2.5(@types/node@22.14.1)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
-      slidev-theme-personal:
-        specifier: link:../../theme
-        version: link:../../theme
-    devDependencies:
-      alien-signals:
-        specifier: ^1.0.13
-        version: 1.0.13
-
-  2025-04-18/src: {}
 
   theme:
     dependencies:
@@ -415,10 +391,6 @@ packages:
 
   '@drauu/core@0.4.3':
     resolution: {integrity: sha512-MmFKN0DEIS+78wtfag7DiQDuE7eSpHRt4tYh0m8bEUnxbH1v2pieQ6Ir+1WZ3Xxkkf5L5tmDfeYQtCSwUz1Hyg==}
-
-  '@egjs/hammerjs@2.0.17':
-    resolution: {integrity: sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A==}
-    engines: {node: '>=0.8.0'}
 
   '@emnapi/core@1.4.3':
     resolution: {integrity: sha512-4m62DuCE07lw01soJwPiBGC0nAww0Q+RY70VZ+n49yDIO13yyinhbWCeNnaob0lakDtWQzSdtNWzJeOJt2ma+g==}
@@ -1632,9 +1604,6 @@ packages:
   '@types/geojson@7946.0.14':
     resolution: {integrity: sha512-WCfD5Ht3ZesJUsONdhvm84dmzWOiOzOAqOncN0++w0lBw1o8OuDNJF2McvvCef/yBqb/HYRahp1BYtODFQ8bRg==}
 
-  '@types/hammerjs@2.0.46':
-    resolution: {integrity: sha512-ynRvcq6wvqexJ9brDMS4BnBLzmr0e14d6ZJTEShTBWKymQiHwlAyGu0ZPEFI2Fh1U53F7tN9ufClWM5KvqkKOw==}
-
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
 
@@ -2321,9 +2290,6 @@ packages:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
 
-  chroma-js@3.1.2:
-    resolution: {integrity: sha512-IJnETTalXbsLx1eKEgx19d5L6SRM7cH4vINw/99p/M11HCuXGRWL+6YmCm7FWFGIo6dtWuQoQi1dc5yQ7ESIHg==}
-
   ci-info@4.2.0:
     resolution: {integrity: sha512-cYY9mypksY8NRqgDB1XD1RiJL338v/551niynFTGkZOO2LHuB2OmOYxDIe/ttN9AHwrqdum1360G3ald0W9kCg==}
     engines: {node: '>=8'}
@@ -2387,9 +2353,6 @@ packages:
 
   compatx@0.1.8:
     resolution: {integrity: sha512-jcbsEAR81Bt5s1qOFymBufmCbXCXbk0Ql+K5ouj6gCyx2yHlu6AgmGIi9HxfKixpUDO5bCFJUHQ5uM6ecbTebw==}
-
-  component-emitter@1.3.1:
-    resolution: {integrity: sha512-T0+barUSQRTUQASh8bx02dl+DhF54GtIDY13Y3m9oWTklKbb3Wv974meRpeZ3lp1JpLVECWWNHC4vaG2XHXouQ==}
 
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
@@ -3541,9 +3504,6 @@ packages:
   kdbush@3.0.0:
     resolution: {integrity: sha512-hRkd6/XW4HTsA9vjVpY9tuXJYLSlelnkTmVFu4M9/7MIYQtFcHpbugAU7UbOfjOiVSVYl2fqgBuJ32JUmRo5Ew==}
 
-  keycharm@0.4.0:
-    resolution: {integrity: sha512-TyQTtsabOVv3MeOpR92sIKk/br9wxS+zGj4BG7CR8YbK4jM3tyIBaF0zhzeBUMx36/Q/iQLOKKOT+3jOQtemRQ==}
-
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
@@ -4493,13 +4453,6 @@ packages:
   slashes@3.0.12:
     resolution: {integrity: sha512-Q9VME8WyGkc7pJf6QEkj3wE+2CnvZMI+XJhwdTPR8Z/kWQRXi7boAWLDibRPyHRTUTPx5FaU7MsyrjI3yLB4HA==}
 
-  slidev-addon-graph@0.1.0:
-    resolution: {integrity: sha512-q72YqHpDUe03SIW0UICn1/KPRIu3v+izwwhWlM19k0qTYhKKw7r9/TSvqS7GRWLl899rFaFAvfkzPcjxWEKLWA==}
-    peerDependencies:
-      '@slidev/client': '>=0.49.0'
-      vite: '>=5.0'
-      vue: ^3.0.0
-
   slidev-addon-inalia@0.1.19:
     resolution: {integrity: sha512-WOecTwD4t9ITEGWEqOVbuq71Sg2cNmpvtK+iLeDCLKvUrli3xJFaU6IKHyZsnl6mF22rSzxAzWsaTdd7oRdxKw==}
     engines: {slidev: '>=0.49.29'}
@@ -4937,29 +4890,6 @@ packages:
 
   vfile@6.0.1:
     resolution: {integrity: sha512-1bYqc7pt6NIADBJ98UiG0Bn/CHIVOoZ/IyEkqIruLg0mE1BKzkOXY2D6CSqQIcKqgadppE5lrxgWXJmXd7zZJw==}
-
-  vis-data@7.1.9:
-    resolution: {integrity: sha512-COQsxlVrmcRIbZMMTYwD+C2bxYCFDNQ2EHESklPiInbD/Pk3JZ6qNL84Bp9wWjYjAzXfSlsNaFtRk+hO9yBPWA==}
-    peerDependencies:
-      uuid: ^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
-      vis-util: ^5.0.1
-
-  vis-network@9.1.9:
-    resolution: {integrity: sha512-Ft+hLBVyiLstVYSb69Q1OIQeh3FeUxHJn0WdFcq+BFPqs+Vq1ibMi2sb//cxgq1CP7PH4yOXnHxEH/B2VzpZYA==}
-    peerDependencies:
-      '@egjs/hammerjs': ^2.0.0
-      component-emitter: ^1.3.0
-      keycharm: ^0.2.0 || ^0.3.0 || ^0.4.0
-      uuid: ^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
-      vis-data: ^6.3.0 || ^7.0.0
-      vis-util: ^5.0.1
-
-  vis-util@5.0.7:
-    resolution: {integrity: sha512-E3L03G3+trvc/X4LXvBfih3YIHcKS2WrP0XTdZefr6W6Qi/2nNCqZfe4JFfJU6DcQLm6Gxqj2Pfl+02859oL5A==}
-    engines: {node: '>=8'}
-    peerDependencies:
-      '@egjs/hammerjs': ^2.0.0
-      component-emitter: ^1.3.0 || ^2.0.0
 
   vite-dev-rpc@1.0.7:
     resolution: {integrity: sha512-FxSTEofDbUi2XXujCA+hdzCDkXFG1PXktMjSk1efq9Qb5lOYaaM9zNSvKvPPF7645Bak79kSp1PTooMW2wktcA==}
@@ -5492,10 +5422,6 @@ snapshots:
       sisteransi: 1.0.5
 
   '@drauu/core@0.4.3': {}
-
-  '@egjs/hammerjs@2.0.17':
-    dependencies:
-      '@types/hammerjs': 2.0.46
 
   '@emnapi/core@1.4.3':
     dependencies:
@@ -6878,8 +6804,6 @@ snapshots:
 
   '@types/geojson@7946.0.14': {}
 
-  '@types/hammerjs@2.0.46': {}
-
   '@types/hast@3.0.4':
     dependencies:
       '@types/unist': 3.0.2
@@ -7751,8 +7675,6 @@ snapshots:
   chownr@2.0.0:
     optional: true
 
-  chroma-js@3.1.2: {}
-
   ci-info@4.2.0: {}
 
   citty@0.1.6:
@@ -7805,8 +7727,6 @@ snapshots:
 
   compatx@0.1.8:
     optional: true
-
-  component-emitter@1.3.1: {}
 
   concat-map@0.0.1: {}
 
@@ -9098,8 +9018,6 @@ snapshots:
 
   kdbush@3.0.0: {}
 
-  keycharm@0.4.0: {}
-
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
@@ -10259,23 +10177,6 @@ snapshots:
 
   slashes@3.0.12: {}
 
-  slidev-addon-graph@0.1.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@51.5.0(@nuxt/kit@3.13.1(rollup@4.30.1))(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)(rollup@4.30.1)(vite@6.2.5(@types/node@22.14.1)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.1))(vue-template-compiler@2.7.16))(component-emitter@1.3.1)(keycharm@0.4.0)(typescript@5.8.3)(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))(vite@6.2.5(@types/node@22.14.1)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3)):
-    dependencies:
-      '@slidev/client': 51.5.0(@nuxt/kit@3.13.1(rollup@4.30.1))(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)(rollup@4.30.1)(vite@6.2.5(@types/node@22.14.1)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.1))(vue-template-compiler@2.7.16)
-      '@vueuse/core': 12.4.0(typescript@5.8.3)
-      chroma-js: 3.1.2
-      vis-data: 7.1.9(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))
-      vis-network: 9.1.9(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)(keycharm@0.4.0)(uuid@11.1.0)(vis-data@7.1.9(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)))(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))
-      vite: 6.2.5(@types/node@22.14.1)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.1)
-      vue: 3.5.13(typescript@5.8.3)
-    transitivePeerDependencies:
-      - '@egjs/hammerjs'
-      - component-emitter
-      - keycharm
-      - typescript
-      - uuid
-      - vis-util
-
   slidev-addon-inalia@0.1.19(@babel/parser@7.27.0)(@nuxt/kit@3.13.1(rollup@4.30.1))(@types/markdown-it@14.1.2)(@types/node@22.14.1)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(playwright-chromium@1.52.0)(postcss@8.5.3)(rollup@4.30.1)(tsx@4.19.2)(typescript@5.8.3)(vue-template-compiler@2.7.16):
     dependencies:
       '@slidev/cli': 51.5.0(patch_hash=9f114ddd3e8e1c926d899dc1b202b4cec8b1a5f3fee4e7809a97d30cd2530c0d)(@babel/parser@7.27.0)(@nuxt/kit@3.13.1(rollup@4.30.1))(@types/markdown-it@14.1.2)(@types/node@22.14.1)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(playwright-chromium@1.52.0)(postcss@8.5.3)(rollup@4.30.1)(tsx@4.19.2)(vue-template-compiler@2.7.16)
@@ -10856,25 +10757,6 @@ snapshots:
       '@types/unist': 3.0.2
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
-
-  vis-data@7.1.9(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)):
-    dependencies:
-      uuid: 11.1.0
-      vis-util: 5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)
-
-  vis-network@9.1.9(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)(keycharm@0.4.0)(uuid@11.1.0)(vis-data@7.1.9(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)))(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)):
-    dependencies:
-      '@egjs/hammerjs': 2.0.17
-      component-emitter: 1.3.1
-      keycharm: 0.4.0
-      uuid: 11.1.0
-      vis-data: 7.1.9(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))
-      vis-util: 5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)
-
-  vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1):
-    dependencies:
-      '@egjs/hammerjs': 2.0.17
-      component-emitter: 1.3.1
 
   vite-dev-rpc@1.0.7(vite@6.2.5(@types/node@22.14.1)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.1)):
     dependencies:
