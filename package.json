@@ -49,7 +49,6 @@
   "pnpm": {
     "patchedDependencies": {
       "cobe": "patches/cobe.patch",
-      "@slidev/cli": "patches/@slidev__cli.patch",
       "slidev-addon-graph": "patches/slidev-addon-graph.patch"
     }
   }

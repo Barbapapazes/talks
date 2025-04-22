@@ -286,13 +286,13 @@ name: "Crée un contrôleur"
 layout: center-y
 ---
 
-```sh [terminal]
+```sh {*} [terminal]
 node ace make:controller posts
 ```
 
 <!-- eslint no-empty-pattern: 0 -->
 
-```ts [app/controllers/http/posts_controller.ts]
+```ts {*} [app/controllers/http/posts_controller.ts]
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class PostsController {
@@ -322,11 +322,11 @@ name: "Définis un modèle"
 layout: center-y
 ---
 
-```sh [terminal]
+```sh {*} [terminal]
 node ace make:model post
 ```
 
-```ts [app/models/post.ts]
+```ts {*} [app/models/post.ts]
 import { BaseModel, column } from '@adonisjs/lucid/orm'
 
 export default class Post extends BaseModel {
@@ -353,11 +353,11 @@ name: "Valide les données"
 layout: center-y
 ---
 
-```sh [terminal]
+```sh {*} [terminal]
 node ace make:validator posts
 ```
 
-```ts [app/validators/create_post_validator.ts]
+```ts {*} [app/validators/create_post_validator.ts]
 import vine from '@vinejs/vine'
 
 export const createPostValidator = vine.compile(

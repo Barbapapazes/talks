@@ -210,7 +210,7 @@ name: Vous suivez encore ? 🫣
 ---
 
 <Inalia
-  question="Vous suivez encore ? 🧣"
+  question="Vous suivez encore ?"
   type="single_select"
   chart="donut"
   :data="[
