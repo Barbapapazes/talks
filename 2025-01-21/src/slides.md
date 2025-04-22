@@ -570,7 +570,7 @@ name: IoC
 layout: center-y
 ---
 
-```ts [app/contracts/repositories_services.ts]
+```ts {*} [app/contracts/repositories_services.ts]
 export abstract class RepositoriesService {
   abstract repositories(): Promise<Repository[]>
 }
@@ -578,7 +578,7 @@ export abstract class RepositoriesService {
 
 <v-click>
 
-```ts [app/services/github_repositories_service.ts]
+```ts {*} [app/services/github_repositories_service.ts]
 import { RepositoriesService } from '#contracts/services'
 
 export class GitHubRepositoriesService implements RepositoriesService {
