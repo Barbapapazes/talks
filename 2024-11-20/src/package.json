@@ -6,6 +6,7 @@
     "dev": "slidev",
     "build": "slidev build --base /2024-11-20/takimeet/ --out ../../dist/2024-11-20/takimeet",
     "export": "slidev export --per-slide --output ../2024-11-20-takimeet.pdf",
-    "thumbnail": "slidev export --per-slide --range 1 --format png && mkdir -p ../../dist/2024-11-20/takimeet && cp slides-export/01.png ../../dist/2024-11-20/takimeet/thumbnail.png"
+    "thumbnail:cp": "ffmpeg -y -i slides-export/01.png -vf scale=-1:256 -compression_level 100 ./public/thumbnail.png",
+    "thumbnail": "slidev export --per-slide --range 1 --format png"
   }
 }
