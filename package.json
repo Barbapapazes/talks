@@ -6,7 +6,7 @@
     "build:all": "pnpm run clean && pnpm run thumbnail && pnpm run build && pnpm run generate:redirects && pnpm run generate:meta",
     "build": "pnpm -r run build",
     "export": "pnpm -r run export",
-    "thumbnail": "pnpm -r run thumbnail",
+    "thumbnail": "pnpm -r --workspace-concurrency=1 run thumbnail",
     "clean": "rm -rf dist && rm -rf slides-export",
     "generate:redirects": "jiti scripts/generate-redirects.ts",
     "generate:meta": "jiti scripts/generate-meta.ts",
