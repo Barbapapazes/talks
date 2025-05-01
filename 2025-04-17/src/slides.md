@@ -10,7 +10,6 @@ themeConfig:
   primary: white
 codeCopy: false
 transition: fade-out
-remoteAssets: true
 theme: slidev-theme-personal
 addons:
   - slidev-addon-inalia

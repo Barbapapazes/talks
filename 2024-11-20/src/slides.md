@@ -11,7 +11,6 @@ themeConfig:
 colorSchema: dark
 glowSeed: 213
 transition: fade-out
-remoteAssets: true
 addons:
   - slidev-addon-inalia
 title: Fluidifier l'expérience utilisateur

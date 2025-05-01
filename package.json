@@ -3,8 +3,13 @@
   "private": true,
   "packageManager": "pnpm@10.9.0",
   "scripts": {
-    "build": "rm -rf dist && pnpm --filter=!slidev-theme-personal -r run build  && jiti scripts/generate-redirects.ts && jiti scripts/generate-meta.ts",
-    "export": "pnpm -r run export",
+    "build": "pnpm -r run --workspace-concurrency=-1 build && pnpm run generate:redirects && pnpm run generate:meta",
+    "export": "pnpm -r run --workspace-concurrency=-1 export",
+    "thumbnail": "pnpm -r --workspace-concurrency=1 run thumbnail",
+    "thumbnail:cp": "pnpm -r --workspace-concurrency=-1 run thumbnail:cp",
+    "clean": "rm -rf dist && rm -rf slides-export",
+    "generate:redirects": "jiti scripts/generate-redirects.ts",
+    "generate:meta": "jiti scripts/generate-meta.ts",
     "dev": "jiti scripts/select-deck.ts dev --open",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -40,6 +45,7 @@
     "ofetch": "^1.4.1",
     "pathe": "^2.0.3",
     "playwright-chromium": "^1.52.0",
+    "prettier": "^3.5.3",
     "prompts": "^2.4.2",
     "slidev-addon-graph": "^0.1.0",
     "slidev-theme-personal": "link:./theme",
