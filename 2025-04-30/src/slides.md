@@ -10,6 +10,7 @@ themeConfig:
   primary: white
 codeCopy: false
 transition: fade-out
+remoteAssets: true
 theme: slidev-theme-personal
 addons:
   - slidev-addon-inalia
@@ -18,8 +19,8 @@ title: "La réactivité et les signaux: démystifions la magie du frontend"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: web,development,vue,reactivity,frontend
-event: Devoxx France
-date: 17 avril 2025
+event: MiXiT
+date: 30 avril 2025
 ---
 
 # La réactivité et les signaux :<br> démystifions la magie du frontend
@@ -38,14 +39,14 @@ name: Quel framework pour le frontend ?
   type="multiple_select"
   chart="bar"
   :data="[
-    { label: 'Vue', count: 23, color: '#40B07F' },
-    { label: 'Angular', count: 132, color: '#A422EC' },
-    { label: 'React', count: 47, color: '#5AC5DD' },
-    { label: 'Svelte', count: 6, color: '#FF3D00' },
-    { label: 'Solid', count: 1, color: '#568DC8' },
-    { label: 'Qwik', count: 1, color: '#AE80F4' },
-    { label: 'Aucun', count: 5, color: '#000000' },
-    { label: 'Un autre', count: 6, color: '#D65C60' }
+    { label: 'Vue', count: 21, color: '#40B07F' },
+    { label: 'Angular', count: 27, color: '#A422EC' },
+    { label: 'React', count: 16, color: '#5AC5DD' },
+    { label: 'Svelte', count: 4, color: '#FF3D00' },
+    { label: 'Solid', count: 0, color: '#568DC8' },
+    { label: 'Qwik', count: 0, color: '#AE80F4' },
+    { label: 'Aucun', count: 4, color: '#000000' },
+    { label: 'Un autre', count: 4, color: '#D65C60' }
   ]"
 />
 
@@ -71,7 +72,8 @@ name: Qui s'est déjà questionné sur le fonctionnement profond de la réactivi
   type="single_select"
   chart="donut"
   :data="[
-    { label: 'Oui', count: 153, color: '#F9C3C5' }, { label: 'Non', count: 38, color: '#D65C60' }
+    { label: 'Oui', count: 20, color: '#F9C3C5' },
+    { label: 'Non', count: 16, color: '#D65C60' }
   ]"
 />
 
@@ -235,13 +237,13 @@ name: Vous suivez encore ? 🫣
 ---
 
 <Inalia
-  question="Vous suivez encore ?"
+  question="Vous suivez encore ? 🫣"
   type="single_select"
   chart="donut"
   :data="[
-    { label: 'Oui, évidemment', count: 93, color: '#F9C3C5' },
-    { label: 'Oui, enfin je crois', count: 59, color: '#EF676C' },
-    { label: 'Non, là c\'est trop 🤯', count: 6, color: '#8F3D40' }
+    { label: 'Oui, évidemment', count: 7, color: '#F9C3C5' },
+    { label: 'Oui, enfin je crois', count: 5, color: '#EF676C' },
+    { label: 'Non, là c\'est trop 🤯', count: 1, color: '#8F3D40' }
   ]"
 />
 
@@ -304,7 +306,7 @@ Expliquer la notion de subscriber et de dependency pour chacun des éléments
 -->
 
 ---
-name: Signals finally explained
+name: Signals finally explained (Part 1)
 transition: slide-up
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=3611&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
@@ -322,6 +324,54 @@ export function signal<T>(oldValue?: T): WriteableSignal<T | undefined> {
   }) as WriteableSignal<T | undefined>
 }
 ```
+```ts {*}{lines:true}
+function signalGetterSetter<T>(this: Signal<T>, ...value: [T]): T | void {
+  if (value.length) {
+    if (this.currentValue !== (this.currentValue = value[0])) {
+      const subs = this.subs
+      if (subs !== undefined) {
+        propagate(subs)
+        if (!batchDepth) {
+          processEffectNotifications()
+        }
+      }
+    }
+  }
+  else {
+    if (activeSub !== undefined) {
+      link(this, activeSub)
+    }
+    return this.currentValue
+  }
+}
+```
+````
+
+<!--
+
+Explication des différents types de réactivité au moment du propagate avec le pull, push et pull-push.
+
+-->
+
+---
+name: What the f*ck is push, pull and pull-push?
+transition: slide-down
+---
+
+<div class="flex">
+  <img v-click src="/push.png" alt="push" class="w-1/2" />
+
+  <img v-click src="/pull.png" alt="pull" class="w-1/2" />
+</div>
+
+---
+name: Signals finally explained (Part 2)
+transition: slide-up
+layout: bottom-left-card
+img: https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=3611&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+---
+
+````md magic-move
 ```ts {*}{lines:true}
 function signalGetterSetter<T>(this: Signal<T>, ...value: [T]): T | void {
   if (value.length) {
@@ -380,13 +430,26 @@ effect(() => {
   console.log(`Total: ${total()}`)
 })
 ```
+```ts {*}{lines:true}
+const quantity = signal(0)
+const price = signal(15)
+
+const total = computed(() => quantity() * price())
+
+effect(() => {
+  console.log(`Total ${quantity()} * ${price()}: ${total()}`)
+})
+```
 ````
 
-<!--
+---
+name: Signals made easy
+transition: slide-down
+---
 
-Explication des différents types de réactivité au moment du propagate avec le pull, push et pull-push.
-
--->
+<div class="size-full flex items-center justify-center">
+  <img src="/alien-signals.png" alt="alien signals" class="w-full" />
+</div>
 
 ---
 name: Problèmes
