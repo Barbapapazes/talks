@@ -21,6 +21,7 @@ function generateMeta() {
     event: string
     url: string
     pdf_url: string
+    thumbnail_url: string
     github_url?: string
     recording_url?: string
   }[]
@@ -36,6 +37,7 @@ function generateMeta() {
     const event = content.event
     const url = `https://talks.soubiran.dev/${date}/${content.name}`
     const pdf_url = `${url}/pdf`
+    const thumbnail_url = `${url}/thumbnail.png`
     const github_url = `https://github.com/Barbapapazes/talks/tree/main/${date}`
     const recording_url = `${url}/recording`
 
@@ -54,6 +56,7 @@ function generateMeta() {
       date,
       url,
       pdf_url,
+      thumbnail_url,
       github_url,
       recording_url: content.recording ? recording_url : undefined,
     })

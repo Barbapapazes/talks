@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-12-04/vuejs-paris/ --out ../../dist/2024-12-04/vuejs-paris",
-    "export": "slidev export --per-slide --output ../2024-12-04-vuejs-paris.pdf"
+    "export": "slidev export --per-slide --output ../2024-12-04-vuejs-paris.pdf",
+    "thumbnail": "slidev export --per-slide --range 1 --format png && cp slides-export/01.png ../../dist/2024-12-04/vuejs-paris/thumbnail.png"
   }
 }
