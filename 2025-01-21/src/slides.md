@@ -11,7 +11,6 @@ themeConfig:
 codeCopy: false
 glowSeed: 213
 transition: fade-out
-remoteAssets: true
 theme: slidev-theme-personal
 addons:
   - slidev-addon-inalia
