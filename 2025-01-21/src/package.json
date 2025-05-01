@@ -7,6 +7,6 @@
     "dev": "slidev",
     "build": "slidev build --base /2025-01-21/paris-typescript/ --out ../../dist/2025-01-21/paris-typescript",
     "export": "slidev export --per-slide --output ../2025-01-21-paris-typescript.pdf",
-    "thumbnail": "slidev export --per-slide --range 1 --format png && cp slides-export/01.png ../../dist/2025-01-21/paris-typescript/thumbnail.png"
+    "thumbnail": "slidev export --per-slide --range 1 --format png && mkdir -p ../../dist/2025-01-21/paris-typescript && cp slides-export/01.png ../../dist/2025-01-21/paris-typescript/thumbnail.png"
   }
 }
