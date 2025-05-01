@@ -4,9 +4,9 @@
   "packageManager": "pnpm@10.9.0",
   "scripts": {
     "build": "pnpm -r run --workspace-concurrency=-1 build && pnpm run generate:redirects && pnpm run generate:meta",
-    "export": "pnpm -r run --workspace-concurrency=-1 export",
+    "export": "pnpm -r run --workspace-concurrency=1 export",
     "thumbnail": "pnpm -r --workspace-concurrency=1 run thumbnail",
-    "thumbnail:cp": "pnpm -r --workspace-concurrency=-1 run thumbnail:cp",
+    "thumbnail:cp": "pnpm -r --workspace-concurrency=1 run thumbnail:cp",
     "clean": "rm -rf dist && rm -rf slides-export",
     "generate:redirects": "jiti scripts/generate-redirects.ts",
     "generate:meta": "jiti scripts/generate-meta.ts",
