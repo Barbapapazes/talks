@@ -18,17 +18,17 @@ const { currentRoute } = useNav()
 
 export type Range = [number, number]
 
-export type Distribution =
-  | 'full'
-  | 'top'
-  | 'bottom'
-  | 'left'
-  | 'right'
-  | 'top-left'
-  | 'top-right'
-  | 'bottom-left'
-  | 'bottom-right'
-  | 'center'
+export type Distribution
+  = | 'full'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-left'
+    | 'top-right'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'center'
 
 const formatter = computed(() => (currentRoute.value.meta?.slide as any)?.frontmatter || {})
 const distribution = computed(() => (formatter.value.grow || 'full') as Distribution)
