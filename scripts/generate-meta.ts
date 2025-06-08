@@ -44,7 +44,7 @@ function generateMeta() {
     const path = packageJSON.split('/').slice(0, -1).join('/')
     const slidesContent = readFileSync(join(path, 'slides.md'), 'utf-8')
 
-    const name = slidesContent.match(/title: (.*)/)?.[1]
+    const name = slidesContent.match(/title: (.*)/)?.[1].replaceAll(/"/g, '').trim()
 
     if (!name) {
       throw new Error('Name not found')

@@ -1,6 +1,7 @@
 {
   "name": "mixit",
   "event": "MiXiT",
+  "recording": "https://youtu.be/VlyS6bJZYYU",
   "private": true,
   "scripts": {
     "dev": "slidev",
