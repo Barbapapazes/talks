@@ -34,7 +34,19 @@ name: Quel framework pour le frontend ?
 ---
 
 <Inalia
-  :questionId="1"
+  question="Quel framework pour le frontend ?"
+  type="multiple_select"
+  chart="bar"
+  :data="[
+    { label: 'Vue', count: 36, color: '#40B07F' },
+    { label: 'Angular', count: 38, color: '#A422EC' },
+    { label: 'React', count: 28, color: '#5AC5DD' },
+    { label: 'Svelte', count: 2, color: '#FF3D00' },
+    { label: 'Solid', count: 0, color: '#568DC8' },
+    { label: 'Qwik', count: 0, color: '#AE80F4' },
+    { label: 'Aucun', count: 4, color: '#000000' },
+    { label: 'Un autre', count: 5, color: '#D65C60' }
+  ]"
 />
 
 <!--
@@ -55,7 +67,13 @@ name: Qui s'est déjà questionné sur le fonctionnement profond de la réactivi
 ---
 
 <Inalia
-  :questionId="2"
+  question="Qui s'est déjà questionné sur le fonctionnement profond de la réactivité de son framework ?"
+  type="single_select"
+  chart="donut"
+  :data="[
+    { label: 'Oui', count: 56, color: '#F9C3C5' },
+    { label: 'Non', count: 29, color: '#D65C60' }
+  ]"
 />
 
 ---
@@ -218,7 +236,14 @@ name: Vous suivez encore ? 🫣
 ---
 
 <Inalia
-  :questionId="3"
+  question="Vous suivez encore ?"
+  type="single_select"
+  chart="donut"
+  :data="[
+    { label: 'Oui, évidemment', count: 54, color: '#F9C3C5' },
+    { label: 'Oui, enfin je crois', count: 21, color: '#EF676C' },
+    { label: 'Non, là c\'est trop 🤯', count: 2, color: '#8F3D40' }
+  ]"
 />
 
 ---
