@@ -47,7 +47,7 @@
     "playwright-chromium": "^1.52.0",
     "prettier": "^3.5.3",
     "prompts": "^2.4.2",
-    "slidev-addon-graph": "^0.1.1",
+    "slidev-addon-graph": "^1.0.0",
     "slidev-theme-personal": "link:./theme",
     "taze": "^19.1.0",
     "typescript": "^5.8.3"
