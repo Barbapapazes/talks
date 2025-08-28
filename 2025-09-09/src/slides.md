@@ -116,8 +116,6 @@ TODO: dans l'exemple de base, passer des props dans la view pour montrer que ça
 
 API
 
-
-
  -->
 
 ---
@@ -155,12 +153,10 @@ ajouter la gestion des erreurs en live
 
 ajouter un lien vers l'index.vue
 
-
 TODO: faire une nouvelle page qui ne charge rien. sauf le time via une props, avoir un button pour load data, déjà ça load mais ça change le time, donc on met le only
 
 -> on peut être très granulaire dans la gestion des data
 et il existe même un defer pour ne charger que les données après le chargement de la page ou lorsque le composant est visible.
-
 
 TODO: mettre le code final ici
 
@@ -191,7 +187,5 @@ layout: outro
 </ul>
 
 <!--
-
-
 
  -->
