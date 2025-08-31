@@ -108,8 +108,8 @@ importers:
         specifier: ^2.4.2
         version: 2.4.2
       slidev-addon-graph:
-        specifier: ^0.1.1
-        version: 0.1.1(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@51.5.0(@nuxt/kit@3.16.2)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)(vite@6.3.2(@types/node@22.15.30)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.1)))(component-emitter@1.3.1)(keycharm@0.4.0)(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))(vite@6.3.2(@types/node@22.15.30)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
+        specifier: ^1.0.0
+        version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@51.5.0(@nuxt/kit@3.16.2)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)(vite@6.3.2(@types/node@22.15.30)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.1)))(component-emitter@1.3.1)(keycharm@0.4.0)(uuid@11.1.0)(vite@6.3.2(@types/node@22.15.30)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
       slidev-theme-personal:
         specifier: link:./theme
         version: link:theme
@@ -1691,6 +1691,11 @@ packages:
     peerDependencies:
       vue: ^3.5.0
 
+  '@vueuse/core@13.8.0':
+    resolution: {integrity: sha512-rmBcgpEpxY0ZmyQQR94q1qkUcHREiLxQwNyWrtjMDipD0WTH/JBcAt0gdcn2PsH0SA76ec291cHFngmyaBhlxA==}
+    peerDependencies:
+      vue: ^3.5.0
+
   '@vueuse/math@13.1.0':
     resolution: {integrity: sha512-iTpUKYUWhZHzc6RTbkEkpA9L/CJBtIY7nwN0Lc6JkX3KOFTRU1vmN9odX9ZTNnndlE51HS5d68VvUBh1v5n84A==}
     peerDependencies:
@@ -1704,6 +1709,9 @@ packages:
 
   '@vueuse/metadata@13.3.0':
     resolution: {integrity: sha512-42IzJIOYCKIb0Yjv1JfaKpx8JlCiTmtCWrPxt7Ja6Wzoq0h79+YVXmBV03N966KEmDEESTbp5R/qO3AB5BDnGw==}
+
+  '@vueuse/metadata@13.8.0':
+    resolution: {integrity: sha512-BYMp3Gp1kBUPv7AfQnJYP96mkX7g7cKdTIgwv/Jgd+pfQhz678naoZOAcknRtPLP4cFblDDW7rF4e3KFa+PfIA==}
 
   '@vueuse/motion@3.0.3':
     resolution: {integrity: sha512-4B+ITsxCI9cojikvrpaJcLXyq0spj3sdlzXjzesWdMRd99hhtFI6OJ/1JsqwtF73YooLe0hUn/xDR6qCtmn5GQ==}
@@ -1720,6 +1728,11 @@ packages:
 
   '@vueuse/shared@13.3.0':
     resolution: {integrity: sha512-L1QKsF0Eg9tiZSFXTgodYnu0Rsa2P0En2LuLrIs/jgrkyiDuJSsPZK+tx+wU0mMsYHUYEjNsuE41uqqkuR8VhA==}
+    peerDependencies:
+      vue: ^3.5.0
+
+  '@vueuse/shared@13.8.0':
+    resolution: {integrity: sha512-x4nfM0ykW+RmNJ4/1IzZsuLuWWrNTxlTWUiehTGI54wnOxIgI9EDdu/O5S77ac6hvQ3hk2KpOVFHaM0M796Kbw==}
     peerDependencies:
       vue: ^3.5.0
 
@@ -3805,8 +3818,8 @@ packages:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
     engines: {node: '>=14.16'}
 
-  slidev-addon-graph@0.1.1:
-    resolution: {integrity: sha512-ACVXqdOpWv7I0l/g9hQq4cM1thOgRx17tcxX2EmUU++S0wfxkn5xZeFDj3QaDKCtf202HymNP3mbEZ4ThBx80A==}
+  slidev-addon-graph@1.0.0:
+    resolution: {integrity: sha512-7+oaom+6idawJ1n8uLOBoQ8kx6OJKfuzTfFuPmiV6DW4kqrNQ7qkvoGJxtI+fzUSj2EB2mwkhhxHw3XnaX/5Nw==}
     peerDependencies:
       '@slidev/client': '>=0.49.0'
       vite: '>=5.0'
@@ -4190,24 +4203,24 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vis-data@7.1.9:
-    resolution: {integrity: sha512-COQsxlVrmcRIbZMMTYwD+C2bxYCFDNQ2EHESklPiInbD/Pk3JZ6qNL84Bp9wWjYjAzXfSlsNaFtRk+hO9yBPWA==}
+  vis-data@8.0.1:
+    resolution: {integrity: sha512-yQFFHlxQ0tDHbi+ay5HZ1bR65ovDuL1GNlC4O4YIbz6sppRK0qFHn0L4Pp2La+vy2O0MiSDRjPNr49y/bAw5Sw==}
     peerDependencies:
-      uuid: ^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
-      vis-util: ^5.0.1
+      uuid: ^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
+      vis-util: '>=6.0.0'
 
-  vis-network@9.1.10:
-    resolution: {integrity: sha512-7j71o99bZntr+sJGA58vWD6u9QL+qnt5oKj0Nn+F402L6o+FpO3P35zzPWPsCtqBwxPl0Cd+8xNuR3u7xleNPA==}
+  vis-network@10.0.1:
+    resolution: {integrity: sha512-TTw1IVsiLc2jdN+WeCyDaapMFSsCobebD0qUL8e7/QFAmLPSDlIYnXvlq/K5pjcFzMWthOs3+cu0HTBWPmJHKA==}
     peerDependencies:
       '@egjs/hammerjs': ^2.0.0
-      component-emitter: ^1.3.0
+      component-emitter: ^1.3.0 || ^2.0.0
       keycharm: ^0.2.0 || ^0.3.0 || ^0.4.0
       uuid: ^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
-      vis-data: ^6.3.0 || ^7.0.0
-      vis-util: ^5.0.1
+      vis-data: '>=8.0.0'
+      vis-util: '>=6.0.0'
 
-  vis-util@5.0.7:
-    resolution: {integrity: sha512-E3L03G3+trvc/X4LXvBfih3YIHcKS2WrP0XTdZefr6W6Qi/2nNCqZfe4JFfJU6DcQLm6Gxqj2Pfl+02859oL5A==}
+  vis-util@6.0.0:
+    resolution: {integrity: sha512-qtpts3HRma0zPe4bO7t9A2uejkRNj8Z2Tb6do6lN85iPNWExFkUiVhdAq5uLGIUqBFduyYeqWJKv/jMkxX0R5g==}
     engines: {node: '>=8'}
     peerDependencies:
       '@egjs/hammerjs': ^2.0.0
@@ -6478,6 +6491,13 @@ snapshots:
       '@vueuse/shared': 13.3.0(vue@3.5.13(typescript@5.8.3))
       vue: 3.5.13(typescript@5.8.3)
 
+  '@vueuse/core@13.8.0(vue@3.5.13(typescript@5.8.3))':
+    dependencies:
+      '@types/web-bluetooth': 0.0.21
+      '@vueuse/metadata': 13.8.0
+      '@vueuse/shared': 13.8.0(vue@3.5.13(typescript@5.8.3))
+      vue: 3.5.13(typescript@5.8.3)
+
   '@vueuse/math@13.1.0(vue@3.5.13(typescript@5.8.3))':
     dependencies:
       '@vueuse/shared': 13.1.0(vue@3.5.13(typescript@5.8.3))
@@ -6489,9 +6509,11 @@ snapshots:
 
   '@vueuse/metadata@13.3.0': {}
 
+  '@vueuse/metadata@13.8.0': {}
+
   '@vueuse/motion@3.0.3(vue@3.5.13(typescript@5.8.3))':
     dependencies:
-      '@vueuse/core': 13.1.0(vue@3.5.13(typescript@5.8.3))
+      '@vueuse/core': 13.3.0(vue@3.5.13(typescript@5.8.3))
       '@vueuse/shared': 13.1.0(vue@3.5.13(typescript@5.8.3))
       defu: 6.1.4
       framesync: 6.1.2
@@ -6514,6 +6536,10 @@ snapshots:
       vue: 3.5.13(typescript@5.8.3)
 
   '@vueuse/shared@13.3.0(vue@3.5.13(typescript@5.8.3))':
+    dependencies:
+      vue: 3.5.13(typescript@5.8.3)
+
+  '@vueuse/shared@13.8.0(vue@3.5.13(typescript@5.8.3))':
     dependencies:
       vue: 3.5.13(typescript@5.8.3)
 
@@ -8876,13 +8902,14 @@ snapshots:
   slash@5.1.0:
     optional: true
 
-  slidev-addon-graph@0.1.1(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@51.5.0(@nuxt/kit@3.16.2)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)(vite@6.3.2(@types/node@22.15.30)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.1)))(component-emitter@1.3.1)(keycharm@0.4.0)(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))(vite@6.3.2(@types/node@22.15.30)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3)):
+  slidev-addon-graph@1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@51.5.0(@nuxt/kit@3.16.2)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)(vite@6.3.2(@types/node@22.15.30)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.1)))(component-emitter@1.3.1)(keycharm@0.4.0)(uuid@11.1.0)(vite@6.3.2(@types/node@22.15.30)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3)):
     dependencies:
       '@slidev/client': 51.5.0(@nuxt/kit@3.16.2)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)(vite@6.3.2(@types/node@22.15.30)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.1))
-      '@vueuse/core': 13.3.0(vue@3.5.13(typescript@5.8.3))
+      '@vueuse/core': 13.8.0(vue@3.5.13(typescript@5.8.3))
       chroma-js: 3.1.2
-      vis-data: 7.1.9(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))
-      vis-network: 9.1.10(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)(keycharm@0.4.0)(uuid@11.1.0)(vis-data@7.1.9(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)))(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))
+      vis-data: 8.0.1(uuid@11.1.0)(vis-util@6.0.0(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))
+      vis-network: 10.0.1(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)(keycharm@0.4.0)(uuid@11.1.0)(vis-data@8.0.1(uuid@11.1.0)(vis-util@6.0.0(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)))(vis-util@6.0.0(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))
+      vis-util: 6.0.0(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)
       vite: 6.3.2(@types/node@22.15.30)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.1)
       vue: 3.5.13(typescript@5.8.3)
     transitivePeerDependencies:
@@ -8890,7 +8917,6 @@ snapshots:
       - component-emitter
       - keycharm
       - uuid
-      - vis-util
 
   slidev-addon-inalia@0.1.19(@babel/parser@7.27.0)(@nuxt/kit@3.16.2)(@types/markdown-it@14.1.2)(@types/node@22.15.30)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(playwright-chromium@1.52.0)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.3):
     dependencies:
@@ -9346,21 +9372,21 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vis-data@7.1.9(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)):
+  vis-data@8.0.1(uuid@11.1.0)(vis-util@6.0.0(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)):
     dependencies:
       uuid: 11.1.0
-      vis-util: 5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)
+      vis-util: 6.0.0(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)
 
-  vis-network@9.1.10(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)(keycharm@0.4.0)(uuid@11.1.0)(vis-data@7.1.9(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)))(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)):
+  vis-network@10.0.1(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)(keycharm@0.4.0)(uuid@11.1.0)(vis-data@8.0.1(uuid@11.1.0)(vis-util@6.0.0(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)))(vis-util@6.0.0(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)):
     dependencies:
       '@egjs/hammerjs': 2.0.17
       component-emitter: 1.3.1
       keycharm: 0.4.0
       uuid: 11.1.0
-      vis-data: 7.1.9(uuid@11.1.0)(vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))
-      vis-util: 5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)
+      vis-data: 8.0.1(uuid@11.1.0)(vis-util@6.0.0(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1))
+      vis-util: 6.0.0(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1)
 
-  vis-util@5.0.7(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1):
+  vis-util@6.0.0(@egjs/hammerjs@2.0.17)(component-emitter@1.3.1):
     dependencies:
       '@egjs/hammerjs': 2.0.17
       component-emitter: 1.3.1
