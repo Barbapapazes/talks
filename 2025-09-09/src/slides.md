@@ -25,41 +25,35 @@ date: 9 septembre 2025
 
 <!--
 
-TODO: trouver un moyen de filer un lien vers les slides rapidos
-TODO: Twitch dans les réseaux sociaux et retirer le bluesky
+TODO: faire le talk sur Inalia
+TODO: terminer le live coing (et mettre le repo sur gh)
 
-De quoi on parle pendant 10 minutes ?
+_Il faut démarrer l'application Laravel (https://github.com/barbapapazes/inertia-un-anneau-pour-les-gouverner-tous) et se mettre dans le fichier `routes/web.php`._
 
-Objectif: Donner envie à l'audience d'essayer Inertia dans un projet
+Bonsoir tout le monde !
 
-- Cover
-- QR code Inalia
-- Qu'est-ce que Inalia (AD)
+Vous allez bien ?
 
-- Présentation rapide
-- Timer 10 minutes
+L'objectif des 10 prochaines minutes est simple, vous donnez l'envie de tester Inertia dans vos projets. Inertia, c'est un outil que j'utilise tant professionnellement que personnellement et dont je ne peux plus me passer aujourd'hui.
 
-- Question Inalia (As-tu déjà utilisé Inertia ?) (multi-select) (début des explications de ce qu'est Inertia)
-  - jamais
-  - en perso
-  - en pro
-
-- Inertia  (optionnel)
-
-- Live Coding (dans la seconde moitié donc 5 minutes) (démontrer la simplicité apportée par Inertia)
-  - utilisation classique d'un template engine
-  - view() => inertia() dans le retour des contrôleurs (swap)
-  - parler de l'implication de passer de `view` à `inertia`. Dynamiser le frontend donc utilisation d'un framework frontend et donc, implicitement, nécessite de construire une API. (repasser sur des slides pour l'expliquer)
-  - useForm (only, optional, defer) (nouveau composant form)
-  - Link
-- Résumé, Fin et Feedback
-
- -->
+-->
 
 ---
 name: Overview
 layout: inalia-overview
 ---
+
+<!--
+
+Avant d'aller plus loin, je vous invite à scanner ce QR code.
+
+Il vous mènera sur une page où vous allez pouvoir retrouver mes réseaux, répondre à des questions, pour le moment, ne le faites pas, et même poser vos questions auxquelles je vais pouvoir répondre au fur et à mesure.
+
+À la fin, vous pourrez me donner un feedback. Mais à la fin, parce que ça ne serait pas très objectif de le faire dès maintenant.
+
+Et à tout moment, vous pouvez réagir à ce que je dis, si vous trouvez ça drôle, si vous aimez ou simplement si vous êtes d'accord.
+
+-->
 
 ---
 name: Inalia
@@ -68,15 +62,15 @@ layout: inalia
 
 <!--
 
-le qr, la question, les feedback, tout viens de là
-plateforme pour rendre interactifs les talks
-intégré à Slidev
+TODO: faire la slide
 
-et on le fait sur Twitch, alors venez
+Derrière le QR code et la page sur laquelle vous venez d'atterrir, il y a une plateforme qui s'appelle Inalia.
 
-(en 30 secondes max)
+Inalia, c'est un SaaS que je développe en live sur Twitch avec l'objectif de rendre nos présentations plus interactives et même mémorables !
 
- -->
+Il va sortir de sa bêta privée dans les prochaines semaines et vous pouvez dès à présent vous pré-inscrire sur inalia.app.
+
+-->
 
 ---
 name: Intro
@@ -84,15 +78,43 @@ layout: intro
 intro: Ingénieur logiciel Avionique chez <span class="i-custom-maiaspace inline-block size-5 align-text-top"></span> Maiaspace
 ---
 
----
-name: Countdown
----
+<!--
+
+Mais l'objectif ce soir, c'est surtout de vous parler d'Inertia.
+
+Avant de rentrer dans le vif du sujet, je me présente, je m'appelle Estéban. Je suis ingénieur logiciel Avionique chez MaiaSpace. MaiaSpace c'est une filiale d'ArianeGroup qui vise à développer un lanceur spatial partiellement réutilisable.
+
+Quand je ne suis pas au travail, je gravite autour des écosystèmes de Laravel, Vite, Vue et Nuxt.
+
+Et lorsqu'il me reste un peu de temps j'écris des articles
+
+Dans le même temps, vous pouvez me retrouver partout et surtout sur Twitch où je stream plusieurs fois par semaine.
+
+-->
 
 ---
 name: Qui a déjà utilisé Inertia ?
 ---
 
 <Inalia :questionId="1" />
+
+<!--
+
+Mais assez parlé de moi, parlons vraiment d'Inertia.
+
+Qui, parmi vous, a déjà utilisé Inertia ?
+
+Je vous laisse y répondre soit via la page Inalia sur laquelle vous êtes arrivé, soit via le QR code juste ici.
+
+En attendant, lassez-moi vous parler un peu d'Inertia.
+
+Inertia n'est ni un nouveau framework frontend, ni un framework backend. C'est un protocole qui permet de lier les deux et il vient s'ajouter à votre stack existante par le biais d'adaptateurs.
+
+TODO: rework pour éviter de répéter 100 fois la même chose et pour isoler la notion de modern monolith: Concrètement, si vous utilisez Laravel côté backend et Vue côté frontend, alors l'utilisation d'Inertia sera transparente et permettra de faire ce qu'il appelle un "modern monolith" en utilisant l'adaptateur Laravel côté serveur et l'adaptateur Vue côté client. Mais si vous préférez React, vous avez un adaptateur React. Si vous préférez Adonis, vous avez un adaptateur Adonis.
+
+Je sais, ça peut sembler un peu abstrait pour l'instant.
+
+-->
 
 ---
 name: De la théorie à la pratique
@@ -104,67 +126,175 @@ img:
 
 <!--
 
-Présentation des fichiers importants
-- web.php
-- resources/{views,js}
+Pour vous convaincre d'essayer l'outil, rien de mieux qu'un peu de code.
 
-Habituellement, template engine server-side (blade dans notre cas)
+Là, on se trouve dans une application Laravel avec l'adaptateur Inertia d'installé.
 
-Mais qu'est-ce qui se passe si on veut une application interactive avec un framework frontend ?
+Sous vos yeux, c'est le fichier `web.php` dans lequel on définit les routes de notre application.
 
-TODO: dans l'exemple de base, passer des props dans la view pour montrer que ça fonctionne bien lors du changement ensuite vers (inertia)
+On y voit la route `/` qui renvoie une vue `index` avec une prop `time` qui contient l'heure actuelle et une seconde prop `event` qui contient le nom du meetup.
 
-API
+```php
+Route::get('/', function () {
+    return view('index', [
+        'time' => now()->toDateTimeString(),
+        'event' => 'HumanTalks Paris',
+    ]);
+});
+```
 
+La vue, c'est la suivante.
 
+_Ouvrir le fichier resources/views/index.blade.php_
 
- -->
+```blade
+<div>
+  Il est actuellement {{ $time }} à {{ $event }}.
+</div>
+```
 
----
-name: Du rendu côté serveur à la SPA
----
+Rien de bien sorcier, c'est une page rendue complètement côté serveur avec un template engine. D'ailleurs, on peut s'y rendre.
 
-<!--
+Maintenant, imaginons que l'on veuille rendre cette superbe application interactive. Quels sont nos choix ?
 
-à voir mais la slide pourrait disparaître dans la mesure où tout peut se dire à l'oral
+- Utiliser une librairie comme Alpine ou Unpoly
 
-(ou juste mettre le mot API en énorme sur la slide)
+Ça ne me va pas du tout. Ces libraries n'ont pas du tout la puissance d'un framework frontend moderne dont on va avoir besoin.
 
-text à dire : https://inertiajs.com/who-is-it-for#:~:text=But%20what%20happens,a%20better%20way.
+- Construire une API JSON et utiliser un framework frontend comme Vue, React ou Svelte
 
-mais il existe une autre voie, c'est Inertia.
+Ça ne me va pas non plus. Construire une API, c'est long, c'est complexe, ça complexifie le frontend et puis ensuite, il faut la maintenir.
 
- -->
+Donc on est coincé ? Fin du talk ? Merci au revoir, on remballe.
 
----
-name: Encore du code
-layout: center-card
-img:
----
+Évidemment non, grâce à Inertia.
 
-# I want more.
+Comme je vous le disais tout à l'heure, Inertia, c'est un un protocole entre le frontend et le backend avec des adaptateurs ce qui veut dire que plutôt que de renvoyer une vue, on va renvoyer une page Inertia.
 
-<!--
+_Changement de `view()` en `inertia()`_
 
-passage de view() à inertia() dans web.php pour montrer que ça fonctionne pareil et que le template engine devient le framework JS
+```php
+Route::get('/', function () {
+    return inertia('index', [
+        'time' => now()->toDateTimeString(),
+        'event' => 'HumanTalks Paris',
+    ]);
+});
+```
 
-écrire le Route::get('/register', ...) en live
-ajouter le composant Form en live
-ajouter le processing en live
-ajouter la gestion des erreurs en live
+_Ouvrir le résultat dans le navigateur._
 
-ajouter un lien vers l'index.vue
+Visuellement, aucune différence ! Et pourtant, on vient de remplacer le template engine par Vue.
 
+_Ouvrir le fichier `resources/js/Pages/index.vue`_
 
-TODO: faire une nouvelle page qui ne charge rien. sauf le time via une props, avoir un button pour load data, déjà ça load mais ça change le time, donc on met le only
+```vue
+<script setup>
+const props = defineProps({
+  time: String,
+  event: String,
+});
+</script>
 
--> on peut être très granulaire dans la gestion des data
-et il existe même un defer pour ne charger que les données après le chargement de la page ou lorsque le composant est visible.
+<template>
+  <div>
+    Il est actuellement {{ props.time }} à {{ props.event }}.
+  </div>
+</template>
+```
 
+_Écrire un `Bonjour !` avant le `Il est actuellement` pour qu'on voit que ça fonctionne._
 
-TODO: mettre le code final ici
+C'est peut-être un détail pour vous, mais ça veut dire qu'on peut profiter de tout l'écosystème frontend qu'on connaît. C'est à dire les paquets npm et Vite.
 
- -->
+Mais, c'est pas tout ! Inertia vient avec un tas de fonctionnalités pour tout nous simplifier le développement de ces modern monolith.
+
+L'une des choses que l'on fait le plus, c'est devoir gérer des formulaires. Inertia vient avec un composant `Form`.
+
+Définissons une nouvelle route `/register`.
+
+_Ouvrir le fichier `routes/web.php`._
+
+```php
+Route::get('register', function () {
+    return inertia('register');
+});
+```
+
+Cette route renvoie la page `register` que l'on peut aller explorer.
+
+Vous devez savoir que j'ai préparé la route POST `/register` pour recevoir les données du formulaire.
+
+_Scroller un peu plus bas dans le fichier `routes/web.php`._
+
+_Ouvrir le fichier `resources/js/Pages/register.vue`_
+
+C'est rien de plus qu'un formulaire avec quelques champs avec quelques inputs.
+
+Allons voir la page et soumettons le formulaire.
+
+_Ouvrir la page `/register` dans le navigateur et soumettons le formulaire._
+
+On voit directement un problème. La page se recharge complètement. Ce n'est pas très cohérent avec l'utilisation d'un framework frontend.
+
+Maintenant, remplaçons le formulaire HTML par le composant `Form` d'Inertia.
+
+```vue
+<script setup>
+import { Form } from '@inertiajs/vue3';
+</script>
+
+<template>
+  <Form method="post" action="/register">
+    <input name="email" type="email" placeholder="Email" />
+    <input name="password" type="password" placeholder="Password" />
+    <button type="submit">Register</button>
+  </Form>
+</template>
+```
+
+Si l'on soumet à nouveau le formulaire, la page ne recharge plus !
+
+Mais ce n'est pas tout.
+
+On peut gérer les erreurs de validation, afficher un message dès lors que le formulaire est soumis et même le réinitialiser automatiquement.
+
+```vue
+<script setup>
+import { Form } from '@inertiajs/vue3';
+</script>
+
+<template>
+  <Form method="post" action="/register" reset-on-success #default="{ errors, recentlySuccessful }">
+    <input name="email" type="email" placeholder="Email" />
+    <div v-if="errors.email" class="error">{{ errors.email }}</div>
+
+    <input name="password" type="password" placeholder="Password" />
+    <div v-if="errors.password" class="error">{{ errors.password }}</div>
+
+    <span v-if="recentlySuccessful">
+      Registered.
+    </span>
+    <button type="submit">Register</button>
+  </Form>
+</template>
+```
+
+Pour naviguer de page en page, Inertia vient aussi avec un composant `Link`.
+
+```vue
+<script setup>
+import { Link } from '@inertiajs/vue3';
+</script>
+
+<template>
+  <Link href="/">Home</Link>
+</template>
+```
+
+Ça peut sembler naturel mais si on y réfléchit quelque instant, c'est assez génial parce qu'on n'a pas définit de router côté client. On utilise le router du serveur et on évite de dupliquer cette logique.
+
+-->
 
 ---
 name: Outro
@@ -192,6 +322,14 @@ layout: outro
 
 <!--
 
+Ce que vous venez de découvrir, ce n'est qu'un aperçu de tout ce qu'il est possible de faire. Je vous invite à aller lire la documentation et à explorer l'application de démonstration pour avoir une vision plus réaliste.
 
+Il est bon de rappeler qu'Inertia, ce n'est pas magique et ça ne résoudra pas tous vos problèmes. Mais ça peut en résoudre vraiment beaucoup et vous permettre de garder conserver une grande vélocité.
+
+Honnêtement, donnez-lui une chance, vous ne le regretterez pas.
+
+Merci à tous !
+
+C'était Estéban. Et pour laisser un feedback, c'est juste là.
 
  -->
