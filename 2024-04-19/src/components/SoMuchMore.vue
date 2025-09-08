@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import type { SelectData } from 'slidev-addon-inalia/types/data'
-import Inalia from 'slidev-addon-inalia/components/Inalia.vue'
+import type { SelectData } from 'slidev-addon-inalia'
+import { Inalia } from 'slidev-addon-inalia'
 import MostLoved from './MostLoved.vue'
 </script>
 

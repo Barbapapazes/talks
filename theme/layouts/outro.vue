@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import Feedback from '../components/Feedback.vue'
 import Footer from '../components/Footer.vue'
 import FooterLink from '../components/FooterLink.vue'
 import { socials, talks, website } from '../contants'

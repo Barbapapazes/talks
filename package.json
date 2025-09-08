@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.11.1",
+  "packageManager": "pnpm@10.15.1",
   "scripts": {
     "build": "pnpm -r run --workspace-concurrency=-1 build && pnpm run generate:redirects && pnpm run generate:meta",
     "export": "pnpm -r run --workspace-concurrency=1 export",
@@ -21,7 +21,7 @@
     "@unovis/vue": "1.4.3-beta.0",
     "cobe": "^0.6.3",
     "seedrandom": "^3.0.5",
-    "slidev-addon-inalia": "^0.2.4"
+    "slidev-addon-inalia": "^0.2.6"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.14.1",
@@ -41,7 +41,7 @@
     "eslint": "^9.28.0",
     "execa": "^9.5.2",
     "fdir": "^6.4.5",
-    "jiti": "^2.4.2",
+    "jiti": "^2.5.1",
     "ofetch": "^1.4.1",
     "pathe": "^2.0.3",
     "playwright-chromium": "^1.52.0",
@@ -50,7 +50,7 @@
     "slidev-addon-graph": "^0.1.1",
     "slidev-theme-personal": "link:./theme",
     "taze": "^19.1.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "pnpm": {
     "patchedDependencies": {
