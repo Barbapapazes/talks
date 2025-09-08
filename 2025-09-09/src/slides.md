@@ -11,8 +11,8 @@ themeConfig:
 codeCopy: false
 transition: fade-out
 theme: slidev-theme-personal
-# addons:
-#   - slidev-addon-inalia
+addons:
+  - slidev-addon-inalia
 title: "Inertia: Un Anneau pour les gouverner tous"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
@@ -24,9 +24,6 @@ date: 9 septembre 2025
 # Inertia: Un Anneau<br />pour les gouverner tous
 
 <!--
-
-TODO: faire le talk sur Inalia
-TODO: terminer le live coing (et mettre le repo sur gh)
 
 _Il faut démarrer l'application Laravel (https://github.com/barbapapazes/inertia-un-anneau-pour-les-gouverner-tous) et se mettre dans le fichier `routes/web.php`._
 
@@ -57,12 +54,26 @@ Et à tout moment, vous pouvez réagir à ce que je dis, si vous trouvez ça dr�
 
 ---
 name: Inalia
-layout: inalia
 ---
 
-<!--
+<div class="absolute top-1/2 left-1/2 -translate-1/2 space-y-2">
+  <div class="flex flex-row items-center gap-2">
+    <img src="https://inalia.app/favicon.svg" alt="Inalia logo" class="size-16" />
+    <span class="text-5xl font-serif font-medium"> Inalia </span>
+  </div>
+</div>
 
-TODO: faire la slide
+<div class="absolute bottom-10 right-1/2 translate-x-1/2 space-y-2 text-center text-lg opacity-60 font-light">
+  <p class="">
+    Développé en live sur <a href="https://twitch.tv/barbapapazes" class="font-normal border-0">Twitch</a>
+  </p>
+  <hr />
+  <p>
+    Accessible sur <a href="https://inalia.app" class="font-normal border-0"> inalia.app </a>
+  </p>
+</div>
+
+<!--
 
 Derrière le QR code et la page sur laquelle vous venez d'atterrir, il y a une plateforme qui s'appelle Inalia.
 
@@ -86,7 +97,7 @@ Avant de rentrer dans le vif du sujet, je me présente, je m'appelle Estéban. J
 
 Quand je ne suis pas au travail, je gravite autour des écosystèmes de Laravel, Vite, Vue et Nuxt.
 
-Et lorsqu'il me reste un peu de temps j'écris des articles
+Et lorsqu'il me reste un peu de temps j'écris des articles.
 
 Dans le même temps, vous pouvez me retrouver partout et surtout sur Twitch où je stream plusieurs fois par semaine.
 
@@ -104,15 +115,13 @@ Mais assez parlé de moi, parlons vraiment d'Inertia.
 
 Qui, parmi vous, a déjà utilisé Inertia ?
 
-Je vous laisse y répondre soit via la page Inalia sur laquelle vous êtes arrivé, soit via le QR code juste ici.
+Je vous laisse y répondre soit via la page Inalia sur laquelle vous êtes arrivé en cliquant sur la première question, soit via le QR code juste ici.
 
-En attendant, lassez-moi vous parler un peu d'Inertia.
+En attendant, laissez-moi vous parler un peu d'Inertia.
 
-Inertia n'est ni un nouveau framework frontend, ni un framework backend. C'est un protocole qui permet de lier les deux et il vient s'ajouter à votre stack existante par le biais d'adaptateurs.
+Inertia n'est ni un nouveau framework frontend, ni un framework backend. C'est un protocole qui permet de lier les deux et qui vient s'ajouter à votre stack par le biais d'adaptateurs. Ainsi, il permet de créer ce qu'ils appellent un "modern monolith".
 
-TODO: rework pour éviter de répéter 100 fois la même chose et pour isoler la notion de modern monolith: Concrètement, si vous utilisez Laravel côté backend et Vue côté frontend, alors l'utilisation d'Inertia sera transparente et permettra de faire ce qu'il appelle un "modern monolith" en utilisant l'adaptateur Laravel côté serveur et l'adaptateur Vue côté client. Mais si vous préférez React, vous avez un adaptateur React. Si vous préférez Adonis, vous avez un adaptateur Adonis.
-
-Je sais, ça peut sembler un peu abstrait pour l'instant.
+Je sais, ça peut sembler un peu abstrait pour l'instant, mais vous allez voir, c'est assez transparent et très puissant.
 
 -->
 
