@@ -107,7 +107,12 @@ Dans le même temps, vous pouvez me retrouver partout et surtout sur Twitch où 
 name: Qui a déjà utilisé Inertia ?
 ---
 
-<Inalia :questionId="1" />
+<Inalia
+  question="Qui a déjà utilisé Inertia ?"
+  type="single_select"
+  chart="donut"
+  :data="[{ label: 'Oui', count: 0, color: '#0FA91A' }, { label: 'Non', count: 18, color: '#A91E0F' }]"
+/>
 
 <!--
 
