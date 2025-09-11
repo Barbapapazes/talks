@@ -1,5 +1,5 @@
 export default {
   optimizeDeps: {
-    include: ['reka-ui'],
+    include: ['reka-ui', 'slidev-addon-inalia', 'alien-signals'],
   },
 }
