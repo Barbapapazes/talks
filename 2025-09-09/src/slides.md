@@ -133,7 +133,7 @@ Je sais, ça peut sembler un peu abstrait pour l'instant, mais vous allez voir, 
 ---
 name: De la théorie à la pratique
 layout: center-card
-img:
+img: https://images.unsplash.com/photo-1756489693617-b6586eed7e51?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 # Talk is cheap.<br />Show me the code.
