@@ -1,5 +1,5 @@
 export default {
   optimizeDeps: {
-    include: ['seedrandom'],
+    include: ['seedrandom', 'slidev-addon-inalia'],
   },
 }

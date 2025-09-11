@@ -9,7 +9,7 @@ fonts:
 themeConfig:
   primary: white
 codeCopy: false
-transition: fade-out
+transition: fade-outq
 theme: slidev-theme-personal
 addons:
   - slidev-addon-inalia

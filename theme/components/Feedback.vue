@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import InaliaQR from 'slidev-addon-inalia/components/InaliaQR.vue'
-import InaliaShortUrl from 'slidev-addon-inalia/components/InaliaShortUrl.vue'
-import { useInaliaTalk } from 'slidev-addon-inalia/composables/useInaliaTalk'
+import { InaliaQR, InaliaShortUrl, useInaliaTalk } from 'slidev-addon-inalia'
 
 const { talk } = useInaliaTalk()
 </script>

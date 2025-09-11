@@ -1,5 +1,5 @@
 export default {
   optimizeDeps: {
-    include: ['cobe'],
+    include: ['cobe', 'slidev-addon-inalia'],
   },
 }
