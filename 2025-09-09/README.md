@@ -4,4 +4,4 @@
 
 ---
 
-[Live Coding](https://github.com/barbapapazes/humantalks-paris-live-coding)
+[Live Coding](https://github.com/barbapapazes/inertia-un-anneau-pour-les-gouverner-tous)
