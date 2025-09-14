@@ -17,7 +17,7 @@ const links = [website, talks, ...socials]
         <span> esteban@soubiran.dev </span>
       </div>
 
-      <Feedback v-click class="absolute right-14 top-28" />
+      <Feedback v-if="$frontmatter.feedback !== false" v-click class="absolute right-14 top-28" />
 
       <Footer class="flex flex-row gap-2">
         <FooterLink
