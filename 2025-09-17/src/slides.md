@@ -144,9 +144,9 @@ layout: center
 </h1>
 
 <!--
-Il y a aussi la notion de contexte. Le contexte d'une réflexion, d'un moment, d'un récit est essentiel pour comprendre toute l'histoire et les subtilités.
+Il y a aussi la notion de contexte. Le contexte d'une réflexion, d'un moment, d'un récit est essentiel pour comprendre toute l'histoire et ses subtilités.
 
-D'ailleurs, le contexte est une notion devenue essentielle. On peut le voir avec la manipulation de l'information sur les réseaux ou simplement au niveau des LLMs où la pertinence est directement liée à la qualité du contexte.
+D'ailleurs, le contexte est une notion devenue essentielle. On peut le voir avec la manipulation de l'information sur les réseaux ou simplement au travers des LLMs où la pertinence est directement liée à la qualité du contexte.
 
 Alors laissez moi vous donner un peu de contexte.
 
