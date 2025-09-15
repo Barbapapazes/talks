@@ -157,37 +157,51 @@ Comment j'en suis arrivé à utiliser Inertia et pourquoi je l'aime tant.
 name: Timeline
 ---
 
+<!-- TODO: add missing images and stack -->
+<Timeline
+  :items="[
+    {
+      img: '/nuit-de-linfo-2018.jpg',
+      date: 'Dec, 2018',
+      title: 'Nuit de l\'Info',
+    },
+    {
+      img: '/tutoring-platform.jpg',
+      date: '2020',
+      title: 'Tutoring Platform',
+    },
+    {
+      img: '/voting-platform.jpg',
+      date: '2022',
+      title: 'Voting Platform',
+    }
+  ]"
+/>
+
 <!--
 
-TODO:
+Ça, c'est moi. Et je me rends compte que je ne me fais pas de cadeau en faisant ça. C'était à ma première Nuit de l'Info, donc en décembre 2018. À ce moment-là, je découvre le développement web et j'accroche de suite. Un grand canva, blanc, dans lequel vous pouvez faire absolument tout ce que vous voulez. Quelle liberté.
 
--->
+Enfin, une liberté, qu'il faut savoir l'utiliser. Et c'est là que tout se complexifie.
 
-<!-- Image de la Nuit de l'Info 2018 -->
+En 2020, avec des amis, on a repris le projet d'une plateforme de tutorat pour la vie étudiante de mon école. On y a passé tellement d'heures à trois. Et pourtant, on n'a jamais rien livré. Personne n'a jamais vu un seul pixel de la nouvelle version.
 
-<!-- Ça, c'est moi. Et je me rends compte que je ne me fais pas de cadeau en faisant ça. C'était à ma première Nuit de l'Info, donc en décembre 2018. À ce moment-là, je découvre le développement web et j'accroche de suite. Un grand canva, blanc, dans lequel vous pouvez faire absolument tout ce que vous voulez. Quelle liberté. -->
-
-<!-- Enfin, une liberté, qu'il faut savoir l'utiliser. Et c'est là que tout se complexifie. -->
-
-<!-- Timeline (à la Nuxt UI) avec toutes les dates mais sans échelle -->
-
-<!-- En 2020, avec des amis, on a repris le projet d'une plateforme de tutorat pour la vie étudiante de mon école. On y a passé tellement d'heures à trois. Et pourtant, on n'a jamais rien livré. Personne n'a jamais vu un seul pixel de la nouvelle version. -->
-
-<!-- Image de ma présentation de TEAM lors de ma soutenance -->
-
-<!-- En 2021, avec un autre ami, on est revenu avec un nouveau projet pour la vie étudiante. L'idée était simple sur le papier, construire 4 plateformes pour faciliter la vie étudiante, pour former un écosystème. Sept mois de travail, une dispense d'un semestre pour travailler dessus à temps plein. Et pourtant, au bout du compte, on ne l'a jamais livré et personne n'en a jamais vu la couleur.
+En 2021, avec un autre ami, on est revenu avec un nouveau projet pour la vie étudiante. L'idée était simple sur le papier, construire 4 plateformes pour faciliter la vie étudiante, pour former un écosystème. Sept mois de travail, une dispense d'un semestre pour travailler dessus à temps plein. Et pourtant, au bout du compte, on ne l'a jamais livré et personne n'en a jamais vu la couleur.
 
 En 2022, j'ai construit une plateforme de vote pour un concours étudiant. Et en septembre, miracle, la plateforme était prête et en production. Pour la première fois depuis 4 ans, un projet a été livré. Enfin !
 
 Maintenant, prenons un peu de recul. Pourquoi le dernier projet est-il enfin livré ?
 
-Parce que je me suis concentré sur le fait de créer et livrer un moment, et non de simplement coder pour coder. Regardez, sur la plateforme de Tutorat, on avait un backend avec Feathersjs, deux frontend, un avec React et l'autre avec Vue et une application mobile en React Native. Pour l'écosystème, on avait un backend avec Adonis, 4 frontend avec Nuxt et une bibliothèque de composants. Tellement de complexité. De son côté, la plateforme de vote, c'était simplement un backend Adonis avec template engine et un peu d'Unpoly. Rien de plus.
+Parce que je me suis concentré sur le fait de créer et livrer un moment, et non de simplement coder pour coder.
+
+Regardez, sur la plateforme de Tutorat, on avait un backend avec Feathersjs, deux frontend, un avec React et l'autre avec Vue et une application mobile en React Native. Pour l'écosystème, on avait un backend avec Adonis, 4 frontend avec Nuxt et une bibliothèque de composants. Tellement de complexité. De son côté, la plateforme de vote, c'était simplement un backend Adonis avec template engine et un peu d'Unpoly. Rien de plus.
 
 C'est exactement ce que vous permet Inertia, vous permettre de vous concentrer sur ce que vous créez pour livrer. Inertia vient simplifier votre travail.
 
-Mais concrètement, cette simplification, elle se traduit comment ? -->
+Je crois qu'il est enfin temps de voir ce qu'est Inertia concrètement.
+-->
 
-<!-- potentiellement une question sur le fait de foirer un side project ? à voir -->
+<!-- TODO: potentiellement une question sur le fait de foirer un side project ? à voir, et potentiellement la mettre avant -->
 
 ---
 name: Who already uses Inertia?
@@ -225,6 +239,8 @@ img: https://images.unsplash.com/photo-1756489693617-b6586eed7e51?q=80&w=2342&au
 ---
 name: How to make our app interactive?
 ---
+
+<!-- TODO: écrire le texte pour la question -->
 
 <!-- bibliothèque comme Alpine, HTMX ou Unpoly -->
 <!-- framework frontend et une API JSON -->
