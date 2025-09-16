@@ -154,17 +154,30 @@ Comment j'en suis arrivé à utiliser Inertia et pourquoi je l'aime tant.
 -->
 
 ---
+name: NDI
+layout: center-card
+img: https://images.unsplash.com/photo-1522248053824-07f955114b0f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+imgClass: blur-sm
+---
+
+<img src="/ndi.jpeg" class="size-60 rounded-md">
+
+<!--
+Ça, c'est moi. Et je me rends compte que je ne me fais pas de cadeau en faisant ça. C'était à ma première Nuit de l'Info, donc en décembre 2018. À ce moment-là, je découvre le développement web et j'accroche de suite. Un grand canva, blanc, dans lequel vous pouvez faire absolument tout ce que vous voulez. Quelle liberté.
+
+Enfin, une liberté, qu'il faut savoir l'utiliser. Et c'est là que tout se complexifie.
+-->
+
+---
 name: Timeline
 layout: center
 ---
-
-<!-- TODO: ajouter les images et l'image pour la nuit de l'info (peut 6etre sur une slide à part?) -->
 
 <Timeline
   :items="[
     {
       icon: 'i-ph-pen-nib-straight-duotone',
-      img: '/tutoring-platform.jpg',
+      img: '/tutoring-platform.png',
       date: '2020',
       title: 'Tutoring Platform',
       stack: [
@@ -184,7 +197,7 @@ layout: center
     },
     {
       icon: 'i-ph-graph-duotone',
-      img: '/insamee.jpg',
+      img: '/team.jpeg',
       date: '2021',
       title: 'Insamee',
       stack: [
@@ -200,7 +213,7 @@ layout: center
     },
     {
       icon: 'i-ph-envelope-simple-duotone',
-      img: '/voting-platform.jpg',
+      img: '/voting-platform.png',
       date: '2022',
       title: 'Voting Platform',
       stack: [
@@ -218,10 +231,6 @@ layout: center
 />
 
 <!--
-Ça, c'est moi. Et je me rends compte que je ne me fais pas de cadeau en faisant ça. C'était à ma première Nuit de l'Info, donc en décembre 2018. À ce moment-là, je découvre le développement web et j'accroche de suite. Un grand canva, blanc, dans lequel vous pouvez faire absolument tout ce que vous voulez. Quelle liberté.
-
-Enfin, une liberté, qu'il faut savoir l'utiliser. Et c'est là que tout se complexifie.
-
 En 2020, avec des amis, on a repris le projet d'une plateforme de tutorat pour la vie étudiante de mon école. On y a passé tellement d'heures à trois. Et pourtant, on n'a jamais rien livré. Personne n'a jamais vu un seul pixel de la nouvelle version.
 
 En 2021, avec un autre ami, on est revenu avec un nouveau projet pour la vie étudiante. L'idée était simple sur le papier, construire 4 plateformes pour faciliter la vie étudiante, pour former un écosystème. Sept mois de travail, une dispense d'un semestre pour travailler dessus à temps plein. Et pourtant, au bout du compte, on ne l'a jamais livré et personne n'en a jamais vu la couleur.

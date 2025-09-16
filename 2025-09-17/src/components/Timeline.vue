@@ -8,11 +8,14 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="grid gap-4" :style="`grid-template-columns: repeat(${props.items.length}, minmax(0, 1fr))`">
-    <TimelineItem
-      v-for="item in props.items"
-      :key="item.title"
-      v-bind="item"
-    />
+  <div class="grid gap-8" :style="`grid-template-columns: repeat(${props.items.length}, minmax(0, 1fr))`">
+    <v-clicks>
+      <TimelineItem
+        v-for="(item, index) in props.items"
+        :key="item.title"
+        :click="props.items.length + index + 1"
+        v-bind="item"
+      />
+    </v-clicks>
   </div>
 </template>
