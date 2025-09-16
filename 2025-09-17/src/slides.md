@@ -155,25 +155,64 @@ Comment j'en suis arrivé à utiliser Inertia et pourquoi je l'aime tant.
 
 ---
 name: Timeline
+layout: center
 ---
 
-<!-- TODO: add missing images and stack -->
+<!-- TODO: ajouter les images et l'image pour la nuit de l'info (peut 6etre sur une slide à part?) -->
+
 <Timeline
   :items="[
     {
-      img: '/nuit-de-linfo-2018.jpg',
-      date: 'Dec, 2018',
-      title: 'Nuit de l\'Info',
-    },
-    {
+      icon: 'i-ph-pen-nib-straight-duotone',
       img: '/tutoring-platform.jpg',
       date: '2020',
       title: 'Tutoring Platform',
+      stack: [
+        {
+          icon: 'i-devicon-feathersjs',
+          name: 'FeathersJS'
+        },
+        {
+          icon: 'i-devicon-react',
+          name: 'React'
+        },
+        {
+          icon: 'i-devicon-vuejs',
+          name: 'Vue.js'
+        },
+      ]
     },
     {
+      icon: 'i-ph-graph-duotone',
+      img: '/insamee.jpg',
+      date: '2021',
+      title: 'Insamee',
+      stack: [
+        {
+          icon: 'i-devicon-adonisjs',
+          name: 'AdonisJS'
+        },
+        {
+          icon: 'i-devicon-nuxt',
+          name: 'Nuxt'
+        }
+      ]
+    },
+    {
+      icon: 'i-ph-envelope-simple-duotone',
       img: '/voting-platform.jpg',
       date: '2022',
       title: 'Voting Platform',
+      stack: [
+        {
+          icon: 'i-devicon-adonisjs',
+          name: 'AdonisJS'
+        },
+        {
+          src: 'https://avatars.githubusercontent.com/u/17380553?s=200&v=4',
+          name: 'Unpoly'
+        }
+      ]
     }
   ]"
 />

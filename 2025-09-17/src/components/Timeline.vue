@@ -8,7 +8,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div>
+  <div class="grid gap-4" :style="`grid-template-columns: repeat(${props.items.length}, minmax(0, 1fr))`">
     <TimelineItem
       v-for="item in props.items"
       :key="item.title"
