@@ -1,15 +1,6 @@
-<script lang="ts">
-interface StackItem {}
-
-export interface TimelineItem {
-  img: string
-  date: string
-  title: string
-  stack: StackItem[]
-}
-</script>
-
 <script lang="ts" setup>
+import type { TimelineItem } from '../types/timeline'
+
 const props = defineProps<TimelineItem>()
 </script>
 

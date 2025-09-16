@@ -77,7 +77,7 @@ intro: Ingénieur logiciel Avionique chez <span class="i-custom-maiaspace
 ---
 
 <!--
-Mais l'objectif ce soir, c'est surtout de vous parler d'Inertia.
+Mais l'objectif ce soir, c'est surtout d'Inertia dont on va parler.
 
 Avant de rentrer dans le vif du sujet, je me présente, je m'appelle Estéban. Je suis ingénieur logiciel Avionique chez MaiaSpace. MaiaSpace c'est une filiale d'ArianeGroup qui vise à développer un lanceur spatial partiellement réutilisable.
 
@@ -179,7 +179,6 @@ name: Timeline
 />
 
 <!--
-
 Ça, c'est moi. Et je me rends compte que je ne me fais pas de cadeau en faisant ça. C'était à ma première Nuit de l'Info, donc en décembre 2018. À ce moment-là, je découvre le développement web et j'accroche de suite. Un grand canva, blanc, dans lequel vous pouvez faire absolument tout ce que vous voulez. Quelle liberté.
 
 Enfin, une liberté, qu'il faut savoir l'utiliser. Et c'est là que tout se complexifie.
@@ -240,19 +239,17 @@ img: https://images.unsplash.com/photo-1756489693617-b6586eed7e51?q=80&w=2342&au
 name: How to make our app interactive?
 ---
 
-<!-- TODO: écrire le texte pour la question -->
-
-<!-- bibliothèque comme Alpine, HTMX ou Unpoly -->
-<!-- framework frontend et une API JSON -->
-<!-- autre ? -->
-
-<Inalia questionId="2" />
+<Inalia :questionId="3" />
 
 <!--
+Ok, très intéressante les réponses.
 
- évoquer le fait qu'on s'est tous fait matrixer par le fait de concevoir des API JSON pour absolument tous les projets
- mais ce n'est pas du tout la seule manière de faire. il y en a d'autres
+- Pas la première parce qu'une librairie frontend n'a pas du tout la puissance d'un framework frontend, que ce soit au niveau de l'écosystème, du tooling, ou même des UI kit.
+- Pas la deuxième parce que c'est juste trop de complexité dans notre cas. Potentiellement un nouveau repo, une découpe qui n'a pas de sens parce qu'on serait les seuls consommateurs, il faut ajouter du routing, de l'autorisation côté client, etc.
 
+On s'est clairement fait matrixé par le fait de devoir passer d'un monolith à un frontend séparé avec une API pour faire évoluer nos projets et y ajouter de l'interactivité. Mais ça, c'est terminé.
+
+Aujourd'hui, avec Inertia, on a un nouveau choix.
  -->
 
 ---
@@ -344,11 +341,9 @@ feedback: false
 </ul>
 
 <!--
-
 Je crois qu'il y a deux manières de terminer ce talk.
 
 Une traditionnelle et une alternative. Commençons par l'alternative.
-
 -->
 
 ---

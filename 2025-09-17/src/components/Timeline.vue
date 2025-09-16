@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { TimelineItem as ITimelineItem } from './TimelineItem.vue'
+import type { TimelineItem as ITimelineItem } from '../types/timeline'
 import TimelineItem from './TimelineItem.vue'
 
 const props = defineProps<{
