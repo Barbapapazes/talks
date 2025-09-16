@@ -165,7 +165,7 @@ imgClass: blur-sm
 <!--
 Ça, c'est moi. Et je me rends compte que je ne me fais pas de cadeau en faisant ça. C'était à ma première Nuit de l'Info, donc en décembre 2018. À ce moment-là, je découvre le développement web et j'accroche de suite. Un grand canva, blanc, dans lequel vous pouvez faire absolument tout ce que vous voulez. Quelle liberté.
 
-Enfin, une liberté, qu'il faut savoir l'utiliser. Et c'est là que tout se complexifie.
+Enfin, une liberté, qu'il faut savoir utiliser. Et c'est là que tout se complexifie.
 -->
 
 ---
@@ -243,12 +243,12 @@ Parce que je me suis concentré sur le fait de créer et livrer un moment, et no
 
 Regardez, sur la plateforme de Tutorat, on avait un backend avec Feathersjs, deux frontend, un avec React et l'autre avec Vue et une application mobile en React Native. Pour l'écosystème, on avait un backend avec Adonis, 4 frontend avec Nuxt et une bibliothèque de composants. Tellement de complexité. De son côté, la plateforme de vote, c'était simplement un backend Adonis avec template engine et un peu d'Unpoly. Rien de plus.
 
-C'est exactement ce que vous permet Inertia, vous permettre de vous concentrer sur ce que vous créez pour livrer. Inertia vient simplifier votre travail.
+Une stack parfaite pour se concentrer sur le fait de livrer.
 
-Je crois qu'il est enfin temps de voir ce qu'est Inertia concrètement.
+C'est exactement ce que vous permet Inertia, vous permettre de vous concentrer sur le produit plus que sur la technologie.
+
+Et je crois qu'il est enfin temps, avec tout ce context de voir ce qu'est Inertia concrètement.
 -->
-
-<!-- TODO: potentiellement une question sur le fait de foirer un side project ? à voir, et potentiellement la mettre avant -->
 
 ---
 name: Who already uses Inertia?
@@ -257,15 +257,13 @@ name: Who already uses Inertia?
 <Inalia :questionId="2" />
 
 <!--
-
 Qui, parmi vous, a déjà utilisé Inertia ?
 
 Je vous laisse y répondre soit via la page Inalia, soit via le QR code juste ici.
 
 En attendant, laissez-moi vous parler un peu d'Inertia.
 
-Inertia n'est ni un nouveau framework frontend, ni un framework backend. C'est un protocole qui permet de lier les deux et qui vient s'ajouter à votre stack par le biais d'adaptateurs, permettant l'émergence des modern monoliths.
-
+Inertia n'est ni un nouveau framework frontend, ni un framework backend. C'est un protocole qui permet de lier les deux et qui vient s'ajouter à votre stack par le biais d'adaptateurs, permettant l'émergence de ce qu'ils appellent les modern monoliths.
 -->
 
 ---
