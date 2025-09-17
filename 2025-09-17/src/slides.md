@@ -28,7 +28,7 @@ Bonsoir tout le monde !
 
 Vous allez bien ?
 
-L'objectif des 20 prochaines minutes est simple, vous donnez l'envie de tester Inertia dans vos projets. Inertia, c'est un outil que j'utilise au quotidien et qui a complètement changé ma manière de créer sur le web.
+L'objectif des 20 prochaines minutes est simple, vous donnez l'envie d'utiliser Inertia dans vos projets. Inertia, c'est un outil que j'utilise au quotidien et qui a complètement changé ma manière de créer sur le web.
 -->
 
 ---
