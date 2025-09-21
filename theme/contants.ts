@@ -20,10 +20,10 @@ export const socials = [
     href: 'https://x.com/soubiran_',
   },
   {
-    icon: 'i-simple-icons-bluesky size-3',
-    label: 'Bluesky',
-    text: '@soubiran.dev',
-    href: 'https://bsky.app/profile/soubiran.dev',
+    icon: 'i-simple-icons-twitch size-3',
+    label: 'Twitch',
+    text: 'Barbapapazes',
+    href: 'https://twitch.tv/barbapapazes',
   },
   {
     icon: 'i-simple-icons-linkedin size-3',

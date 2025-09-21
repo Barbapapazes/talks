@@ -1,6 +1,6 @@
 ---
 htmlAttrs:
-  lang: fr
+  lang: en
   dir: ltr
 fonts:
   sans: DM Sans
