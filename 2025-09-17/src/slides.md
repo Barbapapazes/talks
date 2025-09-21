@@ -50,7 +50,12 @@ Et à tout moment, vous pouvez réagir à ce que je dis, si vous trouvez ça dr�
 name: Who is who?
 ---
 
-<Inalia :questionId="1" />
+<Inalia
+  question="Qui est qui ?"
+  type="single_select"
+  chart="donut"
+  :data="[{ label: 'Takima', count: 22, color: '#FD00A6' }, { label: 'Node.js Paris', count: 38, color: '#27AD03' }]"
+/>
 
 <!--
 Pour s'assurer que ça fonctionne bien chez tout le monde et pour nous donner du contexte dont on aura besoin par la suite, je vous invite à répondre à la première question, soit via la page sur laquelle vous êtes arrivé, soit en scannant le QR code.
@@ -254,7 +259,12 @@ Et je crois qu'il est enfin temps, avec tout ce context de voir ce qu'est Inerti
 name: Who already uses Inertia?
 ---
 
-<Inalia :questionId="2" />
+<Inalia
+  question="Qui a déjà utilisé Inertia ?"
+  type="single_select"
+  chart="donut"
+  :data="[{ label: 'Oui', count: 5, color: '#5AF755' }, { label: 'Non', count: 40, color: '#FB4D16' }]"
+/>
 
 <!--
 Qui, parmi vous, a déjà utilisé Inertia ?
@@ -285,7 +295,12 @@ img: https://images.unsplash.com/photo-1756489693617-b6586eed7e51?q=80&w=2342&au
 name: How to make our app interactive?
 ---
 
-<Inalia :questionId="3" />
+<Inalia
+  question="Comment rendre notre app interactive ?"
+  type="multiple_select"
+  chart="bar"
+  :data="[{ label: 'HTMX, Alpine ou Unpoly', count: 0, color: '#F7C455' }, { label: 'API JSON et Vue, Angular ou React', count: 0, color: '#55D2F7' }, { label: 'Autre', count: 0, color: '#a855f7' }]"
+/>
 
 <!--
 Ok, très intéressante les réponses.
