@@ -17,13 +17,13 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Redeploy
-        run: npx jiti scripts/redeploy.ts
+        run: node .scripts/redeploy.ts
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
