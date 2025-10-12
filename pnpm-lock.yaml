@@ -171,6 +171,8 @@ importers:
 
   2025-09-17/src: {}
 
+  2025-10-17/src: {}
+
   theme:
     dependencies:
       reka-ui:
