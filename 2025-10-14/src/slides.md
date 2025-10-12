@@ -18,8 +18,8 @@ title: "La réactivité et les signaux: démystifions la magie du frontend"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: web,development,vue,reactivity,frontend
-event: BreizhCamp
-date: 25 juin 2025
+event: Paris TypeScript
+date: 14 octobre 2025
 ---
 
 # La réactivité et les signaux :<br> démystifions la magie du frontend
@@ -119,14 +119,15 @@ effect(() => {
 ```
 
 <!--
+Mais ce qui va nous intéresser aujourd'hui, c'est ce code là. On y retrouve notre Excel avec quantity, price, total qui est une fonction de la quantité par le prix et puis l'affichage du total.
 
-On y retrouve exactement notre Excel.
+La librairie qu'on va analyser, c'est Alien Signals. C'est une implémentation bas niveau d'un système de réactivité, tellement bas niveau que l'API d'Alien Signals elle-même est basée sur ces primitives. D'ailleurs, il est possible de l'utiliser pour refaire les signaux d'à peu près tous les frameworks et même ceux du TC39. C'est aussi la librairie la plus performante sur le marché et elle est utilisé dans le système de réactivité de Vue.js dans la version 3.5 et 3.6.
 
-Et pourquoi Alien Signals ? Tout simplement parce que c'est agnostique du framework (et même du language) et que c'est tellement bas niveau, qu'est il possible de refaire la réactivité de certains frameworks et d'implémenter la RFC du TC39 sur les signaux.
+C'est intéressant de noter que la logique d'Alien Signals est agnostique du language et elle a été portée dans d'autres languages comme Dart, Java, C#, Go, Lua.
 
-Développé par Johnson Chu pour répondre à ces besoins dans Volar, le framework d'extension pour LSP.
+Elle a été développée par Johnson Chu pour répondre à ces besoins dans Volar, le framework d'extension pour LSP. Johnson travaille aussi sur Vue Language Server et la réactivité dans Vue.js.
 
-Finalement, c'est une implémentation qui permet de faire évoluer celle de Vue 3 donc ce n'est pas un petit projet random mais un projet bien solide et sérieux.
+Du coup, l'objectif, c'est de comprendre pourquoi, quand je mets à jour la quantité, le système sait qu'il doit ré-exécuter la fonction de callback de l'effet.
 
 -->
 
@@ -176,7 +177,6 @@ clicks: 4
 <GraphTheory class="absolute inset-4" />
 
 <!--
-
 Un graph, c'est une structure mathématique qui permet de représenter des relations entre des objets.
 
 Le premier élément, c'est le noeud [click], ou node, qui représente l'endroit où on lieu les calculs. Dans un graph, on peut avoir plusieurs noeuds [click], et chaque noeud peut relié avec un ou pluieurs autres neouds avec un lien, link, ou edge. Dans notre cas, on remarque que le lien est une flèche, ce qui signifie que le graph a une direction, on dit alors qu'il est orienté. On ne peut parcourir les liens que dans le sens de la flèche.
@@ -187,7 +187,7 @@ Ensuite, notre graph, il est dit acyclique, c'est à dire qu'il n'est pas possib
 
 Enfin, il y a une dernière notion qui nous intéresse, c'est celle du tri topologique. Un tri topologique est un ordre linéaire des noeuds d'un graph orienté acyclique tel que pour chaque lien orienté, le noeud de départ vient avant le noeud d'arrivée dans l'ordre.
 
-Prendre un example pour le tri topologique.
+Prendre un example pour le tri topologique et le faire visualiser comme un tableau dans lequel on place les noeuds les un après les autres.
 
 -->
 
@@ -208,12 +208,6 @@ Et ce qui est bien avec ces lites doublements chaînées, c'est qu'on peut les r
 Présenter la slide.
 
 -->
-
----
-name: Vous suivez encore ? 🫣
----
-
-<Inalia :questionId="3" />
 
 ---
 name: Le lien entre les graphes et la réactivité
@@ -245,6 +239,14 @@ effect(() => {
   </Card>
 </div>
 
+<!--
+- Visualisation logique
+- Visualisation de communication entre les éléments
+
+Deux représentation distinctes pour faciliter la suite.
+
+-->
+
 ---
 layout: bottom-left-card
 transition: slide-up
@@ -263,7 +265,6 @@ effectScope(() => {})
 ```
 
 <!--
-
 Expliquer la notion de subscriber et de dependency pour chacun des éléments
 
 - signal: dependency
@@ -271,6 +272,9 @@ Expliquer la notion de subscriber et de dependency pour chacun des éléments
 - effect: dependency et subscriber
 - effectScope: subscriber
 
+dependency: on peut s'y abonner
+
+subscriber: s'il porte des dependencies, il s'abonne
 -->
 
 ---
