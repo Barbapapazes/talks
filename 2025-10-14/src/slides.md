@@ -33,7 +33,12 @@ layout: inalia-overview
 name: Quel framework pour le frontend ?
 ---
 
-<Inalia :questionId="1" />
+<Inalia
+  question="Quel framework pour le frontend ?"
+  type="multiple_select"
+  chart="bar"
+  :data="[{ label: 'Vue', count: 13, color: '#35C63F' }, { label: 'React', count: 31, color: '#00E3E6' }, { label: 'Angular', count: 14, color: '#BF00E6' }, { label: 'Svelte', count: 4, color: '#E66200' }, { label: 'Solid', count: 1, color: '#008CE6' }, { label: 'Qwik', count: 0, color: '#E500E6' }, { label: 'Aucun', count: 2, color: '#E60045' }, { label: 'Un autre', count: 0, color: '#000000' }]"
+/>
 
 <!--
 
@@ -52,7 +57,12 @@ https://www.builder.io/blog/reactivity-across-frameworks
 name: Qui s'est déjà questionné sur le fonctionnement profond de la réactivité de son framework ?
 ---
 
-<Inalia :questionId="2" />
+<Inalia
+  question="Qui s'est déjà questionné sur le fonctionnement profond de la réactivité de son framework ?"
+  type="single_select"
+  chart="donut"
+  :data="[{ label: 'Moi', count: 30, color: '#00E650' }, { label: 'Pas moi', count: 16, color: '#E60089' }]"
+/>
 
 ---
 name: L'équation
