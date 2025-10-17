@@ -25,6 +25,6 @@
     "vite.config.ts",
     "uno.config.ts",
     "eslint.config.ts",
-    "scripts/**/*.ts"
+    ".scripts/**/*.ts"
   ]
 }
