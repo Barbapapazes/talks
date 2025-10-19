@@ -24,13 +24,14 @@ function generateMeta() {
 
     const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as Package
     const event = content.event
-    const url = `https://talks.soubiran.dev/${date}/${content.name}`
+    const prefix = `${date}/${content.name}`
+    const url = `https://talks.soubiran.dev/${prefix}`
     const thumbnail_url = `${url}/thumbnail.png`
     const pdf_url = `${url}/pdf`
     const github_url = `${url}/src`
     const recording_url = `${url}/recording`
     const audio_url = `${url}/audio`
-    const transcript = `${url}/transcript`
+    const transcript = `https://soubiran.dev/${prefix}/transcript`
 
     const path = packageJSON.split('/').slice(0, -1).join('/')
     const slidesContent = readFileSync(join(path, 'slides.md'), 'utf-8')
