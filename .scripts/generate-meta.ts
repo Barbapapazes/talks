@@ -1,19 +1,10 @@
+import type { Package } from './_types.ts'
 import { readFileSync, writeFileSync } from 'node:fs'
-import { fdir as Fdir } from 'fdir'
 import { join } from 'pathe'
+import { getPackagesJson } from './_utils.ts'
 
 function generateMeta() {
-  const packagesJSON = new Fdir()
-    .withBasePath()
-    .glob('./**/package.json')
-    .exclude((dirName) => {
-      return dirName.startsWith('.') || dirName.startsWith('node_modules') || dirName.startsWith('theme')
-    })
-    .filter((dirName) => {
-      return !dirName.startsWith('package.json')
-    })
-    .crawl('./')
-    .sync()
+  const packagesJson = getPackagesJson()
 
   const meta = [] as {
     name: string
@@ -24,22 +15,22 @@ function generateMeta() {
     thumbnail_url: string
     github_url?: string
     recording_url?: string
+    audio_url?: string
+    transcript?: string
   }[]
 
-  for (const packageJSON of packagesJSON) {
+  for (const packageJSON of packagesJson) {
     const date = packageJSON.split('/')[0]
 
-    const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as {
-      name: string
-      event: string
-      recording?: string
-    }
+    const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as Package
     const event = content.event
     const url = `https://talks.soubiran.dev/${date}/${content.name}`
-    const pdf_url = `${url}/pdf`
     const thumbnail_url = `${url}/thumbnail.png`
-    const github_url = `https://github.com/Barbapapazes/talks/tree/main/${date}`
+    const pdf_url = `${url}/pdf`
+    const github_url = `${url}/src`
     const recording_url = `${url}/recording`
+    const audio_url = `${url}/audio`
+    const transcript = `${url}/transcript`
 
     const path = packageJSON.split('/').slice(0, -1).join('/')
     const slidesContent = readFileSync(join(path, 'slides.md'), 'utf-8')
@@ -55,10 +46,12 @@ function generateMeta() {
       event,
       date,
       url,
-      pdf_url,
       thumbnail_url,
+      pdf_url,
       github_url,
       recording_url: content.recording ? recording_url : undefined,
+      audio_url: content.recording ? audio_url : undefined,
+      transcript: content.recording ? transcript : undefined,
     })
   }
 

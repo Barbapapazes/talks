@@ -1,26 +1,15 @@
 import { readFileSync, writeFileSync } from 'node:fs'
-import { fdir as Fdir } from 'fdir'
 import { join } from 'pathe'
+import { getPackagesJson } from './_utils.ts'
 
 function generateRedirects() {
-  const packagesJSON = new Fdir()
-    .withBasePath()
-    .glob('./**/package.json')
-    .exclude((dirName) => {
-      return dirName.startsWith('.') || dirName.startsWith('node_modules') || dirName.startsWith('theme')
-    })
-    .filter((dirName) => {
-      return !dirName.startsWith('package.json')
-    })
-    .crawl('./')
-    .sync()
-
+  const packagesJson = getPackagesJson()
   const redirects = [] as string[]
 
-  for (const packageJSON of packagesJSON) {
-    const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as { name: string, recording?: string }
+  for (const packageJson of packagesJson) {
+    const content = JSON.parse(readFileSync(packageJson, 'utf-8')) as { name: string, recording?: string }
 
-    const date = packageJSON.split('/')[0]
+    const date = packageJson.split('/')[0]
     const name = content.name
 
     redirects.push(`/${date}/${name}/pdf https://pdf.talks.soubiran.dev/${date}/${date}-${name}.pdf 302`)
@@ -28,6 +17,8 @@ function generateRedirects() {
 
     if (content.recording) {
       redirects.push(`/${date}/${name}/recording ${content.recording} 302`)
+      redirects.push(`/${date}/${name}/audio https://audio.talks.soubiran.dev/${date}/${date}-${name}.mp3 302`)
+      redirects.push(`/${date}/${name}/transcript https://soubiran.dev/talks/${date}/${name} 302`)
     }
   }
 

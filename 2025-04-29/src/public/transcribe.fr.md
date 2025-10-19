@@ -1,0 +1,17 @@
+Bonjour à tous et bienvenue. Je suis très heureux d’être là pour vous parler de JavaScript et, surtout, de ses paquets, les node_modules. Avant de commencer, scannez le QR code: vous y trouverez mes coordonnées, une question à ne pas ouvrir tout de suite, des liens pour poser des questions, noter le talk en fin de session, et des réactions en temps réel.
+
+Je commence avec un graphique: le package is-string atteint 160 millions de téléchargements par mois en 2024 et continue de croître. Sa fonctionnalité est simple: déterminer si une valeur JavaScript est une chaîne de caractères. Pour comparer, React culmine à environ 140 millions, et Tailwind autour de 60 millions. Pourtant, si je vous demande qui l’a installé, la plupart répondront non.
+
+Qui installe ces paquets, et avec quelles conséquences? Quand vous installez via NPM, vous récupérez non seulement le code exécutable, mais aussi README, licence, package.json et d’autres fichiers non exécutables. Tout cela prend du temps d’installation et de l’espace disque. Je vais le démontrer avec quelques outils utiles pour comprendre nos node_modules.
+
+D’abord, Node Modules Inspector. On y recherche is-string. L’outil s’exécute dans un WebContainer, donc l’analyse reflète fidèlement une installation locale. Résultat: is-string installe 15 dépendances et pèse environ 254 Ko. La ventilation montre que seulement 10 à 20% est réellement du JavaScript utilisé; sur 250 Ko, à peine 25 Ko servent au runtime.
+
+Ce constat mène à l’initiative Ecosystem Performance, une communauté qui vise à accélérer l’écosystème JavaScript: réduction et modernisation des dépendances, outils d’analyse, propositions d’alternatives natives ou plus légères, et contributions directes pour aider les projets à simplifier leurs node_modules.
+
+Avant même d’ajouter une dépendance, on peut évaluer sa pertinence. Package Size, l’outil “historique”, installe le paquet en WebContainer et affiche taille d’installation, arborescence des dépendances, répartition des types de fichiers, et poids ajouté au bundle. Pour is-string, on observe ~15 paquets, ~270 Ko installés, et environ 15 Ko minifiés potentiellement intégrés au bundle.
+
+Autre outil: DevTree. Il maintient une base de substitutions natives et d’alternatives plus modernes. On peut analyser un package ou uploader son package.json. is-string est classé “micro utility” avec une alternative native: typeof valeur === 'string'. Le même raisonnement s’applique à des micro-paquets comme is-number; ces suggestions aident à réduire les dépendances superflues.
+
+Enfin, npmgraph pour visualiser l’arbre de dépendances. Prenons Storybook. En 8.2, l’arbre compte environ 400 dépendances transitives. Cela entraîne des installations longues, des démarrages lents (beaucoup de fichiers à lire) et une charge de maintenance élevée: surveiller des dizaines de mises à jour, des régressions potentielles au fin fond de l’arbre, etc. Après un travail conjoint avec Ecosystem Performance, Storybook 8.4 réduit drastiquement cet arbre à quelques dizaines de dépendances, simplifiant maintenance et performances.
+
+Pour en savoir plus, consultez e18.dev et le dépôt qui maintient la cartographie des remplacements (un grand JSON partagé entre outils). Le Discord de la communauté est très actif, avec notamment des échanges réguliers autour de Vite. Merci pour votre attention; je suis Estéban Soubiran. Si vous souhaitez noter le talk, le lien est sur la page Mixit.

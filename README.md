@@ -4,8 +4,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 ---
 
-Clone PDF to S3 bucket:
+Copy assets to S3 bucket:
 
 ```sh
-rclone copy . perso:talks-soubiran-dev --include "*.pdf"
+rclone copy . perso:talks-soubiran-dev --filter-from ./copy-assets.txt
 ```
