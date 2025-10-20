@@ -17,7 +17,7 @@ function generateMeta() {
     github_url?: string
     recording_url?: string
     audio_url?: string
-    transcript?: string
+    transcript_url?: string
   }[]
 
   for (const packageJSON of packagesJson) {
