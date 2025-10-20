@@ -62,7 +62,7 @@ async function downloadAudio(packageJson: string) {
     )
   }
 
-  const transcriptionFileName = `${folder}/src/public/transcribe.md`
+  const transcriptionFileName = `${folder}/src/public/transcript.md`
   // ensure directory exists before writing transcription
   try {
     await writeFile(transcriptionFileName, '', { flag: 'a' })

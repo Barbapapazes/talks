@@ -1,7 +1,7 @@
 ---
 mode: 'agent'
 model: GPT-5
-description: Translate talk transcripts between English and French; preserve meaning and technical tokens; write to transcribe.fr.md or transcribe.en.md; do not modify versions.
+description: Translate talk transcripts between English and French; preserve meaning and technical tokens; write to transcript.fr.md or transcript.en.md; do not modify versions.
 ---
 
 Goal
@@ -18,8 +18,8 @@ Output format
 - Keep paragraphing: 1–3 sentences per paragraph, separated by a single blank line.
 - Do not include the source text; output must be translation only.
 - File naming and destination:
-  - If target is French, write to a file named transcribe.fr.md in the same directory.
-  - If target is English, write to a file named transcribe.en.md in the same directory.
+  - If target is French, write to a file named transcript.fr.md in the same directory.
+  - If target is English, write to a file named transcript.en.md in the same directory.
   - Do not modify or overwrite the source/original-language file.
 
 Translation rules (Do)
