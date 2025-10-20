@@ -61,8 +61,8 @@ Typography and punctuation
 Tiny examples
 - EN → FR
   Input: Today I’m going to talk about Nuxt 3. It ships with an API server.
-  Output: Aujourd’hui, je vais parler de Nuxt 3. Il est livré avec un serveur d’API.
+  Output: Aujourd’hui, je vais parler de Nuxt 3. Il est livré avec un serveur d’API.
 
 - FR → EN
-  Input: Aujourd’hui, je vais parler de Nuxt 3. Il est livré avec un serveur d’API.
+  Input: Aujourd’hui, je vais parler de Nuxt 3. Il est livré avec un serveur d’API.
   Output: Today, I’m going to talk about Nuxt 3. It comes with an API server.
