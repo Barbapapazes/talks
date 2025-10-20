@@ -45,6 +45,7 @@ function generateMeta() {
     meta.push({
       name,
       event,
+      prefix,
       date,
       url,
       thumbnail_url,
