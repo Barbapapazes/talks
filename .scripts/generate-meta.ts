@@ -32,7 +32,7 @@ function generateMeta() {
     const github_url = `${url}/src`
     const recording_url = `${url}/recording`
     const audio_url = `${url}/audio`
-    const transcript = `https://soubiran.dev/${prefix}/transcript`
+    const transcript_url = `https://soubiran.dev/talks/${prefix}`
 
     const path = packageJSON.split('/').slice(0, -1).join('/')
     const slidesContent = readFileSync(join(path, 'slides.md'), 'utf-8')
@@ -54,7 +54,7 @@ function generateMeta() {
       github_url,
       recording_url: content.recording ? recording_url : undefined,
       audio_url: content.recording ? audio_url : undefined,
-      transcript: content.recording ? transcript : undefined,
+      transcript_url: content.recording ? transcript_url : undefined,
     })
   }
 
