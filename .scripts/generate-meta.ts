@@ -9,6 +9,7 @@ function generateMeta() {
   const meta = [] as {
     name: string
     date: string
+    prefix: string
     event: string
     url: string
     pdf_url: string
