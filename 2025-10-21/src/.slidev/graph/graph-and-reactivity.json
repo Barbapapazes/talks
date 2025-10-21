@@ -1,0 +1,26 @@
+{
+  "id": "graph-and-reactivity",
+  "pos": {
+    "quantity": {
+      "x": -78,
+      "y": -43
+    },
+    "price": {
+      "x": 89,
+      "y": -41
+    },
+    "total": {
+      "x": 6,
+      "y": 8
+    },
+    "effect": {
+      "x": 6,
+      "y": 96
+    }
+  },
+  "view": {
+    "x": 0,
+    "y": 0
+  },
+  "scale": 1
+}
