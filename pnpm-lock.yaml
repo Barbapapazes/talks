@@ -149,8 +149,8 @@ importers:
   2025-04-17/src:
     devDependencies:
       alien-signals:
-        specifier: ^1.0.13
-        version: 1.0.13
+        specifier: ^3.0.0
+        version: 3.0.3
 
   2025-04-18/src: {}
 
@@ -159,14 +159,14 @@ importers:
   2025-04-30/src:
     devDependencies:
       alien-signals:
-        specifier: ^1.0.13
-        version: 1.0.13
+        specifier: ^3.0.0
+        version: 3.0.3
 
   2025-06-25/src:
     devDependencies:
       alien-signals:
-        specifier: ^1.0.13
-        version: 1.0.13
+        specifier: ^3.0.0
+        version: 3.0.3
 
   2025-06-26/src: {}
 
@@ -177,16 +177,16 @@ importers:
   2025-10-14/src:
     devDependencies:
       alien-signals:
-        specifier: ^1.0.13
-        version: 1.0.13
+        specifier: ^3.0.0
+        version: 3.0.3
 
   2025-10-17/src: {}
 
   2025-10-21/src:
     devDependencies:
       alien-signals:
-        specifier: ^1.0.13
-        version: 1.0.13
+        specifier: ^3.0.0
+        version: 3.0.3
 
   theme:
     dependencies:
@@ -1894,11 +1894,11 @@ packages:
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
 
-  alien-signals@1.0.13:
-    resolution: {integrity: sha512-OGj9yyTnJEttvzhTUWuscOvtqxq5vrhF7vL9oS0xJ2mK0ItPYP1/y+vCFebfxoEyAz0++1AIwJ5CMr+Fk3nDmg==}
-
   alien-signals@2.0.7:
     resolution: {integrity: sha512-wE7y3jmYeb0+h6mr5BOovuqhFv22O/MV9j5p0ndJsa7z1zJNPGQ4ph5pQk/kTTCWRC3xsA4SmtwmkzQO+7NCNg==}
+
+  alien-signals@3.0.3:
+    resolution: {integrity: sha512-2JXjom6R7ZwrISpUphLhf4htUq1aKRCennTJ6u9kFfr3sLmC9+I4CxxVi+McoFnIg+p1HnVrfLT/iCt4Dlz//Q==}
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -7181,9 +7181,9 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  alien-signals@1.0.13: {}
-
   alien-signals@2.0.7: {}
+
+  alien-signals@3.0.3: {}
 
   ansi-regex@5.0.1: {}
 
