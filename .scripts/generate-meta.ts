@@ -43,6 +43,10 @@ function generateMeta() {
       throw new Error('Name not found')
     }
 
+    if (meta.find(m => m.name === name && m.event === event)) {
+      throw new Error(`Duplicate meta entry found for ${name} on ${event} (${date})`)
+    }
+
     meta.push({
       name,
       event,

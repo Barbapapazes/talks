@@ -11,7 +11,7 @@ async function startReadyDeck() {
 
   const src = resolve(deck.folder, 'src')
 
-  await execa('rm', ['.env'], { cwd: src })
+  await execa('rm', ['-f', '.env'], { cwd: src })
   await execa('pnpm', ['run', 'thumbnail'], { cwd: src })
   await execa('pnpm', ['run', 'thumbnail:cp'], { cwd: src })
   await execa('pnpm', ['run', 'export'], { cwd: src })
