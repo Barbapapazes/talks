@@ -22,11 +22,11 @@ function generateMeta() {
   }[]
 
   for (const packageJSON of packagesJson) {
-    const date = packageJSON.split('/')[0]
+    const dir = packageJSON.split('/')[0]
 
     const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as Package
     const event = content.event
-    const prefix = `${date}/${content.name}`
+    const prefix = `${dir}/${content.name}`
     const url = `https://talks.soubiran.dev/${prefix}`
     const thumbnail_url = `${url}/thumbnail.png`
     const pdf_url = `${url}/pdf`
@@ -46,14 +46,15 @@ function generateMeta() {
     }
 
     if (meta.find(m => m.name === name && m.event === event)) {
-      throw new Error(`Duplicate meta entry found for ${name} on ${event} (${date})`)
+      throw new Error(`Duplicate meta entry found for ${name} on ${event} (${dir})`)
     }
 
     meta.push({
       name,
       event,
       prefix,
-      date,
+      // Keep only the first 10 characters (date) because talks given on the same day are suffixed with -1, -2, ...
+      date: dir.slice(0, 10),
       url,
       thumbnail_url,
       pdf_url,
