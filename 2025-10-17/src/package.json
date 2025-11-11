@@ -1,6 +1,7 @@
 {
   "name": "devfest-nantes",
   "event": "Devfest Nantes",
+  "recording": "https://youtu.be/YHl6fUM5PDw",
   "article": "https://soubiran.dev/posts/my-adventure-to-nantes-for-europes-largest-devfest",
   "private": true,
   "scripts": {
