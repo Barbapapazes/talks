@@ -1,6 +1,7 @@
 {
   "name": "bdx-io",
   "event": "BDX IO",
+  "article": "https://soubiran.dev/posts/twice-in-one-day-speaking-at-bdx-io-2025-at-bordeaux",
   "private": true,
   "scripts": {
     "dev": "slidev",

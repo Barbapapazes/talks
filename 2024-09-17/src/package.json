@@ -1,6 +1,7 @@
 {
   "name": "pragvue",
   "event": "PragVue",
+  "article": "https://soubiran.dev/posts/pragvue-2024-travel-food-people-and-a-lot-of-vue-js",
   "private": true,
   "scripts": {
     "dev": "slidev",

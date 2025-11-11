@@ -2,6 +2,7 @@
   "name": "devoxxfr",
   "event": "Devoxx France",
   "recording": "https://youtu.be/Iyts6NE6bps",
+  "article": "https://soubiran.dev/posts/beyond-the-tech-people-who-made-devoxx-france-2025-special",
   "private": true,
   "scripts": {
     "dev": "slidev",

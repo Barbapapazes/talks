@@ -2,6 +2,7 @@
   "name": "mixit",
   "event": "MiXiT",
   "recording": "https://youtu.be/VlyS6bJZYYU",
+  "article": "https://soubiran.dev/posts/the-conference-for-ethics-and-diversity-in-tech-mixit-2025",
   "private": true,
   "scripts": {
     "dev": "slidev",

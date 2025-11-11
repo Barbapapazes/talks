@@ -3,4 +3,5 @@ export interface Package {
   name: string
   event: string
   recording?: string
+  article?: string
 }

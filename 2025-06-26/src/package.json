@@ -1,6 +1,7 @@
 {
   "name": "breizhcamp",
   "event": "BreizhCamp",
+  "article": "https://soubiran.dev/posts/breizhcamp-2025-my-first-time-in-brittany-as-a-speaker",
   "private": true,
   "scripts": {
     "dev": "slidev",

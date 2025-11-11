@@ -2,6 +2,7 @@
   "name": "strasbourgjs",
   "event": "StrasbourgJS",
   "recording": "https://youtu.be/mPcJXqaBLFM",
+  "article": "https://soubiran.dev/posts/my-first-meetup-talk-a-dive-into-the-large-unjs-ecosystem",
   "private": true,
   "scripts": {
     "dev": "slidev",

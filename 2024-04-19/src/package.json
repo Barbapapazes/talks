@@ -2,6 +2,7 @@
   "name": "devoxxfr",
   "event": "Devoxx France",
   "recording": "https://youtu.be/0BApl8r1VWc",
+  "article": "https://soubiran.dev/posts/speaking-at-devoxx-france-2024-insights-and-highlights",
   "private": true,
   "scripts": {
     "dev": "slidev",
