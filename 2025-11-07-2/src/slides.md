@@ -18,7 +18,7 @@ title: "La réactivité et les signaux: démystifions la magie du frontend"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: web,development,vue,reactivity,frontend
-event: BDX IO
+event: BDX I/O
 date: 07 novembre 2025
 ---
 
