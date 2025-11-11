@@ -2,6 +2,7 @@ import type { Package } from './_types.ts'
 import { exec as _exec } from 'node:child_process'
 import { createReadStream, existsSync, mkdirSync } from 'node:fs'
 import { readFile, writeFile } from 'node:fs/promises'
+import process from 'node:process'
 import { promisify } from 'node:util'
 import OpenAI from 'openai'
 import { getPackagesJson } from './_utils.ts'
@@ -14,7 +15,17 @@ const openai = new OpenAI()
 async function downloadRecordings() {
   const packagesJson = getPackagesJson()
 
-  await Promise.allSettled(packagesJson.map(packageJson => downloadAudio(packageJson)))
+  const results = await Promise.allSettled(packagesJson.map(packageJson => downloadAudio(packageJson)))
+
+  const errors = results.filter(r => r.status === 'rejected') as PromiseRejectedResult[]
+
+  if (errors.length > 0) {
+    console.error('Errors occurred during processing:')
+    for (const err of errors) {
+      console.error(err.reason)
+    }
+    process.exit(1)
+  }
 }
 
 downloadRecordings()
@@ -62,13 +73,10 @@ async function downloadAudio(packageJson: string) {
     )
   }
 
-  const transcriptionFileName = `${folder}/src/public/transcript.md`
-  // ensure directory exists before writing transcription
-  try {
-    await writeFile(transcriptionFileName, '', { flag: 'a' })
-  }
-  catch {
-    // ignore; we'll create file later when writing
+  const transcriptionFileName = `${folder}/src/public/transcript.en.md`
+  if (!existsSync(transcriptionFileName)) {
+    // ensure directory exists before writing transcription
+    await writeFile(transcriptionFileName, '', { flag: 'a' }).then(() => {})
   }
 
   // If transcript already exists and is non-empty, skip transcription
