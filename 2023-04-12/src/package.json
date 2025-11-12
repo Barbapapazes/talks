@@ -1,8 +1,9 @@
 {
   "name": "devoxxfr",
   "event": "Devoxx France",
-  "recording": "https://youtu.be/MIM6E_XMRHQ",
   "private": true,
+  "description": "Découvrez Unpoly, une bibliothèque JavaScript permettant de créer des applications web progressives sans framework frontend lourd.",
+  "recording": "https://youtu.be/MIM6E_XMRHQ",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2023-04-12/devoxxfr/ --out ../../dist/2023-04-12/devoxxfr",

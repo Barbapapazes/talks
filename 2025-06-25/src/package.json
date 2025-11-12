@@ -1,8 +1,9 @@
 {
   "name": "breizhcamp",
   "event": "BreizhCamp",
-  "article": "https://soubiran.dev/posts/breizhcamp-2025-my-first-time-in-brittany-as-a-speaker",
   "private": true,
+  "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
+  "article": "https://soubiran.dev/posts/breizhcamp-2025-my-first-time-in-brittany-as-a-speaker",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-06-25/breizhcamp/ --out ../../dist/2025-06-25/breizhcamp",
