@@ -1,8 +1,9 @@
 {
   "name": "bdx-io",
   "event": "BDX I/O",
-  "article": "https://soubiran.dev/posts/twice-in-one-day-speaking-at-bdx-io-2025-at-bordeaux",
   "private": true,
+  "description": "En JavaScript, il y a un paquet pour tout... et souvent pour rien.",
+  "article": "https://soubiran.dev/posts/twice-in-one-day-speaking-at-bdx-io-2025-at-bordeaux",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-11-07-1/bdx-io/ --out ../../dist/2025-11-07-1/bdx-io",

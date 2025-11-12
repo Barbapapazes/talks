@@ -2,6 +2,7 @@
   "name": "strasbourgjs",
   "event": "StrasbourgJS",
   "private": true,
+  "description": "La réactivité et les signaux: démystifions la magie du frontend",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-10-21/strasbourgjs/ --out ../../dist/2025-10-21/strasbourgjs",

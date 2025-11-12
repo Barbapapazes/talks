@@ -2,6 +2,7 @@
   "name": "nodejs-paris",
   "event": "Node.js Paris",
   "private": true,
+  "description": "Vous n'avez pas besoin de ces nouvelles API Node.js",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-03-05/nodejs-paris/ --out ../../dist/2025-03-05/nodejs-paris",

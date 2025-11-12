@@ -1,8 +1,9 @@
 {
   "name": "pragvue",
   "event": "PragVue",
-  "article": "https://soubiran.dev/posts/pragvue-2024-travel-food-people-and-a-lot-of-vue-js",
   "private": true,
+  "description": "You've dreamed it? Create full-stack apps with Nuxt!",
+  "article": "https://soubiran.dev/posts/pragvue-2024-travel-food-people-and-a-lot-of-vue-js",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-09-17/pragvue/ --out ../../dist/2024-09-17/pragvue",

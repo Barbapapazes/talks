@@ -2,6 +2,7 @@
   "name": "humantalks-paris",
   "event": "HumanTalks Paris",
   "private": true,
+  "description": "Inertia: Un Anneau pour les gouverner tous",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-09-09/humantalks-paris/ --out ../../dist/2025-09-09/humantalks-paris",

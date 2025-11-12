@@ -1,9 +1,10 @@
 {
   "name": "devoxxfr",
   "event": "Devoxx France",
+  "private": true,
+  "description": "La réactivité et les signaux: démystifions la magie du frontend",
   "recording": "https://youtu.be/Iyts6NE6bps",
   "article": "https://soubiran.dev/posts/beyond-the-tech-people-who-made-devoxx-france-2025-special",
-  "private": true,
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-04-17/devoxxfr/ --out ../../dist/2025-04-17/devoxxfr",

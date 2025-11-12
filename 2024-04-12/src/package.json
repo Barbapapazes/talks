@@ -1,9 +1,10 @@
 {
   "name": "strasbourgjs",
   "event": "StrasbourgJS",
+  "private": true,
+  "description": "Découvrons ensemble l'écosystème UnJS",
   "recording": "https://youtu.be/mPcJXqaBLFM",
   "article": "https://soubiran.dev/posts/my-first-meetup-talk-a-dive-into-the-large-unjs-ecosystem",
-  "private": true,
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-04-12/strasbourgjs/ --out ../../dist/2024-04-12/strasbourgjs",

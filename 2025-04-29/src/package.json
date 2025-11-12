@@ -1,9 +1,10 @@
 {
   "name": "mixit",
   "event": "MiXiT",
+  "private": true,
+  "description": "En JavaScript, il y a un paquet pour tout... et souvent pour rien.",
   "recording": "https://youtu.be/VlyS6bJZYYU",
   "article": "https://soubiran.dev/posts/the-conference-for-ethics-and-diversity-in-tech-mixit-2025",
-  "private": true,
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-04-29/mixit/ --out ../../dist/2025-04-29/mixit",

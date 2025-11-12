@@ -1,8 +1,9 @@
 {
   "name": "nuxtnation",
   "event": "Nuxt Nation",
-  "recording": "https://youtu.be/I4-YfEn8K0w",
   "private": true,
+  "description": "Ship Nuxt apps that scale",
+  "recording": "https://youtu.be/I4-YfEn8K0w",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-11-13/nuxtnation/ --out ../../dist/2024-11-13/nuxtnation",

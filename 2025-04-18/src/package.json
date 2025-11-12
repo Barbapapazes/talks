@@ -1,9 +1,10 @@
 {
   "name": "devoxxfr",
   "event": "Devoxx France",
+  "private": true,
+  "description": "En JavaScript, il y a un paquet pour tout... et souvent pour rien.",
   "recording": "https://youtu.be/oPsMeG9zKmE",
   "article": "https://soubiran.dev/posts/beyond-the-tech-people-who-made-devoxx-france-2025-special",
-  "private": true,
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-04-18/devoxxfr/ --out ../../dist/2025-04-18/devoxxfr",

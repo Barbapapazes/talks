@@ -2,6 +2,7 @@
   "name": "vuejs-paris",
   "event": "Vue.js Paris",
   "private": true,
+  "description": "Nuxt, NuxtHub et le full-stack",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-12-04/vuejs-paris/ --out ../../dist/2024-12-04/vuejs-paris",

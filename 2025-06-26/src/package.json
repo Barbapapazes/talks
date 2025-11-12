@@ -1,8 +1,9 @@
 {
   "name": "breizhcamp",
   "event": "BreizhCamp",
-  "article": "https://soubiran.dev/posts/breizhcamp-2025-my-first-time-in-brittany-as-a-speaker",
   "private": true,
+  "description": "En JavaScript, il y a un paquet pour tout... et souvent pour rien.",
+  "article": "https://soubiran.dev/posts/breizhcamp-2025-my-first-time-in-brittany-as-a-speaker",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-06-26/breizhcamp/ --out ../../dist/2025-06-26/breizhcamp",

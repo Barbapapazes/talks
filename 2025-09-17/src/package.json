@@ -2,6 +2,7 @@
   "name": "nodejs-paris",
   "event": "Node.js Paris",
   "private": true,
+  "description": "Inertia: Un Anneau pour les gouverner tous",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-09-17/nodejs-paris/ --out ../../dist/2025-09-17/nodejs-paris",

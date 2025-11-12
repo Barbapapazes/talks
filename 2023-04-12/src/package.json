@@ -1,8 +1,9 @@
 {
   "name": "devoxxfr",
   "event": "Devoxx France",
-  "recording": "https://youtu.be/MIM6E_XMRHQ",
   "private": true,
+  "description": "Unpoly pour reprendre le contrôle !",
+  "recording": "https://youtu.be/MIM6E_XMRHQ",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2023-04-12/devoxxfr/ --out ../../dist/2023-04-12/devoxxfr",
