@@ -2,7 +2,7 @@
   "name": "devoxxfr",
   "event": "Devoxx France",
   "private": true,
-  "description": "Unifié et Universel, le JavaScript avec UnJS",
+  "description": "Plongez dans UnJS : des outils JavaScript unifiés et universels qui fonctionnent partout, du navigateur à Node.js et au-delà.",
   "recording": "https://youtu.be/0BApl8r1VWc",
   "article": "https://soubiran.dev/posts/speaking-at-devoxx-france-2024-insights-and-highlights",
   "scripts": {

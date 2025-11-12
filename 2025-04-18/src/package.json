@@ -2,7 +2,7 @@
   "name": "devoxxfr",
   "event": "Devoxx France",
   "private": true,
-  "description": "En JavaScript, il y a un paquet pour tout... et souvent pour rien.",
+  "description": "Explorez le paradoxe des packages JavaScript : omniprésents mais souvent inutiles. Apprenez à optimiser vos dépendances efficacement.",
   "recording": "https://youtu.be/oPsMeG9zKmE",
   "article": "https://soubiran.dev/posts/beyond-the-tech-people-who-made-devoxx-france-2025-special",
   "scripts": {

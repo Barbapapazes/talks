@@ -2,7 +2,7 @@
   "name": "takimeet",
   "event": "TakiMeet",
   "private": true,
-  "description": "Fluidifier l'expérience utilisateur",
+  "description": "Améliorez l'expérience utilisateur en créant des interfaces fluides et réactives grâce aux techniques modernes de développement web.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-11-20/takimeet/ --out ../../dist/2024-11-20/takimeet",

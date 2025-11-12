@@ -2,7 +2,7 @@
   "name": "vuejs-paris",
   "event": "Vue.js Paris",
   "private": true,
-  "description": "Nuxt, NuxtHub et le full-stack",
+  "description": "Explorez NuxtHub, la plateforme de déploiement full-stack pour Nuxt, et simplifiez la mise en production de vos applications.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-12-04/vuejs-paris/ --out ../../dist/2024-12-04/vuejs-paris",

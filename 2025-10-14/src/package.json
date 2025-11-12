@@ -2,7 +2,7 @@
   "name": "paris-typescript",
   "event": "Paris TypeScript",
   "private": true,
-  "description": "La réactivité et les signaux: démystifions la magie du frontend",
+  "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-10-14/paris-typescript/ --out ../../dist/2025-10-14/paris-typescript",

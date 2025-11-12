@@ -2,7 +2,7 @@
   "name": "mixit",
   "event": "MiXiT",
   "private": true,
-  "description": "En JavaScript, il y a un paquet pour tout... et souvent pour rien.",
+  "description": "Explorez le paradoxe des packages JavaScript : omniprésents mais souvent inutiles. Apprenez à optimiser vos dépendances efficacement.",
   "recording": "https://youtu.be/VlyS6bJZYYU",
   "article": "https://soubiran.dev/posts/the-conference-for-ethics-and-diversity-in-tech-mixit-2025",
   "scripts": {

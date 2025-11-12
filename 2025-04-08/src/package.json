@@ -2,7 +2,7 @@
   "name": "human-talks",
   "event": "HumanTalks Paris",
   "private": true,
-  "description": "Ship Nuxt apps that scale",
+  "description": "Découvrez comment déployer et faire évoluer vos applications Nuxt en production avec les meilleures pratiques et outils modernes.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-04-08/human-talks/ --out ../../dist/2025-04-08/human-talks",

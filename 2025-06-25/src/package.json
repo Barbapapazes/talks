@@ -2,7 +2,7 @@
   "name": "breizhcamp",
   "event": "BreizhCamp",
   "private": true,
-  "description": "La réactivité et les signaux: démystifions la magie du frontend",
+  "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
   "article": "https://soubiran.dev/posts/breizhcamp-2025-my-first-time-in-brittany-as-a-speaker",
   "scripts": {
     "dev": "slidev",

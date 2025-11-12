@@ -2,7 +2,7 @@
   "name": "paris-typescript",
   "event": "Paris TypeScript",
   "private": true,
-  "description": "Deviens full-stack avec TypeScript",
+  "description": "Devenez développeur full-stack en maîtrisant TypeScript côté backend avec AdonisJS, un framework élégant et type-safe.",
   "recording": "https://youtu.be/xKrok6ZtHUk",
   "scripts": {
     "dev": "slidev",

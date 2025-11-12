@@ -2,7 +2,7 @@
   "name": "humantalks-paris",
   "event": "HumanTalks Paris",
   "private": true,
-  "description": "Inertia: Un Anneau pour les gouverner tous",
+  "description": "Découvrez Inertia.js, le pont élégant entre Laravel et Vue/React qui simplifie la création d'applications full-stack modernes.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-09-09/humantalks-paris/ --out ../../dist/2025-09-09/humantalks-paris",

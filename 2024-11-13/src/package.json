@@ -2,7 +2,7 @@
   "name": "nuxtnation",
   "event": "Nuxt Nation",
   "private": true,
-  "description": "Ship Nuxt apps that scale",
+  "description": "Découvrez comment déployer et faire évoluer vos applications Nuxt en production avec les meilleures pratiques et outils modernes.",
   "recording": "https://youtu.be/I4-YfEn8K0w",
   "scripts": {
     "dev": "slidev",

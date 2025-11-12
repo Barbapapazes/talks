@@ -2,7 +2,7 @@
   "name": "devoxxfr",
   "event": "Devoxx France",
   "private": true,
-  "description": "La réactivité et les signaux: démystifions la magie du frontend",
+  "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
   "recording": "https://youtu.be/Iyts6NE6bps",
   "article": "https://soubiran.dev/posts/beyond-the-tech-people-who-made-devoxx-france-2025-special",
   "scripts": {

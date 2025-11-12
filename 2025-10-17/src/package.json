@@ -2,7 +2,7 @@
   "name": "devfest-nantes",
   "event": "Devfest Nantes",
   "private": true,
-  "description": "En JavaScript, il y a un paquet pour tout... et souvent pour rien.",
+  "description": "Explorez le paradoxe des packages JavaScript : omniprésents mais souvent inutiles. Apprenez à optimiser vos dépendances efficacement.",
   "recording": "https://youtu.be/YHl6fUM5PDw",
   "article": "https://soubiran.dev/posts/my-adventure-to-nantes-for-europes-largest-devfest",
   "scripts": {

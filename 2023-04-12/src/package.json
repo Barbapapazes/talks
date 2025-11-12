@@ -2,7 +2,7 @@
   "name": "devoxxfr",
   "event": "Devoxx France",
   "private": true,
-  "description": "Unpoly pour reprendre le contrôle !",
+  "description": "Découvrez Unpoly, une bibliothèque JavaScript permettant de créer des applications web progressives sans framework frontend lourd.",
   "recording": "https://youtu.be/MIM6E_XMRHQ",
   "scripts": {
     "dev": "slidev",
