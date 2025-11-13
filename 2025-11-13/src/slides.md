@@ -37,7 +37,7 @@ name: Quel framework pour le frontend ?
   question="Quel framework pour le frontend ?"
   type="multiple_select"
   chart="bar"
-  :data="[{ label: 'Vue', count: 15, color: '#7ADF44' }, { label: 'Angular', count: 40, color: '#FF00C2' }, { label: 'React', count: 34, color: '#00C8FF' }, { label: 'Svelte', count: 6, color: '#FF9B14' }, { label: 'Solid', count: 0, color: '#83C5FF' }, { label: 'Qwik', count: 0, color: '#D5A7FF' }, { label: 'Aucun', count: 5, color: '#000000' }, { label: 'Un autre', count: 2, color: '#FF8FDC' }]"
+  :data="[{ label: 'Vue', count: 25, color: '#60F226' }, { label: 'Angular', count: 64, color: '#F24026' }, { label: 'React', count: 36, color: '#49DEFC' }, { label: 'Svelte', count: 6, color: '#F29A26' }, { label: 'Solid', count: 1, color: '#158CE2' }, { label: 'Qwik', count: 1, color: '#CF4FFF' }, { label: 'Aucun', count: 6, color: '#000000' }, { label: 'Un autre', count: 12, color: '#F39BE2' }]"
 />
 
 <!--
@@ -216,7 +216,7 @@ name: Vous suivez encore ? 🫣
   question="Vous suivez encore ? 🫣"
   type="single_select"
   chart="donut"
-  :data="[{ label: 'Oui, évidemment', count: 43, color: '#03CE06' }, { label: 'Oui, enfin je crois', count: 19, color: '#6c03ce' }, { label: 'Non, là c\'est trop 🤯', count: 0, color: '#CE0903' }]"
+  :data="[{ label: 'Oui, évidemment', count: 22, color: '#33F226' }, { label: 'Oui, enfin je crois', count: 4, color: '#9026f2' }, { label: 'Non, là c\'est trop', count: 2, color: '#F22626' }]"
 />
 
 <!--

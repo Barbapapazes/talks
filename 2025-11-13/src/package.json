@@ -1,7 +1,6 @@
 {
   "name": "devfest-toulouse",
   "event": "DevFest Toulouse",
-  "article": "",
   "private": true,
   "scripts": {
     "dev": "slidev",
