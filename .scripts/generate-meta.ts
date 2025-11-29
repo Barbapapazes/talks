@@ -11,6 +11,7 @@ function generateMeta() {
     date: string
     prefix: string
     event: string
+    description?: string
     url: string
     pdf_url: string
     thumbnail_url: string
@@ -55,6 +56,7 @@ function generateMeta() {
       prefix,
       // Keep only the first 10 characters (date) because talks given on the same day are suffixed with -1, -2, ...
       date: dir.slice(0, 10),
+      description: content.description,
       url,
       thumbnail_url,
       pdf_url,
