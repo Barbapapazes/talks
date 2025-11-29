@@ -2,6 +2,7 @@
   "name": "devfest-toulouse",
   "event": "DevFest Toulouse",
   "private": true,
+  "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-11-13/devfest-toulouse/ --out ../../dist/2025-11-13/devfest-toulouse",
