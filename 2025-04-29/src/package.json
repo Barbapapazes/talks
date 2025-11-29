@@ -1,8 +1,10 @@
 {
   "name": "mixit",
   "event": "MiXiT",
-  "recording": "https://youtu.be/VlyS6bJZYYU",
   "private": true,
+  "description": "Explorez le paradoxe des packages JavaScript : omniprésents mais souvent inutiles. Apprenez à optimiser vos dépendances efficacement.",
+  "recording": "https://youtu.be/VlyS6bJZYYU",
+  "article": "https://soubiran.dev/posts/the-conference-for-ethics-and-diversity-in-tech-mixit-2025",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-04-29/mixit/ --out ../../dist/2025-04-29/mixit",

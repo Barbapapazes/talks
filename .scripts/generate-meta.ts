@@ -11,6 +11,7 @@ function generateMeta() {
     date: string
     prefix: string
     event: string
+    description?: string
     url: string
     pdf_url: string
     thumbnail_url: string
@@ -18,14 +19,15 @@ function generateMeta() {
     recording_url?: string
     audio_url?: string
     transcript_url?: string
+    article_url?: string
   }[]
 
   for (const packageJSON of packagesJson) {
-    const date = packageJSON.split('/')[0]
+    const dir = packageJSON.split('/')[0]
 
     const content = JSON.parse(readFileSync(packageJSON, 'utf-8')) as Package
     const event = content.event
-    const prefix = `${date}/${content.name}`
+    const prefix = `${dir}/${content.name}`
     const url = `https://talks.soubiran.dev/${prefix}`
     const thumbnail_url = `${url}/thumbnail.png`
     const pdf_url = `${url}/pdf`
@@ -33,6 +35,7 @@ function generateMeta() {
     const recording_url = `${url}/recording`
     const audio_url = `${url}/audio`
     const transcript_url = `https://soubiran.dev/talks/${prefix}`
+    const article_url = `${url}/article`
 
     const path = packageJSON.split('/').slice(0, -1).join('/')
     const slidesContent = readFileSync(join(path, 'slides.md'), 'utf-8')
@@ -44,14 +47,16 @@ function generateMeta() {
     }
 
     if (meta.find(m => m.name === name && m.event === event)) {
-      throw new Error(`Duplicate meta entry found for ${name} on ${event} (${date})`)
+      throw new Error(`Duplicate meta entry found for ${name} on ${event} (${dir})`)
     }
 
     meta.push({
       name,
       event,
       prefix,
-      date,
+      // Keep only the first 10 characters (date) because talks given on the same day are suffixed with -1, -2, ...
+      date: dir.slice(0, 10),
+      description: content.description,
       url,
       thumbnail_url,
       pdf_url,
@@ -59,6 +64,7 @@ function generateMeta() {
       recording_url: content.recording ? recording_url : undefined,
       audio_url: content.recording ? audio_url : undefined,
       transcript_url: content.recording ? transcript_url : undefined,
+      article_url: content.article ? article_url : undefined,
     })
   }
 

@@ -1,8 +1,10 @@
 {
   "name": "devoxxfr",
   "event": "Devoxx France",
-  "recording": "https://youtu.be/Iyts6NE6bps",
   "private": true,
+  "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
+  "recording": "https://youtu.be/Iyts6NE6bps",
+  "article": "https://soubiran.dev/posts/beyond-the-tech-people-who-made-devoxx-france-2025-special",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-04-17/devoxxfr/ --out ../../dist/2025-04-17/devoxxfr",

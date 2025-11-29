@@ -1,8 +1,10 @@
 {
   "name": "strasbourgjs",
   "event": "StrasbourgJS",
-  "recording": "https://youtu.be/mPcJXqaBLFM",
   "private": true,
+  "description": "Explorez l'écosystème UnJS et ses packages universels pour construire des applications JavaScript performantes et multiplateforme.",
+  "recording": "https://youtu.be/mPcJXqaBLFM",
+  "article": "https://soubiran.dev/posts/my-first-meetup-talk-a-dive-into-the-large-unjs-ecosystem",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-04-12/strasbourgjs/ --out ../../dist/2024-04-12/strasbourgjs",

@@ -20,7 +20,7 @@ const links = [website, ...socials]
     <div class="flex flex-col h-full">
       <div class="flex flex-row justify-between items-center">
         <div class="flex flex-col gap-4">
-          <img src="https://github.com/barbapapazes.png" class="size-24">
+          <img src="https://github.com/barbapapazes.png" class="size-24 rounded-full">
 
           <div>
             <h1>Estéban Soubiran</h1>

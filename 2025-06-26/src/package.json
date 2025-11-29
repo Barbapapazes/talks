@@ -2,6 +2,8 @@
   "name": "breizhcamp",
   "event": "BreizhCamp",
   "private": true,
+  "description": "Explorez le paradoxe des packages JavaScript : omniprésents mais souvent inutiles. Apprenez à optimiser vos dépendances efficacement.",
+  "article": "https://soubiran.dev/posts/breizhcamp-2025-my-first-time-in-brittany-as-a-speaker",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-06-26/breizhcamp/ --out ../../dist/2025-06-26/breizhcamp",

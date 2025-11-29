@@ -2,6 +2,8 @@
   "name": "pragvue",
   "event": "PragVue",
   "private": true,
+  "description": "Apprenez à créer des applications full-stack avec Nuxt : du serveur à l'interface utilisateur, tout avec un seul framework.",
+  "article": "https://soubiran.dev/posts/pragvue-2024-travel-food-people-and-a-lot-of-vue-js",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-09-17/pragvue/ --out ../../dist/2024-09-17/pragvue",
