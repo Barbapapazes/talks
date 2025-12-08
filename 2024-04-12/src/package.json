@@ -5,6 +5,12 @@
   "description": "Explorez l'écosystème UnJS et ses packages universels pour construire des applications JavaScript performantes et multiplateforme.",
   "recording": "https://youtu.be/mPcJXqaBLFM",
   "article": "https://soubiran.dev/posts/my-first-meetup-talk-a-dive-into-the-large-unjs-ecosystem",
+  "location": {
+    "city": "Strasbourg",
+    "country": "France",
+    "latitude": 48.5734,
+    "longitude": 7.7521
+  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-04-12/strasbourgjs/ --out ../../dist/2024-04-12/strasbourgjs",

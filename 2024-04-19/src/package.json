@@ -5,6 +5,12 @@
   "description": "Plongez dans UnJS : des outils JavaScript unifiés et universels qui fonctionnent partout, du navigateur à Node.js et au-delà.",
   "recording": "https://youtu.be/0BApl8r1VWc",
   "article": "https://soubiran.dev/posts/speaking-at-devoxx-france-2024-insights-and-highlights",
+  "location": {
+    "city": "Paris",
+    "country": "France",
+    "latitude": 48.8566,
+    "longitude": 2.3522
+  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-04-19/devoxxfr/ --out ../../dist/2024-04-19/devoxxfr",

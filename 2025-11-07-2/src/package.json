@@ -4,6 +4,12 @@
   "private": true,
   "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
   "article": "https://soubiran.dev/posts/twice-in-one-day-speaking-at-bdx-io-2025-at-bordeaux",
+  "location": {
+    "city": "Bordeaux",
+    "country": "France",
+    "latitude": 44.8378,
+    "longitude": -0.5792
+  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-11-07-2/bdx-io/ --out ../../dist/2025-11-07-2/bdx-io",

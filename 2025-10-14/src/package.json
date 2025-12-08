@@ -3,6 +3,12 @@
   "event": "Paris TypeScript",
   "private": true,
   "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
+  "location": {
+    "city": "Paris",
+    "country": "France",
+    "latitude": 48.8566,
+    "longitude": 2.3522
+  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-10-14/paris-typescript/ --out ../../dist/2025-10-14/paris-typescript",

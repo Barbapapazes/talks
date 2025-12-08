@@ -5,6 +5,12 @@
   "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
   "recording": "https://youtu.be/Iyts6NE6bps",
   "article": "https://soubiran.dev/posts/beyond-the-tech-people-who-made-devoxx-france-2025-special",
+  "location": {
+    "city": "Paris",
+    "country": "France",
+    "latitude": 48.8566,
+    "longitude": 2.3522
+  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-04-17/devoxxfr/ --out ../../dist/2025-04-17/devoxxfr",

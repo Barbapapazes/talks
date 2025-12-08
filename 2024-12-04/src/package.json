@@ -3,6 +3,12 @@
   "event": "Vue.js Paris",
   "private": true,
   "description": "Explorez NuxtHub, la plateforme de déploiement full-stack pour Nuxt, et simplifiez la mise en production de vos applications.",
+  "location": {
+    "city": "Paris",
+    "country": "France",
+    "latitude": 48.8566,
+    "longitude": 2.3522
+  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-12-04/vuejs-paris/ --out ../../dist/2024-12-04/vuejs-paris",

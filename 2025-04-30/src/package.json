@@ -5,6 +5,12 @@
   "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
   "recording": "https://youtu.be/3PcrqsBVGgA",
   "article": "https://soubiran.dev/posts/the-conference-for-ethics-and-diversity-in-tech-mixit-2025",
+  "location": {
+    "city": "Lyon",
+    "country": "France",
+    "latitude": 45.7640,
+    "longitude": 4.8357
+  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-04-30/mixit/ --out ../../dist/2025-04-30/mixit",

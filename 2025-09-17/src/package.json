@@ -3,6 +3,12 @@
   "event": "Node.js Paris",
   "private": true,
   "description": "Découvrez Inertia.js, le pont élégant entre Laravel et Vue/React qui simplifie la création d'applications full-stack modernes.",
+  "location": {
+    "city": "Paris",
+    "country": "France",
+    "latitude": 48.8566,
+    "longitude": 2.3522
+  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-09-17/nodejs-paris/ --out ../../dist/2025-09-17/nodejs-paris",
