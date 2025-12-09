@@ -18,7 +18,7 @@ titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: web,development,e18e,web,performance
 event: Paris TypeScript
-date: 09 décembre 2025
+date: 9 décembre 2025
 ---
 
 # En JavaScript,<br>il y a un paquet pour tout...<br>et souvent pour rien.
