@@ -1,6 +1,7 @@
+import type { Package } from './_types.ts'
 import { readdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
-import type { Package } from './_types.ts'
+import process from 'node:process'
 
 interface TalkMetadata extends Package {
   folder: string
@@ -24,14 +25,14 @@ function extractLanguageCode(lang: string): string {
 async function extractLanguageFromSlides(slidesPath: string): Promise<string | undefined> {
   try {
     const content = await readFile(slidesPath, 'utf-8')
-    
+
     // Extract frontmatter (between --- markers)
     const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/)
     if (!frontmatterMatch)
       return undefined
 
     const frontmatter = frontmatterMatch[1]
-    
+
     // Look for lang: in htmlAttrs or at root level
     const langMatch = frontmatter.match(/lang:\s*([a-z]{2}(?:-[A-Z]{2})?)/i)
     if (langMatch) {
@@ -41,7 +42,6 @@ async function extractLanguageFromSlides(slidesPath: string): Promise<string | u
     return undefined
   }
   catch (error) {
-    // eslint-disable-next-line no-console
     console.warn(`Could not read slides.md at ${slidesPath}:`, error)
     return undefined
   }
@@ -58,8 +58,8 @@ async function extractTalkMetadata(folder: string): Promise<TalkMetadata | null>
 
     // Read README.md for title
     const readmeContent = await readFile(readmePath, 'utf-8')
-    const titleMatch = readmeContent.match(/^#\s+(.+)$/m)
-    const title = titleMatch?.[1] || 'Untitled'
+    const titleMatch = readmeContent.match(/^# (.*)$/m)
+    const title = titleMatch?.[1]?.trim() || 'Untitled'
 
     // Read package.json for event, recording, article
     const packageJsonContent = await readFile(packageJsonPath, 'utf-8')
@@ -71,9 +71,8 @@ async function extractTalkMetadata(folder: string): Promise<TalkMetadata | null>
     // Extract date from folder name (e.g., "2024-04-19" or "2025-11-07-1")
     const folderName = folder.split('/').pop() || ''
     const dateMatch = folderName.match(/^(\d{4})-(\d{2})-(\d{2})/)
-    
+
     if (!dateMatch) {
-      // eslint-disable-next-line no-console
       console.warn(`Could not extract date from folder: ${folderName}`)
       return null
     }
@@ -95,7 +94,6 @@ async function extractTalkMetadata(folder: string): Promise<TalkMetadata | null>
     }
   }
   catch (error) {
-    // eslint-disable-next-line no-console
     console.warn(`Could not extract metadata from ${folder}:`, error)
     return null
   }
@@ -107,7 +105,7 @@ async function extractTalkMetadata(folder: string): Promise<TalkMetadata | null>
 async function updateSlidesWithLanguage(slidesPath: string, language: string): Promise<void> {
   try {
     const content = await readFile(slidesPath, 'utf-8')
-    
+
     // Check if language already exists
     if (content.match(/lang:\s*[a-z]{2}/i)) {
       return // Language already set
@@ -155,7 +153,6 @@ ${frontmatter}`
     }
   }
   catch (error) {
-    // eslint-disable-next-line no-console
     console.warn(`Could not update slides.md at ${slidesPath}:`, error)
   }
 }
@@ -187,16 +184,16 @@ Slides from my [talks](https://soubiran.dev/talks).
 
   for (const year of years) {
     content += `###### ${year}\n\n`
-    
+
     // Sort talks by date descending within year
     const yearTalks = talksByYear[year].sort((a, b) => -a.date.localeCompare(b.date))
-    
+
     for (const talk of yearTalks) {
       // Format: - `lang` [Title](./folder) - Event
       const lang = talk.language || 'en'
       content += `- \`${lang}\` [${talk.title}](./${talk.folder}) - ${talk.event}\n`
     }
-    
+
     content += '\n'
   }
 
@@ -219,7 +216,7 @@ rclone copy . perso:talks-soubiran-dev --filter-from ./copy-assets.txt
 export async function generateReadme(rootPath = '.'): Promise<void> {
   // eslint-disable-next-line no-console
   console.log('Scanning talk folders...')
-  
+
   // Get all folders matching date pattern (YYYY-MM-DD or YYYY-MM-DD-N)
   const folders = (await readdir(rootPath, { withFileTypes: true }))
     .filter(dirent => dirent.isDirectory())
@@ -237,13 +234,13 @@ export async function generateReadme(rootPath = '.'): Promise<void> {
     const metadata = await extractTalkMetadata(folderPath)
     if (metadata) {
       talks.push(metadata)
-      
+
       // If language is missing, try to detect and update
       if (!metadata.language) {
         // eslint-disable-next-line no-console
         console.log(`Language missing for ${folder}, defaulting to 'fr'`)
         metadata.language = 'fr' // Default to French for this repository
-        
+
         // Update slides.md with the language
         const slidesPath = resolve(folderPath, 'src', 'slides.md')
         await updateSlidesWithLanguage(slidesPath, metadata.language)
@@ -260,7 +257,7 @@ export async function generateReadme(rootPath = '.'): Promise<void> {
   // Write README.md
   const readmePath = resolve(rootPath, 'README.md')
   await writeFile(readmePath, readmeContent, 'utf-8')
-  
+
   // eslint-disable-next-line no-console
   console.log('README.md updated successfully!')
 }
