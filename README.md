@@ -2,6 +2,40 @@
 
 Slides from my [talks](https://soubiran.dev/talks).
 
+###### 2025
+
+- `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2025-12-05) - DevFest Toulouse
+- `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2025-11-13) - DevFest Toulouse
+- `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2025-11-07-2) - BDX I/O
+- `fr` [En JavaScript, il y a un paquet pour tout... et souvent pour rien.](./2025-11-07-1) - BDX I/O
+- `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2025-10-21) - StrasbourgJS
+- `fr` [En JavaScript, il y a un paquet pour tout... et souvent pour rien.](./2025-10-17) - Devfest Nantes
+- `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2025-10-14) - Paris TypeScript
+- `en` [Inertia: Un Anneau pour les gouverner tous](./2025-09-17) - Node.js Paris
+- `en` [Inertia: Un Anneau pour les gouverner tous](./2025-09-09) - HumanTalks Paris
+- `fr` [En JavaScript, il y a un paquet pour tout... et souvent pour rien.](./2025-06-26) - BreizhCamp
+- `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2025-06-25) - BreizhCamp
+- `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2025-04-30) - MiXiT
+- `fr` [En JavaScript, il y a un paquet pour tout... et souvent pour rien.](./2025-04-29) - MiXiT
+- `fr` [En JavaScript, il y a un paquet pour tout... et souvent pour rien.](./2025-04-18) - Devoxx France
+- `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2025-04-17) - Devoxx France
+- `en` [Ship Nuxt apps that scale](./2025-04-08) - HumanTalks Paris
+- `fr` [Vous n'avez pas besoin de ces nouvelles API Node.js](./2025-03-05) - Node.js Paris
+- `fr` [Deviens full-stack avec TypeScript](./2025-01-21) - Paris TypeScript
+
+###### 2024
+
+- `fr` [Nuxt, NuxtHub et le full-stack](./2024-12-04) - Vue.js Paris
+- `fr` [Fluidifier l'expérience utilisateur](./2024-11-20) - TakiMeet
+- `en` [Ship Nuxt apps that scale](./2024-11-13) - Nuxt Nation
+- `en` [You've dreamed it? Create full-stack apps with Nuxt](./2024-09-17) - PragVue
+- `fr` [Unifié et Universel, le JavaScript avec UnJS](./2024-04-19) - Devoxx France
+- `fr` [Découvrons ensemble l'écosystème UnJS](./2024-04-12) - StrasbourgJS
+
+###### 2023
+
+- `fr` [Unpoly pour reprendre le contrôle !](./2023-04-12) - Devoxx France
+
 ---
 
 Copy assets to S3 bucket:
