@@ -38,7 +38,7 @@ YYYY/MM/DD - [Event Name](event-url)
 
 ### 2. src/package.json
 Update these fields:
-- `name`: Use a slug version of the event name (e.g., `paris-typescript`, `bdx-io`)
+- `name`: Use a slug version of the event name in lowercase with dashes (e.g., `paris-typescript`, `bdx-io`, `nuxt-nation`)
 - `event`: Full event name (e.g., `"Paris TypeScript"`, `"BDX I/O"`)
 - `scripts.build`: Update the base path to match new directory and event name:
   - `--base /YYYY-MM-DD/event-slug/`
@@ -70,24 +70,25 @@ Copy this file unchanged from the source talk.
 
 **Agent Actions:**
 1. Identify source: `2025-11-07-1/` (latest e18e talk)
-2. Create directory: `2025-12-09/`
-3. Copy all files from `2025-11-07-1/` to `2025-12-09/`
-4. Update `2025-12-09/README.md`:
+2. Determine target date: `2025-12-09/` (based on the event date - "today")
+3. Create directory: `2025-12-09/`
+4. Copy all files from `2025-11-07-1/` to `2025-12-09/`
+5. Update `2025-12-09/README.md`:
    ```markdown
    # En JavaScript, il y a un paquet pour tout... et souvent pour rien.
    
    2025/12/09 - [Paris TypeScript](https://www.meetup.com/paris-typescript/)
    ```
-5. Update `2025-12-09/src/package.json`:
+6. Update `2025-12-09/src/package.json`:
    - `name`: `"paris-typescript"`
    - `event`: `"Paris TypeScript"`
    - Remove `article` field
    - Update build path to `/2025-12-09/paris-typescript/`
    - Update export to `../2025-12-09-paris-typescript.pdf`
-6. Update `2025-12-09/src/slides.md` frontmatter:
+7. Update `2025-12-09/src/slides.md` frontmatter:
    - `event`: `Paris TypeScript`
    - `date`: `9 décembre 2025`
-7. Copy all assets from `src/public/`
+8. Copy all assets from `src/public/`
 
 ## Important Notes
 
