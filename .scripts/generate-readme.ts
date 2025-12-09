@@ -34,7 +34,7 @@ async function extractLanguageFromSlides(slidesPath: string): Promise<string | u
     const frontmatter = frontmatterMatch[1]
 
     // Look for lang: in htmlAttrs or at root level
-    const langMatch = frontmatter.match(/lang:\s*([a-z]{2}(?:-[A-Z]{2})?)/i)
+    const langMatch = frontmatter.match(/lang:\s*([a-z]{2}(?:-[a-z]{2})?)/i)
     if (langMatch) {
       return extractLanguageCode(langMatch[1])
     }
@@ -227,14 +227,12 @@ export async function generateReadme(rootPath = '.'): Promise<void> {
   // eslint-disable-next-line no-console
   console.log(`Found ${folders.length} talk folders`)
 
-  // Extract metadata from each folder
+  // Extract metadata from each folder concurrently
   const talks: TalkMetadata[] = []
-  for (const folder of folders) {
+  const metadataPromises = folders.map(async (folder) => {
     const folderPath = resolve(rootPath, folder)
     const metadata = await extractTalkMetadata(folderPath)
     if (metadata) {
-      talks.push(metadata)
-
       // If language is missing, try to detect and update
       if (!metadata.language) {
         // eslint-disable-next-line no-console
@@ -245,6 +243,14 @@ export async function generateReadme(rootPath = '.'): Promise<void> {
         const slidesPath = resolve(folderPath, 'src', 'slides.md')
         await updateSlidesWithLanguage(slidesPath, metadata.language)
       }
+    }
+    return metadata
+  })
+
+  const results = await Promise.allSettled(metadataPromises)
+  for (const result of results) {
+    if (result.status === 'fulfilled' && result.value) {
+      talks.push(result.value)
     }
   }
 
