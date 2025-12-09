@@ -100,15 +100,25 @@ Copy this file unchanged from the source talk.
 
 ## Finding Source Talks
 
-- To find the latest talk on a specific topic, search through directory names and README files
+- To find the latest talk on a specific topic:
+  - Search through directory names (format: `YYYY-MM-DD` or `YYYY-MM-DD-N`)
+  - Check README files in each directory for the talk title
+  - Look for keywords or topics mentioned by the user
+  - Sort directories by date to find the most recent
 - If the user mentions a specific talk or event, search for that event name in existing directories
+- Use commands like `ls -t` to list directories by modification time, or `grep -r "talk-title"` to search README files
 - When in doubt, ask the user to clarify which talk to copy from
 
 ## Error Handling
 
 - If a directory already exists for the target date, append a numeric suffix (`-1`, `-2`, etc.)
 - If the source talk cannot be found, ask the user for clarification
-- If required metadata is missing from the source, use sensible defaults and inform the user
+- If required metadata is missing from the source:
+  - For `name` in package.json: Use a generic slug like `talk-YYYY-MM-DD`
+  - For `event` field: Ask the user for the event name
+  - For `date` in slides.md: Use the directory date in the format "DD month YYYY" (French or English based on talk language)
+  - For missing `article` field: Simply omit it (this is optional)
+- If the event URL is unknown, use a placeholder comment or ask the user
 
 ## Testing
 
