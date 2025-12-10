@@ -53,14 +53,5 @@
     "slidev-theme-personal": "link:./theme",
     "taze": "^19.7.0",
     "typescript": "^5.9.3"
-  },
-  "pnpm": {
-    "overrides": {
-      "vite": "npm:rolldown-vite@latest"
-    },
-    "patchedDependencies": {
-      "cobe": "patches/cobe.patch",
-      "slidev-addon-graph": "patches/slidev-addon-graph.patch"
-    }
   }
 }
