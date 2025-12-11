@@ -120,6 +120,19 @@ function generateReadmeContent(talks: TalkMetadata[]): string {
     return acc
   }, {})
 
+  // Group talks by title to count repetitions
+  const talksByTitle = talks.reduce<Record<string, { count: number, byYear: Record<number, number> }>>((acc, talk) => {
+    if (!acc[talk.title]) {
+      acc[talk.title] = { count: 0, byYear: {} }
+    }
+    acc[talk.title].count++
+    if (!acc[talk.title].byYear[talk.year]) {
+      acc[talk.title].byYear[talk.year] = 0
+    }
+    acc[talk.title].byYear[talk.year]++
+    return acc
+  }, {})
+
   // Sort years in descending order
   const years = Object.keys(talksByYear)
     .map(Number)
@@ -160,11 +173,28 @@ Slides from my [talks](https://soubiran.dev/talks).
     content += `| ${event} | ${data.total} | ${yearCounts} |\n`
   }
 
+  content += '\n'
+
+  // Add talks by title statistics
+  content += `### Talks by Title
+
+| Talk Title | Total | ${years.join(' | ')} |
+|------------|-------|${years.map(() => '------').join('|')}|
+`
+
+  // Sort talks by count (descending)
+  const titleEntries = Object.entries(talksByTitle).sort((a, b) => b[1].count - a[1].count)
+
+  for (const [title, data] of titleEntries) {
+    const yearCounts = years.map(year => data.byYear[year] || 0).join(' | ')
+    content += `| ${title} | ${data.count} | ${yearCounts} |\n`
+  }
+
   content += '\n## Talks\n\n'
 
   // Add talks list
   for (const year of years) {
-    content += `###### ${year}\n\n`
+    content += `### ${year}\n\n`
 
     // Sort talks by date descending within year
     const yearTalks = talksByYear[year].sort((a, b) => -a.date.localeCompare(b.date))
