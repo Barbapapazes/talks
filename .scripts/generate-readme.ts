@@ -170,6 +170,19 @@ function generateReadmeContent(talks: TalkMetadata[]): string {
     return acc
   }, {})
 
+  // Group talks by event
+  const talksByEvent = talks.reduce<Record<string, { total: number, byYear: Record<number, number> }>>((acc, talk) => {
+    if (!acc[talk.event]) {
+      acc[talk.event] = { total: 0, byYear: {} }
+    }
+    acc[talk.event].total++
+    if (!acc[talk.event].byYear[talk.year]) {
+      acc[talk.event].byYear[talk.year] = 0
+    }
+    acc[talk.event].byYear[talk.year]++
+    return acc
+  }, {})
+
   // Sort years in descending order
   const years = Object.keys(talksByYear)
     .map(Number)
@@ -180,8 +193,39 @@ function generateReadmeContent(talks: TalkMetadata[]): string {
 
 Slides from my [talks](https://soubiran.dev/talks).
 
+## Statistics
+
+### Talks per Year
+
+| Year | Number of Talks |
+|------|-----------------|
 `
 
+  // Add talks per year statistics
+  for (const year of years) {
+    content += `| ${year} | ${talksByYear[year].length} |\n`
+  }
+
+  content += `| **Total** | **${talks.length}** |\n\n`
+
+  // Add talks by event statistics
+  content += `### Talks per Event
+
+| Event | Total | ${years.join(' | ')} |
+|-------|-------|${years.map(() => '------').join('|')}|
+`
+
+  // Sort events by total number of talks (descending)
+  const eventEntries = Object.entries(talksByEvent).sort((a, b) => b[1].total - a[1].total)
+
+  for (const [event, data] of eventEntries) {
+    const yearCounts = years.map(year => data.byYear[year] || 0).join(' | ')
+    content += `| ${event} | ${data.total} | ${yearCounts} |\n`
+  }
+
+  content += '\n'
+
+  // Add talks list
   for (const year of years) {
     content += `###### ${year}\n\n`
 

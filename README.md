@@ -2,6 +2,36 @@
 
 Slides from my [talks](https://soubiran.dev/talks).
 
+## Statistics
+
+### Talks per Year
+
+| Year | Number of Talks |
+|------|-----------------|
+| 2025 | 18 |
+| 2024 | 6 |
+| 2023 | 1 |
+| **Total** | **25** |
+
+### Talks per Event
+
+| Event | Total | 2025 | 2024 | 2023 |
+|-------|-------|------|------|------|
+| Devoxx France | 4 | 2 | 1 | 1 |
+| DevFest Toulouse | 2 | 2 | 0 | 0 |
+| BDX I/O | 2 | 2 | 0 | 0 |
+| StrasbourgJS | 2 | 1 | 1 | 0 |
+| Paris TypeScript | 2 | 2 | 0 | 0 |
+| Node.js Paris | 2 | 2 | 0 | 0 |
+| HumanTalks Paris | 2 | 2 | 0 | 0 |
+| BreizhCamp | 2 | 2 | 0 | 0 |
+| MiXiT | 2 | 2 | 0 | 0 |
+| Devfest Nantes | 1 | 1 | 0 | 0 |
+| Vue.js Paris | 1 | 0 | 1 | 0 |
+| TakiMeet | 1 | 0 | 1 | 0 |
+| Nuxt Nation | 1 | 0 | 1 | 0 |
+| PragVue | 1 | 0 | 1 | 0 |
+
 ###### 2025
 
 - `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2025-12-05) - DevFest Toulouse
