@@ -17,37 +17,37 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Event | Total | 2025 | 2024 | 2023 |
 |-------|-------|------|------|------|
-| Devoxx France | 4 | 2 | 1 | 1 |
-| DevFest Toulouse | 2 | 2 | 0 | 0 |
 | BDX I/O | 2 | 2 | 0 | 0 |
-| StrasbourgJS | 2 | 1 | 1 | 0 |
-| Paris TypeScript | 2 | 2 | 0 | 0 |
-| Node.js Paris | 2 | 2 | 0 | 0 |
-| HumanTalks Paris | 2 | 2 | 0 | 0 |
 | BreizhCamp | 2 | 2 | 0 | 0 |
-| MiXiT | 2 | 2 | 0 | 0 |
 | Devfest Nantes | 1 | 1 | 0 | 0 |
-| Vue.js Paris | 1 | 0 | 1 | 0 |
-| TakiMeet | 1 | 0 | 1 | 0 |
+| DevFest Toulouse | 2 | 2 | 0 | 0 |
+| Devoxx France | 4 | 2 | 1 | 1 |
+| HumanTalks Paris | 2 | 2 | 0 | 0 |
+| MiXiT | 2 | 2 | 0 | 0 |
+| Node.js Paris | 2 | 2 | 0 | 0 |
 | Nuxt Nation | 1 | 0 | 1 | 0 |
+| Paris TypeScript | 2 | 2 | 0 | 0 |
 | PragVue | 1 | 0 | 1 | 0 |
+| StrasbourgJS | 2 | 1 | 1 | 0 |
+| TakiMeet | 1 | 0 | 1 | 0 |
+| Vue.js Paris | 1 | 0 | 1 | 0 |
 
 ### Talks by Title
 
 | Talk Title | Total | 2025 | 2024 | 2023 |
 |------------|-------|------|------|------|
-| La réactivité et les signaux : démystifions la magie du frontend | 8 | 8 | 0 | 0 |
-| En JavaScript, il y a un paquet pour tout... et souvent pour rien. | 5 | 5 | 0 | 0 |
-| Inertia: Un Anneau pour les gouverner tous | 2 | 2 | 0 | 0 |
-| Ship Nuxt apps that scale | 2 | 1 | 1 | 0 |
-| Vous n'avez pas besoin de ces nouvelles API Node.js | 1 | 1 | 0 | 0 |
-| Deviens full-stack avec TypeScript | 1 | 1 | 0 | 0 |
-| Nuxt, NuxtHub et le full-stack | 1 | 0 | 1 | 0 |
-| Fluidifier l'expérience utilisateur | 1 | 0 | 1 | 0 |
-| You've dreamed it? Create full-stack apps with Nuxt | 1 | 0 | 1 | 0 |
-| Unifié et Universel, le JavaScript avec UnJS | 1 | 0 | 1 | 0 |
 | Découvrons ensemble l'écosystème UnJS | 1 | 0 | 1 | 0 |
+| Deviens full-stack avec TypeScript | 1 | 1 | 0 | 0 |
+| En JavaScript, il y a un paquet pour tout... et souvent pour rien. | 5 | 5 | 0 | 0 |
+| Fluidifier l'expérience utilisateur | 1 | 0 | 1 | 0 |
+| Inertia: Un Anneau pour les gouverner tous | 2 | 2 | 0 | 0 |
+| La réactivité et les signaux : démystifions la magie du frontend | 8 | 8 | 0 | 0 |
+| Nuxt, NuxtHub et le full-stack | 1 | 0 | 1 | 0 |
+| Ship Nuxt apps that scale | 2 | 1 | 1 | 0 |
+| Unifié et Universel, le JavaScript avec UnJS | 1 | 0 | 1 | 0 |
 | Unpoly pour reprendre le contrôle ! | 1 | 0 | 0 | 1 |
+| Vous n'avez pas besoin de ces nouvelles API Node.js | 1 | 1 | 0 | 0 |
+| You've dreamed it? Create full-stack apps with Nuxt | 1 | 0 | 1 | 0 |
 
 ## Talks
 

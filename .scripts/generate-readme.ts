@@ -165,8 +165,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 |-------|-------|${years.map(() => '------').join('|')}|
 `
 
-  // Sort events by total number of talks (descending)
-  const eventEntries = Object.entries(talksByEvent).sort((a, b) => b[1].total - a[1].total)
+  // Sort events alphabetically
+  const eventEntries = Object.entries(talksByEvent).sort((a, b) => a[0].localeCompare(b[0]))
 
   for (const [event, data] of eventEntries) {
     const yearCounts = years.map(year => data.byYear[year] || 0).join(' | ')
@@ -182,8 +182,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 |------------|-------|${years.map(() => '------').join('|')}|
 `
 
-  // Sort talks by count (descending)
-  const titleEntries = Object.entries(talksByTitle).sort((a, b) => b[1].count - a[1].count)
+  // Sort talks alphabetically
+  const titleEntries = Object.entries(talksByTitle).sort((a, b) => a[0].localeCompare(b[0]))
 
   for (const [title, data] of titleEntries) {
     const yearCounts = years.map(year => data.byYear[year] || 0).join(' | ')
