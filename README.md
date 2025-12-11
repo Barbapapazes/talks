@@ -32,6 +32,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 | Nuxt Nation | 1 | 0 | 1 | 0 |
 | PragVue | 1 | 0 | 1 | 0 |
 
+## Talks
+
 ###### 2025
 
 - `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2025-12-05) - DevFest Toulouse

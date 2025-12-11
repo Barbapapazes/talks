@@ -1,7 +1,8 @@
 import type { Package } from './_types.ts'
-import { readdir, readFile, writeFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import process from 'node:process'
+import matter from 'gray-matter'
 
 interface TalkMetadata extends Package {
   folder: string
@@ -25,18 +26,12 @@ function extractLanguageCode(lang: string): string {
 async function extractLanguageFromSlides(slidesPath: string): Promise<string | undefined> {
   try {
     const content = await readFile(slidesPath, 'utf-8')
+    const { data } = matter(content)
 
-    // Extract frontmatter (between --- markers)
-    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/)
-    if (!frontmatterMatch)
-      return undefined
-
-    const frontmatter = frontmatterMatch[1]
-
-    // Look for lang: in htmlAttrs or at root level
-    const langMatch = frontmatter.match(/lang:\s*([a-z]{2}(?:-[a-z]{2})?)/i)
-    if (langMatch) {
-      return extractLanguageCode(langMatch[1])
+    // Look for lang in htmlAttrs or at root level
+    const lang = data.htmlAttrs?.lang || data.lang
+    if (lang) {
+      return extractLanguageCode(lang)
     }
 
     return undefined
@@ -96,64 +91,6 @@ async function extractTalkMetadata(folder: string): Promise<TalkMetadata | null>
   catch (error) {
     console.warn(`Could not extract metadata from ${folder}:`, error)
     return null
-  }
-}
-
-/**
- * Update slides.md with language if missing
- */
-async function updateSlidesWithLanguage(slidesPath: string, language: string): Promise<void> {
-  try {
-    const content = await readFile(slidesPath, 'utf-8')
-
-    // Check if language already exists
-    if (content.match(/lang:\s*[a-z]{2}/i)) {
-      return // Language already set
-    }
-
-    // Check if there's a frontmatter
-    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/)
-    if (!frontmatterMatch) {
-      // No frontmatter, add one with language
-      const newContent = `---
-htmlAttrs:
-  lang: ${language}
-  dir: ltr
----
-${content}`
-      await writeFile(slidesPath, newContent, 'utf-8')
-      // eslint-disable-next-line no-console
-      console.log(`Added language ${language} to ${slidesPath}`)
-      return
-    }
-
-    // Frontmatter exists, check if htmlAttrs exists
-    const frontmatter = frontmatterMatch[1]
-    if (frontmatter.includes('htmlAttrs:')) {
-      // htmlAttrs exists, add lang if not present
-      const updatedFrontmatter = frontmatter.replace(
-        /htmlAttrs:/,
-        `htmlAttrs:\n  lang: ${language}`,
-      )
-      const newContent = content.replace(frontmatterMatch[1], updatedFrontmatter)
-      await writeFile(slidesPath, newContent, 'utf-8')
-      // eslint-disable-next-line no-console
-      console.log(`Added language ${language} to htmlAttrs in ${slidesPath}`)
-    }
-    else {
-      // No htmlAttrs, add it
-      const updatedFrontmatter = `htmlAttrs:
-  lang: ${language}
-  dir: ltr
-${frontmatter}`
-      const newContent = content.replace(frontmatterMatch[1], updatedFrontmatter)
-      await writeFile(slidesPath, newContent, 'utf-8')
-      // eslint-disable-next-line no-console
-      console.log(`Added language ${language} to ${slidesPath}`)
-    }
-  }
-  catch (error) {
-    console.warn(`Could not update slides.md at ${slidesPath}:`, error)
   }
 }
 
@@ -223,7 +160,7 @@ Slides from my [talks](https://soubiran.dev/talks).
     content += `| ${event} | ${data.total} | ${yearCounts} |\n`
   }
 
-  content += '\n'
+  content += '\n## Talks\n\n'
 
   // Add talks list
   for (const year of years) {
@@ -255,6 +192,24 @@ rclone copy . perso:talks-soubiran-dev --filter-from ./copy-assets.txt
 }
 
 /**
+ * Get all talk folders matching date pattern
+ * Reuses the same logic as selectDeck from _utils.ts
+ */
+async function getTalkFolders(_rootPath: string): Promise<string[]> {
+  // Reuse the logic from selectDeck to get folders
+  const url = new URL('..', import.meta.url)
+  const { readdir } = await import('node:fs/promises')
+
+  const folders = (await readdir(url, { withFileTypes: true }))
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name)
+    .filter(folder => folder.match(/^\d{4}-\d{2}-\d{2}/))
+    .sort((a, b) => -a.localeCompare(b))
+
+  return folders
+}
+
+/**
  * Main function to generate README
  */
 export async function generateReadme(rootPath = '.'): Promise<void> {
@@ -262,11 +217,7 @@ export async function generateReadme(rootPath = '.'): Promise<void> {
   console.log('Scanning talk folders...')
 
   // Get all folders matching date pattern (YYYY-MM-DD or YYYY-MM-DD-N)
-  const folders = (await readdir(rootPath, { withFileTypes: true }))
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name)
-    .filter(folder => folder.match(/^\d{4}-\d{2}-\d{2}/))
-    .sort((a, b) => -a.localeCompare(b))
+  const folders = await getTalkFolders(rootPath)
 
   // eslint-disable-next-line no-console
   console.log(`Found ${folders.length} talk folders`)
@@ -277,15 +228,9 @@ export async function generateReadme(rootPath = '.'): Promise<void> {
     const folderPath = resolve(rootPath, folder)
     const metadata = await extractTalkMetadata(folderPath)
     if (metadata) {
-      // If language is missing, try to detect and update
+      // If language is missing, throw an error
       if (!metadata.language) {
-        // eslint-disable-next-line no-console
-        console.log(`Language missing for ${folder}, defaulting to 'fr'`)
-        metadata.language = 'fr' // Default to French for this repository
-
-        // Update slides.md with the language
-        const slidesPath = resolve(folderPath, 'src', 'slides.md')
-        await updateSlidesWithLanguage(slidesPath, metadata.language)
+        throw new Error(`Language missing for ${folder}. Please add 'lang' to the slides.md frontmatter.`)
       }
     }
     return metadata
@@ -295,6 +240,9 @@ export async function generateReadme(rootPath = '.'): Promise<void> {
   for (const result of results) {
     if (result.status === 'fulfilled' && result.value) {
       talks.push(result.value)
+    }
+    else if (result.status === 'rejected') {
+      console.error(result.reason)
     }
   }
 

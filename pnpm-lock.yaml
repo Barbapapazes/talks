@@ -95,6 +95,9 @@ importers:
       fdir:
         specifier: ^6.5.0
         version: 6.5.0(picomatch@4.0.3)
+      gray-matter:
+        specifier: ^4.0.3
+        version: 4.0.3
       ofetch:
         specifier: ^1.4.1
         version: 1.4.1
