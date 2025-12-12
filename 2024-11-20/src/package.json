@@ -1,14 +1,17 @@
 {
   "name": "takimeet",
-  "event": "TakiMeet",
+  "event": {
+    "name": "TakiMeet",
+    "url": "https://www.takima.fr/",
+    "location": {
+      "city": "Paris",
+      "country": "France",
+      "latitude": 48.80486167446941,
+      "longitude": 2.324595137047259
+    }
+  },
   "private": true,
   "description": "Améliorez l'expérience utilisateur en créant des interfaces fluides et réactives grâce aux techniques modernes de développement web.",
-  "location": {
-    "city": "Paris",
-    "country": "France",
-    "latitude": 48.80486167446941,
-    "longitude": 2.324595137047259
-  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-11-20/takimeet/ --out ../../dist/2024-11-20/takimeet",

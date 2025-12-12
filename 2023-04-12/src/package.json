@@ -1,15 +1,18 @@
 {
   "name": "devoxxfr",
-  "event": "Devoxx France",
+  "event": {
+    "name": "Devoxx France",
+    "url": "https://www.devoxx.fr/",
+    "location": {
+      "city": "Paris",
+      "country": "France",
+      "latitude": 48.87920881050965,
+      "longitude": 2.2836092090943354
+    }
+  },
   "private": true,
   "description": "Découvrez Unpoly, une bibliothèque JavaScript permettant de créer des applications web progressives sans framework frontend lourd.",
   "recording": "https://youtu.be/MIM6E_XMRHQ",
-  "location": {
-    "city": "Paris",
-    "country": "France",
-    "latitude": 48.87920881050965,
-    "longitude": 2.2836092090943354
-  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2023-04-12/devoxxfr/ --out ../../dist/2023-04-12/devoxxfr",

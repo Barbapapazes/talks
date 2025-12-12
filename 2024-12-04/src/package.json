@@ -1,14 +1,17 @@
 {
   "name": "vuejs-paris",
-  "event": "Vue.js Paris",
+  "event": {
+    "name": "Vue.js Paris",
+    "url": "https://www.meetup.com/fr-FR/vuejs-paris/",
+    "location": {
+      "city": "Paris",
+      "country": "France",
+      "latitude": 48.86565735572218,
+      "longitude": 2.342539485144613
+    }
+  },
   "private": true,
   "description": "Explorez NuxtHub, la plateforme de déploiement full-stack pour Nuxt, et simplifiez la mise en production de vos applications.",
-  "location": {
-    "city": "Paris",
-    "country": "France",
-    "latitude": 48.86565735572218,
-    "longitude": 2.342539485144613
-  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-12-04/vuejs-paris/ --out ../../dist/2024-12-04/vuejs-paris",

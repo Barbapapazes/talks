@@ -27,7 +27,7 @@ function talkMetaEntryMapper(dir: string, pkg: Package, frontmatter: Record<stri
   return {
     language: frontmatter.htmlAttrs.lang,
     name: frontmatter.title,
-    event: pkg.event,
+    event: pkg.event.name,
     prefix,
     // Keep only the first 10 characters (date) because talks given on the same day are suffixed with -1, -2, ...
     date: dir.slice(0, 10),
@@ -41,6 +41,6 @@ function talkMetaEntryMapper(dir: string, pkg: Package, frontmatter: Record<stri
     audio_url: pkg.recording ? audio_url : undefined,
     transcript_url: pkg.recording ? transcript_url : undefined,
     article_url: pkg.article ? article_url : undefined,
-    location: pkg.location,
+    location: pkg.event.location,
   }
 }

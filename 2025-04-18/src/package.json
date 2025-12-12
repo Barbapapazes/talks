@@ -1,16 +1,19 @@
 {
   "name": "devoxxfr",
-  "event": "Devoxx France",
+  "event": {
+    "name": "Devoxx France",
+    "url": "https://www.devoxx.fr/",
+    "location": {
+      "city": "Paris",
+      "country": "France",
+      "latitude": 48.87920881050965,
+      "longitude": 2.2836092090943354
+    }
+  },
   "private": true,
   "description": "Explorez le paradoxe des packages JavaScript : omniprésents mais souvent inutiles. Apprenez à optimiser vos dépendances efficacement.",
   "recording": "https://youtu.be/oPsMeG9zKmE",
   "article": "https://soubiran.dev/posts/beyond-the-tech-people-who-made-devoxx-france-2025-special",
-  "location": {
-    "city": "Paris",
-    "country": "France",
-    "latitude": 48.87920881050965,
-    "longitude": 2.2836092090943354
-  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-04-18/devoxxfr/ --out ../../dist/2025-04-18/devoxxfr",

@@ -1,14 +1,17 @@
 {
   "name": "devfest-dijon",
-  "event": "DevFest Dijon",
+  "event": {
+    "name": "DevFest Dijon",
+    "url": "https://devfest.developers-group-dijon.fr/",
+    "location": {
+      "city": "Dijon",
+      "country": "France",
+      "latitude": 47.31307384050383,
+      "longitude": 5.072856389593075
+    }
+  },
   "private": true,
   "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
-  "location": {
-    "city": "Dijon",
-    "country": "France",
-    "latitude": 47.31307384050383,
-    "longitude": 5.072856389593075
-  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-12-05/devfest-dijon/ --out ../../dist/2025-12-05/devfest-dijon",

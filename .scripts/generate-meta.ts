@@ -1,5 +1,5 @@
 import type { MetaEntry } from './_types.ts'
-import { writeFileSync } from 'node:fs'
+import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'pathe'
 import { generateMetaEntry } from './_meta.ts'
 import { calculateStatistics } from './_readme.ts'
@@ -25,6 +25,9 @@ async function generateMeta() {
   }
 
   const statistics = calculateStatistics(meta)
+
+  // Ensure dist directory exists
+  mkdirSync('dist', { recursive: true })
 
   writeFileSync(join('dist', 'meta.json'), JSON.stringify({
     data: meta,
