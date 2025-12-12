@@ -1,14 +1,17 @@
 {
   "name": "human-talks",
-  "event": "HumanTalks Paris",
+  "event": {
+    "name": "HumanTalks Paris",
+    "url": "https://humantalks.paris/",
+    "location": {
+      "city": "Paris",
+      "country": "France",
+      "latitude": 48.875576679627024,
+      "longitude": 2.3627290740328992
+    }
+  },
   "private": true,
   "description": "Découvrez comment déployer et faire évoluer vos applications Nuxt en production avec les meilleures pratiques et outils modernes.",
-  "location": {
-    "city": "Paris",
-    "country": "France",
-    "latitude": 48.875576679627024,
-    "longitude": 2.3627290740328992
-  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-04-08/human-talks/ --out ../../dist/2025-04-08/human-talks",

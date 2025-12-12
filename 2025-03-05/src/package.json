@@ -1,14 +1,17 @@
 {
   "name": "nodejs-paris",
-  "event": "Node.js Paris",
+  "event": {
+    "name": "Node.js Paris",
+    "url": "http://nodejs.paris/meetups",
+    "location": {
+      "city": "Paris",
+      "country": "France",
+      "latitude": 48.86860314335723,
+      "longitude": 2.3354337719970117
+    }
+  },
   "private": true,
   "description": "Découvrez pourquoi certaines nouvelles API Node.js ne sont pas nécessaires et comment les alternatives existantes font mieux le travail.",
-  "location": {
-    "city": "Paris",
-    "country": "France",
-    "latitude": 48.86860314335723,
-    "longitude": 2.33543377199701188522
-  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-03-05/nodejs-paris/ --out ../../dist/2025-03-05/nodejs-paris",

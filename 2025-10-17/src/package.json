@@ -1,16 +1,19 @@
 {
   "name": "devfest-nantes",
-  "event": "Devfest Nantes",
+  "event": {
+    "name": "Devfest Nantes",
+    "url": "https://devfest.gdgnantes.com/",
+    "location": {
+      "city": "Nantes",
+      "country": "France",
+      "latitude": 47.21301161689769,
+      "longitude": -1.543613931486997
+    }
+  },
   "private": true,
   "description": "Explorez le paradoxe des packages JavaScript : omniprésents mais souvent inutiles. Apprenez à optimiser vos dépendances efficacement.",
   "recording": "https://youtu.be/YHl6fUM5PDw",
   "article": "https://soubiran.dev/posts/my-adventure-to-nantes-for-europes-largest-devfest",
-  "location": {
-    "city": "Nantes",
-    "country": "France",
-    "latitude": 47.21301161689769,
-    "longitude": -1.543613931486997
-  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-10-17/devfest-nantes/ --out ../../dist/2025-10-17/devfest-nantes",
