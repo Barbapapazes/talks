@@ -7,7 +7,7 @@
     "export": "pnpm -r run --workspace-concurrency=1 export",
     "thumbnail": "pnpm -r --workspace-concurrency=1 run thumbnail",
     "thumbnail:cp": "pnpm -r --workspace-concurrency=-1 run thumbnail:cp",
-    "ready": "node .scripts/ready-deck.ts && pnpm run generate:readme",
+    "ready": "node .scripts/ready-deck.ts && pnpm run generate:readme && pnpm run generate:talk-readme",
     "clean": "rm -rf dist && rm -rf slides-export",
     "generate:redirects": "node .scripts/generate-redirects.ts",
     "generate:meta": "node .scripts/generate-meta.ts",
