@@ -1,6 +1,6 @@
 ---
 htmlAttrs:
-  lang: fr-FR
+  lang: fr
   dir: ltr
 layout: cover
 highlighter: shiki
