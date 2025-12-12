@@ -24,16 +24,10 @@ function talkMetaEntryMapper(dir: string, pkg: Package, frontmatter: Record<stri
   const transcript_url = `https://soubiran.dev/talks/${prefix}`
   const article_url = `${url}/article`
 
-  // Handle both old format (string) and new format (object)
-  const eventName = typeof pkg.event === 'string' ? pkg.event : pkg.event.name
-  const eventLocation = typeof pkg.event === 'object' && pkg.event.location
-    ? pkg.event.location
-    : pkg.location
-
   return {
     language: frontmatter.htmlAttrs.lang,
     name: frontmatter.title,
-    event: eventName,
+    event: pkg.event.name,
     prefix,
     // Keep only the first 10 characters (date) because talks given on the same day are suffixed with -1, -2, ...
     date: dir.slice(0, 10),
@@ -47,6 +41,6 @@ function talkMetaEntryMapper(dir: string, pkg: Package, frontmatter: Record<stri
     audio_url: pkg.recording ? audio_url : undefined,
     transcript_url: pkg.recording ? transcript_url : undefined,
     article_url: pkg.article ? article_url : undefined,
-    location: eventLocation,
+    location: pkg.event.location,
   }
 }

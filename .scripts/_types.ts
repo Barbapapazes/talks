@@ -8,17 +8,16 @@ export interface Location {
 export interface Event {
   name: string
   url: string
-  location?: Location
+  location: Location
 }
 
 export interface Package {
   date: string
   name: string
-  event: Event | string // Support both old and new format during transition
+  event: Event
   description?: string
   recording?: string
   article?: string
-  location?: Location // Keep for backward compatibility
 }
 
 export interface MetaEntry {
@@ -37,5 +36,5 @@ export interface MetaEntry {
   audio_url?: string
   transcript_url?: string
   article_url?: string
-  location?: Location
+  location: Location
 }
