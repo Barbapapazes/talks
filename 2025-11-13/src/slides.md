@@ -14,7 +14,7 @@ theme: slidev-theme-personal
 addons:
   - slidev-addon-inalia
   - slidev-addon-graph
-title: "La réactivité et les signaux: démystifions la magie du frontend"
+title: "La réactivité et les signaux : démystifions la magie du frontend"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: web,development,vue,reactivity,frontend

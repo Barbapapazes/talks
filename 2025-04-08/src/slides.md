@@ -1,6 +1,6 @@
 ---
 htmlAttrs:
-  lang: en
+  lang: fr
   dir: ltr
 fonts:
   sans: Noto Sans
