@@ -6,8 +6,8 @@
   "location": {
     "city": "Paris",
     "country": "France",
-    "latitude": 48.8566,
-    "longitude": 2.3522
+    "latitude": 48.80486167446941,
+    "longitude": 2.324595137047259
   },
   "scripts": {
     "dev": "slidev",

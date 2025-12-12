@@ -6,8 +6,8 @@
   "location": {
     "city": "Toulouse",
     "country": "France",
-    "latitude": 43.6047,
-    "longitude": 1.4442
+    "latitude": 43.54228454982411,
+    "longitude": 1.5135988668549822
   },
   "scripts": {
     "dev": "slidev",

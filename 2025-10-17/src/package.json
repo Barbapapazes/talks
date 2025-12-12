@@ -8,8 +8,8 @@
   "location": {
     "city": "Nantes",
     "country": "France",
-    "latitude": 47.2184,
-    "longitude": -1.5536
+    "latitude": 47.21301161689769,
+    "longitude": -1.543613931486997
   },
   "scripts": {
     "dev": "slidev",

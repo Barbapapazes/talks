@@ -7,8 +7,8 @@
   "location": {
     "city": "Bordeaux",
     "country": "France",
-    "latitude": 44.8378,
-    "longitude": -0.5792
+    "latitude": 44.8882638878896,
+    "longitude": -0.567226209881065
   },
   "scripts": {
     "dev": "slidev",

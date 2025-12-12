@@ -8,8 +8,8 @@
   "location": {
     "city": "Lyon",
     "country": "France",
-    "latitude": 45.7640,
-    "longitude": 4.8357
+    "latitude": 45.78405605635917,
+    "longitude": 4.869033628453851
   },
   "scripts": {
     "dev": "slidev",

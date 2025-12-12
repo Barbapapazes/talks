@@ -7,8 +7,8 @@
   "location": {
     "city": "Prague",
     "country": "Czech Republic",
-    "latitude": 50.0755,
-    "longitude": 14.4378
+    "latitude": 50.05163619329479,
+    "longitude": 14.442793342573804
   },
   "scripts": {
     "dev": "slidev",
