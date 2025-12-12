@@ -1,6 +1,7 @@
 import type { Package } from './_types.ts'
 import { readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
+import process from 'node:process'
 import matter from 'gray-matter'
 import { getPackagesJson } from './_utils.ts'
 
@@ -38,7 +39,8 @@ ${date} - [${eventName}](${eventUrl})
     await writeFile(join(dir, 'README.md'), content)
   }
   catch (error) {
-    throw new Error(`Failed to generate README for ${dir}: ${error}`)
+    const errorMessage = error instanceof Error ? error.message : String(error)
+    throw new Error(`Failed to generate README for ${dir}: ${errorMessage}`)
   }
 }
 
@@ -54,4 +56,7 @@ async function generateAllTalkReadmes() {
   }
 }
 
-generateAllTalkReadmes()
+generateAllTalkReadmes().catch((error) => {
+  console.error('Failed to generate talk READMEs:', error)
+  process.exit(1)
+})
