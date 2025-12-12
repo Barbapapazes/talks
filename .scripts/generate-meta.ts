@@ -1,4 +1,4 @@
-import type { Package } from './_types.ts'
+import type { Location, Package } from './_types.ts'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'pathe'
 import { calculateStatistics, convertMetaToTalks, generateReadme } from './_readme.ts'
@@ -21,6 +21,7 @@ function generateMeta() {
     audio_url?: string
     transcript_url?: string
     article_url?: string
+    location?: Location
   }[]
 
   for (const packageJSON of packagesJson) {
@@ -66,6 +67,7 @@ function generateMeta() {
       audio_url: content.recording ? audio_url : undefined,
       transcript_url: content.recording ? transcript_url : undefined,
       article_url: content.article ? article_url : undefined,
+      location: content.location,
     })
   }
 
