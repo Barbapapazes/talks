@@ -1,12 +1,18 @@
 {
-  "name": "devfest-toulouse",
-  "event": "DevFest Toulouse",
+  "name": "devfest-dijon",
+  "event": "DevFest Dijon",
   "private": true,
   "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
+  "location": {
+    "city": "Dijon",
+    "country": "France",
+    "latitude": 47.31307384050383,
+    "longitude": 5.072856389593075
+  },
   "scripts": {
     "dev": "slidev",
-    "build": "slidev build --base /2025-11-13/devfest-toulouse/ --out ../../dist/2025-11-13/devfest-toulouse",
-    "export": "slidev export --per-slide --output ../2025-11-13-devfest-toulouse.pdf",
+    "build": "slidev build --base /2025-12-05/devfest-dijon/ --out ../../dist/2025-12-05/devfest-dijon",
+    "export": "slidev export --per-slide --output ../2025-12-05-devfest-dijon.pdf",
     "thumbnail:cp": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
     "thumbnail": "slidev export --per-slide --range 1 --format png"
   },
