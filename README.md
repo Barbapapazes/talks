@@ -79,12 +79,12 @@ Slides from my [talks](https://soubiran.dev/talks).
 - `fr` [Fluidifier l'expérience utilisateur](./2024-11-20) - TakiMeet
 - `en` [Ship Nuxt apps that scale](./2024-11-13) - Nuxt Nation
 - `en` [You've dreamed it? Create full-stack apps with Nuxt!](./2024-09-17) - PragVue
-- `fr-FR` [Unifié et Universel, le JavaScript avec UnJS](./2024-04-19) - Devoxx France
-- `fr-FR` [Découvrons ensemble l'écosystème UnJS](./2024-04-12) - StrasbourgJS
+- `fr` [Unifié et Universel, le JavaScript avec UnJS](./2024-04-19) - Devoxx France
+- `fr` [Découvrons ensemble l'écosystème UnJS](./2024-04-12) - StrasbourgJS
 
 ### 2023
 
-- `fr-FR` [Unpoly pour reprendre le contrôle !](./2023-04-12) - Devoxx France
+- `fr` [Unpoly pour reprendre le contrôle !](./2023-04-12) - Devoxx France
 
 ---
 
