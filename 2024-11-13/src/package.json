@@ -4,6 +4,12 @@
   "private": true,
   "description": "Découvrez comment déployer et faire évoluer vos applications Nuxt en production avec les meilleures pratiques et outils modernes.",
   "recording": "https://youtu.be/I4-YfEn8K0w",
+  "location": {
+    "city": "Online",
+    "country": "Online",
+    "latitude": 0,
+    "longitude": 0
+  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-11-13/nuxtnation/ --out ../../dist/2024-11-13/nuxtnation",
