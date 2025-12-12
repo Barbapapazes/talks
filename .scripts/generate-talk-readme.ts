@@ -8,28 +8,38 @@ import { getPackagesJson } from './_utils.ts'
  * Generate README for a single talk directory
  */
 async function generateTalkReadme(dir: string): Promise<void> {
-  // Read package.json
-  const pkg = await readFile(join(dir, 'src', 'package.json'), 'utf-8')
-  const packageJson = JSON.parse(pkg) as Package
+  try {
+    // Read package.json
+    const pkg = await readFile(join(dir, 'src', 'package.json'), 'utf-8')
+    const packageJson = JSON.parse(pkg) as Package
 
-  // Read slides.md to get the title
-  const slides = await readFile(join(dir, 'src', 'slides.md'), 'utf-8')
-  const frontmatter = matter(slides).data
+    // Read slides.md to get the title
+    const slides = await readFile(join(dir, 'src', 'slides.md'), 'utf-8')
+    const frontmatter = matter(slides).data
 
-  // Extract information
-  const title = frontmatter.title
-  const date = dir.slice(0, 10).replace(/-/g, '/') // Convert YYYY-MM-DD to YYYY/MM/DD
-  const eventName = packageJson.event.name
-  const eventUrl = packageJson.event.url
+    // Extract information
+    const title = frontmatter.title
+    // Extract date from directory name (expects YYYY-MM-DD format at start)
+    const dateMatch = dir.match(/^(\d{4}-\d{2}-\d{2})/)
+    if (!dateMatch) {
+      throw new Error(`Directory name does not start with YYYY-MM-DD format: ${dir}`)
+    }
+    const date = dateMatch[1].replace(/-/g, '/') // Convert YYYY-MM-DD to YYYY/MM/DD
+    const eventName = packageJson.event.name
+    const eventUrl = packageJson.event.url
 
-  // Generate README content
-  const content = `# ${title}
+    // Generate README content
+    const content = `# ${title}
 
 ${date} - [${eventName}](${eventUrl})
 `
 
-  // Write README.md
-  await writeFile(join(dir, 'README.md'), content)
+    // Write README.md
+    await writeFile(join(dir, 'README.md'), content)
+  }
+  catch (error) {
+    throw new Error(`Failed to generate README for ${dir}: ${error}`)
+  }
 }
 
 /**
