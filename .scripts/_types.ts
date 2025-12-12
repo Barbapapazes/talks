@@ -12,7 +12,7 @@ export interface Package {
   description?: string
   recording?: string
   article?: string
-  location?: Location
+  location: Location
 }
 
 export interface MetaEntry {
@@ -31,5 +31,5 @@ export interface MetaEntry {
   audio_url?: string
   transcript_url?: string
   article_url?: string
-  location?: Location
+  location: Location
 }

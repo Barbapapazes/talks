@@ -41,5 +41,6 @@ function talkMetaEntryMapper(dir: string, pkg: Package, frontmatter: Record<stri
     audio_url: pkg.recording ? audio_url : undefined,
     transcript_url: pkg.recording ? transcript_url : undefined,
     article_url: pkg.article ? article_url : undefined,
+    location: pkg.location,
   }
 }
