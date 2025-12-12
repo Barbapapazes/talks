@@ -25,7 +25,7 @@
     "slidev-addon-inalia": "^0.2.6"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^5.4.1",
+    "@antfu/eslint-config": "^6.0.0",
     "@iconify-json/devicon": "^1.2.45",
     "@iconify-json/heroicons": "^1.2.3",
     "@iconify-json/logos": "^1.2.9",
@@ -53,14 +53,5 @@
     "slidev-theme-personal": "link:./theme",
     "taze": "^19.7.0",
     "typescript": "^5.9.3"
-  },
-  "pnpm": {
-    "overrides": {
-      "vite": "npm:rolldown-vite@latest"
-    },
-    "patchedDependencies": {
-      "cobe": "patches/cobe.patch",
-      "slidev-addon-graph": "patches/slidev-addon-graph.patch"
-    }
   }
 }
