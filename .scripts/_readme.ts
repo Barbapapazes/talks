@@ -158,6 +158,17 @@ rclone copy . perso:talks-soubiran-dev --filter-from ./copy-assets.txt
   return content
 }
 
+/**
+ * Generate README content for a single talk
+ */
+export function generateTalkReadmeContent(meta: MetaEntry): string {
+  const content = `# ${meta.name}
+
+${meta.date.replace(/-/g, '/')} - [${meta.event}](${meta.event_url})
+`
+  return content
+}
+
 function dateToYear(dateStr: string): number {
   return Number(dateStr.slice(0, 4))
 }

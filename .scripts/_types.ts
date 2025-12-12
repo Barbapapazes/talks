@@ -26,6 +26,7 @@ export interface MetaEntry {
   date: string
   prefix: string
   event: string
+  event_url: string
   description?: string
   folder: string
   url: string
