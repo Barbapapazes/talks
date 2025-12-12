@@ -1,14 +1,17 @@
 {
   "name": "strasbourgjs",
-  "event": "StrasbourgJS",
+  "event": {
+    "name": "StrasbourgJS",
+    "url": "https://strasbourgjs.org/",
+    "location": {
+      "city": "Strasbourg",
+      "country": "France",
+      "latitude": 48.576651520014444,
+      "longitude": 7.755109833536078
+    }
+  },
   "private": true,
   "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
-  "location": {
-    "city": "Strasbourg",
-    "country": "France",
-    "latitude": 48.576651520014444,
-    "longitude": 7.755109833536078
-  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-10-21/strasbourgjs/ --out ../../dist/2025-10-21/strasbourgjs",

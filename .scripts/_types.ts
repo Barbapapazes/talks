@@ -5,14 +5,20 @@ export interface Location {
   longitude: number
 }
 
+export interface Event {
+  name: string
+  url: string
+  location?: Location
+}
+
 export interface Package {
   date: string
   name: string
-  event: string
+  event: Event | string // Support both old and new format during transition
   description?: string
   recording?: string
   article?: string
-  location?: Location
+  location?: Location // Keep for backward compatibility
 }
 
 export interface MetaEntry {

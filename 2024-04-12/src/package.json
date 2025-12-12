@@ -1,16 +1,19 @@
 {
   "name": "strasbourgjs",
-  "event": "StrasbourgJS",
+  "event": {
+    "name": "StrasbourgJS",
+    "url": "https://https://strasbourgjs.org/",
+    "location": {
+      "city": "Strasbourg",
+      "country": "France",
+      "latitude": 48.60359333922045,
+      "longitude": 7.756997318155868
+    }
+  },
   "private": true,
   "description": "Explorez l'écosystème UnJS et ses packages universels pour construire des applications JavaScript performantes et multiplateforme.",
   "recording": "https://youtu.be/mPcJXqaBLFM",
   "article": "https://soubiran.dev/posts/my-first-meetup-talk-a-dive-into-the-large-unjs-ecosystem",
-  "location": {
-    "city": "Strasbourg",
-    "country": "France",
-    "latitude": 48.60359333922045,
-    "longitude": 7.756997318155868
-  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-04-12/strasbourgjs/ --out ../../dist/2024-04-12/strasbourgjs",

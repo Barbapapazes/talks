@@ -1,15 +1,18 @@
 {
   "name": "bdx-io",
-  "event": "BDX I/O",
+  "event": {
+    "name": "BDX I/O",
+    "url": "https://bdxio.fr/",
+    "location": {
+      "city": "Bordeaux",
+      "country": "France",
+      "latitude": 44.8882638878896,
+      "longitude": -0.567226209881065
+    }
+  },
   "private": true,
   "description": "Explorez le paradoxe des packages JavaScript : omniprésents mais souvent inutiles. Apprenez à optimiser vos dépendances efficacement.",
   "article": "https://soubiran.dev/posts/twice-in-one-day-speaking-at-bdx-io-2025-at-bordeaux",
-  "location": {
-    "city": "Bordeaux",
-    "country": "France",
-    "latitude": 44.8882638878896,
-    "longitude": -0.567226209881065
-  },
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-11-07-1/bdx-io/ --out ../../dist/2025-11-07-1/bdx-io",
