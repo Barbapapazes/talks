@@ -19,7 +19,7 @@ export default function latestArticles() {
         // TODO: add types, lang, and description to meta.json
 
         const latestArticles = articles
-          .sort((a, b) => b.id - a.id)
+          .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
           .filter(article => !article.uri.startsWith('/fr/'))
           .slice(0, 4)
 

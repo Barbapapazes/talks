@@ -3,4 +3,5 @@ export interface Article {
   title: string
   uri: string
   url: string
+  date: string
 }
