@@ -11,7 +11,6 @@
     "clean": "rm -rf dist && rm -rf slides-export",
     "generate:redirects": "tsx .scripts/generate-redirects.ts",
     "generate:meta": "tsx .scripts/generate-meta.ts",
-    "generate:readme": "tsx .scripts/generate-readme.ts",
     "dev": "tsx .scripts/select-deck.ts dev --open",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"

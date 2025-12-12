@@ -1,6 +1,7 @@
 import type { Package } from './_types.ts'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'pathe'
+import { calculateStatistics, convertMetaToTalks, generateReadme } from './_readme.ts'
 import { getPackagesJson } from './_utils.ts'
 
 function generateMeta() {
@@ -68,7 +69,37 @@ function generateMeta() {
     })
   }
 
-  writeFileSync(join('dist', 'meta.json'), JSON.stringify({ data: meta }))
+  // Calculate statistics
+  const talks = convertMetaToTalks(meta)
+  const statistics = calculateStatistics(talks)
+
+  // Write meta.json with statistics
+  writeFileSync(join('dist', 'meta.json'), JSON.stringify({
+    data: meta,
+    statistics: {
+      totalTalks: statistics.totalTalks,
+      talksByYear: statistics.talksByYear,
+      talksByEvent: Object.fromEntries(
+        Object.entries(statistics.talksByEvent).map(([event, data]) => [event, {
+          total: data.total,
+          byYear: data.byYear,
+        }]),
+      ),
+      talksByTitle: Object.fromEntries(
+        Object.entries(statistics.talksByTitle).map(([title, data]) => [title, {
+          count: data.count,
+          byYear: data.byYear,
+        }]),
+      ),
+    },
+  }))
+
+  // Generate README
+  // eslint-disable-next-line no-console
+  console.log('\nGenerating README...')
+  generateReadme(meta).catch((error) => {
+    console.error('Failed to generate README:', error)
+  })
 }
 
 generateMeta()
