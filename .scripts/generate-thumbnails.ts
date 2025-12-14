@@ -25,7 +25,7 @@ async function generateAllThumbnails() {
       console.warn(`✓ Generated thumbnails for ${talkDir}`)
     }
     catch (error) {
-      console.error(`✗ Failed to generate thumbnails for ${talkDir}:`, error.message)
+      console.error(`✗ Failed to generate thumbnails for ${talkDir}:`, String(error))
     }
   }
 
