@@ -17,6 +17,7 @@ function talkMetaEntryMapper(dir: string, pkg: Package, frontmatter: Record<stri
   const prefix = `${dir}/${pkg.name}`
   const url = `https://talks.soubiran.dev/${prefix}`
   const thumbnail_url = `${url}/thumbnail.png`
+  const thumbnail_dark_url = `${url}/thumbnail-dark.png`
   const pdf_url = `${url}/pdf`
   const github_url = `${url}/src`
   const recording_url = `${url}/recording`
@@ -36,6 +37,7 @@ function talkMetaEntryMapper(dir: string, pkg: Package, frontmatter: Record<stri
     folder: dir,
     url,
     thumbnail_url,
+    thumbnail_dark_url,
     pdf_url,
     github_url,
     recording_url: pkg.recording ? recording_url : undefined,
