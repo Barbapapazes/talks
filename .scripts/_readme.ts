@@ -80,7 +80,25 @@ export function generateReadmeContent(meta: MetaEntry[]): string {
 
 Slides from my [talks](https://soubiran.dev/talks).
 
-## Statistics
+## Talks\n\n`
+
+  // Add talks list
+  for (const year of years) {
+    content += `### ${year}\n\n`
+
+    // Sort talks by date descending within year
+    const yearTalks = talksGroupedByYear[year].sort((a, b) => -a.date.localeCompare(b.date))
+
+    for (const talk of yearTalks) {
+      // Format: - `lang` [Title](./folder) - Event
+      const lang = talk.language || 'en'
+      content += `- \`${lang}\` [${talk.name}](./${talk.folder}) - ${talk.event}\n`
+    }
+
+    content += '\n'
+  }
+
+  content += `## Statistics
 
 ### Talks per Year
 
@@ -125,24 +143,6 @@ Slides from my [talks](https://soubiran.dev/talks).
   for (const [title, data] of titleEntries) {
     const yearCounts = years.map(year => data.byYear[year] || 0).join(' | ')
     content += `| ${title} | ${data.count} | ${yearCounts} |\n`
-  }
-
-  content += '\n## Talks\n\n'
-
-  // Add talks list
-  for (const year of years) {
-    content += `### ${year}\n\n`
-
-    // Sort talks by date descending within year
-    const yearTalks = talksGroupedByYear[year].sort((a, b) => -a.date.localeCompare(b.date))
-
-    for (const talk of yearTalks) {
-      // Format: - `lang` [Title](./folder) - Event
-      const lang = talk.language || 'en'
-      content += `- \`${lang}\` [${talk.name}](./${talk.folder}) - ${talk.event}\n`
-    }
-
-    content += '\n'
   }
 
   // Add footer with copy assets command
