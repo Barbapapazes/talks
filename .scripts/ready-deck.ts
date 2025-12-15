@@ -14,6 +14,12 @@ async function startReadyDeck() {
   await execa('rm', ['-f', '.env'], { cwd: src })
   await execa('pnpm', ['run', 'thumbnail'], { cwd: src })
   await execa('pnpm', ['run', 'thumbnail:cp'], { cwd: src })
+  await execa('pnpm', ['run', 'thumbnail:dark'], { cwd: src })
+  await execa('pnpm', ['run', 'thumbnail:cp:dark'], { cwd: src })
+
+  // Optimize thumbnails
+  await execa('pnpm', ['run', 'optimize:thumbnails'], { cwd: src })
+
   await execa('pnpm', ['run', 'export'], { cwd: src })
 
   // eslint-disable-next-line no-console

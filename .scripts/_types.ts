@@ -32,6 +32,7 @@ export interface MetaEntry {
   url: string
   pdf_url: string
   thumbnail_url: string
+  thumbnail_dark_url: string
   github_url?: string
   recording_url?: string
   audio_url?: string
