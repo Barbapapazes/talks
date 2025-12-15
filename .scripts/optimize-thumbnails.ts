@@ -43,6 +43,9 @@ async function optimizeThumbnails() {
         if (savings > 0) {
           console.warn(`  ✓ ${thumbnailPath.split('/').slice(-3).join('/')}: ${(originalSize / 1024).toFixed(1)}KB → ${(optimizedSize / 1024).toFixed(1)}KB (${savingsPercent}% reduction)`)
         }
+        else {
+          console.warn(`  → ${thumbnailPath.split('/').slice(-3).join('/')}: No size reduction`)
+        }
 
         totalOriginalSize += originalSize
         totalOptimizedSize += optimizedSize
