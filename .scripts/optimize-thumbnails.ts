@@ -52,7 +52,7 @@ async function optimizeThumbnails() {
         optimizedCount++
       }
       catch (error) {
-        console.error(`  ✗ Failed to optimize ${thumbnailPath}:`, String(error))
+        console.error(`  ✗ Failed to optimize ${thumbnailPath}:`, error)
       }
     }
   }
