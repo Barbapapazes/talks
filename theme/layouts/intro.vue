@@ -81,5 +81,26 @@ const links = [website, ...socials]
         </Footer>
       </VClick>
     </div>
+
+    <template v-if="$frontmatter.stickers">
+      <VClick>
+        <div class="absolute inset-0 bg-white bg-opacity-10 backdrop-blur-sm" />
+      </VClick>
+      <VAfter>
+        <img src="/takima/dark-vador.png" class="absolute h-1/2 top-8 rotate-350 drop-shadow-md duration-300 ease-out forward:delay-50">
+      </VAfter>
+      <VAfter>
+        <img src="/takima/git-poule.png" class="absolute h-1/2 top-16 left-1/2 -translate-x-1/2 drop-shadow-md duration-300 ease-out forward:delay-75">
+      </VAfter>
+      <VAfter>
+        <img src="/takima/pear-programming.png" class="absolute h-1/2 right-8 top-8 drop-shadow-md duration-300 ease-out forward:delay-125">
+      </VAfter>
+      <VAfter>
+        <img src="/takima/of-course-my-code-works.png" class="absolute h-1/3 bottom-4 left-1/3 -translate-x-1/2 rotate-359 drop-shadow-md duration-300 ease-out forward:delay-75">
+      </VAfter>
+      <VAfter>
+        <img src="/takima/taking-control.png" class="absolute h-1/3 bottom-4 left-2/3 -translate-x-1/2 rotate-2 drop-shadow-md duration-300 ease-out forward:delay-100">
+      </VAfter>
+    </template>
   </div>
 </template>

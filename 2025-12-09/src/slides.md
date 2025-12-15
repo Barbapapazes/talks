@@ -29,6 +29,19 @@ layout: inalia-overview
 ---
 
 ---
+name: Et si tu faisais un talk ?
+layout: center
+---
+
+<h2 class="text-2xl font-semibold">Et si c'était toi la prochaine fois ?</h2>
+
+<!--
+
+Avant d'aller plus loin, si vous souhaitez réaliser un talk, que ce soit sur les outils que vous utiliser, vos projets personnels ou même des folies que vous avez pu faire dans vos entreprises ou missions, n'hésitez pas à me contacter. C'est toujours un plaisir d'échanger autour d'un verre ou en visio.
+
+-->
+
+---
 name: `is-string` downloads
 ---
 
@@ -55,7 +68,7 @@ transition: slide-up
   question="Qui a déjà installé is-string ?"
   type="single_select"
   chart="donut"
-  :data="[{ label: 'Oui', count: 1, color: '#881ded' }, { label: 'Non', count: 29, color: '#EDED1D' }]"
+  :data="[{ label: 'Oui', count: 2, color: '#E93F0C' }, { label: 'Non', count: 26, color: '#E90CE8' }]"
 />
 
 <!--
@@ -80,7 +93,8 @@ Mais on ne veut pas ça. On ne veut pas que notre node_modules devienne la chose
 
 ---
 layout: intro
-intro: Ingénieur logiciel Avionique chez <span class="i-custom-maiaspace inline-block size-5 align-text-top"></span> Maiaspace
+intro: Ingénieur chez <span class="i-custom-takima inline-block size-5 align-text-top"></span> Takima
+stickers: true
 ---
 
 <!--
