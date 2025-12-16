@@ -75,6 +75,11 @@ export function generateReadmeContent(meta: MetaEntry[]): string {
     return acc
   }, {})
 
+  // Sort talks by date descending within each year
+  for (const year of years) {
+    talksGroupedByYear[year].sort((a, b) => -a.date.localeCompare(b.date))
+  }
+
   // Build README content
   let content = `# Talks
 
@@ -86,10 +91,7 @@ Slides from my [talks](https://soubiran.dev/talks).
   for (const year of years) {
     content += `### ${year}\n\n`
 
-    // Sort talks by date descending within year
-    const yearTalks = talksGroupedByYear[year].sort((a, b) => -a.date.localeCompare(b.date))
-
-    for (const talk of yearTalks) {
+    for (const talk of talksGroupedByYear[year]) {
       // Format: - `lang` [Title](./folder) - Event
       const lang = talk.language || 'en'
       content += `- \`${lang}\` [${talk.name}](./${talk.folder}) - ${talk.event}\n`
@@ -103,10 +105,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 
   // Add talks in simple text format
   for (const year of years) {
-    // Sort talks by date descending within year
-    const yearTalks = talksGroupedByYear[year].sort((a, b) => -a.date.localeCompare(b.date))
-
-    for (const talk of yearTalks) {
+    for (const talk of talksGroupedByYear[year]) {
       // Format: Date - Title - Event - Location
       const location = `${talk.location.city}, ${talk.location.country}`
       content += `${talk.date} - ${talk.name} - ${talk.event} - ${location}\n`
