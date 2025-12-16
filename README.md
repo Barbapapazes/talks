@@ -39,6 +39,40 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 - `fr` [Unpoly pour reprendre le contrôle !](./2023-04-12) - Devoxx France
 
+<details>
+<summary>Copy talks list as text</summary>
+
+```
+2025-12-09 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - Paris TypeScript - Paris, France
+2025-12-05 - La réactivité et les signaux : démystifions la magie du frontend - DevFest Dijon - Dijon, France
+2025-11-13 - La réactivité et les signaux : démystifions la magie du frontend - DevFest Toulouse - Toulouse, France
+2025-11-07 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - BDX I/O - Bordeaux, France
+2025-11-07 - La réactivité et les signaux : démystifions la magie du frontend - BDX I/O - Bordeaux, France
+2025-10-21 - La réactivité et les signaux : démystifions la magie du frontend - StrasbourgJS - Strasbourg, France
+2025-10-17 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - Devfest Nantes - Nantes, France
+2025-10-14 - La réactivité et les signaux : démystifions la magie du frontend - Paris TypeScript - Paris, France
+2025-09-17 - Inertia: Un Anneau pour les gouverner tous - Node.js Paris - Paris, France
+2025-09-09 - Inertia: Un Anneau pour les gouverner tous - HumanTalks Paris - Paris, France
+2025-06-26 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - BreizhCamp - Rennes, France
+2025-06-25 - La réactivité et les signaux : démystifions la magie du frontend - BreizhCamp - Rennes, France
+2025-04-30 - La réactivité et les signaux : démystifions la magie du frontend - MiXiT - Lyon, France
+2025-04-29 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - MiXiT - Lyon, France
+2025-04-18 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - Devoxx France - Paris, France
+2025-04-17 - La réactivité et les signaux : démystifions la magie du frontend - Devoxx France - Paris, France
+2025-04-08 - Ship Nuxt apps that scale - HumanTalks Paris - Paris, France
+2025-03-05 - Vous n'avez pas besoin de ces nouvelles API Node.js - Node.js Paris - Paris, France
+2025-01-21 - Deviens full-stack avec TypeScript - Paris TypeScript - Paris, France
+2024-12-04 - Nuxt, NuxtHub et le full-stack - Vue.js Paris - Paris, France
+2024-11-20 - Fluidifier l'expérience utilisateur - TakiMeet - Paris, France
+2024-11-13 - Ship Nuxt apps that scale - Nuxt Nation - Online, Online
+2024-09-17 - You've dreamed it? Create full-stack apps with Nuxt! - PragVue - Prague, Czech Republic
+2024-04-19 - Unifié et Universel, le JavaScript avec UnJS - Devoxx France - Paris, France
+2024-04-12 - Découvrons ensemble l'écosystème UnJS - StrasbourgJS - Strasbourg, France
+2023-04-12 - Unpoly pour reprendre le contrôle ! - Devoxx France - Paris, France
+```
+
+</details>
+
 ## Statistics
 
 ### Talks per Year

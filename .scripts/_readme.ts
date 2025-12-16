@@ -98,6 +98,23 @@ Slides from my [talks](https://soubiran.dev/talks).
     content += '\n'
   }
 
+  // Add details section with simple text format
+  content += `<details>\n<summary>Copy talks list as text</summary>\n\n\`\`\`\n`
+
+  // Add talks in simple text format
+  for (const year of years) {
+    // Sort talks by date descending within year
+    const yearTalks = talksGroupedByYear[year].sort((a, b) => -a.date.localeCompare(b.date))
+
+    for (const talk of yearTalks) {
+      // Format: Date - Title - Event - Location
+      const location = `${talk.location.city}, ${talk.location.country}`
+      content += `${talk.date} - ${talk.name} - ${talk.event} - ${location}\n`
+    }
+  }
+
+  content += `\`\`\`\n\n</details>\n\n`
+
   content += `## Statistics
 
 ### Talks per Year
