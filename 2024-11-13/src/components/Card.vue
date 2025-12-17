@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="rounded border border-gray-800 shadow p-2 bg-gray-900/90 backdrop-blur-sm">
+  <div class="border border-gray-800 rounded bg-gray-900/90 p-2 shadow backdrop-blur-sm">
     <slot />
   </div>
 </template>

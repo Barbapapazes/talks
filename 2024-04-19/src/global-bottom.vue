@@ -147,12 +147,12 @@ const poly3 = usePloy(3)
 
 <template>
   <div
-    class="bg transform-gpu overflow-hidden pointer-events-none"
+    class="bg pointer-events-none transform-gpu overflow-hidden"
     :style="{ filter: `blur(70px) hue-rotate(${hue}deg)` }"
     aria-hidden="true"
   >
     <div
-      class="clip bg-gradient-to-r from-[#fde047] to-white/10"
+      class="clip from-[#fde047] to-white/10 bg-gradient-to-r"
       :style="{ 'clip-path': `polygon(${poly1})`, 'opacity': opacity }"
     />
     <div
@@ -160,7 +160,7 @@ const poly3 = usePloy(3)
       :style="{ 'clip-path': `polygon(${poly2})`, 'opacity': opacity }"
     />
     <div
-      class="clip to-white/10 bg-gradient-to-t from-lime"
+      class="clip from-lime to-white/10 bg-gradient-to-t"
       :style="{ 'clip-path': `polygon(${poly3})`, 'opacity': 0.2 }"
     />
   </div>

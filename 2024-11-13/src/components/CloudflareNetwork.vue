@@ -44,7 +44,7 @@ const locations = [
 </script>
 
 <template>
-  <div class="absolute bottom-0 grid grid-cols-2 top-0 left-12 right-12 place-content-center gap-x-94 gap-y-12">
+  <div class="absolute bottom-0 left-12 right-12 top-0 grid grid-cols-2 place-content-center gap-x-94 gap-y-12">
     <LatencyCard
       v-for="(location, index) in locations"
       :key="location.name"
@@ -60,8 +60,8 @@ const locations = [
     />
   </div>
 
-  <div class="absolute text-6xl top-11 left-1/2 -translate-x-1/2 whitespace-nowrap text-[#F37F20]">
-    <span class="absolute op-60 blur-md select-none">Cloudflare Network</span>
+  <div class="absolute left-1/2 top-11 whitespace-nowrap text-6xl text-[#F37F20] -translate-x-1/2">
+    <span class="absolute select-none op-60 blur-md">Cloudflare Network</span>
     <span class="op-80">Cloudflare Network</span>
   </div>
 

@@ -19,7 +19,7 @@ const items = computed(() => {
 <template>
   <div ref="parent" flex="~ row wrap items-center justify-center gap-4">
     <div v-for="item in items" :key="item.count" flex="~ col items-center" gap-1>
-      <img :src="`https://unjs.io/assets/logos/${item.label}.svg`" w-6 h-6>
+      <img :src="`https://unjs.io/assets/logos/${item.label}.svg`" h-6 w-6>
       <div flex="~ row" gap-1 text="gray-400 xs">
         <span>{{ item.label }}</span>
         <span>({{ item.count }})</span>

@@ -82,7 +82,7 @@ const links = [website, ...socials]
       </VClick>
     </div>
 
-    <template v-if="$frontmatter.stickers">
+    <!-- <template v-if="$frontmatter.stickers">
       <VClick>
         <div class="absolute inset-0 bg-white bg-opacity-10 backdrop-blur-sm" />
       </VClick>
@@ -101,6 +101,6 @@ const links = [website, ...socials]
       <VAfter>
         <img src="/takima/taking-control.png" class="absolute h-1/3 bottom-4 left-2/3 -translate-x-1/2 rotate-2 drop-shadow-md duration-300 ease-out forward:delay-100">
       </VAfter>
-    </template>
+    </template> -->
   </div>
 </template>

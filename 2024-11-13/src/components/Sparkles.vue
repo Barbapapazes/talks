@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="stars w-screen h-screen absolute pointer-events-none inset-x-0 -top-[--header-height] bottom-0 opacity-75">
+  <div class="stars pointer-events-none absolute inset-x-0 bottom-0 h-screen w-screen opacity-75 -top-[--header-height]">
     <div class="rounded-full bg-transparent" />
     <div class="rounded-full bg-transparent" />
     <div class="rounded-full bg-transparent" />

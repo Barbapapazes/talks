@@ -5,8 +5,9 @@ trustPolicy: no-downgrade
 packages:
   - '**/src'
   - theme
+
 overrides:
-  vite: npm:rolldown-vite@latest
+  vite: 8.0.0-beta.0
 patchedDependencies:
   cobe: patches/cobe.patch
   slidev-addon-graph: patches/slidev-addon-graph.patch

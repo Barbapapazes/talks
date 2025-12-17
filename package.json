@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.18.0",
+  "packageManager": "pnpm@10.25.0",
   "scripts": {
     "build": "pnpm -r run --workspace-concurrency=-1 build && pnpm run generate:redirects && pnpm run generate:meta",
     "export": "pnpm -r run --workspace-concurrency=1 export",
@@ -31,7 +31,7 @@
     "slidev-addon-inalia": "^0.2.6"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^6.0.0",
+    "@antfu/eslint-config": "^6.6.1",
     "@iconify-json/devicon": "^1.2.45",
     "@iconify-json/heroicons": "^1.2.3",
     "@iconify-json/logos": "^1.2.9",
@@ -46,7 +46,7 @@
     "@types/prompts": "^2.4.9",
     "@unocss/eslint-plugin": "^66.5.2",
     "dotenv": "^17.2.3",
-    "eslint": "^9.37.0",
+    "eslint": "^9.39.1",
     "execa": "^9.6.0",
     "fdir": "^6.5.0",
     "gray-matter": "^4.0.3",
