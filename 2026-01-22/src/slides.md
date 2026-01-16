@@ -1,30 +1,98 @@
+---
+htmlAttrs:
+  lang: fr
+  dir: ltr
+fonts:
+  sans: DM Sans
+  serif: Noto Serif
+  mono: Consolas
+themeConfig:
+  primary: white
+codeCopy: false
+transition: fade-out
+theme: slidev-theme-personal
+addons:
+  - slidev-addon-inalia
+title: "Inalia: Un Anneau pour les gouverner tous."
+titleTemplate: '%s - Estéban Soubiran'
+author: Estéban Soubiran
+keywords: web,development,e18e,web,performance
+event: Paris TypeScript
+date: 9 décembre 2025
+---
+
+Inalia: Un Anneau pour les gouverner tous.
+
 <!--
 
-Bonsoir tout le monde,
+Bonsoir tout le monde, j'espère que vous allez bien.
 
-// slide de titre
+-->
 
-Présentation
+---
+layout: intro
+intro: Ingénieur chez <span class="i-custom-takima inline-block size-5 align-text-top"></span> Takima
+---
 
-// slide de présentation
+<!--
 
-Avant d'aller plus loin, je vous invite à scanner ce QR code. ...
+Je me présente, Estéban ...
 
-// slide du qr code
+-->
 
-Et, avant de commencer, je voudrais savoir un peu qui vous êtes
+---
+name: Overview
+layout: inalia-overview
+---
 
-// slide avec un sondage pour demander aux gens qui ils sont (développeurs, managers, étudiants, curieux de l'IA, CTO, juniors, seniors, etc.)
+<!--
 
-J'espère que vous allez bien et je suis très heureux d'être ici ce soir et en même temps, je suis un peu gêné.
+Avant d'aller plus loin, je vous invite à scanner ce QR code...
+
+-->
+
+---
+name: Qui êtes-vous ?
+transition: slide-up
+---
+
+<!-- <Inalia :questionId="1" /> -->
+
+<!--
+
+Slide avec un sondage pour demander aux gens qui ils sont (développeurs, managers, étudiants, curieux de l'IA, CTO, juniors, seniors, etc.)
+
+-->
+
+---
+name: Qu'est-ce que je fais ici ?
+---
+
+<!-- // slide avec une image de moi à Devoxx France en 2023 -->
+
+<!--
+
+Je suis très heureux d'être ici ce soir et en même temps, je suis un peu gêné.
 
 Ça fait 3 ans que j'écris des conférences et si la première a pu être laborieuse à écrire, je crois que celle-ci a été, et de très loin, la plus complexe. Non pas parce que le sujet est particulièrement compliqué, mais parce que on vit dans une étrange période où vous avez tous un Aristote (précepteur d'Alexandre le Grand) dans votre poche, disponible 24h/24 et 7j/7 pour répondre à toutes vos questions.
 
-// slide avec une image de moi à Devoxx France en 2023
+-->
 
-Demandez-lui s'il peut vous en dire plus sur ce qu'est Inertia et en quelques secondes, ils vous répondra mieux que je ne pourrais le faire. [lancer la démo live]
+---
+name: Qu'est-ce qu'Inertia ?
+---
+
+<InertiaFromAI />
+
+<!--
 
 // slide avec l'image de la conversation https://chatgpt.com/c/696a081e-f0ac-8326-8e8c-6b026c4cea80 (ou un composant typewriter temps réel comme si l'IA stream la réponse, avec une animation de trois points comme si l'IA réfléchissait, puis ensuite, afficher le fait qu'elle va chercher ses sources sur le web, puis afficher, petit à petit la réponse complète) (et lire la réponse à voix haute, comme ça, tout le monde a la réponse et on avance dans la conférence sur Inertia) (typescriter sur le message que j'envoie et ensuite, gestion d'un streaming like, qui va sûrement terminer sur l'org Inalia) (utiliser ticktoken pour découper le texte)
+
+ -->
+
+<!--
+
+Demandez-lui s'il peut vous en dire plus sur ce qu'est Inertia et en quelques secondes, ils vous répondra mieux que je ne pourrais le faire. [lancer la démo live]
 
 Mais alors, pourquoi venir m'écouter parler ce soir, pendant 20 minutes ? C'est une question que je me suis posée et plus généralement, c'est l'enseignement qui est remis en question. Qu'est-ce que doit être le professeur aujourd'hui, dans un monde où il n'est plus le sachant ? Dans un monde où l'intelligence est disponible as a service ? Pour l'instant, je n'ai pas la réponse. D'autant que si ça se trouve, vous êtes juste venus pour écouter Eduardo et manger des pizzas. Et c'est ok.
 
@@ -67,5 +135,11 @@ Where is the sense of what we are doing now ?
 - Peux-tu montrer un vrai cas d’usage en production, avec ses avantages et ses limites ?
 - Quand tu as commencé avec Inertia, qu’est-ce qui a été plus simple que prévu ? Et qu’est-ce qui a été plus compliqué ?
 - Quels sont les compromis assumés par Inertia ?
+
+-->
+
+<!--
+
+et si tu faisais un talk ? je t'accompagne pour te lancer
 
 -->
