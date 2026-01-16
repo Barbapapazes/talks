@@ -50,6 +50,7 @@
     "execa": "^9.6.0",
     "fdir": "^6.5.0",
     "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.0",
     "ofetch": "^1.4.1",
     "openai": "^6.5.0",
     "pathe": "^2.0.3",
@@ -59,6 +60,9 @@
     "slidev-addon-graph": "^1.0.0",
     "slidev-theme-personal": "link:./theme",
     "taze": "^19.7.0",
-    "typescript": "^5.9.3"
+    "tiktoken": "^1.0.17",
+    "typescript": "^5.9.3",
+    "vite-plugin-top-level-await": "^1.4.4",
+    "vite-plugin-wasm": "^3.3.0"
   }
 }
