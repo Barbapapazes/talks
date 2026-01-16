@@ -26,22 +26,23 @@ export function virtualInertiaFromAI() {
         // Initialize tiktoken encoder
         const encoder = encoding_for_model('gpt-4')
         const tokens = encoder.encode(rawMarkdown)
-        encoder.free()
 
         // Build incremental chunks (every ~10 tokens for smooth streaming effect)
         const tokensPerFrame = 10
         const chunks: string[] = []
         const textDecoder = new TextDecoder()
 
+        // Reuse the same decoder for all chunks
         for (let i = 0; i <= tokens.length; i += tokensPerFrame) {
           const currentTokens = tokens.slice(0, Math.min(i + tokensPerFrame, tokens.length))
-          const decoder = encoding_for_model('gpt-4')
-          const chunkBytes = decoder.decode(currentTokens)
-          decoder.free()
+          const chunkBytes = encoder.decode(currentTokens)
           // Convert Uint8Array to string
           const chunk = typeof chunkBytes === 'string' ? chunkBytes : textDecoder.decode(chunkBytes)
           chunks.push(chunk)
         }
+
+        // Free encoder after all decoding is done
+        encoder.free()
 
         // Convert each chunk to HTML using markdown-it
         const md = new MarkdownIt()
