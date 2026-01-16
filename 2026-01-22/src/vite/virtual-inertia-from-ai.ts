@@ -31,12 +31,15 @@ export function virtualInertiaFromAI() {
         // Build incremental chunks (every ~10 tokens for smooth streaming effect)
         const tokensPerFrame = 10
         const chunks: string[] = []
+        const textDecoder = new TextDecoder()
         
         for (let i = 0; i <= tokens.length; i += tokensPerFrame) {
           const currentTokens = tokens.slice(0, Math.min(i + tokensPerFrame, tokens.length))
           const decoder = encoding_for_model('gpt-4')
-          const chunk = decoder.decode(currentTokens)
+          const chunkBytes = decoder.decode(currentTokens)
           decoder.free()
+          // Convert Uint8Array to string
+          const chunk = typeof chunkBytes === 'string' ? chunkBytes : textDecoder.decode(chunkBytes)
           chunks.push(chunk)
         }
 
