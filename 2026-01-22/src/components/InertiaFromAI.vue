@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import { onSlideEnter, onSlideLeave } from '@slidev/client'
 import { assistantHtmlFrames } from 'virtual:inertia-from-ai'
+import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 
 // Props with defaults
 const props = withDefaults(defineProps<{
@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
   streamFramesPerTick?: number
   height?: string
 }>(), {
-  userPrompt: "Qu'est-ce qu'Inertia.js ?",
+  userPrompt: 'Qu\'est-ce qu\'Inertia.js ?',
   typewriterCharDelayMs: 50,
   searchDurationMs: 1500,
   thinkingDurationMs: 1000,
@@ -39,7 +39,7 @@ const intervals = ref<number[]>([])
 function startTypewriter(text: string, onComplete: () => void) {
   let charIndex = 0
   typedUserText.value = ''
-  
+
   const typeNextChar = () => {
     if (charIndex < text.length) {
       typedUserText.value += text[charIndex]
@@ -47,12 +47,13 @@ function startTypewriter(text: string, onComplete: () => void) {
       scrollToBottom()
       const timer = window.setTimeout(typeNextChar, props.typewriterCharDelayMs)
       timers.value.push(timer)
-    } else {
+    }
+    else {
       showCursor.value = false
       onComplete()
     }
   }
-  
+
   typeNextChar()
 }
 
@@ -87,7 +88,7 @@ function resetAnimation() {
 // Timeline: Phase transitions
 function startTimeline() {
   resetAnimation()
-  
+
   // Phase 1: Typing user prompt
   currentPhase.value = 'typingUser'
   startTypewriter(props.userPrompt, () => {
@@ -95,17 +96,17 @@ function startTimeline() {
     const searchTimer = window.setTimeout(() => {
       currentPhase.value = 'searching'
       scrollToBottom()
-      
+
       // Phase 3: Thinking
       const thinkingTimer = window.setTimeout(() => {
         currentPhase.value = 'thinking'
         scrollToBottom()
-        
+
         // Phase 4: Streaming
         const streamingTimer = window.setTimeout(() => {
           currentPhase.value = 'streaming'
           currentFrameIndex.value = 0
-          
+
           // Stream frames
           const streamInterval = window.setInterval(() => {
             if (currentFrameIndex.value < assistantHtmlFrames.length - 1) {
@@ -114,21 +115,22 @@ function startTimeline() {
                 currentFrameIndex.value = assistantHtmlFrames.length - 1
               }
               scrollToBottom()
-            } else {
+            }
+            else {
               clearInterval(streamInterval)
               currentPhase.value = 'done'
             }
           }, props.streamFrameDelayMs)
-          
+
           intervals.value.push(streamInterval)
         }, props.thinkingDurationMs)
-        
+
         timers.value.push(streamingTimer)
       }, props.searchDurationMs)
-      
+
       timers.value.push(thinkingTimer)
     }, 500) // Small delay after typing
-    
+
     timers.value.push(searchTimer)
   })
 }
@@ -164,12 +166,12 @@ const currentAssistantHtml = computed(() => {
   return ''
 })
 
-const showAssistant = computed(() => 
-  currentPhase.value === 'streaming' || currentPhase.value === 'done'
+const showAssistant = computed(() =>
+  currentPhase.value === 'streaming' || currentPhase.value === 'done',
 )
 
 const showStatus = computed(() =>
-  currentPhase.value === 'searching' || currentPhase.value === 'thinking'
+  currentPhase.value === 'searching' || currentPhase.value === 'thinking',
 )
 </script>
 
@@ -222,16 +224,16 @@ const showStatus = computed(() =>
           <span class="text-white text-xs">AI</span>
         </div>
         <div class="message-bubble assistant-bubble">
-          <div v-html="currentAssistantHtml" class="assistant-content" />
+          <div class="assistant-content" v-html="currentAssistantHtml" />
         </div>
       </div>
     </div>
 
     <!-- Faux Input Row -->
     <div class="chat-input-row">
-      <input 
-        type="text" 
-        placeholder="Message ChatGPT..." 
+      <input
+        type="text"
+        placeholder="Message ChatGPT..."
         disabled
         class="faux-input"
       >
@@ -363,11 +365,11 @@ const showStatus = computed(() =>
 }
 
 @keyframes bounce {
-  0%, 80%, 100% { 
+  0%, 80%, 100% {
     transform: translateY(0);
     opacity: 0.5;
   }
-  40% { 
+  40% {
     transform: translateY(-8px);
     opacity: 1;
   }

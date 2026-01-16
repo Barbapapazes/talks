@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export function virtualInertiaFromAI() {
   const virtualModuleId = 'virtual:inertia-from-ai'
-  const resolvedVirtualModuleId = '\0' + virtualModuleId
+  const resolvedVirtualModuleId = `\0${virtualModuleId}`
 
   return {
     name: 'virtual-inertia-from-ai',
@@ -32,7 +32,7 @@ export function virtualInertiaFromAI() {
         const tokensPerFrame = 10
         const chunks: string[] = []
         const textDecoder = new TextDecoder()
-        
+
         for (let i = 0; i <= tokens.length; i += tokensPerFrame) {
           const currentTokens = tokens.slice(0, Math.min(i + tokensPerFrame, tokens.length))
           const decoder = encoding_for_model('gpt-4')
