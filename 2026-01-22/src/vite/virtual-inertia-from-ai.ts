@@ -28,15 +28,17 @@ export function virtualInertiaFromAI() {
         const tokens = encoder.encode(rawMarkdown)
 
         // Build incremental chunks (every ~10 tokens for smooth streaming effect)
+        // Each chunk contains progressively more content (cumulative) to simulate streaming
         const tokensPerFrame = 10
         const chunks: string[] = []
         const textDecoder = new TextDecoder()
 
-        // Reuse the same decoder for all chunks
+        // Create cumulative frames: frame N contains all tokens from 0 to N*tokensPerFrame
+        // This creates a streaming effect where each frame shows more content than the last
         for (let i = 0; i <= tokens.length; i += tokensPerFrame) {
           const currentTokens = tokens.slice(0, Math.min(i + tokensPerFrame, tokens.length))
           const chunkBytes = encoder.decode(currentTokens)
-          // Convert Uint8Array to string
+          // Tiktoken may return string or Uint8Array depending on version
           const chunk = typeof chunkBytes === 'string' ? chunkBytes : textDecoder.decode(chunkBytes)
           chunks.push(chunk)
         }
