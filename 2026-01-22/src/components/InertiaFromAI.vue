@@ -409,7 +409,7 @@ const showStatus = computed(() =>
   color: white;
   border-radius: 8px;
   display: flex;
-  items: center;
+  align-items: center;
   justify-content: center;
   opacity: 0.5;
   cursor: not-allowed;
