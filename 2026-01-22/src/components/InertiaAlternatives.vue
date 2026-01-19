@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { assistantHtmlFrames } from 'virtual:ai:inertia-from-ai'
+import { assistantHtmlFrames } from 'virtual:ai:inertia-alternatives'
 import ChatAnimation from './ChatAnimation.vue'
 
 const props = withDefaults(defineProps<{

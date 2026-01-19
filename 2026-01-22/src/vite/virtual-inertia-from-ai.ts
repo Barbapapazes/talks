@@ -7,20 +7,29 @@ import { encoding_for_model } from 'tiktoken'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export function virtualInertiaFromAI() {
-  const virtualModuleId = 'virtual:inertia-from-ai'
-  const resolvedVirtualModuleId = `\0${virtualModuleId}`
+  const virtualModulePrefix = 'virtual:ai:'
 
   return {
-    name: 'virtual-inertia-from-ai',
+    name: 'virtual-ai-content',
     resolveId(id: string) {
-      if (id === virtualModuleId) {
-        return resolvedVirtualModuleId
+      if (id.startsWith(virtualModulePrefix)) {
+        return `\0${id}`
       }
     },
     load(id: string) {
-      if (id === resolvedVirtualModuleId) {
+      if (id.startsWith(`\0${virtualModulePrefix}`)) {
+        // Extract the file name from the virtual module ID
+        // e.g., "virtual:ai:inertia-from-ai" -> "inertia-from-ai"
+        const fileName = id.slice(`\0${virtualModulePrefix}`.length)
+
         // Read the markdown file
-        const contentPath = path.resolve(__dirname, '../content/inertia-from-ai.md')
+        const contentPath = path.resolve(__dirname, `../content/${fileName}.md`)
+
+        // Check if file exists
+        if (!fs.existsSync(contentPath)) {
+          throw new Error(`Content file not found: ${contentPath}`)
+        }
+
         const rawMarkdown = fs.readFileSync(contentPath, 'utf-8')
 
         // Initialize tiktoken encoder

@@ -21,7 +21,7 @@ event: Paris TypeScript
 date: 9 décembre 2025
 ---
 
-Inalia: Un Anneau pour les gouverner tous.
+# Inalia: Un Anneau<br />pour les gouverner tous.
 
 <!--
 
@@ -43,6 +43,7 @@ Je me présente, Estéban ...
 ---
 name: Overview
 layout: inalia-overview
+transition: slide-up
 ---
 
 <!--
@@ -53,7 +54,6 @@ Avant d'aller plus loin, je vous invite à scanner ce QR code...
 
 ---
 name: Qui êtes-vous ?
-transition: slide-up
 ---
 
 <!-- <Inalia :questionId="1" /> -->
@@ -62,13 +62,25 @@ transition: slide-up
 
 Slide avec un sondage pour demander aux gens qui ils sont (développeurs, managers, étudiants, curieux de l'IA, CTO, juniors, seniors, etc.)
 
+ -->
+
+ <!--
+
+ potentiellement ajouter une slide pour demander si les gens connaissent Inertia ou pas et s'ils l'ont déjà utilisé ou pas
+
+  -->
+
+<!--
+
+Pour bien commencer ce petit talk, j'aimerais en savoir un peu plus sur vous, qui êtes-vous ? Vous pouvez répondre via la page sur laquelle vous avez atterri en scannant le QR code juste avant ou simplement en scannant ce QR code. Vous pouvez mettre choisir plusieurs choix dans la liste. L'idée, c'est de pouvoir adapter la présentation en fonction des profils présents dans la salle.
+
 -->
 
 ---
 name: Qu'est-ce que je fais ici ?
 ---
 
-<!-- // slide avec une image de moi à Devoxx France en 2023 -->
+<img src="/devoxx-2023.jpg" class="absolute inset-0" />
 
 <!--
 
@@ -79,37 +91,85 @@ Je suis très heureux d'être ici ce soir et en même temps, je suis un peu gên
 -->
 
 ---
-name: Qu'est-ce qu'Inertia ?
+name: Dis-m'en plus sur Inertia
+layout: ai
 ---
 
-<InertiaFromAI />
+<TellMeMoreAboutInertia user-prompt="Je suis développeur web et j'ai vu passer un project qui s'appelle Inertia. Tu peux m'en dire plus ?" />
 
 <!--
 
-// slide avec l'image de la conversation https://chatgpt.com/c/696a081e-f0ac-8326-8e8c-6b026c4cea80 (ou un composant typewriter temps réel comme si l'IA stream la réponse, avec une animation de trois points comme si l'IA réfléchissait, puis ensuite, afficher le fait qu'elle va chercher ses sources sur le web, puis afficher, petit à petit la réponse complète) (et lire la réponse à voix haute, comme ça, tout le monde a la réponse et on avance dans la conférence sur Inertia) (typescriter sur le message que j'envoie et ensuite, gestion d'un streaming like, qui va sûrement terminer sur l'org Inalia) (utiliser ticktoken pour découper le texte)
+Demandez-lui s'il peut vous en dire plus sur ce qu'est Inertia [enter] et en quelques secondes, ils vous répondra mieux que je ne pourrais le faire. [enter]. [lire le résultat et passer sur les informations importantes]
+
+-->
+
+---
+name: Pourquoi venir m'écouter parler ce soir ?
+---
+
+<!-- <Inalia :questionId="2" /> -->
+
+<!--
+
+// slide avec la question "Pourquoi venir m'écouter parler ce soir ?" (en texte libre et peut-être revoir la présentation de la slide de base de Inalia via une slide custom)
+// ajouter un bouton pour demander à l'IA de résumer les réponses des gens
 
  -->
 
 <!--
 
-Demandez-lui s'il peut vous en dire plus sur ce qu'est Inertia et en quelques secondes, ils vous répondra mieux que je ne pourrais le faire. [lancer la démo live]
+Mais alors, pourquoi venir m'écouter parler ce soir, pendant 20 minutes ? C'est une question que je me suis posée et plus généralement, c'est l'enseignement qui est remis en question. Qu'est-ce que doit être le professeur, le conférencier aujourd'hui, dans un monde où il n'est plus le sachant ? Dans un monde où l'intelligence est disponible as a service ? Pour l'instant, je n'ai pas la réponse. D'autant que si ça se trouve, vous êtes juste venus pour écouter Eduardo et manger des pizzas. Et c'est ok. Si vous voulez manger des pizzas, on peut aller manger des pizzas.
 
-Mais alors, pourquoi venir m'écouter parler ce soir, pendant 20 minutes ? C'est une question que je me suis posée et plus généralement, c'est l'enseignement qui est remis en question. Qu'est-ce que doit être le professeur aujourd'hui, dans un monde où il n'est plus le sachant ? Dans un monde où l'intelligence est disponible as a service ? Pour l'instant, je n'ai pas la réponse. D'autant que si ça se trouve, vous êtes juste venus pour écouter Eduardo et manger des pizzas. Et c'est ok.
+-->
 
-// slide avec la question "Pourquoi venir m'écouter parler ce soir ?" (en texte libre et peut-être revoir la présentation de la slide de base de Inalia via une slide custom)
-// ajouter un bouton pour demander à l'IA de résumer les réponses des gens
+---
+name: Les alternatives à Inertia
+layout: ai
+---
 
-On pourrait se dire : "Estéban, tu dois pouvoir apporter de la transversalité, un contexte, une vision que l'IA ne peut pas avoir." Si seulement... [laisser le code dérouler] Je ne vais pas vous mentir, je me sens un peu con et inutile.
+<InertiaAlternatives user-prompt="Si je ne veux pas utiliser Inertia, quelles sont les alternatives ? (présente les avantages et les défauts de ces autres solutions)" />
 
-// slide avec la question sur les alternatives sur Inertia (et le tableau à la fin)
+<!--
+
+Mais on pourrait se dire quand même : "Estéban, tu dois pouvoir apporter de la transversalité, un contexte, une vision que l'IA ne peut pas avoir." Si seulement... [enter] Mais demandons-lui pour voir. [enter] Je ne vais pas vous mentir, face à ça, je me sens un peu con et inutile.
+
+[lire et expliquer la réponse de l'IA]
+
+-->
+
+---
+name: Qu'est-ce qu'on fait maintenant ?
+---
+
+<!--
 
 Alors maintenant qu'on a dit ça, qu'est-ce qu'on fait ? Je pourrais vous laisser avec vos téléphones et puis vous dire que vous avez tout ce qu'il vous faut dans la poche. J'ai apporté le sujet, vous pouvez creuser avec votre assistant préféré et bénéficier d'un apprentissage personnalisé.
 
+-->
+
+---
+name: Que voulez-vous faire ce soir ?
+---
+
+<!-- <Inalia :questionId="3" /> -->
+
+<!--
+
 // slide qui demande ce que les gens aimeraient apprendre ce soir, en sachant que je suis là, en physique.
 
-En fait, il y a deux choses que je peux vous apporter. La première, c'est vous apprendre à parler avec l'IA d'un sujet que vous ne maîtriser pas. La seconde, c'est vous apporter un retour d'expérience terrain, concret et réel de l'utilisation d'Inertia. Pour la première, ça pourrait faire l'objet d'une conférence à part entière. Pour la seconde, on peut se pencher sur du code et sur vos questions en lien avec Inertia sur des sujets que où l'IA ne pourrait pas vous répondre facilement. Et il y en a.
+// TODO: rebosser le texte
+
+Donc je vous le demande, que voulez-vous faire ce soir ?
+
+En fait, il y a deux choses que je peux vous apporter. La première, c'est vous apprendre à parler avec l'IA d'un sujet que vous ne maîtriser pas. La seconde, c'est vous apporter un retour d'expérience terrain, concret et réel de l'utilisation d'Inertia. Pour la première, ça pourrait faire l'objet d'une conférence à part entière donc on ne va pas le faire ce soir. Pour la seconde, on peut se pencher sur du code et sur vos questions en lien avec Inertia sur des sujets où l'IA ne pourrait pas vous répondre facilement. Et il y en a.
+
+// Ajouter le fait que les gens peuvent lever la main pour poser des questions en direct, qu'on fasse un truc plus interactif, qu'on en discute ensemble, et que si vous voulez ajouter des choses, aller y
 
 -->
+
+---
+name: Live Coding
+---
 
 <!--
 
