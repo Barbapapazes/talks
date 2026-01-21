@@ -21,5 +21,8 @@
     "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
     "thumbnail:cp:dark": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
+  },
+  "devDependencies": {
+    "@shikijs/markdown-it": "^3.21.0"
   }
 }

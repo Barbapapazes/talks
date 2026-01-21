@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import Shiki from '@shikijs/markdown-it'
 import MarkdownIt from 'markdown-it'
 import { encoding_for_model } from 'tiktoken'
 
@@ -16,7 +17,7 @@ export function virtualInertiaFromAI() {
         return `\0${id}`
       }
     },
-    load(id: string) {
+    async load(id: string) {
       if (id.startsWith(`\0${virtualModulePrefix}`)) {
         // Extract the file name from the virtual module ID
         // e.g., "virtual:ai:inertia-from-ai" -> "inertia-from-ai"
@@ -55,8 +56,18 @@ export function virtualInertiaFromAI() {
         // Free encoder after all decoding is done
         encoder.free()
 
-        // Convert each chunk to HTML using markdown-it
-        const md = new MarkdownIt()
+        // Get highlighter and set up markdown-it with Shiki
+        const md = MarkdownIt()
+        md.use(
+          await Shiki({
+            themes: {
+              light: 'github-light',
+              dark: 'github-dark',
+            },
+          }),
+        )
+
+        // Convert each chunk to HTML using markdown-it with Shiki
         const assistantHtmlFrames = chunks.map(chunk => md.render(chunk))
 
         // Export the data

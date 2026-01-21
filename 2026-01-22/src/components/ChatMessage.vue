@@ -103,4 +103,13 @@ const isUser = computed(() => props.type === 'user')
 .assistant-content :deep(tr:last-child td) {
   border-bottom: none;
 }
+
+.assistant-content :deep(pre) {
+  font-size: 0.875rem;
+  background-color: #f3f4f6 !important;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
 </style>
