@@ -56,13 +56,7 @@ Avant d'aller plus loin, je vous invite à scanner ce QR code...
 name: Qui êtes-vous ?
 ---
 
-<!-- <Inalia :questionId="1" /> -->
-
-<!--
-
-Slide avec un sondage pour demander aux gens qui ils sont (développeurs, managers, étudiants, curieux de l'IA, CTO, juniors, seniors, etc., accro à l'IA, réfractaires, utilisateurs occasionnels, etc.)
-
- -->
+<Inalia :questionId="3" />
 
 <!--
 
@@ -74,7 +68,7 @@ Pour bien commencer ce petit talk, j'aimerais en savoir un peu plus sur vous. Qu
 name: Inertia, ça vous parle ?
 ---
 
-<!-- <Inalia :questionId="2" /> -->
+<Inalia :questionId="2" />
 
 <!--
 
@@ -117,11 +111,10 @@ Demandez-lui [enter] s'il peut vous en dire plus sur ce qu'est Inertia et en que
 name: Pourquoi venir m'écouter parler ce soir ?
 ---
 
-<!-- <Inalia :questionId="3" /> -->
+<Inalia :questionId="4" />
 
 <!--
 
-// slide avec la question "Pourquoi venir m'écouter parler ce soir ?" (en texte libre et peut-être revoir la présentation de la slide de base de Inalia via une slide custom)
 // ajouter un bouton pour demander à l'IA de résumer les réponses des gens (oui, faut le faire ça, ça peut -être marrant)
 
  -->
@@ -185,13 +178,9 @@ Alors maintenant qu'on a dit tout ça, qu'est-ce qu'on fait ? Je pourrais vous l
 name: Que voulez-vous faire ce soir ?
 ---
 
-<!-- <Inalia :questionId="4" /> -->
+<Inalia :questionId="5" />
 
 <!--
-
-// slide qui demande ce que les gens aimeraient apprendre ce soir, en sachant que je suis là, en physique.
-
-// TODO: rebosser le texte
 
 Donc je vous le demande, que voulez-vous faire ce soir ?
 
