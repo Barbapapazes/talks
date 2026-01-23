@@ -115,12 +115,6 @@ name: Pourquoi venir m'écouter parler ce soir ?
 
 <!--
 
-// ajouter un bouton pour demander à l'IA de résumer les réponses des gens (oui, faut le faire ça, ça peut -être marrant)
-
- -->
-
-<!--
-
 Mais alors, pourquoi venir m'écouter parler ce soir, pendant 20 minutes ? C'est une question que je me suis posée et plus généralement, c'est l'enseignement et l'apprentissage qui est remis en question. Qu'est-ce que doit être le professeur, le conférencier aujourd'hui, dans un monde où il n'est plus le sachant ? Dans un monde où l'intelligence est disponible as a service ? Pour l'instant, je vous le dit, je n'ai pas la réponse. D'autant que si ça se trouve, vous êtes juste venus pour écouter Eduardo et manger des pizzas. Et c'est ok. Si vous voulez manger des pizzas, on peut aller manger des pizzas.
 
 -->
