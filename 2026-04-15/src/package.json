@@ -1,0 +1,25 @@
+{
+  "name": "mixit",
+  "event": {
+    "name": "MiXiT",
+    "url": "https://mixitconf.org/",
+    "location": {
+      "city": "Lyon",
+      "country": "France",
+      "latitude": 45.78405605635917,
+      "longitude": 4.869033628453851
+    }
+  },
+  "private": true,
+  "description": "Plongée au cœur de la pipeline de Vite : découvrez son fonctionnement interne et comment prendre le contrôle avec des plugins personnalisés.",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2026-04-15/mixit/ --out ../../dist/2026-04-15/mixit",
+    "export": "slidev export --per-slide --output ../2026-04-15-mixit.pdf",
+    "thumbnail:cp": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
+    "thumbnail": "slidev export --per-slide --range 1 --format png",
+    "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
+    "thumbnail:cp:dark": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
+    "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
+  }
+}
