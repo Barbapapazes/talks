@@ -1,0 +1,21 @@
+flowchart TD
+  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["Au cœur d’une pipeline: démystifions Vite et ses plugins"]
+  intro["Intro"]
+  inalia["Inalia"]
+  vite["Vite"]
+  les_origines_de_vite["Les origines de Vite"]
+  le_fonctionnement_de_vite["Le fonctionnement de Vite"]
+  le_futur_de_vite["Le futur de Vite"]
+  tout_n_est_que_plugin["Tout n'est que plugin"]
+  du_css_import_dans_un_fichier_typescript["Du CSS importé dans un fichier TypeScript"]
+  une_image_charg_e_dans_un_fichier_typescript["Une image chargée dans un fichier TypeScript"]
+  import_meta_glob_est_une_illusion["import.meta.glob est une illusion"]
+  vite --> les_origines_de_vite
+  vite --> le_fonctionnement_de_vite
+  vite --> le_futur_de_vite
+  les_origines_de_vite --> le_fonctionnement_de_vite
+  le_fonctionnement_de_vite --> tout_n_est_que_plugin
+  le_futur_de_vite --> le_fonctionnement_de_vite
+  tout_n_est_que_plugin --> du_css_import_dans_un_fichier_typescript
+  tout_n_est_que_plugin --> une_image_charg_e_dans_un_fichier_typescript
+  tout_n_est_que_plugin --> import_meta_glob_est_une_illusion

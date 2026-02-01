@@ -17,6 +17,7 @@
     "generate:meta": "node .scripts/generate-meta.ts",
     "generate:readme": "node .scripts/generate-readme.ts",
     "generate:talk-readme": "node .scripts/generate-talk-readme.ts",
+    "generate:tree": "node .scripts/generate-tree.ts",
     "dev": "node .scripts/select-deck.ts dev --open",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -40,7 +41,9 @@
     "@iconify-json/ph": "^1.2.2",
     "@iconify-json/simple-icons": "^1.2.53",
     "@iconify-json/vscode-icons": "^1.2.31",
+    "@mermaid-js/mermaid-cli": "^11.11.0",
     "@slidev/cli": "52.1.0",
+    "@slidev/parser": "52.1.0",
     "@slidev/theme-default": "^0.25.0",
     "@types/node": "^24.6.2",
     "@types/prompts": "^2.4.9",

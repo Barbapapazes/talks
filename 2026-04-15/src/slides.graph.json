@@ -1,0 +1,204 @@
+{
+  "filepath": "/Users/esoub/dev/p/talks/2026-04-15/src/slides.md",
+  "nodes": [
+    {
+      "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
+      "index": 0,
+      "title": "Au cœur d’une pipeline: démystifions Vite et ses plugins",
+      "frontmatter": {
+        "htmlAttrs": {
+          "lang": "fr",
+          "dir": "ltr"
+        },
+        "fonts": {
+          "sans": "DM Sans",
+          "serif": "Noto Serif",
+          "mono": "Consolas"
+        },
+        "themeConfig": {
+          "primary": "white"
+        },
+        "codeCopy": false,
+        "transition": "fade-out",
+        "theme": "slidev-theme-personal",
+        "addons": [
+          "slidev-addon-inalia"
+        ],
+        "title": "Au cœur d’une pipeline: démystifions Vite et ses plugins",
+        "titleTemplate": "%s - Estéban Soubiran",
+        "author": "Estéban Soubiran",
+        "keywords": "web,development,vite,plugins,pipeline",
+        "event": "MiXiT",
+        "date": "15 avril 2026",
+        "chooseYourOwnAdventure": true
+      }
+    },
+    {
+      "id": "intro",
+      "index": 1,
+      "name": "Intro",
+      "title": "Intro",
+      "frontmatter": {
+        "name": "Intro",
+        "layout": "intro"
+      }
+    },
+    {
+      "id": "inalia",
+      "index": 2,
+      "name": "Inalia",
+      "title": "Inalia",
+      "frontmatter": {
+        "name": "Inalia",
+        "layout": "inalia-overview"
+      }
+    },
+    {
+      "id": "vite",
+      "index": 3,
+      "name": "Vite",
+      "title": "Vite",
+      "frontmatter": {
+        "name": "Vite",
+        "choices": [
+          "Les origines de Vite",
+          "Le fonctionnement de Vite",
+          "Le futur de Vite"
+        ]
+      }
+    },
+    {
+      "id": "les_origines_de_vite",
+      "index": 4,
+      "name": "Les origines de Vite",
+      "title": "Les origines de Vite",
+      "frontmatter": {
+        "name": "Les origines de Vite",
+        "choices": [
+          "Le fonctionnement de Vite"
+        ]
+      }
+    },
+    {
+      "id": "le_fonctionnement_de_vite",
+      "index": 5,
+      "name": "Le fonctionnement de Vite",
+      "title": "Le fonctionnement de Vite",
+      "frontmatter": {
+        "name": "Le fonctionnement de Vite",
+        "choices": [
+          "Tout n'est que plugin"
+        ]
+      }
+    },
+    {
+      "id": "le_futur_de_vite",
+      "index": 6,
+      "name": "Le futur de Vite",
+      "title": "Le futur de Vite",
+      "frontmatter": {
+        "name": "Le futur de Vite",
+        "choices": [
+          "Le fonctionnement de Vite"
+        ]
+      }
+    },
+    {
+      "id": "tout_n_est_que_plugin",
+      "index": 7,
+      "name": "Tout n'est que plugin",
+      "title": "Tout n'est que plugin",
+      "frontmatter": {
+        "name": "Tout n'est que plugin",
+        "choices": [
+          "Du CSS importé dans un fichier TypeScript",
+          "Une image chargée dans un fichier TypeScript",
+          "import.meta.glob est une illusion"
+        ]
+      }
+    },
+    {
+      "id": "du_css_import_dans_un_fichier_typescript",
+      "index": 8,
+      "name": "Du CSS importé dans un fichier TypeScript",
+      "title": "Du CSS importé dans un fichier TypeScript",
+      "frontmatter": {
+        "name": "Du CSS importé dans un fichier TypeScript",
+        "choices": [
+          null
+        ]
+      }
+    },
+    {
+      "id": "une_image_charg_e_dans_un_fichier_typescript",
+      "index": 9,
+      "name": "Une image chargée dans un fichier TypeScript",
+      "title": "Une image chargée dans un fichier TypeScript",
+      "frontmatter": {
+        "name": "Une image chargée dans un fichier TypeScript",
+        "choices": [
+          null
+        ]
+      }
+    },
+    {
+      "id": "import_meta_glob_est_une_illusion",
+      "index": 10,
+      "name": "import.meta.glob est une illusion",
+      "title": "import.meta.glob est une illusion",
+      "frontmatter": {
+        "name": "import.meta.glob est une illusion",
+        "choices": [
+          null
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "vite",
+      "to": "les_origines_de_vite",
+      "label": "Les origines de Vite"
+    },
+    {
+      "from": "vite",
+      "to": "le_fonctionnement_de_vite",
+      "label": "Le fonctionnement de Vite"
+    },
+    {
+      "from": "vite",
+      "to": "le_futur_de_vite",
+      "label": "Le futur de Vite"
+    },
+    {
+      "from": "les_origines_de_vite",
+      "to": "le_fonctionnement_de_vite",
+      "label": "Le fonctionnement de Vite"
+    },
+    {
+      "from": "le_fonctionnement_de_vite",
+      "to": "tout_n_est_que_plugin",
+      "label": "Tout n'est que plugin"
+    },
+    {
+      "from": "le_futur_de_vite",
+      "to": "le_fonctionnement_de_vite",
+      "label": "Le fonctionnement de Vite"
+    },
+    {
+      "from": "tout_n_est_que_plugin",
+      "to": "du_css_import_dans_un_fichier_typescript",
+      "label": "Du CSS importé dans un fichier TypeScript"
+    },
+    {
+      "from": "tout_n_est_que_plugin",
+      "to": "une_image_charg_e_dans_un_fichier_typescript",
+      "label": "Une image chargée dans un fichier TypeScript"
+    },
+    {
+      "from": "tout_n_est_que_plugin",
+      "to": "import_meta_glob_est_une_illusion",
+      "label": "import.meta.glob est une illusion"
+    }
+  ]
+}
