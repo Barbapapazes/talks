@@ -1,0 +1,648 @@
+{
+  "filepath": "/Users/esoub/dev/p/talks/2026-04-15/src/slides.md",
+  "nodes": [
+    {
+      "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
+      "index": 0,
+      "title": "Au cœur d’une pipeline: démystifions Vite et ses plugins",
+      "frontmatter": {
+        "htmlAttrs": {
+          "lang": "fr",
+          "dir": "ltr"
+        },
+        "fonts": {
+          "sans": "DM Sans",
+          "serif": "Noto Serif",
+          "mono": "Consolas"
+        },
+        "themeConfig": {
+          "primary": "white"
+        },
+        "codeCopy": false,
+        "transition": "fade-out",
+        "theme": "slidev-theme-personal",
+        "addons": [
+          "slidev-addon-inalia"
+        ],
+        "title": "Au cœur d’une pipeline: démystifions Vite et ses plugins",
+        "titleTemplate": "%s - Estéban Soubiran",
+        "author": "Estéban Soubiran",
+        "keywords": "web,development,vite,plugins,pipeline",
+        "event": "MiXiT",
+        "date": "15 avril 2026",
+        "chooseYourOwnAdventure": true,
+        "timing": 0
+      }
+    },
+    {
+      "id": "intro",
+      "index": 1,
+      "name": "Intro",
+      "title": "Intro",
+      "frontmatter": {
+        "name": "Intro",
+        "layout": "intro",
+        "timing": 0
+      }
+    },
+    {
+      "id": "inalia",
+      "index": 2,
+      "name": "Inalia",
+      "title": "Inalia",
+      "frontmatter": {
+        "name": "Inalia",
+        "layout": "inalia-overview",
+        "timing": 0
+      }
+    },
+    {
+      "id": "vite",
+      "index": 3,
+      "name": "Vite",
+      "title": "Vite",
+      "frontmatter": {
+        "name": "Vite",
+        "timing": 0,
+        "choices": [
+          "Les origines de Vite",
+          "Le fonctionnement de Vite",
+          "Le futur de Vite"
+        ]
+      }
+    },
+    {
+      "id": "les_origines_de_vite",
+      "index": 4,
+      "name": "Les origines de Vite",
+      "title": "Les origines de Vite",
+      "frontmatter": {
+        "name": "Les origines de Vite",
+        "timing": 0,
+        "choices": [
+          "Le fonctionnement de Vite"
+        ]
+      }
+    },
+    {
+      "id": "le_fonctionnement_de_vite",
+      "index": 5,
+      "name": "Le fonctionnement de Vite",
+      "title": "Le fonctionnement de Vite",
+      "frontmatter": {
+        "name": "Le fonctionnement de Vite",
+        "timing": 0,
+        "choices": [
+          "Tout n'est que plugin",
+          "Les entrailles d'un plugin Vite"
+        ]
+      }
+    },
+    {
+      "id": "le_futur_de_vite",
+      "index": 6,
+      "name": "Le futur de Vite",
+      "title": "Le futur de Vite",
+      "frontmatter": {
+        "name": "Le futur de Vite",
+        "timing": 0,
+        "choices": [
+          "Le fonctionnement de Vite"
+        ]
+      }
+    },
+    {
+      "id": "tout_n_est_que_plugin",
+      "index": 7,
+      "name": "Tout n'est que plugin",
+      "title": "Tout n'est que plugin",
+      "frontmatter": {
+        "name": "Tout n'est que plugin",
+        "timing": 0,
+        "choices": [
+          "Du CSS importé dans un fichier TypeScript",
+          "Une image chargée dans un fichier TypeScript",
+          "import.meta.glob est une illusion"
+        ]
+      }
+    },
+    {
+      "id": "du_css_import_dans_un_fichier_typescript",
+      "index": 8,
+      "name": "Du CSS importé dans un fichier TypeScript",
+      "title": "Du CSS importé dans un fichier TypeScript",
+      "frontmatter": {
+        "name": "Du CSS importé dans un fichier TypeScript",
+        "timing": 0,
+        "choices": [
+          "Les entrailles d'un plugin Vite"
+        ]
+      }
+    },
+    {
+      "id": "une_image_charg_e_dans_un_fichier_typescript",
+      "index": 9,
+      "name": "Une image chargée dans un fichier TypeScript",
+      "title": "Une image chargée dans un fichier TypeScript",
+      "frontmatter": {
+        "name": "Une image chargée dans un fichier TypeScript",
+        "timing": 0,
+        "choices": [
+          "Les entrailles d'un plugin Vite"
+        ]
+      }
+    },
+    {
+      "id": "import_meta_glob_est_une_illusion",
+      "index": 10,
+      "name": "import.meta.glob est une illusion",
+      "title": "import.meta.glob est une illusion",
+      "frontmatter": {
+        "name": "import.meta.glob est une illusion",
+        "timing": 0,
+        "choices": [
+          "Les entrailles d'un plugin Vite"
+        ]
+      }
+    },
+    {
+      "id": "les_entrailles_d_un_plugin_vite",
+      "index": 11,
+      "name": "Les entrailles d'un plugin Vite",
+      "title": "Les entrailles d'un plugin Vite",
+      "frontmatter": {
+        "name": "Les entrailles d'un plugin Vite",
+        "timing": 0,
+        "choices": [
+          "Tout n'est que plugin",
+          "La théorie des plugins Vite",
+          "Des exemples concrets"
+        ]
+      }
+    },
+    {
+      "id": "la_th_orie_des_plugins_vite",
+      "index": 12,
+      "name": "La théorie des plugins Vite",
+      "title": "La théorie des plugins Vite",
+      "frontmatter": {
+        "name": "La théorie des plugins Vite",
+        "timing": 0
+      }
+    },
+    {
+      "id": "resolveid",
+      "index": 13,
+      "name": "resolveId",
+      "title": "resolveId",
+      "frontmatter": {
+        "name": "resolveId",
+        "timing": 0
+      }
+    },
+    {
+      "id": "load",
+      "index": 14,
+      "name": "load",
+      "title": "load",
+      "frontmatter": {
+        "name": "load",
+        "timing": 0
+      }
+    },
+    {
+      "id": "transform",
+      "index": 15,
+      "name": "transform",
+      "title": "transform",
+      "frontmatter": {
+        "name": "transform",
+        "timing": 0,
+        "choices": [
+          "Des exemples concrets",
+          "Un plugin pour virtualiser"
+        ]
+      }
+    },
+    {
+      "id": "un_plugin_pour_virtualiser",
+      "index": 16,
+      "name": "Un plugin pour virtualiser",
+      "title": "Un plugin pour virtualiser",
+      "frontmatter": {
+        "name": "Un plugin pour virtualiser",
+        "timing": 0,
+        "choices": [
+          "Le middleware - Un fichier virtuel",
+          "Vue Router - Un module virtuel",
+          "VitePress - Des modules virtuels"
+        ]
+      }
+    },
+    {
+      "id": "le_middleware_un_fichier_virtuel",
+      "index": 17,
+      "name": "Le middleware - Un fichier virtuel",
+      "title": "Le middleware - Un fichier virtuel",
+      "frontmatter": {
+        "name": "Le middleware - Un fichier virtuel",
+        "timing": 0,
+        "choices": [
+          "Visualiser la pipeline"
+        ]
+      }
+    },
+    {
+      "id": "vue_router_un_module_virtuel",
+      "index": 18,
+      "name": "Vue Router - Un module virtuel",
+      "title": "Vue Router - Un module virtuel",
+      "frontmatter": {
+        "name": "Vue Router - Un module virtuel",
+        "timing": 0,
+        "choices": [
+          "Visualiser la pipeline"
+        ]
+      }
+    },
+    {
+      "id": "vitepress_des_modules_virtuels",
+      "index": 19,
+      "name": "VitePress - Des modules virtuels",
+      "title": "VitePress - Des modules virtuels",
+      "frontmatter": {
+        "name": "VitePress - Des modules virtuels",
+        "timing": 0,
+        "choices": [
+          "Visualiser la pipeline"
+        ]
+      }
+    },
+    {
+      "id": "des_exemples_concrets",
+      "index": 20,
+      "name": "Des exemples concrets",
+      "title": "Des exemples concrets",
+      "frontmatter": {
+        "name": "Des exemples concrets",
+        "timing": 0,
+        "choices": [
+          "Icons Plugin (unplugin-icons)",
+          "Infos Plugin (unplugin-infos)",
+          "Laravel Vite Plugin"
+        ]
+      }
+    },
+    {
+      "id": "icons_plugin_unplugin_icons",
+      "index": 21,
+      "name": "Icons Plugin (unplugin-icons)",
+      "title": "Icons Plugin (unplugin-icons)",
+      "frontmatter": {
+        "name": "Icons Plugin (unplugin-icons)",
+        "timing": 0,
+        "choices": [
+          "Visualiser la pipeline"
+        ]
+      }
+    },
+    {
+      "id": "infos_plugin_unplugin_infos",
+      "index": 22,
+      "name": "Infos Plugin (unplugin-infos)",
+      "title": "Infos Plugin (unplugin-infos)",
+      "frontmatter": {
+        "name": "Infos Plugin (unplugin-infos)",
+        "timing": 0,
+        "choices": [
+          "Visualiser la pipeline"
+        ]
+      }
+    },
+    {
+      "id": "laravel_vite_plugin",
+      "index": 23,
+      "name": "Laravel Vite Plugin",
+      "title": "Laravel Vite Plugin",
+      "frontmatter": {
+        "name": "Laravel Vite Plugin",
+        "timing": 0,
+        "choices": [
+          "Visualiser la pipeline"
+        ]
+      }
+    },
+    {
+      "id": "visualiser_la_pipeline",
+      "index": 24,
+      "name": "Visualiser la pipeline",
+      "title": "Visualiser la pipeline",
+      "frontmatter": {
+        "name": "Visualiser la pipeline",
+        "timing": 0,
+        "choices": [
+          "Vue Plugin",
+          "Auto Import Plugin (unplugin-auto-import)"
+        ]
+      }
+    },
+    {
+      "id": "vue_plugin",
+      "index": 25,
+      "name": "Vue Plugin",
+      "title": "Vue Plugin",
+      "frontmatter": {
+        "name": "Vue Plugin",
+        "timing": 0,
+        "choices": [
+          "Le fonctionnement de la pipeline"
+        ]
+      }
+    },
+    {
+      "id": "auto_import_plugin_unplugin_auto_import",
+      "index": 26,
+      "name": "Auto Import Plugin (unplugin-auto-import)",
+      "title": "Auto Import Plugin (unplugin-auto-import)",
+      "frontmatter": {
+        "name": "Auto Import Plugin (unplugin-auto-import)",
+        "timing": 0,
+        "choices": [
+          "Le fonctionnement de la pipeline"
+        ]
+      }
+    },
+    {
+      "id": "le_fonctionnement_de_la_pipeline",
+      "index": 27,
+      "name": "Le fonctionnement de la pipeline",
+      "title": "Le fonctionnement de la pipeline",
+      "frontmatter": {
+        "name": "Le fonctionnement de la pipeline",
+        "timing": 0
+      }
+    },
+    {
+      "id": "prendre_en_main_l_ordre",
+      "index": 28,
+      "name": "Prendre en main l'ordre",
+      "title": "Prendre en main l'ordre",
+      "frontmatter": {
+        "name": "Prendre en main l'ordre",
+        "timing": 0
+      }
+    },
+    {
+      "id": "l_important_d_un_filtre",
+      "index": 29,
+      "name": "L'important d'un filtre",
+      "title": "L'important d'un filtre",
+      "frontmatter": {
+        "name": "L'important d'un filtre",
+        "timing": 0
+      }
+    },
+    {
+      "id": "live_coding",
+      "index": 30,
+      "name": "Live Coding",
+      "title": "Live Coding",
+      "frontmatter": {
+        "name": "Live Coding",
+        "timing": 0
+      }
+    },
+    {
+      "id": "conclusion",
+      "index": 31,
+      "name": "Conclusion",
+      "title": "Conclusion",
+      "frontmatter": {
+        "name": "Conclusion",
+        "timing": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
+      "to": "intro",
+      "label": ""
+    },
+    {
+      "from": "intro",
+      "to": "inalia",
+      "label": ""
+    },
+    {
+      "from": "inalia",
+      "to": "vite",
+      "label": ""
+    },
+    {
+      "from": "vite",
+      "to": "les_origines_de_vite",
+      "label": "Les origines de Vite"
+    },
+    {
+      "from": "vite",
+      "to": "le_fonctionnement_de_vite",
+      "label": "Le fonctionnement de Vite"
+    },
+    {
+      "from": "vite",
+      "to": "le_futur_de_vite",
+      "label": "Le futur de Vite"
+    },
+    {
+      "from": "les_origines_de_vite",
+      "to": "le_fonctionnement_de_vite",
+      "label": "Le fonctionnement de Vite"
+    },
+    {
+      "from": "le_fonctionnement_de_vite",
+      "to": "tout_n_est_que_plugin",
+      "label": "Tout n'est que plugin"
+    },
+    {
+      "from": "le_fonctionnement_de_vite",
+      "to": "les_entrailles_d_un_plugin_vite",
+      "label": "Les entrailles d'un plugin Vite"
+    },
+    {
+      "from": "le_futur_de_vite",
+      "to": "le_fonctionnement_de_vite",
+      "label": "Le fonctionnement de Vite"
+    },
+    {
+      "from": "tout_n_est_que_plugin",
+      "to": "du_css_import_dans_un_fichier_typescript",
+      "label": "Du CSS importé dans un fichier TypeScript"
+    },
+    {
+      "from": "tout_n_est_que_plugin",
+      "to": "une_image_charg_e_dans_un_fichier_typescript",
+      "label": "Une image chargée dans un fichier TypeScript"
+    },
+    {
+      "from": "tout_n_est_que_plugin",
+      "to": "import_meta_glob_est_une_illusion",
+      "label": "import.meta.glob est une illusion"
+    },
+    {
+      "from": "du_css_import_dans_un_fichier_typescript",
+      "to": "les_entrailles_d_un_plugin_vite",
+      "label": "Les entrailles d'un plugin Vite"
+    },
+    {
+      "from": "une_image_charg_e_dans_un_fichier_typescript",
+      "to": "les_entrailles_d_un_plugin_vite",
+      "label": "Les entrailles d'un plugin Vite"
+    },
+    {
+      "from": "import_meta_glob_est_une_illusion",
+      "to": "les_entrailles_d_un_plugin_vite",
+      "label": "Les entrailles d'un plugin Vite"
+    },
+    {
+      "from": "les_entrailles_d_un_plugin_vite",
+      "to": "tout_n_est_que_plugin",
+      "label": "Tout n'est que plugin"
+    },
+    {
+      "from": "les_entrailles_d_un_plugin_vite",
+      "to": "la_th_orie_des_plugins_vite",
+      "label": "La théorie des plugins Vite"
+    },
+    {
+      "from": "les_entrailles_d_un_plugin_vite",
+      "to": "des_exemples_concrets",
+      "label": "Des exemples concrets"
+    },
+    {
+      "from": "la_th_orie_des_plugins_vite",
+      "to": "resolveid",
+      "label": ""
+    },
+    {
+      "from": "resolveid",
+      "to": "load",
+      "label": ""
+    },
+    {
+      "from": "load",
+      "to": "transform",
+      "label": ""
+    },
+    {
+      "from": "transform",
+      "to": "des_exemples_concrets",
+      "label": "Des exemples concrets"
+    },
+    {
+      "from": "transform",
+      "to": "un_plugin_pour_virtualiser",
+      "label": "Un plugin pour virtualiser"
+    },
+    {
+      "from": "un_plugin_pour_virtualiser",
+      "to": "le_middleware_un_fichier_virtuel",
+      "label": "Le middleware - Un fichier virtuel"
+    },
+    {
+      "from": "un_plugin_pour_virtualiser",
+      "to": "vue_router_un_module_virtuel",
+      "label": "Vue Router - Un module virtuel"
+    },
+    {
+      "from": "un_plugin_pour_virtualiser",
+      "to": "vitepress_des_modules_virtuels",
+      "label": "VitePress - Des modules virtuels"
+    },
+    {
+      "from": "le_middleware_un_fichier_virtuel",
+      "to": "visualiser_la_pipeline",
+      "label": "Visualiser la pipeline"
+    },
+    {
+      "from": "vue_router_un_module_virtuel",
+      "to": "visualiser_la_pipeline",
+      "label": "Visualiser la pipeline"
+    },
+    {
+      "from": "vitepress_des_modules_virtuels",
+      "to": "visualiser_la_pipeline",
+      "label": "Visualiser la pipeline"
+    },
+    {
+      "from": "des_exemples_concrets",
+      "to": "icons_plugin_unplugin_icons",
+      "label": "Icons Plugin (unplugin-icons)"
+    },
+    {
+      "from": "des_exemples_concrets",
+      "to": "infos_plugin_unplugin_infos",
+      "label": "Infos Plugin (unplugin-infos)"
+    },
+    {
+      "from": "des_exemples_concrets",
+      "to": "laravel_vite_plugin",
+      "label": "Laravel Vite Plugin"
+    },
+    {
+      "from": "icons_plugin_unplugin_icons",
+      "to": "visualiser_la_pipeline",
+      "label": "Visualiser la pipeline"
+    },
+    {
+      "from": "infos_plugin_unplugin_infos",
+      "to": "visualiser_la_pipeline",
+      "label": "Visualiser la pipeline"
+    },
+    {
+      "from": "laravel_vite_plugin",
+      "to": "visualiser_la_pipeline",
+      "label": "Visualiser la pipeline"
+    },
+    {
+      "from": "visualiser_la_pipeline",
+      "to": "vue_plugin",
+      "label": "Vue Plugin"
+    },
+    {
+      "from": "visualiser_la_pipeline",
+      "to": "auto_import_plugin_unplugin_auto_import",
+      "label": "Auto Import Plugin (unplugin-auto-import)"
+    },
+    {
+      "from": "vue_plugin",
+      "to": "le_fonctionnement_de_la_pipeline",
+      "label": "Le fonctionnement de la pipeline"
+    },
+    {
+      "from": "auto_import_plugin_unplugin_auto_import",
+      "to": "le_fonctionnement_de_la_pipeline",
+      "label": "Le fonctionnement de la pipeline"
+    },
+    {
+      "from": "le_fonctionnement_de_la_pipeline",
+      "to": "prendre_en_main_l_ordre",
+      "label": ""
+    },
+    {
+      "from": "prendre_en_main_l_ordre",
+      "to": "l_important_d_un_filtre",
+      "label": ""
+    },
+    {
+      "from": "l_important_d_un_filtre",
+      "to": "live_coding",
+      "label": ""
+    },
+    {
+      "from": "live_coding",
+      "to": "conclusion",
+      "label": ""
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+flowchart TD
+  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["Au cœur d’une pipeline: démystifions Vite et ses plugins"]
+  intro["Intro"]
+  inalia["Inalia"]
+  vite["Vite"]
+  les_origines_de_vite["Les origines de Vite"]
+  le_fonctionnement_de_vite["Le fonctionnement de Vite"]
+  le_futur_de_vite["Le futur de Vite"]
+  tout_n_est_que_plugin["Tout n'est que plugin"]
+  du_css_import_dans_un_fichier_typescript["Du CSS importé dans un fichier TypeScript"]
+  une_image_charg_e_dans_un_fichier_typescript["Une image chargée dans un fichier TypeScript"]
+  import_meta_glob_est_une_illusion["import.meta.glob est une illusion"]
+  les_entrailles_d_un_plugin_vite["Les entrailles d'un plugin Vite"]
+  la_th_orie_des_plugins_vite["La théorie des plugins Vite"]
+  resolveid["resolveId"]
+  load["load"]
+  transform["transform"]
+  un_plugin_pour_virtualiser["Un plugin pour virtualiser"]
+  le_middleware_un_fichier_virtuel["Le middleware - Un fichier virtuel"]
+  vue_router_un_module_virtuel["Vue Router - Un module virtuel"]
+  vitepress_des_modules_virtuels["VitePress - Des modules virtuels"]
+  des_exemples_concrets["Des exemples concrets"]
+  icons_plugin_unplugin_icons["Icons Plugin (unplugin-icons)"]
+  infos_plugin_unplugin_infos["Infos Plugin (unplugin-infos)"]
+  laravel_vite_plugin["Laravel Vite Plugin"]
+  visualiser_la_pipeline["Visualiser la pipeline"]
+  vue_plugin["Vue Plugin"]
+  auto_import_plugin_unplugin_auto_import["Auto Import Plugin (unplugin-auto-import)"]
+  le_fonctionnement_de_la_pipeline["Le fonctionnement de la pipeline"]
+  prendre_en_main_l_ordre["Prendre en main l'ordre"]
+  l_important_d_un_filtre["L'important d'un filtre"]
+  live_coding["Live Coding"]
+  conclusion["Conclusion"]
+  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins --> intro
+  intro --> inalia
+  inalia --> vite
+  vite --> les_origines_de_vite
+  vite --> le_fonctionnement_de_vite
+  vite --> le_futur_de_vite
+  les_origines_de_vite --> le_fonctionnement_de_vite
+  le_fonctionnement_de_vite --> tout_n_est_que_plugin
+  le_fonctionnement_de_vite --> les_entrailles_d_un_plugin_vite
+  le_futur_de_vite --> le_fonctionnement_de_vite
+  tout_n_est_que_plugin --> du_css_import_dans_un_fichier_typescript
+  tout_n_est_que_plugin --> une_image_charg_e_dans_un_fichier_typescript
+  tout_n_est_que_plugin --> import_meta_glob_est_une_illusion
+  du_css_import_dans_un_fichier_typescript --> les_entrailles_d_un_plugin_vite
+  une_image_charg_e_dans_un_fichier_typescript --> les_entrailles_d_un_plugin_vite
+  import_meta_glob_est_une_illusion --> les_entrailles_d_un_plugin_vite
+  les_entrailles_d_un_plugin_vite --> tout_n_est_que_plugin
+  les_entrailles_d_un_plugin_vite --> la_th_orie_des_plugins_vite
+  les_entrailles_d_un_plugin_vite --> des_exemples_concrets
+  la_th_orie_des_plugins_vite --> resolveid
+  resolveid --> load
+  load --> transform
+  transform --> des_exemples_concrets
+  transform --> un_plugin_pour_virtualiser
+  un_plugin_pour_virtualiser --> le_middleware_un_fichier_virtuel
+  un_plugin_pour_virtualiser --> vue_router_un_module_virtuel
+  un_plugin_pour_virtualiser --> vitepress_des_modules_virtuels
+  le_middleware_un_fichier_virtuel --> visualiser_la_pipeline
+  vue_router_un_module_virtuel --> visualiser_la_pipeline
+  vitepress_des_modules_virtuels --> visualiser_la_pipeline
+  des_exemples_concrets --> icons_plugin_unplugin_icons
+  des_exemples_concrets --> infos_plugin_unplugin_infos
+  des_exemples_concrets --> laravel_vite_plugin
+  icons_plugin_unplugin_icons --> visualiser_la_pipeline
+  infos_plugin_unplugin_infos --> visualiser_la_pipeline
+  laravel_vite_plugin --> visualiser_la_pipeline
+  visualiser_la_pipeline --> vue_plugin
+  visualiser_la_pipeline --> auto_import_plugin_unplugin_auto_import
+  vue_plugin --> le_fonctionnement_de_la_pipeline
+  auto_import_plugin_unplugin_auto_import --> le_fonctionnement_de_la_pipeline
+  le_fonctionnement_de_la_pipeline --> prendre_en_main_l_ordre
+  prendre_en_main_l_ordre --> l_important_d_un_filtre
+  l_important_d_un_filtre --> live_coding
+  live_coding --> conclusion

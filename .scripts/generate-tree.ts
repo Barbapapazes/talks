@@ -1,9 +1,10 @@
-import { readFileSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parseSync } from '@slidev/parser'
 import { execa } from 'execa'
 import matter from 'gray-matter'
+
 import { selectDeck } from './_utils.ts'
 
 interface GraphNode {
@@ -33,6 +34,10 @@ function slugify(text: string | undefined): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '_')
     .replace(/^_|_$/g, '')
+}
+
+function hasChoicesKey(frontmatter: Record<string, any>) {
+  return Object.prototype.hasOwnProperty.call(frontmatter, 'choices')
 }
 
 async function generateTree() {
@@ -65,7 +70,7 @@ async function generateTree() {
   for (const slide of parsed.slides) {
     const name = slide.frontmatter.name as string | undefined
     const title = slide.title || `Slide ${slide.index + 1}`
-    const id = slugify(name || title)
+    const id = slugify(name || title) || `slide_${slide.index + 1}`
 
     const node: GraphNode = {
       id,
@@ -101,8 +106,22 @@ async function generateTree() {
   const edges: GraphEdge[] = []
   const unresolvedChoices: Array<{ from: string, choice: string }> = []
 
+  const nodeByIndex = new Map(nodes.map(node => [node.index, node]))
+
   for (const node of nodes) {
     const choices = node.frontmatter.choices
+
+    if (!hasChoicesKey(node.frontmatter)) {
+      const nextNode = nodeByIndex.get(node.index + 1)
+      if (nextNode) {
+        edges.push({
+          from: node.id,
+          to: nextNode.id,
+          label: '',
+        })
+      }
+      continue
+    }
 
     if (!choices || !Array.isArray(choices))
       continue
@@ -138,14 +157,18 @@ async function generateTree() {
   }
 
   // Build graph object
+
   const graph: Graph = {
     filepath: slidesPath,
     nodes,
     edges,
   }
 
+  const dataPath = join(deckPath, '.data')
+  mkdirSync(dataPath, { recursive: true })
+
   // Generate JSON file
-  const jsonPath = join(deckPath, 'slides.graph.json')
+  const jsonPath = join(dataPath, 'slides.graph.json')
   writeFileSync(jsonPath, JSON.stringify(graph, null, 2), 'utf-8')
   console.warn(`✓ Generated JSON graph: ${jsonPath}`)
 
@@ -166,13 +189,18 @@ async function generateTree() {
     mermaidLines.push(`  ${fromId} --> ${toId}`)
   }
 
-  const mermaidPath = join(deckPath, 'slides.graph.txt')
+  const mermaidPath = join(dataPath, 'slides.graph.txt')
   writeFileSync(mermaidPath, `${mermaidLines.join('\n')}\n`, 'utf-8')
   console.warn(`✓ Generated Mermaid flow: ${mermaidPath}`)
 
-  const svgPath = join(deckPath, 'slides.graph.svg')
+  const svgPath = join(dataPath, 'slides.graph.svg')
   await execa('mmdc', ['-i', mermaidPath, '-o', svgPath], { stdio: 'inherit' })
   console.warn(`✓ Generated Mermaid SVG: ${svgPath}`)
+
+  // Also generate PNG
+  const pngPath = join(dataPath, 'slides.graph.png')
+  await execa('mmdc', ['-i', mermaidPath, '-o', pngPath], { stdio: 'inherit' })
+  console.warn(`✓ Generated Mermaid PNG: ${pngPath}`)
 
   console.warn(`\nGraph statistics:`)
   console.warn(`  - Total slides: ${nodes.length}`)
