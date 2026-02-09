@@ -1,44 +1,64 @@
-flowchart TD
-  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["Au cœur d’une pipeline: démystifions Vite et ses plugins"]
-  intro["Intro"]
-  inalia["Inalia"]
-  vite["Vite"]
-  les_origines_de_vite["Les origines de Vite"]
-  le_fonctionnement_de_vite["Le fonctionnement de Vite"]
-  le_futur_de_vite["Le futur de Vite"]
-  tout_n_est_que_plugin["Tout n'est que plugin"]
-  du_css_import_dans_un_fichier_typescript["Du CSS importé dans un fichier TypeScript"]
-  une_image_charg_e_dans_un_fichier_typescript["Une image chargée dans un fichier TypeScript"]
-  import_meta_glob_est_une_illusion["import.meta.glob est une illusion"]
-  le_pr_bundling_avec_esbuild["Le pré-bundling avec Esbuild"]
-  les_entrailles_d_un_plugin_vite["Les entrailles d'un plugin Vite"]
-  la_th_orie_des_plugins_vite["La théorie des plugins Vite"]
-  resolveid["resolveId"]
-  load["load"]
-  transform["transform"]
-  des_exemples_concrets["Des exemples concrets"]
-  vue_plugin["Vue Plugin"]
-  auto_import_plugin_unplugin_auto_import["Auto Import Plugin (unplugin-auto-import)"]
-  un_plugin_pour_virtualiser["Un plugin pour virtualiser"]
-  vue_router_un_module_virtuel["Vue Router - Un module virtuel"]
-  vitepress_des_data_virtuels["VitePress - Des data virtuels"]
-  icons_plugin_des_icons_virtuels["Icons Plugin - Des icons virtuels"]
-  infos_plugin_des_infos_virtuelles["Infos Plugin - Des infos virtuelles"]
-  les_autres_capacit_s_des_plugins["Les autres capacités des plugins"]
-  le_hmr_hot_module_replacement["Le HMR (Hot Module Replacement)"]
-  le_middleware_un_fichier_virtuel["Le middleware - Un fichier virtuel"]
-  run_plugin_un_plugin_pour_ex_cuter_des_commandes["Run Plugin - Un plugin pour exécuter des commandes"]
-  virtual_plugin_un_plugin_pour_virtualiser_des_modules["Virtual Plugin - Un plugin pour virtualiser des modules"]
-  laravel_vite_la_communication_inter_processus["Laravel Vite - La communication inter-processus"]
-  unplugin_macro_un_plugin_pour_cr_er_des_macros["unplugin-macro - Un plugin pour créer des macros"]
-  visualiser_la_pipeline["Visualiser la pipeline"]
-  dans_les_profondeurs_de_la_pipeline["Dans les profondeurs de la pipeline"]
-  prendre_en_main_l_ordre["Prendre en main l'ordre"]
-  l_important_d_un_filtre["L'important d'un filtre"]
-  live_coding["Live Coding"]
-  q_a["Q&A"]
-  la_r_unification_avec_rolldown["La réunification avec Rolldown"]
-  conclusion["Conclusion"]
+%%{init: {"flowchart": {"htmlLabels": true, "curve": "basis"}} }%%
+flowchart LR
+  classDef default font-family:sans-serif
+  classDef choice fill:#f9f9f9,stroke:#333,stroke-width:1px
+  classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+  subgraph Introduction ["Introduction"]
+      intro["Intro"]:::main
+      inalia["Inalia"]:::main
+  end
+  subgraph Vite_Core ["Vite Core"]
+      vite["Vite"]:::choice
+      les_origines_de_vite["Les origines de Vite"]:::choice
+      le_fonctionnement_de_vite["Le fonctionnement de Vite"]:::choice
+      le_futur_de_vite["Le futur de Vite"]:::choice
+      le_pr_bundling_avec_esbuild["Le pré-bundling avec Esbuild"]:::choice
+  end
+  subgraph Feature_Plugins ["Feature Plugins"]
+      tout_n_est_que_plugin["Tout n'est que plugin"]:::choice
+      du_css_import_dans_un_fichier_typescript["Du CSS importé dans un fichier TypeScript"]:::choice
+      une_image_charg_e_dans_un_fichier_typescript["Une image chargée dans un fichier TypeScript"]:::choice
+      import_meta_glob_est_une_illusion["import.meta.glob est une illusion"]:::choice
+  end
+  subgraph Inside_a_Plugin ["Inside a Plugin"]
+      les_entrailles_d_un_plugin_vite["Les entrailles d'un plugin Vite"]:::choice
+      la_th_orie_des_plugins_vite["La théorie des plugins Vite"]:::main
+      resolveid["resolveId"]:::main
+      load["load"]:::main
+      transform["transform"]:::choice
+  end
+  subgraph Concrete_Examples ["Concrete Examples"]
+      des_exemples_concrets["Des exemples concrets"]:::choice
+      vue_plugin["Vue Plugin"]:::choice
+      auto_import_plugin_unplugin_auto_import["Auto Import Plugin (unplugin-auto-import)"]:::choice
+      visualiser_la_pipeline["Visualiser la pipeline"]:::choice
+  end
+  subgraph Virtualization ["Virtualization"]
+      un_plugin_pour_virtualiser["Un plugin pour virtualiser"]:::choice
+      vue_router_un_module_virtuel["Vue Router - Un module virtuel"]:::choice
+      vitepress_des_data_virtuels["VitePress - Des data virtuels"]:::choice
+      icons_plugin_des_icons_virtuels["Icons Plugin - Des icons virtuels"]:::choice
+      infos_plugin_des_infos_virtuelles["Infos Plugin - Des infos virtuelles"]:::choice
+  end
+  subgraph Advanced_Capabilities ["Advanced Capabilities"]
+      les_autres_capacit_s_des_plugins["Les autres capacités des plugins"]:::choice
+      le_hmr_hot_module_replacement["Le HMR (Hot Module Replacement)"]:::choice
+      le_middleware_un_fichier_virtuel["Le middleware - Un fichier virtuel"]:::choice
+      run_plugin_un_plugin_pour_ex_cuter_des_commandes["Run Plugin - Un plugin pour exécuter des commandes"]:::choice
+      virtual_plugin_un_plugin_pour_virtualiser_des_modules["Virtual Plugin - Un plugin pour virtualiser des modules"]:::choice
+      laravel_vite_la_communication_inter_processus["Laravel Vite - La communication inter-processus"]:::choice
+      unplugin_macro_un_plugin_pour_cr_er_des_macros["unplugin-macro - Un plugin pour créer des macros"]:::choice
+  end
+  subgraph Deep_Dive___Conclusion ["Deep Dive & Conclusion"]
+      dans_les_profondeurs_de_la_pipeline["Dans les profondeurs de la pipeline"]:::main
+      prendre_en_main_l_ordre["Prendre en main l'ordre"]:::main
+      l_important_d_un_filtre["L'important d'un filtre"]:::choice
+      live_coding["Live Coding"]:::choice
+      q_a["Q&A"]:::choice
+      la_r_unification_avec_rolldown["La réunification avec Rolldown"]:::choice
+      conclusion["Conclusion"]:::main
+  end
+  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["Au cœur d’une pipeline: démystifions Vite et ses plugins"]:::main
   au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins --> intro
   intro --> inalia
   inalia --> vite

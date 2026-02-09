@@ -48,6 +48,7 @@ Je vous préviens, tout ne pourra pas être exploré alors faites les bons choix
 ---
 name: Intro
 layout: intro
+group: Introduction
 timing: 0
 ---
 
@@ -60,6 +61,7 @@ Je m'appelle Estéban...
 ---
 name: Inalia
 layout: inalia-overview
+group: Introduction
 timing: 0
 ---
 
@@ -73,6 +75,7 @@ Et puis, vous pouvez même réagir en direct à ce que je dis, si vous trouvez �
 
 ---
 name: Vite
+group: Vite Core
 timing: 0
 choices:
   - Les origines de Vite
@@ -86,6 +89,7 @@ choices:
 
 ---
 name: Les origines de Vite
+group: Vite Core
 timing: 0
 choices:
   - Le fonctionnement de Vite
@@ -99,6 +103,7 @@ d'où ça vient, reprendre le contenu du documentaire de Vite, et les origines d
 
 ---
 name: Le fonctionnement de Vite
+group: Vite Core
 timing: 0
 choices:
   - Le pré-bundling avec Esbuild
@@ -118,6 +123,7 @@ https://chatgpt.com/share/6989c859-c310-8011-9006-dc074a544fb4
 
 ---
 name: Le futur de Vite
+group: Vite Core
 timing: 0
 choices:
   - Le fonctionnement de Vite
@@ -131,6 +137,7 @@ aspect stratégique avec VoidZero
 
 ---
 name: Tout n'est que plugin
+group: Feature Plugins
 timing: 0
 choices:
   - Du CSS importé dans un fichier TypeScript
@@ -146,6 +153,7 @@ on l'a vu, le coeur est minimal, pour une raison simple, tout passe par des plug
 
 ---
 name: Du CSS importé dans un fichier TypeScript
+group: Feature Plugins
 timing: 0
 choices:
   - Les entrailles d'un plugin Vite
@@ -165,6 +173,7 @@ montrer du pseudo code du plugin
 
 ---
 name: Une image chargée dans un fichier TypeScript
+group: Feature Plugins
 timing: 0
 choices:
   - Les entrailles d'un plugin Vite
@@ -183,6 +192,7 @@ montrer les différentes options parce qu'il peut automatiser
 
 ---
 name: import.meta.glob est une illusion
+group: Feature Plugins
 timing: 0
 choices:
   - Les entrailles d'un plugin Vite
@@ -190,6 +200,7 @@ choices:
 
 ---
 name: Le pré-bundling avec Esbuild
+group: Vite Core
 timing: 0
 choices:
   - Les entrailles d'un plugin Vite
@@ -204,6 +215,7 @@ Le problème des "milliers de requêtes" pour les grosses dépendances (ex: loda
 
 ---
 name: Les entrailles d'un plugin Vite
+group: Inside a Plugin
 timing: 0
 choices:
   - Tout n'est que plugin
@@ -212,6 +224,7 @@ choices:
 
 ---
 name: La théorie des plugins Vite
+group: Inside a Plugin
 timing: 0
 ---
 
@@ -223,6 +236,7 @@ reprendre avec plus de détails le fonctionnement d'une requête dans Vite
 
 ---
 name: resolveId
+group: Inside a Plugin
 timing: 0
 ---
 
@@ -234,6 +248,7 @@ quand, ou et quoi
 
 ---
 name: load
+group: Inside a Plugin
 timing: 0
 ---
 
@@ -247,6 +262,7 @@ donner des examples
 
 ---
 name: transform
+group: Inside a Plugin
 timing: 0
 choices:
   - Des exemples concrets
@@ -260,6 +276,7 @@ quand, ou et quoi
 
 ---
 name: Des exemples concrets
+group: Concrete Examples
 timing: 0
 choices:
   - Vue Plugin
@@ -268,6 +285,7 @@ choices:
 
 ---
 name: Vue Plugin
+group: Concrete Examples
 timing: 0
 choices:
   - Visualiser la pipeline
@@ -275,6 +293,7 @@ choices:
 
 ---
 name: Auto Import Plugin (unplugin-auto-import)
+group: Concrete Examples
 timing: 0
 choices:
   - Visualiser la pipeline
@@ -282,6 +301,7 @@ choices:
 
 ---
 name: Un plugin pour virtualiser
+group: Virtualization
 timing: 0
 choices:
   - Vue Router - Un module virtuel
@@ -292,6 +312,7 @@ choices:
 
 ---
 name: Vue Router - Un module virtuel
+group: Virtualization
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
@@ -299,6 +320,7 @@ choices:
 
 ---
 name: VitePress - Des data virtuels
+group: Virtualization
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
@@ -306,6 +328,7 @@ choices:
 
 ---
 name: Icons Plugin - Des icons virtuels
+group: Virtualization
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
@@ -313,6 +336,7 @@ choices:
 
 ---
 name: Infos Plugin - Des infos virtuelles
+group: Virtualization
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
@@ -320,6 +344,7 @@ choices:
 
 ---
 name: Les autres capacités des plugins
+group: Advanced Capabilities
 timing: 0
 choices:
   - Le HMR (Hot Module Replacement)
@@ -349,6 +374,7 @@ l'objectif, c'est de faire comprendre que les applications des Vite plugins sont
 
 ---
 name: Le HMR (Hot Module Replacement)
+group: Advanced Capabilities
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
@@ -364,6 +390,7 @@ Exemple : invalider un module virtuel quand un fichier sur le disque change.
 
 ---
 name: Le middleware - Un fichier virtuel
+group: Advanced Capabilities
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
@@ -375,6 +402,7 @@ choices:
 
 ---
 name: Run Plugin - Un plugin pour exécuter des commandes
+group: Advanced Capabilities
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
@@ -386,6 +414,7 @@ choices:
 
 ---
 name: Virtual Plugin - Un plugin pour virtualiser des modules
+group: Advanced Capabilities
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
@@ -397,6 +426,7 @@ choices:
 
 ---
 name: Laravel Vite - La communication inter-processus
+group: Advanced Capabilities
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
@@ -408,6 +438,7 @@ choices:
 
 ---
 name: unplugin-macro - Un plugin pour créer des macros
+group: Advanced Capabilities
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
@@ -419,6 +450,7 @@ choices:
 
 ---
 name: Visualiser la pipeline
+group: Concrete Examples
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
@@ -434,6 +466,7 @@ sortir vite-plugin-inspect pour voir les différents hooks, les différents plug
 
 ---
 name: Dans les profondeurs de la pipeline
+group: Deep Dive & Conclusion
 timing: 0
 ---
 
@@ -445,6 +478,7 @@ creuser la manière dont les plugins sont appelés, dans quel ordre
 
 ---
 name: Prendre en main l'ordre
+group: Deep Dive & Conclusion
 timing: 0
 ---
 
@@ -460,6 +494,7 @@ slide relativement rapide
 
 ---
 name: L'important d'un filtre
+group: Deep Dive & Conclusion
 timing: 0
 choices:
   - Live Coding
@@ -479,6 +514,7 @@ createFilter de @rollup/pluginutils.
 
 ---
 name: Live Coding
+group: Deep Dive & Conclusion
 timing: 0
 choices:
   - Conclusion
@@ -505,6 +541,7 @@ plugin autour de l'AI ? Là, j'ai pas d'idée
 
 ---
 name: Q&A
+group: Deep Dive & Conclusion
 timing: 0
 choices:
   - Conclusion
@@ -518,6 +555,7 @@ un long Q&A parce que même après le live coding, il peut quand même y avoir d
 
 ---
 name: La réunification avec Rolldown
+group: Deep Dive & Conclusion
 timing: 0
 choices:
   - Conclusion
@@ -535,6 +573,7 @@ Pourquoi certains plugins ne marchent qu'en build ?
 
 ---
 name: Conclusion
+group: Deep Dive & Conclusion
 timing: 0
 ---
 

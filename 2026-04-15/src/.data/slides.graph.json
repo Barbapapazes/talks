@@ -42,6 +42,7 @@
       "frontmatter": {
         "name": "Intro",
         "layout": "intro",
+        "group": "Introduction",
         "timing": 0
       }
     },
@@ -53,6 +54,7 @@
       "frontmatter": {
         "name": "Inalia",
         "layout": "inalia-overview",
+        "group": "Introduction",
         "timing": 0
       }
     },
@@ -63,6 +65,7 @@
       "title": "Vite",
       "frontmatter": {
         "name": "Vite",
+        "group": "Vite Core",
         "timing": 0,
         "choices": [
           "Les origines de Vite",
@@ -78,6 +81,7 @@
       "title": "Les origines de Vite",
       "frontmatter": {
         "name": "Les origines de Vite",
+        "group": "Vite Core",
         "timing": 0,
         "choices": [
           "Le fonctionnement de Vite"
@@ -91,6 +95,7 @@
       "title": "Le fonctionnement de Vite",
       "frontmatter": {
         "name": "Le fonctionnement de Vite",
+        "group": "Vite Core",
         "timing": 0,
         "choices": [
           "Le pré-bundling avec Esbuild",
@@ -106,6 +111,7 @@
       "title": "Le futur de Vite",
       "frontmatter": {
         "name": "Le futur de Vite",
+        "group": "Vite Core",
         "timing": 0,
         "choices": [
           "Le fonctionnement de Vite"
@@ -119,6 +125,7 @@
       "title": "Tout n'est que plugin",
       "frontmatter": {
         "name": "Tout n'est que plugin",
+        "group": "Feature Plugins",
         "timing": 0,
         "choices": [
           "Du CSS importé dans un fichier TypeScript",
@@ -134,6 +141,7 @@
       "title": "Du CSS importé dans un fichier TypeScript",
       "frontmatter": {
         "name": "Du CSS importé dans un fichier TypeScript",
+        "group": "Feature Plugins",
         "timing": 0,
         "choices": [
           "Les entrailles d'un plugin Vite"
@@ -147,6 +155,7 @@
       "title": "Une image chargée dans un fichier TypeScript",
       "frontmatter": {
         "name": "Une image chargée dans un fichier TypeScript",
+        "group": "Feature Plugins",
         "timing": 0,
         "choices": [
           "Les entrailles d'un plugin Vite"
@@ -160,6 +169,7 @@
       "title": "import.meta.glob est une illusion",
       "frontmatter": {
         "name": "import.meta.glob est une illusion",
+        "group": "Feature Plugins",
         "timing": 0,
         "choices": [
           "Les entrailles d'un plugin Vite"
@@ -173,6 +183,7 @@
       "title": "Le pré-bundling avec Esbuild",
       "frontmatter": {
         "name": "Le pré-bundling avec Esbuild",
+        "group": "Vite Core",
         "timing": 0,
         "choices": [
           "Les entrailles d'un plugin Vite"
@@ -186,6 +197,7 @@
       "title": "Les entrailles d'un plugin Vite",
       "frontmatter": {
         "name": "Les entrailles d'un plugin Vite",
+        "group": "Inside a Plugin",
         "timing": 0,
         "choices": [
           "Tout n'est que plugin",
@@ -200,6 +212,7 @@
       "title": "La théorie des plugins Vite",
       "frontmatter": {
         "name": "La théorie des plugins Vite",
+        "group": "Inside a Plugin",
         "timing": 0
       }
     },
@@ -210,6 +223,7 @@
       "title": "resolveId",
       "frontmatter": {
         "name": "resolveId",
+        "group": "Inside a Plugin",
         "timing": 0
       }
     },
@@ -220,6 +234,7 @@
       "title": "load",
       "frontmatter": {
         "name": "load",
+        "group": "Inside a Plugin",
         "timing": 0
       }
     },
@@ -230,6 +245,7 @@
       "title": "transform",
       "frontmatter": {
         "name": "transform",
+        "group": "Inside a Plugin",
         "timing": 0,
         "choices": [
           "Des exemples concrets"
@@ -243,6 +259,7 @@
       "title": "Des exemples concrets",
       "frontmatter": {
         "name": "Des exemples concrets",
+        "group": "Concrete Examples",
         "timing": 0,
         "choices": [
           "Vue Plugin",
@@ -257,6 +274,7 @@
       "title": "Vue Plugin",
       "frontmatter": {
         "name": "Vue Plugin",
+        "group": "Concrete Examples",
         "timing": 0,
         "choices": [
           "Visualiser la pipeline"
@@ -270,6 +288,7 @@
       "title": "Auto Import Plugin (unplugin-auto-import)",
       "frontmatter": {
         "name": "Auto Import Plugin (unplugin-auto-import)",
+        "group": "Concrete Examples",
         "timing": 0,
         "choices": [
           "Visualiser la pipeline"
@@ -283,6 +302,7 @@
       "title": "Un plugin pour virtualiser",
       "frontmatter": {
         "name": "Un plugin pour virtualiser",
+        "group": "Virtualization",
         "timing": 0,
         "choices": [
           "Vue Router - Un module virtuel",
@@ -299,6 +319,7 @@
       "title": "Vue Router - Un module virtuel",
       "frontmatter": {
         "name": "Vue Router - Un module virtuel",
+        "group": "Virtualization",
         "timing": 0,
         "choices": [
           "Dans les profondeurs de la pipeline"
@@ -312,6 +333,7 @@
       "title": "VitePress - Des data virtuels",
       "frontmatter": {
         "name": "VitePress - Des data virtuels",
+        "group": "Virtualization",
         "timing": 0,
         "choices": [
           "Dans les profondeurs de la pipeline"
@@ -325,6 +347,7 @@
       "title": "Icons Plugin - Des icons virtuels",
       "frontmatter": {
         "name": "Icons Plugin - Des icons virtuels",
+        "group": "Virtualization",
         "timing": 0,
         "choices": [
           "Dans les profondeurs de la pipeline"
@@ -338,6 +361,7 @@
       "title": "Infos Plugin - Des infos virtuelles",
       "frontmatter": {
         "name": "Infos Plugin - Des infos virtuelles",
+        "group": "Virtualization",
         "timing": 0,
         "choices": [
           "Dans les profondeurs de la pipeline"
@@ -351,6 +375,7 @@
       "title": "Les autres capacités des plugins",
       "frontmatter": {
         "name": "Les autres capacités des plugins",
+        "group": "Advanced Capabilities",
         "timing": 0,
         "choices": [
           "Le HMR (Hot Module Replacement)",
@@ -370,6 +395,7 @@
       "title": "Le HMR (Hot Module Replacement)",
       "frontmatter": {
         "name": "Le HMR (Hot Module Replacement)",
+        "group": "Advanced Capabilities",
         "timing": 0,
         "choices": [
           "Dans les profondeurs de la pipeline"
@@ -383,6 +409,7 @@
       "title": "Le middleware - Un fichier virtuel",
       "frontmatter": {
         "name": "Le middleware - Un fichier virtuel",
+        "group": "Advanced Capabilities",
         "timing": 0,
         "choices": [
           "Dans les profondeurs de la pipeline"
@@ -396,6 +423,7 @@
       "title": "Run Plugin - Un plugin pour exécuter des commandes",
       "frontmatter": {
         "name": "Run Plugin - Un plugin pour exécuter des commandes",
+        "group": "Advanced Capabilities",
         "timing": 0,
         "choices": [
           "Dans les profondeurs de la pipeline"
@@ -409,6 +437,7 @@
       "title": "Virtual Plugin - Un plugin pour virtualiser des modules",
       "frontmatter": {
         "name": "Virtual Plugin - Un plugin pour virtualiser des modules",
+        "group": "Advanced Capabilities",
         "timing": 0,
         "choices": [
           "Dans les profondeurs de la pipeline"
@@ -422,6 +451,7 @@
       "title": "Laravel Vite - La communication inter-processus",
       "frontmatter": {
         "name": "Laravel Vite - La communication inter-processus",
+        "group": "Advanced Capabilities",
         "timing": 0,
         "choices": [
           "Dans les profondeurs de la pipeline"
@@ -435,6 +465,7 @@
       "title": "unplugin-macro - Un plugin pour créer des macros",
       "frontmatter": {
         "name": "unplugin-macro - Un plugin pour créer des macros",
+        "group": "Advanced Capabilities",
         "timing": 0,
         "choices": [
           "Dans les profondeurs de la pipeline"
@@ -448,6 +479,7 @@
       "title": "Visualiser la pipeline",
       "frontmatter": {
         "name": "Visualiser la pipeline",
+        "group": "Concrete Examples",
         "timing": 0,
         "choices": [
           "Dans les profondeurs de la pipeline",
@@ -463,6 +495,7 @@
       "title": "Dans les profondeurs de la pipeline",
       "frontmatter": {
         "name": "Dans les profondeurs de la pipeline",
+        "group": "Deep Dive & Conclusion",
         "timing": 0
       }
     },
@@ -473,6 +506,7 @@
       "title": "Prendre en main l'ordre",
       "frontmatter": {
         "name": "Prendre en main l'ordre",
+        "group": "Deep Dive & Conclusion",
         "timing": 0
       }
     },
@@ -483,6 +517,7 @@
       "title": "L'important d'un filtre",
       "frontmatter": {
         "name": "L'important d'un filtre",
+        "group": "Deep Dive & Conclusion",
         "timing": 0,
         "choices": [
           "Live Coding",
@@ -498,6 +533,7 @@
       "title": "Live Coding",
       "frontmatter": {
         "name": "Live Coding",
+        "group": "Deep Dive & Conclusion",
         "timing": 0,
         "choices": [
           "Conclusion"
@@ -511,6 +547,7 @@
       "title": "Q&A",
       "frontmatter": {
         "name": "Q&A",
+        "group": "Deep Dive & Conclusion",
         "timing": 0,
         "choices": [
           "Conclusion"
@@ -524,6 +561,7 @@
       "title": "La réunification avec Rolldown",
       "frontmatter": {
         "name": "La réunification avec Rolldown",
+        "group": "Deep Dive & Conclusion",
         "timing": 0,
         "choices": [
           "Conclusion"
@@ -537,6 +575,7 @@
       "title": "Conclusion",
       "frontmatter": {
         "name": "Conclusion",
+        "group": "Deep Dive & Conclusion",
         "timing": 0
       }
     }

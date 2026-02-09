@@ -1,10 +1,10 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
+import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import { parseSync } from '@slidev/parser'
 import { execa } from 'execa'
 import matter from 'gray-matter'
-
 import { selectDeck } from './_utils.ts'
 
 interface GraphNode {
@@ -42,7 +42,8 @@ function hasChoicesKey(frontmatter: Record<string, any>) {
 
 async function generateTree() {
   // Get all decks
-  const allDecks = await selectDeck()
+  const folder = process.argv[2]
+  const allDecks = folder ? { folder } : await selectDeck()
 
   if (!allDecks.folder) {
     console.warn('No deck selected')
@@ -173,14 +174,43 @@ async function generateTree() {
   console.warn(`✓ Generated JSON graph: ${jsonPath}`)
 
   // Generate Mermaid flow text
-  const mermaidLines = ['flowchart TD']
+  const mermaidLines = [
+    '%%{init: {"flowchart": {"htmlLabels": true, "curve": "basis"}} }%%',
+    'flowchart LR',
+  ]
+
+  // Add styling
+  mermaidLines.push('  classDef default font-family:sans-serif')
+  mermaidLines.push('  classDef choice fill:#f9f9f9,stroke:#333,stroke-width:1px')
+  mermaidLines.push('  classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:2px')
 
   // Add nodes
+  const groups = new Map<string, string[]>()
+  const ungrouped: string[] = []
+
   for (const node of nodes) {
     const label = node.name || node.title
     const sanitizedId = node.id.replace(/\W/g, '_')
-    mermaidLines.push(`  ${sanitizedId}["${label}"]`)
+    const className = node.frontmatter.choices ? 'choice' : 'main'
+    const line = `  ${sanitizedId}["${label}"]:::${className}`
+
+    const group = node.frontmatter.group as string | undefined
+    if (group) {
+      if (!groups.has(group))
+        groups.set(group, [])
+      groups.get(group)!.push(line)
+    }
+    else {
+      ungrouped.push(line)
+    }
   }
+
+  for (const [groupName, lines] of groups) {
+    mermaidLines.push(`  subgraph ${groupName.replace(/\W/g, '_')} ["${groupName}"]`)
+    mermaidLines.push(...lines.map(l => `    ${l}`))
+    mermaidLines.push('  end')
+  }
+  mermaidLines.push(...ungrouped)
 
   // Add edges
   for (const edge of edges) {
@@ -196,11 +226,6 @@ async function generateTree() {
   const svgPath = join(dataPath, 'slides.graph.svg')
   await execa('mmdc', ['-i', mermaidPath, '-o', svgPath], { stdio: 'inherit' })
   console.warn(`✓ Generated Mermaid SVG: ${svgPath}`)
-
-  // Also generate PNG
-  const pngPath = join(dataPath, 'slides.graph.png')
-  await execa('mmdc', ['-i', mermaidPath, '-o', pngPath], { stdio: 'inherit' })
-  console.warn(`✓ Generated Mermaid PNG: ${pngPath}`)
 
   console.warn(`\nGraph statistics:`)
   console.warn(`  - Total slides: ${nodes.length}`)
