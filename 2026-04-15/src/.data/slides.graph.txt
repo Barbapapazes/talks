@@ -10,6 +10,7 @@ flowchart TD
   du_css_import_dans_un_fichier_typescript["Du CSS importé dans un fichier TypeScript"]
   une_image_charg_e_dans_un_fichier_typescript["Une image chargée dans un fichier TypeScript"]
   import_meta_glob_est_une_illusion["import.meta.glob est une illusion"]
+  le_pr_bundling_avec_esbuild["Le pré-bundling avec Esbuild"]
   les_entrailles_d_un_plugin_vite["Les entrailles d'un plugin Vite"]
   la_th_orie_des_plugins_vite["La théorie des plugins Vite"]
   resolveid["resolveId"]
@@ -24,6 +25,7 @@ flowchart TD
   icons_plugin_des_icons_virtuels["Icons Plugin - Des icons virtuels"]
   infos_plugin_des_infos_virtuelles["Infos Plugin - Des infos virtuelles"]
   les_autres_capacit_s_des_plugins["Les autres capacités des plugins"]
+  le_hmr_hot_module_replacement["Le HMR (Hot Module Replacement)"]
   le_middleware_un_fichier_virtuel["Le middleware - Un fichier virtuel"]
   run_plugin_un_plugin_pour_ex_cuter_des_commandes["Run Plugin - Un plugin pour exécuter des commandes"]
   virtual_plugin_un_plugin_pour_virtualiser_des_modules["Virtual Plugin - Un plugin pour virtualiser des modules"]
@@ -44,6 +46,7 @@ flowchart TD
   vite --> le_fonctionnement_de_vite
   vite --> le_futur_de_vite
   les_origines_de_vite --> le_fonctionnement_de_vite
+  le_fonctionnement_de_vite --> le_pr_bundling_avec_esbuild
   le_fonctionnement_de_vite --> tout_n_est_que_plugin
   le_fonctionnement_de_vite --> les_entrailles_d_un_plugin_vite
   le_futur_de_vite --> le_fonctionnement_de_vite
@@ -53,6 +56,7 @@ flowchart TD
   du_css_import_dans_un_fichier_typescript --> les_entrailles_d_un_plugin_vite
   une_image_charg_e_dans_un_fichier_typescript --> les_entrailles_d_un_plugin_vite
   import_meta_glob_est_une_illusion --> les_entrailles_d_un_plugin_vite
+  le_pr_bundling_avec_esbuild --> les_entrailles_d_un_plugin_vite
   les_entrailles_d_un_plugin_vite --> tout_n_est_que_plugin
   les_entrailles_d_un_plugin_vite --> la_th_orie_des_plugins_vite
   la_th_orie_des_plugins_vite --> resolveid
@@ -71,11 +75,14 @@ flowchart TD
   vitepress_des_data_virtuels --> dans_les_profondeurs_de_la_pipeline
   icons_plugin_des_icons_virtuels --> dans_les_profondeurs_de_la_pipeline
   infos_plugin_des_infos_virtuelles --> dans_les_profondeurs_de_la_pipeline
+  les_autres_capacit_s_des_plugins --> le_hmr_hot_module_replacement
   les_autres_capacit_s_des_plugins --> le_middleware_un_fichier_virtuel
   les_autres_capacit_s_des_plugins --> vue_router_un_module_virtuel
   les_autres_capacit_s_des_plugins --> run_plugin_un_plugin_pour_ex_cuter_des_commandes
   les_autres_capacit_s_des_plugins --> virtual_plugin_un_plugin_pour_virtualiser_des_modules
   les_autres_capacit_s_des_plugins --> laravel_vite_la_communication_inter_processus
+  les_autres_capacit_s_des_plugins --> unplugin_macro_un_plugin_pour_cr_er_des_macros
+  le_hmr_hot_module_replacement --> dans_les_profondeurs_de_la_pipeline
   le_middleware_un_fichier_virtuel --> dans_les_profondeurs_de_la_pipeline
   run_plugin_un_plugin_pour_ex_cuter_des_commandes --> dans_les_profondeurs_de_la_pipeline
   virtual_plugin_un_plugin_pour_virtualiser_des_modules --> dans_les_profondeurs_de_la_pipeline

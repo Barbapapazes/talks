@@ -93,7 +93,7 @@ choices:
 
 <!--
 
-Choix:
+d'où ça vient, reprendre le contenu du documentaire de Vite, et les origines depuis le serveur pour Vue.js
 
 -->
 
@@ -101,11 +101,18 @@ Choix:
 name: Le fonctionnement de Vite
 timing: 0
 choices:
+  - Le pré-bundling avec Esbuild
   - Tout n'est que plugin
   - Les entrailles d'un plugin Vite
 ---
 
 <!--
+
+simple server web, faire un schéma avec le UA qui fait une requête, le serveur qui la reçoit, la traite et qui répond
+(faire un schéma dynamique)
+
+reprendre le système de chat IA ? en mode, on vit dans une époque de fou
+https://chatgpt.com/share/6989c859-c310-8011-9006-dc074a544fb4
 
 -->
 
@@ -117,6 +124,8 @@ choices:
 ---
 
 <!--
+
+aspect stratégique avec VoidZero
 
 -->
 
@@ -131,6 +140,8 @@ choices:
 
 <!--
 
+on l'a vu, le coeur est minimal, pour une raison simple, tout passe par des plugins, même les fonctionnalités de base (pourquoi ? parce que ça t'assure que ton système de plugin est le bon, avec suffisamment de puissance et de liberté, tu n'as pas plus d'accès qu'un third party plugin)
+
 -->
 
 ---
@@ -140,6 +151,18 @@ choices:
   - Les entrailles d'un plugin Vite
 ---
 
+<!--
+
+import './style.css'
+
+ça ne choque plus personne mais dans la vraie vie, ça ne fonctionne pas
+
+reprendre le schéma dynamique du fonctionnement de Vite et montrer ce qu'il se passe...
+
+montrer du pseudo code du plugin
+
+ -->
+
 ---
 name: Une image chargée dans un fichier TypeScript
 timing: 0
@@ -147,12 +170,37 @@ choices:
   - Les entrailles d'un plugin Vite
 ---
 
+<!--
+
+import img from './image.png'
+
+ça ne choque plus personne mais dans la vraie vie, ça ne fonctionne pas
+
+reprendre le schéma dynamique du fonctionnement de Vite et montrer ce qu'il se passe...
+montrer les différentes options parce qu'il peut automatiser
+
+ -->
+
 ---
 name: import.meta.glob est une illusion
 timing: 0
 choices:
   - Les entrailles d'un plugin Vite
 ---
+
+---
+name: Le pré-bundling avec Esbuild
+timing: 0
+choices:
+  - Les entrailles d'un plugin Vite
+---
+
+<!--
+
+Pourquoi Esbuild ? Conversion CommonJS -> ESM (indispensable pour les vieilles lib)
+Le problème des "milliers de requêtes" pour les grosses dépendances (ex: lodash-es). On fusionne tout en un seul fichier dans .vite/deps.
+
+-->
 
 ---
 name: Les entrailles d'un plugin Vite
@@ -167,15 +215,35 @@ name: La théorie des plugins Vite
 timing: 0
 ---
 
+<!--
+
+reprendre avec plus de détails le fonctionnement d'une requête dans Vite
+
+-->
+
 ---
 name: resolveId
 timing: 0
 ---
 
+<!--
+
+quand, ou et quoi
+
+-->
+
 ---
 name: load
 timing: 0
 ---
+
+<!--
+
+quand, ou et quoi
+
+donner des examples
+
+-->
 
 ---
 name: transform
@@ -183,6 +251,12 @@ timing: 0
 choices:
   - Des exemples concrets
 ---
+
+<!--
+
+quand, ou et quoi
+
+-->
 
 ---
 name: Des exemples concrets
@@ -248,11 +322,13 @@ choices:
 name: Les autres capacités des plugins
 timing: 0
 choices:
+  - Le HMR (Hot Module Replacement)
   - Le middleware - Un fichier virtuel
   - Vue Router - Un module virtuel
   - Run Plugin - Un plugin pour exécuter des commandes
   - Virtual Plugin - Un plugin pour virtualiser des modules
   - Laravel Vite - La communication inter-processus
+  - unplugin-macro - Un plugin pour créer des macros
 ---
 
 <!--
@@ -272,11 +348,30 @@ l'objectif, c'est de faire comprendre que les applications des Vite plugins sont
  -->
 
 ---
+name: Le HMR (Hot Module Replacement)
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+<!--
+
+Comment Vite sait quoi mettre à jour ?
+Le hook `handleHotUpdate` pour intercepter les changements.
+Exemple : invalider un module virtuel quand un fichier sur le disque change.
+
+-->
+
+---
 name: Le middleware - Un fichier virtuel
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
 ---
+
+<!--
+
+-->
 
 ---
 name: Run Plugin - Un plugin pour exécuter des commandes
@@ -285,6 +380,10 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
+<!--
+
+-->
+
 ---
 name: Virtual Plugin - Un plugin pour virtualiser des modules
 timing: 0
@@ -292,12 +391,20 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
+<!--
+
+-->
+
 ---
 name: Laravel Vite - La communication inter-processus
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
 ---
+
+<!--
+
+-->
 
 ---
 name: unplugin-macro - Un plugin pour créer des macros
@@ -307,17 +414,6 @@ choices:
 ---
 
 <!--
-
-il faut des plugins qui font du resovledId, load, transform (pour montrer la pipeline)
-et on peut avoir une autre branch sur les autres capacités des plugins
-
-mettre les vue plugin et auto import plugin avant et ensuite, montrer à quoi ça ressemble plus concrètement
-
-la virtualisation, c'est une autre branche
-
-et une section sur les autres capacités des plugins (genre le plugin de run, le plugin d'info, le plugin d'icon, ...)
-
-dans les autres capacités des plugins de vite, pour chacun des plugins, parler des autres plugins
 
 -->
 
@@ -330,10 +426,22 @@ choices:
   - Les autres capacités des plugins
 ---
 
+<!--
+
+sortir vite-plugin-inspect pour voir les différents hooks, les différents plugins et les modifications successives parce que jusque là, c'est juste une boite noire
+
+ -->
+
 ---
 name: Dans les profondeurs de la pipeline
 timing: 0
 ---
+
+<!--
+
+creuser la manière dont les plugins sont appelés, dans quel ordre
+
+ -->
 
 ---
 name: Prendre en main l'ordre
@@ -343,6 +451,10 @@ timing: 0
 <!--
 
 prendre l'example du plugin de Vue, avec un pre pour bosser sur le SFC et un post pour bosser sur le js, l'output
+
+le pre, le post, ...
+
+slide relativement rapide
 
  -->
 
@@ -359,6 +471,10 @@ choices:
 
 toutes les requests passent par tous les plugins donc sans filtres, ça peut ralentir fortement
 
+donc il faut des filtres, avant c'était un if dans le plugin donc ça call le plugin, maintenant, c'est en amont, et on le voit dans les profondeurs de la pipeline
+
+createFilter de @rollup/pluginutils.
+
  -->
 
 ---
@@ -368,12 +484,37 @@ choices:
   - Conclusion
 ---
 
+<!--
+
+tricky mais on peut faire un question group pour savoir ce qu'on veut développer
+
+gestion d'un nouveau type de fichier
+gestion d'un fichier virtuel via le middleware
+gestion d'un module virtuel
+
+modification du contenu en fonction de ce qu'il y a eu avant dans la pipeline
+
+optimisation des images automatiquement
+
+Proposition : Un plugin qui transforme un fichier .txt en une string exportée (très simple à coder en 2 min : transform + extension check).
+Alternative : Un plugin "Guard" qui empêche d'importer moment ou une lib trop lourde en affichant un warning dans la console Vite via this.warn().
+
+plugin autour de l'AI ? Là, j'ai pas d'idée
+
+ -->
+
 ---
 name: Q&A
 timing: 0
 choices:
   - Conclusion
 ---
+
+<!--
+
+un long Q&A parce que même après le live coding, il peut quand même y avoir des questions
+
+ -->
 
 ---
 name: La réunification avec Rolldown
@@ -382,8 +523,15 @@ choices:
   - Conclusion
 ---
 
-<!-- ou on pose directement des questions si les gens ont beaucoup de questions -->
-<!-- et du coup pour le live coding, avoir une question sur un hook à use, une feature à dev, une thématique, .... -->
+<!--
+
+aspect technique de Rolldown dans Vite (réunification build/dev)
+
+La dualité Esbuild (Dev) / Rollup (Build).
+L'importance du hook `config` et de la propriété `apply: 'serve' | 'build'`.
+Pourquoi certains plugins ne marchent qu'en build ?
+
+-->
 
 ---
 name: Conclusion

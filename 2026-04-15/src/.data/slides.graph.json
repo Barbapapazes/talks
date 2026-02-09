@@ -1,5 +1,5 @@
 {
-  "filepath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-15/src/slides.md",
+  "filepath": "/home/esteban/dev/p/barbapapazes/talks/2026-04-15/src/slides.md",
   "nodes": [
     {
       "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
@@ -93,6 +93,7 @@
         "name": "Le fonctionnement de Vite",
         "timing": 0,
         "choices": [
+          "Le pré-bundling avec Esbuild",
           "Tout n'est que plugin",
           "Les entrailles d'un plugin Vite"
         ]
@@ -166,8 +167,21 @@
       }
     },
     {
-      "id": "les_entrailles_d_un_plugin_vite",
+      "id": "le_pr_bundling_avec_esbuild",
       "index": 11,
+      "name": "Le pré-bundling avec Esbuild",
+      "title": "Le pré-bundling avec Esbuild",
+      "frontmatter": {
+        "name": "Le pré-bundling avec Esbuild",
+        "timing": 0,
+        "choices": [
+          "Les entrailles d'un plugin Vite"
+        ]
+      }
+    },
+    {
+      "id": "les_entrailles_d_un_plugin_vite",
+      "index": 12,
       "name": "Les entrailles d'un plugin Vite",
       "title": "Les entrailles d'un plugin Vite",
       "frontmatter": {
@@ -181,7 +195,7 @@
     },
     {
       "id": "la_th_orie_des_plugins_vite",
-      "index": 12,
+      "index": 13,
       "name": "La théorie des plugins Vite",
       "title": "La théorie des plugins Vite",
       "frontmatter": {
@@ -191,7 +205,7 @@
     },
     {
       "id": "resolveid",
-      "index": 13,
+      "index": 14,
       "name": "resolveId",
       "title": "resolveId",
       "frontmatter": {
@@ -201,7 +215,7 @@
     },
     {
       "id": "load",
-      "index": 14,
+      "index": 15,
       "name": "load",
       "title": "load",
       "frontmatter": {
@@ -211,7 +225,7 @@
     },
     {
       "id": "transform",
-      "index": 15,
+      "index": 16,
       "name": "transform",
       "title": "transform",
       "frontmatter": {
@@ -224,7 +238,7 @@
     },
     {
       "id": "des_exemples_concrets",
-      "index": 16,
+      "index": 17,
       "name": "Des exemples concrets",
       "title": "Des exemples concrets",
       "frontmatter": {
@@ -238,7 +252,7 @@
     },
     {
       "id": "vue_plugin",
-      "index": 17,
+      "index": 18,
       "name": "Vue Plugin",
       "title": "Vue Plugin",
       "frontmatter": {
@@ -251,7 +265,7 @@
     },
     {
       "id": "auto_import_plugin_unplugin_auto_import",
-      "index": 18,
+      "index": 19,
       "name": "Auto Import Plugin (unplugin-auto-import)",
       "title": "Auto Import Plugin (unplugin-auto-import)",
       "frontmatter": {
@@ -264,7 +278,7 @@
     },
     {
       "id": "un_plugin_pour_virtualiser",
-      "index": 19,
+      "index": 20,
       "name": "Un plugin pour virtualiser",
       "title": "Un plugin pour virtualiser",
       "frontmatter": {
@@ -280,7 +294,7 @@
     },
     {
       "id": "vue_router_un_module_virtuel",
-      "index": 20,
+      "index": 21,
       "name": "Vue Router - Un module virtuel",
       "title": "Vue Router - Un module virtuel",
       "frontmatter": {
@@ -293,7 +307,7 @@
     },
     {
       "id": "vitepress_des_data_virtuels",
-      "index": 21,
+      "index": 22,
       "name": "VitePress - Des data virtuels",
       "title": "VitePress - Des data virtuels",
       "frontmatter": {
@@ -306,7 +320,7 @@
     },
     {
       "id": "icons_plugin_des_icons_virtuels",
-      "index": 22,
+      "index": 23,
       "name": "Icons Plugin - Des icons virtuels",
       "title": "Icons Plugin - Des icons virtuels",
       "frontmatter": {
@@ -319,7 +333,7 @@
     },
     {
       "id": "infos_plugin_des_infos_virtuelles",
-      "index": 23,
+      "index": 24,
       "name": "Infos Plugin - Des infos virtuelles",
       "title": "Infos Plugin - Des infos virtuelles",
       "frontmatter": {
@@ -332,24 +346,39 @@
     },
     {
       "id": "les_autres_capacit_s_des_plugins",
-      "index": 24,
+      "index": 25,
       "name": "Les autres capacités des plugins",
       "title": "Les autres capacités des plugins",
       "frontmatter": {
         "name": "Les autres capacités des plugins",
         "timing": 0,
         "choices": [
+          "Le HMR (Hot Module Replacement)",
           "Le middleware - Un fichier virtuel",
           "Vue Router - Un module virtuel",
           "Run Plugin - Un plugin pour exécuter des commandes",
           "Virtual Plugin - Un plugin pour virtualiser des modules",
-          "Laravel Vite - La communication inter-processus"
+          "Laravel Vite - La communication inter-processus",
+          "unplugin-macro - Un plugin pour créer des macros"
+        ]
+      }
+    },
+    {
+      "id": "le_hmr_hot_module_replacement",
+      "index": 26,
+      "name": "Le HMR (Hot Module Replacement)",
+      "title": "Le HMR (Hot Module Replacement)",
+      "frontmatter": {
+        "name": "Le HMR (Hot Module Replacement)",
+        "timing": 0,
+        "choices": [
+          "Dans les profondeurs de la pipeline"
         ]
       }
     },
     {
       "id": "le_middleware_un_fichier_virtuel",
-      "index": 25,
+      "index": 27,
       "name": "Le middleware - Un fichier virtuel",
       "title": "Le middleware - Un fichier virtuel",
       "frontmatter": {
@@ -362,7 +391,7 @@
     },
     {
       "id": "run_plugin_un_plugin_pour_ex_cuter_des_commandes",
-      "index": 26,
+      "index": 28,
       "name": "Run Plugin - Un plugin pour exécuter des commandes",
       "title": "Run Plugin - Un plugin pour exécuter des commandes",
       "frontmatter": {
@@ -375,7 +404,7 @@
     },
     {
       "id": "virtual_plugin_un_plugin_pour_virtualiser_des_modules",
-      "index": 27,
+      "index": 29,
       "name": "Virtual Plugin - Un plugin pour virtualiser des modules",
       "title": "Virtual Plugin - Un plugin pour virtualiser des modules",
       "frontmatter": {
@@ -388,7 +417,7 @@
     },
     {
       "id": "laravel_vite_la_communication_inter_processus",
-      "index": 28,
+      "index": 30,
       "name": "Laravel Vite - La communication inter-processus",
       "title": "Laravel Vite - La communication inter-processus",
       "frontmatter": {
@@ -401,7 +430,7 @@
     },
     {
       "id": "unplugin_macro_un_plugin_pour_cr_er_des_macros",
-      "index": 29,
+      "index": 31,
       "name": "unplugin-macro - Un plugin pour créer des macros",
       "title": "unplugin-macro - Un plugin pour créer des macros",
       "frontmatter": {
@@ -414,7 +443,7 @@
     },
     {
       "id": "visualiser_la_pipeline",
-      "index": 30,
+      "index": 32,
       "name": "Visualiser la pipeline",
       "title": "Visualiser la pipeline",
       "frontmatter": {
@@ -429,7 +458,7 @@
     },
     {
       "id": "dans_les_profondeurs_de_la_pipeline",
-      "index": 31,
+      "index": 33,
       "name": "Dans les profondeurs de la pipeline",
       "title": "Dans les profondeurs de la pipeline",
       "frontmatter": {
@@ -439,7 +468,7 @@
     },
     {
       "id": "prendre_en_main_l_ordre",
-      "index": 32,
+      "index": 34,
       "name": "Prendre en main l'ordre",
       "title": "Prendre en main l'ordre",
       "frontmatter": {
@@ -449,7 +478,7 @@
     },
     {
       "id": "l_important_d_un_filtre",
-      "index": 33,
+      "index": 35,
       "name": "L'important d'un filtre",
       "title": "L'important d'un filtre",
       "frontmatter": {
@@ -464,7 +493,7 @@
     },
     {
       "id": "live_coding",
-      "index": 34,
+      "index": 36,
       "name": "Live Coding",
       "title": "Live Coding",
       "frontmatter": {
@@ -477,7 +506,7 @@
     },
     {
       "id": "q_a",
-      "index": 35,
+      "index": 37,
       "name": "Q&A",
       "title": "Q&A",
       "frontmatter": {
@@ -490,7 +519,7 @@
     },
     {
       "id": "la_r_unification_avec_rolldown",
-      "index": 36,
+      "index": 38,
       "name": "La réunification avec Rolldown",
       "title": "La réunification avec Rolldown",
       "frontmatter": {
@@ -503,7 +532,7 @@
     },
     {
       "id": "conclusion",
-      "index": 37,
+      "index": 39,
       "name": "Conclusion",
       "title": "Conclusion",
       "frontmatter": {
@@ -550,6 +579,11 @@
     },
     {
       "from": "le_fonctionnement_de_vite",
+      "to": "le_pr_bundling_avec_esbuild",
+      "label": "Le pré-bundling avec Esbuild"
+    },
+    {
+      "from": "le_fonctionnement_de_vite",
       "to": "tout_n_est_que_plugin",
       "label": "Tout n'est que plugin"
     },
@@ -590,6 +624,11 @@
     },
     {
       "from": "import_meta_glob_est_une_illusion",
+      "to": "les_entrailles_d_un_plugin_vite",
+      "label": "Les entrailles d'un plugin Vite"
+    },
+    {
+      "from": "le_pr_bundling_avec_esbuild",
       "to": "les_entrailles_d_un_plugin_vite",
       "label": "Les entrailles d'un plugin Vite"
     },
@@ -685,6 +724,11 @@
     },
     {
       "from": "les_autres_capacit_s_des_plugins",
+      "to": "le_hmr_hot_module_replacement",
+      "label": "Le HMR (Hot Module Replacement)"
+    },
+    {
+      "from": "les_autres_capacit_s_des_plugins",
       "to": "le_middleware_un_fichier_virtuel",
       "label": "Le middleware - Un fichier virtuel"
     },
@@ -707,6 +751,16 @@
       "from": "les_autres_capacit_s_des_plugins",
       "to": "laravel_vite_la_communication_inter_processus",
       "label": "Laravel Vite - La communication inter-processus"
+    },
+    {
+      "from": "les_autres_capacit_s_des_plugins",
+      "to": "unplugin_macro_un_plugin_pour_cr_er_des_macros",
+      "label": "unplugin-macro - Un plugin pour créer des macros"
+    },
+    {
+      "from": "le_hmr_hot_module_replacement",
+      "to": "dans_les_profondeurs_de_la_pipeline",
+      "label": "Dans les profondeurs de la pipeline"
     },
     {
       "from": "le_middleware_un_fichier_virtuel",
