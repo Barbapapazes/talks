@@ -160,7 +160,6 @@ timing: 0
 choices:
   - Tout n'est que plugin
   - La théorie des plugins Vite
-  - Des exemples concrets
 ---
 
 ---
@@ -183,71 +182,10 @@ name: transform
 timing: 0
 choices:
   - Des exemples concrets
-  - Un plugin pour virtualiser
----
-
----
-name: Un plugin pour virtualiser
-timing: 0
-choices:
-  - Le middleware - Un fichier virtuel
-  - Vue Router - Un module virtuel
-  - VitePress - Des modules virtuels
----
-
----
-name: Le middleware - Un fichier virtuel
-timing: 0
-choices:
-  - Visualiser la pipeline
----
-
----
-name: Vue Router - Un module virtuel
-timing: 0
-choices:
-  - Visualiser la pipeline
----
-
----
-name: VitePress - Des modules virtuels
-timing: 0
-choices:
-  - Visualiser la pipeline
 ---
 
 ---
 name: Des exemples concrets
-timing: 0
-choices:
-  - Icons Plugin (unplugin-icons)
-  - Infos Plugin (unplugin-infos)
-  - Laravel Vite Plugin
----
-
----
-name: Icons Plugin (unplugin-icons)
-timing: 0
-choices:
-  - Visualiser la pipeline
----
-
----
-name: Infos Plugin (unplugin-infos)
-timing: 0
-choices:
-  - Visualiser la pipeline
----
-
----
-name: Laravel Vite Plugin
-timing: 0
-choices:
-  - Visualiser la pipeline
----
-
----
-name: Visualiser la pipeline
 timing: 0
 choices:
   - Vue Plugin
@@ -258,18 +196,142 @@ choices:
 name: Vue Plugin
 timing: 0
 choices:
-  - Le fonctionnement de la pipeline
+  - Visualiser la pipeline
 ---
 
 ---
 name: Auto Import Plugin (unplugin-auto-import)
 timing: 0
 choices:
-  - Le fonctionnement de la pipeline
+  - Visualiser la pipeline
 ---
 
 ---
-name: Le fonctionnement de la pipeline
+name: Un plugin pour virtualiser
+timing: 0
+choices:
+  - Vue Router - Un module virtuel
+  - VitePress - Des data virtuels
+  - Icons Plugin - Des icons virtuels
+  - Infos Plugin - Des infos virtuelles
+---
+
+---
+name: Vue Router - Un module virtuel
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+---
+name: VitePress - Des data virtuels
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+---
+name: Icons Plugin - Des icons virtuels
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+---
+name: Infos Plugin - Des infos virtuelles
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+---
+name: Les autres capacités des plugins
+timing: 0
+choices:
+  - Le middleware - Un fichier virtuel
+  - Vue Router - Un module virtuel
+  - Run Plugin - Un plugin pour exécuter des commandes
+  - Virtual Plugin - Un plugin pour virtualiser des modules
+  - Laravel Vite - La communication inter-processus
+---
+
+<!--
+
+branchement dans le serveur avec les middleware
+module virtuel qui n'existe pas dans le système de fichier mais qui est créé à la volée par un plugin
+hmr
+buildStart
+buildEnd
+
+Environment API, que l'on ne verra pas mais qui permet d'ajouter un backend à Vite
+
+avec nitro cloudflare-vite-plugin
+
+l'objectif, c'est de faire comprendre que les applications des Vite plugins sont sans limite et qu'on peut tout faire avec
+
+ -->
+
+---
+name: Le middleware - Un fichier virtuel
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+---
+name: Run Plugin - Un plugin pour exécuter des commandes
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+---
+name: Virtual Plugin - Un plugin pour virtualiser des modules
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+---
+name: Laravel Vite - La communication inter-processus
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+---
+name: unplugin-macro - Un plugin pour créer des macros
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+<!--
+
+il faut des plugins qui font du resovledId, load, transform (pour montrer la pipeline)
+et on peut avoir une autre branch sur les autres capacités des plugins
+
+mettre les vue plugin et auto import plugin avant et ensuite, montrer à quoi ça ressemble plus concrètement
+
+la virtualisation, c'est une autre branche
+
+et une section sur les autres capacités des plugins (genre le plugin de run, le plugin d'info, le plugin d'icon, ...)
+
+dans les autres capacités des plugins de vite, pour chacun des plugins, parler des autres plugins
+
+-->
+
+---
+name: Visualiser la pipeline
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+  - Un plugin pour virtualiser
+  - Les autres capacités des plugins
+---
+
+---
+name: Dans les profondeurs de la pipeline
 timing: 0
 ---
 
@@ -278,14 +340,46 @@ name: Prendre en main l'ordre
 timing: 0
 ---
 
+<!--
+
+prendre l'example du plugin de Vue, avec un pre pour bosser sur le SFC et un post pour bosser sur le js, l'output
+
+ -->
+
 ---
 name: L'important d'un filtre
 timing: 0
+choices:
+  - Live Coding
+  - Q&A
+  - La réunification avec Rolldown
 ---
+
+<!--
+
+toutes les requests passent par tous les plugins donc sans filtres, ça peut ralentir fortement
+
+ -->
 
 ---
 name: Live Coding
 timing: 0
+choices:
+  - Conclusion
+---
+
+---
+name: Q&A
+timing: 0
+choices:
+  - Conclusion
+---
+
+---
+name: La réunification avec Rolldown
+timing: 0
+choices:
+  - Conclusion
 ---
 
 <!-- ou on pose directement des questions si les gens ont beaucoup de questions -->

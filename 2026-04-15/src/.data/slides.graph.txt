@@ -15,21 +15,27 @@ flowchart TD
   resolveid["resolveId"]
   load["load"]
   transform["transform"]
-  un_plugin_pour_virtualiser["Un plugin pour virtualiser"]
-  le_middleware_un_fichier_virtuel["Le middleware - Un fichier virtuel"]
-  vue_router_un_module_virtuel["Vue Router - Un module virtuel"]
-  vitepress_des_modules_virtuels["VitePress - Des modules virtuels"]
   des_exemples_concrets["Des exemples concrets"]
-  icons_plugin_unplugin_icons["Icons Plugin (unplugin-icons)"]
-  infos_plugin_unplugin_infos["Infos Plugin (unplugin-infos)"]
-  laravel_vite_plugin["Laravel Vite Plugin"]
-  visualiser_la_pipeline["Visualiser la pipeline"]
   vue_plugin["Vue Plugin"]
   auto_import_plugin_unplugin_auto_import["Auto Import Plugin (unplugin-auto-import)"]
-  le_fonctionnement_de_la_pipeline["Le fonctionnement de la pipeline"]
+  un_plugin_pour_virtualiser["Un plugin pour virtualiser"]
+  vue_router_un_module_virtuel["Vue Router - Un module virtuel"]
+  vitepress_des_data_virtuels["VitePress - Des data virtuels"]
+  icons_plugin_des_icons_virtuels["Icons Plugin - Des icons virtuels"]
+  infos_plugin_des_infos_virtuelles["Infos Plugin - Des infos virtuelles"]
+  les_autres_capacit_s_des_plugins["Les autres capacités des plugins"]
+  le_middleware_un_fichier_virtuel["Le middleware - Un fichier virtuel"]
+  run_plugin_un_plugin_pour_ex_cuter_des_commandes["Run Plugin - Un plugin pour exécuter des commandes"]
+  virtual_plugin_un_plugin_pour_virtualiser_des_modules["Virtual Plugin - Un plugin pour virtualiser des modules"]
+  laravel_vite_la_communication_inter_processus["Laravel Vite - La communication inter-processus"]
+  unplugin_macro_un_plugin_pour_cr_er_des_macros["unplugin-macro - Un plugin pour créer des macros"]
+  visualiser_la_pipeline["Visualiser la pipeline"]
+  dans_les_profondeurs_de_la_pipeline["Dans les profondeurs de la pipeline"]
   prendre_en_main_l_ordre["Prendre en main l'ordre"]
   l_important_d_un_filtre["L'important d'un filtre"]
   live_coding["Live Coding"]
+  q_a["Q&A"]
+  la_r_unification_avec_rolldown["La réunification avec Rolldown"]
   conclusion["Conclusion"]
   au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins --> intro
   intro --> inalia
@@ -49,29 +55,40 @@ flowchart TD
   import_meta_glob_est_une_illusion --> les_entrailles_d_un_plugin_vite
   les_entrailles_d_un_plugin_vite --> tout_n_est_que_plugin
   les_entrailles_d_un_plugin_vite --> la_th_orie_des_plugins_vite
-  les_entrailles_d_un_plugin_vite --> des_exemples_concrets
   la_th_orie_des_plugins_vite --> resolveid
   resolveid --> load
   load --> transform
   transform --> des_exemples_concrets
-  transform --> un_plugin_pour_virtualiser
-  un_plugin_pour_virtualiser --> le_middleware_un_fichier_virtuel
+  des_exemples_concrets --> vue_plugin
+  des_exemples_concrets --> auto_import_plugin_unplugin_auto_import
+  vue_plugin --> visualiser_la_pipeline
+  auto_import_plugin_unplugin_auto_import --> visualiser_la_pipeline
   un_plugin_pour_virtualiser --> vue_router_un_module_virtuel
-  un_plugin_pour_virtualiser --> vitepress_des_modules_virtuels
-  le_middleware_un_fichier_virtuel --> visualiser_la_pipeline
-  vue_router_un_module_virtuel --> visualiser_la_pipeline
-  vitepress_des_modules_virtuels --> visualiser_la_pipeline
-  des_exemples_concrets --> icons_plugin_unplugin_icons
-  des_exemples_concrets --> infos_plugin_unplugin_infos
-  des_exemples_concrets --> laravel_vite_plugin
-  icons_plugin_unplugin_icons --> visualiser_la_pipeline
-  infos_plugin_unplugin_infos --> visualiser_la_pipeline
-  laravel_vite_plugin --> visualiser_la_pipeline
-  visualiser_la_pipeline --> vue_plugin
-  visualiser_la_pipeline --> auto_import_plugin_unplugin_auto_import
-  vue_plugin --> le_fonctionnement_de_la_pipeline
-  auto_import_plugin_unplugin_auto_import --> le_fonctionnement_de_la_pipeline
-  le_fonctionnement_de_la_pipeline --> prendre_en_main_l_ordre
+  un_plugin_pour_virtualiser --> vitepress_des_data_virtuels
+  un_plugin_pour_virtualiser --> icons_plugin_des_icons_virtuels
+  un_plugin_pour_virtualiser --> infos_plugin_des_infos_virtuelles
+  vue_router_un_module_virtuel --> dans_les_profondeurs_de_la_pipeline
+  vitepress_des_data_virtuels --> dans_les_profondeurs_de_la_pipeline
+  icons_plugin_des_icons_virtuels --> dans_les_profondeurs_de_la_pipeline
+  infos_plugin_des_infos_virtuelles --> dans_les_profondeurs_de_la_pipeline
+  les_autres_capacit_s_des_plugins --> le_middleware_un_fichier_virtuel
+  les_autres_capacit_s_des_plugins --> vue_router_un_module_virtuel
+  les_autres_capacit_s_des_plugins --> run_plugin_un_plugin_pour_ex_cuter_des_commandes
+  les_autres_capacit_s_des_plugins --> virtual_plugin_un_plugin_pour_virtualiser_des_modules
+  les_autres_capacit_s_des_plugins --> laravel_vite_la_communication_inter_processus
+  le_middleware_un_fichier_virtuel --> dans_les_profondeurs_de_la_pipeline
+  run_plugin_un_plugin_pour_ex_cuter_des_commandes --> dans_les_profondeurs_de_la_pipeline
+  virtual_plugin_un_plugin_pour_virtualiser_des_modules --> dans_les_profondeurs_de_la_pipeline
+  laravel_vite_la_communication_inter_processus --> dans_les_profondeurs_de_la_pipeline
+  unplugin_macro_un_plugin_pour_cr_er_des_macros --> dans_les_profondeurs_de_la_pipeline
+  visualiser_la_pipeline --> dans_les_profondeurs_de_la_pipeline
+  visualiser_la_pipeline --> un_plugin_pour_virtualiser
+  visualiser_la_pipeline --> les_autres_capacit_s_des_plugins
+  dans_les_profondeurs_de_la_pipeline --> prendre_en_main_l_ordre
   prendre_en_main_l_ordre --> l_important_d_un_filtre
   l_important_d_un_filtre --> live_coding
+  l_important_d_un_filtre --> q_a
+  l_important_d_un_filtre --> la_r_unification_avec_rolldown
   live_coding --> conclusion
+  q_a --> conclusion
+  la_r_unification_avec_rolldown --> conclusion
