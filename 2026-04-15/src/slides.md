@@ -95,6 +95,13 @@ choices:
   - Le fonctionnement de Vite
 ---
 
+- Créé par Evan You (créateur de Vue.js)
+- Né d'une frustration : les temps de démarrage trop longs des bundlers traditionnels
+- Inspiration initiale : serveur de développement pour Vue.js utilisant les ES modules natifs
+- "Vite" signifie "rapide" en français - un clin d'œil à sa philosophie
+- Première version publique : début 2020
+- Évolution : d'un outil pour Vue.js à un build tool universel
+
 <!--
 
 d'où ça vient, reprendre le contenu du documentaire de Vite, et les origines depuis le serveur pour Vue.js
@@ -110,6 +117,19 @@ choices:
   - Tout n'est que plugin
   - Les entrailles d'un plugin Vite
 ---
+
+## Deux composants majeurs
+
+- **Dev Server** : Sert les fichiers source via ES modules natifs
+- **Build Command** : Bundle avec Rollup pour la production
+
+## Le cycle d'une requête en dev
+
+1. Le navigateur demande un module (ex: `/src/main.js`)
+2. Le serveur reçoit la requête
+3. La **plugin pipeline** traite la requête (`resolveId` → `load` → `transform`)
+4. Le code transformé est servi au navigateur
+5. Instant Server Start + Lightning Fast HMR ⚡️
 
 <!--
 
@@ -129,6 +149,14 @@ choices:
   - Le fonctionnement de Vite
 ---
 
+- **VoidZero** : Nouvelle entreprise fondée par Evan You pour industrialiser l'écosystème
+- **Rolldown** : Bundler écrit en Rust, compatible Rollup, pour remplacer Esbuild+Rollup
+- Objectif : unifier dev et build avec le même bundler
+- Fin de la dualité Esbuild (dev) / Rollup (build)
+- Performance accrue grâce à Rust
+- Meilleure cohérence entre environnements dev et production
+- **Environment API** : Support multi-environnements (client, SSR, worklets...)
+
 <!--
 
 aspect stratégique avec VoidZero
@@ -145,6 +173,14 @@ choices:
   - import.meta.glob est une illusion
 ---
 
+- Le cœur de Vite est **minimaliste** par design
+- Toutes les fonctionnalités passent par des **plugins**
+- Même l'import CSS, JSON, assets... sont gérés par des plugins internes
+- Philosophie : si Vite peut le faire avec un plugin, vous aussi !
+- Gage de qualité : l'API plugin est suffisamment puissante
+- Interface universelle de plugins compatible Rollup/Rolldown
+- Les plugins tiers ont le même niveau d'accès que les plugins internes
+
 <!--
 
 on l'a vu, le coeur est minimal, pour une raison simple, tout passe par des plugins, même les fonctionnalités de base (pourquoi ? parce que ça t'assure que ton système de plugin est le bon, avec suffisamment de puissance et de liberté, tu n'as pas plus d'accès qu'un third party plugin)
@@ -158,6 +194,20 @@ timing: 0
 choices:
   - Les entrailles d'un plugin Vite
 ---
+
+```ts
+import './style.css' // ← Ça ne devrait pas fonctionner en JS natif !
+```
+
+## Le plugin CSS intervient
+
+1. **resolveId** : Identifie le fichier `style.css`
+2. **load** : Lit le contenu CSS du disque
+3. **transform** : Transforme le CSS en JavaScript qui :
+   - Crée un élément `<style>` dans le `<head>`
+   - Y injecte le CSS
+   - Supporte le HMR pour mise à jour instantanée
+4. Le navigateur reçoit du JavaScript pur
 
 <!--
 
@@ -179,6 +229,20 @@ choices:
   - Les entrailles d'un plugin Vite
 ---
 
+```ts
+import img from './image.png' // Retourne l'URL publique
+import imgUrl from './image.png?url' // Explicitement l'URL
+import imgRaw from './image.png?raw' // Contenu brut
+```
+
+## Le plugin Asset gère plusieurs cas
+
+- Par défaut : retourne le chemin public de l'asset
+- En production : hash du fichier pour cache busting
+- Petites images : peuvent être inline en base64
+- Query parameters pour contrôle fin (`?url`, `?raw`, `?inline`)
+- Optimisation automatique possible (compression, formats modernes)
+
 <!--
 
 import img from './image.png'
@@ -198,6 +262,24 @@ choices:
   - Les entrailles d'un plugin Vite
 ---
 
+```ts
+const modules = import.meta.glob('./dir/*.js')
+```
+
+## Ce code est transformé en :
+
+```ts
+const modules = {
+  './dir/foo.js': () => import('./dir/foo.js'),
+  './dir/bar.js': () => import('./dir/bar.js'),
+}
+```
+
+- Plugin `importMetaGlob` détecte ce pattern
+- Scan du filesystem à la compilation
+- Génération de code JavaScript standard
+- **import.meta.glob n'existe pas dans le navigateur !**
+
 ---
 name: Le pré-bundling avec Esbuild
 group: Vite Core
@@ -205,6 +287,19 @@ timing: 0
 choices:
   - Les entrailles d'un plugin Vite
 ---
+
+## Pourquoi pré-bundler ?
+
+### 1. Conversion de format
+- Beaucoup de dépendances npm sont en **CommonJS**
+- Le navigateur ne comprend que **ESM**
+- Esbuild convertit CJS → ESM à la volée
+
+### 2. Performance
+- `lodash-es` = 600+ modules = 600+ requêtes HTTP !
+- Esbuild bundle tout dans `.vite/deps/lodash-es.js`
+- Une seule requête, démarrage quasi-instantané
+- Mise en cache agressive
 
 <!--
 
@@ -222,11 +317,44 @@ choices:
   - La théorie des plugins Vite
 ---
 
+```ts
+export default function monPlugin() {
+  return {
+    name: 'mon-plugin', // Obligatoire
+    resolveId(id) { /* ... */ },
+    load(id) { /* ... */ },
+    transform(code, id) { /* ... */ },
+    // + autres hooks
+  }
+}
+```
+
+- Un plugin = objet avec des **hooks**
+- Appelés par le **PluginContainer** dans un ordre précis
+- Chaque hook peut retourner une valeur ou `null`
+- Hooks compatibles Rollup + extensions Vite-specific
+
 ---
 name: La théorie des plugins Vite
 group: Inside a Plugin
 timing: 0
 ---
+
+## Lifecycle d'une requête module
+
+1. **buildStart** (une fois au démarrage)
+2. Pour chaque module demandé :
+   - **resolveId** : Résoudre le chemin
+   - **load** : Charger le contenu  
+   - **transform** : Transformer le code
+3. **buildEnd** (à la fermeture)
+
+## Caractéristiques
+
+- Hooks appelés dans l'ordre d'enregistrement des plugins
+- Peuvent être **synchrones** ou **asynchrones**
+- Le premier hook qui retourne une valeur "gagne"
+- `this` contexte avec utilitaires (`this.resolve()`, `this.error()`, etc.)
 
 <!--
 
@@ -240,6 +368,27 @@ group: Inside a Plugin
 timing: 0
 ---
 
+```ts
+resolveId(id: string, importer?: string, options?) {
+  if (id === 'virtual:my-module') {
+    return '\0virtual:my-module' // \0 = module virtuel
+  }
+  return null // Laisser d'autres plugins gérer
+}
+```
+
+## Quand ?
+- À chaque `import` rencontré dans le code
+
+## Quoi ?
+- Résoudre un identifiant de module vers un chemin absolu
+- Créer des modules virtuels (préfixe `\0`)
+
+## Exemples d'usage
+- Alias de chemins
+- Modules virtuels
+- Redirections conditionnelles
+
 <!--
 
 quand, ou et quoi
@@ -251,6 +400,28 @@ name: load
 group: Inside a Plugin
 timing: 0
 ---
+
+```ts
+load(id: string) {
+  if (id === '\0virtual:config') {
+    return `export default ${JSON.stringify(config)}`
+  }
+  // Laisser le filesystem loader par défaut
+  return null
+}
+```
+
+## Quand ?
+- Après `resolveId`, pour obtenir le contenu du module
+
+## Quoi ?
+- Charger le contenu source (code, JSON, etc.)
+- Par défaut : lecture depuis le filesystem
+- Pour modules virtuels : génération de code à la volée
+
+## Retour possible
+- String (le code)
+- Objet `{ code: string, map?: SourceMap, ... }`
 
 <!--
 
@@ -267,6 +438,30 @@ timing: 0
 choices:
   - Des exemples concrets
 ---
+
+```ts
+transform(code: string, id: string) {
+  if (!id.endsWith('.vue')) return null
+  
+  const result = compileSFC(code)
+  return {
+    code: result.code,
+    map: result.map, // sourcemap
+  }
+}
+```
+
+## Quand ?
+- Après `load`, pour transformer le code chargé
+
+## Quoi ?
+- Transpilation (TS → JS, Vue → JS, etc.)
+- Injection de code
+- Optimisations
+
+## Info contexte disponible
+- `options.ssr` : mode SSR ou client
+- `this.environment` : environnement courant
 
 <!--
 
@@ -291,6 +486,20 @@ choices:
   - Visualiser la pipeline
 ---
 
+## @vitejs/plugin-vue
+
+- **resolveId** : Gère les query params (`?vue&type=style`)
+- **load** : Pour les requêtes de sous-parties (styles, scripts)
+- **transform** : Compile les SFC (Single File Components)
+  - Template → render function
+  - `<script setup>` → JavaScript standard
+  - `<style scoped>` → CSS avec hash unique
+- **handleHotUpdate** : HMR granulaire par bloc (template vs script vs style)
+
+## Pattern : plugin avec enforce
+- Un plugin `pre` pour parser le SFC
+- Un plugin `post` pour finaliser
+
 ---
 name: Auto Import Plugin (unplugin-auto-import)
 group: Concrete Examples
@@ -298,6 +507,23 @@ timing: 0
 choices:
   - Visualiser la pipeline
 ---
+
+## unplugin-auto-import
+
+```ts
+// Avant
+import { ref, computed } from 'vue'
+
+// Après (auto-importé)
+const count = ref(0)
+const double = computed(() => count.value * 2)
+```
+
+- **transform** : Détecte les identifiants non déclarés
+- Injecte automatiquement les imports manquants
+- Génère un fichier `.d.ts` pour TypeScript
+- Supporte Vue, React, VueUse, et custom imports
+- **unplugin** = compatible Vite, Webpack, Rollup, esbuild
 
 ---
 name: Un plugin pour virtualiser
@@ -310,6 +536,20 @@ choices:
   - Infos Plugin - Des infos virtuelles
 ---
 
+## Modules virtuels
+
+- N'existent **pas sur le disque**
+- Créés à la demande par un plugin
+- Convention : préfixe `virtual:` pour l'utilisateur
+- Internement : préfixe `\0` pour éviter résolution filesystem
+
+## Pourquoi ?
+
+- Injecter des configs build-time
+- Générer du code depuis des métadonnées
+- Créer des APIs type-safe
+- Auto-découverte de fichiers (routes, composants...)
+
 ---
 name: Vue Router - Un module virtuel
 group: Virtualization
@@ -317,6 +557,23 @@ timing: 0
 choices:
   - Dans les profondeurs de la pipeline
 ---
+
+## unplugin-vue-router
+
+```ts
+import { routes } from 'vue-router/auto-routes'
+```
+
+- Scan du dossier `src/pages/`
+- Génère automatiquement les routes basées sur la structure fichiers
+- `pages/users/[id].vue` → route `/users/:id`
+- Module `virtual:generated-routes` créé dynamiquement
+- **HMR** : mise à jour des routes quand fichiers changent
+- Type-safe avec TypeScript
+
+## Pattern
+- `resolveId` : détecter `vue-router/auto-routes`
+- `load` : générer le code des routes
 
 ---
 name: VitePress - Des data virtuels
@@ -326,6 +583,23 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
+## VitePress Data Loaders
+
+```ts
+import { data } from './posts.data.js'
+// data = résultat de la fonction data() exécutée au build
+```
+
+- Fichiers `.data.js` contiennent une fonction `export` `const` `data`  
+- Fonction exécutée **au build** (accès Node.js, filesystem, APIs...)
+- Résultat sérialisé et injecté comme module virtuel
+- Disponible côté client sans re-fetch
+- Idéal pour : markdown metadata, API calls, etc.
+
+## Avantage
+- Build-time data fetching
+- Pas de waterfall requests
+
 ---
 name: Icons Plugin - Des icons virtuels
 group: Virtualization
@@ -334,6 +608,22 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
+## unplugin-icons
+
+```ts
+import IconAccessibility from '~icons/carbon/accessibility'
+```
+
+- Import **on-demand** d'icônes depuis Iconify
+- Plus de 100,000 icônes de 100+ icon sets
+- `~icons/{collection}/{icon}` est un module virtuel
+- Le SVG est chargé et transformé en composant (Vue/React/Svelte...)
+- **Tree-shaking** : seules les icônes utilisées sont bundlées
+
+## Implémentation
+- `resolveId` : match pattern `~icons/*`
+- `load` : fetch SVG + transform en component
+
 ---
 name: Infos Plugin - Des infos virtuelles
 group: Virtualization
@@ -341,6 +631,30 @@ timing: 0
 choices:
   - Dans les profondeurs de la pipeline
 ---
+
+```ts
+import { version, buildDate } from 'virtual:app-info'
+```
+
+## Plugin custom 'app-info'
+
+```ts
+{
+  name: 'virtual-app-info',
+  resolveId(id) {
+    if (id === 'virtual:app-info') return '\0' + id
+  },
+  load(id) {
+    if (id === '\0virtual:app-info') {
+      return `export const version = "${pkg.version}"
+              export const buildDate = "${new Date().toISOString()}"`
+    }
+  }
+}
+```
+
+- Injection de métadonnées build-time
+- Accès à `process.env`, `package.json`, git hash...
 
 ---
 name: Les autres capacités des plugins
@@ -380,6 +694,25 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
+## Comment ça marche ?
+
+1. Le watcher détecte un changement de fichier
+2. Vite invalide le module correspondant dans le module graph
+3. Hook **handleHotUpdate** appelé pour chaque plugin
+4. Le plugin peut filtrer les modules à reload
+5. WebSocket envoie un événement au navigateur
+6. Le client HMR applique le patch sans full reload
+
+```ts
+handleHotUpdate({ file, modules, server }) {
+  if (file.endsWith('.md')) {
+    // Invalider aussi le module virtuel des routes
+    const mod = server.moduleGraph.getModuleById('\0virtual:routes')
+    return [...modules, mod]
+  }
+}
+```
+
 <!--
 
 Comment Vite sait quoi mettre à jour ?
@@ -396,9 +729,27 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-<!--
+## configureServer hook
 
--->
+```ts
+{
+  name: 'my-middleware',
+  configureServer(server) {
+    server.middlewares.use((req, res, next) => {
+      if (req.url === '/api/hello') {
+        res.end('Hello from Vite middleware!')
+        return
+      }
+      next()
+    })
+  }
+}
+```
+
+- Accès au serveur Express/Connect de Vite
+- Ajouter des routes custom (API, webhooks...)
+- Proxy, authentification, logging...
+- Exemple : Laravel Vite Plugin pour communiquer avec PHP
 
 ---
 name: Run Plugin - Un plugin pour exécuter des commandes
@@ -408,9 +759,29 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-<!--
+## Hooks de lifecycle
 
--->
+```ts
+{
+  name: 'run-codegen',
+  async buildStart() {
+    // Exécuter avant le build
+    await execAsync('npm run generate:types')
+  },
+  async buildEnd() {
+    // Après le build
+    console.log('Build terminé!')
+  },
+  async closeBundle() {
+    // Après écriture des fichiers
+    await execAsync('npm run post-build')
+  }
+}
+```
+
+- Intégration avec outils externes
+- Génération de code
+- Post-processing
 
 ---
 name: Virtual Plugin - Un plugin pour virtualiser des modules
@@ -420,9 +791,26 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-<!--
+## vite-plugin-virtual
 
--->
+```ts
+import virtual from 'vite-plugin-virtual'
+
+export default {
+  plugins: [
+    virtual({
+      'virtual:config': `export default ${JSON.stringify(myConfig)}`,
+      'virtual:features': () => {
+        return `export const features = ${generateFeatures()}`
+      }
+    })
+  ]
+}
+```
+
+- Simplifie la création de modules virtuels
+- Valeurs statiques ou fonctions dynamiques
+- Utile pour injecter des configs, feature flags...
 
 ---
 name: Laravel Vite - La communication inter-processus
@@ -432,9 +820,23 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-<!--
+## laravel-vite-plugin
 
--->
+- Laravel (PHP) ↔ Vite (Node.js) communiquent
+- Plugin expose un fichier manifest avec les assets
+- En dev : hot file pour indiquer que le serveur Vite est up
+- Laravel sait si utiliser Vite dev server ou build assets
+- **configureServer** : middleware pour gérer compatibilité
+
+## Pattern
+```ts
+configureServer(server) {
+  // Écrire hot file
+  writeFileSync('public/hot', server.config.server.port)
+}
+```
+
+- Inter-op entre runtimes différents
 
 ---
 name: unplugin-macro - Un plugin pour créer des macros
@@ -444,9 +846,23 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-<!--
+## unplugin-macros
 
--->
+```ts
+import { $fetch } from './api.ts' with { type: 'macro' }
+
+const users = $fetch('/api/users') // Exécuté au build!
+```
+
+- Les macros s'exécutent **au build time**, pas runtime
+- Le résultat est inliné dans le code final
+- Basé sur AST transformations
+- Permet du "zero-runtime" code
+
+## Use cases
+- Fetch de données statiques
+- Optimisations compile-time
+- Code generation
 
 ---
 name: Visualiser la pipeline
@@ -457,6 +873,22 @@ choices:
   - Un plugin pour virtualiser
   - Les autres capacités des plugins
 ---
+
+## vite-plugin-inspect
+
+- UI web pour inspecter la plugin pipeline en temps réel
+- Accessible via `/__inspect/`
+- Visualise :
+  - Tous les modules chargés
+  - Ordre d'exécution des plugins
+  - Transformations successives du code à chaque étape
+  - Temps d'exécution de chaque hook
+
+## Pourquoi c'est indispensable ?
+
+- Déboguer les conflicts entre plugins
+- Comprendre les transformations appliquées
+- Optimiser les performances
 
 <!--
 
@@ -470,6 +902,25 @@ group: Deep Dive & Conclusion
 timing: 0
 ---
 
+## PluginContainer : le chef d'orchestre
+
+```ts
+class PluginContainer {
+  async resolveId(id, importer) {
+    for (const plugin of this.plugins) {
+      const result = await plugin.resolveId?.(id, importer)
+      if (result) return result
+    }
+  }
+  // Pareil pour load, transform...
+}
+```
+
+- Parcourt les plugins dans l'ordre
+- Premier retour non-null = gagnant
+- Context (`this`) injecté avec utilitaires
+- `getSortedPluginsByHook()` gère l'ordre + enforce
+
 <!--
 
 creuser la manière dont les plugins sont appelés, dans quel ordre
@@ -481,6 +932,28 @@ name: Prendre en main l'ordre
 group: Deep Dive & Conclusion
 timing: 0
 ---
+
+## La propriété `enforce`
+
+```ts
+{
+  name: 'pre-plugin',
+  enforce: 'pre', // Exécuté en premier
+  transform(code) { /* ... */ }
+},
+{
+  name: 'normal-plugin',
+  // enforce non défini = ordre normal
+},
+{
+  name: 'post-plugin',
+  enforce: 'post', // Exécuté en dernier
+}
+```
+
+## Ordre final : `pre` → plugins utilisateur → Vite core → `post`
+
+- Exemple Vue : plugin `pre` parse le SFC, plugin `post` finalise
 
 <!--
 
@@ -501,6 +974,26 @@ choices:
   - Q&A
   - La réunification avec Rolldown
 ---
+
+## Le problème
+
+- Chaque requête passe par **tous** les plugins
+- Sans filtre, chaque hook de chaque plugin est appelé
+- Ralentissement significatif sur gros projets
+
+## La solution : filters
+
+```ts
+transform: {
+  filter: { id: /\.vue$/ }, // Regex ou glob
+  handler(code, id) { /* ... */ }
+}
+```
+
+- Filtrage **avant** l'appel du hook
+- `createFilter` de `@rollup/pluginutils`
+- Filtres sur `id`, `code`, `moduleType`
+- Performance critique !
 
 <!--
 
@@ -561,6 +1054,21 @@ choices:
   - Conclusion
 ---
 
+## Le problème actuel
+
+- **Dev** : Esbuild (pré-bundling) + transformation à la volée
+- **Build** : Rollup (bundling complet)
+- Deux bundlers = deux comportements légèrement différents
+- Certains plugins ne fonctionnent qu'en build (`apply: 'build'`)
+
+## Rolldown : la solution
+
+- Bundler unique écrit en Rust
+- Compatible API Rollup
+- Performances Esbuild
+- **Un seul bundler pour dev et build**
+- Élimination des divergences comportementales
+
 <!--
 
 aspect technique de Rolldown dans Vite (réunification build/dev)
@@ -576,6 +1084,25 @@ name: Conclusion
 group: Deep Dive & Conclusion
 timing: 0
 ---
+
+## Ce qu'on a exploré ensemble
+
+✅ Les fondamentaux de Vite (serveur dev + ES modules)
+✅ Le système de plugins (resolveId → load → transform)
+✅ Modules virtuels et leur magie
+✅ Exemples concrets (Vue, auto-import, icons...)
+✅ HMR et capabilities avancées
+✅ Optimisation avec les filtres
+✅ Le futur avec Rolldown
+
+## Ce qu'on n'a pas eu le temps de voir
+
+- Environment API (multi-runtimes)
+- SSR avec ModuleRunner
+- Plugin development best practices complètes
+- Et tellement plus !
+
+**Le chemin que VOUS avez choisi a façonné cette conférence !**
 
 <!-- (revoir la fin, elle est pas ouf mais en même temps. on peut pas passer par tout donc faut se demander si tu as quand même les éléments intéressant ou non) -->
 
