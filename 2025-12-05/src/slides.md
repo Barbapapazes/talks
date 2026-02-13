@@ -33,7 +33,12 @@ layout: inalia-overview
 name: Quel framework pour le frontend ?
 ---
 
-<Inalia :questionId="1" />
+<Inalia
+  question="Quel framework pour le frontend ?"
+  type="multiple_select"
+  chart="bar"
+  :data="[{ label: 'Vue', count: 18, color: '#3DE425' }, { label: 'Angular', count: 39, color: '#E32619' }, { label: 'React', count: 38, color: '#3AE4EC' }, { label: 'Svelte', count: 6, color: '#F5C814' }, { label: 'Solid', count: 2, color: '#0B62ED' }, { label: 'Qwik', count: 0, color: '#E80CCB' }, { label: 'Aucun', count: 5, color: '#000000' }, { label: 'Un autre', count: 3, color: '#b00079' }]"
+/>
 
 <!--
 
@@ -207,7 +212,12 @@ Présenter la slide.
 name: Vous suivez encore ? 🫣
 ---
 
-<Inalia :questionId="2" />
+<Inalia
+  question="Vous suivez encore ? 🫣"
+  type="single_select"
+  chart="donut"
+  :data="[{ label: 'Oui, évidemment', count: 44, color: '#b00079' }, { label: 'Oui, enfin je crois', count: 9, color: '#6A00B0' }, { label: 'Non, là c\'est trop', count: 2, color: '#B06B00' }]"
+/>
 
 <!--
 
