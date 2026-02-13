@@ -12,6 +12,7 @@ jobs:
   trigger-worker:
     timeout-minutes: 5
     runs-on: ubuntu-latest
+    permissions: {}
     steps:
       - name: Trigger deployment check worker
         run: |
