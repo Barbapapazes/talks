@@ -213,13 +213,13 @@ importers:
 
   2025-12-09/src: {}
 
-  2026-02-12-1/src:
+  2026-02-12/src:
     devDependencies:
       alien-signals:
         specifier: ^1.0.13
         version: 1.0.13
 
-  2026-02-13-1/src: {}
+  2026-02-13/src: {}
 
   theme:
     dependencies:

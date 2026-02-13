@@ -161,6 +161,12 @@ name: npmgraph
   <img src="/npmgraph.js.org.png" class="rounded-xl" />
 </a>
 
+<!--
+
+Storybook 8.2
+
+-->
+
 ---
 layout: outro
 ---
