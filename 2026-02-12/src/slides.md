@@ -128,7 +128,7 @@ Du coup, l'objectif, c'est de comprendre pourquoi, quand je mets à jour la quan
 ---
 name: Présentation
 layout: intro
-intro: Ingénieur logiciel Avionique chez <span class="i-custom-maiaspace inline-block size-5 align-text-top"></span> Maiaspace
+intro: Ingénieur chez <span class="i-custom-takima inline-block size-5 align-text-top"></span> Takima
 ---
 
 ---

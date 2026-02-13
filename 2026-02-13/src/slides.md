@@ -75,7 +75,7 @@ Mais on ne veut pas ça. On ne veut pas que notre node_modules devienne la chose
 
 ---
 layout: intro
-intro: Ingénieur logiciel Avionique chez <span class="i-custom-maiaspace inline-block size-5 align-text-top"></span> Maiaspace
+intro: Ingénieur chez <span class="i-custom-takima inline-block size-5 align-text-top"></span> Takima
 ---
 
 <!--
