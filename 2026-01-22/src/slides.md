@@ -56,7 +56,12 @@ Avant d'aller plus loin, je vous invite à scanner ce QR code...
 name: Qui êtes-vous ?
 ---
 
-<Inalia :questionId="3" />
+<Inalia
+  question="Qui êtes-vous ?"
+  type="multiple_select"
+  chart="bar"
+  :data="[{ label: 'Développeur', count: 13, color: '#FB1515' }, { label: 'Lead Dev / Architecte', count: 7, color: '#FBAF15' }, { label: 'CTO / Engineering Manager', count: 1, color: '#FBD615' }, { label: 'Étudiant', count: 0, color: '#CEFB15' }, { label: 'Curieux', count: 1, color: '#6FFB15' }, { label: 'Junior', count: 1, color: '#15FBEB' }, { label: 'Sénior', count: 7, color: '#1597FB' }, { label: 'En reconversion', count: 0, color: '#4E15FB' }, { label: 'Accro à l\'IA', count: 1, color: '#8315FB' }, { label: 'Utilisateur occasionnel de l\'IA', count: 1, color: '#7C15FB' }, { label: 'Sceptique face à l\'IA', count: 2, color: '#B515FB' }, { label: 'Intéressé par l\'IA', count: 4, color: '#F115FB' }, { label: 'Fan d\'Eduardo', count: 6, color: '#FB15C1' }, { label: 'J\'aime juste la pizza', count: 5, color: '#FB1584' }, { label: 'J\'ai vu de la lumière', count: 2, color: '#FB1515' }]"
+/>
 
 <!--
 
@@ -68,7 +73,12 @@ Pour bien commencer ce petit talk, j'aimerais en savoir un peu plus sur vous. Qu
 name: Inertia, ça vous parle ?
 ---
 
-<Inalia :questionId="2" />
+<Inalia
+  question="Inertia, ça te parle ?"
+  type="single_select"
+  chart="donut"
+  :data="[{ label: 'Je suis un expert', count: 2, color: '#15FB41' }, { label: 'Je l\'ai déjà installé', count: 2, color: '#B9FB15' }, { label: 'Je connais que le nom', count: 5, color: '#FBD815' }, { label: 'Aucune idée', count: 10, color: '#FB5715' }]"
+/>
 
 <!--
 
@@ -111,7 +121,11 @@ Demandez-lui [enter] s'il peut vous en dire plus sur ce qu'est Inertia et en que
 name: Pourquoi venir m'écouter parler ce soir ?
 ---
 
-<Inalia :questionId="4" />
+<Inalia
+  question="Pourquoi venir ce soir ?"
+  type="text"
+  :data="['Curiosité', 'Je suis sceptique sur inertia', 'Écosystème vue', 'Découverte', 'La réponse D', 'Les pizzas 🍕', '42', 'La transmission de savoir.', 'Les pizzas', 'Pur curiosité et envie d\'échanger sur des sujets tech', 'Surprise', 'Rencontre les être humain', 'Eduardo 😍']"
+/>
 
 <!--
 
@@ -172,7 +186,11 @@ Alors maintenant qu'on a dit tout ça, qu'est-ce qu'on fait ? Je pourrais vous l
 name: Que voulez-vous faire ce soir ?
 ---
 
-<Inalia :questionId="5" />
+<Inalia
+  question="Qu'est-ce qu'on fait ce soir ?"
+  type="text"
+  :data="['On discute', 'Live coding', 'Montre']"
+/>
 
 <!--
 
