@@ -5,11 +5,6 @@ const ACCOUNT_ID = '791273e4d0a39e921e3dc7a6a76acf61'
 const WORKER_NAME = 'soubiran-dev'
 const TALKS_PROJECT_NAME = 'talks'
 
-interface Env {
-  CF_API_TOKEN: string
-  DEPLOYMENT_CHECK_WORKFLOW: Workflow
-}
-
 interface DeploymentStatus {
   latest_deployment: {
     id: string
@@ -50,10 +45,15 @@ interface BuildInfo {
  */
 export class DeploymentCheckWorkflow extends WorkflowEntrypoint<Env, Record<string, never>> {
   async run(event: WorkflowEvent<Record<string, never>>, step: WorkflowStep) {
-    const maxAttempts = 30 // 30 minutes max
+    const timeoutMs = 30 * 60 * 1000 // 30 minutes timeout
+    const startTime = Date.now()
+    let attempt = 0
+    let backoffSeconds = 60 // Start with 1 minute
 
-    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-      // Check deployment status
+    while (Date.now() - startTime < timeoutMs) {
+      attempt++
+
+      // Check deployment status with retry
       const isComplete = await step.do(`check-deployment-${attempt}`, async () => {
         try {
           const response = await fetch(
@@ -136,14 +136,21 @@ export class DeploymentCheckWorkflow extends WorkflowEntrypoint<Env, Record<stri
         return { success: true, message: 'Deployment complete and redeploy triggered' }
       }
 
-      // Sleep for 1 minute before next check (unless it's the last attempt)
-      if (attempt < maxAttempts) {
-        console.warn(`Talks deployment not yet complete. Waiting 1 minute... (attempt ${attempt}/${maxAttempts})`)
-        await step.sleep('wait-before-retry', '1 minute')
+      // Exponential backoff: wait longer each time, but cap at 5 minutes
+      const remainingTime = timeoutMs - (Date.now() - startTime)
+      if (remainingTime > backoffSeconds * 1000) {
+        console.warn(`Talks deployment not yet complete. Waiting ${backoffSeconds}s... (attempt ${attempt})`)
+        await step.sleep(`wait-${attempt}`, `${backoffSeconds} seconds`)
+
+        // Increase backoff exponentially, capped at 5 minutes (300 seconds)
+        backoffSeconds = Math.min(backoffSeconds * 1.5, 300)
+      }
+      else {
+        break
       }
     }
 
-    return { success: false, message: 'Max attempts reached, deployment did not complete in time' }
+    return { success: false, message: 'Timeout reached, deployment did not complete in time' }
   }
 }
 

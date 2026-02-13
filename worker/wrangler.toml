@@ -3,7 +3,8 @@ main = "src/index.ts"
 compatibility_date = "2024-12-01"
 
 [[workflows]]
-name = "DEPLOYMENT_CHECK_WORKFLOW"
+binding = "DEPLOYMENT_CHECK_WORKFLOW"
+name = "deployment-check-workflow"
 class_name = "DeploymentCheckWorkflow"
 
 [env.production]

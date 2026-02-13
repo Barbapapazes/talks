@@ -18,4 +18,6 @@ jobs:
         run: |
           curl -X POST https://deployment-check-worker.${{ secrets.CF_ACCOUNT_ID }}.workers.dev \
             -H "Content-Type: application/json" \
+            -H "CF-Access-Client-Id: ${{ secrets.CF_ACCESS_CLIENT_ID }}" \
+            -H "CF-Access-Client-Secret: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}" \
             -d '{}'
