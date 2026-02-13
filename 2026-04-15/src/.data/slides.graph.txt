@@ -1,0 +1,121 @@
+%%{init: {"flowchart": {"htmlLabels": true, "curve": "basis"}} }%%
+flowchart LR
+  classDef default font-family:sans-serif
+  classDef choice fill:#f9f9f9,stroke:#333,stroke-width:1px
+  classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+  subgraph Introduction ["Introduction"]
+      intro["Intro"]:::main
+      inalia["Inalia"]:::main
+  end
+  subgraph Vite_Core ["Vite Core"]
+      vite["Vite"]:::choice
+      les_origines_de_vite["Les origines de Vite"]:::choice
+      le_fonctionnement_de_vite["Le fonctionnement de Vite"]:::choice
+      le_futur_de_vite["Le futur de Vite"]:::choice
+      le_pr_bundling_avec_esbuild["Le pré-bundling avec Esbuild"]:::choice
+  end
+  subgraph Feature_Plugins ["Feature Plugins"]
+      tout_n_est_que_plugin["Tout n'est que plugin"]:::choice
+      du_css_import_dans_un_fichier_typescript["Du CSS importé dans un fichier TypeScript"]:::choice
+      une_image_charg_e_dans_un_fichier_typescript["Une image chargée dans un fichier TypeScript"]:::choice
+      import_meta_glob_est_une_illusion["import.meta.glob est une illusion"]:::choice
+  end
+  subgraph Inside_a_Plugin ["Inside a Plugin"]
+      les_entrailles_d_un_plugin_vite["Les entrailles d'un plugin Vite"]:::choice
+      la_th_orie_des_plugins_vite["La théorie des plugins Vite"]:::main
+      resolveid["resolveId"]:::main
+      load["load"]:::main
+      transform["transform"]:::choice
+  end
+  subgraph Concrete_Examples ["Concrete Examples"]
+      des_exemples_concrets["Des exemples concrets"]:::choice
+      vue_plugin["Vue Plugin"]:::choice
+      auto_import_plugin_unplugin_auto_import["Auto Import Plugin (unplugin-auto-import)"]:::choice
+      visualiser_la_pipeline["Visualiser la pipeline"]:::choice
+  end
+  subgraph Virtualization ["Virtualization"]
+      un_plugin_pour_virtualiser["Un plugin pour virtualiser"]:::choice
+      vue_router_un_module_virtuel["Vue Router - Un module virtuel"]:::choice
+      vitepress_des_data_virtuels["VitePress - Des data virtuels"]:::choice
+      icons_plugin_des_icons_virtuels["Icons Plugin - Des icons virtuels"]:::choice
+      infos_plugin_des_infos_virtuelles["Infos Plugin - Des infos virtuelles"]:::choice
+  end
+  subgraph Advanced_Capabilities ["Advanced Capabilities"]
+      les_autres_capacit_s_des_plugins["Les autres capacités des plugins"]:::choice
+      le_hmr_hot_module_replacement["Le HMR (Hot Module Replacement)"]:::choice
+      le_middleware_un_fichier_virtuel["Le middleware - Un fichier virtuel"]:::choice
+      run_plugin_un_plugin_pour_ex_cuter_des_commandes["Run Plugin - Un plugin pour exécuter des commandes"]:::choice
+      virtual_plugin_un_plugin_pour_virtualiser_des_modules["Virtual Plugin - Un plugin pour virtualiser des modules"]:::choice
+      laravel_vite_la_communication_inter_processus["Laravel Vite - La communication inter-processus"]:::choice
+      unplugin_macro_un_plugin_pour_cr_er_des_macros["unplugin-macro - Un plugin pour créer des macros"]:::choice
+  end
+  subgraph Deep_Dive___Conclusion ["Deep Dive & Conclusion"]
+      dans_les_profondeurs_de_la_pipeline["Dans les profondeurs de la pipeline"]:::main
+      prendre_en_main_l_ordre["Prendre en main l'ordre"]:::main
+      l_important_d_un_filtre["L'important d'un filtre"]:::choice
+      live_coding["Live Coding"]:::choice
+      q_a["Q&A"]:::choice
+      la_r_unification_avec_rolldown["La réunification avec Rolldown"]:::choice
+      conclusion["Conclusion"]:::main
+  end
+  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["Au cœur d’une pipeline: démystifions Vite et ses plugins"]:::main
+  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins --> intro
+  intro --> inalia
+  inalia --> vite
+  vite --> les_origines_de_vite
+  vite --> le_fonctionnement_de_vite
+  vite --> le_futur_de_vite
+  les_origines_de_vite --> le_fonctionnement_de_vite
+  le_fonctionnement_de_vite --> le_pr_bundling_avec_esbuild
+  le_fonctionnement_de_vite --> tout_n_est_que_plugin
+  le_fonctionnement_de_vite --> les_entrailles_d_un_plugin_vite
+  le_futur_de_vite --> le_fonctionnement_de_vite
+  tout_n_est_que_plugin --> du_css_import_dans_un_fichier_typescript
+  tout_n_est_que_plugin --> une_image_charg_e_dans_un_fichier_typescript
+  tout_n_est_que_plugin --> import_meta_glob_est_une_illusion
+  du_css_import_dans_un_fichier_typescript --> les_entrailles_d_un_plugin_vite
+  une_image_charg_e_dans_un_fichier_typescript --> les_entrailles_d_un_plugin_vite
+  import_meta_glob_est_une_illusion --> les_entrailles_d_un_plugin_vite
+  le_pr_bundling_avec_esbuild --> les_entrailles_d_un_plugin_vite
+  les_entrailles_d_un_plugin_vite --> tout_n_est_que_plugin
+  les_entrailles_d_un_plugin_vite --> la_th_orie_des_plugins_vite
+  la_th_orie_des_plugins_vite --> resolveid
+  resolveid --> load
+  load --> transform
+  transform --> des_exemples_concrets
+  des_exemples_concrets --> vue_plugin
+  des_exemples_concrets --> auto_import_plugin_unplugin_auto_import
+  vue_plugin --> visualiser_la_pipeline
+  auto_import_plugin_unplugin_auto_import --> visualiser_la_pipeline
+  un_plugin_pour_virtualiser --> vue_router_un_module_virtuel
+  un_plugin_pour_virtualiser --> vitepress_des_data_virtuels
+  un_plugin_pour_virtualiser --> icons_plugin_des_icons_virtuels
+  un_plugin_pour_virtualiser --> infos_plugin_des_infos_virtuelles
+  vue_router_un_module_virtuel --> dans_les_profondeurs_de_la_pipeline
+  vitepress_des_data_virtuels --> dans_les_profondeurs_de_la_pipeline
+  icons_plugin_des_icons_virtuels --> dans_les_profondeurs_de_la_pipeline
+  infos_plugin_des_infos_virtuelles --> dans_les_profondeurs_de_la_pipeline
+  les_autres_capacit_s_des_plugins --> le_hmr_hot_module_replacement
+  les_autres_capacit_s_des_plugins --> le_middleware_un_fichier_virtuel
+  les_autres_capacit_s_des_plugins --> vue_router_un_module_virtuel
+  les_autres_capacit_s_des_plugins --> run_plugin_un_plugin_pour_ex_cuter_des_commandes
+  les_autres_capacit_s_des_plugins --> virtual_plugin_un_plugin_pour_virtualiser_des_modules
+  les_autres_capacit_s_des_plugins --> laravel_vite_la_communication_inter_processus
+  les_autres_capacit_s_des_plugins --> unplugin_macro_un_plugin_pour_cr_er_des_macros
+  le_hmr_hot_module_replacement --> dans_les_profondeurs_de_la_pipeline
+  le_middleware_un_fichier_virtuel --> dans_les_profondeurs_de_la_pipeline
+  run_plugin_un_plugin_pour_ex_cuter_des_commandes --> dans_les_profondeurs_de_la_pipeline
+  virtual_plugin_un_plugin_pour_virtualiser_des_modules --> dans_les_profondeurs_de_la_pipeline
+  laravel_vite_la_communication_inter_processus --> dans_les_profondeurs_de_la_pipeline
+  unplugin_macro_un_plugin_pour_cr_er_des_macros --> dans_les_profondeurs_de_la_pipeline
+  visualiser_la_pipeline --> dans_les_profondeurs_de_la_pipeline
+  visualiser_la_pipeline --> un_plugin_pour_virtualiser
+  visualiser_la_pipeline --> les_autres_capacit_s_des_plugins
+  dans_les_profondeurs_de_la_pipeline --> prendre_en_main_l_ordre
+  prendre_en_main_l_ordre --> l_important_d_un_filtre
+  l_important_d_un_filtre --> live_coding
+  l_important_d_un_filtre --> q_a
+  l_important_d_un_filtre --> la_r_unification_avec_rolldown
+  live_coding --> conclusion
+  q_a --> conclusion
+  la_r_unification_avec_rolldown --> conclusion
