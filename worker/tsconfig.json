@@ -5,12 +5,11 @@
     "module": "ES2022",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "types": ["@cloudflare/workers-types"],
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "worker-configuration.d.ts"]
 }

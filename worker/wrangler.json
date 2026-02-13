@@ -1,0 +1,17 @@
+{
+  "name": "deployment-check-worker",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-12-01",
+  "workflows": [
+    {
+      "binding": "DEPLOYMENT_CHECK_WORKFLOW",
+      "name": "deployment-check-workflow",
+      "class_name": "DeploymentCheckWorkflow"
+    }
+  ],
+  "env": {
+    "production": {
+      "name": "deployment-check-worker"
+    }
+  }
+}

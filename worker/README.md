@@ -21,6 +21,8 @@ npx wrangler deploy
 
 ## Configuration
 
+The worker is configured using `wrangler.json` (JSON format instead of TOML).
+
 The worker requires the following environment variable:
 - `CF_API_TOKEN`: Cloudflare API token with permissions to read deployment status and trigger builds
 
