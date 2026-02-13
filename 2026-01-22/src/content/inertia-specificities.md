@@ -257,8 +257,8 @@ Ce qui rend Inertia spécifique (résumé)
 À retenir
 
 Si tu devais retenir 3 features clés :
-	1.	Inertia::render (backend-driven UI)
-	2.	useForm (formulaires + validation)
-	3.	Shared / partial / lazy props (performance sans complexité)
+1.  Inertia::render (backend-driven UI)
+2.  useForm (formulaires + validation)
+3.  Shared / partial / lazy props (performance sans complexité)
 
 C’est cet ensemble qui fait qu’Inertia est simple sans être limité.
