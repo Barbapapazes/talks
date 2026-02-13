@@ -19,6 +19,32 @@ interface DeploymentStatus {
   }
 }
 
+interface WorkerDeployment {
+  result: {
+    deployments: Array<{
+      versions: Array<{
+        version_id: string
+      }>
+    }>
+  }
+}
+
+interface BuildInfo {
+  result: {
+    builds: {
+      [versionId: string]: {
+        trigger: {
+          trigger_uuid: string
+        }
+        build_trigger_metadata: {
+          branch: string
+          commit_hash: string
+        }
+      }
+    }
+  }
+}
+
 /**
  * Cloudflare Workflow for checking deployment and triggering redeploy
  */
@@ -41,7 +67,7 @@ export class DeploymentCheckWorkflow extends WorkflowEntrypoint<Env, Record<stri
           )
 
           if (!response.ok) {
-            console.error('Failed to fetch deployment status:', response.statusText)
+            console.error(`Failed to fetch deployment status from ${TALKS_PROJECT_NAME} project:`, response.statusText)
             return false
           }
 
@@ -69,7 +95,7 @@ export class DeploymentCheckWorkflow extends WorkflowEntrypoint<Env, Record<stri
               },
             )
 
-            const deploymentsData = await deployments.json() as any
+            const deploymentsData = await deployments.json() as WorkerDeployment
             const versionId = deploymentsData.result.deployments[0].versions[0].version_id
 
             // Get the build for this version
@@ -80,7 +106,7 @@ export class DeploymentCheckWorkflow extends WorkflowEntrypoint<Env, Record<stri
               },
             )
 
-            const buildsData = await buildsByVersion.json() as any
+            const buildsData = await buildsByVersion.json() as BuildInfo
             const build = buildsData.result.builds[versionId]
 
             // Retrigger using the same trigger, branch, and commit
