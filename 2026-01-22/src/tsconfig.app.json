@@ -1,0 +1,12 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "**/*.ts",
+    "**/*.vue",
+    "virtual-modules.d.ts"
+  ],
+  "exclude": [
+    "vite.config.ts",
+    "uno.config.ts"
+  ]
+}

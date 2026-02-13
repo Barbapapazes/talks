@@ -1,0 +1,28 @@
+{
+  "name": "vuejs-paris",
+  "event": {
+    "name": "Vue.js Paris",
+    "url": "https://www.meetup.com/fr-FR/vuejs-paris/",
+    "location": {
+      "city": "Paris",
+      "country": "France",
+      "latitude": 48.86017471886511,
+      "longitude": 2.343880178313211
+    }
+  },
+  "private": true,
+  "description": "Découvrez Inertia.js, le pont élégant entre Laravel et Vue/React qui simplifie la création d'applications full-stack modernes.",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2026-01-22/vuejs-paris/ --out ../../dist/2026-01-22/vuejs-paris",
+    "export": "slidev export --per-slide --output ../2026-01-22-vuejs-paris.pdf",
+    "thumbnail:cp": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
+    "thumbnail": "slidev export --per-slide --range 1 --format png",
+    "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
+    "thumbnail:cp:dark": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
+    "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
+  },
+  "devDependencies": {
+    "@shikijs/markdown-it": "^3.21.0"
+  }
+}

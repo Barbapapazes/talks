@@ -66,6 +66,16 @@ export const technologies = [
     text: 'Nuxt',
     href: 'https://nuxt.com',
   },
+  {
+    icon: 'i-logos-spring-icon',
+    text: 'Spring',
+    href: 'https://spring.io',
+  },
+  {
+    icon: 'i-logos-kotlin-icon',
+    text: 'Kotlin',
+    href: 'https://kotlinlang.org',
+  },
   // {
   //   icon: 'i-logos-unjs',
   //   text: 'UnJS',
