@@ -1,0 +1,23 @@
+name: Trigger Deployment Check Worker
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  trigger-worker:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Trigger deployment check worker
+        run: |
+          curl -X POST https://deployment-check-worker.${{ secrets.CF_ACCOUNT_ID }}.workers.dev \
+            -H "Content-Type: application/json" \
+            -H "CF-Access-Client-Id: ${{ secrets.CF_ACCESS_CLIENT_ID }}" \
+            -H "CF-Access-Client-Secret: ${{ secrets.CF_ACCESS_CLIENT_SECRET }}" \
+            -d '{}'
