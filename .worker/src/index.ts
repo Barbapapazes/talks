@@ -10,14 +10,16 @@ const cloudflare = new Cloudflare({
 })
 
 export class TriggerRedeployLinkedWebsitesWorkflow extends WorkflowEntrypoint<Env, Record<string, never>> {
-  async run(_: WorkflowEvent<Record<string, never>>, step: WorkflowStep) {
+  async run({ instanceId }: WorkflowEvent<Record<string, never>>, step: WorkflowStep) {
     await step.do('existing-workflow', async () => {
+      // Will contains itself
       const json = await cloudflare.workflows.instances.list(WORKFLOW_NAME, {
         account_id: ACCOUNT_ID,
         status: 'running',
       })
 
-      if (json.result.length > 0) {
+      const otherInstances = json.result.filter(instance => instance.id !== instanceId)
+      if (otherInstances.length > 0) {
         throw new NonRetryableError(`Another instance of ${WORKFLOW_NAME} is already running.`)
       }
     })
@@ -30,8 +32,14 @@ export class TriggerRedeployLinkedWebsitesWorkflow extends WorkflowEntrypoint<En
       },
       timeout: '1 hour',
     }, async () => {
-      const json = await cloudflare.pages.projects.get(TALKS_PROJECT_NAME, { account_id: ACCOUNT_ID })
-      const status = json.latest_deployment?.latest_stage?.status
+      const json = await cloudflare.pages.projects.deployments.list(TALKS_PROJECT_NAME, { account_id: ACCOUNT_ID, env: 'production' })
+
+      const latestProductionDeployment = json.result[0]
+
+      const status = latestProductionDeployment?.latest_stage?.status
+      if (!status) {
+        throw new Error('No status found for the latest production deployment.')
+      }
 
       if (status === 'success') {
         return
