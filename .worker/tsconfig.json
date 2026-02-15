@@ -11,5 +11,5 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*", "worker-configuration.d.ts"]
+  "include": ["src/*.ts", "src/worker-configuration.d.ts"]
 }
