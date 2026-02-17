@@ -27,6 +27,11 @@ timing: 0
 
 Ajouter des questions au début pour mieux identifier le public
 
+=> via les groupes sur Inalia
+- qui a déjà utilisé Vite ? (avoir une réponse : "Je fais du Next.js")
+- qui a déjà créé un plugin Vite ?
+- qui a déjà publié sur npm un plugin Vite ?
+
 -->
 
 # Au cœur d’une pipeline:<br>démystifions Vite et ses plugins
@@ -77,6 +82,49 @@ Et puis, vous pouvez même réagir en direct à ce que je dis, si vous trouvez �
 name: Vite
 group: Vite Core
 timing: 0
+---
+
+<!--
+
+Mais aujourd'hui, ce n'est ni de moi ni d'Inalia que nous allons parler. Aujourd'hui, c'est Vite qui va être à l'honneur.
+
+On l'a vu au début, vous êtes une large majorité à utiliser Vite. Et c'est normal, Vite est un outil présent dans absolument tout le paysage frontend, et même backend. Que vous fassiez du React, du Vue, du Svelte, du Node.js, du Deno, du Cloudflare Workers, Vite est là. Vous pouvez même faire du Laravel, du Nitro ou du Adonis que Vite serait là aussi. Depuis 2020, Vite est devenu un véritable incontournable, aussi bien pour le frontend que pour le backend.
+
+-->
+
+<!--
+
+Slide avec le logo Vite au centre et une constellation de logos des autres frameworks autour.
+
+ -->
+
+---
+name: Vite Growth
+group: Vite Core
+timing: 0
+---
+
+<!--
+
+Incontournable ? Vous allez me dire, Estéban, tu y vas peut être un peu fort non ? Face à Vite, on a Webpack et Rspack qui sont deux autres bundlers, l'un plus ancien, l'autre plus récent, avec la même philosophie que Webpack mais écrit en Rust.
+
+... détailler le chart de croissance en partant de Vite et en comparant avec Webpack et Rspack
+
+-->
+
+<!--
+
+Logo de Vite, Webpack et Rspack côte à côte, comme sur https://nuxt.com/#:~:text=Bundler%20with%20Vite
+
+Slide avec le graph de croissance de Vite et une comparaison avec Webpack et Rspack (https://npm.chart.dev/vite+webpack+@rspack/core)
+(utiliser le même effet que pour la conférence sur paquet en javascript avec is-string)
+
+ -->
+
+---
+name: Vite - Choices
+group: Vite Core
+timing: 0
 choices:
   - Les origines de Vite
   - Le fonctionnement de Vite
@@ -84,6 +132,20 @@ choices:
 ---
 
 <!--
+
+Vous voilà face à votre premier choix, votre premier dilemme. [mieux tourner la phrase]
+
+Je vous laisse scanner le QR code pour faire votre choix. Attention, il n'y aura pas de retour en arrière possible. Attention, vous n'avez que quelques secondes pour choisir, alors réfléchissez vite.
+
+Si vous souhaitez comprendre les origines de Vite, d'où il vient, pourquoi il a été créé, et comment il a évolué, rendez-vous sur "Les origines de Vite".
+Mais peut-être que vous préférez comprendre comment Vite fonctionne dans les grandes lignes, alors rendez-vous sur "Le fonctionnement de Vite".
+Et enfin, si vous êtes du genre à vouloir anticiper l'avenir, à être curieux de l'avenir de Vite, alors je crois que "Le futur de Vite" est fait pour vous.
+
+-->
+
+<!--
+
+Mettre un timer pour faire le choix (qui est fake parce que ça ne va pas vraiment couper mais ça met un peu de pression et ça me permet de ne pas rester 107 ans sur la même slide)
 
 -->
 
@@ -104,9 +166,15 @@ choices:
 
 <!--
 
-d'où ça vient, reprendre le contenu du documentaire de Vite, et les origines depuis le serveur pour Vue.js
+[voir le documentaire pour bien comprendre les origines et les motivations et voir ce qu'on peut en ressortir visuellement]
 
 -->
+
+<!--
+
+Mettre un gif low quality du documentaire de Vite en fond
+
+ -->
 
 ---
 name: Le fonctionnement de Vite
@@ -231,8 +299,8 @@ choices:
 
 ```ts
 import img from './image.png' // Retourne l'URL publique
-import imgUrl from './image.png?url' // Explicitement l'URL
 import imgRaw from './image.png?raw' // Contenu brut
+import imgUrl from './image.png?url' // Explicitement l'URL
 ```
 
 ## Le plugin Asset gère plusieurs cas
@@ -345,7 +413,7 @@ timing: 0
 1. **buildStart** (une fois au démarrage)
 2. Pour chaque module demandé :
    - **resolveId** : Résoudre le chemin
-   - **load** : Charger le contenu  
+   - **load** : Charger le contenu
    - **transform** : Transformer le code
 3. **buildEnd** (à la fermeture)
 
@@ -442,7 +510,7 @@ choices:
 ```ts
 transform(code: string, id: string) {
   if (!id.endsWith('.vue')) return null
-  
+
   const result = compileSFC(code)
   return {
     code: result.code,
@@ -512,7 +580,7 @@ choices:
 
 ```ts
 // Avant
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 
 // Après (auto-importé)
 const count = ref(0)
@@ -590,7 +658,7 @@ import { data } from './posts.data.js'
 // data = résultat de la fonction data() exécutée au build
 ```
 
-- Fichiers `.data.js` contiennent une fonction `export` `const` `data`  
+- Fichiers `.data.js` contiennent une fonction `export` `const` `data`
 - Fonction exécutée **au build** (accès Node.js, filesystem, APIs...)
 - Résultat sérialisé et injecté comme module virtuel
 - Disponible côté client sans re-fetch
@@ -633,7 +701,7 @@ choices:
 ---
 
 ```ts
-import { version, buildDate } from 'virtual:app-info'
+import { buildDate, version } from 'virtual:app-info'
 ```
 
 ## Plugin custom 'app-info'
@@ -909,7 +977,8 @@ class PluginContainer {
   async resolveId(id, importer) {
     for (const plugin of this.plugins) {
       const result = await plugin.resolveId?.(id, importer)
-      if (result) return result
+      if (result)
+        return result
     }
   }
   // Pareil pour load, transform...
