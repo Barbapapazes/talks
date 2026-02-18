@@ -56,7 +56,7 @@ export class TriggerRedeployLinkedWebsitesWorkflow extends WorkflowEntrypoint<En
       // Get the build for this version
       const buildsByVersion = await cloudflare.get(
         `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/builds/builds?version_ids=${versionId}`,
-      )  as BuildInfo
+      ) as BuildInfo
       const build = buildsByVersion.result.builds[versionId]
 
       // Retrigger using the same trigger, branch, and commit
