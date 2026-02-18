@@ -7,7 +7,7 @@ packages:
   - theme
 
 overrides:
-  vite: 8.0.0-beta.0
+  vite: 8.0.0-beta.14
 patchedDependencies:
   cobe: patches/cobe.patch
   slidev-addon-graph: patches/slidev-addon-graph.patch
