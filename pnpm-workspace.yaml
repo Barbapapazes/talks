@@ -3,6 +3,7 @@ shellEmulator: true
 trustPolicy: no-downgrade
 
 packages:
+  - .worker
   - '**/src'
   - theme
 
