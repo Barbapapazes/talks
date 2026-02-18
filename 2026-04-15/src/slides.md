@@ -32,6 +32,11 @@ Ajouter des questions au début pour mieux identifier le public
 - qui a déjà créé un plugin Vite ?
 - qui a déjà publié sur npm un plugin Vite ?
 
+Source
+- Vite Documentary
+- Vite Documentation
+- Vite source code
+
 -->
 
 # Au cœur d’une pipeline:<br>démystifions Vite et ses plugins
@@ -157,16 +162,18 @@ choices:
   - Le fonctionnement de Vite
 ---
 
-- Créé par Evan You (créateur de Vue.js)
-- Né d'une frustration : les temps de démarrage trop longs des bundlers traditionnels
-- Inspiration initiale : serveur de développement pour Vue.js utilisant les ES modules natifs
-- "Vite" signifie "rapide" en français - un clin d'œil à sa philosophie
-- Première version publique : début 2020
-- Évolution : d'un outil pour Vue.js à un build tool universel
-
 <!--
 
-[voir le documentaire pour bien comprendre les origines et les motivations et voir ce qu'on peut en ressortir visuellement]
+webpack to bundle everything (image, css, html, js) through a single pipeline but for every save, you bundle the entier app again (which is slow, and slower and slower as the app grows) (hmr was slowing down the app as the app grows it was frustrating)
+
+bad DX selon Evan You
+
+
+2020, initialement pour Vue mais la v2 (en 17 février 2021) a été complètement réécrite pour être un build tool universel (compatible avec rollup et c'est ça le grand changement, avoir accès à tout l'écosystème de plugins rollup, game changer)
+(et pour l'annecdotre, la v1 n'a jamais vu le jour)
+
+blazing fast 100ms instead of seconds (and whatever the size of the app)
+
 
 -->
 
@@ -186,23 +193,13 @@ choices:
   - Les entrailles d'un plugin Vite
 ---
 
-## Deux composants majeurs
-
-- **Dev Server** : Sert les fichiers source via ES modules natifs
-- **Build Command** : Bundle avec Rollup pour la production
-
-## Le cycle d'une requête en dev
-
-1. Le navigateur demande un module (ex: `/src/main.js`)
-2. Le serveur reçoit la requête
-3. La **plugin pipeline** traite la requête (`resolveId` → `load` → `transform`)
-4. Le code transformé est servi au navigateur
-5. Instant Server Start + Lightning Fast HMR ⚡️
-
 <!--
 
-simple server web, faire un schéma avec le UA qui fait une requête, le serveur qui la reçoit, la traite et qui répond
-(faire un schéma dynamique)
+simple server web, faire un schéma avec l'IA qui fait une requête, le serveur qui la reçoit, la traite et qui répond
+(faire un schéma dynamique avec des éléments mouvants ?)
+
+il sait ce qu'il doit faire en fonction du fichier demandé
+le hmr fonctionne si bien et le startup est instant parce que le serveur ne bundle rien du tout
 
 reprendre le système de chat IA ? en mode, on vit dans une époque de fou
 https://chatgpt.com/share/6989c859-c310-8011-9006-dc074a544fb4
@@ -217,17 +214,20 @@ choices:
   - Le fonctionnement de Vite
 ---
 
-- **VoidZero** : Nouvelle entreprise fondée par Evan You pour industrialiser l'écosystème
-- **Rolldown** : Bundler écrit en Rust, compatible Rollup, pour remplacer Esbuild+Rollup
-- Objectif : unifier dev et build avec le même bundler
-- Fin de la dualité Esbuild (dev) / Rollup (build)
-- Performance accrue grâce à Rust
-- Meilleure cohérence entre environnements dev et production
-- **Environment API** : Support multi-environnements (client, SSR, worklets...)
-
 <!--
 
-aspect stratégique avec VoidZero
+aspect stratégique avec VoidZero (attention à ne pas entrer dans la technique, c'est pour la fin du talk la technique)
+
+Utilisation de Rolldown à la place de Esbuild et Rollup (Rolldown est un drop-in replacement pour les deux, écrit en Rust
+plus performant sur la vitesse, sur la consommation mémoire, et ça permet de n'avoir qu'un seul bundler pour le dev et le build, ce qui élimine les divergences de comportement entre les deux environnements)
+
+Bundled by default grâce au gain de performance et possibilité d'avoir plus de fonctionnalités et d'optimisations
+
+VoidZero avec Vite+ pour unifier les pratiques et fournir un outil tout en un pour les monorepos caching (superset de Vite) (avec tout l'ecosystem préconfiguré, gui inspector => write business logic instead of configuring tools)
+
+https://viteplus.dev/
+
+
 
 -->
 
@@ -241,17 +241,9 @@ choices:
   - import.meta.glob est une illusion
 ---
 
-- Le cœur de Vite est **minimaliste** par design
-- Toutes les fonctionnalités passent par des **plugins**
-- Même l'import CSS, JSON, assets... sont gérés par des plugins internes
-- Philosophie : si Vite peut le faire avec un plugin, vous aussi !
-- Gage de qualité : l'API plugin est suffisamment puissante
-- Interface universelle de plugins compatible Rollup/Rolldown
-- Les plugins tiers ont le même niveau d'accès que les plugins internes
-
 <!--
 
-on l'a vu, le coeur est minimal, pour une raison simple, tout passe par des plugins, même les fonctionnalités de base (pourquoi ? parce que ça t'assure que ton système de plugin est le bon, avec suffisamment de puissance et de liberté, tu n'as pas plus d'accès qu'un third party plugin)
+on l'a vu, le coeur est minimal à tel point que tout passe par des plugins, pour une raison simple, tout passe par des plugins, même les fonctionnalités de base (pourquoi ? parce que ça t'assure que ton système de plugin est le bon, avec suffisamment de puissance et de liberté, tu n'as pas plus d'accès qu'un third party plugin)
 
 -->
 
