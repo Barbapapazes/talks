@@ -18,8 +18,8 @@
     "generate:readme": "node .scripts/generate-readme.ts",
     "generate:talk-readme": "node .scripts/generate-talk-readme.ts",
     "dev": "node .scripts/select-deck.ts dev --open",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.9.0",
