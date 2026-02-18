@@ -54,24 +54,15 @@ export class TriggerRedeployLinkedWebsitesWorkflow extends WorkflowEntrypoint<En
       const versionId = deployments.deployments[0].versions[0].version_id
 
       // Get the build for this version
-      const buildsByVersion = await fetch(
+      const buildsByVersion = await cloudflare.get(
         `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/builds/builds?version_ids=${versionId}`,
-        {
-          headers: { Authorization: `Bearer ${this.env.CLOUDFLARE_API_TOKEN}` },
-        },
-      )
-      const buildsData = await buildsByVersion.json() as BuildInfo
-      const build = buildsData.result.builds[versionId]
+      )  as BuildInfo
+      const build = buildsByVersion.result.builds[versionId]
 
       // Retrigger using the same trigger, branch, and commit
-      await fetch(
+      await cloudflare.post(
         `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/builds/triggers/${build.trigger.trigger_uuid}/builds`,
         {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${this.env.CLOUDFLARE_API_TOKEN}`,
-            'Content-Type': 'application/json',
-          },
           body: JSON.stringify({
             branch: build.build_trigger_metadata.branch,
             commit_hash: build.build_trigger_metadata.commit_hash,
