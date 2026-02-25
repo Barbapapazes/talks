@@ -168,12 +168,10 @@ webpack to bundle everything (image, css, html, js) through a single pipeline bu
 
 bad DX selon Evan You
 
-
 2020, initialement pour Vue mais la v2 (en 17 février 2021) a été complètement réécrite pour être un build tool universel (compatible avec rollup et c'est ça le grand changement, avoir accès à tout l'écosystème de plugins rollup, game changer)
 (et pour l'annecdotre, la v1 n'a jamais vu le jour)
 
 blazing fast 100ms instead of seconds (and whatever the size of the app)
-
 
 -->
 
@@ -226,8 +224,6 @@ Bundled by default grâce au gain de performance et possibilité d'avoir plus de
 VoidZero avec Vite+ pour unifier les pratiques et fournir un outil tout en un pour les monorepos caching (superset de Vite) (avec tout l'ecosystem préconfiguré, gui inspector => write business logic instead of configuring tools)
 
 https://viteplus.dev/
-
-
 
 -->
 
@@ -348,23 +344,32 @@ choices:
   - Les entrailles d'un plugin Vite
 ---
 
-## Pourquoi pré-bundler ?
+<!--
 
-### 1. Conversion de format
-- Beaucoup de dépendances npm sont en **CommonJS**
-- Le navigateur ne comprend que **ESM**
-- Esbuild convertit CJS → ESM à la volée
+Dans la slide, commencer par montrer la cascade de requêtes pour une gross dépendance
 
-### 2. Performance
-- `lodash-es` = 600+ modules = 600+ requêtes HTTP !
-- Esbuild bundle tout dans `.vite/deps/lodash-es.js`
-- Une seule requête, démarrage quasi-instantané
-- Mise en cache agressive
+Faire un example avec du CommonJS (require), throw une erreur
+Uncaught SyntaxError: The requested module 'http://localhost:5173/@fs/home/esteban/dev/p/vitejs/vite/node_modules/.pnpm/react@19.2.4/node_modules/react/index.js?v=9bb1a453' doesn't provide an export named: 'default' main.js:1:144
+
+Montrer le contenu du dossier `.vite/deps`
+
+[Écrire (ou avoir un typewriter générique) `import React from 'react'` dans code block]
+
+ -->
 
 <!--
 
-Pourquoi Esbuild ? Conversion CommonJS -> ESM (indispensable pour les vieilles lib)
-Le problème des "milliers de requêtes" pour les grosses dépendances (ex: lodash-es). On fusionne tout en un seul fichier dans .vite/deps.
+Tout fière d'avoir compris le fonctionnement de Vite, nous voilà avec l'envie d'importer une petite dépendance et quoi de mieux que React pour bien commencer ? Dans notre `main.js`, importons React [click] et ouvrons le navigateur. [click]
+
+Rien ne s'affiche, mais dans la console, une erreur [click]. On y lit que le module demandé ne fournit pas d'export nommé 'default'. Alors on regarde la réponse de Vite [click] et là, c'est le drame. On y voit un `module.exports` et un `require`, du CommonJS, exactement ce que notre navigateur ne comprend pas.
+
+Heureusement, Vite au démarrage va scanner les imports et convertir les dépendances CommonJS en ESM de tel sorte à ce que le navigateur puisse les lire. Ouf, on est sauvé !
+
+Maintenant on a besoin de lodash, alors on l'install puis on l'importe. [click] Vous avez vu la cascade de requêtes dans l'onglet Réseau ? Plus de 600 requêtes pour récupérer tous les modules de lodash. C'est à cause d'un barrel file qui ré-exporte tous les modules de lodash. [click]
+
+Heureusement, Vite lors de son scannage va automatiquement pré-bundler toutes les dépendances qu'il va trouver. Autrement dit, il va générer un unique fichier JavaScript pour chaque dépendance. [click] Et voilà, une unique requête pour charger lodash !
+
+Pourquoi c'est important ? Pour les mêmes raisons qu'il est déconseillé de faire des n+1 à votre base de données. La réseau ajoute un overhead non négligeable et votre navigateur est limité à un nombre de requêtes simultanées. Plus vous faites de requêtes, plus votre application sera lente à démarrer. Et dans ce cas là, on ne parle pas de quelques millisecondes, mais de secondes.
 
 -->
 
