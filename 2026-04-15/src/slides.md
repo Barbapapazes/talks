@@ -1,9 +1,9 @@
----
-htmlAttrs:
-  lang: fr
-  dir: ltr
-fonts:
-  sans: DM Sans
+<!--
+quand, ou et quoi
+
+donner des exemples
+
+-->
   serif: Noto Serif
   mono: Consolas
 themeConfig:
@@ -13,7 +13,7 @@ transition: fade-out
 theme: slidev-theme-personal
 addons:
   - slidev-addon-inalia
-title: "Au cœur d’une pipeline: démystifions Vite et ses plugins"
+title: "Au cœur d’une pipeline : démystifions Vite et ses plugins"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: web,development,vite,plugins,pipeline
@@ -111,7 +111,7 @@ timing: 0
 
 <!--
 
-Incontournable ? Vous allez me dire, Estéban, tu y vas peut être un peu fort non ? Face à Vite, on a Webpack et Rspack qui sont deux autres bundlers, l'un plus ancien, l'autre plus récent, avec la même philosophie que Webpack mais écrit en Rust.
+Incontournable ? Vous allez me dire, Estéban, tu y vas peut-être un peu fort, non ? Face à Vite, on a Webpack et Rspack qui sont deux autres bundlers, l'un plus ancien, l'autre plus récent, avec la même philosophie que Webpack mais écrit en Rust.
 
 ... détailler le chart de croissance en partant de Vite et en comparant avec Webpack et Rspack
 
@@ -164,12 +164,12 @@ choices:
 
 <!--
 
-webpack to bundle everything (image, css, html, js) through a single pipeline but for every save, you bundle the entier app again (which is slow, and slower and slower as the app grows) (hmr was slowing down the app as the app grows it was frustrating)
+webpack to bundle everything (image, css, html, js) through a single pipeline but for every save, you bundle the entire app again (which is slow, and slower and slower as the app grows)
 
 bad DX selon Evan You
 
 2020, initialement pour Vue mais la v2 (en 17 février 2021) a été complètement réécrite pour être un build tool universel (compatible avec rollup et c'est ça le grand changement, avoir accès à tout l'écosystème de plugins rollup, game changer)
-(et pour l'annecdotre, la v1 n'a jamais vu le jour)
+(et pour l'anecdote, la v1 n'a jamais vu le jour)
 
 blazing fast 100ms instead of seconds (and whatever the size of the app)
 
@@ -193,11 +193,11 @@ choices:
 
 <!--
 
-simple server web, faire un schéma avec l'IA qui fait une requête, le serveur qui la reçoit, la traite et qui répond
+serveur web simple, faire un schéma avec l'IA qui fait une requête, le serveur qui la reçoit, la traite et qui répond
 (faire un schéma dynamique avec des éléments mouvants ?)
 
 il sait ce qu'il doit faire en fonction du fichier demandé
-le hmr fonctionne si bien et le startup est instant parce que le serveur ne bundle rien du tout
+le HMR fonctionne si bien et le démarrage est instant parce que le serveur ne bundle rien du tout
 
 reprendre le système de chat IA ? en mode, on vit dans une époque de fou
 https://chatgpt.com/share/6989c859-c310-8011-9006-dc074a544fb4
@@ -216,7 +216,7 @@ choices:
 
 aspect stratégique avec VoidZero (attention à ne pas entrer dans la technique, c'est pour la fin du talk la technique)
 
-Utilisation de Rolldown à la place de Esbuild et Rollup (Rolldown est un drop-in replacement pour les deux, écrit en Rust
+Utilisation de Rolldown à la place d'Esbuild et Rollup (Rolldown est un drop-in replacement pour les deux, écrit en Rust
 plus performant sur la vitesse, sur la consommation mémoire, et ça permet de n'avoir qu'un seul bundler pour le dev et le build, ce qui élimine les divergences de comportement entre les deux environnements)
 
 Bundled by default grâce au gain de performance et possibilité d'avoir plus de fonctionnalités et d'optimisations
@@ -239,7 +239,7 @@ choices:
 
 <!--
 
-on l'a vu, le coeur est minimal à tel point que tout passe par des plugins, pour une raison simple, tout passe par des plugins, même les fonctionnalités de base (pourquoi ? parce que ça t'assure que ton système de plugin est le bon, avec suffisamment de puissance et de liberté, tu n'as pas plus d'accès qu'un third party plugin)
+on l'a vu, le cœur est minimal à tel point que tout passe par des plugins. Pour une raison simple : cela garantit que votre système de plugins est correct ; avec suffisamment de puissance et de liberté, aucun plugin tiers n'a plus d'accès.
 
 -->
 
@@ -346,9 +346,9 @@ choices:
 
 <!--
 
-Dans la slide, commencer par montrer la cascade de requêtes pour une gross dépendance
+Dans la slide, commencer par montrer la cascade de requêtes pour une grosse dépendance
 
-Faire un example avec du CommonJS (require), throw une erreur
+Faire un exemple avec du CommonJS (require), throw une erreur
 Uncaught SyntaxError: The requested module 'http://localhost:5173/@fs/home/esteban/dev/p/vitejs/vite/node_modules/.pnpm/react@19.2.4/node_modules/react/index.js?v=9bb1a453' doesn't provide an export named: 'default' main.js:1:144
 
 Montrer le contenu du dossier `.vite/deps`
@@ -359,7 +359,7 @@ Montrer le contenu du dossier `.vite/deps`
 
 <!--
 
-Tout fière d'avoir compris le fonctionnement de Vite, nous voilà avec l'envie d'importer une petite dépendance et quoi de mieux que React pour bien commencer ? Dans notre `main.js`, importons React [click] et ouvrons le navigateur. [click]
+Tout fier d'avoir compris le fonctionnement de Vite, nous voilà avec l'envie d'importer une petite dépendance et quoi de mieux que React pour bien commencer ? Dans notre `main.js`, importons React [click] et ouvrons le navigateur. [click]
 
 Rien ne s'affiche, mais dans la console, une erreur [click]. On y lit que le module demandé ne fournit pas d'export nommé 'default'. Alors on regarde la réponse de Vite [click] et là, c'est le drame. On y voit un `module.exports` et un `require`, du CommonJS, exactement ce que notre navigateur ne comprend pas.
 
@@ -369,16 +369,16 @@ Maintenant on a besoin de lodash, alors on l'install puis on l'importe. [click] 
 
 Heureusement, Vite lors de son scannage va automatiquement pré-bundler toutes les dépendances qu'il va trouver. Autrement dit, il va générer un unique fichier JavaScript pour chaque dépendance. [click] Et voilà, une unique requête pour charger lodash !
 
-Pourquoi c'est important ? Pour les mêmes raisons qu'il est déconseillé de faire des n+1 à votre base de données. La réseau ajoute un overhead non négligeable et votre navigateur est limité à un nombre de requêtes simultanées. Plus vous faites de requêtes, plus votre application sera lente à démarrer. Et dans ce cas là, on ne parle pas de quelques millisecondes, mais de secondes.
+Pourquoi c'est important ? Pour les mêmes raisons qu'il est déconseillé de faire des n+1 à votre base de données. Le réseau ajoute une surcharge non négligeable et votre navigateur est limité à un nombre de requêtes simultanées. Plus vous faites de requêtes, plus votre application sera lente à démarrer. Et dans ce cas-là, on ne parle pas de quelques millisecondes, mais de secondes.
 
 -->
 
----
-name: Les entrailles d'un plugin Vite
-group: Inside a Plugin
-timing: 0
-choices:
-  - Tout n'est que plugin
+<!--
+quand, ou et quoi
+
+donner des exemples
+
+-->
   - La théorie des plugins Vite
 ---
 
@@ -492,7 +492,7 @@ load(id: string) {
 
 quand, ou et quoi
 
-donner des examples
+donner des exemples
 
 -->
 
@@ -551,7 +551,7 @@ choices:
   - Visualiser la pipeline
 ---
 
-## @vitejs/plugin-vue
+<!-- ## @vitejs/plugin-vue
 
 - **resolveId** : Gère les query params (`?vue&type=style`)
 - **load** : Pour les requêtes de sous-parties (styles, scripts)
@@ -563,32 +563,93 @@ choices:
 
 ## Pattern : plugin avec enforce
 - Un plugin `pre` pour parser le SFC
-- Un plugin `post` pour finaliser
+- Un plugin `post` pour finaliser -->
+
+<!-- TODO: réfléchir à comment montrer visuellement les différentes requêtes -->
+<!--
+
+Un visuel que je vois bien
+
+à gauche, le user agent
+à droite, vite
+
+les requêtes sont envoyées d'un sens à l'autre avec dessous, le potentiel contenu de la requête (comme des codes blocks)
+on peut en ajouter au fur et à mesure au click et ça pourrait cacher les blocks de code
+avec à droite, les hooks du plugin qui sont appelés au fûr et à mesure
 
 ---
-name: Auto Import Plugin (unplugin-auto-import)
+
+pourquoi ne pas faire une interface similair à Vite plugin inspect avec de temps à autre, une petit requête pour bien comprendre de quoi on parle (ou un truc qui zoom sur la request ...?)
+
+ -->
+
+<!--
+
+Maintenant, passons à la pratique en regardant concrètement le fonctionnement du plugin Vite pour Vue.
+
+Tout commence par le fichier `main.ts` qui importe le fichier `App.vue`. Vite reçoit la requête et la fait passer par la pipeline de plugins. Le hook `resolveId` du plugin va intercepter les requêtes contenant le query parameter `vue`. Ensuite, le load va lire le fichier `.vue` sur le disque et retourner son contenu et enfin, le hook `transform` va compiler les différentes parties du SFC en JavaScript standard que le navigateur peut comprendre.
+
+et puis ensuite, en fonction des changements que vous faites dans votre composant, le plugin va être en mesure de faire du HMR granulaire, c'est à dire que si vous changez uniquement le template, seul le template sera recompilé et mis à jour dans le navigateur, sans toucher au script ou au style. C'est ça qui rend le développement avec Vite si rapide et agréable.
+
+TODO:: mettre un exemple de avant/après ?
+
+TODO: pour chacune des étapes qui ont pu être vu juste avant, il faut lier à du code concret pour expliquer comment le plugin vite s'inscrit dans un plugin vite
+
+
+Et là, vous êtes sûrement en train de vous dire que c'est pratique de pouvoir visualiser la pipeline de de Vite et je suis bien d'accord avec vous... [click]
+
+-->
+
+---
+name: Auto Import Plugin (unplugin-auto-import) - Exemple
+group: Concrete Examples
+timing: 0
+---
+
+```vue
+<script lang="ts" setup>
+const count = ref(0)
+
+const double = computed(() => count.value * 2)
+
+effect(() => {
+  console.log(`Count: ${count.value}, Double: ${double.value}`)
+})
+</script>
+```
+
+<!-- TODO: layout avec la card en bas à gauche et le nom du plugin en haut à gauche -->
+<!-- TODO: avoir un composant pour afficher le nom du plugin et un lien vers github -->
+
+<!--
+
+Excellent choix parce que ce plugin là, je l'adore. Concrètement, vous n'avez plus besoin d'importer quoi que ce soit, c'est automatique.
+
+Par exemple, ce code-là, qui utilise la réactivité de Vue, fonctionne parfaitement alors qu'il n'y a aucun import. Pourquoi ? Tout simplement parce que le plugin va scanner votre code et automatiquement injecter les imports nécessaires. Le point essentiel, c'est que ce n'est pas de l'injection globale, c'est à la demande (on‑demand), donc il n'y a dans votre bundle que ce que vous utilisez vraiment.
+
+Vous êtes sûrement en train de vous dire que c'est quand même un peu magique, tout ça ?
+
+-->
+
+---
+name: Auto Import Plugin (unplugin-auto-import) - Visualisation
 group: Concrete Examples
 timing: 0
 choices:
   - Visualiser la pipeline
 ---
 
-## unplugin-auto-import
+<!-- TODO: visuel similaire à vite-plugin-inspect -->
 
-```ts
-// Avant
-import { computed, ref } from 'vue'
+<!--
 
-// Après (auto-importé)
-const count = ref(0)
-const double = computed(() => count.value * 2)
-```
+Alors c'est vrai qu'on peut les confondre mais dans notre cas, aucun doute, c'est un plugin Vite.
 
-- **transform** : Détecte les identifiants non déclarés
-- Injecte automatiquement les imports manquants
-- Génère un fichier `.d.ts` pour TypeScript
-- Supporte Vue, React, VueUse, et custom imports
-- **unplugin** = compatible Vite, Webpack, Rollup, esbuild
+Pour le vérifier, soulevons un le capot. Dans un premier temps, Vite va venir charger le fichier, puis il va scanner le code dans le hook transform et retourner le code transformé avec les imports injectés. On a ici la visualisation du côté on-demand de la manipulation.
+
+Là, vous êtes sûrement en train de vous dire que c'est pratique de visualiser la pipeline de la sorte. Et ça tombe bien... [click]
+
+-->
 
 ---
 name: Un plugin pour virtualiser
@@ -597,7 +658,7 @@ timing: 0
 choices:
   - Vue Router - Un module virtuel
   - VitePress - Des data virtuels
-  - Icons Plugin - Des icons virtuels
+  - Icons Plugin - Des icônes virtuelles
   - Infos Plugin - Des infos virtuelles
 ---
 
@@ -606,7 +667,7 @@ choices:
 - N'existent **pas sur le disque**
 - Créés à la demande par un plugin
 - Convention : préfixe `virtual:` pour l'utilisateur
-- Internement : préfixe `\0` pour éviter résolution filesystem
+- En interne : préfixe `\0` pour éviter la résolution du système de fichiers
 
 ## Pourquoi ?
 
@@ -633,7 +694,7 @@ import { routes } from 'vue-router/auto-routes'
 - Génère automatiquement les routes basées sur la structure fichiers
 - `pages/users/[id].vue` → route `/users/:id`
 - Module `virtual:generated-routes` créé dynamiquement
-- **HMR** : mise à jour des routes quand fichiers changent
+- **HMR** : mise à jour des routes quand les fichiers changent
 - Type-safe avec TypeScript
 
 ## Pattern
@@ -648,7 +709,7 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-## VitePress Data Loaders
+<!-- ## VitePress Data Loaders
 
 ```ts
 import { data } from './posts.data.js'
@@ -663,10 +724,25 @@ import { data } from './posts.data.js'
 
 ## Avantage
 - Build-time data fetching
-- Pas de waterfall requests
+- Pas de waterfall requests -->
+
+<!--
+
+dans VitePress, on peut faire ça et dessous, c'est de la virtualisation
+
+parce qu'en plus simple, ça donnerait ça (exemple)
+
+et ça peut permettre de récupérer des infos de git au moment du build
+d'aller fetcher une api au build time...
+
+chopper des listes, faire des traitements au build plutôt qu'au runtime
+
+faut préciser les infos à chaque fois
+
+ -->
 
 ---
-name: Icons Plugin - Des icons virtuels
+name: Icons Plugin - Des icônes virtuelles
 group: Virtualization
 timing: 0
 choices:
@@ -733,21 +809,24 @@ choices:
   - Virtual Plugin - Un plugin pour virtualiser des modules
   - Laravel Vite - La communication inter-processus
   - unplugin-macro - Un plugin pour créer des macros
+  - Nitro - Un backend
 ---
 
 <!--
 
-branchement dans le serveur avec les middleware
-module virtuel qui n'existe pas dans le système de fichier mais qui est créé à la volée par un plugin
-hmr
-buildStart
-buildEnd
+Vous souhaitez donc en savoir plus sur les plugins Vite et ses capacités avancées ? Vous êtes au bon endroit !
 
-Environment API, que l'on ne verra pas mais qui permet d'ajouter un backend à Vite
+TODO: retravailler les différentes phrases
+1. Le HMR (Hot Module Replacement) : comprendre comment Vite gère le hot reload de manière intelligente et performante, même pour les modules virtuels.
+2. Le middleware - Un fichier virtuel : comment créer un middleware personnalisé dans Vite pour ajouter des routes API ou intercepter des requêtes.
+3. Vue Router - Un module virtuel : comment le plugin de Vue Router génère dynamiquement un module de routes à partir de la structure de fichiers.
+4. Run Plugin - Un plugin pour exécuter des commandes : comment créer un plugin qui exécute des commandes avant ou après le build, pour intégrer des outils externes.
+5. Virtual Plugin - Un plugin pour virtualiser des modules : comment créer des modules virtuels pour injecter des données ou générer du code à la volée.
+6. Laravel Vite - La communication inter-processus : comment le plugin Laravel Vite permet la communication entre le serveur PHP et le serveur Vite.
+7. unplugin-macro - Un plugin pour créer des macros : comment créer des macros qui s'exécutent au build time pour optimiser le code ou générer du code.
+8. Nitro - Un backend : comment utiliser Vite pour développer un backend avec Nitro, le framework de Nuxt pour les fonctions serverless.
 
-avec nitro cloudflare-vite-plugin
-
-l'objectif, c'est de faire comprendre que les applications des Vite plugins sont sans limite et qu'on peut tout faire avec
+Aujourd'hui, nous n'en verrons qu'un mais rendez-vous compte, les possibilités sont sans limite.
 
  -->
 
@@ -759,7 +838,7 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-## Comment ça marche ?
+<!-- ## Comment ça marche ?
 
 1. Le watcher détecte un changement de fichier
 2. Vite invalide le module correspondant dans le module graph
@@ -776,7 +855,17 @@ handleHotUpdate({ file, modules, server }) {
     return [...modules, mod]
   }
 }
-```
+``` -->
+
+<!--
+
+TODO: faire un diagramme dynamique (dans le sens où il va s'afficher au fur et à mesure) où le user agent se connecte en websocket au server, quand un fichier change, Vite demande à ces fonctions ce qu'il doit en faire, tu peux l'invalider (son cache), et renvoyer une info au client pour lui dire ce qu'il doit faire et le client peut par la suite fetch à nouveau le module pour récupérer la nouvelle version du code. (hot module replacement, pas besoin de faire un full reload et ça permet de garder l'état de l'application et ça prend quelques dizaines de millisecondes au lieu de secondes)
+
+et c'est super rapide parce que vite ne faisant pas de bundle, il est en mesure de n'invalider et de rechercher qu'un fichier spécifique dans le module graph
+
+manipuler le handleHotUpdate pour comprendre ce qu'il se passe vraiment
+
+ -->
 
 <!--
 
@@ -824,29 +913,37 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-## Hooks de lifecycle
-
 ```ts
-{
-  name: 'run-codegen',
-  async buildStart() {
-    // Exécuter avant le build
-    await execAsync('npm run generate:types')
-  },
-  async buildEnd() {
-    // Après le build
-    console.log('Build terminé!')
-  },
-  async closeBundle() {
-    // Après écriture des fichiers
-    await execAsync('npm run post-build')
-  }
-}
+import { defineConfig } from 'vite'
+import { run } from 'vite-plugin-run'
+
+export default defineConfig({
+  plugins: [
+    run([
+      {
+        name: 'generate ziggy types',
+        run: ['php', 'artisan', 'ziggy:generate', '--types'],
+        pattern: [/web.php$/, /api.php$/],
+      },
+      {
+        name: 'generate wayfinder types',
+        run: ['php', 'artisan', 'wayfinder:generate'],
+        condition: file => file.includes('/app/'),
+      }
+    ]),
+  ],
+})
 ```
 
-- Intégration avec outils externes
-- Génération de code
-- Post-processing
+<!--
+
+Avec Vite, il est possible de lancer des side effects nous permettant de nous simplifier la vie. `vite-plugin-run` en est le parfait exemple.
+
+En fonction des fichiers que vous modifiez, vous pouvez lancer des commandes shell pour faire, ..., tout.
+
+Là, par exemple, on se sert de ce plugin pour régénérer les types de nos routes Laravel à chaque fois que les routes changent. Plus besoin de le faire à la main.
+
+-->
 
 ---
 name: Virtual Plugin - Un plugin pour virtualiser des modules
@@ -856,26 +953,36 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-## vite-plugin-virtual
-
 ```ts
+import { defineConfig } from 'vite'
 import virtual from 'vite-plugin-virtual'
 
-export default {
+export default defineConfig({
   plugins: [
     virtual({
-      'virtual:config': `export default ${JSON.stringify(myConfig)}`,
-      'virtual:features': () => {
-        return `export const features = ${generateFeatures()}`
-      }
+      'virtual:git:commit': () => {
+        const commit = execSync('git rev-parse HEAD').toString().trim()
+        return `export default "${commit}"`
+      },
+      'virtual:api:data': async () => {
+        const res = await fetch('https://api.example.com/data')
+        const data = await res.json()
+        return `export default ${JSON.stringify(data)}`
+      },
     })
   ]
-}
+})
 ```
 
-- Simplifie la création de modules virtuels
-- Valeurs statiques ou fonctions dynamiques
-- Utile pour injecter des configs, feature flags...
+<!--
+
+Avec Vite, il est possible de créer des modules virtuels, c'est à dire de renvoyer du code au navigateur qui n'existe pas sur le disque. La requêtes est interceptée avant que Vite ne tente de charger le fichier, et le plugin peut retourner du code à la volée.
+
+Par exemple, on peut l'utiliser pour injecter des données au build time, comme un commit git, le résultat d'une API, une configuration particulière, etc.
+
+Le truc, c'est que devoir faire à la main un plugin pour chaque module virtuel, ça peut vite devenir pénible, et vite-plugin-virtual est là pour ça. Rien à configurer, juste un mapping entre le nom du module virtuel et le code à retourner, et le tour est joué !
+
+-->
 
 ---
 name: Laravel Vite - La communication inter-processus
@@ -885,23 +992,53 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-## laravel-vite-plugin
+<!-- TODO: refaire https://soubiran.dev/posts/laravel-and-vite-a-love-story-ruined-with-cross-origin#:~:text=Laravel%20and%20Vite%20integration,-This avec du code -->
 
-- Laravel (PHP) ↔ Vite (Node.js) communiquent
-- Plugin expose un fichier manifest avec les assets
-- En dev : hot file pour indiquer que le serveur Vite est up
-- Laravel sait si utiliser Vite dev server ou build assets
-- **configureServer** : middleware pour gérer compatibilité
+<!--
 
-## Pattern
+Pour celui là, il faut que je vous donne un peu plus de contexte.
+
+Laravel, c'est du PHP et Vite, c'est du Node.js, chacun tournant dans son propre processus. En développement, quand on demande une page, on fait une requête à Laravel qui nous renvoie la page avec les assets comme les fichiers JavaScript et le CSS renvoyant vers le serveur Vite. Mais comment est-ce que Laravel connaît l'adresse du serveur Vite ?
+
+-->
+
+---
+name: Laravel Vite - La communication inter-processus - Le fichier hot
+group: Advanced Capabilities
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
 ```ts
-configureServer(server) {
-  // Écrire hot file
-  writeFileSync('public/hot', server.config.server.port)
+import fs from 'node:fs'
+import { ResolvedConfig } from 'vite'
+
+export default function laravel() {
+  return [{
+    name: 'laravel',
+    enforce: 'post',
+    configureServer(server) {
+      server.httpServer?.once('listening', () => {
+        const address = server.httpServer?.address()
+        if (isAddressInfo(address)) {
+          const viteDevServerUrl = resolveDevServerUrl(address, server.config)
+
+          fs.writeFileSync('./public/hot', `${viteDevServerUrl}${server.config.base.replace(/\/$/, '')}`)
+        }
+      })
+    }
+  }]
 }
 ```
 
-- Inter-op entre runtimes différents
+<!--
+
+Dans son plugin, Laravel demande à Vite d'écrire un fichier `hot` dans le dossier `public` avec l'adresse du serveur Vite.
+
+Laravel peut alors lire le fichier `hot` et générer les bonnes URLs pour les assets. Malin !
+
+-->
 
 ---
 name: unplugin-macro - Un plugin pour créer des macros
@@ -939,27 +1076,40 @@ choices:
   - Les autres capacités des plugins
 ---
 
-## vite-plugin-inspect
-
-- UI web pour inspecter la plugin pipeline en temps réel
-- Accessible via `/__inspect/`
-- Visualise :
-  - Tous les modules chargés
-  - Ordre d'exécution des plugins
-  - Transformations successives du code à chaque étape
-  - Temps d'exécution de chaque hook
-
-## Pourquoi c'est indispensable ?
-
-- Déboguer les conflicts entre plugins
-- Comprendre les transformations appliquées
-- Optimiser les performances
+<!-- TODO: animation d'introduction de vite-plugin-inspect du bas vers le haut en maxi lettre (spring effect) -->
+<!-- TODO: voir si on peut le faire dans les slides -->
 
 <!--
 
-sortir vite-plugin-inspect pour voir les différents hooks, les différents plugins et les modifications successives parce que jusque là, c'est juste une boite noire
+Parce qu'il existe un plugin permettant de visualiser l'ensemble de la pipeline de Vite.
+
+Je l'utilise rarement mais c'est véritablement lui qui m'a permis de comprendre le fonctionnement et la philosophie de Vite.
 
  -->
+
+---
+name: Visualiser la pipeline - Choices
+group: Concrete Examples
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+  - Un plugin pour virtualiser
+  - Les autres capacités des plugins
+---
+
+<!--
+
+Désormais, vous avez le pouvoir de visualiser la pipeline de Vite à moment, de la démystifier sur demande.
+
+Avec ce grand pouvoir, arrive un nouveau choix:
+
+1. Plonger dans les profondeurs de la pipeline comment Vite les appellent.
+2. Découvrir comment créer un plugin pour virtualiser des modules.
+3. Explorer les autres capacités des plugins Vite, comme le HMR, les middlewares, les macros, etc.
+
+Attention, il n'y aura pas de retour en arrière possible, alors choisissez judicieusement !
+
+-->
 
 ---
 name: Dans les profondeurs de la pipeline
@@ -1023,7 +1173,7 @@ timing: 0
 
 <!--
 
-prendre l'example du plugin de Vue, avec un pre pour bosser sur le SFC et un post pour bosser sur le js, l'output
+prendre l'exemple du plugin de Vue, avec un `pre` pour bosser sur le SFC et un `post` pour bosser sur le js, l'output
 
 le pre, le post, ...
 
@@ -1063,9 +1213,9 @@ transform: {
 
 <!--
 
-toutes les requests passent par tous les plugins donc sans filtres, ça peut ralentir fortement
+Toutes les requêtes passent par tous les plugins ; sans filtres, cela peut fortement ralentir.
 
-donc il faut des filtres, avant c'était un if dans le plugin donc ça call le plugin, maintenant, c'est en amont, et on le voit dans les profondeurs de la pipeline
+Donc il faut des filtres. Avant, c'était un `if` dans le plugin, ce qui faisait appeler le plugin ; maintenant, le filtrage se fait en amont, comme on le voit dans les profondeurs de la pipeline.
 
 createFilter de @rollup/pluginutils.
 
