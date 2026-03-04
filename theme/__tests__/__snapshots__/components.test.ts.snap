@@ -1,0 +1,160 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`card > renders correctly with default slot 1`] = `
+"<div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+  <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <p>Card content</p>
+  </div>
+</div>"
+`;
+
+exports[`cardLayout > renders correctly with imgClass 1`] = `
+"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover object-top">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <p>Card content</p>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`cardLayout > renders correctly with outside slot 1`] = `
+"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
+  <div class="absolute bottom-10 left-14">
+    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <p>Card content</p>
+      </div>
+    </div>
+  </div>
+  <div class="outside-content">Outside</div>
+</div>"
+`;
+
+exports[`cardLayout > renders correctly with position "bottom-center" 1`] = `
+"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <p>Card content</p>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`cardLayout > renders correctly with position "bottom-left" 1`] = `
+"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
+  <div class="absolute bottom-10 left-14">
+    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <p>Card content</p>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`cardLayout > renders correctly with position "bottom-right" 1`] = `
+"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
+  <div class="absolute bottom-10 right-14">
+    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <p>Card content</p>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`cardLayout > renders correctly with position "center" 1`] = `
+"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <p>Card content</p>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`cardLayout > renders correctly with position "center-left" 1`] = `
+"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
+  <div class="absolute top-1/2 left-14 -translate-y-1/2">
+    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <p>Card content</p>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`cardLayout > renders correctly with position "center-right" 1`] = `
+"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
+  <div class="absolute top-1/2 right-14 -translate-y-1/2">
+    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <p>Card content</p>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`cardLayout > renders correctly with position "top-center" 1`] = `
+"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
+  <div class="absolute top-14 left-1/2 -translate-x-1/2">
+    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <p>Card content</p>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`cardLayout > renders correctly with position "top-left" 1`] = `
+"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
+  <div class="absolute top-14 left-14">
+    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <p>Card content</p>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`cardLayout > renders correctly with position "top-right" 1`] = `
+"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
+  <div class="absolute top-14 right-14">
+    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
+      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <p>Card content</p>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`footer > renders correctly with default slot 1`] = `"<footer class="absolute left-1/2 -translate-x-1/2 bottom-4"><span>Footer content</span></footer>"`;
+
+exports[`footerItem > renders correctly with default slot 1`] = `"<div class="font-light text-[0.875rem] text-neutral-400 dark:text-neutral-600"><span>Item content</span></div>"`;
+
+exports[`footerItem > renders correctly with text prop 1`] = `"<div class="font-light text-[0.875rem] text-neutral-400 dark:text-neutral-600"><span>Footer item text</span></div>"`;
+
+exports[`footerLink > renders correctly with href and text 1`] = `
+"<a class="font-light text-[0.875rem] text-neutral-400 dark:text-neutral-600 flex items-center gap-1" href="https://example.com">
+  <!--v-if--><span class="whitespace-nowrap">Example</span>
+</a>"
+`;
+
+exports[`footerLink > renders correctly with href, text and icon 1`] = `"<a class="font-light text-[0.875rem] text-neutral-400 dark:text-neutral-600 flex items-center gap-1" href="https://example.com"><span class="i-ph-house-duotone size-4 inline-block"></span><span class="whitespace-nowrap">Example</span></a>"`;
+
+exports[`icon > renders correctly with a name 1`] = `"<span class="inline-flex i-ph-house-duotone"></span>"`;
+
+exports[`icon > renders correctly with a name and class 1`] = `"<span class="inline-flex i-ph-house-duotone size-4"></span>"`;
