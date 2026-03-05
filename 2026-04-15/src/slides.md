@@ -1,9 +1,9 @@
-<!--
-quand, ou et quoi
-
-donner des exemples
-
--->
+---
+htmlAttrs:
+  lang: fr
+  dir: ltr
+fonts:
+  sans: DM Sans
   serif: Noto Serif
   mono: Consolas
 themeConfig:
@@ -499,12 +499,6 @@ resolveId(id: string, importer?: string, options?) {
 - Modules virtuels
 - Redirections conditionnelles
 
-<!--
-
-quand, ou et quoi
-
--->
-
 ---
 name: load
 group: Inside a Plugin
@@ -532,14 +526,6 @@ load(id: string) {
 ## Retour possible
 - String (le code)
 - Objet `{ code: string, map?: SourceMap, ... }`
-
-<!--
-
-quand, ou et quoi
-
-donner des exemples
-
--->
 
 ---
 name: transform
@@ -573,20 +559,24 @@ transform(code: string, id: string) {
 - `options.ssr` : mode SSR ou client
 - `this.environment` : environnement courant
 
-<!--
-
-quand, ou et quoi
-
--->
-
 ---
-name: Des exemples concrets
+name: Des exemples concrets - Choices
 group: Concrete Examples
 timing: 0
 choices:
   - Vue Plugin
   - Auto Import Plugin (unplugin-auto-import)
 ---
+
+<!--
+
+On vient de voir, dans les grandes lignes, la théorie sur les plugins Vite.
+
+Il est temps de passer à la pratique et de voir concrètement comment ça fonctionne avec des exemples de plugins populaires.
+
+TODO: mettre la partie sélection de la partie suivante
+
+-->
 
 ---
 name: Vue Plugin
@@ -817,29 +807,27 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-```ts
-import { buildDate, version } from 'virtual:app-info'
-```
+<!--
 
-## Plugin custom 'app-info'
+TODO: bloc de code avec le plugin dans la configuration vite
+TODO: bloc de code avec son utilisation dans le code
+TODO: demonstration concrète avec un composant qui affiche les infos de la présentation (sha du dernier commit, date de build, etc.)
 
-```ts
-{
-  name: 'virtual-app-info',
-  resolveId(id) {
-    if (id === 'virtual:app-info') return '\0' + id
-  },
-  load(id) {
-    if (id === '\0virtual:app-info') {
-      return `export const version = "${pkg.version}"
-              export const buildDate = "${new Date().toISOString()}"`
-    }
-  }
-}
-```
+ -->
 
-- Injection de métadonnées build-time
-- Accès à `process.env`, `package.json`, git hash...
+<!--
+
+Imaginez que vous vouliez afficher ou simplement récupérer dans votre application le sha du dernier commit git, ou la date de build.
+
+Comment est-ce que vous feriez ?
+
+Un fichier de config que vous devez penser à mettre à jour à chaque fois que vous faites un build ? Pas très pratique et surtout, pas du tout automatisé.
+
+Non, le mieux, c'est d'utiliser un plugin Vite
+
+TODO: faire une second slide pour montrer comment ça fonctionne under the hood (faire le lien avec la slide d'avant sur la théorie de la virtualisation) (mettre un schéma qui explique tout ça)
+
+-->
 
 ---
 name: Les autres capacités des plugins
@@ -927,7 +915,7 @@ choices:
   - Dans les profondeurs de la pipeline
 ---
 
-## configureServer hook
+<!-- ## configureServer hook
 
 ```ts
 {
@@ -944,10 +932,25 @@ choices:
 }
 ```
 
-- Accès au serveur Express/Connect de Vite
-- Ajouter des routes custom (API, webhooks...)
-- Proxy, authentification, logging...
-- Exemple : Laravel Vite Plugin pour communiquer avec PHP
+-->
+
+<!--
+
+TODO: mettre un code d'exemple pour visualiser de quoi on parler et puis c'est tout, parce que ça suffit pour illustrer le concept, on est dans un serveur web in-fine
+
+ -->
+
+<!--
+
+Depuis le début, je ne vous parle que de la pipeline de plugins.
+
+Sauf que Vite, c'est un serveur web, et qu'à travers les plugins, il est entièrement configurable. Il est notamment possible d'y ajouter des middlewares, soit pour modifier la requêtes, soit pour renvoyer une page custom.
+
+Le plugin vite-plugin-inspect utilise cette technique pour vous permettre accéder à la page contenant toutes les informations sur la pipeline de Vite, page à `/__inspect/` et accessible uniquement en développement. Cette technique, elle est super pratique pour donner accès à des donnés, ou des pages pendant le développement.
+
+On peut imaginer mocker une API pendant le développement avec un middleware, simuler la récupération d'un fichier qui contient les variables d'environment, ou même injecter un server web, comme le fait Nitro.
+
+-->
 
 ---
 name: Run Plugin - Un plugin pour exécuter des commandes
@@ -1235,7 +1238,7 @@ choices:
   - La réunification avec Rolldown
 ---
 
-## Le problème
+<!-- ## Le problème
 
 - Chaque requête passe par **tous** les plugins
 - Sans filtre, chaque hook de chaque plugin est appelé
@@ -1255,15 +1258,41 @@ transform: {
 - Filtres sur `id`, `code`, `moduleType`
 - Performance critique !
 
+-->
+
 <!--
 
-Toutes les requêtes passent par tous les plugins ; sans filtres, cela peut fortement ralentir.
+TODO: code avec d'abord un filtre à l'ancienne dans le plugin puis un shiki move avec un filtre via les filtres de Vite
 
-Donc il faut des filtres. Avant, c'était un `if` dans le plugin, ce qui faisait appeler le plugin ; maintenant, le filtrage se fait en amont, comme on le voit dans les profondeurs de la pipeline.
+similar to https://vite.dev/guide/api-plugin#hook-filters
 
-createFilter de @rollup/pluginutils.
+TODO: ajouter une animation pour expliquer visuellement le passage de Rust à Node.js (je ne sais pas encore comment faire ça par contre)
 
+request -> plugin 1 -> plugin 2 -> plugin 3 -> response
+
+avec les filtres
+
+request -> filter 1 -> filter 2 -> filter 3 -> response
+              |          |            |
+           plugin 1 -> plugin 2 -> plugin 3
+
+et via une animation automatique, montrer un loading sur le plugin
+pour la seconde partie, faire pareil mais montrer que si ça fonctionne, alors le plugin load ensuite, et si ça ne match pas, alors le plugin n'est même pas appelé et on passe au filtre suivant
+
+animation d'une dizaine de secondes
+
+(utiliser vue-flow pour faire ça ?)
  -->
+
+<!--
+
+Je vous ai un peu menti.
+
+Pour filtrer les requêtes dans les hooks `resolveId`, `load` et `transform`, on peut utiliser un simple `if` et le tour est joué.
+
+Si cette solution semble simple, elle est en réalité très inefficace parce qu'elle nécessite d'invoquer le hook pour chaque requête. Maintenant que le bundler est en Rust, ça introduit un overhead non négligeable.
+
+Du coup, on peut extraire le filtrage en amont. Dans ce cas, on peut complètement by-passer le plugin pour les requêtes qui ne matchent pas le filtre et ça éviter de faire un aller-retour entre Rust et Node.js pour rien.
 
 ---
 name: Live Coding
