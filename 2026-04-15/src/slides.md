@@ -373,14 +373,13 @@ Pourquoi c'est important ? Pour les mêmes raisons qu'il est déconseillé de fa
 
 -->
 
-<!--
-quand, ou et quoi
-
-donner des exemples
-
--->
-  - La théorie des plugins Vite
 ---
+name: Les entrailles d'un plugin Vite
+group: Inside a Plugin
+timing: 0
+---
+
+<!--
 
 ```ts
 export default function monPlugin() {
@@ -394,10 +393,42 @@ export default function monPlugin() {
 }
 ```
 
-- Un plugin = objet avec des **hooks**
-- Appelés par le **PluginContainer** dans un ordre précis
-- Chaque hook peut retourner une valeur ou `null`
-- Hooks compatibles Rollup + extensions Vite-specific
+-->
+
+<!-- TODO: shiki move pour à chaque click, rajouter du code
+
+1. objet
+2. method
+3. un petit nom
+
+ -->
+
+<!--
+
+Rentrons dans le vif du sujet, parce que c'est quand même pour ça que vous êtes venu. Parlons des plugins Vite.
+
+Avant tout, qu'est ce que c'est ? C'est un moyen d'étendre les fonctionnalités de Vite en se branchant dedans à différents moments de son cycle de vie.
+
+Concrètement, c'est un objet [click] dans lequel on va définir des méthodes [click] qui vont être appelées par Vite, ni plus ni moins. On retrouve parmi les plus populaires `resolveId`, `load`, `transform`.
+
+Et il ne faut pas oublier de donner un petit nom à son plugin [click], c'est important pour le retrouver quand il y a une erreur !
+
+Voilà, vous venez de faire votre premier plugin Vite, félicitations !
+
+-->
+
+---
+name:  Les entrailles d'un plugin Vite - Choices
+group: Inside a Plugin
+timing: 0
+choices:
+  - Tout n'est que plugin
+  - La théorie des plugins Vite
+---
+
+<!--
+
+ -->
 
 ---
 name: La théorie des plugins Vite
@@ -405,23 +436,37 @@ group: Inside a Plugin
 timing: 0
 ---
 
-## Lifecycle d'une requête module
+<!--
 
-1. **buildStart** (une fois au démarrage)
-2. Pour chaque module demandé :
-   - **resolveId** : Résoudre le chemin
-   - **load** : Charger le contenu
-   - **transform** : Transformer le code
-3. **buildEnd** (à la fermeture)
+TODO:
 
-## Caractéristiques
+https://chatgpt.com/share/69a877a6-67bc-8011-abe6-4ac260fc2d1d
 
-- Hooks appelés dans l'ordre d'enregistrement des plugins
-- Peuvent être **synchrones** ou **asynchrones**
-- Le premier hook qui retourne une valeur "gagne"
-- `this` contexte avec utilitaires (`this.resolve()`, `this.error()`, etc.)
+avoir d'un côté de la slide le code d'un plugin avec les 7 hooks (options, buildStart, resolveId, load, transform, buildEnd, closeBundle) et de l'autre côté, un workflow (avec une petit phrase) qui va évoluer à chaque click ?
+
+vite en démarrant, comment par appeler le hook options pour start
+
+les hooks buildEnd et closeBundle ne sont appelés qu'à la fermeture du processus, donc sur un ctrl+c ou à la fin d'un build
+
+les 4 hooks dont je viens de parler ne sont appelé d'une seule fois, en revanche, résolveId, load et transform sont intégré dans la partie HTTP de Vite et appelé pour chacune des requêtes.
+
+Autrement dit, si on prend un user agent qui fait une requête pour un module, la requête va arriver sur Vite qui va la passer au hook resolveId, puis dans load, puis dans transform avant de répondre au user agent, pour chacune des requêtes.
+
+quelques subtilités quand même
+
+- l'id, c'est le chemin absolue du module qui est demandé par le user agent
+- ces trois hooks sont appelé pour tes les plugins dans l'ordre d'enregistrement donc si tu as 10 plugins, tu fais 10 fois le resolveId, 10 fois le load, 10 fois le transform pour chaque requête
+- en vrai c'est faux. dès qu'un resolveId returne une valeur truthy, vite arrête la boucle et utilise ce nouvel identifiant comme identifiant du module, il va ensuite appeler boucler sur les load et comme pour le resolveId, le premier qui répond gagne, sans chercher à appeler celui des autres. En revanche, le transform lui, est appelé pour tous les modules
+
+le résolveId permet de modifier l'id du module pour s'assurer que notre module va y répondre dans le load et dans le transform, éviter les interférences avec les autres plugins
+
+(à voir comment on peut rendre ça visuel, un workflow c'est suffisant, brainstormer avec l'IA)
+
+ -->
 
 <!--
+
+Maintenant que vous avez une meilleure idée de ce qu'est un plugin Vite, plongeons nous vraiment dans son fonctionnement. Que se passe-t-il quand vous faites `npm run dev` ?
 
 reprendre avec plus de détails le fonctionnement d'une requête dans Vite
 
@@ -594,7 +639,6 @@ et puis ensuite, en fonction des changements que vous faites dans votre composan
 TODO:: mettre un exemple de avant/après ?
 
 TODO: pour chacune des étapes qui ont pu être vu juste avant, il faut lier à du code concret pour expliquer comment le plugin vite s'inscrit dans un plugin vite
-
 
 Et là, vous êtes sûrement en train de vous dire que c'est pratique de pouvoir visualiser la pipeline de de Vite et je suis bien d'accord avec vous... [click]
 
