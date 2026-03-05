@@ -228,7 +228,7 @@ https://viteplus.dev/
 -->
 
 ---
-name: Tout n'est que plugin
+name: Tout n'est que plugin - Choices
 group: Feature Plugins
 timing: 0
 choices:
@@ -241,6 +241,8 @@ choices:
 
 on l'a vu, le cœur est minimal à tel point que tout passe par des plugins. Pour une raison simple : cela garantit que votre système de plugins est correct ; avec suffisamment de puissance et de liberté, aucun plugin tiers n'a plus d'accès.
 
+TODO: texte pour passer aux choix suivants
+
 -->
 
 ---
@@ -251,11 +253,11 @@ choices:
   - Les entrailles d'un plugin Vite
 ---
 
-```ts
-import './style.css' // ← Ça ne devrait pas fonctionner en JS natif !
+```ts [src/main.ts]
+import './style.css'
 ```
 
-## Le plugin CSS intervient
+<!--
 
 1. **resolveId** : Identifie le fichier `style.css`
 2. **load** : Lit le contenu CSS du disque
@@ -265,15 +267,21 @@ import './style.css' // ← Ça ne devrait pas fonctionner en JS natif !
    - Supporte le HMR pour mise à jour instantanée
 4. Le navigateur reçoit du JavaScript pur
 
+-->
+
 <!--
 
-import './style.css'
+TODO: faire un schéma dynamique du fonctionnement de Vite et montrer ce qu'il se passe... (et le reprendre à plusieurs endroits sur plusieurs slides)
 
-ça ne choque plus personne mais dans la vraie vie, ça ne fonctionne pas
+faut le réfléchir lui, j'ai un doute sur comment le faire pour qu'il soit sympa visuellement et réutilisable
 
-reprendre le schéma dynamique du fonctionnement de Vite et montrer ce qu'il se passe...
+ -->
 
-montrer du pseudo code du plugin
+<!--
+
+Alors ça [show the code block], ça ne choque plus personne, mais ça n'existe pas en JavaScript. C'est impossible d'importer du CSS dans un fichier JavaScript.
+
+Dans les faits, le navigateur, quand il voit un `import`, il se moque pas mal de l'extension et il requête le module. Vite, lui, va s'apercevoir qu'il s'agit de CSS et le faire passer un plugin qui va transformer ce CSS en JavaScript pour l'injecter dans le `<head>` de votre page.
 
  -->
 
@@ -379,29 +387,35 @@ group: Inside a Plugin
 timing: 0
 ---
 
-<!--
-
-```ts
+````md magic-move
+```ts [my-plugin.ts]
 export default function monPlugin() {
   return {
-    name: 'mon-plugin', // Obligatoire
-    resolveId(id) { /* ... */ },
-    load(id) { /* ... */ },
-    transform(code, id) { /* ... */ },
-    // + autres hooks
   }
 }
 ```
 
--->
+```ts [my-plugin.ts]
+export default function monPlugin() {
+  return {
+    resolveId(id) { },
+    load(id) { },
+    transform(code, id) { },
+  }
+}
+```
 
-<!-- TODO: shiki move pour à chaque click, rajouter du code
-
-1. objet
-2. method
-3. un petit nom
-
- -->
+```ts [my-plugin.ts]
+export default function monPlugin() {
+  return {
+    name: 'mon-plugin',
+    resolveId(id) { },
+    load(id) { },
+    transform(code, id) { },
+  }
+}
+```
+````
 
 <!--
 
@@ -425,10 +439,6 @@ choices:
   - Tout n'est que plugin
   - La théorie des plugins Vite
 ---
-
-<!--
-
- -->
 
 ---
 name: La théorie des plugins Vite
@@ -611,8 +621,6 @@ Un visuel que je vois bien
 les requêtes sont envoyées d'un sens à l'autre avec dessous, le potentiel contenu de la requête (comme des codes blocks)
 on peut en ajouter au fur et à mesure au click et ça pourrait cacher les blocks de code
 avec à droite, les hooks du plugin qui sont appelés au fûr et à mesure
-
----
 
 pourquoi ne pas faire une interface similair à Vite plugin inspect avec de temps à autre, une petit requête pour bien comprendre de quoi on parle (ou un truc qui zoom sur la request ...?)
 
@@ -1293,6 +1301,8 @@ Pour filtrer les requêtes dans les hooks `resolveId`, `load` et `transform`, on
 Si cette solution semble simple, elle est en réalité très inefficace parce qu'elle nécessite d'invoquer le hook pour chaque requête. Maintenant que le bundler est en Rust, ça introduit un overhead non négligeable.
 
 Du coup, on peut extraire le filtrage en amont. Dans ce cas, on peut complètement by-passer le plugin pour les requêtes qui ne matchent pas le filtre et ça éviter de faire un aller-retour entre Rust et Node.js pour rien.
+
+-->
 
 ---
 name: Live Coding
