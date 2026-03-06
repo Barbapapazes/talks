@@ -9,9 +9,9 @@
     "cf:typegen": "wrangler types src/worker-configuration.d.ts"
   },
   "dependencies": {
-    "cloudflare": "^5.2.0"
+    "cloudflare": "catalog:"
   },
   "devDependencies": {
-    "wrangler": "^4.63.0"
+    "wrangler": "catalog:"
   }
 }

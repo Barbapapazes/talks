@@ -87,44 +87,43 @@ Et puis, vous pouvez même réagir en direct à ce que je dis, si vous trouvez �
 name: Vite
 group: Vite Core
 timing: 0
+layout: center-card
+img: /vite-background.png
+transition: slide-up
 ---
+
+<img src="/vite-logo-color-dark.svg" />
+
+::outside::
+
+<UsedByVite />
 
 <!--
 
 Mais aujourd'hui, ce n'est ni de moi ni d'Inalia que nous allons parler. Aujourd'hui, c'est Vite qui va être à l'honneur.
 
-On l'a vu au début, vous êtes une large majorité à utiliser Vite. Et c'est normal, Vite est un outil présent dans absolument tout le paysage frontend, et même backend. Que vous fassiez du React, du Vue, du Svelte, du Node.js, du Deno, du Cloudflare Workers, Vite est là. Vous pouvez même faire du Laravel, du Nitro ou du Adonis que Vite serait là aussi. Depuis 2020, Vite est devenu un véritable incontournable, aussi bien pour le frontend que pour le backend.
+On l'a vu au début, vous êtes une large majorité à utiliser Vite. Et c'est normal, Vite est un outil présent dans absolument tout [click] le paysage frontend, et même backend. Que vous fassiez du React, du Vue, du Svelte, du Node.js, du Deno, du Cloudflare Workers, Vite est là. Vous pouvez même faire du Laravel, du Nitro ou du Adonis que Vite serait là aussi. Depuis 2020, Vite est devenu un véritable incontournable, aussi bien pour le frontend que pour le backend.
 
 -->
-
-<!--
-
-Slide avec le logo Vite au centre et une constellation de logos des autres frameworks autour.
-
- -->
 
 ---
 name: Vite Growth
 group: Vite Core
 timing: 0
+clicks: 3
 ---
 
+<GrowthChart />
+
 <!--
+
+TODO: donner pour chacun la valeur par mois
 
 Incontournable ? Vous allez me dire, Estéban, tu y vas peut-être un peu fort, non ? Face à Vite, on a Webpack et Rspack qui sont deux autres bundlers, l'un plus ancien, l'autre plus récent, avec la même philosophie que Webpack mais écrit en Rust.
 
 ... détailler le chart de croissance en partant de Vite et en comparant avec Webpack et Rspack
 
 -->
-
-<!--
-
-Logo de Vite, Webpack et Rspack côte à côte, comme sur https://nuxt.com/#:~:text=Bundler%20with%20Vite
-
-Slide avec le graph de croissance de Vite et une comparaison avec Webpack et Rspack (https://npm.chart.dev/vite+webpack+@rspack/core)
-(utiliser le même effet que pour la conférence sur paquet en javascript avec is-string)
-
- -->
 
 ---
 name: Vite - Choices
