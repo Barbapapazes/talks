@@ -110,7 +110,6 @@ On l'a vu au début, vous êtes une large majorité à utiliser Vite. Et c'est n
 name: Vite Growth
 group: Vite Core
 timing: 0
-clicks: 3
 ---
 
 <GrowthChart />
@@ -129,6 +128,7 @@ Incontournable ? Vous allez me dire, Estéban, tu y vas peut-être un peu fort, 
 name: Vite - Choices
 group: Vite Core
 timing: 0
+layout: choices
 choices:
   - Les origines de Vite
   - Le fonctionnement de Vite
@@ -144,12 +144,6 @@ Je vous laisse scanner le QR code pour faire votre choix. Attention, il n'y aura
 Si vous souhaitez comprendre les origines de Vite, d'où il vient, pourquoi il a été créé, et comment il a évolué, rendez-vous sur "Les origines de Vite".
 Mais peut-être que vous préférez comprendre comment Vite fonctionne dans les grandes lignes, alors rendez-vous sur "Le fonctionnement de Vite".
 Et enfin, si vous êtes du genre à vouloir anticiper l'avenir, à être curieux de l'avenir de Vite, alors je crois que "Le futur de Vite" est fait pour vous.
-
--->
-
-<!--
-
-Mettre un timer pour faire le choix (qui est fake parce que ça ne va pas vraiment couper mais ça met un peu de pression et ça me permet de ne pas rester 107 ans sur la même slide)
 
 -->
 
@@ -227,9 +221,16 @@ https://viteplus.dev/
 -->
 
 ---
+name: Tout n'est que plugin
+group: Feature Plugins
+timing: 0
+---
+
+---
 name: Tout n'est que plugin - Choices
 group: Feature Plugins
 timing: 0
+layout: choices
 choices:
   - Du CSS importé dans un fichier TypeScript
   - Une image chargée dans un fichier TypeScript
@@ -248,13 +249,32 @@ TODO: texte pour passer aux choix suivants
 name: Du CSS importé dans un fichier TypeScript
 group: Feature Plugins
 timing: 0
+layout: bottom-left-card
+---
+
+```ts
+import './style.css'
+```
+
+<!-- TODO: que contient notre fichier CSS d'ailleurs? -->
+
+<!--
+
+Ça ne choque plus personne, mais ça n'existe pas en JavaScript. C'est impossible d'importer du CSS dans un fichier JavaScript.
+-->
+
+---
+name: Du CSS importé dans un fichier TypeScript - Visualisation
+group: Feature Plugins
+timing: 0
+class: bg-black
 choices:
   - Les entrailles d'un plugin Vite
 ---
 
-```ts [src/main.ts]
-import './style.css'
-```
+<Suspense>
+  <CssInTs class="absolute top-20 left-40 -right-px -bottom-px" />
+</Suspense>
 
 <!--
 
@@ -277,8 +297,6 @@ faut le réfléchir lui, j'ai un doute sur comment le faire pour qu'il soit symp
  -->
 
 <!--
-
-Alors ça [show the code block], ça ne choque plus personne, mais ça n'existe pas en JavaScript. C'est impossible d'importer du CSS dans un fichier JavaScript.
 
 Dans les faits, le navigateur, quand il voit un `import`, il se moque pas mal de l'extension et il requête le module. Vite, lui, va s'apercevoir qu'il s'agit de CSS et le faire passer un plugin qui va transformer ce CSS en JavaScript pour l'injecter dans le `<head>` de votre page.
 
@@ -384,6 +402,8 @@ Pourquoi c'est important ? Pour les mêmes raisons qu'il est déconseillé de fa
 name: Les entrailles d'un plugin Vite
 group: Inside a Plugin
 timing: 0
+layout: bottom-left-card
+img: https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=19020&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -430,10 +450,13 @@ Voilà, vous venez de faire votre premier plugin Vite, félicitations !
 
 -->
 
+<!-- TODO: second slide avec les hooks de lifecycle -->
+
 ---
 name:  Les entrailles d'un plugin Vite - Choices
 group: Inside a Plugin
 timing: 0
+layout: choices
 choices:
   - Tout n'est que plugin
   - La théorie des plugins Vite
@@ -444,6 +467,8 @@ name: La théorie des plugins Vite
 group: Inside a Plugin
 timing: 0
 ---
+
+<Theorie />
 
 <!--
 

@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useSlideContext } from '@slidev/client'
 import CardLayout from '../components/CardLayout.vue'
+
+const { $frontmatter } = useSlideContext()
 </script>
 
 <template>

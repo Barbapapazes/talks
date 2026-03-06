@@ -23,12 +23,17 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "@dagrejs/dagre": "catalog:",
     "@formkit/auto-animate": "catalog:",
     "@iconify-json/unjs": "catalog:",
     "@tsparticles/engine": "catalog:",
     "@tsparticles/slim": "catalog:",
     "@unovis/vue": "catalog:",
+    "@vue-flow/background": "catalog:",
+    "@vue-flow/core": "catalog:",
+    "add": "catalog:",
     "cobe": "catalog:",
+    "pnpm": "catalog:",
     "seedrandom": "catalog:",
     "slidev-addon-inalia": "catalog:"
   },

@@ -23,7 +23,9 @@
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
   "dependencies": {
+    "@shikijs/transformers": "catalog:",
     "@unovis/ts": "catalog:",
-    "@unovis/vue": "catalog:"
+    "@unovis/vue": "catalog:",
+    "@vueuse/core": "catalog:"
   }
 }

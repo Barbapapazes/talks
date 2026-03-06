@@ -28,16 +28,16 @@ const icons = [
 
 <template>
   <div class="absolute inset-14 grid grid-cols-4 items-center justify-items-center">
-    <template v-for="(icon, index) in icons" :key="icon">
+    <template v-for="(icon, index) in icons" :key="index">
       <component :is="index === 0 ? VClick : VAfter">
         <img
           v-if="icon && icon.startsWith('http')"
           :src="icon"
           class="size-16 transition forward:delay-[--delay]"
           :style="{ '--delay': `calc(${(index % 4) + (Math.floor(index / 4))} * 30ms)` }"
-
         >
-        <span v-else-if="icon"
+        <span
+          v-else-if="icon"
           :class="icon"
           class="size-16 transition forward:delay-[--delay]"
           :style="{ '--delay': `calc(${(index % 4) + (Math.floor(index / 4))} * 30ms)` }"
