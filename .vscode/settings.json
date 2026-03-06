@@ -69,7 +69,12 @@
   "cSpell.words": [
     "challengée",
     "cloudflare",
+    "laravel",
+    "Laravel",
+    "Rolldown",
+    "rspack",
     "Slidev",
     "Unpoly"
-  ]
+  ],
+  "vitest.disableWorkspaceWarning": true
 }

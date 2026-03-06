@@ -23,6 +23,6 @@
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
   "devDependencies": {
-    "@shikijs/markdown-it": "^3.22.0"
+    "@shikijs/markdown-it": "catalog:"
   }
 }

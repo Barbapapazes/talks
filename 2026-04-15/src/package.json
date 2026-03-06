@@ -11,20 +11,21 @@
     }
   },
   "private": true,
-  "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
-  "recording": "https://youtu.be/3PcrqsBVGgA",
-  "article": "https://soubiran.dev/posts/the-conference-for-ethics-and-diversity-in-tech-mixit-2025",
+  "description": "Plongée au cœur de la pipeline de Vite : découvrez son fonctionnement interne et comment prendre le contrôle avec des plugins personnalisés.",
   "scripts": {
     "dev": "slidev",
-    "build": "slidev build --base /2025-04-30/mixit/ --out ../../dist/2025-04-30/mixit",
-    "export": "slidev export --per-slide --output ../2025-04-30-mixit.pdf",
+    "build": "slidev build --base /2026-04-15/mixit/ --out ../../dist/2026-04-15/mixit",
+    "export": "slidev export --per-slide --output ../2026-04-15-mixit.pdf",
     "thumbnail:cp": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
     "thumbnail": "slidev export --per-slide --range 1 --format png",
     "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
     "thumbnail:cp:dark": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
-  "devDependencies": {
-    "alien-signals": "catalog:"
+  "dependencies": {
+    "@shikijs/transformers": "catalog:",
+    "@unovis/ts": "catalog:",
+    "@unovis/vue": "catalog:",
+    "@vueuse/core": "catalog:"
   }
 }
