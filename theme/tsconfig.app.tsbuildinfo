@@ -1,1 +1,0 @@
-{"root":["./contants.ts","./modules.d.ts","./vitest.config.ts","./__tests__/components.test.ts","./plugins/latest-articles.ts","./setup/shiki.ts","./styles/index.ts","./types/article.ts"],"version":"5.9.3"}
