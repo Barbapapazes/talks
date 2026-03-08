@@ -7,8 +7,9 @@ fonts:
   serif: Noto Serif
   mono: Consolas
 themeConfig:
-  primary: white
+  primary: "#6C1EB9"
 codeCopy: false
+colorSchema: light
 transition: fade-out
 theme: slidev-theme-personal
 addons:
@@ -42,7 +43,6 @@ Source
 # Au cœur d’une pipeline:<br>démystifions Vite et ses plugins
 
 <!--
-
 Bonjour à tous !
 
 J'espère que vous allez bien.
@@ -52,20 +52,25 @@ Je suis tellement heureux d'être là aujourd'hui pour pouvoir vous parler de Vi
 Pour cette session, vous n'allez pas être spectateur, mais acteur de la présentation. Et oui, aujourd'hui, vous êtes les héros de cette conférence et vos choix détermineront le contenu que vous allez découvrir.
 
 Je vous préviens, tout ne pourra pas être exploré alors faites les bons choix !
-
 -->
 
 ---
 name: Intro
 layout: intro
+intro: Ingénieur chez <span class="i-custom-takima inline-block size-5
+  align-text-top"></span> Takima
 group: Introduction
 timing: 0
 ---
 
 <!--
+Je m'appelle Estéban. Je suis ingénieur logiciel chez Takima.
 
-Je m'appelle Estéban...
+Je gravite principalement autour des écosystèmes de Laravel, Vite, Vue, Nuxt, Spring et Kotlin.
 
+Quand il me reste du temps libre, j'écris des articles. Le dernier en date est sur ma victoire au Hackathon Mistral AI.
+
+Et puis vous pouvez me retrouver sur tous les réseaux, sur mon site ou même sur Discord où j'y partage ma veille.
 -->
 
 ---
@@ -100,7 +105,7 @@ transition: slide-up
 
 <!--
 
-Mais aujourd'hui, ce n'est ni de moi ni d'Inalia que nous allons parler. Aujourd'hui, c'est Vite qui va être à l'honneur.
+Mais aujourd'hui, ce n'est ni de moi ni d'Inalia dont nous allons parler. Aujourd'hui, c'est Vite qui va être à l'honneur.
 
 On l'a vu au début, vous êtes une large majorité à utiliser Vite. Et c'est normal, Vite est un outil présent dans absolument tout [click] le paysage frontend, et même backend. Que vous fassiez du React, du Vue, du Svelte, du Node.js, du Deno, du Cloudflare Workers, Vite est là. Vous pouvez même faire du Laravel, du Nitro ou du Adonis que Vite serait là aussi. Depuis 2020, Vite est devenu un véritable incontournable, aussi bien pour le frontend que pour le backend.
 
@@ -115,13 +120,19 @@ timing: 0
 <GrowthChart />
 
 <!--
+Incontournable oui mais à quel point ?
 
-TODO: donner pour chacun la valeur par mois
+La première release de Vite, c'est 2020 et aujourd'hui, il atteint le chiffre stratosphérique de [click] 60 millions de téléchargement par semaine.
 
-Incontournable ? Vous allez me dire, Estéban, tu y vas peut-être un peu fort, non ? Face à Vite, on a Webpack et Rspack qui sont deux autres bundlers, l'un plus ancien, l'autre plus récent, avec la même philosophie que Webpack mais écrit en Rust.
+Sauf que, je vous connais, vous allez me dire: ok, mais ça représente quoi 60 millions ?
 
-... détailler le chart de croissance en partant de Vite et en comparant avec Webpack et Rspack
+Regardons du côté de [click] Webpack, le bundler historique. Aujourd'hui, il est autour de 35 millions et s'est fait dépasser en juillet 2025.
 
+On peut aussi regarde du côté de [click] Rspack, développé par ByteDance, maison mère de TikTok, qui atteint difficilement les 10 millions de téléchargements par semaine.
+
+Et puis, pour ceux qui ont suivi mes dernières conférences, même [click] is-string s'est fait dépasser.
+
+C'est donc très clair, Vite est largement au dessus en terme d'adoption.
 -->
 
 ---
@@ -151,33 +162,101 @@ Et enfin, si vous êtes du genre à vouloir anticiper l'avenir, à être curieux
 name: Les origines de Vite
 group: Vite Core
 timing: 0
+layout: bottom-left-card
+img: /vite-documentary-background.gif
 choices:
   - Le fonctionnement de Vite
 ---
 
+<v-click>
+
+```ts
+import {} from 'my-module'
+```
+
+</v-click>
+
 <!--
 
-webpack to bundle everything (image, css, html, js) through a single pipeline but for every save, you bundle the entire app again (which is slow, and slower and slower as the app grows)
+Pour bien comprendre ce qu'est Vite et le problème résolut, il faut qu'on revienne en 2018.
 
-bad DX selon Evan You
+Cette année marque un tournant majeur parce qu'elle voit la standardisation [click] des modules ECMAScript. Concrètement, ça signifie qu'on a un moyen unifié pour importer et exporter du code JavaScript, que ce soit dans le navigateur ou dans Node.js. Mieux encore, on a enfin un moyen natif pour importer du code dans le navigateur, module par module.
 
-2020, initialement pour Vue mais la v2 (en 17 février 2021) a été complètement réécrite pour être un build tool universel (compatible avec rollup et c'est ça le grand changement, avoir accès à tout l'écosystème de plugins rollup, game changer)
-(et pour l'anecdote, la v1 n'a jamais vu le jour)
+C'est peut-être un détail pour vous mais ça change tout. Au paravent, on était obligé de bundler nos fichiers JavaScript pour n'avoir qu'un unique fichier à importer dans le navigateur. Pour faire ça, l'outil le plus populaire c'était Webpack.
 
-blazing fast 100ms instead of seconds (and whatever the size of the app)
+Sauf que bundler toute notre application à chaque changement, c'était lent. Tellement lent qu'Evan You a considéré que ça n'atteignait pas ses standards de qualités pour la communauté Vue.js.
+
+Et une idée lui est venu en tête. Et si, on profitait de ces modules ECMAScript pour ne pas faire du bundling en développement et juste les servir tel quel ?
+
+C'est comme ça qu'est né Vite en 2020 et c'est ce qui le rend si rapide au démarrage.
 
 -->
-
-<!--
-
-Mettre un gif low quality du documentaire de Vite en fond
-
- -->
 
 ---
 name: Le fonctionnement de Vite
 group: Vite Core
 timing: 0
+layout: ai
+---
+
+<ViteExplainedWithAI
+  user-prompt="I'm new in the web dev world. What is Vite and how does it work?"
+/>
+
+<!--
+On sait ce qu'est Vite. On sait d'où ça vient. Il nous reste une question, comment est-ce que ça fonctionne ?
+
+J'aurai pu vous faire une slide avec quelques bullets points mais je me suis dit qu'en 2026, on pouvait faire mieux et directement demander à une IA. [enter] Alors demandons lui. [enter]
+
+On apprends que Vite est un remplacent de Webpack, qu'il utilise les capacités natives du navigateur comme les modules ECMAScript, ESM pour les intimes et qu'en développement, il ne bundle pas notre application.
+
+Oh, intéressant, Vite transforme les fichiers sur demande avant de les renvoyer. Gardons le dans un coin de notre tête.
+
+Bon bah voilà, vous savez tout.
+
+Nan, parce que c'est bien sympa tout ces explications mais c'est pas très visuelle. [click]
+-->
+
+---
+name: Le fonctionnement de Vite - Visualisation
+group: Vite Core
+timing: 0
+layout: full
+---
+
+<ViteExplainedVisually />
+
+<!--
+Tout commence par [click] un navigateur d'un côté et [click] des fichiers de l'autre. On peut se balader dedans et regarder le contenu des fichiers. C'est un template Vue et TypeScript, rien d'extraordinaire.
+
+Entre les deux, on va placer [click] Vite. Le navigateur et Vite vont [click] communiquer en HTTP, Vite va [click] lire les fichiers dans le système de fichier et puis tant qu'on y est, [click] démarrons Vite.
+
+Maintenant, revenons dans notre navigateur pour [click] accéder à localhost:5173 et regardons les requêtes et les réponses.
+
+[click] Alors la première évidemment, c'est pour charger le document. Si on regarde la réponse, c'est le fichier index.html, avec le script main.ts et le client Vite en plus par rapport au fichier sur le disque.
+
+[click] Ensuite, c'est le fichier main.ts qui est chargé. On y voit trois imports, l'un pour un fichier style.css, un pour Vue, dont le chemin d'accès s'est fait transformé, et un dernier pour le composant Vue.
+
+Tiens ? Je savais pas qu'on pouvait importer dans le navigateur des fichiers CSS et des fichiers Vue ! Génial !
+
+Dans les logs, on découvre ensuite [click] le chargement du fichier CSS, puis [click] de Vue, et finalement, [click] de notre fichier Vue.
+
+Par curiosité, qu'est ce que renvoie Vite pour le fichier CSS et Vue ?
+
+Ah ! Alors ça, c'est étonnant, c'est du JavaScript. En fouillant un peu, on y retrouve quand même notre fichier de départ.
+
+Mais c'est donc ça, la transformation sur demande que réalise Vite dont on a entendu parler juste avant ?
+
+C'est génial ! Mais comment est-ce que ça fonctionne ?
+
+Et bien, vous faites bien de poser la question, c'est tout l'objectif de cette conférence, [click] comprendre ce qu'il se passe dans Vite.
+-->
+
+---
+name: Le fonctionnement de Vite - Choices
+group: Vite Core
+timing: 0
+layout: choices
 choices:
   - Le pré-bundling avec Esbuild
   - Tout n'est que plugin
@@ -186,14 +265,7 @@ choices:
 
 <!--
 
-serveur web simple, faire un schéma avec l'IA qui fait une requête, le serveur qui la reçoit, la traite et qui répond
-(faire un schéma dynamique avec des éléments mouvants ?)
-
-il sait ce qu'il doit faire en fonction du fichier demandé
-le HMR fonctionne si bien et le démarrage est instant parce que le serveur ne bundle rien du tout
-
-reprendre le système de chat IA ? en mode, on vit dans une époque de fou
-https://chatgpt.com/share/6989c859-c310-8011-9006-dc074a544fb4
+TODO: écrire le texte pour le choix
 
 -->
 
@@ -223,8 +295,29 @@ https://viteplus.dev/
 ---
 name: Tout n'est que plugin
 group: Feature Plugins
+layout: image
 timing: 0
 ---
+
+<AllAboutPlugins />
+
+<!--
+
+Donc, on vient de le voir, Vite, c'est un serveur web qui transforme nos fichiers à la demande. Out-of-the-box, Vite supporte une multitude de transformations :
+
+- HTML
+- JSX
+- CSS
+- Static Assets
+- JSON
+- Glob Import
+- Dynamic Import
+- WebAssembly
+- Web Workers
+
+Et le plus dingue, c'est que tout ça, ce n'est implémenté qu'à travers des plugins via la même API que chacun peut utiliser pour faire ses propres plugins.
+
+ -->
 
 ---
 name: Tout n'est que plugin - Choices
@@ -403,7 +496,6 @@ name: Les entrailles d'un plugin Vite
 group: Inside a Plugin
 timing: 0
 layout: bottom-left-card
-img: https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=19020&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -466,6 +558,7 @@ choices:
 name: La théorie des plugins Vite
 group: Inside a Plugin
 timing: 0
+class: p-0!
 ---
 
 <Theorie />
@@ -1408,27 +1501,15 @@ group: Deep Dive & Conclusion
 timing: 0
 ---
 
-## Ce qu'on a exploré ensemble
+<!--
 
-✅ Les fondamentaux de Vite (serveur dev + ES modules)
-✅ Le système de plugins (resolveId → load → transform)
-✅ Modules virtuels et leur magie
-✅ Exemples concrets (Vue, auto-import, icons...)
-✅ HMR et capabilities avancées
-✅ Optimisation avec les filtres
-✅ Le futur avec Rolldown
+TODO: slide habituelle avec les ressources
 
-## Ce qu'on n'a pas eu le temps de voir
+https://vite.dev/guide/why
+The Vite Documentary
+Vite Discord
 
-- Environment API (multi-runtimes)
-- SSR avec ModuleRunner
-- Plugin development best practices complètes
-- Et tellement plus !
+ -->
 
-**Le chemin que VOUS avez choisi a façonné cette conférence !**
-
-<!-- (revoir la fin, elle est pas ouf mais en même temps. on peut pas passer par tout donc faut se demander si tu as quand même les éléments intéressant ou non) -->
 
 <!-- à la fin, avoir une slide qui montre exactement le chemin qu'on a fait ensemble pour dire qu'il y a encore beaucoup de choses à explorer -->
-
-<!-- la fin est trop linéaire, c'est chiant -->

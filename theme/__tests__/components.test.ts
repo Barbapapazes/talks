@@ -1,11 +1,40 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
+import BackgroundImage from '../components/BackgroundImage.vue'
 import Card from '../components/Card.vue'
 import CardLayout from '../components/CardLayout.vue'
 import Footer from '../components/Footer.vue'
 import FooterItem from '../components/FooterItem.vue'
 import FooterLink from '../components/FooterLink.vue'
 import Icon from '../components/Icon.vue'
+
+describe('backgroundImage', () => {
+  it('renders nothing when no img is provided', () => {
+    const wrapper = mount(BackgroundImage)
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('renders an img element when img is provided', () => {
+    const wrapper = mount(BackgroundImage, {
+      props: { img: '/test-image.jpg' },
+    })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('renders with a custom alt text', () => {
+    const wrapper = mount(BackgroundImage, {
+      props: { img: '/test-image.jpg', alt: 'Custom alt text' },
+    })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('renders with imgClass applied', () => {
+    const wrapper = mount(BackgroundImage, {
+      props: { img: '/test-image.jpg', imgClass: 'object-top' },
+    })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+})
 
 describe('card', () => {
   it('renders correctly with default slot', () => {

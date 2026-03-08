@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useSlideContext } from '@slidev/client'
 import { VisArea, VisXYContainer } from '@unovis/vue'
-import { rspack, vite, webpack } from 'virtual:growth-chart'
+import { isString, rspack, vite, webpack } from 'virtual:growth-chart'
 
 const { $clicks } = useSlideContext()
 
@@ -30,6 +30,10 @@ const y = (d: DataRecord) => d[1]
         src="https://raw.githubusercontent.com/rstackjs/rstack-design-resources/e25f6d56e04bc6ff82dcee6cd1e4c31711b22365/rspack/rspack-logo.svg"
       >
       Rspack
+    </div>
+    <div v-click class="flex flex-row items-center gap-2 text-[#fde047] font-light">
+      <div class="i-devicon-javascript size-5" />
+      is-string
     </div>
   </div>
 
@@ -64,6 +68,16 @@ const y = (d: DataRecord) => d[1]
         :line="true"
         color="#FA3A1F"
         line-color="#FA3A1F"
+      />
+      <VisArea
+        v-if="$clicks >= 4"
+        :data="isString"
+        :x="x"
+        :y="y"
+        :opacity="0.3"
+        :line="true"
+        color="#fde047"
+        line-color="#fde047"
       />
     </VisXYContainer>
   </div>

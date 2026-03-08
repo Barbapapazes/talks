@@ -1,0 +1,15 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "paths": {
+      "@theme/*": [
+        "../../theme/*"
+      ]
+    }
+  },
+  "include": [
+    "../../theme/modules.d.ts",
+    "./modules.d.ts",
+    "./components/**/*.vue"
+  ]
+}

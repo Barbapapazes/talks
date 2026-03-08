@@ -1,7 +1,8 @@
 /// <reference types="@slidev/types" />
 
 import { defineConfig } from 'vite'
-import LatestArticles from './plugins/latest-articles'
+import ai from './plugins/ai'
+import latestArticles from './plugins/latest-articles'
 
 const codeBlockIcons = {
   // package managers
@@ -61,7 +62,8 @@ const codeBlockIcons = {
 
 export default defineConfig({
   plugins: [
-    LatestArticles(),
+    latestArticles(),
+    ai(),
   ],
 
   slidev: {

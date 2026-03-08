@@ -1,5 +1,6 @@
 {
   "name": "vuejs-paris",
+  "type": "module",
   "event": {
     "name": "Vue.js Paris",
     "url": "https://www.meetup.com/fr-FR/vuejs-paris/",
@@ -22,7 +23,11 @@
     "thumbnail:cp:dark": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
+  "dependencies": {
+    "mixit": "link:../../2026-04-15/src"
+  },
   "devDependencies": {
-    "@shikijs/markdown-it": "catalog:"
+    "@shikijs/markdown-it": "catalog:",
+    "typescript": "catalog:"
   }
 }

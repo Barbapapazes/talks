@@ -125,7 +125,7 @@ function onClick(request: Request) {
               class="forward:delay-[--delay] transition"
               :class="{
                 'bg-neutral-800': index % 2 && request.name !== currentRequest?.name,
-                'bg-blue-900': request.name === currentRequest?.name,
+                'bg-violet-900': request.name === currentRequest?.name,
                 'hover:bg-neutral-700': request.name !== currentRequest?.name,
               }"
               :style="{

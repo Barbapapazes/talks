@@ -35,6 +35,7 @@
     "cobe": "catalog:",
     "pnpm": "catalog:",
     "seedrandom": "catalog:",
+    "shiki": "catalog:",
     "slidev-addon-inalia": "catalog:"
   },
   "devDependencies": {

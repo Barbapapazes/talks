@@ -1,5 +1,6 @@
 {
   "name": "mixit",
+  "type": "module",
   "event": {
     "name": "MiXiT",
     "url": "https://mixitconf.org/",
@@ -27,5 +28,8 @@
     "@unovis/ts": "catalog:",
     "@unovis/vue": "catalog:",
     "@vueuse/core": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
   }
 }

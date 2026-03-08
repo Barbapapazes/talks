@@ -55,13 +55,16 @@ catalog:
   prompts: ^2.4.2
   reka-ui: 1.0.0-alpha.8
   seedrandom: ^3.0.5
+  shiki: ^4.0.1
   slidev-addon-graph: ^1.0.0
   slidev-addon-inalia: ^0.2.6
   tailwind-variants: ^3.2.2
   taze: ^19.9.2
   tiktoken: ^1.0.22
   typescript: ^5.9.3
+  vite: ^8.0.0-beta.16
   vitest: ^4.0.18
+  vue: ^3.5.29
   wrangler: ^4.63.0
 
 catalogMode: prefer
@@ -74,3 +77,12 @@ patchedDependencies:
   slidev-addon-graph: patches/slidev-addon-graph.patch
 
 shellEmulator: true
+catalogs:
+  conflicts_@types/node_h25_3_5:
+    '@types/node': ^25.3.5
+  conflicts_@vitejs/plugin-vue_h6_0_4:
+    '@vitejs/plugin-vue': ^6.0.4
+  conflicts_@vue/tsconfig_h0_9_0:
+    '@vue/tsconfig': ^0.9.0
+  conflicts_typescript_t5_9_3:
+    typescript: ~5.9.3

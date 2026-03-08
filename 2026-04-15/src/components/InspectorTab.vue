@@ -10,7 +10,7 @@ const props = defineProps<{
       v-for="item in props.items"
       :key="typeof item === 'string' ? item : item.name"
       class="px-2 py-2"
-      :class="{ 'text-blue-500 border-b-2 border-blue-500': typeof item === 'string' ? false : item.active }"
+      :class="{ 'text-violet-500 border-b-2 border-violet-500': typeof item === 'string' ? false : item.active }"
     >
       {{ typeof item === 'string' ? item : item.name }}
     </div>

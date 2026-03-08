@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { Edge, Node } from '@vue-flow/core'
 import dagre from '@dagrejs/dagre'
+import { onSlideEnter } from '@slidev/client'
 import { Background } from '@vue-flow/background'
 import { Position, useVueFlow, VueFlow } from '@vue-flow/core'
 import { nextTick, ref } from 'vue'
@@ -10,17 +11,17 @@ import HookNode from './HookNode.vue'
 interface PipelineProps {
   plugins: {
     name: string
-    resolvedId: {
-      input: string | null
-      output: string | null
+    resolveId: {
+      input: { code: string, language: string } | null
+      output: { code: string, language: string } | null
     }
     load: {
-      input: string | null
-      output: string | null
+      input: { code: string, language: string } | null
+      output: { code: string, language: string } | null
     }
     transform: {
-      input: string | null
-      output: string | null
+      input: { code: string, language: string } | null
+      output: { code: string, language: string } | null
     }
   }[]
 }
@@ -44,14 +45,14 @@ const nodes = ref<Node[]>([
     position: { x: 0, y: 0 },
   },
   {
-    id: 'resolvedId',
+    id: 'resolveId',
     type: 'hook',
     data: {
-      label: 'resolvedId',
+      label: 'resolveId',
       plugins: props.plugins.map(plugin => ({
         name: plugin.name,
-        input: plugin.resolvedId.input,
-        output: plugin.resolvedId.output,
+        input: plugin.resolveId.input,
+        output: plugin.resolveId.output,
       })),
     },
     position: { x: 0, y: 0 },
@@ -86,15 +87,15 @@ const nodes = ref<Node[]>([
 
 const edges = ref<Edge[]>([
   {
-    id: 'e-request-resolvedId',
+    id: 'e-request-resolveId',
     source: 'request',
-    target: 'resolvedId',
+    target: 'resolveId',
     type: 'smoothstep',
     animated: true,
   },
   {
-    id: 'e-resolvedId-load',
-    source: 'resolvedId',
+    id: 'e-resolveId-load',
+    source: 'resolveId',
     target: 'load',
     type: 'smoothstep',
     animated: true,
@@ -173,12 +174,18 @@ async function layoutGraph(direction: 'TB' | 'LR' = 'TB') {
     fitView()
   })
 }
+const show = ref(false)
+onSlideEnter(() => {
+  nextTick(() => {
+    show.value = true
+  })
+})
 
 const selectedPlugin = ref<{
   name: string
   hook: string
-  input: string | null
-  output: string | null
+  input: { code: string, language: string } | null
+  output: { code: string, language: string } | null
 } | undefined>(undefined)
 function onPluginClick(hookName: string, pluginName: string) {
   const plugin = props.plugins.find(p => p.name === pluginName)
@@ -198,8 +205,8 @@ const { highlight } = useHighlight()
 </script>
 
 <template>
-  <div class="absolute inset-0 grid grid-cols-2">
-    <div>
+  <div class="h-full w-full flex flex-row">
+    <div v-if="show" class="h-full w-1/2">
       <VueFlow
         :nodes="nodes"
         :edges="edges"
@@ -234,14 +241,28 @@ const { highlight } = useHighlight()
       </VueFlow>
     </div>
 
-    <div class="grid grid-rows-2">
+    <div class="w-1/2 h-full grid grid-rows-2">
       <!-- TODO: input -->
-      <div v-if="selectedPlugin && selectedPlugin.input">
-        <div v-html="highlight(selectedPlugin.input, 'ts')" />
+      <div>
+        <div
+          v-if="selectedPlugin && selectedPlugin.input"
+          v-html="highlight(selectedPlugin.input.code, selectedPlugin.input.language)"
+        />
       </div>
       <!-- TODO: output -->
-      <div v-if="selectedPlugin && selectedPlugin.output">
-        <div v-html="highlight(selectedPlugin.output, 'ts')" />
+      <div class="overflow-y-scroll">
+        <div
+          v-if="selectedPlugin && selectedPlugin.output"
+          v-html="highlight(selectedPlugin.output.code, selectedPlugin.output.language)"
+        />
+        <div
+          v-if="selectedPlugin && selectedPlugin.output"
+          v-html="highlight(selectedPlugin.output.code, selectedPlugin.output.language)"
+        />
+        <div
+          v-if="selectedPlugin && selectedPlugin.output"
+          v-html="highlight(selectedPlugin.output.code, selectedPlugin.output.language)"
+        />
       </div>
     </div>
   </div>

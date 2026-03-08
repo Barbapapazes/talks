@@ -49,6 +49,7 @@ function isSelected(pluginName: string) {
             'hover:bg-neutral-200': !isSelected(plugin.name),
           }"
         >
+          <!-- TODO: ajouter la signature de la fonction -->
           {{ plugin.name }}
 
           <button class="absolute inset-0" @click="onClick(plugin.name)" />

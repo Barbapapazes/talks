@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BackgroundImage from './BackgroundImage.vue'
 import Card from './Card.vue'
 
 export type CardPosition = 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
@@ -26,7 +27,7 @@ const positionClasses: Record<CardPosition, string> = {
 
 <template>
   <div class="relative slidev-layout">
-    <img v-if="props.img" :src="props.img" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover" :class="props.imgClass">
+    <BackgroundImage :img="props.img" :class="props.imgClass" />
     <div class="absolute z-10" :class="positionClasses[props.position]">
       <Card>
         <slot />
