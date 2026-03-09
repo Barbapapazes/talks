@@ -62,7 +62,7 @@ const requests: Request[] = [
     active-tab="Network"
     :network="{
       requests,
-      selectedRequestId: 5,
+      selectedRequestId: 4,
     }"
   />
 </template>

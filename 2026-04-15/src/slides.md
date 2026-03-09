@@ -966,6 +966,7 @@ Attention, il n'y aura pas de retour en arrière possible, alors choisissez judi
 name: Un plugin pour virtualiser
 group: Virtualization
 timing: 0
+transition: slide-up
 ---
 
 <VirtualizationExplainedVisually />
@@ -978,6 +979,8 @@ TODO:
 name: Un plugin pour virtualiser - Plugin Internals
 group: Virtualization
 timing: 0
+layout: bottom-center-card
+img: https://images.unsplash.com/photo-1710020603990-0c984e7811f3?q=80&w=3268&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ```ts
@@ -1024,6 +1027,9 @@ TODO: write text for this slide
 name: Vue Router - Un module virtuel
 group: Virtualization
 timing: 0
+layout: bottom-center-card
+img: https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+transition: slide-up
 ---
 
 ```vue
@@ -1050,13 +1056,12 @@ TODO: texte de la slide
 name: Vue Router - Un module virtuel - Plugin Internals
 group: Virtualization
 timing: 0
+layout: bottom-center-card
+img: https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
   - Dans les profondeurs de la pipeline
 ---
 
-<!--
-TODO: pseudo code du plugin
--->
 <!-- TODO: create a plugin that virtualize the import vue-router/auto-routes by returning the result of the generateRoutes() function, also use a resolve it -->
 ```
 import { defineConfig } from 'vite'
