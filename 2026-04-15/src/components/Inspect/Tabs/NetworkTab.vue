@@ -3,23 +3,42 @@ import type { Request } from '../../../types/network-tab'
 import VAfter from '@slidev/client/builtin/VAfter.ts'
 import VClick from '@slidev/client/builtin/VClick.ts'
 import { onClickOutside } from '@vueuse/core'
-import { computed, ref, useTemplateRef, watch } from 'vue'
+import { computed, defineComponent, markRaw, shallowRef, useTemplateRef, watch } from 'vue'
 import InspectRequestHeaders from '../InspectRequestHeaders.vue'
 import InspectRequestTabs from '../InspectRequestTabs.vue'
 
 interface NetworkTabProps {
   requests: Request[]
-  animate?: boolean
   showDetails?: boolean
   selectedRequestId?: number | null
 }
 const props = withDefaults(defineProps<NetworkTabProps>(), {
-  animate: true,
   showDetails: true,
   selectedRequestId: null,
 })
 
 type RequestDetailTab = 'Headers' | 'Response'
+
+interface NetworkRequestRow {
+  request: Request
+  delay: number | string
+  icon?: string
+  method: string
+  status: number
+  protocol: string
+  size: string
+  waterfallStyle: {
+    left: string
+    width: string
+  }
+}
+
+const ROW_ANIMATION_LIMIT = 120
+const PlainWrapper = markRaw(defineComponent({
+  setup(_, { slots }) {
+    return () => slots.default?.()
+  },
+}))
 
 function icon(type: string) {
   switch (type) {
@@ -32,30 +51,53 @@ function icon(type: string) {
   }
 }
 
-const currentRequest = ref<Request | null>(null)
-const currentRequestTab = ref<RequestDetailTab>('Headers')
+const currentRequest = shallowRef<Request | null>(null)
+const currentRequestId = computed(() => currentRequest.value?.id ?? null)
+const currentRequestTab = shallowRef<RequestDetailTab>('Headers')
 
-const maxWaterfallWidth = computed(() => Math.max(
-  ...props.requests.map(request => (request.waterfallStart ?? 0) + (request.waterfallDuration ?? request.time)),
-  1,
-))
+const shouldAnimateRows = computed(() => props.requests.length <= ROW_ANIMATION_LIMIT)
+
+const requestRows = computed<NetworkRequestRow[]>(() => {
+  const maxWaterfallWidth = props.requests.reduce((maxWidth, request) => {
+    return Math.max(maxWidth, (request.waterfallStart ?? 0) + (request.waterfallDuration ?? request.time))
+  }, 1)
+
+  return props.requests.map((request, index) => {
+    const offset = request.waterfallStart ?? 0
+    const duration = request.waterfallDuration ?? request.time
+
+    return {
+      request,
+      delay: shouldAnimateRows.value ? `calc(${index} * 30ms)` : 0,
+      icon: icon(request.type),
+      method: request.method ?? 'GET',
+      status: request.status ?? 200,
+      protocol: request.protocol ?? 'http/1.1',
+      size: request.size ?? '-',
+      waterfallStyle: {
+        left: `${(offset / maxWaterfallWidth) * 100}%`,
+        width: `${Math.max((duration / maxWaterfallWidth) * 100, 1.5)}%`,
+      },
+    }
+  })
+})
 
 const currentRequestTarget = useTemplateRef('currentRequestTarget')
 onClickOutside(currentRequestTarget, () => currentRequest.value = null)
 
 watch(
   () => [props.requests, props.selectedRequestId] as const,
-  () => {
-    if (props.selectedRequestId != null) {
-      currentRequest.value = props.requests.find(request => request.id === props.selectedRequestId) ?? null
+  ([requests, selectedRequestId]) => {
+    if (selectedRequestId != null) {
+      currentRequest.value = requests.find(request => request.id === selectedRequestId) ?? null
       return
     }
 
     if (currentRequest.value) {
-      currentRequest.value = props.requests.find(request => request.id === currentRequest.value?.id) ?? null
+      currentRequest.value = requests.find(request => request.id === currentRequest.value?.id) ?? null
     }
   },
-  { immediate: true, deep: true },
+  { immediate: true },
 )
 
 function onClick(request: Request) {
@@ -63,34 +105,15 @@ function onClick(request: Request) {
   currentRequestTab.value = 'Headers'
 }
 
-function isSelected(request: Request) {
-  return request.id === currentRequest.value?.id
+function isSelected(requestId: number) {
+  return requestId === currentRequestId.value
 }
 
-function formatMethod(request: Request) {
-  return request.method ?? 'GET'
-}
+function rowWrapper(index: number) {
+  if (!shouldAnimateRows.value)
+    return PlainWrapper
 
-function formatStatus(request: Request) {
-  return request.status ?? 200
-}
-
-function formatProtocol(request: Request) {
-  return request.protocol ?? 'http/1.1'
-}
-
-function formatSize(request: Request) {
-  return request.size ?? '-'
-}
-
-function waterfallStyle(request: Request) {
-  const offset = request.waterfallStart ?? 0
-  const duration = request.waterfallDuration ?? request.time
-
-  return {
-    left: `${(offset / maxWaterfallWidth.value) * 100}%`,
-    width: `${Math.max((duration / maxWaterfallWidth.value) * 100, 1.5)}%`,
-  }
+  return index === 0 ? VClick : VAfter
 }
 </script>
 
@@ -131,63 +154,63 @@ function waterfallStyle(request: Request) {
 
       <tbody>
         <component
-          :is="index === 0 ? VClick : VAfter"
-          v-for="(request, index) in props.requests"
-          :key="request.id"
+          :is="rowWrapper(index)"
+          v-for="(row, index) in requestRows"
+          :key="row.request.id"
         >
           <tr
             class="forward:delay-[--delay] cursor-pointer transition"
             :class="{
-              'bg-neutral-800': index % 2 && !isSelected(request),
-              'bg-violet-900': isSelected(request),
-              'hover:bg-neutral-700': !isSelected(request),
+              'bg-neutral-800': index % 2 && !isSelected(row.request.id),
+              'bg-violet-900': isSelected(row.request.id),
+              'hover:bg-neutral-700': !isSelected(row.request.id),
             }"
             :style="{
-              '--delay': props.animate ? `calc(${(index % props.requests.length) + (Math.floor(index / props.requests.length))} * 30ms)` : 0,
+              '--delay': row.delay,
             }"
-            @click="onClick(request)"
+            @click="onClick(row.request)"
           >
             <td class="pl-2 py-2">
               <div class="flex flex-row items-center gap-2">
-                <span class="text-right text-xs text-neutral-500">{{ request.id }}</span>
+                <span class="text-right text-xs text-neutral-500">{{ row.request.id }}</span>
                 <div
                   class="size-5"
-                  :class="icon(request.type)"
+                  :class="row.icon"
                 />
-                <span class="truncate">{{ request.name }}</span>
+                <span class="truncate">{{ row.request.name }}</span>
               </div>
             </td>
             <td class="px-1 py-2">
-              {{ formatMethod(request) }}
+              {{ row.method }}
             </td>
             <td class="px-1 py-2">
-              {{ formatStatus(request) }}
+              {{ row.status }}
             </td>
             <td class="px-1 py-2">
-              {{ formatProtocol(request) }}
+              {{ row.protocol }}
             </td>
             <td class="px-1 py-2">
-              {{ request.type }}
+              {{ row.request.type }}
             </td>
             <td class="px-1 py-2">
-              <span v-if="request.initiator" class="underline">
-                {{ request.initiator }}
+              <span v-if="row.request.initiator" class="underline">
+                {{ row.request.initiator }}
               </span>
               <span v-else class="text-neutral-500">
                 Other
               </span>
             </td>
             <td class="py-2 text-right whitespace-nowrap">
-              {{ formatSize(request) }}
+              {{ row.size }}
             </td>
             <td class="py-2 text-right whitespace-nowrap">
-              {{ request.time }} ms
+              {{ row.request.time }} ms
             </td>
             <td class="p-2">
               <div class="relative h-4 w-36">
                 <div
                   class="absolute top-0.5 h-3 rounded-sm bg-sky-400/80"
-                  :style="waterfallStyle(request)"
+                  :style="row.waterfallStyle"
                 />
               </div>
             </td>

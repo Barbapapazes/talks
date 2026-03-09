@@ -562,7 +562,6 @@ choices:
 
 <BackgroundImage img="https://images.unsplash.com/photo-1556139918-9b92e8b00105?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
 
-
 <PreBundlingWithEsbuildSolved class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--

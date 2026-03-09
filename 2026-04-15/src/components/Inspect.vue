@@ -24,7 +24,6 @@ type NetworkInput = Request[] | NetworkOptions
 
 const props = defineProps<{
   activeTab?: InspectTab
-  animate?: boolean
   console?: ConsoleInput
   network?: NetworkInput
 }>()
@@ -113,7 +112,6 @@ function onSelectTab(tab: string) {
       <NetworkTab
         v-else-if="currentTab === 'Network' && networkData"
         :requests="networkData.requests"
-        :animate="props.animate"
         :show-details="networkData.showDetails"
         :selected-request-id="networkData.selectedRequestId"
       />

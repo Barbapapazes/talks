@@ -60,7 +60,6 @@ const requests: Request[] = [
 <template>
   <Inspect
     active-tab="Network"
-    :animate="false"
     :network="{
       requests,
       selectedRequestId: 5,
