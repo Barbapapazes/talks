@@ -1,21 +1,23 @@
 <script lang="ts" setup>
-import appVue from 'virtual:vite-file-system:App:vue'
+import type {
+  ExplainedVisuallyFileSystemItem,
+  ExplainedVisuallyHttpLog,
+} from './ExplainedVisually/types'
+import appVueFile from 'virtual:vite-file-system:App:vue'
 import indexHtml from 'virtual:vite-file-system:index:html'
 import mainTs from 'virtual:vite-file-system:main:ts'
 import packageJson from 'virtual:vite-file-system:package:json'
-import styleCss from 'virtual:vite-file-system:style:css'
+import styleCssFile from 'virtual:vite-file-system:style:css'
 import tsconfigAppJson from 'virtual:vite-file-system:tsconfig:app:json'
 import tsconfigJson from 'virtual:vite-file-system:tsconfig:json'
 import tsconfigNodeJson from 'virtual:vite-file-system:tsconfig:node:json'
 import viteConfigTs from 'virtual:vite-file-system:vite.config:ts'
-import { ref } from 'vue'
-import ViteExplainedVisuallyBrowser from './ViteExplainedVisually/ViteExplainedVisuallyBrowser.vue'
-import ViteExplainedVisuallyEdge from './ViteExplainedVisually/ViteExplainedVisuallyEdge.vue'
-import ViteExplainedVisuallyFileModal from './ViteExplainedVisually/ViteExplainedVisuallyFileModal.vue'
-import ViteExplainedVisuallyFileSystem from './ViteExplainedVisually/ViteExplainedVisuallyFileSystem.vue'
-import ViteExplainedVisuallyHttpLogs from './ViteExplainedVisually/ViteExplainedVisuallyHttpLogs.vue'
-import ViteExplainedVisuallyHttpResponseModal from './ViteExplainedVisually/ViteExplainedVisuallyHttpResponseModal.vue'
-import ViteExplainedVisuallyViteServer from './ViteExplainedVisually/ViteExplainedVisuallyViteServer.vue'
+import appVueTransformed from 'virtual:vite-transformed-file:App:ts'
+import styleCssTransformed from 'virtual:vite-transformed-file:style:ts'
+import { useHighlight } from '../composables/useHighlight'
+import ExplainedVisually from './ExplainedVisually.vue'
+
+const { highlight } = useHighlight()
 
 const fileSystem = [
   {
@@ -31,12 +33,12 @@ const fileSystem = [
       {
         title: 'style.css',
         icon: 'i-vscode-icons-file-type-css',
-        code: styleCss,
+        code: styleCssFile,
       },
       {
         title: 'App.vue',
         icon: 'i-vscode-icons-file-type-vue',
-        code: appVue,
+        code: appVueFile,
       },
     ],
   },
@@ -70,98 +72,66 @@ const fileSystem = [
     icon: 'i-vscode-icons-file-type-tsconfig',
     code: tsconfigNodeJson,
   },
-]
+] satisfies ExplainedVisuallyFileSystemItem[]
 
-function foundFileByTitle(title: string) {
-  return fileSystem
-    .flatMap(item => item.children || item)
-    .find(item => item.title === title) || null
-}
-
-const file = ref<{ file: string, code: string } | null>(null)
-function onSelect(item: { title: string }) {
-  const foundFile = foundFileByTitle(item.title)
-
-  if (foundFile) {
-    file.value = { file: foundFile.title, code: foundFile.code }
-  }
-  else {
-    file.value = null
-  }
-}
-
-const httpResponse = ref<{
-  request: string
-  response: { file: string | undefined, code: string }
-  file: string | undefined
-} | null>(null)
-function onHttpResponse(request: string, file: string | undefined, response: string) {
-  const foundFile = foundFileByTitle(file || '')
-
-  httpResponse.value = {
-    request,
-    response: { file, code: response },
-    file: foundFile ? foundFile.code : undefined,
-  }
-}
+const httpLogs = [
+  {
+    request: highlight('GET http://localhost:5173/', 'http'),
+    response: {
+      file: 'index.html',
+      code: indexHtml,
+    },
+    click: 8,
+  },
+  {
+    request: highlight('GET http://localhost:5173/src/main.ts?t=1772882882631', 'http'),
+    response: {
+      file: 'main.ts',
+      code: mainTs,
+    },
+    click: 9,
+  },
+  {
+    request: highlight('GET http://localhost:5173/src/style.css?t=1772882882631', 'http'),
+    response: {
+      file: 'style.css',
+      code: styleCssTransformed,
+    },
+    click: 10,
+  },
+  {
+    request: highlight('GET http://localhost:5173/node_modules/.vite/deps/vue.js?v=ed2c93c8', 'http'),
+    response: {
+      code: highlight('/* vue.js content */', 'ts'),
+    },
+    click: 11,
+  },
+  {
+    request: highlight('GET http://localhost:5173/src/App.vue', 'http'),
+    response: {
+      file: 'App.vue',
+      code: appVueTransformed,
+    },
+    click: 12,
+  },
+] satisfies ExplainedVisuallyHttpLog[]
 </script>
 
 <template>
-  <div class="absolute left-10 right-10 top-14 flex fex-row items-center justify-between">
-    <ViteExplainedVisuallyBrowser
-      v-click="[1, 13]"
-    >
-      <span v-click="7">
-        localhost:5173
-      </span>
-    </ViteExplainedVisuallyBrowser>
-
-    <ViteExplainedVisuallyEdge
-      v-click="[4, 13]"
-      text="HTTP Requests"
-    />
-
-    <ViteExplainedVisuallyViteServer
-      v-click="3"
-      class="relative"
-    >
-      <span
-        v-click="[6, 13]"
-        class="absolute left-1/2 -translate-x-1/2 bottom-1 flex flex-row gap-1 text-cyan-700 text-xs"
-      >
-        <span
-          class="i-ph-spinner animate-spin animate-duration-[3s] size-4"
-        />
-        <span>
-          http://localhost:5173/
-        </span>
-      </span>
-    </ViteExplainedVisuallyViteServer>
-
-    <ViteExplainedVisuallyEdge
-      v-click="[5, 13]"
-      text="Read Files"
-    />
-
-    <ViteExplainedVisuallyFileSystem
-      v-click="[2, 13]"
-      :items="fileSystem"
-      @select="onSelect"
-    />
-  </div>
-
-  <ViteExplainedVisuallyHttpLogs
-    v-click="[7, 13]"
-    :initial-click="8"
-    class="absolute left-10 -bottom-2 right-3/10 pb-10"
-    @http-response="onHttpResponse"
-  />
-
-  <ViteExplainedVisuallyFileModal
-    v-model="file"
-  />
-
-  <ViteExplainedVisuallyHttpResponseModal
-    v-model="httpResponse"
+  <ExplainedVisually
+    :browser-address-click="7"
+    :browser-click="[1, 13]"
+    browser-address="localhost:5173"
+    :file-explorer-click="[2, 13]"
+    :file-explorer-default-expanded="['src']"
+    :file-system-items="fileSystem"
+    :http-logs="httpLogs"
+    :http-logs-click="[7, 13]"
+    :read-files-edge-click="[5, 13]"
+    :request-edge-click="[4, 13]"
+    :server-click="3"
+    :server-status-click="[6, 13]"
+    server-status-icon="i-ph-spinner animate-spin animate-duration-[3s] size-4"
+    server-status-text="http://localhost:5173/"
   />
 </template>

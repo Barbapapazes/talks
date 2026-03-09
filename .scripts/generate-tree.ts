@@ -12,7 +12,11 @@ interface GraphNode {
   index: number
   name: string | undefined
   title: string
-  frontmatter: Record<string, any>
+  ready: boolean
+  group: string | undefined
+  layout: string | undefined
+  timing: number | undefined
+  choices?: string[]
 }
 
 interface GraphEdge {
@@ -22,7 +26,7 @@ interface GraphEdge {
 }
 
 interface Graph {
-  filepath: string
+  generatedAt: string
   nodes: GraphNode[]
   edges: GraphEdge[]
 }
@@ -36,8 +40,8 @@ function slugify(text: string | undefined): string {
     .replace(/^_|_$/g, '')
 }
 
-function hasChoicesKey(frontmatter: Record<string, any>) {
-  return Object.prototype.hasOwnProperty.call(frontmatter, 'choices')
+function hasChoicesKey(node: GraphNode) {
+  return Object.prototype.hasOwnProperty.call(node, 'choices')
 }
 
 async function generateTree() {
@@ -78,7 +82,14 @@ async function generateTree() {
       index: slide.index,
       name,
       title,
-      frontmatter: slide.frontmatter,
+      ready: !!slide.frontmatter.ready,
+      layout: slide.frontmatter.layout as string | undefined,
+      group: slide.frontmatter.group as string | undefined,
+      timing: slide.frontmatter.timing as number | undefined,
+    }
+
+    if (slide.frontmatter.choices) {
+      node.choices = slide.frontmatter.choices as string[]
     }
 
     nodes.push(node)
@@ -110,9 +121,9 @@ async function generateTree() {
   const nodeByIndex = new Map(nodes.map(node => [node.index, node]))
 
   for (const node of nodes) {
-    const choices = node.frontmatter.choices
+    const choices = node.choices
 
-    if (!hasChoicesKey(node.frontmatter)) {
+    if (!hasChoicesKey(node)) {
       const nextNode = nodeByIndex.get(node.index + 1)
       if (nextNode) {
         edges.push({
@@ -160,7 +171,7 @@ async function generateTree() {
   // Build graph object
 
   const graph: Graph = {
-    filepath: slidesPath,
+    generatedAt: new Date().toISOString(),
     nodes,
     edges,
   }
@@ -181,8 +192,10 @@ async function generateTree() {
 
   // Add styling
   mermaidLines.push('  classDef default font-family:sans-serif')
-  mermaidLines.push('  classDef choice fill:#f9f9f9,stroke:#333,stroke-width:1px')
   mermaidLines.push('  classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:2px')
+  mermaidLines.push('  classDef choice fill:#f9f9f9,stroke:#333,stroke-width:1px')
+  mermaidLines.push('  classDef finished fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px')
+  mermaidLines.push('  classDef finishedChoice fill:#dcedc8,stroke:#558b2f,stroke-width:2px')
 
   // Add nodes
   const groups = new Map<string, string[]>()
@@ -191,10 +204,12 @@ async function generateTree() {
   for (const node of nodes) {
     const label = node.name || node.title
     const sanitizedId = node.id.replace(/\W/g, '_')
-    const className = node.frontmatter.choices ? 'choice' : 'main'
+    const className = node.choices && node.choices.length > 1
+      ? (node.ready ? 'finishedChoice' : 'choice')
+      : (node.ready ? 'finished' : 'main')
     const line = `  ${sanitizedId}["${label}"]:::${className}`
 
-    const group = node.frontmatter.group as string | undefined
+    const group = node.group
     if (group) {
       if (!groups.has(group))
         groups.set(group, [])
@@ -230,7 +245,8 @@ async function generateTree() {
   console.warn(`\nGraph statistics:`)
   console.warn(`  - Total slides: ${nodes.length}`)
   console.warn(`  - Total choices: ${edges.length}`)
-  console.warn(`  - Slides with choices: ${nodes.filter(n => n.frontmatter.choices?.length > 0).length}`)
+  console.warn(`  - Ready slides: ${nodes.filter(n => n.ready).length}/${nodes.length}`)
+  console.warn(`  - Slides with choices: ${nodes.filter(n => n.choices ? n.choices.length > 0 : false).length}`)
 }
 
 generateTree().catch(console.error)

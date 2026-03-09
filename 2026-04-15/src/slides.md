@@ -21,25 +21,20 @@ keywords: web,development,vite,plugins,pipeline
 event: MiXiT
 date: 15 avril 2026
 chooseYourOwnAdventure: true
+ready: true
 timing: 0.6
 ---
 
 <!--
+À lire pour comprendre la construction de ce talk.
 
-Ajouter des questions au début pour mieux identifier le public
+Ce talk place l'audience au centre : ce sont les spectateur·rice·s qui choisissent le déroulé. Les choix du public déterminent les slides affichées.
 
-=> via les groupes sur Inalia
-- qui a déjà utilisé Vite ? (avoir une réponse : "Je fais du Next.js")
-- qui a déjà créé un plugin Vite ?
-- qui a déjà publié sur npm un plugin Vite ?
+Important : tous les chemins sont déjà écrits — il n'y a pas de création de contenu à la volée. La vue d'ensemble se trouve dans .data/slides.graph.svg (et .data/slides.graph.txt pour la version mermaid) ; elle représente toutes les slides et leurs liens. Certaines boucles peuvent sembler exister, mais les participants ne peut pas visiter deux fois la même slide, sauf pour les slides de choix.
 
-Source
-- Vite Documentary
-- Vite Documentation
-- Vite source code
+Ces fichiers sont générés à partir de ce fichier slides.md, qui contient l'ensemble des slides et les liens définis via la clé `choices` de chaque slide. Une slide sans clé `choices` est suivie automatiquement par la slide suivante dans l'ordre du fichier.
 
-TODO: add a file that explains how the slides works, what to read to understand them and how to read them. (for a human and a machine)
-
+Le vote se fait via Inalia : la slide suivante sera celle qui aura obtenu le plus de voix.
 -->
 
 # Au cœur d’une pipeline:<br>démystifions Vite et ses plugins
@@ -57,12 +52,28 @@ Je vous préviens, tout ne pourra pas être exploré alors faites les bons choix
 -->
 
 ---
+name: Inalia
+layout: inalia-overview
+group: Introduction
+timing: 0.8
+ready: true
+---
+
+<!--
+
+Avant d'aller plus loin, je vous invite à scanner ce QR code. Il vous amènera sur une page où vous allez pouvoir retrouver mes réseaux, répondre à des questions, pour le moment, ne le faites pas, poser des questions pour que je puisse y répondre en live pendant la présentation, donner votre avis, mais pour être objectif, je vous recommande de le faire à la fin, même si on sait que ça va être bien !
+
+Et puis, vous pouvez même réagir en direct à ce que je dis, si vous trouvez ça drôle, si vous aimez, ou si simplement vous êtes d'accord.
+
+-->
+
+---
 name: Intro
 layout: intro
-intro: Ingénieur chez <span class="i-custom-takima inline-block size-5
-  align-text-top"></span> Takima
+intro: Ingénieur chez <span class="i-custom-takima inline-block size-5 align-text-top"></span> Takima
 group: Introduction
 timing: 0.5
+ready: true
 ---
 
 <!--
@@ -76,24 +87,31 @@ Et puis vous pouvez me retrouver sur tous les réseaux, sur mon site ou même su
 -->
 
 ---
-name: Inalia
-layout: inalia-overview
+name: Faisons Connaissance
 group: Introduction
-timing: 0.8
+ready: true
 ---
 
+<!-- <Inalia :questionId="1" /> -->
+
 <!--
+Ceci étant dit, est-ce qu'on ne ferait pas davantage connaissance ?
 
-Avant d'aller plus loin, je vous invite à scanner ce QR code. Il vous amènera sur une page où vous allez pouvoir retrouver mes réseaux, répondre à des questions, pour le moment, ne le faites pas, poser des questions pour que je puisse y répondre en live pendant la présentation, donner votre avis, mais pour être objectif, je vous recommande de le faire à la fin, même si on sait que ça va être bien !
+Quel est votre rapport à Vite ? Est-ce que vous l'utilisez ? Est-ce que vous avez déjà créé un plugin Vite ? Est-ce que vous avez déjà publié un plugin Vite sur npm ?
 
-Et puis, vous pouvez même réagir en direct à ce que je dis, si vous trouvez ça drôle, si vous aimez, ou si simplement vous êtes d'accord.
+Je vous invite à répondre à la première question sur la page sur laquelle vous êtes arrivés juste avant ou à scanner le QR code juste ici.
 
+TODO: 3 questions sur Inlia.
+- qui a déjà utilisé Vite ? (avoir une réponse : "Je fais du Next.js")
+- qui a déjà créé un plugin Vite ?
+- qui a déjà publié sur npm un plugin Vite ?
 -->
 
 ---
 name: Vite
 group: Vite Core
 timing: 0.8
+ready: true
 layout: center-card
 img: /vite-background.png
 transition: slide-up
@@ -117,6 +135,7 @@ On l'a vu au début, vous êtes une large majorité à utiliser Vite. Et c'est n
 name: Vite Growth
 group: Vite Core
 timing: 0.9
+ready: true
 ---
 
 <GrowthChart />
@@ -138,9 +157,10 @@ C'est donc très clair, Vite est largement au dessus en terme d'adoption.
 -->
 
 ---
-name: Vite - Choices
+name: Vite Growth - Choices
 group: Vite Core
 timing: 0.9
+ready: true
 layout: choices
 choices:
   - Les origines de Vite
@@ -164,6 +184,7 @@ Et enfin, si vous êtes du genre à vouloir anticiper l'avenir, à être curieux
 name: Les origines de Vite
 group: Vite Core
 timing: 1.5
+ready: true
 layout: bottom-left-card
 img: /vite-documentary-background.gif
 choices:
@@ -206,6 +227,7 @@ C'est comme ça qu'est né Vite en 2020 et c'est ce qui le rend si rapide au dé
 name: Le fonctionnement de Vite
 group: Vite Core
 timing: 1
+ready: true
 layout: ai
 ---
 
@@ -231,6 +253,7 @@ Nan, parce que c'est bien sympa tout ces explications mais c'est pas très visue
 name: Le fonctionnement de Vite - Visualisation
 group: Vite Core
 timing: 2.2
+ready: true
 layout: full
 ---
 
@@ -283,6 +306,7 @@ TODO: écrire le texte pour le choix
 name: Le futur de Vite
 group: Vite Core
 timing: 1
+ready: true
 choices:
   - Le fonctionnement de Vite
 ---
@@ -305,9 +329,10 @@ https://viteplus.dev/
 ---
 name: Tout n'est que plugin
 group: Feature Plugins
+timing: 0.6
+ready: true
 layout: image
 img: https://images.unsplash.com/photo-1564089969562-7b8667a4adec?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-timing: 0.6
 ---
 
 <AllAboutPlugins />
@@ -353,6 +378,7 @@ TODO: texte pour passer aux choix suivants
 name: Du CSS importé dans un fichier TypeScript
 group: Feature Plugins
 timing: 0.5
+ready: true
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
@@ -374,6 +400,7 @@ Pourquoi ? Parce que les faits, le navigateur, quand il voit un `import`, il se 
 name: Du CSS importé dans un fichier TypeScript - Visualisation
 group: Feature Plugins
 timing: 1.3
+ready: true
 choices:
   - Les entrailles d'un plugin Vite
 ---
@@ -398,6 +425,7 @@ Autrement dit, la transformation de notre fichier CSS natif pour en faire un fic
 name: Une image chargée dans un fichier TypeScript
 group: Feature Plugins
 timing: 0.5
+ready: true
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
@@ -419,6 +447,7 @@ Pourquoi ? Parce que dans les faits, le navigateur, quand il voit un `import`, i
 name: Une image chargée dans un fichier TypeScript - Visualisation
 group: Feature Plugins
 timing: 1.6
+ready: true
 transition: slide-up
 ---
 
@@ -450,6 +479,7 @@ Si on regarde le fichier main.ts, on y voit l'import de différentes images.
 name: Une image chargée dans un fichier TypeScript - Build
 group: Feature Plugins
 timing: 1.1
+ready: true
 layout: bottom-right-card
 img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
@@ -478,6 +508,7 @@ D'ailleurs, on y retrouve aussi la grosse image d'inlinée et sa version raw.
 name: import.meta.glob est une illusion
 group: Feature Plugins
 timing: 0.3
+ready: true
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
@@ -499,6 +530,7 @@ Dans notre cas, ça permet d'importer tous les fichiers Vue du dossier src.
 name: import.meta.glob est une illusion - Visualisation
 group: Feature Plugins
 timing: 0.8
+ready: true
 choices:
   - Les entrailles d'un plugin Vite
 ---
@@ -521,6 +553,7 @@ Tout ça, c'est calculé dans Vite par Node automatiquement.
 name: Le pré-bundling avec Esbuild
 group: Vite Core
 timing: 1.4
+ready: true
 ---
 
 <BackgroundImage img="https://images.unsplash.com/photo-1556139918-9b92e8b00105?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
@@ -556,6 +589,7 @@ Maintenant on a besoin de lodash, alors on l'install puis on l'importe. [click] 
 name: Le pré-bundling avec Esbuild - Résolution
 group: Vite Core
 timing: 0.7
+ready: true
 choices:
   - Les entrailles d'un plugin Vite
 ---
@@ -565,11 +599,9 @@ choices:
 <PreBundlingWithEsbuildSolved class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
-
 Heureusement, Vite lors de son scannage va automatiquement pré-bundler toutes les dépendances qu'il va trouver. Autrement dit, il va générer un unique fichier JavaScript pour chaque dépendance. [click] Et voilà, une unique requête pour charger lodash !
 
 Pourquoi c'est important ? Pour les mêmes raisons qu'il est déconseillé de faire des n+1 à votre base de données. Le réseau ajoute une surcharge non négligeable et votre navigateur est limité à un nombre de requêtes simultanées. Plus vous faites de requêtes, plus votre application sera lente à démarrer. Et dans ce cas-là, on ne parle pas de quelques millisecondes, mais de secondes.
-
 -->
 
 ---
@@ -893,7 +925,88 @@ Là, vous êtes sûrement en train de vous dire que c'est pratique de visualiser
 -->
 
 ---
+name: Visualiser la pipeline
+group: Concrete Examples
+timing: 0.3
+---
+
+<!-- TODO: animation d'introduction de vite-plugin-inspect du bas vers le haut en maxi lettre (spring effect) -->
+<!-- TODO: voir si on peut le faire dans les slides -->
+
+<!--
+Parce qu'il existe un plugin permettant de visualiser l'ensemble de la pipeline de Vite.
+
+Je l'utilise rarement mais c'est véritablement lui qui m'a permis de comprendre le fonctionnement et la philosophie de Vite.
+ -->
+
+---
+name: Visualiser la pipeline - Choices
+group: Concrete Examples
+timing: 0.6
+ready: true
+choices:
+  - Dans les profondeurs de la pipeline
+  - Un plugin pour virtualiser
+  - Les autres capacités des plugins
+---
+
+<!--
+Désormais, vous avez le pouvoir de visualiser la pipeline de Vite à moment, de la démystifier sur demande.
+
+Avec ce grand pouvoir, arrive un nouveau choix:
+
+1. Plonger dans les profondeurs de la pipeline comment Vite les appellent.
+2. Découvrir comment créer un plugin pour virtualiser des modules.
+3. Explorer les autres capacités des plugins Vite, comme le HMR, les middlewares, les macros, etc.
+
+Attention, il n'y aura pas de retour en arrière possible, alors choisissez judicieusement !
+-->
+
+---
 name: Un plugin pour virtualiser
+group: Virtualization
+timing: 0
+---
+
+<VirtualizationExplainedVisually />
+
+<!--
+TODO:
+-->
+
+---
+name: Un plugin pour virtualiser - Plugin Internals
+group: Virtualization
+timing: 0
+---
+
+```ts
+export default function myPlugin() {
+  const virtualModuleId = 'virtual:my-module'
+  const resolvedVirtualModuleId = '\0' + virtualModuleId
+
+  return {
+    name: 'my-plugin',
+    resolveId(id) {
+      if (id === virtualModuleId) {
+        return resolvedVirtualModuleId
+      }
+    },
+    load(id) {
+      if (id === resolvedVirtualModuleId) {
+        return `export const msg = "from virtual module"`
+      }
+    },
+  }
+}
+```
+
+<!--
+Super, on a vu la théorie. Mais concrètement, comment est-ce qu'on applique ça à un plugin Vite?
+-->
+
+---
+name: Un plugin pour virtualiser - Choices
 group: Virtualization
 timing: 0
 choices:
@@ -903,72 +1016,98 @@ choices:
   - Infos Plugin - Des infos virtuelles
 ---
 
-## Modules virtuels
-
-- N'existent **pas sur le disque**
-- Créés à la demande par un plugin
-- Convention : préfixe `virtual:` pour l'utilisateur
-- En interne : préfixe `\0` pour éviter la résolution du système de fichiers
-
-## Pourquoi ?
-
-- Injecter des configs build-time
-- Générer du code depuis des métadonnées
-- Créer des APIs type-safe
-- Auto-découverte de fichiers (routes, composants...)
+<!--
+TODO: write text for this slide
+-->
 
 ---
 name: Vue Router - Un module virtuel
+group: Virtualization
+timing: 0
+---
+
+```vue
+import { createApp } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import { routes } from 'vue-router/auto-routes'
+import App from './App.vue'
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+})
+
+createApp(App)
+  .use(router)
+  .mount('#app')
+```
+
+<!--
+TODO: texte de la slide
+-->
+
+---
+name: Vue Router - Un module virtuel - Plugin Internals
 group: Virtualization
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
 ---
 
-## unplugin-vue-router
-
-```ts
-import { routes } from 'vue-router/auto-routes'
+<!--
+TODO: pseudo code du plugin
+-->
+<!-- TODO: create a plugin that virtualize the import vue-router/auto-routes by returning the result of the generateRoutes() function, also use a resolve it -->
 ```
+import { defineConfig } from 'vite'
 
-- Scan du dossier `src/pages/`
-- Génère automatiquement les routes basées sur la structure fichiers
-- `pages/users/[id].vue` → route `/users/:id`
-- Module `virtual:generated-routes` créé dynamiquement
-- **HMR** : mise à jour des routes quand les fichiers changent
-- Type-safe avec TypeScript
-
-## Pattern
-- `resolveId` : détecter `vue-router/auto-routes`
-- `load` : générer le code des routes
+export default defineConfig({
+  plugins: [
+    (() => ({
+      name: 'auto-routes',
+      resolveId(id) {
+        if (id === 'vue-router/auto-routes') {
+          return '\0vue-router/auto-routes'
+        }
+      },
+      load(id) {
+        if (id === '\0vue-router/auto-routes') {
+          // improve my adding the fact the it will read the fs
+          const routes = generateRoutes()
+          return `export const routes = ${JSON.stringify(routes)}`
+        }
+      },
+    }))(),
+  ],
+})
+```
 
 ---
 name: VitePress - Des data virtuels
 group: Virtualization
 timing: 0.5
-choices:
-  - Dans les profondeurs de la pipeline
 ---
 
-<!-- ## VitePress Data Loaders
-
 ```ts
-import { data } from './posts.data.js'
-// data = résultat de la fonction data() exécutée au build
+export default {
+  load() {
+    return {
+      hello: 'world'
+    }
+  }
+}
 ```
 
-- Fichiers `.data.js` contiennent une fonction `export` `const` `data`
-- Fonction exécutée **au build** (accès Node.js, filesystem, APIs...)
-- Résultat sérialisé et injecté comme module virtuel
-- Disponible côté client sans re-fetch
-- Idéal pour : markdown metadata, API calls, etc.
+```vue
+<script setup>
+import { data } from './example.data.js'
+</script>
 
-## Avantage
-- Build-time data fetching
-- Pas de waterfall requests -->
+<pre>{{ data }}</pre>
+```
 
 <!--
-
+TODO: texte de la slide
 dans VitePress, on peut faire ça et dessous, c'est de la virtualisation
 
 parce qu'en plus simple, ça donnerait ça (exemple)
@@ -979,51 +1118,212 @@ d'aller fetcher une api au build time...
 chopper des listes, faire des traitements au build plutôt qu'au runtime
 
 faut préciser les infos à chaque fois
-
  -->
 
 ---
-name: Icons Plugin - Des icônes virtuelles
+name: VitePress - Des data virtuels - Plugin Internals
 group: Virtualization
 timing: 0
 choices:
   - Dans les profondeurs de la pipeline
 ---
 
-## unplugin-icons
-
 ```ts
-import IconAccessibility from '~icons/carbon/accessibility'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    (() => ({
+      name: 'data-plugin',
+      resolveId(id) {
+        if (id === 'virtual:data') {
+          return '\0virtual:data'
+        }
+      },
+      async load(id) {
+        if (id === '\0virtual:data') {
+          const res = await fetch('https://api.example.com/data')
+          const data = await res.json()
+          return `export default ${JSON.stringify(data)}`
+        }
+      },
+    })(),
+  ],
+})
 ```
 
-- Import **on-demand** d'icônes depuis Iconify
-- Plus de 100,000 icônes de 100+ icon sets
-- `~icons/{collection}/{icon}` est un module virtuel
-- Le SVG est chargé et transformé en composant (Vue/React/Svelte...)
-- **Tree-shaking** : seules les icônes utilisées sont bundlées
-
-## Implémentation
-- `resolveId` : match pattern `~icons/*`
-- `load` : fetch SVG + transform en component
+<!--
+TODO: texte de la slide
+-->
 
 ---
-name: Infos Plugin - Des infos virtuelles
+name: Icons Plugin - Des icônes virtuelles
 group: Virtualization
-timing: 0.8
+timing: 0
+---
+
+```vue
+<script setup>
+import IconAccessibility from '~icons/carbon/accessibility'
+import IconAccountBox from '~icons/mdi/account-box'
+</script>
+
+<template>
+  <icon-accessibility />
+  <icon-account-box style="font-size: 2em; color: red" />
+</template>
+```
+
+<!--
+TODO: texte de la slide
+-->
+
+---
+name: Icons Plugin - Des icônes virtuelles - Plugin Internals
+group: Virtualization
+timing: 0
 choices:
   - Dans les profondeurs de la pipeline
 ---
 
+```ts
+import { defineConfig } from 'vite'
+import { loadIcon } from 'iconify'
+
+export default defineConfig({
+  plugins: [
+    {
+      name: 'icons',
+      resolveId(id) {
+        if (id.startsWith('~icons/')) {
+          return '\0' + id
+        }
+      },
+      async load(id) {
+        if (id.startsWith('\0~icons/')) {
+          const iconName = id.slice(7)
+          const svg = await loadIcon(iconName)
+          return `export default ${JSON.stringify(svg)}`
+        }
+      },
+    },
+  ],
+})
+```
+
 <!--
+TODO: texte de la slide
+-->
 
-TODO: bloc de code avec le plugin dans la configuration vite
-TODO: bloc de code avec son utilisation dans le code
-TODO: demonstration concrète avec un composant qui affiche les infos de la présentation (sha du dernier commit, date de build, etc.)
+---
+name: Infos Plugin - Des infos virtuelles
+group: Virtualization
+timing: 0
+---
 
- -->
+```ts
+import now from '~build/time'
+import { sha } from '~build/git'
+
+console.log(`Build ${sha} at ${now}`)
+```
+
+<InfosPlugin />
 
 <!--
+TODO: revoir le texte de la slide
+-->
 
+---
+name: Infos Plugin - Des infos virtuelles - Plugin Internals
+group: Virtualization
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+````md magic-move
+```ts
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    {
+      name: 'build-info',
+    },
+  ],
+})
+```
+```ts
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    {
+      name: 'build-info',
+      resolveId(id) {
+        if (id === '~build/time') {
+          return '\0~build/time'
+        }
+      },
+    },
+  ],
+})
+```
+```ts
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    {
+      name: 'build-info',
+      resolveId(id) {
+        if (id === '~build/time') {
+          return '\0~build/time'
+        }
+      },
+      load(id) {
+        if (id === '\0~build/time') {
+          return `export default ${JSON.stringify(new Date().toISOString())}`
+        }
+      },
+    },
+  ],
+})
+```
+```ts
+import { execSync } from 'child_process'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    {
+      name: 'build-info',
+      resolveId(id) {
+        if (id === '~build/time') {
+          return '\0~build/time'
+        }
+        if (id === '~build/git') {
+          return '\0~build/git'
+        }
+      },
+      load(id) {
+        if (id === '\0~build/time') {
+          return `export default ${JSON.stringify(new Date().toISOString())}`
+        }
+        if (id === '\0~build/git') {
+          const sha = execSync('git rev-parse HEAD').toString().trim()
+          return `export default ${JSON.stringify(sha)}`
+        }
+      },
+    },
+  ],
+})
+```
+````
+
+<!--
+TODO: revoir le texte de la slide
 Imaginez que vous vouliez afficher ou simplement récupérer dans votre application le sha du dernier commit git, ou la date de build.
 
 Comment est-ce que vous feriez ?
@@ -1031,9 +1331,6 @@ Comment est-ce que vous feriez ?
 Un fichier de config que vous devez penser à mettre à jour à chaque fois que vous faites un build ? Pas très pratique et surtout, pas du tout automatisé.
 
 Non, le mieux, c'est d'utiliser un plugin Vite
-
-TODO: faire une second slide pour montrer comment ça fonctionne under the hood (faire le lien avec la slide d'avant sur la théorie de la virtualisation) (mettre un schéma qui explique tout ça)
-
 -->
 
 ---
@@ -1044,6 +1341,7 @@ choices:
   - Le HMR (Hot Module Replacement)
   - Le middleware - Un fichier virtuel
   - Vue Router - Un module virtuel
+  - Infos Plugin - Des infos virtuelles
   - Run Plugin - Un plugin pour exécuter des commandes
   - Virtual Plugin - Un plugin pour virtualiser des modules
   - Laravel Vite - La communication inter-processus
@@ -1094,7 +1392,8 @@ handleHotUpdate({ file, modules, server }) {
     return [...modules, mod]
   }
 }
-``` -->
+```
+-->
 
 <!--
 
@@ -1107,24 +1406,26 @@ manipuler le handleHotUpdate pour comprendre ce qu'il se passe vraiment
  -->
 
 <!--
+L'une des grandes features de Vite, en plus du mode unbundled, c'est son Hot Module Replacement (HMR).
+
+Concrètement, c'est un système qui permet de changer un fichier à la volé dans le navigateur.
 
 Comment Vite sait quoi mettre à jour ?
+
 Le hook `handleHotUpdate` pour intercepter les changements.
 Exemple : invalider un module virtuel quand un fichier sur le disque change.
-
 -->
 
 ---
 name: Le middleware - Un fichier virtuel
 group: Advanced Capabilities
 timing: 1
+ready: true
 choices:
   - Dans les profondeurs de la pipeline
 ---
 
-<!-- ## configureServer hook
-
-```ts
+```ts {*}{lines:true}
 {
   name: 'my-middleware',
   configureServer(server) {
@@ -1138,14 +1439,6 @@ choices:
   }
 }
 ```
-
--->
-
-<!--
-
-TODO: mettre un code d'exemple pour visualiser de quoi on parler et puis c'est tout, parce que ça suffit pour illustrer le concept, on est dans un serveur web in-fine
-
- -->
 
 <!--
 
@@ -1163,10 +1456,38 @@ On peut imaginer mocker une API pendant le développement avec un middleware, si
 name: Run Plugin - Un plugin pour exécuter des commandes
 group: Advanced Capabilities
 timing: 0.6
-choices:
-  - Dans les profondeurs de la pipeline
+ready: true
+layout: bottom-center-card
+transition: slide-up
 ---
 
+````md magic-move
+```ts
+import { defineConfig } from 'vite'
+import { run } from 'vite-plugin-run'
+
+export default defineConfig({
+  plugins: [
+    run(),
+  ],
+})
+```
+```ts
+import { defineConfig } from 'vite'
+import { run } from 'vite-plugin-run'
+
+export default defineConfig({
+  plugins: [
+    run([
+      {
+        name: 'generate ziggy types',
+        run: ['php', 'artisan', 'ziggy:generate', '--types'],
+        pattern: [/web.php$/, /api.php$/],
+      }
+    ]),
+  ],
+})
+```
 ```ts
 import { defineConfig } from 'vite'
 import { run } from 'vite-plugin-run'
@@ -1188,23 +1509,68 @@ export default defineConfig({
   ],
 })
 ```
+````
 
 <!--
+Avec un plugin Vite, il est possible de créer des side-effects à chaque changement d'un fichier.
 
-Avec Vite, il est possible de lancer des side effects nous permettant de nous simplifier la vie. `vite-plugin-run` en est le parfait exemple.
+Vite dispose d'un file watcher qui lui permet de réagir dès lors qu'un fichier est créé, modifié ou même supprimé. C'est notamment utilisé par le Hot Module Replacement (HMR).
 
-En fonction des fichiers que vous modifiez, vous pouvez lancer des commandes shell pour faire, ..., tout.
+Le truc, c'est qu'on peut se brancher dessus avec un plugin pour délancher nos propres réactions. C'est ce qu'a fait le plugin `vite-plugin-run`.
 
-Là, par exemple, on se sert de ce plugin pour régénérer les types de nos routes Laravel à chaque fois que les routes changent. Plus besoin de le faire à la main.
+On commence par lui définir [click] une commande bash qu'on aimerait voir exécuter et ensuite [click] les fichiers en mesure de déclencher la commande.
 
+Dans ce premier example, on génère automatiquement les types des routes pour le frontend à chaque fois qu'on vient modifier le fichier backend qui les contients.
+
+Dans ce second example, [click], on vient aussi regénérer des types API backend pour le frontend à chaque fois qu'on touche nos controllers ou nos resources backend.
+
+Avec cette méthode, on se retire une tâche manuelle et on s'assure d'avoir un frontend synchronisé avec le backend.
+-->
+
+---
+name: Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals
+group: Advanced Capabilities
+timing: 0
+ready: true
+layout: bottom-center-card
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+```ts {*}{lines:true}
+import { execSync } from 'node:child_process'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    (() => ({
+      name: 'run',
+      handleHotUpdate({ file }) {
+        if (file.match(/web\.php$/)) {
+          execSync('php artisan ziggy:generate --types')
+        }
+        if (file.includes('/app/')) {
+          execSync('php artisan wayfinder:generate')
+        }
+      }
+    }))()
+  ]
+})
+```
+
+<!--
+Plus concrètement, un plugin comme `vite-plugin-run` est implémenté avec le hook `handleHotUpdate`.
+
+À chaque fois qu'un fichier est modifié, le hook est exécuté et les commandes peuvent-être exécutée.
 -->
 
 ---
 name: Virtual Plugin - Un plugin pour virtualiser des modules
 group: Advanced Capabilities
 timing: 0.9
-choices:
-  - Dans les profondeurs de la pipeline
+ready: true
+layout: bottom-center-card
+transition: slide-up
 ---
 
 ```ts
@@ -1229,21 +1595,61 @@ export default defineConfig({
 ```
 
 <!--
-
 Avec Vite, il est possible de créer des modules virtuels, c'est à dire de renvoyer du code au navigateur qui n'existe pas sur le disque. La requêtes est interceptée avant que Vite ne tente de charger le fichier, et le plugin peut retourner du code à la volée.
 
 Par exemple, on peut l'utiliser pour injecter des données au build time, comme un commit git, le résultat d'une API, une configuration particulière, etc.
 
 Le truc, c'est que devoir faire à la main un plugin pour chaque module virtuel, ça peut vite devenir pénible, et vite-plugin-virtual est là pour ça. Rien à configurer, juste un mapping entre le nom du module virtuel et le code à retourner, et le tour est joué !
+-->
 
+---
+name: Virtual Plugin - Un plugin pour virtualiser des modules - Plugin Internals
+group: Advanced Capabilities
+timing: 0
+ready: true
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+```ts {*}{lines:true}
+import defineConfig from 'vite'
+
+export default defineConfig({
+  plugins: [
+    (() => ({
+      name: 'virtual',
+      resolveId(id) {
+        if (id.startsWith('virtual:')) {
+          return `\0${id}`
+        }
+      },
+      load(id) {
+        if (id === '\0virtual:git:commit') {
+          const commit = execSync('git rev-parse HEAD').toString().trim()
+          return `export default "${commit}"`
+        }
+        if (id === '\0virtual:api:data') {
+          const res = await fetch('https://api.example.com/data')
+          const data = await res.json()
+          return `export default ${JSON.stringify(data)}`
+        }
+      }
+    }))()
+  ]
+})
+```
+
+<!--
+Plus concrètement, un plugin comme `vite-plugin-virtual` est implémenté comme un plugin pour un module virtuel, avec le hook `resolveId` et `transform` en suivant les conventions de Rollup.
+
+On va venir boucler sur toutes les clés dans le resolveId pour voir si l'import match avec l'une d'elle et on va venir faire pareil dans le load pour trouver la valeur associée et la retournée.
 -->
 
 ---
 name: Laravel Vite - La communication inter-processus
 group: Advanced Capabilities
 timing: 0.6
-choices:
-  - Dans les profondeurs de la pipeline
+transition: slide-up
 ---
 
 <!-- TODO: refaire https://soubiran.dev/posts/laravel-and-vite-a-love-story-ruined-with-cross-origin#:~:text=Laravel%20and%20Vite%20integration,-This avec du code -->
@@ -1257,14 +1663,15 @@ Laravel, c'est du PHP et Vite, c'est du Node.js, chacun tournant dans son propre
 -->
 
 ---
-name: Laravel Vite - La communication inter-processus - Le fichier hot
+name: Laravel Vite - La communication inter-processus - Plugin Internals
 group: Advanced Capabilities
 timing: 0.3
+layout: bottom-center-card
 choices:
   - Dans les profondeurs de la pipeline
 ---
 
-```ts
+```ts {*}{lines:true}
 import fs from 'node:fs'
 import { ResolvedConfig } from 'vite'
 
@@ -1287,90 +1694,142 @@ export default function laravel() {
 ```
 
 <!--
-
 Dans son plugin, Laravel demande à Vite d'écrire un fichier `hot` dans le dossier `public` avec l'adresse du serveur Vite.
 
 Laravel peut alors lire le fichier `hot` et générer les bonnes URLs pour les assets. Malin !
 
+Plus concrètement, un plugin comme `vite-plugin-laravel` va se servir du hook `configureServer` pour récupérer toutes les informations dont il a besoin et venir écrire le fichier dès lors lors que le serveur est accepte des requêtes.
 -->
 
 ---
 name: unplugin-macro - Un plugin pour créer des macros
 group: Advanced Capabilities
 timing: 0
+layout: bottom-center-card
+---
+
+```ts
+export function getRandom() {
+  return Math.random()
+}
+export const buildTime = Date.now()
+```
+
+```ts
+import { buildTime, getRandom } from './macros' with { type: 'macro' }
+
+getRandom()
+buildTime
+```
+
+<!--
+TODO: Missing text for this slide
+-->
+
+---
+name: unplugin-macro - Un plugin pour créer des macros - Plugin Internals
+group: Advanced Capabilities
+timing: 0
+layout: bottom-center-card
 choices:
   - Dans les profondeurs de la pipeline
 ---
 
-## unplugin-macros
-
 ```ts
-import { $fetch } from './api.ts' with { type: 'macro' }
+import { defineConfig } from 'vite'
 
-const users = $fetch('/api/users') // Exécuté au build!
+export default defineConfig({
+  plugins: [
+    (() => {
+      return {
+        name: 'macro',
+        async transform(code, id) {
+          if (id.endsWith('.ts')) {
+            const program = babelParse(code)
+
+            const macroExports = findMacroExports(program)
+            const macros = collectMacro(program)
+
+            for (macroExport of macroExports) {
+              const result = await executeMacroExport(macroExport)
+              code = replaceMacroExportWithResult(code, macroExport, result)
+            }
+
+            for (macro of macros) {
+              const result = await executeMacro(macro)
+              code = replaceMacroWithResult(code, macro, result)
+          }
+      }
+    })()
+  ]
+})
 ```
 
-- Les macros s'exécutent **au build time**, pas runtime
-- Le résultat est inliné dans le code final
-- Basé sur AST transformations
-- Permet du "zero-runtime" code
+<!--
+Plus concrètement, le plugin `unplugin-macro` va utiliser le hook `transform` pour trouver les macro, via un walker dans l'AST du code source wt la balise `with { type: 'macro' }`, et venir l'exécuter pour la remplacer par le résultat de l'exécution.
 
-## Use cases
-- Fetch de données statiques
-- Optimisations compile-time
-- Code generation
+C'est un plugin relativement complexe mais qui démontre que tout est possible avec ce plugin.
+-->
 
 ---
 name: Nitro - Un backend
 group: Advanced Capabilities
 timing: 0
-choices:
-  - Dans les profondeurs de la pipeline
 ---
 
----
-name: Visualiser la pipeline
-group: Concrete Examples
-timing: 0.3
-choices:
-  - Dans les profondeurs de la pipeline
-  - Un plugin pour virtualiser
-  - Les autres capacités des plugins
----
-
-<!-- TODO: animation d'introduction de vite-plugin-inspect du bas vers le haut en maxi lettre (spring effect) -->
-<!-- TODO: voir si on peut le faire dans les slides -->
+<NitroABackend />
 
 <!--
+Vite est connu pour sa capacité à fournir une plateforme de développement robuste pour le frontend.
 
-Parce qu'il existe un plugin permettant de visualiser l'ensemble de la pipeline de Vite.
+Sauf que certains se sont ce sont demandé s'il n'était pas possible d'aller plus loin.
 
-Je l'utilise rarement mais c'est véritablement lui qui m'a permis de comprendre le fonctionnement et la philosophie de Vite.
-
- -->
+Vite c'est un serveur et il est possible d'y injecter ses propres middleware. Que se passerait-il si on forward les requêtes vers un autres serveur, qui s'occupe de la traiter de de renvoyer la requête ?
+-->
 
 ---
-name: Visualiser la pipeline - Choices
-group: Concrete Examples
-timing: 0.6
+name: Nitro - Un backend - Plugin Internals
+group: Advanced Capabilities
+timing: 0
+ready: true
 choices:
   - Dans les profondeurs de la pipeline
-  - Un plugin pour virtualiser
-  - Les autres capacités des plugins
 ---
 
+```ts {*}{lines:true}
+// Extremely simplified pseudo-code of the Nitro plugin
+import { defineConfig } from 'vite'
+import { createContext, createNitro, NitroPluginContext } from 'nitro'
+
+export default defineConfig({
+  plugins: [
+    (() => {
+      const ctx: NitroPluginContext = createContext(pluginConfig);
+
+      return {
+        name: 'nitro',
+        async config(config) {
+          ctx.nitro = await createNitro(ctx);
+        },
+        configureServer(server) {
+          server.middlewares.use(function nitroDevMiddlewarePre(req, res, next) {
+            if (isNitroRequest(req.url)) {
+              nitroDevMiddleware(req, res, next);
+            } else {
+              next();
+            }
+          });
+        }
+      }
+    })()
+  ]
+})
+```
+
 <!--
+Concrètement, qu'est-ce que ça donne ?
 
-Désormais, vous avez le pouvoir de visualiser la pipeline de Vite à moment, de la démystifier sur demande.
-
-Avec ce grand pouvoir, arrive un nouveau choix:
-
-1. Plonger dans les profondeurs de la pipeline comment Vite les appellent.
-2. Découvrir comment créer un plugin pour virtualiser des modules.
-3. Explorer les autres capacités des plugins Vite, comme le HMR, les middlewares, les macros, etc.
-
-Attention, il n'y aura pas de retour en arrière possible, alors choisissez judicieusement !
-
+Dans le plugin de Nitro, on démarre un serveur Nitro dans le hook `configureServer` et on vient forward les requêtes vers ce serveur avec un middleware.
 -->
 
 ---
@@ -1450,7 +1909,6 @@ timing: 0.8
 choices:
   - Live Coding
   - Q&A
-  - La réunification avec Rolldown
 ---
 
 <!-- ## Le problème
@@ -1542,63 +2000,56 @@ plugin autour de l'AI ? Là, j'ai pas d'idée
 name: Q&A
 group: Deep Dive & Conclusion
 timing: 0.1
+ready: true
 choices:
   - Conclusion
 ---
 
 <!--
 
-un long Q&A parce que même après le live coding, il peut quand même y avoir des questions
+Il semblerait que vous ayez des questions ! Alors allons-y !
+
+Qui commence ?
 
  -->
-
----
-name: La réunification avec Rolldown
-group: Deep Dive & Conclusion
-timing: 0.3
-choices:
-  - Conclusion
----
-
-## Le problème actuel
-
-- **Dev** : Esbuild (pré-bundling) + transformation à la volée
-- **Build** : Rollup (bundling complet)
-- Deux bundlers = deux comportements légèrement différents
-- Certains plugins ne fonctionnent qu'en build (`apply: 'build'`)
-
-## Rolldown : la solution
-
-- Bundler unique écrit en Rust
-- Compatible API Rollup
-- Performances Esbuild
-- **Un seul bundler pour dev et build**
-- Élimination des divergences comportementales
-
-<!--
-
-aspect technique de Rolldown dans Vite (réunification build/dev)
-
-La dualité Esbuild (Dev) / Rollup (Build).
-L'importance du hook `config` et de la propriété `apply: 'serve' | 'build'`.
-Pourquoi certains plugins ne marchent qu'en build ?
-
--->
 
 ---
 name: Conclusion
 group: Deep Dive & Conclusion
 timing: 0.2
+layout: outro
+ready: true
 ---
 
+<h1 class="text-4xl font-serif">
+  Looking for more?
+</h1>
+
+<ul class="op-80">
+  <li>
+    Watch the <a href="https://youtu.be/bmWQqAKLgT4" target="_blank">Vite documentary on YouTube</a>.
+  </li>
+  <li>
+    Read the <a href="https://vite.dev/guide/why" target="_blank">Why Vite page</a> on the Vite documentation.
+  </li>
+    <li>
+    Explore the <a href="https://antfu.me/posts/journey-with-icons-continues" target="_blank">Anthony's journey with icons</a>.
+  </li>
+  <li>
+    Check out the <a href="https://vite.dev/guide/api-plugin" target="_blank">Vite plugin API documentation</a>.
+  </li>
+  <li>
+    Dive into all the code source of plugins mentioned.
+  </li>
+  <li>
+    Join the community on <a href="https://chat.vite.dev/"  target="_blank">Discord</a>.
+  </li>
+</ul>
+
 <!--
+Si vous cherchez à en savoir plus, je vous invite à regarder le documentaire sur Vite sur YouTube, à lire la page "Why Vite" dans la documentation officielle, à suivre le parcours d'Anthony avec les icônes, à explorer la documentation de l'API des plugins Vite, à plonger dans le code source de tous les plugins mentionnés et à rejoindre la communauté sur Discord.
 
-TODO: slide habituelle avec les ressources
+Et à parcourir les autres chemins de cette présentation pour découvrir d'autres facettes de Vite.
 
-https://vite.dev/guide/why
-The Vite Documentary
-Vite Discord
-
- -->
-
-<!-- à la fin, avoir une slide qui montre exactement le chemin qu'on a fait ensemble pour dire qu'il y a encore beaucoup de choses à explorer -->
+Merci à tous, c'était Estéban, et si vous avez un feedback, c'est juste là.
+-->

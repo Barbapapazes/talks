@@ -1,8 +1,7 @@
 <script lang="ts" setup>
-const file = defineModel<{
-  file: string
-  code: string
-} | null>({ required: true })
+import type { ExplainedVisuallySelectedFile } from './types'
+
+const file = defineModel<ExplainedVisuallySelectedFile | null>({ required: true })
 </script>
 
 <template>

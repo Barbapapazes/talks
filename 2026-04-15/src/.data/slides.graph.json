@@ -1,792 +1,745 @@
 {
-  "filepath": "/Users/esoub/dev/p/talks/2026-04-15/src/slides.md",
+  "generatedAt": "2026-03-09T15:47:26.951Z",
   "nodes": [
     {
       "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
       "index": 0,
       "title": "Au cœur d’une pipeline : démystifions Vite et ses plugins",
-      "frontmatter": {
-        "htmlAttrs": {
-          "lang": "fr",
-          "dir": "ltr"
-        },
-        "fonts": {
-          "sans": "DM Sans",
-          "serif": "Noto Serif",
-          "mono": "Consolas"
-        },
-        "themeConfig": {
-          "primary": "#6C1EB9"
-        },
-        "codeCopy": false,
-        "colorSchema": "light",
-        "transition": "fade-out",
-        "theme": "slidev-theme-personal",
-        "addons": [
-          "slidev-addon-inalia"
-        ],
-        "title": "Au cœur d’une pipeline : démystifions Vite et ses plugins",
-        "titleTemplate": "%s - Estéban Soubiran",
-        "author": "Estéban Soubiran",
-        "keywords": "web,development,vite,plugins,pipeline",
-        "event": "MiXiT",
-        "date": "15 avril 2026",
-        "chooseYourOwnAdventure": true,
-        "timing": 0.6
-      }
-    },
-    {
-      "id": "intro",
-      "index": 1,
-      "name": "Intro",
-      "title": "Intro",
-      "frontmatter": {
-        "name": "Intro",
-        "layout": "intro",
-        "intro": "Ingénieur chez <span class=\"i-custom-takima inline-block size-5 align-text-top\"></span> Takima",
-        "group": "Introduction",
-        "timing": 0.5
-      }
+      "ready": true,
+      "timing": 0.6
     },
     {
       "id": "inalia",
-      "index": 2,
+      "index": 1,
       "name": "Inalia",
       "title": "Inalia",
-      "frontmatter": {
-        "name": "Inalia",
-        "layout": "inalia-overview",
-        "group": "Introduction",
-        "timing": 0.8
-      }
+      "ready": true,
+      "layout": "inalia-overview",
+      "group": "Introduction",
+      "timing": 0.8
+    },
+    {
+      "id": "intro",
+      "index": 2,
+      "name": "Intro",
+      "title": "Intro",
+      "ready": true,
+      "layout": "intro",
+      "group": "Introduction",
+      "timing": 0.5
+    },
+    {
+      "id": "faisons_connaissance",
+      "index": 3,
+      "name": "Faisons Connaissance",
+      "title": "Faisons Connaissance",
+      "ready": true,
+      "group": "Introduction"
     },
     {
       "id": "vite",
-      "index": 3,
+      "index": 4,
       "name": "Vite",
       "title": "Vite",
-      "frontmatter": {
-        "name": "Vite",
-        "group": "Vite Core",
-        "timing": 0.8,
-        "layout": "center-card",
-        "img": "/vite-background.png",
-        "transition": "slide-up"
-      }
+      "ready": true,
+      "layout": "center-card",
+      "group": "Vite Core",
+      "timing": 0.8
     },
     {
       "id": "vite_growth",
-      "index": 4,
+      "index": 5,
       "name": "Vite Growth",
       "title": "Vite Growth",
-      "frontmatter": {
-        "name": "Vite Growth",
-        "group": "Vite Core",
-        "timing": 0.9
-      }
+      "ready": true,
+      "group": "Vite Core",
+      "timing": 0.9
     },
     {
-      "id": "vite_choices",
-      "index": 5,
-      "name": "Vite - Choices",
-      "title": "Vite - Choices",
-      "frontmatter": {
-        "name": "Vite - Choices",
-        "group": "Vite Core",
-        "timing": 0.9,
-        "layout": "choices",
-        "choices": [
-          "Les origines de Vite",
-          "Le fonctionnement de Vite",
-          "Le futur de Vite"
-        ]
-      }
+      "id": "vite_growth_choices",
+      "index": 6,
+      "name": "Vite Growth - Choices",
+      "title": "Vite Growth - Choices",
+      "ready": true,
+      "layout": "choices",
+      "group": "Vite Core",
+      "timing": 0.9,
+      "choices": [
+        "Les origines de Vite",
+        "Le fonctionnement de Vite",
+        "Le futur de Vite"
+      ]
     },
     {
       "id": "les_origines_de_vite",
-      "index": 6,
+      "index": 7,
       "name": "Les origines de Vite",
       "title": "Les origines de Vite",
-      "frontmatter": {
-        "name": "Les origines de Vite",
-        "group": "Vite Core",
-        "timing": 1.5,
-        "layout": "bottom-left-card",
-        "img": "/vite-documentary-background.gif",
-        "choices": [
-          "Le fonctionnement de Vite"
-        ]
-      }
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Vite Core",
+      "timing": 1.5,
+      "choices": [
+        "Le fonctionnement de Vite"
+      ]
     },
     {
       "id": "le_fonctionnement_de_vite",
-      "index": 7,
+      "index": 8,
       "name": "Le fonctionnement de Vite",
       "title": "Le fonctionnement de Vite",
-      "frontmatter": {
-        "name": "Le fonctionnement de Vite",
-        "group": "Vite Core",
-        "timing": 1,
-        "layout": "ai"
-      }
+      "ready": true,
+      "layout": "ai",
+      "group": "Vite Core",
+      "timing": 1
     },
     {
       "id": "le_fonctionnement_de_vite_visualisation",
-      "index": 8,
+      "index": 9,
       "name": "Le fonctionnement de Vite - Visualisation",
       "title": "Le fonctionnement de Vite - Visualisation",
-      "frontmatter": {
-        "name": "Le fonctionnement de Vite - Visualisation",
-        "group": "Vite Core",
-        "timing": 2.2,
-        "layout": "full"
-      }
+      "ready": true,
+      "layout": "full",
+      "group": "Vite Core",
+      "timing": 2.2
     },
     {
       "id": "le_fonctionnement_de_vite_choices",
-      "index": 9,
+      "index": 10,
       "name": "Le fonctionnement de Vite - Choices",
       "title": "Le fonctionnement de Vite - Choices",
-      "frontmatter": {
-        "name": "Le fonctionnement de Vite - Choices",
-        "group": "Vite Core",
-        "timing": 0.1,
-        "layout": "choices",
-        "choices": [
-          "Le pré-bundling avec Esbuild",
-          "Tout n'est que plugin",
-          "Les entrailles d'un plugin Vite"
-        ]
-      }
+      "ready": false,
+      "layout": "choices",
+      "group": "Vite Core",
+      "timing": 0.1,
+      "choices": [
+        "Le pré-bundling avec Esbuild",
+        "Tout n'est que plugin",
+        "Les entrailles d'un plugin Vite"
+      ]
     },
     {
       "id": "le_futur_de_vite",
-      "index": 10,
+      "index": 11,
       "name": "Le futur de Vite",
       "title": "Le futur de Vite",
-      "frontmatter": {
-        "name": "Le futur de Vite",
-        "group": "Vite Core",
-        "timing": 1,
-        "choices": [
-          "Le fonctionnement de Vite"
-        ]
-      }
+      "ready": true,
+      "group": "Vite Core",
+      "timing": 1,
+      "choices": [
+        "Le fonctionnement de Vite"
+      ]
     },
     {
       "id": "tout_n_est_que_plugin",
-      "index": 11,
+      "index": 12,
       "name": "Tout n'est que plugin",
       "title": "Tout n'est que plugin",
-      "frontmatter": {
-        "name": "Tout n'est que plugin",
-        "group": "Feature Plugins",
-        "layout": "image",
-        "timing": 0.6
-      }
+      "ready": true,
+      "layout": "image",
+      "group": "Feature Plugins",
+      "timing": 0.6
     },
     {
       "id": "tout_n_est_que_plugin_choices",
-      "index": 12,
+      "index": 13,
       "name": "Tout n'est que plugin - Choices",
       "title": "Tout n'est que plugin - Choices",
-      "frontmatter": {
-        "name": "Tout n'est que plugin - Choices",
-        "group": "Feature Plugins",
-        "timing": 0.4,
-        "layout": "choices",
-        "choices": [
-          "Du CSS importé dans un fichier TypeScript",
-          "Une image chargée dans un fichier TypeScript",
-          "import.meta.glob est une illusion"
-        ]
-      }
+      "ready": false,
+      "layout": "choices",
+      "group": "Feature Plugins",
+      "timing": 0.4,
+      "choices": [
+        "Du CSS importé dans un fichier TypeScript",
+        "Une image chargée dans un fichier TypeScript",
+        "import.meta.glob est une illusion"
+      ]
     },
     {
       "id": "du_css_import_dans_un_fichier_typescript",
-      "index": 13,
+      "index": 14,
       "name": "Du CSS importé dans un fichier TypeScript",
       "title": "Du CSS importé dans un fichier TypeScript",
-      "frontmatter": {
-        "name": "Du CSS importé dans un fichier TypeScript",
-        "group": "Feature Plugins",
-        "timing": 0.2,
-        "layout": "bottom-left-card",
-        "img": "https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "transition": "slide-up"
-      }
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Feature Plugins",
+      "timing": 0.5
     },
     {
       "id": "du_css_import_dans_un_fichier_typescript_visualisation",
-      "index": 14,
+      "index": 15,
       "name": "Du CSS importé dans un fichier TypeScript - Visualisation",
       "title": "Du CSS importé dans un fichier TypeScript - Visualisation",
-      "frontmatter": {
-        "name": "Du CSS importé dans un fichier TypeScript - Visualisation",
-        "group": "Feature Plugins",
-        "timing": 0.4,
-        "choices": [
-          "Les entrailles d'un plugin Vite"
-        ]
-      }
+      "ready": true,
+      "group": "Feature Plugins",
+      "timing": 1.3,
+      "choices": [
+        "Les entrailles d'un plugin Vite"
+      ]
     },
     {
       "id": "une_image_charg_e_dans_un_fichier_typescript",
-      "index": 15,
+      "index": 16,
       "name": "Une image chargée dans un fichier TypeScript",
       "title": "Une image chargée dans un fichier TypeScript",
-      "frontmatter": {
-        "name": "Une image chargée dans un fichier TypeScript",
-        "group": "Feature Plugins",
-        "timing": 0.3,
-        "layout": "bottom-left-card",
-        "img": "https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "transition": "slide-up"
-      }
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Feature Plugins",
+      "timing": 0.5
     },
     {
       "id": "une_image_charg_e_dans_un_fichier_typescript_visualisation",
-      "index": 16,
+      "index": 17,
       "name": "Une image chargée dans un fichier TypeScript - Visualisation",
       "title": "Une image chargée dans un fichier TypeScript - Visualisation",
-      "frontmatter": {
-        "name": "Une image chargée dans un fichier TypeScript - Visualisation",
-        "group": "Feature Plugins",
-        "timing": 0,
-        "transition": "slide-up"
-      }
+      "ready": true,
+      "group": "Feature Plugins",
+      "timing": 1.6
     },
     {
       "id": "une_image_charg_e_dans_un_fichier_typescript_build",
-      "index": 17,
+      "index": 18,
       "name": "Une image chargée dans un fichier TypeScript - Build",
       "title": "Une image chargée dans un fichier TypeScript - Build",
-      "frontmatter": {
-        "name": "Une image chargée dans un fichier TypeScript - Build",
-        "group": "Feature Plugins",
-        "timing": 0,
-        "layout": "bottom-right-card",
-        "img": "https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "choices": [
-          "Les entrailles d'un plugin Vite"
-        ]
-      }
+      "ready": true,
+      "layout": "bottom-right-card",
+      "group": "Feature Plugins",
+      "timing": 1.1,
+      "choices": [
+        "Les entrailles d'un plugin Vite"
+      ]
     },
     {
       "id": "import_meta_glob_est_une_illusion",
-      "index": 18,
+      "index": 19,
       "name": "import.meta.glob est une illusion",
       "title": "import.meta.glob est une illusion",
-      "frontmatter": {
-        "name": "import.meta.glob est une illusion",
-        "group": "Feature Plugins",
-        "timing": 0,
-        "layout": "bottom-left-card",
-        "img": "https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "transition": "slide-up"
-      }
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Feature Plugins",
+      "timing": 0.3
     },
     {
       "id": "import_meta_glob_est_une_illusion_visualisation",
-      "index": 19,
+      "index": 20,
       "name": "import.meta.glob est une illusion - Visualisation",
       "title": "import.meta.glob est une illusion - Visualisation",
-      "frontmatter": {
-        "name": "import.meta.glob est une illusion - Visualisation",
-        "group": "Feature Plugins",
-        "timing": 0,
-        "choices": [
-          "Les entrailles d'un plugin Vite"
-        ]
-      }
+      "ready": true,
+      "group": "Feature Plugins",
+      "timing": 0.8,
+      "choices": [
+        "Les entrailles d'un plugin Vite"
+      ]
     },
     {
       "id": "le_pr_bundling_avec_esbuild",
-      "index": 20,
+      "index": 21,
       "name": "Le pré-bundling avec Esbuild",
       "title": "Le pré-bundling avec Esbuild",
-      "frontmatter": {
-        "name": "Le pré-bundling avec Esbuild",
-        "group": "Vite Core",
-        "timing": 2.1,
-        "choices": [
-          "Les entrailles d'un plugin Vite"
-        ]
-      }
+      "ready": true,
+      "group": "Vite Core",
+      "timing": 1.4
+    },
+    {
+      "id": "le_pr_bundling_avec_esbuild_r_solution",
+      "index": 22,
+      "name": "Le pré-bundling avec Esbuild - Résolution",
+      "title": "Le pré-bundling avec Esbuild - Résolution",
+      "ready": true,
+      "group": "Vite Core",
+      "timing": 0.7,
+      "choices": [
+        "Les entrailles d'un plugin Vite"
+      ]
     },
     {
       "id": "les_entrailles_d_un_plugin_vite",
-      "index": 21,
+      "index": 23,
       "name": "Les entrailles d'un plugin Vite",
       "title": "Les entrailles d'un plugin Vite",
-      "frontmatter": {
-        "name": "Les entrailles d'un plugin Vite",
-        "group": "Inside a Plugin",
-        "timing": 0.1,
-        "layout": "bottom-left-card"
-      }
+      "ready": false,
+      "layout": "bottom-left-card",
+      "group": "Inside a Plugin",
+      "timing": 0.1
     },
     {
       "id": "les_entrailles_d_un_plugin_vite_choices",
-      "index": 22,
+      "index": 24,
       "name": "Les entrailles d'un plugin Vite - Choices",
       "title": "Les entrailles d'un plugin Vite - Choices",
-      "frontmatter": {
-        "name": "Les entrailles d'un plugin Vite - Choices",
-        "group": "Inside a Plugin",
-        "timing": 0,
-        "layout": "choices",
-        "choices": [
-          "Tout n'est que plugin",
-          "La théorie des plugins Vite"
-        ]
-      }
+      "ready": false,
+      "layout": "choices",
+      "group": "Inside a Plugin",
+      "timing": 0,
+      "choices": [
+        "Tout n'est que plugin",
+        "La théorie des plugins Vite"
+      ]
     },
     {
       "id": "la_th_orie_des_plugins_vite",
-      "index": 23,
+      "index": 25,
       "name": "La théorie des plugins Vite",
       "title": "La théorie des plugins Vite",
-      "frontmatter": {
-        "name": "La théorie des plugins Vite",
-        "group": "Inside a Plugin",
-        "timing": 0.3,
-        "class": "p-0!"
-      }
+      "ready": false,
+      "group": "Inside a Plugin",
+      "timing": 0.3
     },
     {
       "id": "resolveid",
-      "index": 24,
+      "index": 26,
       "name": "resolveId",
       "title": "resolveId",
-      "frontmatter": {
-        "name": "resolveId",
-        "group": "Inside a Plugin",
-        "timing": 0
-      }
+      "ready": false,
+      "group": "Inside a Plugin",
+      "timing": 0
     },
     {
       "id": "load",
-      "index": 25,
+      "index": 27,
       "name": "load",
       "title": "load",
-      "frontmatter": {
-        "name": "load",
-        "group": "Inside a Plugin",
-        "timing": 0
-      }
+      "ready": false,
+      "group": "Inside a Plugin",
+      "timing": 0
     },
     {
       "id": "transform",
-      "index": 26,
+      "index": 28,
       "name": "transform",
       "title": "transform",
-      "frontmatter": {
-        "name": "transform",
-        "group": "Inside a Plugin",
-        "timing": 0,
-        "choices": [
-          "Des exemples concrets - Choices"
-        ]
-      }
+      "ready": false,
+      "group": "Inside a Plugin",
+      "timing": 0,
+      "choices": [
+        "Des exemples concrets - Choices"
+      ]
     },
     {
       "id": "des_exemples_concrets_choices",
-      "index": 27,
+      "index": 29,
       "name": "Des exemples concrets - Choices",
       "title": "Des exemples concrets - Choices",
-      "frontmatter": {
-        "name": "Des exemples concrets - Choices",
-        "group": "Concrete Examples",
-        "timing": 0.3,
-        "choices": [
-          "Vue Plugin - Exemple",
-          "Auto Import Plugin (unplugin-auto-import) - Exemple"
-        ]
-      }
+      "ready": false,
+      "group": "Concrete Examples",
+      "timing": 0.3,
+      "choices": [
+        "Vue Plugin - Exemple",
+        "Auto Import Plugin (unplugin-auto-import) - Exemple"
+      ]
     },
     {
       "id": "vue_plugin_exemple",
-      "index": 28,
+      "index": 30,
       "name": "Vue Plugin - Exemple",
       "title": "Vue Plugin - Exemple",
-      "frontmatter": {
-        "name": "Vue Plugin - Exemple",
-        "group": "Concrete Examples",
-        "timing": 1.7,
-        "choices": [
-          "Visualiser la pipeline"
-        ]
-      }
+      "ready": false,
+      "group": "Concrete Examples",
+      "timing": 1.7,
+      "choices": [
+        "Visualiser la pipeline"
+      ]
     },
     {
       "id": "auto_import_plugin_unplugin_auto_import_exemple",
-      "index": 29,
+      "index": 31,
       "name": "Auto Import Plugin (unplugin-auto-import) - Exemple",
       "title": "Auto Import Plugin (unplugin-auto-import) - Exemple",
-      "frontmatter": {
-        "name": "Auto Import Plugin (unplugin-auto-import) - Exemple",
-        "group": "Concrete Examples",
-        "timing": 0.8
-      }
+      "ready": false,
+      "group": "Concrete Examples",
+      "timing": 0.8
     },
     {
       "id": "auto_import_plugin_unplugin_auto_import_visualisation",
-      "index": 30,
+      "index": 32,
       "name": "Auto Import Plugin (unplugin-auto-import) - Visualisation",
       "title": "Auto Import Plugin (unplugin-auto-import) - Visualisation",
-      "frontmatter": {
-        "name": "Auto Import Plugin (unplugin-auto-import) - Visualisation",
-        "group": "Concrete Examples",
-        "timing": 0.7,
-        "choices": [
-          "Visualiser la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "un_plugin_pour_virtualiser",
-      "index": 31,
-      "name": "Un plugin pour virtualiser",
-      "title": "Un plugin pour virtualiser",
-      "frontmatter": {
-        "name": "Un plugin pour virtualiser",
-        "group": "Virtualization",
-        "timing": 0,
-        "choices": [
-          "Vue Router - Un module virtuel",
-          "VitePress - Des data virtuels",
-          "Icons Plugin - Des icônes virtuelles",
-          "Infos Plugin - Des infos virtuelles"
-        ]
-      }
-    },
-    {
-      "id": "vue_router_un_module_virtuel",
-      "index": 32,
-      "name": "Vue Router - Un module virtuel",
-      "title": "Vue Router - Un module virtuel",
-      "frontmatter": {
-        "name": "Vue Router - Un module virtuel",
-        "group": "Virtualization",
-        "timing": 0,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "vitepress_des_data_virtuels",
-      "index": 33,
-      "name": "VitePress - Des data virtuels",
-      "title": "VitePress - Des data virtuels",
-      "frontmatter": {
-        "name": "VitePress - Des data virtuels",
-        "group": "Virtualization",
-        "timing": 0.5,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "icons_plugin_des_ic_nes_virtuelles",
-      "index": 34,
-      "name": "Icons Plugin - Des icônes virtuelles",
-      "title": "Icons Plugin - Des icônes virtuelles",
-      "frontmatter": {
-        "name": "Icons Plugin - Des icônes virtuelles",
-        "group": "Virtualization",
-        "timing": 0,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "infos_plugin_des_infos_virtuelles",
-      "index": 35,
-      "name": "Infos Plugin - Des infos virtuelles",
-      "title": "Infos Plugin - Des infos virtuelles",
-      "frontmatter": {
-        "name": "Infos Plugin - Des infos virtuelles",
-        "group": "Virtualization",
-        "timing": 0.8,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "les_autres_capacit_s_des_plugins",
-      "index": 36,
-      "name": "Les autres capacités des plugins",
-      "title": "Les autres capacités des plugins",
-      "frontmatter": {
-        "name": "Les autres capacités des plugins",
-        "group": "Advanced Capabilities",
-        "timing": 1.9,
-        "choices": [
-          "Le HMR (Hot Module Replacement)",
-          "Le middleware - Un fichier virtuel",
-          "Vue Router - Un module virtuel",
-          "Run Plugin - Un plugin pour exécuter des commandes",
-          "Virtual Plugin - Un plugin pour virtualiser des modules",
-          "Laravel Vite - La communication inter-processus",
-          "unplugin-macro - Un plugin pour créer des macros",
-          "Nitro - Un backend"
-        ]
-      }
-    },
-    {
-      "id": "le_hmr_hot_module_replacement",
-      "index": 37,
-      "name": "Le HMR (Hot Module Replacement)",
-      "title": "Le HMR (Hot Module Replacement)",
-      "frontmatter": {
-        "name": "Le HMR (Hot Module Replacement)",
-        "group": "Advanced Capabilities",
-        "timing": 0.2,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "le_middleware_un_fichier_virtuel",
-      "index": 38,
-      "name": "Le middleware - Un fichier virtuel",
-      "title": "Le middleware - Un fichier virtuel",
-      "frontmatter": {
-        "name": "Le middleware - Un fichier virtuel",
-        "group": "Advanced Capabilities",
-        "timing": 1,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "run_plugin_un_plugin_pour_ex_cuter_des_commandes",
-      "index": 39,
-      "name": "Run Plugin - Un plugin pour exécuter des commandes",
-      "title": "Run Plugin - Un plugin pour exécuter des commandes",
-      "frontmatter": {
-        "name": "Run Plugin - Un plugin pour exécuter des commandes",
-        "group": "Advanced Capabilities",
-        "timing": 0.6,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "virtual_plugin_un_plugin_pour_virtualiser_des_modules",
-      "index": 40,
-      "name": "Virtual Plugin - Un plugin pour virtualiser des modules",
-      "title": "Virtual Plugin - Un plugin pour virtualiser des modules",
-      "frontmatter": {
-        "name": "Virtual Plugin - Un plugin pour virtualiser des modules",
-        "group": "Advanced Capabilities",
-        "timing": 0.9,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "laravel_vite_la_communication_inter_processus",
-      "index": 41,
-      "name": "Laravel Vite - La communication inter-processus",
-      "title": "Laravel Vite - La communication inter-processus",
-      "frontmatter": {
-        "name": "Laravel Vite - La communication inter-processus",
-        "group": "Advanced Capabilities",
-        "timing": 0.6,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "laravel_vite_la_communication_inter_processus_le_fichier_hot",
-      "index": 42,
-      "name": "Laravel Vite - La communication inter-processus - Le fichier hot",
-      "title": "Laravel Vite - La communication inter-processus - Le fichier hot",
-      "frontmatter": {
-        "name": "Laravel Vite - La communication inter-processus - Le fichier hot",
-        "group": "Advanced Capabilities",
-        "timing": 0.3,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "unplugin_macro_un_plugin_pour_cr_er_des_macros",
-      "index": 43,
-      "name": "unplugin-macro - Un plugin pour créer des macros",
-      "title": "unplugin-macro - Un plugin pour créer des macros",
-      "frontmatter": {
-        "name": "unplugin-macro - Un plugin pour créer des macros",
-        "group": "Advanced Capabilities",
-        "timing": 0,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
-    },
-    {
-      "id": "nitro_un_backend",
-      "index": 44,
-      "name": "Nitro - Un backend",
-      "title": "Nitro - Un backend",
-      "frontmatter": {
-        "name": "Nitro - Un backend",
-        "group": "Advanced Capabilities",
-        "timing": 0,
-        "choices": [
-          "Dans les profondeurs de la pipeline"
-        ]
-      }
+      "ready": false,
+      "group": "Concrete Examples",
+      "timing": 0.7,
+      "choices": [
+        "Visualiser la pipeline"
+      ]
     },
     {
       "id": "visualiser_la_pipeline",
-      "index": 45,
+      "index": 33,
       "name": "Visualiser la pipeline",
       "title": "Visualiser la pipeline",
-      "frontmatter": {
-        "name": "Visualiser la pipeline",
-        "group": "Concrete Examples",
-        "timing": 0.3,
-        "choices": [
-          "Dans les profondeurs de la pipeline",
-          "Un plugin pour virtualiser",
-          "Les autres capacités des plugins"
-        ]
-      }
+      "ready": false,
+      "group": "Concrete Examples",
+      "timing": 0.3
     },
     {
       "id": "visualiser_la_pipeline_choices",
-      "index": 46,
+      "index": 34,
       "name": "Visualiser la pipeline - Choices",
       "title": "Visualiser la pipeline - Choices",
-      "frontmatter": {
-        "name": "Visualiser la pipeline - Choices",
-        "group": "Concrete Examples",
-        "timing": 0.6,
-        "choices": [
-          "Dans les profondeurs de la pipeline",
-          "Un plugin pour virtualiser",
-          "Les autres capacités des plugins"
-        ]
-      }
+      "ready": true,
+      "group": "Concrete Examples",
+      "timing": 0.6,
+      "choices": [
+        "Dans les profondeurs de la pipeline",
+        "Un plugin pour virtualiser",
+        "Les autres capacités des plugins"
+      ]
+    },
+    {
+      "id": "un_plugin_pour_virtualiser",
+      "index": 35,
+      "name": "Un plugin pour virtualiser",
+      "title": "Un plugin pour virtualiser",
+      "ready": false,
+      "group": "Virtualization",
+      "timing": 0
+    },
+    {
+      "id": "un_plugin_pour_virtualiser_plugin_internals",
+      "index": 36,
+      "name": "Un plugin pour virtualiser - Plugin Internals",
+      "title": "Un plugin pour virtualiser - Plugin Internals",
+      "ready": false,
+      "group": "Virtualization",
+      "timing": 0
+    },
+    {
+      "id": "un_plugin_pour_virtualiser_choices",
+      "index": 37,
+      "name": "Un plugin pour virtualiser - Choices",
+      "title": "Un plugin pour virtualiser - Choices",
+      "ready": false,
+      "group": "Virtualization",
+      "timing": 0,
+      "choices": [
+        "Vue Router - Un module virtuel",
+        "VitePress - Des data virtuels",
+        "Icons Plugin - Des icônes virtuelles",
+        "Infos Plugin - Des infos virtuelles"
+      ]
+    },
+    {
+      "id": "vue_router_un_module_virtuel",
+      "index": 38,
+      "name": "Vue Router - Un module virtuel",
+      "title": "Vue Router - Un module virtuel",
+      "ready": false,
+      "group": "Virtualization",
+      "timing": 0
+    },
+    {
+      "id": "vue_router_un_module_virtuel_plugin_internals",
+      "index": 39,
+      "name": "Vue Router - Un module virtuel - Plugin Internals",
+      "title": "Vue Router - Un module virtuel - Plugin Internals",
+      "ready": false,
+      "group": "Virtualization",
+      "timing": 0,
+      "choices": [
+        "Dans les profondeurs de la pipeline"
+      ]
+    },
+    {
+      "id": "vitepress_des_data_virtuels",
+      "index": 40,
+      "name": "VitePress - Des data virtuels",
+      "title": "VitePress - Des data virtuels",
+      "ready": false,
+      "group": "Virtualization",
+      "timing": 0.5
+    },
+    {
+      "id": "vitepress_des_data_virtuels_plugin_internals",
+      "index": 41,
+      "name": "VitePress - Des data virtuels - Plugin Internals",
+      "title": "VitePress - Des data virtuels - Plugin Internals",
+      "ready": false,
+      "group": "Virtualization",
+      "timing": 0,
+      "choices": [
+        "Dans les profondeurs de la pipeline"
+      ]
+    },
+    {
+      "id": "icons_plugin_des_ic_nes_virtuelles",
+      "index": 42,
+      "name": "Icons Plugin - Des icônes virtuelles",
+      "title": "Icons Plugin - Des icônes virtuelles",
+      "ready": false,
+      "group": "Virtualization",
+      "timing": 0
+    },
+    {
+      "id": "icons_plugin_des_ic_nes_virtuelles_plugin_internals",
+      "index": 43,
+      "name": "Icons Plugin - Des icônes virtuelles - Plugin Internals",
+      "title": "Icons Plugin - Des icônes virtuelles - Plugin Internals",
+      "ready": false,
+      "group": "Virtualization",
+      "timing": 0,
+      "choices": [
+        "Dans les profondeurs de la pipeline"
+      ]
+    },
+    {
+      "id": "infos_plugin_des_infos_virtuelles",
+      "index": 44,
+      "name": "Infos Plugin - Des infos virtuelles",
+      "title": "Infos Plugin - Des infos virtuelles",
+      "ready": false,
+      "group": "Virtualization",
+      "timing": 0
+    },
+    {
+      "id": "infos_plugin_des_infos_virtuelles_plugin_internals",
+      "index": 45,
+      "name": "Infos Plugin - Des infos virtuelles - Plugin Internals",
+      "title": "Infos Plugin - Des infos virtuelles - Plugin Internals",
+      "ready": false,
+      "group": "Virtualization",
+      "timing": 0,
+      "choices": [
+        "Dans les profondeurs de la pipeline"
+      ]
+    },
+    {
+      "id": "les_autres_capacit_s_des_plugins",
+      "index": 46,
+      "name": "Les autres capacités des plugins",
+      "title": "Les autres capacités des plugins",
+      "ready": false,
+      "group": "Advanced Capabilities",
+      "timing": 1.9,
+      "choices": [
+        "Le HMR (Hot Module Replacement)",
+        "Le middleware - Un fichier virtuel",
+        "Vue Router - Un module virtuel",
+        "Infos Plugin - Des infos virtuelles",
+        "Run Plugin - Un plugin pour exécuter des commandes",
+        "Virtual Plugin - Un plugin pour virtualiser des modules",
+        "Laravel Vite - La communication inter-processus",
+        "unplugin-macro - Un plugin pour créer des macros",
+        "Nitro - Un backend"
+      ]
+    },
+    {
+      "id": "le_hmr_hot_module_replacement",
+      "index": 47,
+      "name": "Le HMR (Hot Module Replacement)",
+      "title": "Le HMR (Hot Module Replacement)",
+      "ready": false,
+      "group": "Advanced Capabilities",
+      "timing": 0.2,
+      "choices": [
+        "Dans les profondeurs de la pipeline"
+      ]
+    },
+    {
+      "id": "le_middleware_un_fichier_virtuel",
+      "index": 48,
+      "name": "Le middleware - Un fichier virtuel",
+      "title": "Le middleware - Un fichier virtuel",
+      "ready": true,
+      "group": "Advanced Capabilities",
+      "timing": 1,
+      "choices": [
+        "Dans les profondeurs de la pipeline"
+      ]
+    },
+    {
+      "id": "run_plugin_un_plugin_pour_ex_cuter_des_commandes",
+      "index": 49,
+      "name": "Run Plugin - Un plugin pour exécuter des commandes",
+      "title": "Run Plugin - Un plugin pour exécuter des commandes",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0.6
+    },
+    {
+      "id": "run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals",
+      "index": 50,
+      "name": "Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals",
+      "title": "Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0,
+      "choices": [
+        "Dans les profondeurs de la pipeline"
+      ]
+    },
+    {
+      "id": "virtual_plugin_un_plugin_pour_virtualiser_des_modules",
+      "index": 51,
+      "name": "Virtual Plugin - Un plugin pour virtualiser des modules",
+      "title": "Virtual Plugin - Un plugin pour virtualiser des modules",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0.9
+    },
+    {
+      "id": "virtual_plugin_un_plugin_pour_virtualiser_des_modules_plugin_internals",
+      "index": 52,
+      "name": "Virtual Plugin - Un plugin pour virtualiser des modules - Plugin Internals",
+      "title": "Virtual Plugin - Un plugin pour virtualiser des modules - Plugin Internals",
+      "ready": true,
+      "group": "Advanced Capabilities",
+      "timing": 0,
+      "choices": [
+        "Dans les profondeurs de la pipeline"
+      ]
+    },
+    {
+      "id": "laravel_vite_la_communication_inter_processus",
+      "index": 53,
+      "name": "Laravel Vite - La communication inter-processus",
+      "title": "Laravel Vite - La communication inter-processus",
+      "ready": false,
+      "group": "Advanced Capabilities",
+      "timing": 0.6
+    },
+    {
+      "id": "laravel_vite_la_communication_inter_processus_plugin_internals",
+      "index": 54,
+      "name": "Laravel Vite - La communication inter-processus - Plugin Internals",
+      "title": "Laravel Vite - La communication inter-processus - Plugin Internals",
+      "ready": false,
+      "layout": "bottom-center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0.3,
+      "choices": [
+        "Dans les profondeurs de la pipeline"
+      ]
+    },
+    {
+      "id": "unplugin_macro_un_plugin_pour_cr_er_des_macros",
+      "index": 55,
+      "name": "unplugin-macro - Un plugin pour créer des macros",
+      "title": "unplugin-macro - Un plugin pour créer des macros",
+      "ready": false,
+      "layout": "bottom-center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0
+    },
+    {
+      "id": "unplugin_macro_un_plugin_pour_cr_er_des_macros_plugin_internals",
+      "index": 56,
+      "name": "unplugin-macro - Un plugin pour créer des macros - Plugin Internals",
+      "title": "unplugin-macro - Un plugin pour créer des macros - Plugin Internals",
+      "ready": false,
+      "layout": "bottom-center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0,
+      "choices": [
+        "Dans les profondeurs de la pipeline"
+      ]
+    },
+    {
+      "id": "nitro_un_backend",
+      "index": 57,
+      "name": "Nitro - Un backend",
+      "title": "Nitro - Un backend",
+      "ready": false,
+      "group": "Advanced Capabilities",
+      "timing": 0
+    },
+    {
+      "id": "nitro_un_backend_plugin_internals",
+      "index": 58,
+      "name": "Nitro - Un backend - Plugin Internals",
+      "title": "Nitro - Un backend - Plugin Internals",
+      "ready": true,
+      "group": "Advanced Capabilities",
+      "timing": 0,
+      "choices": [
+        "Dans les profondeurs de la pipeline"
+      ]
     },
     {
       "id": "dans_les_profondeurs_de_la_pipeline",
-      "index": 47,
+      "index": 59,
       "name": "Dans les profondeurs de la pipeline",
       "title": "Dans les profondeurs de la pipeline",
-      "frontmatter": {
-        "name": "Dans les profondeurs de la pipeline",
-        "group": "Deep Dive & Conclusion",
-        "timing": 0.1
-      }
+      "ready": false,
+      "group": "Deep Dive & Conclusion",
+      "timing": 0.1
     },
     {
       "id": "prendre_en_main_l_ordre",
-      "index": 48,
+      "index": 60,
       "name": "Prendre en main l'ordre",
       "title": "Prendre en main l'ordre",
-      "frontmatter": {
-        "name": "Prendre en main l'ordre",
-        "group": "Deep Dive & Conclusion",
-        "timing": 0.2
-      }
+      "ready": false,
+      "group": "Deep Dive & Conclusion",
+      "timing": 0.2
     },
     {
       "id": "l_important_d_un_filtre",
-      "index": 49,
+      "index": 61,
       "name": "L'important d'un filtre",
       "title": "L'important d'un filtre",
-      "frontmatter": {
-        "name": "L'important d'un filtre",
-        "group": "Deep Dive & Conclusion",
-        "timing": 0.8,
-        "choices": [
-          "Live Coding",
-          "Q&A",
-          "La réunification avec Rolldown"
-        ]
-      }
+      "ready": false,
+      "group": "Deep Dive & Conclusion",
+      "timing": 0.8,
+      "choices": [
+        "Live Coding",
+        "Q&A"
+      ]
     },
     {
       "id": "live_coding",
-      "index": 50,
+      "index": 62,
       "name": "Live Coding",
       "title": "Live Coding",
-      "frontmatter": {
-        "name": "Live Coding",
-        "group": "Deep Dive & Conclusion",
-        "timing": 0.8,
-        "choices": [
-          "Conclusion"
-        ]
-      }
+      "ready": false,
+      "group": "Deep Dive & Conclusion",
+      "timing": 0.8,
+      "choices": [
+        "Conclusion"
+      ]
     },
     {
       "id": "q_a",
-      "index": 51,
+      "index": 63,
       "name": "Q&A",
       "title": "Q&A",
-      "frontmatter": {
-        "name": "Q&A",
-        "group": "Deep Dive & Conclusion",
-        "timing": 0.1,
-        "choices": [
-          "Conclusion"
-        ]
-      }
-    },
-    {
-      "id": "la_r_unification_avec_rolldown",
-      "index": 52,
-      "name": "La réunification avec Rolldown",
-      "title": "La réunification avec Rolldown",
-      "frontmatter": {
-        "name": "La réunification avec Rolldown",
-        "group": "Deep Dive & Conclusion",
-        "timing": 0.3,
-        "choices": [
-          "Conclusion"
-        ]
-      }
+      "ready": true,
+      "group": "Deep Dive & Conclusion",
+      "timing": 0.1,
+      "choices": [
+        "Conclusion"
+      ]
     },
     {
       "id": "conclusion",
-      "index": 53,
+      "index": 64,
       "name": "Conclusion",
       "title": "Conclusion",
-      "frontmatter": {
-        "name": "Conclusion",
-        "group": "Deep Dive & Conclusion",
-        "timing": 0.2
-      }
+      "ready": true,
+      "layout": "outro",
+      "group": "Deep Dive & Conclusion",
+      "timing": 0.2
     }
   ],
   "edges": [
     {
       "from": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
-      "to": "intro",
-      "label": ""
-    },
-    {
-      "from": "intro",
       "to": "inalia",
       "label": ""
     },
     {
       "from": "inalia",
+      "to": "intro",
+      "label": ""
+    },
+    {
+      "from": "intro",
+      "to": "faisons_connaissance",
+      "label": ""
+    },
+    {
+      "from": "faisons_connaissance",
       "to": "vite",
       "label": ""
     },
@@ -797,21 +750,21 @@
     },
     {
       "from": "vite_growth",
-      "to": "vite_choices",
+      "to": "vite_growth_choices",
       "label": ""
     },
     {
-      "from": "vite_choices",
+      "from": "vite_growth_choices",
       "to": "les_origines_de_vite",
       "label": "Les origines de Vite"
     },
     {
-      "from": "vite_choices",
+      "from": "vite_growth_choices",
       "to": "le_fonctionnement_de_vite",
       "label": "Le fonctionnement de Vite"
     },
     {
-      "from": "vite_choices",
+      "from": "vite_growth_choices",
       "to": "le_futur_de_vite",
       "label": "Le futur de Vite"
     },
@@ -907,6 +860,11 @@
     },
     {
       "from": "le_pr_bundling_avec_esbuild",
+      "to": "le_pr_bundling_avec_esbuild_r_solution",
+      "label": ""
+    },
+    {
+      "from": "le_pr_bundling_avec_esbuild_r_solution",
       "to": "les_entrailles_d_un_plugin_vite",
       "label": "Les entrailles d'un plugin Vite"
     },
@@ -971,42 +929,92 @@
       "label": "Visualiser la pipeline"
     },
     {
+      "from": "visualiser_la_pipeline",
+      "to": "visualiser_la_pipeline_choices",
+      "label": ""
+    },
+    {
+      "from": "visualiser_la_pipeline_choices",
+      "to": "dans_les_profondeurs_de_la_pipeline",
+      "label": "Dans les profondeurs de la pipeline"
+    },
+    {
+      "from": "visualiser_la_pipeline_choices",
+      "to": "un_plugin_pour_virtualiser",
+      "label": "Un plugin pour virtualiser"
+    },
+    {
+      "from": "visualiser_la_pipeline_choices",
+      "to": "les_autres_capacit_s_des_plugins",
+      "label": "Les autres capacités des plugins"
+    },
+    {
       "from": "un_plugin_pour_virtualiser",
+      "to": "un_plugin_pour_virtualiser_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "un_plugin_pour_virtualiser_plugin_internals",
+      "to": "un_plugin_pour_virtualiser_choices",
+      "label": ""
+    },
+    {
+      "from": "un_plugin_pour_virtualiser_choices",
       "to": "vue_router_un_module_virtuel",
       "label": "Vue Router - Un module virtuel"
     },
     {
-      "from": "un_plugin_pour_virtualiser",
+      "from": "un_plugin_pour_virtualiser_choices",
       "to": "vitepress_des_data_virtuels",
       "label": "VitePress - Des data virtuels"
     },
     {
-      "from": "un_plugin_pour_virtualiser",
+      "from": "un_plugin_pour_virtualiser_choices",
       "to": "icons_plugin_des_ic_nes_virtuelles",
       "label": "Icons Plugin - Des icônes virtuelles"
     },
     {
-      "from": "un_plugin_pour_virtualiser",
+      "from": "un_plugin_pour_virtualiser_choices",
       "to": "infos_plugin_des_infos_virtuelles",
       "label": "Infos Plugin - Des infos virtuelles"
     },
     {
       "from": "vue_router_un_module_virtuel",
+      "to": "vue_router_un_module_virtuel_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "vue_router_un_module_virtuel_plugin_internals",
       "to": "dans_les_profondeurs_de_la_pipeline",
       "label": "Dans les profondeurs de la pipeline"
     },
     {
       "from": "vitepress_des_data_virtuels",
+      "to": "vitepress_des_data_virtuels_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "vitepress_des_data_virtuels_plugin_internals",
       "to": "dans_les_profondeurs_de_la_pipeline",
       "label": "Dans les profondeurs de la pipeline"
     },
     {
       "from": "icons_plugin_des_ic_nes_virtuelles",
+      "to": "icons_plugin_des_ic_nes_virtuelles_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "icons_plugin_des_ic_nes_virtuelles_plugin_internals",
       "to": "dans_les_profondeurs_de_la_pipeline",
       "label": "Dans les profondeurs de la pipeline"
     },
     {
       "from": "infos_plugin_des_infos_virtuelles",
+      "to": "infos_plugin_des_infos_virtuelles_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "infos_plugin_des_infos_virtuelles_plugin_internals",
       "to": "dans_les_profondeurs_de_la_pipeline",
       "label": "Dans les profondeurs de la pipeline"
     },
@@ -1024,6 +1032,11 @@
       "from": "les_autres_capacit_s_des_plugins",
       "to": "vue_router_un_module_virtuel",
       "label": "Vue Router - Un module virtuel"
+    },
+    {
+      "from": "les_autres_capacit_s_des_plugins",
+      "to": "infos_plugin_des_infos_virtuelles",
+      "label": "Infos Plugin - Des infos virtuelles"
     },
     {
       "from": "les_autres_capacit_s_des_plugins",
@@ -1062,63 +1075,53 @@
     },
     {
       "from": "run_plugin_un_plugin_pour_ex_cuter_des_commandes",
+      "to": "run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals",
       "to": "dans_les_profondeurs_de_la_pipeline",
       "label": "Dans les profondeurs de la pipeline"
     },
     {
       "from": "virtual_plugin_un_plugin_pour_virtualiser_des_modules",
+      "to": "virtual_plugin_un_plugin_pour_virtualiser_des_modules_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "virtual_plugin_un_plugin_pour_virtualiser_des_modules_plugin_internals",
       "to": "dans_les_profondeurs_de_la_pipeline",
       "label": "Dans les profondeurs de la pipeline"
     },
     {
       "from": "laravel_vite_la_communication_inter_processus",
-      "to": "dans_les_profondeurs_de_la_pipeline",
-      "label": "Dans les profondeurs de la pipeline"
+      "to": "laravel_vite_la_communication_inter_processus_plugin_internals",
+      "label": ""
     },
     {
-      "from": "laravel_vite_la_communication_inter_processus_le_fichier_hot",
+      "from": "laravel_vite_la_communication_inter_processus_plugin_internals",
       "to": "dans_les_profondeurs_de_la_pipeline",
       "label": "Dans les profondeurs de la pipeline"
     },
     {
       "from": "unplugin_macro_un_plugin_pour_cr_er_des_macros",
+      "to": "unplugin_macro_un_plugin_pour_cr_er_des_macros_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "unplugin_macro_un_plugin_pour_cr_er_des_macros_plugin_internals",
       "to": "dans_les_profondeurs_de_la_pipeline",
       "label": "Dans les profondeurs de la pipeline"
     },
     {
       "from": "nitro_un_backend",
+      "to": "nitro_un_backend_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "nitro_un_backend_plugin_internals",
       "to": "dans_les_profondeurs_de_la_pipeline",
       "label": "Dans les profondeurs de la pipeline"
-    },
-    {
-      "from": "visualiser_la_pipeline",
-      "to": "dans_les_profondeurs_de_la_pipeline",
-      "label": "Dans les profondeurs de la pipeline"
-    },
-    {
-      "from": "visualiser_la_pipeline",
-      "to": "un_plugin_pour_virtualiser",
-      "label": "Un plugin pour virtualiser"
-    },
-    {
-      "from": "visualiser_la_pipeline",
-      "to": "les_autres_capacit_s_des_plugins",
-      "label": "Les autres capacités des plugins"
-    },
-    {
-      "from": "visualiser_la_pipeline_choices",
-      "to": "dans_les_profondeurs_de_la_pipeline",
-      "label": "Dans les profondeurs de la pipeline"
-    },
-    {
-      "from": "visualiser_la_pipeline_choices",
-      "to": "un_plugin_pour_virtualiser",
-      "label": "Un plugin pour virtualiser"
-    },
-    {
-      "from": "visualiser_la_pipeline_choices",
-      "to": "les_autres_capacit_s_des_plugins",
-      "label": "Les autres capacités des plugins"
     },
     {
       "from": "dans_les_profondeurs_de_la_pipeline",
@@ -1141,22 +1144,12 @@
       "label": "Q&A"
     },
     {
-      "from": "l_important_d_un_filtre",
-      "to": "la_r_unification_avec_rolldown",
-      "label": "La réunification avec Rolldown"
-    },
-    {
       "from": "live_coding",
       "to": "conclusion",
       "label": "Conclusion"
     },
     {
       "from": "q_a",
-      "to": "conclusion",
-      "label": "Conclusion"
-    },
-    {
-      "from": "la_r_unification_avec_rolldown",
       "to": "conclusion",
       "label": "Conclusion"
     }
