@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import ViteExplainedVisuallyModal from './ViteExplainedVisuallyModal.vue'
-
 const file = defineModel<{
   file: string
   code: string
@@ -8,15 +6,11 @@ const file = defineModel<{
 </script>
 
 <template>
-  <ViteExplainedVisuallyModal
+  <Modal
     :open="file !== null"
+    :title="file ? `File ${file.file}` : undefined"
     @update:open="() => file = null"
   >
-    <div class="h-full min-h-0 flex flex-col">
-      <div class="p-2 text-sm text-neutral-500 font-semibold">
-        File {{ file?.file }}
-      </div>
-      <div class="px-2 overflow-auto" v-html="file!.code" />
-    </div>
-  </ViteExplainedVisuallyModal>
+    <div v-if="file" class="min-h-0 flex-1 overflow-auto p-4" v-html="file.code" />
+  </Modal>
 </template>

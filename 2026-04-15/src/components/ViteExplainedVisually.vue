@@ -79,8 +79,8 @@ function foundFileByTitle(title: string) {
 }
 
 const file = ref<{ file: string, code: string } | null>(null)
-function onFileClick(_file: string) {
-  const foundFile = foundFileByTitle(_file)
+function onSelect(item: { title: string }) {
+  const foundFile = foundFileByTitle(item.title)
 
   if (foundFile) {
     file.value = { file: foundFile.title, code: foundFile.code }
@@ -146,7 +146,7 @@ function onHttpResponse(request: string, file: string | undefined, response: str
     <ViteExplainedVisuallyFileSystem
       v-click="[2, 13]"
       :items="fileSystem"
-      @file-click="onFileClick"
+      @select="onSelect"
     />
   </div>
 

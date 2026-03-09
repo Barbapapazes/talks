@@ -21,7 +21,7 @@ keywords: web,development,vite,plugins,pipeline
 event: MiXiT
 date: 15 avril 2026
 chooseYourOwnAdventure: true
-timing: 0
+timing: 0.6
 ---
 
 <!--
@@ -37,6 +37,8 @@ Source
 - Vite Documentary
 - Vite Documentation
 - Vite source code
+
+TODO: add a file that explains how the slides works, what to read to understand them and how to read them. (for a human and a machine)
 
 -->
 
@@ -60,7 +62,7 @@ layout: intro
 intro: Ingénieur chez <span class="i-custom-takima inline-block size-5
   align-text-top"></span> Takima
 group: Introduction
-timing: 0
+timing: 0.5
 ---
 
 <!--
@@ -77,7 +79,7 @@ Et puis vous pouvez me retrouver sur tous les réseaux, sur mon site ou même su
 name: Inalia
 layout: inalia-overview
 group: Introduction
-timing: 0
+timing: 0.8
 ---
 
 <!--
@@ -91,7 +93,7 @@ Et puis, vous pouvez même réagir en direct à ce que je dis, si vous trouvez �
 ---
 name: Vite
 group: Vite Core
-timing: 0
+timing: 0.8
 layout: center-card
 img: /vite-background.png
 transition: slide-up
@@ -101,7 +103,7 @@ transition: slide-up
 
 ::outside::
 
-<UsedByVite />
+<ViteEcosystem />
 
 <!--
 
@@ -114,7 +116,7 @@ On l'a vu au début, vous êtes une large majorité à utiliser Vite. Et c'est n
 ---
 name: Vite Growth
 group: Vite Core
-timing: 0
+timing: 0.9
 ---
 
 <GrowthChart />
@@ -138,7 +140,7 @@ C'est donc très clair, Vite est largement au dessus en terme d'adoption.
 ---
 name: Vite - Choices
 group: Vite Core
-timing: 0
+timing: 0.9
 layout: choices
 choices:
   - Les origines de Vite
@@ -161,7 +163,7 @@ Et enfin, si vous êtes du genre à vouloir anticiper l'avenir, à être curieux
 ---
 name: Les origines de Vite
 group: Vite Core
-timing: 0
+timing: 1.5
 layout: bottom-left-card
 img: /vite-documentary-background.gif
 choices:
@@ -175,6 +177,14 @@ import {} from 'my-module'
 ```
 
 </v-click>
+
+<!--
+
+TODO: Pourquoi ça fonctionne ? (à voir si on le met dans les origines ou dans le fonctionnement)
+
+> Dans la spécification ECMAScript Modules utilisée par les navigateurs, un import doit charger une ressource JavaScript valide (avec Content-Type: text/javascript ou équivalent). Si un navigateur télécharge directement un fichier .css depuis un import JS, il échoue avec une erreur du type :
+
+ -->
 
 <!--
 
@@ -195,7 +205,7 @@ C'est comme ça qu'est né Vite en 2020 et c'est ce qui le rend si rapide au dé
 ---
 name: Le fonctionnement de Vite
 group: Vite Core
-timing: 0
+timing: 1
 layout: ai
 ---
 
@@ -220,7 +230,7 @@ Nan, parce que c'est bien sympa tout ces explications mais c'est pas très visue
 ---
 name: Le fonctionnement de Vite - Visualisation
 group: Vite Core
-timing: 0
+timing: 2.2
 layout: full
 ---
 
@@ -255,7 +265,7 @@ Et bien, vous faites bien de poser la question, c'est tout l'objectif de cette c
 ---
 name: Le fonctionnement de Vite - Choices
 group: Vite Core
-timing: 0
+timing: 0.1
 layout: choices
 choices:
   - Le pré-bundling avec Esbuild
@@ -272,7 +282,7 @@ TODO: écrire le texte pour le choix
 ---
 name: Le futur de Vite
 group: Vite Core
-timing: 0
+timing: 1
 choices:
   - Le fonctionnement de Vite
 ---
@@ -296,7 +306,8 @@ https://viteplus.dev/
 name: Tout n'est que plugin
 group: Feature Plugins
 layout: image
-timing: 0
+img: https://images.unsplash.com/photo-1564089969562-7b8667a4adec?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+timing: 0.6
 ---
 
 <AllAboutPlugins />
@@ -322,7 +333,7 @@ Et le plus dingue, c'est que tout ça, ce n'est implémenté qu'à travers des p
 ---
 name: Tout n'est que plugin - Choices
 group: Feature Plugins
-timing: 0
+timing: 0.4
 layout: choices
 choices:
   - Du CSS importé dans un fichier TypeScript
@@ -341,126 +352,180 @@ TODO: texte pour passer aux choix suivants
 ---
 name: Du CSS importé dans un fichier TypeScript
 group: Feature Plugins
-timing: 0
+timing: 0.5
 layout: bottom-left-card
+img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+transition: slide-up
 ---
 
 ```ts
 import './style.css'
 ```
 
-<!-- TODO: que contient notre fichier CSS d'ailleurs? -->
-
 <!--
+Ça ne choque plus personne, mais en JavaScript, c'est impossible d'importer du CSS dans un fichier TypeScript.
 
-Ça ne choque plus personne, mais ça n'existe pas en JavaScript. C'est impossible d'importer du CSS dans un fichier JavaScript.
+Pourtant, c'est ce qu'on fait tous les jours avec Vite.
+
+Pourquoi ? Parce que les faits, le navigateur, quand il voit un `import`, il se moque pas mal de l'extension et il demande le module, quoi qu'il arrive, tant que le le `Content-Type` du retour est `text/javascript`.
 -->
 
 ---
 name: Du CSS importé dans un fichier TypeScript - Visualisation
 group: Feature Plugins
-timing: 0
-class: bg-black
+timing: 1.3
 choices:
   - Les entrailles d'un plugin Vite
 ---
 
-<Suspense>
-  <CssInTs class="absolute top-20 left-40 -right-px -bottom-px" />
-</Suspense>
+<BackgroundImage img="https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+
+<CssImportedIntoTypeScript class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
+Ce que je vous propose, c'est de regarde d'un peu plus proche [click] les requêtes et aux réponses le notre navigateur.
 
-1. **resolveId** : Identifie le fichier `style.css`
-2. **load** : Lit le contenu CSS du disque
-3. **transform** : Transforme le CSS en JavaScript qui :
-   - Crée un élément `<style>` dans le `<head>`
-   - Y injecte le CSS
-   - Supporte le HMR pour mise à jour instantanée
-4. Le navigateur reçoit du JavaScript pur
+On retrouve, comme tout à l'heure, notre fichier index.html qui contient un lien vers notre fichier TypeScript. Au passage, votre navigateur ne lit toujours pas de TypeScript.
 
+Si on regarde le fichier main.ts, on se rend compte que c'est du JavaScript valide et on y retrouve le style.css.
+
+La requête suivant, c'est justement ce style.css. Si on regarde la réponse, on se rend compte que ce n'est que du JavaScript. On y retrouve ici le contenu de notre fichier CSS. Le point important ici c'est la fonction `__vite__updateStyle` qui va se charger d'injecter le contenu de notre fichier CSS dans le `head` de notre page au moment de l'execution du script.
+
+Autrement dit, la transformation de notre fichier CSS natif pour en faire un fichier JavaScript est entièrement géré par un plugin, qui fait plus de 3 000 lignes, je vous l'épargne.
 -->
-
-<!--
-
-TODO: faire un schéma dynamique du fonctionnement de Vite et montrer ce qu'il se passe... (et le reprendre à plusieurs endroits sur plusieurs slides)
-
-faut le réfléchir lui, j'ai un doute sur comment le faire pour qu'il soit sympa visuellement et réutilisable
-
- -->
-
-<!--
-
-Dans les faits, le navigateur, quand il voit un `import`, il se moque pas mal de l'extension et il requête le module. Vite, lui, va s'apercevoir qu'il s'agit de CSS et le faire passer un plugin qui va transformer ce CSS en JavaScript pour l'injecter dans le `<head>` de votre page.
-
- -->
 
 ---
 name: Une image chargée dans un fichier TypeScript
 group: Feature Plugins
-timing: 0
+timing: 0.5
+layout: bottom-left-card
+img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+transition: slide-up
+---
+
+```ts
+import img from './image.png'
+```
+
+<!--
+Ça ne choque peut-être personne, mais en JavaScript, c'est impossible d'importer une image dans un fichier TypeScript.
+
+Pourtant, c'est ce qu'on peut faire avec Vite.
+
+Pourquoi ? Parce que dans les faits, le navigateur, quand il voit un `import`, il se moque pas mal de l'extension et il demande le module, quoi qu'il arrive, tant que le `Content-Type` du retour est `text/javascript`.
+-->
+
+---
+name: Une image chargée dans un fichier TypeScript - Visualisation
+group: Feature Plugins
+timing: 1.6
+transition: slide-up
+---
+
+<BackgroundImage img="https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+
+<AnImageLoadedIntoTypeScript class="absolute top-20 left-40 -right-px -bottom-px" />
+
+<!--
+Ce que je vous propose, c'est de regarder d'un peu plus proche [click] les requêtes et les réponses dans le navigateur.
+
+On retrouve, comme tout à l'heure, notre fichier index.html qui contient un lien vers notre fichierTypeScript. Au passe, votre navigateur ne lit toujours pas de TypeScript.
+
+Si on regarde le fichier main.ts, on y voit l'import de différentes images.
+
+1. La première, c'est `import` normal.
+2. Le second, c'est toujours un `import` normal mais pour une image qui fait moins de 4KiB.
+3. La troisième, l'URL de l'`import` contient une query `inline`.
+4. La quatrième contient une query `raw`.
+
+À votre avis, que va nous retourner Vite ?
+
+1. Pour cette première image, on voit que Vite nous retourne un fichier JavaScript avec l'URL vers l'image pour l'utiliser dans une balise `img` par example.
+2. Pour la seconde aussi, c'est tout comme la première en développement.
+3. Pour la troisième en revanche, c'est différent. L'image retournée est en base64. L'objectif, c'est de pouvoir inliner l'asset pour éviter une requête vers le serveur.
+4. Pour la quatrième, on a carrément l'image en binaire qui est renvoyée. Là, c'est pratique si vous avez besoin de faire du traitement dessus, si c'est un shader pour Three.js par example.
+-->
+
+---
+name: Une image chargée dans un fichier TypeScript - Build
+group: Feature Plugins
+timing: 1.1
+layout: bottom-right-card
+img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
   - Les entrailles d'un plugin Vite
 ---
 
-```ts
-import img from './image.png' // Retourne l'URL publique
-import imgRaw from './image.png?raw' // Contenu brut
-import imgUrl from './image.png?url' // Explicitement l'URL
-```
-
-## Le plugin Asset gère plusieurs cas
-
-- Par défaut : retourne le chemin public de l'asset
-- En production : hash du fichier pour cache busting
-- Petites images : peuvent être inline en base64
-- Query parameters pour contrôle fin (`?url`, `?raw`, `?inline`)
-- Optimisation automatique possible (compression, formats modernes)
+<AnImageLoadedIntoTypeScriptBuildTree />
 
 <!--
+Là où ça devient intéressant, c'est au moment du build.
 
-import img from './image.png'
+Vous avez là l'output du build de la même application que ce qu'on a vu juste avant.
 
-ça ne choque plus personne mais dans la vraie vie, ça ne fonctionne pas
+Première chose, on y voit notre image avec un hash et c'est normal, Vite ajoute un hash dans les assets qu'il processe, exactement comme pour les fichiers JavaScript. Si vous changer l'image en gardant le même nom, le hash sera différent et donc ça vous éviter les problèmes de caches.
 
-reprendre le schéma dynamique du fonctionnement de Vite et montrer ce qu'il se passe...
-montrer les différentes options parce qu'il peut automatiser
+Ce qu'on voit aussi, c'est qu'il n'y a pas notre seconde image, la tiny image. Elle a disparu ?
 
- -->
+Regardons le fichier `index.js` d'un peu plus près.
+
+Aaaaah, elle est là ! Au moment du build, Vite regarde la taille des assets et s'ils font moins de 4KiB, configurable, il les   inline pour éviter une requête HTTP.
+
+D'ailleurs, on y retrouve aussi la grosse image d'inlinée et sa version raw.
+-->
 
 ---
 name: import.meta.glob est une illusion
 group: Feature Plugins
-timing: 0
+timing: 0.3
+layout: bottom-left-card
+img: https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+transition: slide-up
+---
+
+```ts
+const modules = import.meta.glob('./**/*.vue')
+```
+
+<!--
+Ça ne choque peut-être personne, mais en JavaScript, `import.meta.glob` ça n'existe pas.
+
+C'est une création de Vite qui permet d'importer plusieurs modules en une seule fois via un glob pattern.
+
+Dans notre cas, ça permet d'importer tous les fichiers Vue du dossier src.
+-->
+
+---
+name: import.meta.glob est une illusion - Visualisation
+group: Feature Plugins
+timing: 0.8
 choices:
   - Les entrailles d'un plugin Vite
 ---
 
-```ts
-const modules = import.meta.glob('./dir/*.js')
-```
+<BackgroundImage img="https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
 
-## Ce code est transformé en :
+<ImportMetaGlobIsAnIllusion class="absolute top-20 left-40 -right-px -bottom-px" />
 
-```ts
-const modules = {
-  './dir/foo.js': () => import('./dir/foo.js'),
-  './dir/bar.js': () => import('./dir/bar.js'),
-}
-```
+<!--
+Ce que je vous propose, c'est de regarder d'un peu plus proche [click] les requêtes et les réponses dans le navigateur pour mieux comprendre comment ça fonctionne.
 
-- Plugin `importMetaGlob` détecte ce pattern
-- Scan du filesystem à la compilation
-- Génération de code JavaScript standard
-- **import.meta.glob n'existe pas dans le navigateur !**
+Dans un premier temps, on charge notre document et le serveur Vite nous retourne un fichier index.html qui contient un lien vers notre fichier main.ts.
+
+Ensuite, on retrouve notre fichier main.ts. Ah, surprise, il semble que notre `import.meta.glob` se soit quelque peut transformé. C'est devenu un objet qui contient en clé, le fichier avec un chemin relatif au main.ts et en valeur, un `import` prêt avec l'url absolue du fichier.
+
+Tout ça, c'est calculé dans Vite par Node automatiquement.
+-->
 
 ---
 name: Le pré-bundling avec Esbuild
 group: Vite Core
-timing: 0
-choices:
-  - Les entrailles d'un plugin Vite
+timing: 1.4
 ---
+
+<BackgroundImage img="https://images.unsplash.com/photo-1556139918-9b92e8b00105?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+
+<PreBundlingWithEsbuild class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
 
@@ -485,6 +550,23 @@ Heureusement, Vite au démarrage va scanner les imports et convertir les dépend
 
 Maintenant on a besoin de lodash, alors on l'install puis on l'importe. [click] Vous avez vu la cascade de requêtes dans l'onglet Réseau ? Plus de 600 requêtes pour récupérer tous les modules de lodash. C'est à cause d'un barrel file qui ré-exporte tous les modules de lodash. [click]
 
+-->
+
+---
+name: Le pré-bundling avec Esbuild - Résolution
+group: Vite Core
+timing: 0.7
+choices:
+  - Les entrailles d'un plugin Vite
+---
+
+<BackgroundImage img="https://images.unsplash.com/photo-1556139918-9b92e8b00105?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+
+
+<PreBundlingWithEsbuildSolved class="absolute top-20 left-40 -right-px -bottom-px" />
+
+<!--
+
 Heureusement, Vite lors de son scannage va automatiquement pré-bundler toutes les dépendances qu'il va trouver. Autrement dit, il va générer un unique fichier JavaScript pour chaque dépendance. [click] Et voilà, une unique requête pour charger lodash !
 
 Pourquoi c'est important ? Pour les mêmes raisons qu'il est déconseillé de faire des n+1 à votre base de données. Le réseau ajoute une surcharge non négligeable et votre navigateur est limité à un nombre de requêtes simultanées. Plus vous faites de requêtes, plus votre application sera lente à démarrer. Et dans ce cas-là, on ne parle pas de quelques millisecondes, mais de secondes.
@@ -494,8 +576,9 @@ Pourquoi c'est important ? Pour les mêmes raisons qu'il est déconseillé de fa
 ---
 name: Les entrailles d'un plugin Vite
 group: Inside a Plugin
-timing: 0
+timing: 0.1
 layout: bottom-left-card
+img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -557,7 +640,7 @@ choices:
 ---
 name: La théorie des plugins Vite
 group: Inside a Plugin
-timing: 0
+timing: 0.3
 class: p-0!
 ---
 
@@ -659,7 +742,7 @@ name: transform
 group: Inside a Plugin
 timing: 0
 choices:
-  - Des exemples concrets
+  - Des exemples concrets - Choices
 ---
 
 ```ts
@@ -689,10 +772,10 @@ transform(code: string, id: string) {
 ---
 name: Des exemples concrets - Choices
 group: Concrete Examples
-timing: 0
+timing: 0.3
 choices:
-  - Vue Plugin
-  - Auto Import Plugin (unplugin-auto-import)
+  - Vue Plugin - Exemple
+  - Auto Import Plugin (unplugin-auto-import) - Exemple
 ---
 
 <!--
@@ -706,9 +789,9 @@ TODO: mettre la partie sélection de la partie suivante
 -->
 
 ---
-name: Vue Plugin
+name: Vue Plugin - Exemple
 group: Concrete Examples
-timing: 0
+timing: 1.7
 choices:
   - Visualiser la pipeline
 ---
@@ -762,7 +845,7 @@ Et là, vous êtes sûrement en train de vous dire que c'est pratique de pouvoir
 ---
 name: Auto Import Plugin (unplugin-auto-import) - Exemple
 group: Concrete Examples
-timing: 0
+timing: 0.8
 ---
 
 ```vue
@@ -793,7 +876,7 @@ Vous êtes sûrement en train de vous dire que c'est quand même un peu magique,
 ---
 name: Auto Import Plugin (unplugin-auto-import) - Visualisation
 group: Concrete Examples
-timing: 0
+timing: 0.7
 choices:
   - Visualiser la pipeline
 ---
@@ -863,7 +946,7 @@ import { routes } from 'vue-router/auto-routes'
 ---
 name: VitePress - Des data virtuels
 group: Virtualization
-timing: 0
+timing: 0.5
 choices:
   - Dans les profondeurs de la pipeline
 ---
@@ -927,7 +1010,7 @@ import IconAccessibility from '~icons/carbon/accessibility'
 ---
 name: Infos Plugin - Des infos virtuelles
 group: Virtualization
-timing: 0
+timing: 0.8
 choices:
   - Dans les profondeurs de la pipeline
 ---
@@ -957,7 +1040,7 @@ TODO: faire une second slide pour montrer comment ça fonctionne under the hood 
 ---
 name: Les autres capacités des plugins
 group: Advanced Capabilities
-timing: 0
+timing: 1.9
 choices:
   - Le HMR (Hot Module Replacement)
   - Le middleware - Un fichier virtuel
@@ -990,7 +1073,7 @@ Aujourd'hui, nous n'en verrons qu'un mais rendez-vous compte, les possibilités 
 ---
 name: Le HMR (Hot Module Replacement)
 group: Advanced Capabilities
-timing: 0
+timing: 0.2
 choices:
   - Dans les profondeurs de la pipeline
 ---
@@ -1035,7 +1118,7 @@ Exemple : invalider un module virtuel quand un fichier sur le disque change.
 ---
 name: Le middleware - Un fichier virtuel
 group: Advanced Capabilities
-timing: 0
+timing: 1
 choices:
   - Dans les profondeurs de la pipeline
 ---
@@ -1080,7 +1163,7 @@ On peut imaginer mocker une API pendant le développement avec un middleware, si
 ---
 name: Run Plugin - Un plugin pour exécuter des commandes
 group: Advanced Capabilities
-timing: 0
+timing: 0.6
 choices:
   - Dans les profondeurs de la pipeline
 ---
@@ -1120,7 +1203,7 @@ Là, par exemple, on se sert de ce plugin pour régénérer les types de nos rou
 ---
 name: Virtual Plugin - Un plugin pour virtualiser des modules
 group: Advanced Capabilities
-timing: 0
+timing: 0.9
 choices:
   - Dans les profondeurs de la pipeline
 ---
@@ -1159,7 +1242,7 @@ Le truc, c'est que devoir faire à la main un plugin pour chaque module virtuel,
 ---
 name: Laravel Vite - La communication inter-processus
 group: Advanced Capabilities
-timing: 0
+timing: 0.6
 choices:
   - Dans les profondeurs de la pipeline
 ---
@@ -1177,7 +1260,7 @@ Laravel, c'est du PHP et Vite, c'est du Node.js, chacun tournant dans son propre
 ---
 name: Laravel Vite - La communication inter-processus - Le fichier hot
 group: Advanced Capabilities
-timing: 0
+timing: 0.3
 choices:
   - Dans les profondeurs de la pipeline
 ---
@@ -1239,9 +1322,17 @@ const users = $fetch('/api/users') // Exécuté au build!
 - Code generation
 
 ---
+name: Nitro - Un backend
+group: Advanced Capabilities
+timing: 0
+choices:
+  - Dans les profondeurs de la pipeline
+---
+
+---
 name: Visualiser la pipeline
 group: Concrete Examples
-timing: 0
+timing: 0.3
 choices:
   - Dans les profondeurs de la pipeline
   - Un plugin pour virtualiser
@@ -1262,7 +1353,7 @@ Je l'utilise rarement mais c'est véritablement lui qui m'a permis de comprendre
 ---
 name: Visualiser la pipeline - Choices
 group: Concrete Examples
-timing: 0
+timing: 0.6
 choices:
   - Dans les profondeurs de la pipeline
   - Un plugin pour virtualiser
@@ -1286,7 +1377,7 @@ Attention, il n'y aura pas de retour en arrière possible, alors choisissez judi
 ---
 name: Dans les profondeurs de la pipeline
 group: Deep Dive & Conclusion
-timing: 0
+timing: 0.1
 ---
 
 ## PluginContainer : le chef d'orchestre
@@ -1318,7 +1409,7 @@ creuser la manière dont les plugins sont appelés, dans quel ordre
 ---
 name: Prendre en main l'ordre
 group: Deep Dive & Conclusion
-timing: 0
+timing: 0.2
 ---
 
 ## La propriété `enforce`
@@ -1356,7 +1447,7 @@ slide relativement rapide
 ---
 name: L'important d'un filtre
 group: Deep Dive & Conclusion
-timing: 0
+timing: 0.8
 choices:
   - Live Coding
   - Q&A
@@ -1424,7 +1515,7 @@ Du coup, on peut extraire le filtrage en amont. Dans ce cas, on peut complèteme
 ---
 name: Live Coding
 group: Deep Dive & Conclusion
-timing: 0
+timing: 0.8
 choices:
   - Conclusion
 ---
@@ -1451,7 +1542,7 @@ plugin autour de l'AI ? Là, j'ai pas d'idée
 ---
 name: Q&A
 group: Deep Dive & Conclusion
-timing: 0
+timing: 0.1
 choices:
   - Conclusion
 ---
@@ -1465,7 +1556,7 @@ un long Q&A parce que même après le live coding, il peut quand même y avoir d
 ---
 name: La réunification avec Rolldown
 group: Deep Dive & Conclusion
-timing: 0
+timing: 0.3
 choices:
   - Conclusion
 ---
@@ -1498,7 +1589,7 @@ Pourquoi certains plugins ne marchent qu'en build ?
 ---
 name: Conclusion
 group: Deep Dive & Conclusion
-timing: 0
+timing: 0.2
 ---
 
 <!--
@@ -1510,6 +1601,5 @@ The Vite Documentary
 Vite Discord
 
  -->
-
 
 <!-- à la fin, avoir une slide qui montre exactement le chemin qu'on a fait ensemble pour dire qu'il y a encore beaucoup de choses à explorer -->

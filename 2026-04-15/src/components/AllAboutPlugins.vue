@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-// TODO: rework the description using a better prompt
-// TODO: find icons for each feature
+import VAfter from '@slidev/client/builtin/VAfter.ts'
+import VClick from '@slidev/client/builtin/VClick.ts'
+
 const features = [
   {
     icon: 'i-vscode-icons-file-type-html',
@@ -28,12 +29,12 @@ const features = [
     description: 'Import JSON files directly as JavaScript modules.',
   },
   {
-    icon: '',
+    icon: 'i-vscode-icons-file-type-search-result',
     name: 'Glob Import',
     description: 'Import multiple modules using a file pattern.',
   },
   {
-    icon: '',
+    icon: 'i-vscode-icons-folder-type-include',
     name: 'Dynamic Import',
     description: 'Load modules dynamically with native code splitting.',
   },
@@ -43,7 +44,7 @@ const features = [
     description: 'Import and run WebAssembly modules from JavaScript.',
   },
   {
-    icon: '',
+    icon: 'i-vscode-icons-file-type-light-config',
     name: 'Web Workers',
     description: 'Run code in background threads using Web Workers.',
   },
@@ -53,17 +54,24 @@ const features = [
 <template>
   <div class="h-full flex items-center justify-center">
     <div class="grid grid-cols-3 gap-4">
-      <Card v-for="feature in features" :key="feature.name">
-        <div class="flex flex-row items-center gap-1">
-          <div :class="feature.icon" class="size-5" />
-          <div class="text-sm text-neutral-700">
-            {{ feature.name }}
-          </div>
-        </div>
-        <div class="mt-2 text-xs text-neutral-500">
-          {{ feature.description }}
-        </div>
-      </Card>
+      <template v-for="(feature, index) in features" :key="feature.name">
+        <component :is="index === 0 ? VClick : VAfter">
+          <Card
+            class="transition forward:delay-[--delay]"
+            :style="{ '--delay': `calc(${(index % 3) + (Math.floor(index / 3))} * 30ms)` }"
+          >
+            <div class="flex flex-row items-center gap-1">
+              <div :class="feature.icon" class="size-5" />
+              <div class="text-sm text-neutral-700">
+                {{ feature.name }}
+              </div>
+            </div>
+            <div class="mt-2 text-xs text-neutral-500">
+              {{ feature.description }}
+            </div>
+          </Card>
+        </component>
+      </template>
     </div>
   </div>
 </template>

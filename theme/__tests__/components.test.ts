@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it } from 'vitest'
+import { defineComponent, h, inject, provide } from 'vue'
 import BackgroundImage from '../components/BackgroundImage.vue'
 import Card from '../components/Card.vue'
 import CardLayout from '../components/CardLayout.vue'
@@ -7,6 +8,88 @@ import Footer from '../components/Footer.vue'
 import FooterItem from '../components/FooterItem.vue'
 import FooterLink from '../components/FooterLink.vue'
 import Icon from '../components/Icon.vue'
+import Modal from '../components/Modal.vue'
+import Tree from '../components/Tree.vue'
+
+afterEach(() => {
+  document.body.innerHTML = ''
+})
+
+const dialogCloseKey = Symbol('dialog-close')
+
+const DialogRootStub = defineComponent({
+  props: {
+    open: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  emits: ['update:open'],
+  setup(props, { emit, slots }) {
+    const close = () => emit('update:open', false)
+    provide(dialogCloseKey, close)
+
+    return () => props.open
+      ? h('div', { class: 'dialog-root' }, slots.default?.({ close }))
+      : null
+  },
+})
+
+const DialogPortalStub = defineComponent({
+  setup(_, { slots }) {
+    return () => h('div', { class: 'dialog-portal' }, slots.default?.())
+  },
+})
+
+const DialogOverlayStub = defineComponent({
+  setup() {
+    return () => h('div', { class: 'dialog-overlay' })
+  },
+})
+
+const DialogContentStub = defineComponent({
+  setup(_, { attrs, slots }) {
+    return () => h('div', { ...attrs, role: 'dialog' }, slots.default?.())
+  },
+})
+
+const DialogTitleStub = defineComponent({
+  setup(_, { slots }) {
+    return () => h('h2', slots.default?.())
+  },
+})
+
+const DialogDescriptionStub = defineComponent({
+  setup(_, { slots }) {
+    return () => h('p', slots.default?.())
+  },
+})
+
+const DialogCloseStub = defineComponent({
+  setup(_, { attrs, slots }) {
+    const close = inject<() => void>(dialogCloseKey, () => {})
+
+    return () => h('button', {
+      'type': 'button',
+      'aria-label': attrs['aria-label'] as string | undefined,
+      'onClick': close,
+    }, slots.default?.())
+  },
+})
+
+const modalMountOptions = {
+  global: {
+    stubs: {
+      DialogRoot: DialogRootStub,
+      DialogPortal: DialogPortalStub,
+      DialogOverlay: DialogOverlayStub,
+      DialogContent: DialogContentStub,
+      DialogTitle: DialogTitleStub,
+      DialogDescription: DialogDescriptionStub,
+      DialogClose: DialogCloseStub,
+    },
+  },
+}
 
 describe('backgroundImage', () => {
   it('renders nothing when no img is provided', () => {
@@ -155,5 +238,155 @@ describe('cardLayout', () => {
       },
     })
     expect(wrapper.html()).toMatchSnapshot()
+  })
+})
+
+describe('tree', () => {
+  const items = [
+    {
+      title: 'src',
+      children: [
+        {
+          title: 'main.ts',
+        },
+      ],
+    },
+    {
+      id: 'package-json',
+      title: 'package.json',
+    },
+  ]
+
+  it('renders correctly with the panel variant', () => {
+    const wrapper = mount(Tree, {
+      props: {
+        name: 'Project Files',
+        items,
+        defaultExpanded: ['src'],
+      },
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('renders correctly with the plain variant', () => {
+    const wrapper = mount(Tree, {
+      props: {
+        name: 'Project Files',
+        items,
+        defaultExpanded: ['src'],
+        variant: 'plain',
+      },
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('emits the selected item when a row is clicked', async () => {
+    const wrapper = mount(Tree, {
+      props: {
+        items,
+        defaultExpanded: ['src'],
+      },
+    })
+
+    await wrapper.get('[role="treeitem"]').trigger('click')
+
+    expect(wrapper.emitted('select')).toEqual([[items[0]]])
+  })
+
+  it('infers icons from folder names and file extensions while keeping explicit icons', () => {
+    const wrapper = mount(Tree, {
+      props: {
+        items: [
+          {
+            title: 'dist',
+            children: [
+              {
+                title: 'assets',
+                children: [
+                  {
+                    title: 'image-DNpSpoYj.jpg',
+                  },
+                  {
+                    title: 'vite.config.ts',
+                  },
+                  {
+                    title: 'README.md',
+                    icon: 'i-custom-readme-icon',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+        defaultExpanded: ['dist', 'assets'],
+      },
+    })
+
+    const html = wrapper.html()
+
+    expect(html).toContain('i-vscode-icons-folder-type-dist-opened')
+    expect(html).toContain('i-vscode-icons-folder-type-asset-opened')
+    expect(html).toContain('i-vscode-icons-file-type-image')
+    expect(html).toContain('i-vscode-icons-file-type-vite')
+    expect(html).toContain('i-custom-readme-icon')
+  })
+})
+
+describe('modal', () => {
+  it('does not render dialog content when closed', () => {
+    const wrapper = mount(Modal, {
+      ...modalMountOptions,
+      props: {
+        open: false,
+        title: 'Hidden modal',
+      },
+      slots: {
+        default: '<div>Invisible content</div>',
+      },
+    })
+
+    expect(wrapper.find('[role="dialog"]').exists()).toBe(false)
+    expect(wrapper.text()).not.toContain('Invisible content')
+  })
+
+  it('renders dialog content, title and footer when open', async () => {
+    const wrapper = mount(Modal, {
+      ...modalMountOptions,
+      props: {
+        open: true,
+        title: 'Shared modal',
+        description: 'Reusable dialog wrapper',
+      },
+      slots: {
+        default: '<div class="modal-body">Body content</div>',
+        footer: '<button type="button">Done</button>',
+      },
+    })
+
+    expect(wrapper.find('[role="dialog"]').exists()).toBe(true)
+    expect(wrapper.text()).toContain('Shared modal')
+    expect(wrapper.text()).toContain('Reusable dialog wrapper')
+    expect(wrapper.text()).toContain('Body content')
+    expect(wrapper.text()).toContain('Done')
+  })
+
+  it('emits update:open when the close button is clicked', async () => {
+    const wrapper = mount(Modal, {
+      ...modalMountOptions,
+      props: {
+        open: true,
+        title: 'Closable modal',
+        description: 'Close me if you can',
+      },
+      slots: {
+        default: '<div>Body content</div>',
+      },
+    })
+
+    await wrapper.get('[aria-label="Close modal"]').trigger('click')
+
+    expect(wrapper.emitted('update:open')).toEqual([[false]])
   })
 })

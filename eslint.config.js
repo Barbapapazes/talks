@@ -4,6 +4,10 @@ export default antfu({
   stylistic: true,
   typescript: true,
   vue: true,
-
   unocss: true,
+  ignores: [
+    './2026-04-15/src/.vite/**/*',
+    './2026-04-15/src/.vite-transformed/**/*',
+    './2026-04-15/src/.vite-build/**/*',
+  ],
 })

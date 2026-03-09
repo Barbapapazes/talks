@@ -166,3 +166,33 @@ exports[`footerLink > renders correctly with href, text and icon 1`] = `"<a clas
 exports[`icon > renders correctly with a name 1`] = `"<span class="inline-flex i-ph-house-duotone"></span>"`;
 
 exports[`icon > renders correctly with a name and class 1`] = `"<span class="inline-flex i-ph-house-duotone size-4"></span>"`;
+
+exports[`tree > renders correctly with the panel variant 1`] = `
+"<ul role="tree" tabindex="-1" data-orientation="vertical" dir="ltr" style="outline-color: none; outline-style: none; outline-width: initial;" class="select-none flex flex-col text-xs p-2 not-content list-none gap-0.5 bg-neutral-800 rounded-md font-light">
+  <h2 class="mb-2 text-sm font-semibold">Project Files</h2>
+  <li aria-setsize="2" aria-posinset="1" class="flex flex-row items-center gap-1" style="padding-left: 0.5rem;" role="treeitem" aria-selected="false" aria-expanded="true" aria-level="1" data-indent="1" data-expanded="" tabindex="-1" data-orientation="vertical" data-active="true" data-reka-collection-item=""><span class="inline-flex i-vscode-icons-folder-type-src-opened size-3"></span>
+    <div>src</div>
+  </li>
+  <li aria-setsize="1" aria-posinset="1" class="flex flex-row items-center gap-1" style="padding-left: 1.5rem;" role="treeitem" aria-selected="false" aria-level="2" data-indent="2" tabindex="-1" data-orientation="vertical" data-active="true" data-reka-collection-item=""><span class="inline-flex i-vscode-icons-file-type-typescript size-3"></span>
+    <div>main.ts</div>
+  </li>
+  <li aria-setsize="2" aria-posinset="2" class="flex flex-row items-center gap-1" style="padding-left: 0.5rem;" role="treeitem" aria-selected="false" aria-level="1" data-indent="1" tabindex="-1" data-orientation="vertical" data-active="true" data-reka-collection-item=""><span class="inline-flex i-vscode-icons-file-type-npm size-3"></span>
+    <div>package.json</div>
+  </li>
+</ul>"
+`;
+
+exports[`tree > renders correctly with the plain variant 1`] = `
+"<ul role="tree" tabindex="-1" data-orientation="vertical" dir="ltr" style="outline-color: none; outline-style: none; outline-width: initial;" class="select-none flex flex-col text-xs not-content list-none gap-0.5 font-light">
+  <h2 class="mb-1 text-sm font-semibold text-neutral-500">Project Files</h2>
+  <li aria-setsize="2" aria-posinset="1" class="flex flex-row items-center gap-2" style="padding-left: 0.5rem;" role="treeitem" aria-selected="false" aria-expanded="true" aria-level="1" data-indent="1" data-expanded="" tabindex="-1" data-orientation="vertical" data-active="true" data-reka-collection-item=""><span class="inline-flex i-vscode-icons-folder-type-src-opened size-5"></span>
+    <div>src</div>
+  </li>
+  <li aria-setsize="1" aria-posinset="1" class="flex flex-row items-center gap-2" style="padding-left: 1.5rem;" role="treeitem" aria-selected="false" aria-level="2" data-indent="2" tabindex="-1" data-orientation="vertical" data-active="true" data-reka-collection-item=""><span class="inline-flex i-vscode-icons-file-type-typescript size-5"></span>
+    <div>main.ts</div>
+  </li>
+  <li aria-setsize="2" aria-posinset="2" class="flex flex-row items-center gap-2" style="padding-left: 0.5rem;" role="treeitem" aria-selected="false" aria-level="1" data-indent="1" tabindex="-1" data-orientation="vertical" data-active="true" data-reka-collection-item=""><span class="inline-flex i-vscode-icons-file-type-npm size-5"></span>
+    <div>package.json</div>
+  </li>
+</ul>"
+`;

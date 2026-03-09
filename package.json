@@ -18,6 +18,7 @@
     "generate:readme": "node .scripts/generate-readme.ts",
     "generate:talk-readme": "node .scripts/generate-talk-readme.ts",
     "generate:tree": "node .scripts/generate-tree.ts",
+    "update:timing": "node .scripts/update-timing.ts",
     "dev": "node .scripts/select-deck.ts dev --open",
     "lint": "eslint",
     "lint:fix": "eslint --fix"

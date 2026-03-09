@@ -6,6 +6,10 @@ declare module 'virtual:vite-transformed-file:*' {
   export default string
 }
 
+declare module 'virtual:vite-build:*' {
+  export default string
+}
+
 declare module 'virtual:growth-chart' {
   export const vite: Array<[string, number]>
   export const webpack: Array<[string, number]>

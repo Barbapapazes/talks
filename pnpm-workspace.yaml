@@ -1,7 +1,19 @@
+catalogMode: prefer
+
+shellEmulator: true
+trustPolicy: no-downgrade
+
 packages:
   - .worker
   - '**/src'
   - theme
+
+overrides:
+  vite: 8.0.0-beta.14
+
+patchedDependencies:
+  cobe: patches/cobe.patch
+  slidev-addon-graph: patches/slidev-addon-graph.patch
 
 catalog:
   '@antfu/eslint-config': ^7.4.3
@@ -67,16 +79,6 @@ catalog:
   vue: ^3.5.29
   wrangler: ^4.63.0
 
-catalogMode: prefer
-
-overrides:
-  vite: 8.0.0-beta.14
-
-patchedDependencies:
-  cobe: patches/cobe.patch
-  slidev-addon-graph: patches/slidev-addon-graph.patch
-
-shellEmulator: true
 catalogs:
   conflicts_@types/node_h25_3_5:
     '@types/node': ^25.3.5

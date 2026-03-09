@@ -1,5 +1,6 @@
+/* eslint-disable */
+// @ts-nocheck
 import _export_sfc from '/@id/__x00__plugin-vue:export-helper'; import { createHotContext as __vite__createHotContext } from '/@vite/client'
-// eslint-disable-next-line antfu/no-import-node-modules-by-path
 import { createElementBlock as _createElementBlock, defineComponent as _defineComponent, openBlock as _openBlock, toDisplayString as _toDisplayString, ref } from '/node_modules/.vite/deps/vue.js?v=ed2c93c8'
 
 import.meta.hot = __vite__createHotContext('/src/App.vue')
@@ -16,9 +17,9 @@ const _sfc_main = /* @__PURE__ */ _defineComponent({
     return __returned__
   },
 })
-// eslint-disable-next-line unused-imports/no-unused-vars
+ 
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  // eslint-disable-next-line no-sequences
+   
   return _openBlock(), _createElementBlock(
     'div',
     null,

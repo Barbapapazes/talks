@@ -14,10 +14,10 @@ export default function growthChart() {
     },
     async load(id: string) {
       if (id === resolvedVirtualModuleId) {
-        const vite = await readFile('./.data/vite.json', 'utf-8')
-        const webpack = await readFile('./.data/webpack.json', 'utf-8')
-        const rspack = await readFile('./.data/rspack-core.json', 'utf-8')
-        const isString = await readFile('./.data/is-string.json', 'utf-8')
+        const vite = await readFile('./.npm/vite.json', 'utf-8')
+        const webpack = await readFile('./.npm/webpack.json', 'utf-8')
+        const rspack = await readFile('./.npm/rspack-core.json', 'utf-8')
+        const isString = await readFile('./.npm/is-string.json', 'utf-8')
 
         function groupByMonth(data: Record<string, number>) {
           const result: Record<string, number> = {}

@@ -4,7 +4,7 @@ import BackgroundImage from '../components/BackgroundImage.vue'
 
 <template>
   <div class="relative slidev-layout">
-    <BackgroundImage :img="$frontmatter.img" :img-class="$frontmatter.imgClass" />
+    <BackgroundImage :img="$frontmatter.img" :img-class="$frontmatter.imgClass" class="-z-1" />
     <slot />
   </div>
 </template>
