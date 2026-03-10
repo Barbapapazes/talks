@@ -1,18 +1,7 @@
-catalogMode: prefer
-
-shellEmulator: true
-
-trustPolicy: no-downgrade
 packages:
   - .worker
   - '**/src'
   - theme
-overrides:
-  vite: 8.0.0-beta.14
-
-patchedDependencies:
-  cobe: patches/cobe.patch
-  slidev-addon-graph: patches/slidev-addon-graph.patch
 
 catalog:
   '@antfu/eslint-config': ^7.6.1
@@ -22,6 +11,7 @@ catalog:
   '@iconify-json/heroicons': ^1.2.3
   '@iconify-json/logos': ^1.2.10
   '@iconify-json/lucide': ^1.2.95
+  '@iconify-json/mdi': ^1.2.3
   '@iconify-json/noto': ^1.2.7
   '@iconify-json/ph': ^1.2.2
   '@iconify-json/simple-icons': ^1.2.72
@@ -74,10 +64,14 @@ catalog:
   tiktoken: ^1.0.22
   typescript: ^5.9.3
   vite: ^8.0.0-beta.16
+  vite-plugin-info: ^0.4.1
   vite-plugin-run: ^0.6.1
   vitest: ^4.0.18
   vue: ^3.5.29
   wrangler: ^4.63.0
+
+catalogMode: prefer
+
 catalogs:
   conflicts_@types/node_h25_3_5:
     '@types/node': ^25.3.5
@@ -87,3 +81,14 @@ catalogs:
     '@vue/tsconfig': ^0.9.0
   conflicts_typescript_t5_9_3:
     typescript: ~5.9.3
+
+overrides:
+  vite: 8.0.0-beta.14
+
+patchedDependencies:
+  cobe: patches/cobe.patch
+  slidev-addon-graph: patches/slidev-addon-graph.patch
+
+shellEmulator: true
+
+trustPolicy: no-downgrade

@@ -27,6 +27,9 @@ catalogs:
     '@iconify-json/lucide':
       specifier: ^1.2.95
       version: 1.2.96
+    '@iconify-json/mdi':
+      specifier: ^1.2.3
+      version: 1.2.3
     '@iconify-json/noto':
       specifier: ^1.2.7
       version: 1.2.7
@@ -180,6 +183,9 @@ catalogs:
     typescript:
       specifier: ^5.9.3
       version: 5.9.3
+    vite-plugin-info:
+      specifier: ^0.4.1
+      version: 0.4.1
     vite-plugin-run:
       specifier: ^0.6.1
       version: 0.6.1
@@ -263,6 +269,9 @@ importers:
       '@iconify-json/lucide':
         specifier: 'catalog:'
         version: 1.2.96
+      '@iconify-json/mdi':
+        specifier: 'catalog:'
+        version: 1.2.3
       '@iconify-json/noto':
         specifier: 'catalog:'
         version: 1.2.7
@@ -347,6 +356,9 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
+      vite-plugin-info:
+        specifier: 'catalog:'
+        version: 0.4.1(vite@8.0.0-beta.14(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(yaml@2.8.2))
 
   .worker:
     dependencies:
@@ -473,6 +485,9 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
+      vite-plugin-info:
+        specifier: 'catalog:'
+        version: 0.4.1(vite@8.0.0-beta.14(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(yaml@2.8.2))
       vite-plugin-run:
         specifier: 'catalog:'
         version: 0.6.1
@@ -1168,6 +1183,9 @@ packages:
 
   '@iconify-json/lucide@1.2.96':
     resolution: {integrity: sha512-EICTusj67lvSmEaH/Lhe68ZyzcgfcPNpY00exAOkoo+z2fnLeNy31mdE3E/4/q8WjzZrICAZDxY3d6j7LzkgNA==}
+
+  '@iconify-json/mdi@1.2.3':
+    resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
 
   '@iconify-json/noto@1.2.7':
     resolution: {integrity: sha512-2pNHliXnMLpnepNTZwR9hPBSl6GmhIfXPnudFCHY5v9pJhmA7LoVb/pFY0qLDY/k+3ikET8RXRf7XFxc/pHObA==}
@@ -2648,9 +2666,6 @@ packages:
     resolution: {integrity: sha512-kja8j7PjmncONqaTsB8fQ+wE2mSU2DJ9D4XKoJ5PFWIdRMa6SLSN1ff4mOr4jCbfRSsxR4keIiySJU0N9T5hIQ==}
     engines: {node: '>= 8.0.0'}
 
-  ajv@6.12.6:
-    resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
-
   ajv@6.14.0:
     resolution: {integrity: sha512-IWrosm/yrn43eiKqkfkHis7QioDleaXQHdDVPKg0FSwwd/DuvyX79TZnFOnYpB7dcsFAMmtFztZuXPDvSePkFw==}
 
@@ -2924,6 +2939,10 @@ packages:
     resolution: {integrity: sha512-6CJWHkNRoyZyjV9Rwv2lYONZf1Xm0IuDyNq97nwSsxxP3wf5Bwy15K5rOvVKMtJ127jJBmxFUanSAOjgFRxgrA==}
     peerDependencies:
       devtools-protocol: '*'
+
+  ci-info@3.9.0:
+    resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
+    engines: {node: '>=8'}
 
   ci-info@4.3.1:
     resolution: {integrity: sha512-Wdy2Igu8OcBpI2pZePZ5oWjPC38tmDVx5WKUXKwlLYkA0ozo85sLsLvkBbBn/sZaSCMFOGZJ14fvW9t5/d7kdA==}
@@ -3970,6 +3989,14 @@ packages:
     resolution: {integrity: sha512-L5bGsVkxJbJgdnwyuheIunkGatUF/zssUoxxjACCseZYAVbaqdh9Tsmmlkl8vYan09H7sbvKt4pS8GqKLBrEzA==}
     hasBin: true
 
+  git-config-path@2.0.0:
+    resolution: {integrity: sha512-qc8h1KIQbJpp+241id3GuAtkdyJ+IK+LIVtkiFTRKRrmddDzs3SI9CvP1QYmWBFvm1I/PWRwj//of8bgAc0ltA==}
+    engines: {node: '>=4'}
+
+  git-repo-info@2.1.1:
+    resolution: {integrity: sha512-8aCohiDo4jwjOwma4FmYFd3i97urZulL8XL24nIPxuE+GZnfsAyy/g2Shqx6OjUiFKUXZM+Yy+KHnOmmA3FVcg==}
+    engines: {node: '>= 4.0'}
+
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
 
@@ -4971,6 +4998,15 @@ packages:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
 
+  parse-git-config@3.0.0:
+    resolution: {integrity: sha512-wXoQGL1D+2COYWCD35/xbiKma1Z15xvZL8cI25wvxzled58V51SJM04Urt/uznS900iQor7QO04SgdfT/XlbuA==}
+    engines: {node: '>=8'}
+
+  parse-github-url@1.0.3:
+    resolution: {integrity: sha512-tfalY5/4SqGaV/GIGzWyHnFjlpTPTNpENR9Ea2lLldSJ8EWXMsvacWucqY3m3I4YPtas15IxTLQVQ5NSYXPrww==}
+    engines: {node: '>= 0.10'}
+    hasBin: true
+
   parse-gitignore@2.0.0:
     resolution: {integrity: sha512-RmVuCHWsfu0QPNW+mraxh/xjQVw/lhUCUru8Zni3Ctq3AoMhpDTq0OVdKS6iesd6Kqb7viCV3isAL43dciOSog==}
     engines: {node: '>=14'}
@@ -5367,6 +5403,10 @@ packages:
     resolution: {integrity: sha512-XK7cJDQoNuGXfCNzBBo/81Yg/OgjPwvbabnlzXG2VsdSgNsT6iIkuPBPr+C0Shs+3bb0x0lbPvgQAhMSCKm5Ww==}
     peerDependencies:
       vue: '>= 3.2.0'
+
+  remote-origin-url@2.0.0:
+    resolution: {integrity: sha512-4TKz5bTDEHFzsqgjQZY/NxNqceWhtWD69Fgwetm+172GT2NoljyQssB649ECUBHGhBINuGwKw8mfcjQFugdIlg==}
+    engines: {node: '>=8'}
 
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -6085,6 +6125,11 @@ packages:
 
   vite-hot-client@2.1.0:
     resolution: {integrity: sha512-7SpgZmU7R+dDnSmvXE1mfDtnHLHQSisdySVR7lO8ceAXvM0otZeuQQ6C8LrS5d/aYyP/QZ0hI0L+dIPrm4YlFQ==}
+    peerDependencies:
+      vite: 8.0.0-beta.14
+
+  vite-plugin-info@0.4.1:
+    resolution: {integrity: sha512-CP+B3N1+tdEM/o2Cu3kQpU7H/qABvNb5GqDVsbuH3ICJfdUyHn8xCZPEVQ5dB8/gr/vzFnzRoPbX2YcZQzG7jQ==}
     peerDependencies:
       vite: 8.0.0-beta.14
 
@@ -7104,6 +7149,10 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify-json/mdi@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/noto@1.2.7':
     dependencies:
       '@iconify/types': 2.0.0
@@ -7436,7 +7485,7 @@ snapshots:
       extract-zip: 2.0.1
       progress: 2.0.3
       proxy-agent: 6.5.0
-      semver: 7.7.3
+      semver: 7.7.4
       tar-fs: 3.1.1
       unbzip2-stream: 1.4.3
       yargs: 17.7.2
@@ -8470,11 +8519,11 @@ snapshots:
       '@typescript-eslint/parser': 8.57.0(eslint@10.0.3(jiti@2.6.1))(typescript@5.9.3)
       '@typescript-eslint/typescript-estree': 8.57.0(typescript@5.9.3)
       '@typescript-eslint/utils': 8.57.0(eslint@10.0.3(jiti@2.6.1))(typescript@5.9.3)
-      ajv: 6.12.6
+      ajv: 6.14.0
       eslint: 10.0.3(jiti@2.6.1)
       json-stable-stringify-without-jsonify: 1.0.1
       lodash.merge: 4.6.2
-      semver: 7.7.3
+      semver: 7.7.4
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -9242,13 +9291,6 @@ snapshots:
     dependencies:
       humanize-ms: 1.2.1
 
-  ajv@6.12.6:
-    dependencies:
-      fast-deep-equal: 3.1.3
-      fast-json-stable-stringify: 2.1.0
-      json-schema-traverse: 0.4.1
-      uri-js: 4.4.1
-
   ajv@6.14.0:
     dependencies:
       fast-deep-equal: 3.1.3
@@ -9504,6 +9546,8 @@ snapshots:
       devtools-protocol: 0.0.1367902
       mitt: 3.0.1
       zod: 3.23.8
+
+  ci-info@3.9.0: {}
 
   ci-info@4.3.1: {}
 
@@ -10659,6 +10703,10 @@ snapshots:
       pathe: 2.0.3
     optional: true
 
+  git-config-path@2.0.0: {}
+
+  git-repo-info@2.1.1: {}
+
   github-slugger@2.0.0: {}
 
   gl-matrix@3.4.4: {}
@@ -11780,6 +11828,13 @@ snapshots:
     dependencies:
       callsites: 3.1.0
 
+  parse-git-config@3.0.0:
+    dependencies:
+      git-config-path: 2.0.0
+      ini: 1.3.8
+
+  parse-github-url@1.0.3: {}
+
   parse-gitignore@2.0.0: {}
 
   parse-imports-exports@0.2.4:
@@ -12197,6 +12252,10 @@ snapshots:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - typescript
+
+  remote-origin-url@2.0.0:
+    dependencies:
+      parse-git-config: 3.0.0
 
   require-directory@2.1.1: {}
 
@@ -13074,6 +13133,14 @@ snapshots:
 
   vite-hot-client@2.1.0(vite@8.0.0-beta.14(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(yaml@2.8.2)):
     dependencies:
+      vite: 8.0.0-beta.14(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(yaml@2.8.2)
+
+  vite-plugin-info@0.4.1(vite@8.0.0-beta.14(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(yaml@2.8.2)):
+    dependencies:
+      ci-info: 3.9.0
+      git-repo-info: 2.1.1
+      parse-github-url: 1.0.3
+      remote-origin-url: 2.0.0
       vite: 8.0.0-beta.14(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(yaml@2.8.2)
 
   vite-plugin-inspect@11.3.3(@nuxt/kit@3.20.2)(vite@8.0.0-beta.14(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(yaml@2.8.2)):

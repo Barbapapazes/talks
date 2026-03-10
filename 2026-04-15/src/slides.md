@@ -972,18 +972,48 @@ transition: slide-up
 <VirtualizationExplainedVisually />
 
 <!--
-TODO:
+L'une des grandes fonctionnalités induite par Vite et largement utilisée dans les plugins, c'est cette capacité de générer des modules virtuelles.
+
+Le mieux pour comprendre ça, c'est de le visualiser. D'un côté, prenons notre navigateur, de l'autre, prenons notre système de fichier. Entre les deux, plaçons Vite et observons les requêtes HTTP.
+
+Pour les deux premières, c'est du classique, on y voit l'index.html et le main.ts. Maintenant, si on regarde dans le main.ts, on y voit un `import 'virtual:my-module'`. Le truc, c'est que si on regarde dans notre système de fichier, il n'y a pas de fichier `virtual:my-module` et c'est pas non plus dans les `node_modules` parce que sinon, Vite l'aurait préfixé comme il l'avait fait avec Vue tout à l'heure.
+
+Pourtant, si on regarde la réponse, Vite a bien renvoyé quelque chose.
 -->
 
 ---
 name: Un plugin pour virtualiser - Plugin Internals
 group: Virtualization
 timing: 0
+ready: true
 layout: bottom-center-card
 img: https://images.unsplash.com/photo-1710020603990-0c984e7811f3?q=80&w=3268&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-```ts
+````md magic-move
+```ts {*}{lines:true}
+export default function myPlugin() {
+  return {
+    name: 'my-plugin',
+  }
+}
+```
+```ts {*}{lines:true}
+export default function myPlugin() {
+  const virtualModuleId = 'virtual:my-module'
+  const resolvedVirtualModuleId = '\0' + virtualModuleId
+
+  return {
+    name: 'my-plugin',
+    resolveId(id) {
+      if (id === virtualModuleId) {
+        return resolvedVirtualModuleId
+      }
+    },
+  }
+}
+```
+```ts {*}{lines:true}
 export default function myPlugin() {
   const virtualModuleId = 'virtual:my-module'
   const resolvedVirtualModuleId = '\0' + virtualModuleId
@@ -1003,9 +1033,16 @@ export default function myPlugin() {
   }
 }
 ```
+````
 
 <!--
-Super, on a vu la théorie. Mais concrètement, comment est-ce qu'on applique ça à un plugin Vite?
+Alors comment ça fonctionne ?
+
+Tout part d'un module dans lequel on va venir utiliser deux hooks pour simuler l'existance d'un fichier sur le disque.
+
+Le premier, resolveId qui permet de déterminer l'identité du module et par convention, on va venir la préfixer avec un \0.
+
+Ensuite, et c'est là que tout se joue, on vient utiliser le hook load. On y a l'habitude de lire des fichiers mais cette fois-ci, on va créer nous même le code du module. On écrit dans une string `export const msg = "from virutal module"` et ce module, n'existe pas sur le disque, il n'existe que pour Vite, d'où sont appellation de virtuel.
 -->
 
 ---
@@ -1020,6 +1057,9 @@ choices:
 ---
 
 <!--
+Maintenant qu'on a vu la théorie, ce que je vous propose, c'est qu'on aille se pencher sur des utilisations concrètes de ce mécanisme.
+
+
 TODO: write text for this slide
 -->
 
@@ -1032,7 +1072,7 @@ img: https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&au
 transition: slide-up
 ---
 
-```vue
+```ts {*}{lines:true}
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
@@ -1063,7 +1103,7 @@ choices:
 ---
 
 <!-- TODO: create a plugin that virtualize the import vue-router/auto-routes by returning the result of the generateRoutes() function, also use a resolve it -->
-```
+```ts
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -1165,6 +1205,10 @@ TODO: texte de la slide
 name: Icons Plugin - Des icônes virtuelles
 group: Virtualization
 timing: 0
+ready: true
+layout: center-card
+img: https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+transition: slide-up
 ---
 
 ```vue
@@ -1179,19 +1223,56 @@ import IconAccountBox from '~icons/mdi/account-box'
 </template>
 ```
 
+<IconsPlugin class="mt-4" />
+
 <!--
-TODO: texte de la slide
+Vous avez sûrement l'habitude d'utiliser des icons via des SVG, des fonts, ou directement des librairies d'icons via npm. C'est chouette mais vous êtes limités aux icons contenus dans ce que vous utiliser.
+
+Avec unplugin-icons, vous avez accès à plus de 200 000 icons sur demande.
+
+Vous le voyez, vous écrivez le chemin vers votre icon et automagiquement, il va être chargé et s'afficher [click].
 -->
 
 ---
 name: Icons Plugin - Des icônes virtuelles - Plugin Internals
 group: Virtualization
 timing: 0
+ready: true
+layout: center-card
+img: https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
   - Dans les profondeurs de la pipeline
 ---
 
-```ts
+````md magic-move
+```ts {*}{lines:true}
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    {
+      name: 'icons',
+    },
+  ],
+})
+```
+```ts {*}{lines:true}
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    {
+      name: 'icons',
+      resolveId(id) {
+        if (id.startsWith('~icons/')) {
+          return '\0' + id
+        }
+      },
+    },
+  ],
+})
+```
+```ts {*}{lines:true}
 import { defineConfig } from 'vite'
 import { loadIcon } from 'iconify'
 
@@ -1215,34 +1296,48 @@ export default defineConfig({
   ],
 })
 ```
+````
 
 <!--
-TODO: texte de la slide
+Sous le capot, c'est un jeu de modules virtuels et on y retrouve la même structure que tout à l'heure. Le gros changement est dans la fonction load où il va venir utiliser `loadIcon` d'Iconify pour charger l'icon sur demande. Et c'est ça le gros changement. Pas besoin de charger une librairie de 100mo dans votre frontend, plus de limites sur les icons que vous pouvez utiliser et votre serveur Vite continu à être rapide au démarrage.
 -->
 
 ---
 name: Infos Plugin - Des infos virtuelles
 group: Virtualization
 timing: 0
+ready: true
+layout: center-card
+img: https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+transition: slide-up
 ---
 
 ```ts
 import now from '~build/time'
-import { sha } from '~build/git'
+import { sha } from '~build/info'
 
 console.log(`Build ${sha} at ${now}`)
 ```
 
-<InfosPlugin />
+<InfoPlugin class="mt-4" />
 
 <!--
-TODO: revoir le texte de la slide
+Imaginez que vous vouliez afficher et utiliser le dernier tag git dans votre application, le dernier sha pour Sentry, ou simplement avoir la date du dernier build, comment est-ce que vous feriez ?
+
+Un fichier de config que vous mettez à jour à la main avant chaque release ? avant chaque build ?
+
+Vraiment pas pratique.
+
+Et c'est là qu'intervient `vite-plugin-info`.
 -->
 
 ---
 name: Infos Plugin - Des infos virtuelles - Plugin Internals
 group: Virtualization
 timing: 0
+ready: true
+layout: center-card
+img: https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
   - Dans les profondeurs de la pipeline
 ---
@@ -1305,11 +1400,8 @@ export default defineConfig({
     {
       name: 'build-info',
       resolveId(id) {
-        if (id === '~build/time') {
-          return '\0~build/time'
-        }
-        if (id === '~build/git') {
-          return '\0~build/git'
+        if (id === '~build/time' || id === '~build/git') {
+          return '\0' + id
         }
       },
       load(id) {
@@ -1328,14 +1420,9 @@ export default defineConfig({
 ````
 
 <!--
-TODO: revoir le texte de la slide
-Imaginez que vous vouliez afficher ou simplement récupérer dans votre application le sha du dernier commit git, ou la date de build.
+Sous le capot, c'est un jeu de modules virtuels et on y retrouve la même structure que tout à l'heure. Le gros changement, c'est qu'on va venir executer du code à ce moment là pour le figer dans l'application.
 
-Comment est-ce que vous feriez ?
-
-Un fichier de config que vous devez penser à mettre à jour à chaque fois que vous faites un build ? Pas très pratique et surtout, pas du tout automatisé.
-
-Non, le mieux, c'est d'utiliser un plugin Vite
+Pour le temps, on vient executer un `new Date()` et pour le dernier sha, on vient faire tourner un sous process pour le récupérer avant de le retourner au client et ça nous donne ce qu'on a vu sur la slide d'avant.
 -->
 
 ---
@@ -1728,7 +1815,11 @@ buildTime
 ```
 
 <!--
-TODO: Missing text for this slide
+Les macros en JavaScript, ça n'existe pas. Mais en C, c'est répandu, et ça permet de remplacer un morceau de texte par un autre au moment de la compilation.
+
+`unplugin-macro` ré-introduit ce système. En haut, vous avez vos macros, la première nous donne un nombre aléatoire et le second une date. En dessus, on vient importer ces deux fonctions avec un attribut sur l'`import`.
+
+Au build time, ces deux fonctions vont se faire détecter, exécuter et remplacer par la valeur correspondant. Autrement dit, à chaque fois que vous allez chercher votre application, vous allez toujours avoir le même valeur.
 -->
 
 ---

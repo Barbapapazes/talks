@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T23:20:46.671Z",
+  "generatedAt": "2026-03-10T07:32:14.144Z",
   "nodes": [
     {
       "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
@@ -398,7 +398,7 @@
       "index": 36,
       "name": "Un plugin pour virtualiser - Plugin Internals",
       "title": "Un plugin pour virtualiser - Plugin Internals",
-      "ready": false,
+      "ready": true,
       "layout": "bottom-center-card",
       "group": "Virtualization",
       "timing": 0
@@ -467,7 +467,8 @@
       "index": 42,
       "name": "Icons Plugin - Des icônes virtuelles",
       "title": "Icons Plugin - Des icônes virtuelles",
-      "ready": false,
+      "ready": true,
+      "layout": "center-card",
       "group": "Virtualization",
       "timing": 0
     },
@@ -476,7 +477,8 @@
       "index": 43,
       "name": "Icons Plugin - Des icônes virtuelles - Plugin Internals",
       "title": "Icons Plugin - Des icônes virtuelles - Plugin Internals",
-      "ready": false,
+      "ready": true,
+      "layout": "center-card",
       "group": "Virtualization",
       "timing": 0,
       "choices": [
@@ -488,7 +490,8 @@
       "index": 44,
       "name": "Infos Plugin - Des infos virtuelles",
       "title": "Infos Plugin - Des infos virtuelles",
-      "ready": false,
+      "ready": true,
+      "layout": "center-card",
       "group": "Virtualization",
       "timing": 0
     },
@@ -497,7 +500,8 @@
       "index": 45,
       "name": "Infos Plugin - Des infos virtuelles - Plugin Internals",
       "title": "Infos Plugin - Des infos virtuelles - Plugin Internals",
-      "ready": false,
+      "ready": true,
+      "layout": "center-card",
       "group": "Virtualization",
       "timing": 0,
       "choices": [

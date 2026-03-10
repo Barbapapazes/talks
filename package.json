@@ -45,6 +45,7 @@
     "@iconify-json/heroicons": "catalog:",
     "@iconify-json/logos": "catalog:",
     "@iconify-json/lucide": "catalog:",
+    "@iconify-json/mdi": "catalog:",
     "@iconify-json/noto": "catalog:",
     "@iconify-json/ph": "catalog:",
     "@iconify-json/simple-icons": "catalog:",
@@ -72,6 +73,7 @@
     "slidev-theme-personal": "link:./theme",
     "taze": "catalog:",
     "tiktoken": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vite-plugin-info": "catalog:"
   }
 }

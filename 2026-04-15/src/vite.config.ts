@@ -4,6 +4,7 @@ import run from 'vite-plugin-run'
 import growthChart from './plugins/growth-chart'
 import viteBuild from './plugins/vite-build'
 import viteFileSystem from './plugins/vite-file-system'
+import info from 'vite-plugin-info'
 import viteTransformedFile from './plugins/vite-transformed-file'
 
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
     viteFileSystem(),
     viteTransformedFile(),
     viteBuild(),
+    info(),
     run([
       {
         name: 'generate-tree',

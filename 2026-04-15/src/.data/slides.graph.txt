@@ -51,16 +51,16 @@ flowchart LR
   end
   subgraph Virtualization ["Virtualization"]
       un_plugin_pour_virtualiser["Un plugin pour virtualiser"]:::main
-      un_plugin_pour_virtualiser_plugin_internals["Un plugin pour virtualiser - Plugin Internals"]:::main
+      un_plugin_pour_virtualiser_plugin_internals["Un plugin pour virtualiser - Plugin Internals"]:::finished
       un_plugin_pour_virtualiser_choices["Un plugin pour virtualiser - Choices"]:::choice
       vue_router_un_module_virtuel["Vue Router - Un module virtuel"]:::main
       vue_router_un_module_virtuel_plugin_internals["Vue Router - Un module virtuel - Plugin Internals"]:::main
       vitepress_des_data_virtuels["VitePress - Des data virtuels"]:::main
       vitepress_des_data_virtuels_plugin_internals["VitePress - Des data virtuels - Plugin Internals"]:::main
-      icons_plugin_des_ic_nes_virtuelles["Icons Plugin - Des icônes virtuelles"]:::main
-      icons_plugin_des_ic_nes_virtuelles_plugin_internals["Icons Plugin - Des icônes virtuelles - Plugin Internals"]:::main
-      infos_plugin_des_infos_virtuelles["Infos Plugin - Des infos virtuelles"]:::main
-      infos_plugin_des_infos_virtuelles_plugin_internals["Infos Plugin - Des infos virtuelles - Plugin Internals"]:::main
+      icons_plugin_des_ic_nes_virtuelles["Icons Plugin - Des icônes virtuelles"]:::finished
+      icons_plugin_des_ic_nes_virtuelles_plugin_internals["Icons Plugin - Des icônes virtuelles - Plugin Internals"]:::finished
+      infos_plugin_des_infos_virtuelles["Infos Plugin - Des infos virtuelles"]:::finished
+      infos_plugin_des_infos_virtuelles_plugin_internals["Infos Plugin - Des infos virtuelles - Plugin Internals"]:::finished
   end
   subgraph Advanced_Capabilities ["Advanced Capabilities"]
       les_autres_capacit_s_des_plugins["Les autres capacités des plugins"]:::choice
