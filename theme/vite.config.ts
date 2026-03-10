@@ -60,6 +60,8 @@ const codeBlockIcons = {
   'terminal': 'i-vscode-icons-file-type-shell',
 }
 
+const markdownItTitleRegex = /\[(.*?)\]/
+
 export default defineConfig({
   plugins: [
     latestArticles(),
@@ -83,7 +85,7 @@ export default defineConfig({
           md.renderer.rules.fence = (...args) => {
             const [tokens, idx] = args
             const token = tokens[idx]
-            const title = token.info.match(/\[(.*?)\]/)
+            const title = token.info.match(markdownItTitleRegex)
 
             if (!title) {
               return fenceRule(...args)

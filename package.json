@@ -37,7 +37,8 @@
     "pnpm": "catalog:",
     "seedrandom": "catalog:",
     "shiki": "catalog:",
-    "slidev-addon-inalia": "catalog:"
+    "slidev-addon-inalia": "catalog:",
+    "tailwind-variants": "catalog:"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",

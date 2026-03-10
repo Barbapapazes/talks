@@ -5,7 +5,7 @@ import inlineImagePng from 'virtual:vite-transformed-file:inline-image:ts'
 import mainTs from 'virtual:vite-transformed-file:main-image:ts'
 import RawImagePng from 'virtual:vite-transformed-file:raw-image:ts'
 import tinyImagePng from 'virtual:vite-transformed-file:tiny-image:ts'
-import Inspect from '../Inspect.vue'
+import Inspect from '../Inspect/Inspect.vue'
 
 const requests: Request[] = [
   {

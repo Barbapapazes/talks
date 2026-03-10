@@ -32,6 +32,7 @@
   "devDependencies": {
     "typescript": "catalog:",
     "vite-plugin-info": "catalog:",
+    "vite-plugin-inspect": "catalog:",
     "vite-plugin-run": "catalog:"
   }
 }

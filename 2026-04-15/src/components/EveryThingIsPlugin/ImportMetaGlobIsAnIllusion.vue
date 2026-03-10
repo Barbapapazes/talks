@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import indexHtml from 'virtual:vite-transformed-file:index:html'
 import mainTs from 'virtual:vite-transformed-file:main-glob:ts'
-import Inspect from '../Inspect.vue'
+import Inspect from '../Inspect/Inspect.vue'
 
 const requests: Request[] = [
   {

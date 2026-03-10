@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { Request } from '../types/network-tab'
-import Inspect from './Inspect.vue'
+import Inspect from './Inspect/Inspect.vue'
 
 const requests: Request[] = [
   {

@@ -2,7 +2,7 @@
 import type { ConsoleEntry } from '../types/console-tab'
 import type { Request } from '../types/network-tab'
 import waterfallHar from '../waterfall.har?raw'
-import Inspect from './Inspect.vue'
+import Inspect from './Inspect/Inspect.vue'
 
 interface HarEntry {
   startedDateTime?: string

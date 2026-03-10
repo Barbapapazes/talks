@@ -2,10 +2,10 @@
 import type { ConsoleEntry } from '../types/console-tab'
 import type { Request } from '../types/network-tab'
 import { computed, ref, watch } from 'vue'
-import InspectFilters from './Inspect/InspectFilters.vue'
-import InspectTabs from './Inspect/InspectTabs.vue'
-import ConsoleTab from './Inspect/Tabs/ConsoleTab.vue'
-import NetworkTab from './Inspect/Tabs/NetworkTab.vue'
+import InspectFilters from './InspectFilters.vue'
+import InspectTabs from './InspectTabs.vue'
+import ConsoleTab from './Tabs/ConsoleTab.vue'
+import NetworkTab from './Tabs/NetworkTab.vue'
 
 type InspectTab = 'Console' | 'Network'
 
@@ -17,6 +17,7 @@ interface NetworkOptions {
   requests: Request[]
   showDetails?: boolean
   selectedRequestId?: number | null
+  selectedRequestTab?: 'Headers' | 'Response' | 'Messages' | null
 }
 
 type ConsoleInput = ConsoleEntry[] | ConsoleOptions
@@ -114,6 +115,7 @@ function onSelectTab(tab: string) {
         :requests="networkData.requests"
         :show-details="networkData.showDetails"
         :selected-request-id="networkData.selectedRequestId"
+        :selected-request-tab="networkData.selectedRequestTab"
       />
     </div>
   </div>

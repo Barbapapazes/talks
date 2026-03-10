@@ -1,8 +1,10 @@
 import type { PluginOption, ResolvedConfig } from 'vite'
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import { transformerRemoveComments } from '@shikijs/transformers'
 import { codeToHtml } from 'shiki'
+import { shikiOptions } from './_shiki'
+
+const colonRegex = /:/g
 
 export default function viteTransformedFile(): PluginOption {
   const virtualModuleId = 'virtual:vite-transformed-file:'
@@ -23,7 +25,7 @@ export default function viteTransformedFile(): PluginOption {
       if (id.startsWith(`\0${virtualModuleId}`)) {
         // Extract the file path from the virtual module ID
         // e.g., "virtual:vite-file-system:./src/some-file.txt" -> "./src/some-file.txt"
-        const filePath = id.slice(`\0${virtualModuleId}`.length).replace(/:/g, '.')
+        const filePath = id.slice(`\0${virtualModuleId}`.length).replace(colonRegex, '.')
 
         // Resolve the file path relative to the project root
         const resolvedPath = path.resolve(resolvedConfig.root, `./.vite-transformed/${filePath}`)
@@ -33,17 +35,7 @@ export default function viteTransformedFile(): PluginOption {
 
         const highlightedContent = await codeToHtml(content, {
           lang: path.extname(filePath).slice(1),
-          themes: {
-            light: 'github-light',
-            dark: 'github-dark',
-          },
-          includeExplanation: true,
-          transformers: [
-            transformerRemoveComments(),
-          ],
-          colorReplacements: {
-            '#fff': 'transparent',
-          },
+          ...shikiOptions,
         })
 
         // Return the file content as a JavaScript module export

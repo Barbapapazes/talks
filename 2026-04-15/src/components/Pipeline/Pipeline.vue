@@ -5,23 +5,22 @@ import { onSlideEnter } from '@slidev/client'
 import { Background } from '@vue-flow/background'
 import { Position, useVueFlow, VueFlow } from '@vue-flow/core'
 import { nextTick, ref } from 'vue'
-import { useHighlight } from '../composables/useHighlight'
-import HookNode from './HookNode.vue'
+import HookNode from './Nodes/HookNode.vue'
 
 interface PipelineProps {
   plugins: {
     name: string
     resolveId: {
-      input: { code: string, language: string } | null
-      output: { code: string, language: string } | null
+      input: string | null
+      output: string | null
     }
     load: {
-      input: { code: string, language: string } | null
-      output: { code: string, language: string } | null
+      input: string | null
+      output: string | null
     }
     transform: {
-      input: { code: string, language: string } | null
-      output: { code: string, language: string } | null
+      input: string | null
+      output: string | null
     }
   }[]
 }
@@ -184,8 +183,8 @@ onSlideEnter(() => {
 const selectedPlugin = ref<{
   name: string
   hook: string
-  input: { code: string, language: string } | null
-  output: { code: string, language: string } | null
+  input: string | null
+  output: string | null
 } | undefined>(undefined)
 function onPluginClick(hookName: string, pluginName: string) {
   const plugin = props.plugins.find(p => p.name === pluginName)
@@ -200,8 +199,6 @@ function onPluginClick(hookName: string, pluginName: string) {
     output: plugin[hookName as keyof Omit<typeof plugin, 'name'>].output,
   }
 }
-
-const { highlight } = useHighlight()
 </script>
 
 <template>
@@ -241,27 +238,21 @@ const { highlight } = useHighlight()
       </VueFlow>
     </div>
 
-    <div class="w-1/2 h-full grid grid-rows-2">
-      <!-- TODO: input -->
-      <div>
-        <div
+    <div class="w-1/2 h-full flex flex-col gap-4 p-4">
+      <div class="grow max-h-[calc(50%-0.5rem)] flex flex-col border border-neutral-200 rounded-md flex flex-col overflow-hidden">
+        <div class="font-semibold text-sm text-neutral-500 p-2"> input </div>
+         <div
           v-if="selectedPlugin && selectedPlugin.input"
-          v-html="highlight(selectedPlugin.input.code, selectedPlugin.input.language)"
+          v-html="selectedPlugin.input"
+          class="min-h-0 overflow-auto p-2"
         />
       </div>
-      <!-- TODO: output -->
-      <div class="overflow-y-scroll">
+      <div class="grow max-h-[calc(50%-0.5rem)] flex flex-col border border-neutral-200 rounded-md flex flex-col overflow-hidden">
+        <div class="p-2 font-semibold text-sm text-neutral-500"> output </div>
         <div
           v-if="selectedPlugin && selectedPlugin.output"
-          v-html="highlight(selectedPlugin.output.code, selectedPlugin.output.language)"
-        />
-        <div
-          v-if="selectedPlugin && selectedPlugin.output"
-          v-html="highlight(selectedPlugin.output.code, selectedPlugin.output.language)"
-        />
-        <div
-          v-if="selectedPlugin && selectedPlugin.output"
-          v-html="highlight(selectedPlugin.output.code, selectedPlugin.output.language)"
+          v-html="selectedPlugin.output"
+          class="min-h-0 overflow-auto p-2"
         />
       </div>
     </div>

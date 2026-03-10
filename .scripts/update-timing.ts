@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 import { parseSync } from '@slidev/parser'
 import { selectDeck } from './_utils.ts'
 
-const DEFAULT_WPM = 130
+const DEFAULT_WPM = 100
 
 function countWords(text: string | undefined): number {
   if (!text)
@@ -35,7 +35,7 @@ async function updateTiming() {
   let updatedCount = 0
 
   // Process in reverse order so line indices stay valid as we mutate `lines`
-  for (const slide of [...parsed.slides].reverse()) {
+  for (const slide of parsed.slides.toReversed()) {
     const wordCount = countWords(slide.note)
     totalWords += wordCount
 

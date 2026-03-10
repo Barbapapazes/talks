@@ -16,11 +16,49 @@ const props = defineProps<{
   request: Request
 }>()
 
+const IMAGE_REQUEST_RE = /\.(?:png|apng|avif|gif|jpe?g|svg|webp)(?:\?|$)/
+const SVG_REQUEST_RE = /\.svg(?:\?|$)/
+const PNG_REQUEST_RE = /\.png(?:\?|$)/
+const WEBP_REQUEST_RE = /\.webp(?:\?|$)/
+const AVIF_REQUEST_RE = /\.avif(?:\?|$)/
+const GIF_REQUEST_RE = /\.gif(?:\?|$)/
+const HTML_TAG_RE = /<[^>]+>/g
+const ENTITY_LT_RE = /&lt;/g
+const ENTITY_GT_RE = /&gt;/g
+const ENTITY_AMP_RE = /&amp;/g
+const ENTITY_QUOT_RE = /&quot;/g
+const ENTITY_APOS_RE = /&#39;/g
+const NON_ALPHANUMERIC_RE = /[^a-z0-9]/gi
+
+function imageSubtype(name: string) {
+  if (SVG_REQUEST_RE.test(name))
+    return 'svg+xml'
+
+  if (PNG_REQUEST_RE.test(name))
+    return 'png'
+
+  if (WEBP_REQUEST_RE.test(name))
+    return 'webp'
+
+  if (AVIF_REQUEST_RE.test(name))
+    return 'avif'
+
+  if (GIF_REQUEST_RE.test(name))
+    return 'gif'
+
+  return 'jpeg'
+}
+
 const baseUrl = 'http://localhost:5173'
+const baseWsUrl = 'ws://localhost:5173'
 const fixedDate = 'Sun, 08 Mar 2026 13:23:16 GMT'
 const userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36'
+const isWebSocketRequest = computed(() => props.request.type === 'websocket')
 
 const requestPath = computed(() => {
+  if (props.request.url)
+    return props.request.url
+
   if (props.request.name === 'localhost' || props.request.type === 'document')
     return '/'
 
@@ -37,35 +75,50 @@ const requestUrl = computed(() => {
   if (requestPath.value.startsWith('http://') || requestPath.value.startsWith('https://'))
     return requestPath.value
 
+  if (requestPath.value.startsWith('ws://') || requestPath.value.startsWith('wss://'))
+    return requestPath.value
+
+  if (isWebSocketRequest.value)
+    return `${baseWsUrl}${requestPath.value}`
+
   return `${baseUrl}${requestPath.value}`
 })
 
 const contentType = computed(() => {
+  if (isWebSocketRequest.value)
+    return 'N/A'
+
   if (props.request.type === 'document')
     return 'text/html'
 
   if (props.request.type === 'stylesheet' || props.request.name.endsWith('.css'))
     return 'text/css'
 
-  if (/\.(png|apng|avif|gif|jpe?g|svg|webp)(\?|$)/.test(props.request.name) && !props.request.name.includes('?import'))
-    return `image/${props.request.name.match(/\.svg(\?|$)/) ? 'svg+xml' : props.request.name.match(/\.png(\?|$)/) ? 'png' : props.request.name.match(/\.webp(\?|$)/) ? 'webp' : props.request.name.match(/\.avif(\?|$)/) ? 'avif' : props.request.name.match(/\.gif(\?|$)/) ? 'gif' : 'jpeg'}`
+  if (IMAGE_REQUEST_RE.test(props.request.name) && !props.request.name.includes('?import'))
+    return `image/${imageSubtype(props.request.name)}`
 
   return 'text/javascript'
 })
 
 const estimatedContentLength = computed(() => {
+  if (!props.request.response)
+    return '0'
+
   const plainResponse = props.request.response
-    .replace(/<[^>]+>/g, '')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, '\'')
+    .replace(HTML_TAG_RE, '')
+    .replace(ENTITY_LT_RE, '<')
+    .replace(ENTITY_GT_RE, '>')
+    .replace(ENTITY_AMP_RE, '&')
+    .replace(ENTITY_QUOT_RE, '"')
+    .replace(ENTITY_APOS_RE, '\'')
 
   return String(plainResponse.length)
 })
 
 const requestAccept = computed(() => {
+  if (isWebSocketRequest.value)
+    return '*/*'
+
   if (props.request.type === 'document') {
     return 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8'
   }
@@ -77,6 +130,9 @@ const requestAccept = computed(() => {
 })
 
 const fetchDestination = computed(() => {
+  if (isWebSocketRequest.value)
+    return 'websocket'
+
   if (props.request.type === 'document')
     return 'document'
 
@@ -86,46 +142,122 @@ const fetchDestination = computed(() => {
   return 'script'
 })
 
-const responseHeaders = computed<HeaderRow[]>(() => [
-  {
-    label: 'Access-Control-Allow-Origin',
-    value: baseUrl,
-  },
-  {
-    label: 'Cache-Control',
-    value: 'no-cache',
-  },
-  {
-    label: 'Connection',
-    value: 'keep-alive',
-  },
-  {
-    label: 'Content-Length',
-    value: estimatedContentLength.value,
-  },
-  {
-    label: 'Content-Type',
-    value: contentType.value,
-  },
-  {
-    label: 'Date',
-    value: fixedDate,
-  },
-  {
-    label: 'Etag',
-    value: `W/"vite-${props.request.id}-${props.request.time}-${props.request.name.replace(/[^a-z0-9]/gi, '').toLowerCase() || 'request'}"`,
-  },
-  {
-    label: 'Keep-Alive',
-    value: 'timeout=5',
-  },
-  {
-    label: 'Vary',
-    value: 'Origin',
-  },
-])
+const responseHeaders = computed<HeaderRow[]>(() => {
+  if (isWebSocketRequest.value) {
+    return [
+      {
+        label: 'Connection',
+        value: 'Upgrade',
+      },
+      {
+        label: 'Date',
+        value: fixedDate,
+      },
+      {
+        label: 'Sec-WebSocket-Accept',
+        value: 'UHJldHR5TGVnaXRCdXRUaGlzSXNJdEZha2U9',
+      },
+      {
+        label: 'Upgrade',
+        value: 'websocket',
+      },
+    ]
+  }
+
+  return [
+    {
+      label: 'Access-Control-Allow-Origin',
+      value: baseUrl,
+    },
+    {
+      label: 'Cache-Control',
+      value: 'no-cache',
+    },
+    {
+      label: 'Connection',
+      value: 'keep-alive',
+    },
+    {
+      label: 'Content-Length',
+      value: estimatedContentLength.value,
+    },
+    {
+      label: 'Content-Type',
+      value: contentType.value,
+    },
+    {
+      label: 'Date',
+      value: fixedDate,
+    },
+    {
+      label: 'Etag',
+      value: `W/"vite-${props.request.id}-${props.request.time}-${props.request.name.replace(NON_ALPHANUMERIC_RE, '').toLowerCase() || 'request'}"`,
+    },
+    {
+      label: 'Keep-Alive',
+      value: 'timeout=5',
+    },
+    {
+      label: 'Vary',
+      value: 'Origin',
+    },
+  ]
+})
 
 const requestHeaders = computed<HeaderRow[]>(() => {
+  if (isWebSocketRequest.value) {
+    return [
+      {
+        label: 'Accept-Encoding',
+        value: 'gzip, deflate, br, zstd',
+      },
+      {
+        label: 'Accept-Language',
+        value: 'en-US,en;q=0.9,fr-FR;q=0.8,fr;q=0.7',
+      },
+      {
+        label: 'Cache-Control',
+        value: 'no-cache',
+      },
+      {
+        label: 'Connection',
+        value: 'Upgrade',
+      },
+      {
+        label: 'Host',
+        value: 'localhost:5173',
+      },
+      {
+        label: 'Origin',
+        value: baseUrl,
+      },
+      {
+        label: 'Pragma',
+        value: 'no-cache',
+      },
+      {
+        label: 'Sec-WebSocket-Extensions',
+        value: 'permessage-deflate; client_max_window_bits',
+      },
+      {
+        label: 'Sec-WebSocket-Key',
+        value: 'ZGVtby10YWxrLXNvY2tldA==',
+      },
+      {
+        label: 'Sec-WebSocket-Version',
+        value: '13',
+      },
+      {
+        label: 'Upgrade',
+        value: 'websocket',
+      },
+      {
+        label: 'User-Agent',
+        value: userAgent,
+      },
+    ]
+  }
+
   const rows: HeaderRow[] = [
     {
       label: 'Accept',
@@ -224,15 +356,19 @@ const sections = computed<HeaderSection[]>(() => [
       },
       {
         label: 'Request Method',
-        value: 'GET',
+        value: props.request.method ?? 'GET',
       },
       {
         label: 'Status Code',
-        value: '200 OK',
+        value: props.request.status ? `${props.request.status} ${props.request.status === 101 ? 'Switching Protocols' : 'OK'}` : '200 OK',
       },
       {
         label: 'Remote Address',
         value: '[::1]:5173',
+      },
+      {
+        label: 'Protocol',
+        value: props.request.protocol ?? 'http/1.1',
       },
       {
         label: 'Referrer Policy',

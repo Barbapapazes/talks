@@ -24,10 +24,10 @@ const timer = ref<number>(INITIAL_TIMER)
 const vibrate = ref(false)
 let vibrateTimeout: ReturnType<typeof setTimeout> | null = null
 onSlideEnter(() => {
-  initialTime.value = new Date().getTime()
+  initialTime.value = Date.now()
 
   interval.value = setInterval(() => {
-    const elapsed = new Date().getTime() - initialTime.value
+    const elapsed = Date.now() - initialTime.value
     timer.value = INITIAL_TIMER - elapsed
     if (timer.value <= 0) {
       timer.value = 0

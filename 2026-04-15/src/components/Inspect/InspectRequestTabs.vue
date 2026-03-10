@@ -4,8 +4,10 @@ import Tabs from './Internal/Tabs.vue'
 
 const props = withDefaults(defineProps<{
   modelValue?: string
+  enabledTabs?: string[]
 }>(), {
   modelValue: 'Response',
+  enabledTabs: () => ['Headers', 'Response'],
 })
 
 const emits = defineEmits<{
@@ -17,20 +19,25 @@ const availableTabs = [
   'Payload',
   'Preview',
   'Response',
+  'Messages',
   'Initiator',
   'Timing',
   'Cookies',
 ]
 
-const enabledTabs = new Set(['Headers', 'Response'])
+const tabs = computed(() => {
+  const enabledTabs = new Set(props.enabledTabs)
 
-const tabs = computed(() => availableTabs.map(name => ({
-  name,
-  active: name === props.modelValue,
-  disabled: !enabledTabs.has(name),
-})))
+  return availableTabs.map(name => ({
+    name,
+    active: name === props.modelValue,
+    disabled: !enabledTabs.has(name),
+  }))
+})
 
 function onSelect(name: string) {
+  const enabledTabs = new Set(props.enabledTabs)
+
   if (!enabledTabs.has(name))
     return
 

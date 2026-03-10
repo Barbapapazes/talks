@@ -138,7 +138,7 @@ async function downloadAudio(packageJson: string) {
 
         if (silenceEnds.length > 0) {
           // silenceEnd is relative to window file start; convert to absolute seconds
-          const relative = silenceEnds[silenceEnds.length - 1]
+          const relative = silenceEnds.at(-1)
           const absolute = windowStart + Math.floor(relative)
           // Only accept silence if it's within +/- maxSilenceSearch of intendedEnd
           if (Math.abs(absolute - intendedEnd) <= maxSilenceSearch) {

@@ -5,19 +5,35 @@ import VClick from '@slidev/client/builtin/VClick.ts'
 import { onClickOutside } from '@vueuse/core'
 import { computed, defineComponent, markRaw, shallowRef, useTemplateRef, watch } from 'vue'
 import InspectRequestHeaders from '../InspectRequestHeaders.vue'
+import InspectRequestMessages from '../InspectRequestMessages.vue'
 import InspectRequestTabs from '../InspectRequestTabs.vue'
 
 interface NetworkTabProps {
   requests: Request[]
   showDetails?: boolean
   selectedRequestId?: number | null
+  selectedRequestTab?: RequestDetailTab | null
 }
 const props = withDefaults(defineProps<NetworkTabProps>(), {
   showDetails: true,
   selectedRequestId: null,
+  selectedRequestTab: null,
 })
 
-type RequestDetailTab = 'Headers' | 'Response'
+type RequestDetailTab = 'Headers' | 'Response' | 'Messages'
+
+function getAvailableDetailTabs(request: Request | null): RequestDetailTab[] {
+  if (!request)
+    return ['Headers']
+
+  if (request.type === 'websocket' && request.webSocketMessages?.length)
+    return ['Headers', 'Messages']
+
+  if (request.response)
+    return ['Headers', 'Response']
+
+  return ['Headers']
+}
 
 interface NetworkRequestRow {
   request: Request
@@ -48,12 +64,15 @@ function icon(type: string) {
       return 'i-vscode-icons-file-type-js'
     case 'stylesheet':
       return 'i-vscode-icons-file-type-css'
+    case 'websocket':
+      return 'i-lucide-waypoints'
   }
 }
 
 const currentRequest = shallowRef<Request | null>(null)
 const currentRequestId = computed(() => currentRequest.value?.id ?? null)
 const currentRequestTab = shallowRef<RequestDetailTab>('Headers')
+const currentRequestAvailableTabs = computed<RequestDetailTab[]>(() => getAvailableDetailTabs(currentRequest.value))
 
 const shouldAnimateRows = computed(() => props.requests.length <= ROW_ANIMATION_LIMIT)
 
@@ -86,10 +105,33 @@ const currentRequestTarget = useTemplateRef('currentRequestTarget')
 onClickOutside(currentRequestTarget, () => currentRequest.value = null)
 
 watch(
-  () => [props.requests, props.selectedRequestId] as const,
-  ([requests, selectedRequestId]) => {
+  [currentRequestAvailableTabs, () => props.selectedRequestTab] as const,
+  ([tabs, requestedTab]) => {
+    if (requestedTab && tabs.includes(requestedTab)) {
+      currentRequestTab.value = requestedTab
+      return
+    }
+
+    if (!tabs.includes(currentRequestTab.value))
+      currentRequestTab.value = tabs[0]
+  },
+  { immediate: true },
+)
+
+watch(
+  () => [props.requests, props.selectedRequestId, props.selectedRequestTab] as const,
+  ([requests, selectedRequestId, selectedRequestTab]) => {
     if (selectedRequestId != null) {
       currentRequest.value = requests.find(request => request.id === selectedRequestId) ?? null
+
+      if (currentRequest.value) {
+        const availableTabs = getAvailableDetailTabs(currentRequest.value)
+
+        currentRequestTab.value = selectedRequestTab && availableTabs.includes(selectedRequestTab)
+          ? selectedRequestTab
+          : availableTabs[0]
+      }
+
       return
     }
 
@@ -177,7 +219,7 @@ function rowWrapper(index: number) {
                   class="size-5"
                   :class="row.icon"
                 />
-                <span class="truncate">{{ row.request.name }}</span>
+                <span class="truncate max-w-[13ch]">{{ row.request.name }}</span>
               </div>
             </td>
             <td class="px-1 py-2">
@@ -220,16 +262,24 @@ function rowWrapper(index: number) {
     </table>
 
     <div
-      v-if="props.showDetails && currentRequest?.response"
+      v-if="props.showDetails && currentRequest"
       ref="currentRequestTarget"
       class="z-10 absolute inset-y-0 right-0 left-1/5 flex flex-col border-l border-neutral-700 bg-neutral-900"
     >
-      <InspectRequestTabs v-model="currentRequestTab" />
+      <InspectRequestTabs
+        v-model="currentRequestTab"
+        :enabled-tabs="currentRequestAvailableTabs"
+      />
 
       <InspectRequestHeaders
         v-if="currentRequestTab === 'Headers'"
         :request="currentRequest"
         class="grow overflow-auto"
+      />
+
+      <InspectRequestMessages
+        v-else-if="currentRequestTab === 'Messages' && currentRequest.webSocketMessages"
+        :messages="currentRequest.webSocketMessages"
       />
 
       <div

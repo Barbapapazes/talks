@@ -41,7 +41,7 @@ function slugify(text: string | undefined): string {
 }
 
 function hasChoicesKey(node: GraphNode) {
-  return Object.prototype.hasOwnProperty.call(node, 'choices')
+  return Object.hasOwn(node, 'choices')
 }
 
 async function generateTree() {
@@ -104,7 +104,7 @@ async function generateTree() {
   }
 
   // Check for duplicate names (strict mode)
-  const duplicates = Array.from(nameToNodeId.entries())
+  const duplicates = [...nameToNodeId.entries()]
     .filter(([_, ids]) => ids.length > 1)
 
   if (duplicates.length > 0) {
@@ -202,7 +202,7 @@ async function generateTree() {
   const ungrouped: string[] = []
 
   for (const node of nodes) {
-    const label = node.name || node.title
+    const label = `#${node.index + 1} ${node.name || node.title}`
     const sanitizedId = node.id.replace(/\W/g, '_')
     const className = node.choices && node.choices.length > 1
       ? (node.ready ? 'finishedChoice' : 'choice')

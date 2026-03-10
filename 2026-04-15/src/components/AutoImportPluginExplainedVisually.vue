@@ -3,8 +3,7 @@ import type {
   ExplainedVisuallyFileSystemItem,
   ExplainedVisuallyHttpLog,
 } from './ExplainedVisually/types'
-import appVueTransformed from 'virtual:vite-transformed-file:App:ts'
-import appVueFile from 'virtual:vite-file-system:App:vue'
+import appVueFile from 'virtual:vite-file-system:AppAutoImport:vue'
 import indexHtml from 'virtual:vite-file-system:index:html'
 import mainTs from 'virtual:vite-file-system:main:ts'
 import packageJson from 'virtual:vite-file-system:package:json'
@@ -13,7 +12,8 @@ import tsconfigAppJson from 'virtual:vite-file-system:tsconfig:app:json'
 import tsconfigJson from 'virtual:vite-file-system:tsconfig:json'
 import tsconfigNodeJson from 'virtual:vite-file-system:tsconfig:node:json'
 import viteConfigTs from 'virtual:vite-file-system:vite.config:ts'
-import virtualMyModule from 'virtual:vite-transformed-file:my-module:ts'
+import appVueTransformed from 'virtual:vite-transformed-file:AppAutoImport:ts'
+import styleCssTransformed from 'virtual:vite-transformed-file:style:ts'
 import { useHighlight } from '../composables/useHighlight'
 import ExplainedVisually from './ExplainedVisually.vue'
 
@@ -29,6 +29,16 @@ const fileSystem = [
         title: 'main.ts',
         icon: 'i-vscode-icons-file-type-typescript',
         code: mainTs,
+      },
+      {
+        title: 'style.css',
+        icon: 'i-vscode-icons-file-type-css',
+        code: styleCssFile,
+      },
+      {
+        title: 'App.vue',
+        icon: 'i-vscode-icons-file-type-vue',
+        code: appVueFile,
       },
     ],
   },
@@ -82,9 +92,25 @@ const httpLogs = [
     click: 2,
   },
   {
-    request: highlight('GET http://localhost:5173/@id/__x00__virtual:my-module', 'http'),
+    request: highlight('GET http://localhost:5173/src/style.css?t=1772882882631', 'http'),
     response: {
-      code: virtualMyModule,
+      file: 'style.css',
+      code: styleCssTransformed,
+    },
+    click: 2,
+  },
+  {
+    request: highlight('GET http://localhost:5173/node_modules/.vite/deps/vue.js?v=ed2c93c8', 'http'),
+    response: {
+      code: highlight('/* vue.js content */', 'ts'),
+    },
+    click: 2,
+  },
+  {
+    request: highlight('GET http://localhost:5173/src/App.vue', 'http'),
+    response: {
+      file: 'App.vue',
+      code: appVueTransformed,
     },
     click: 2,
   },
@@ -105,7 +131,7 @@ const httpLogs = [
     :request-edge-click="1"
     :server-click="1"
     :server-status-click="1"
-    server-status-icon="i-lucide-ghost size-4"
-    server-status-text="@vitejs/plugin-vue"
+    server-status-icon="i-ph-magic-wand-bold size-4"
+    server-status-text="unplugin-auto-import"
   />
 </template>
