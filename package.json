@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.30.0",
+  "packageManager": "pnpm@10.30.3",
   "scripts": {
     "build": "pnpm -r run --workspace-concurrency=-1 build && pnpm run generate:redirects && pnpm run generate:meta",
     "export": "pnpm -r run --workspace-concurrency=1 export",
@@ -32,17 +32,17 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^7.4.3",
-    "@iconify-json/devicon": "^1.2.58",
+    "@iconify-json/devicon": "^1.2.59",
     "@iconify-json/heroicons": "^1.2.3",
     "@iconify-json/logos": "^1.2.10",
-    "@iconify-json/lucide": "^1.2.91",
+    "@iconify-json/lucide": "^1.2.95",
     "@iconify-json/noto": "^1.2.7",
     "@iconify-json/ph": "^1.2.2",
-    "@iconify-json/simple-icons": "^1.2.71",
-    "@iconify-json/vscode-icons": "^1.2.43",
+    "@iconify-json/simple-icons": "^1.2.72",
+    "@iconify-json/vscode-icons": "^1.2.44",
     "@slidev/cli": "52.1.0",
     "@slidev/theme-default": "^0.25.0",
-    "@types/node": "^25.2.3",
+    "@types/node": "^25.3.3",
     "@types/prompts": "^2.4.9",
     "@unocss/eslint-plugin": "^66.6.0",
     "dotenv": "^17.3.1",
@@ -59,7 +59,7 @@
     "prompts": "^2.4.2",
     "slidev-addon-graph": "^1.0.0",
     "slidev-theme-personal": "link:./theme",
-    "taze": "^19.9.2",
+    "taze": "^19.10.0",
     "tiktoken": "^1.0.22",
     "typescript": "^5.9.3"
   }
