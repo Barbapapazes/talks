@@ -51,7 +51,12 @@ name: Qui a déjà installé `is-string` ?
 transition: slide-up
 ---
 
-<Inalia :questionId="1" />
+<Inalia
+  question="Qui a déjà installé is-string ?"
+  type="single_select"
+  chart="donut"
+  :data="[{ label: 'Oui', count: 2, color: '#6abfac' }, { label: 'Non', count: 16, color: '#BF6A6A' }]"
+/>
 
 <!--
 

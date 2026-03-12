@@ -33,8 +33,12 @@ layout: inalia-overview
 name: Quel framework pour le frontend ?
 ---
 
-<Inalia :questionId="1" />
-
+<Inalia
+  question="Quel framework pour le frontend ?"
+  type="multiple_select"
+  chart="bar"
+  :data="[{ label: 'Vue', count: 16, color: '#24E148' }, { label: 'Angular', count: 29, color: '#CE3FC3' }, { label: 'React', count: 15, color: '#3FD7E0' }, { label: 'Svelte', count: 3, color: '#E79A1E' }, { label: 'Solid', count: 2, color: '#5B20D0' }, { label: 'Qwik', count: 0, color: '#F32BC4' }, { label: 'Aucun', count: 2, color: '#000000' }, { label: 'Un autre', count: 2, color: '#E1E72F' }]"
+/>
 <!--
 
 Profiter de la question pour évoquer que chaque framework a une manière différente de gérer la réactivité et aujourd'hui, on va en voir une mais qui est celle vers laquelle les frameworks tendent. Même Angular fait des signaux.
@@ -207,7 +211,12 @@ Présenter la slide.
 name: Vous suivez encore ? 🫣
 ---
 
-<Inalia :questionId="2" />
+<Inalia
+  question="Vous suivez encore ? 🫣"
+  type="single_select"
+  chart="donut"
+  :data="[{ label: 'Oui, évidemment', count: 27, color: '#09EE34' }, { label: 'Oui, enfin je crois', count: 12, color: '#6abfac' }, { label: 'Non, là c\'est trop 🤯', count: 1, color: '#D0452B' }]"
+/>
 
 <!--
 
