@@ -235,6 +235,14 @@ importers:
         specifier: ^3.22.0
         version: 3.22.0(markdown-it-async@2.2.0)
 
+  2026-02-12/src:
+    devDependencies:
+      alien-signals:
+        specifier: ^1.0.13
+        version: 1.0.13
+
+  2026-02-13/src: {}
+
   theme:
     dependencies:
       reka-ui:
@@ -2152,6 +2160,9 @@ packages:
 
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
+
+  alien-signals@1.0.13:
+    resolution: {integrity: sha512-OGj9yyTnJEttvzhTUWuscOvtqxq5vrhF7vL9oS0xJ2mK0ItPYP1/y+vCFebfxoEyAz0++1AIwJ5CMr+Fk3nDmg==}
 
   alien-signals@3.1.2:
     resolution: {integrity: sha512-d9dYqZTS90WLiU0I5c6DHj/HcKkF8ZyGN3G5x8wSbslulz70KOxaqCT0hQCo9KOyhVqzqGojvNdJXoTumZOtcw==}
@@ -7732,6 +7743,8 @@ snapshots:
       fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
+
+  alien-signals@1.0.13: {}
 
   alien-signals@3.1.2: {}
 
