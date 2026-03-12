@@ -6,8 +6,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 ### 2026
 
-- `fr` [En JavaScript, il y a un paquet pour tout... et souvent pour rien.](./2026-02-13) - Touraine Tech
-- `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2026-02-12) - Touraine Tech
+- `fr` [Inertia: Un Anneau pour les gouverner tous.](./2026-01-22) - Vue.js Paris
 
 ### 2025
 
@@ -48,8 +47,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 <summary>Copy talks list as text</summary>
 
 ```
-2026-02-13 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - Touraine Tech - Tours, France
-2026-02-12 - La réactivité et les signaux : démystifions la magie du frontend - Touraine Tech - Tours, France
+2026-01-22 - Inertia: Un Anneau pour les gouverner tous. - Vue.js Paris - Paris, France
 2025-12-09 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - Paris TypeScript - Paris, France
 2025-12-05 - La réactivité et les signaux : démystifions la magie du frontend - DevFest Dijon - Dijon, France
 2025-11-13 - La réactivité et les signaux : démystifions la magie du frontend - DevFest Toulouse - Toulouse, France
@@ -86,11 +84,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Year | Number of Talks |
 |------|-----------------|
-| 2026 | 2 |
+| 2026 | 1 |
 | 2025 | 19 |
 | 2024 | 6 |
 | 2023 | 1 |
-| **Total** | **28** |
+| **Total** | **27** |
 
 ### Talks per Event
 
@@ -110,8 +108,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 | PragVue | 1 | 0 | 0 | 1 | 0 |
 | StrasbourgJS | 2 | 0 | 1 | 1 | 0 |
 | TakiMeet | 1 | 0 | 0 | 1 | 0 |
-| Touraine Tech | 2 | 2 | 0 | 0 | 0 |
-| Vue.js Paris | 1 | 0 | 0 | 1 | 0 |
+| Vue.js Paris | 2 | 1 | 0 | 1 | 0 |
 
 ### Talks by Title
 
@@ -119,10 +116,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 |------------|-------|------|------|------|------|
 | Découvrons ensemble l'écosystème UnJS | 1 | 0 | 0 | 1 | 0 |
 | Deviens full-stack avec TypeScript | 1 | 0 | 1 | 0 | 0 |
-| En JavaScript, il y a un paquet pour tout... et souvent pour rien. | 7 | 1 | 6 | 0 | 0 |
+| En JavaScript, il y a un paquet pour tout... et souvent pour rien. | 6 | 0 | 6 | 0 | 0 |
 | Fluidifier l'expérience utilisateur | 1 | 0 | 0 | 1 | 0 |
 | Inertia: Un Anneau pour les gouverner tous | 2 | 0 | 2 | 0 | 0 |
-| La réactivité et les signaux : démystifions la magie du frontend | 9 | 1 | 8 | 0 | 0 |
+| Inertia: Un Anneau pour les gouverner tous. | 1 | 1 | 0 | 0 | 0 |
+| La réactivité et les signaux : démystifions la magie du frontend | 8 | 0 | 8 | 0 | 0 |
 | Nuxt, NuxtHub et le full-stack | 1 | 0 | 0 | 1 | 0 |
 | Ship Nuxt apps that scale | 2 | 0 | 1 | 1 | 0 |
 | Unifié et Universel, le JavaScript avec UnJS | 1 | 0 | 0 | 1 | 0 |
