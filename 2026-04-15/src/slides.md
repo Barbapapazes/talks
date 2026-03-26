@@ -175,7 +175,7 @@ En 2026 [pause], [slow] est-ce qu'on ne demanderait pas à l'IA de nous le dire 
 
 [accelerate] Allez, on lui demande. [enter] "Je suis nouveau dans le monde du développement web, qu'est-ce que Vite et comment est-ce que ça fonctionne ?"
 
-[enter] Elle regarde sur internet, elle réfléchie, et voilà elle répond. [disillusion]
+[enter] Elle regarde sur internet, elle réfléchie, etttttt voilà ! Elle répond... [disillusion]
 
 C'est long. c'est trop long. [fast] et moi bah, j'ai que 45 minutes et j'ai vraiment envie de vous donner un concentré.
 -->
@@ -188,6 +188,17 @@ timing: 0
 
 <!-- TODO: center-card avec des bullets points et des couleurs du primary -->
 <!-- TODO: gray ensuite comme dans les signaux -->
+<!-- TODO: faire un composant généric pour le réutiliser partout -->
+<!-- https://github.com/Barbapapazes/talks/blob/86/2025-12-05/src/slides.md#L448-L453 -->
+
+<ProgressiveList
+  :items="[
+    'Web Server (Request, Response)',
+    'Based on ECMAScript Modules (`import`, `export`)',
+    'Transform Files On-Demand',
+    'Extensible using Plugins'
+  ]
+/>
 
 <!--
 [slow] Du coup, bin voici les trucs les plus importants à retenir sur Vite.
@@ -212,7 +223,22 @@ layout: full
 
 <ViteExplainedVisually />
 
-<!-- TODO: simplifier... -->
+<!-- TODO: simplifier en retirant des choses au fur et à mesure et à la fin, laisser un maximum de place pour le HTTP Log dans la mesur où on ne regarde que lui... -->
+<!-- TODO: supprimer le fait de démarrer Vite -->
+<!-- TODO: tout afficher d'un coup et ensuite les étudier une à une -->
+
+<!--
+[slow] [click] À droite, un navigateur, [click] à gauche, des fichiers. J'ai pris le template Vite, Vue et TypeScript. [fast] Eh heu quand je dis à gauche à droite, c'est heu sur votre machine que tout ça hein.
+
+[slow] Entre les deux, on place [fast] rapidement [slow] [click] Vite, notre serveur web. [fast] Et puis bon bin, le navigateur, il fait des requêtes HTTP vers Vite qui va lire le système de fichier pour renvoyer l'information.
+
+Pour la suite, je vous propose qu'on se place dans la navigateur et qu'on intercepe [click] ensemble les requêtes HTTP.
+
+[accelerate]
+
+
+[enthusiastic] Super ! On a désormais une belle vision d'ensemble.
+-->
 
 <!--
 Tout commence par [click] un navigateur d'un côté et [click] des fichiers de l'autre. On peut s'y balader et regarder leur contenu. C'est un template Vue et TypeScript, rien d'extraordinaire.
@@ -250,6 +276,8 @@ img: https://images.unsplash.com/photo-1564089969562-7b8667a4adec?q=80&w=2340&au
 ---
 
 <AllAboutPlugins />
+
+<!-- TODO: démarer en mode j'ai un secret à vous dire -->
 
 <!--
 
