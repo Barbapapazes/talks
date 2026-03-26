@@ -196,6 +196,8 @@ async function generateTree() {
   mermaidLines.push('  classDef choice fill:#f9f9f9,stroke:#333,stroke-width:1px')
   mermaidLines.push('  classDef finished fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px')
   mermaidLines.push('  classDef finishedChoice fill:#dcedc8,stroke:#558b2f,stroke-width:2px')
+  mermaidLines.push('  classDef recap fill:#ede7f6,stroke:#6a1b9a,stroke-width:2px')
+  mermaidLines.push('  classDef finishedRecap fill:#e1bee7,stroke:#7b1fa2,stroke-width:2px')
 
   // Add nodes
   const groups = new Map<string, string[]>()
@@ -204,9 +206,11 @@ async function generateTree() {
   for (const node of nodes) {
     const label = `#${node.index + 1} ${node.name || node.title}`
     const sanitizedId = node.id.replace(/\W/g, '_')
-    const className = node.choices && node.choices.length > 1
-      ? (node.ready ? 'finishedChoice' : 'choice')
-      : (node.ready ? 'finished' : 'main')
+    const className = node.layout === 'recap'
+      ? (node.ready ? 'finishedRecap' : 'recap')
+      : node.choices && node.choices.length > 1
+          ? (node.ready ? 'finishedChoice' : 'choice')
+          : (node.ready ? 'finished' : 'main')
     const line = `  ${sanitizedId}["${label}"]:::${className}`
 
     const group = node.group

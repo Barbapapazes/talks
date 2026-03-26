@@ -11,8 +11,10 @@ declare module 'virtual:vite-build:*' {
 }
 
 declare module 'virtual:growth-chart' {
-  export const vite: Array<[string, number]>
-  export const webpack: Array<[string, number]>
-  export const rspack: Array<[string, number]>
-  export const isString: Array<[string, number]>
+  export const months: Array<string>
+  export const series: Array<{
+    id: string
+    packageName: string
+    data: Array<[string, number]>
+  }>
 }

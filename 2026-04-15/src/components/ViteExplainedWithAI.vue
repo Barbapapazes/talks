@@ -11,5 +11,6 @@ const props = defineProps<{
   <ChatAnimation
     :user-prompt="props.userPrompt"
     :assistant-html-frames="assistantHtmlFrames"
+    :typewriter-char-delay-ms="30"
   />
 </template>

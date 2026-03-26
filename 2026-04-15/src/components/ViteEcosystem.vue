@@ -3,14 +3,14 @@ import VAfter from '@slidev/client/builtin/VAfter.ts'
 import VClick from '@slidev/client/builtin/VClick.ts'
 
 const icons = [
+  'i-devicon-angular',
+  'i-devicon-react',
+  'i-devicon-astro',
   'i-devicon-vuejs',
   'i-devicon-nuxt',
   'i-devicon-svelte',
-  'i-devicon-react',
-  'i-devicon-angular',
   'i-devicon-solidjs',
   'i-devicon-qwik',
-  'i-devicon-astro',
   'i-unjs-nitro',
   null,
   null,
