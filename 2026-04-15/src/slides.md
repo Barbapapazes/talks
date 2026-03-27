@@ -67,7 +67,7 @@ J'espère que vous allez bien.
 
 [wait]
 
-Hyper content d'être là aujourd'hui pour vous parler de Vite, de ses plugins et de pleins de trucs.
+Merci d'être venu aujourd'hui, c'est vraiment super chouette de vous voir aussi nombreux.
 -->
 
 ---
@@ -232,12 +232,12 @@ layout: full
 
 [slow] Entre les deux, on place [fast] rapidement [slow] [click] Vite, notre serveur web. [fast] Et puis bon bin, le navigateur, il fait des requêtes HTTP vers Vite qui va lire le système de fichier pour renvoyer l'information.
 
-Pour la suite, je vous propose qu'on se place dans la navigateur et qu'on intercepe [click] ensemble les requêtes HTTP.
+Pour la suite, je vous propose qu'on se place dans la navigateur et qu'on intercepte [click] ensemble les requêtes HTTP.
 
 [accelerate]
+TODO:
 
-
-[enthusiastic] Super ! On a désormais une belle vision d'ensemble.
+[enthusiastic] Trop chouette ! On a maintenant une belle vision d'ensemble.
 -->
 
 <!--
@@ -277,12 +277,15 @@ img: https://images.unsplash.com/photo-1564089969562-7b8667a4adec?q=80&w=2340&au
 
 <AllAboutPlugins />
 
-<!-- TODO: démarer en mode j'ai un secret à vous dire -->
+<!-- TODO: au centre avec un example et pouf, ça part dans l'écran -->
+<!-- TODO: overlay en bas à gauche -->
 
 <!--
+[whispers] Bon, par contre, j'ai un petit secret à vous dire. Ça reste en vous et moi hein?
 
-Donc, on vient de le voir, Vite, c'est un serveur web qui transforme nos fichiers à la demande. De base, Vite prend déjà en charge une multitude de transformations :
+[slow] Dans Vite [pause], toutes les fonctionnalités [pause], sont des plugins. [pause] Toutes !
 
+TODO: écrire
 - HTML
 - JSX
 - CSS
@@ -293,30 +296,38 @@ Donc, on vient de le voir, Vite, c'est un serveur web qui transforme nos fichier
 - WebAssembly
 - Web Workers
 
-Et le plus dingue, c'est que tout ça n'est implémenté qu'à travers des plugins, via la même API que n'importe qui peut utiliser pour créer les siens.
+[whispers] Et ça, mmmh, c'est vraiment bien parce que ça veut dire qu'on peut faire enfaite, bah, tout ce qu'on veut qu'on fait un plugin.
+
+TODO: une autre slide
+
+ça m'fait penser, on va explorer l'un d'entre eux après, et vous avez la possibilité de choisir lequel.
+
+X ? on peut ! Y ? on peut ! Z ? on peut ! <en mettre pleins>
+
+Breeeef, on a la possibilité de tout faire.
  -->
 
 ---
 name: Tout n'est que plugin - Choices
 group: Feature Plugins
 timing: 0.5
-
 layout: choices
 choices:
   - Du CSS importé dans un fichier TypeScript
   - Une image chargée dans un fichier TypeScript
-  - import.meta.glob est une illusion
+  - JSX chargé naturellement
 ---
 
 <!--
-// et oui, pas que des thèmes, choissez quel démo vous souhaitez voir (sur la slide d'avant) (teaser du début de la slide d'avant, ou au fur et à mesure de la slide d'avant pour avoir 0 temps mort) via un overlay en bas à gauche, qui apparait ou non)
+Ooooh [pause], très intéressant comme choix.
+
+Et bin c'est parti, explorons <choix> !
 -->
 
 ---
 name: Du CSS importé dans un fichier TypeScript
 group: Feature Plugins
 timing: 0.5
-
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
@@ -326,44 +337,45 @@ transition: slide-up
 import './style.css'
 ```
 
+<!-- TODO: utiliser css-is-js.png -->
+
 <!--
-Ça ne choque plus personne, mais en JavaScript, c'est impossible d'importer du CSS dans un fichier TypeScript.
+[enthusiastic] Nan oui, oui, alors ça, faut qu'on en parle !
 
-Pourtant, c'est ce qu'on fait tous les jours avec Vite.
+[slow] JavaScript, il autorise pas d'importer du CSS. Pourtant, on le fait et ça marche !
 
-Pourquoi ? Parce que, dans les faits, le navigateur, quand il voit un `import`, se moque pas mal de l'extension et demande le module quoi qu'il arrive, tant que le `Content-Type` de la réponse est `text/javascript`.
+Pourquoi ? Parce que l'navigateur, il s'fout de l'extension. Tant que tu lui renvois du JavaScript, c'est ok.
+
+[shocked] Mais ? Ça veut dire qu'on lui renvoie du JavaScript ?
 -->
 
 ---
 name: Du CSS importé dans un fichier TypeScript - Visualisation
 group: Feature Plugins
 timing: 1.2
-
 choices:
-  - Vite et ses features - Récap
+  - Vite et ses features - RécapWhat are some of the names?
 ---
 
+<!-- TODO: make background image use the frontmatter by default -->
 <BackgroundImage img="https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
 
 <CssImportedIntoTypeScript class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
-Ce que je vous propose, c'est de regarder d'un peu plus près [click] les requêtes et les réponses de notre navigateur.
+Pour en avoir le cœur net, je vous propose qu'on aille dans [click] l'inspecteur de notre navigateur. On va y observer les requêtes et les réponses.
 
-On retrouve, comme tout à l'heure, notre fichier index.html qui contient un lien vers notre fichier TypeScript. Au passage, votre navigateur ne lit toujours pas de TypeScript.
+On y r'trouve notre index.html. Ce document, il charge l'index.ts. L'index.ts, lui, importe notre style.css.
 
-Si on regarde le fichier main.ts, on se rend compte que c'est du JavaScript valide et on y retrouve le style.css.
+[impressed] Ooooh, whaaaoo ! Il n'y a pas de CSS là. Heureusement parce que notre navigateur, il n'aurait pas su quoi en faire.
 
-La requête suivante, c'est justement ce style.css. Si on regarde la réponse, on se rend compte que ce n'est que du JavaScript. On y retrouve le contenu de notre fichier CSS. Le point important ici, c'est la fonction `__vite__updateStyle`, qui va se charger d'injecter le contenu de notre fichier CSS dans le `head` de notre page au moment de l'exécution du script.
-
-Autrement dit, la transformation de notre fichier CSS natif en fichier JavaScript est entièrement gérée par un plugin, qui fait plus de 3 000 lignes. Je vous l'épargne.
+[slow] Si on fouille un peu, qu'on cherche là dans le fichier, on y retrouve notre CSS. Tout le reste, c'est de la transformation à la volée par Vite.
 -->
 
 ---
 name: Une image chargée dans un fichier TypeScript
 group: Feature Plugins
 timing: 0.5
-
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
@@ -373,111 +385,116 @@ transition: slide-up
 import img from './image.png'
 ```
 
+<!-- TODO: utiliser img-is-js.png -->
+
 <!--
-Ça ne choque peut-être personne, mais en JavaScript, c'est impossible d'importer une image dans un fichier TypeScript.
+[enthusiastic] Nan oui, oui, alors ça, faut qu'on en parle aussi !
 
-Pourtant, c'est ce qu'on peut faire avec Vite.
+[slow] JavaScript, il autorise pas d'importer des images. Pourtant, on le fait et ça marche !
 
-Pourquoi ? Parce que dans les faits, le navigateur, quand il voit un `import`, il se moque pas mal de l'extension et il demande le module, quoi qu'il arrive, tant que le `Content-Type` du retour est `text/javascript`.
+Pourquoi ? Parce que l'navigateur, il s'fout de l'extension. Tant que tu lui renvois du JavaScript, c'est ok.
+
+[shocked] Mais ? Ça veut dire qu'on lui renvoie du JavaScript ?
 -->
 
 ---
 name: Une image chargée dans un fichier TypeScript - Visualisation
 group: Feature Plugins
 timing: 1.6
-
 transition: slide-up
 ---
 
 <BackgroundImage img="https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
 
+<!-- TODO: keep only one to keep it as simple as possible -->
 <AnImageLoadedIntoTypeScript class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
-Ce que je vous propose, c'est de regarder d'un peu plus près [click] les requêtes et les réponses dans le navigateur.
+Pour en avoir le cœur net, je vous propose qu'on aille dans [click] l'inspecteur de notre navigateur. On va y observer les requêtes et les réponses.
 
-On retrouve, comme tout à l'heure, notre fichier index.html qui contient un lien vers notre fichier TypeScript. Au passage, votre navigateur ne lit toujours pas de TypeScript.
+On y r'trouve notre index.html. Ce document, il charge l'index.ts. L'index.ts, lui, importe notre image.
 
-Si on regarde le fichier main.ts, on y voit l'import de différentes images.
+[impressed] Ooooh, whaaoo ! Il n'y a pas d'image là. Heureusement parce que notre navigateur, il n'aurait pas su quoi en faire.
 
-1. La première, c'est `import` normal.
-2. La deuxième, c'est toujours un `import` normal, mais pour une image qui fait moins de 4 KiB.
-3. La troisième, l'URL de l'`import` contient une query `inline`.
-4. La quatrième contient une query `raw`.
-
-À votre avis, que va nous retourner Vite ?
-
-1. Pour cette première image, on voit que Vite nous retourne un fichier JavaScript avec l'URL vers l'image pour l'utiliser dans une balise `img`, par exemple.
-2. Pour la seconde aussi, c'est tout comme la première en développement.
-3. Pour la troisième, en revanche, c'est différent. L'image retournée est encodée en base64. L'objectif, c'est de pouvoir inliner l'asset pour éviter une requête vers le serveur.
-4. Pour la quatrième, on a carrément le contenu brut de l'image qui est renvoyé. Là, c'est pratique si vous avez besoin de faire du traitement dessus, par exemple pour un shader Three.js.
+[slow] Automatiquement, Vite va répondre à cet import en récupérant le chemin de l'image et en générant un module JavaScript qui exporte l'URL de l'image.
 -->
 
 ---
 name: Une image chargée dans un fichier TypeScript - Build
 group: Feature Plugins
 timing: 1.2
-
 layout: bottom-right-card
 img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
   - Vite et ses features - Récap
 ---
 
+<!-- TODO: n'avoir que le inline dans l'output -->
 <AnImageLoadedIntoTypeScriptBuildTree />
 
 <!--
-Là où ça devient intéressant, c'est au moment du build.
+Au build, deux petites subtilités.
 
-Vous avez là l'output du build de la même application que ce qu'on a vu juste avant.
-
-Première chose, on y voit notre image avec un hash, et c'est normal : Vite ajoute un hash dans les assets qu'il traite, exactement comme pour les fichiers JavaScript. Si vous changez l'image en gardant le même nom, le hash sera différent, et ça vous évitera les problèmes de cache.
-
-Ce qu'on voit aussi, c'est qu'il n'y a pas notre seconde image, la tiny image. Elle a disparu ?
-
-Regardons le fichier `index.js` d'un peu plus près.
-
-Aaaaah, elle est là ! Au moment du build, Vite regarde la taille des assets et, s'ils font moins de 4 KiB — seuil configurable —, il les inline pour éviter une requête HTTP.
-
-D'ailleurs, on y retrouve aussi la grosse image inline et sa version raw.
+1. Les images de moins de 4ko sont inlinées
+2. Les autres images ont un hash dans leur nom. Ça permet d'invalider le cache.
 -->
 
 ---
-name: import.meta.glob est une illusion
+name: JSX chargé naturellement
 group: Feature Plugins
 timing: 0.3
-
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
 ```ts
-const modules = import.meta.glob('./**/*.vue')
+import { createRoot } from 'react-dom/client'
+import { Item } from './Item'
+
+function App() {
+  return (
+    <div>
+      <h1>My App</h1>
+      <Item name="Item 1" price={10} />
+      <Item name="Item 2" price={20} />
+    </div>
+  )
+}
+
+const root = createRoot(document.getElementById('app')!)
+root.render(<App />)
 ```
 
+<!-- TODO: utiliser jsx-is-js.png -->
+
 <!--
-Ça ne choque peut-être personne, mais en JavaScript, `import.meta.glob` ça n'existe pas.
+[enthusiastic] Nan, oui, oui, alors ça, faut qu'on en parle aussi !
 
-C'est une création de Vite qui permet d'importer plusieurs modules en une seule fois via un glob pattern.
+[slow] JavaScript, il autorise pas d'importer du JSX. Pourtant, on le fait et ça marche !
 
-Dans notre cas, ça permet d'importer tous les fichiers Vue du dossier `src`.
+Pourquoi ? Parce que l'navigateur, il s'fout de l'extension. Tant que tu lui renvois du JavaScript, c'est ok.
+
+[shocked] Mais ? Ça veut dire qu'on lui renvoie du JavaScript ?
 -->
 
 ---
-name: import.meta.glob est une illusion - Visualisation
+name: JSX chargé naturellement - Visualisation
 group: Feature Plugins
 timing: 0.8
-
 choices:
   - Vite et ses features - Récap
 ---
 
 <BackgroundImage img="https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
 
+<!-- TODO: rewrite -->
 <ImportMetaGlobIsAnIllusion class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
+
+
+
 Ce que je vous propose, c'est de regarder d'un peu plus près [click] les requêtes et les réponses dans le navigateur pour mieux comprendre comment ça fonctionne.
 
 Dans un premier temps, on charge notre document et le serveur Vite nous retourne un fichier index.html qui contient un lien vers notre fichier main.ts.
@@ -492,18 +509,47 @@ name: Vite et ses features - Récap
 layout: recap
 ---
 
+<!-- TODO: faire la slide -->
+
+<RecapList
+  :title="'Vite en 3 points'"
+  :items="[
+    {
+      title: 'Un serveur web pour le développement',
+      description: 'Il fait transiter des requêtes qu\'on transformera à la volée'
+    },
+    {
+      title: 'Un bundler pour la production',
+      description: 'Il transforme notre code pour la production'
+    },
+    {
+      title: 'Un système de plugins',
+      description: 'Pour étendre ses fonctionnalités et faire tout ce qu\'on veut'
+    }
+  ]"
+/>
+
 <!--
+[slow] Ok, on résume parce que ça commence à faire beaucoup.
+
+Vite c'est trois choses :
+1. un serveur web pour le développement où on fait transiter des requêtes qu'on transformera à la volée
+2. un bundler, à la webpack, qui va transformer notre code pour la production
+3. et un système de plugins, pour étendre ses fonctionnalités et faire tout ce qu'on veut.
+
+Pour la suite, c'est dans ce dernier point, sur les plugins, que je vous invite à me suivre.
 -->
 
 ---
 name: Les entrailles d'un plugin Vite
 group: Inside a Plugin
 timing: 0.9
-
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
+
+<!-- TODO: highlight du code -->
 
 ````md magic-move
 ```ts {*}{lines:true}
@@ -536,6 +582,7 @@ export default function monPlugin() {
 ````
 
 <!--
+TODO: on peut pas dire ça
 Rentrons dans le vif du sujet, parce que c'est quand même pour ça que vous êtes venus. Parlons des plugins Vite.
 
 Avant tout, qu'est-ce que c'est ? C'est un moyen d'étendre les fonctionnalités de Vite en s'y branchant à différents moments de son cycle de vie.
@@ -556,6 +603,7 @@ img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=
 ---
 
 <!-- TODO: simplifier et porter davantage à l'essentiel avec du visuel et du highlight de ligne (ou du blur) -->
+<!-- TODO: ne garder que les hooks essentiels -->
 
 ````md magic-move
 ```ts {*}{lines:true}
@@ -683,7 +731,6 @@ Dans un plugin Vite, il est aussi possible de se brancher sur le cycle de vie de
 name: resolveId
 group: Inside a Plugin
 timing: 0
-
 layout: bottom-right-card
 img: https://images.unsplash.com/photo-1614521185607-c374b6c5609c?q=80&w=1468&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
@@ -2121,15 +2168,19 @@ Imaginez une pipeline avec le plugin Vue. Si on veut agir sur le code du composa
 
 ---
 name: Conclusion
+layout: conclusion
 ---
 
 <!-- TODO: juste une punch finale, ce que les gens doivent retenir -->
 
+<!-- TODO: aucune limite et transformation entre les fichiers et le navigateur et même, certains des fichiers peuvent être virtuels. -->
+
 ---
 name: Votre tour
+layout: keep-in-mind
 ---
 
-<!-- TODO: En 45 minutes, vous avez découvert le nécessaire pour réaliser votre plugin Vite -->
+En 45 minutes, vous avez découvert<br>le nécessaire pour réaliser<br>votre plugin Vite.
 
 ---
 name: Outro
@@ -2137,5 +2188,4 @@ timing: 0.7
 layout: outro2
 ---
 
-<!-- TODO: je crois qu'on s'en fou de tout ça -->
 <!-- TODO: qr de fin, ma tête, qui je suis, où me retrouver et potentiellement les articles  -->
