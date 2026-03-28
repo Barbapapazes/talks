@@ -1,4 +1,4 @@
-export type ExplainedVisuallyClickValue = number | [number, number]
+export type ExplainedVisuallyClickValue = number
 
 export interface ExplainedVisuallyFileSystemItem {
   title: string
@@ -15,8 +15,7 @@ export interface ExplainedVisuallyHttpResponse {
 
 export interface ExplainedVisuallyHttpLog {
   request: string
-  response: ExplainedVisuallyHttpResponse
-  click: ExplainedVisuallyClickValue
+  response?: ExplainedVisuallyHttpResponse
 }
 
 export interface ExplainedVisuallySelectedFile {

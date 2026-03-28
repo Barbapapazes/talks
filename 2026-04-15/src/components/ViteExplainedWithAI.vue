@@ -12,5 +12,7 @@ const props = defineProps<{
     :user-prompt="props.userPrompt"
     :assistant-html-frames="assistantHtmlFrames"
     :typewriter-char-delay-ms="30"
+    :search-duration-ms="1500"
+    :thinking-duration-ms="3000"
   />
 </template>

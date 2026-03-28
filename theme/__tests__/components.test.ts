@@ -1,6 +1,15 @@
 import { mount } from '@vue/test-utils'
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { defineComponent, h, inject, provide } from 'vue'
+
+vi.mock('@slidev/client', () => ({
+  useSlideContext: () => ({
+    $frontmatter: {},
+    $clicks: 0,
+  }),
+  useIsSlideActive: () => false,
+}))
+
 import BackgroundImage from '../components/BackgroundImage.vue'
 import Card from '../components/Card.vue'
 import CardLayout from '../components/CardLayout.vue'
@@ -9,6 +18,8 @@ import FooterItem from '../components/FooterItem.vue'
 import FooterLink from '../components/FooterLink.vue'
 import Icon from '../components/Icon.vue'
 import Modal from '../components/Modal.vue'
+import ProgressiveList from '../components/ProgressiveList.vue'
+import RecapList from '../components/RecapList.vue'
 import Tree from '../components/Tree.vue'
 
 afterEach(() => {
@@ -388,5 +399,69 @@ describe('modal', () => {
     await wrapper.get('[aria-label="Close modal"]').trigger('click')
 
     expect(wrapper.emitted('update:open')).toEqual([[false]])
+  })
+})
+
+describe('progressiveList', () => {
+  it('dims previously revealed items until an extra click clears the dimming', async () => {
+    const mountProgressiveList = ($clicks: number) => mount(ProgressiveList, {
+      props: {
+        items: ['Glitches', 'Cyclic dependencies', 'Mutable state'],
+      },
+      global: {
+        mocks: {
+          $clicks,
+        },
+        directives: {
+          click: {},
+        },
+      },
+    })
+
+    const afterSecondClick = mountProgressiveList(2).findAll('[data-progressive-list-item]')
+    expect(afterSecondClick[0].classes()).toContain('opacity-20')
+    expect(afterSecondClick[1].classes()).not.toContain('opacity-20')
+    expect(afterSecondClick[2].classes()).not.toContain('opacity-20')
+
+    const afterThirdClick = mountProgressiveList(3).findAll('[data-progressive-list-item]')
+    expect(afterThirdClick[0].classes()).toContain('opacity-20')
+    expect(afterThirdClick[1].classes()).toContain('opacity-20')
+    expect(afterThirdClick[2].classes()).not.toContain('opacity-20')
+
+    const afterExtraClick = mountProgressiveList(4).findAll('[data-progressive-list-item]')
+    for (const item of afterExtraClick)
+      expect(item.classes()).not.toContain('opacity-20')
+  })
+})
+
+describe('recapList', () => {
+  it('renders the title and each recap item', () => {
+    const wrapper = mount(RecapList, {
+      props: {
+        title: 'Vite en 3 points',
+        items: [
+          {
+            title: 'Un serveur web pour le développement',
+            description: 'Il fait transiter des requêtes qu\'on transformera à la volée',
+          },
+          {
+            title: 'Un bundler pour la production',
+            description: 'Il transforme notre code pour la production',
+          },
+          {
+            title: 'Un système de plugins',
+            description: 'Pour étendre ses fonctionnalités et faire tout ce qu\'on veut',
+          },
+        ],
+      },
+      global: {
+        directives: {
+          click: {},
+        },
+      },
+    })
+
+    expect(wrapper.findAll('[data-recap-list-item]')).toHaveLength(3)
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })

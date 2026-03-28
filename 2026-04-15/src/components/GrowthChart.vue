@@ -42,11 +42,13 @@ const seriesMeta: Record<string, SeriesMeta> = {
   },
   snowpack: {
     label: 'Snowpack',
-    color: '#2D9D78',
+    color: '#2E5E82',
+    iconClass: 'i-simple-icons-snowpack',
   },
   'swc-core': {
     label: 'SWC',
-    color: '#F882AF',
+    color: '#F8821F',
+    iconClass: 'i-vscode-icons-file-type-swc',
   },
 }
 
@@ -69,9 +71,9 @@ const series = (chartSeries as ChartSeries[]).map((dataset, index) => ({
 <template>
   <div class="absolute z-10 top-14 left-14 flex flex-col gap-1">
     <div
-      v-for="dataset in series"
+      v-for="(dataset, index) in series"
       :key="dataset.id"
-      v-click
+      v-click="index === 0 ? 1 : 2"
       class="flex flex-row items-center gap-2 font-light"
       :style="{ color: dataset.color }"
     >
@@ -101,7 +103,7 @@ const series = (chartSeries as ChartSeries[]).map((dataset, index) => ({
         :key="dataset.id"
       >
       <VisArea
-        v-if="$clicks >= index + 1"
+        v-if="index === 0 ? $clicks >= 1 : $clicks >= 2"
         :data="dataset.data"
         :x="x"
         :y="y"

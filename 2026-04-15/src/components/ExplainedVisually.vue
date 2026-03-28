@@ -15,7 +15,6 @@ import ExplainedVisuallyHttpLogs from './ExplainedVisually/ExplainedVisuallyHttp
 import ExplainedVisuallyHttpResponseModal from './ExplainedVisually/ExplainedVisuallyHttpResponseModal.vue'
 import ExplainedVisuallyServer from './ExplainedVisually/ExplainedVisuallyServer.vue'
 
-// TODO: move class to their respective components, there is no reason to move them
 const props = withDefaults(defineProps<{
   browserAddress?: string
   browserAddressClick?: ExplainedVisuallyClickValue
@@ -25,17 +24,14 @@ const props = withDefaults(defineProps<{
   fileSystemItems: ExplainedVisuallyFileSystemItem[]
   httpLogs: ExplainedVisuallyHttpLog[]
   httpLogsClick?: ExplainedVisuallyClickValue
-  httpLogsClass?: string
   httpLogsTitle?: string
   readFilesEdgeClick?: ExplainedVisuallyClickValue
   readFilesEdgeText?: string
   requestEdgeClick?: ExplainedVisuallyClickValue
   requestEdgeText?: string
-  sceneClass?: string
   serverClick?: ExplainedVisuallyClickValue
   serverLogoAlt?: string
   serverLogoSrc?: string
-  serverStatusClass?: string
   serverStatusClick?: ExplainedVisuallyClickValue
   serverStatusIcon?: string
   serverStatusText?: string
@@ -46,26 +42,18 @@ const props = withDefaults(defineProps<{
   fileExplorerClick: undefined,
   fileExplorerDefaultExpanded: () => [],
   httpLogsClick: undefined,
-  httpLogsClass: 'absolute left-10 -bottom-2 right-3/10 pb-10',
   httpLogsTitle: 'HTTP Logs',
   readFilesEdgeClick: undefined,
   readFilesEdgeText: 'Read Files',
   requestEdgeClick: undefined,
   requestEdgeText: 'HTTP Requests',
-  sceneClass: 'absolute left-10 right-10 top-14 flex fex-row items-center justify-between',
   serverClick: undefined,
   serverLogoAlt: 'Server logo',
   serverLogoSrc: '/vite-icon-color-dark.svg',
-  serverStatusClass: 'absolute bottom-1 left-1/2 flex flex-row gap-1 -translate-x-1/2 text-xs text-cyan-700',
-  serverStatusClick: undefined,
-  serverStatusIcon: undefined,
-  serverStatusText: undefined,
 })
 
 defineSlots<{
-  'browser'?: () => any
   'server'?: () => any
-  'server-status'?: () => any
 }>()
 
 function findFileByTitle(
@@ -99,6 +87,9 @@ function onSelectFile(item: ExplainedVisuallyFileSystemItem) {
 
 const httpResponse = ref<ExplainedVisuallySelectedResponse | null>(null)
 function onSelectHttpLog(log: ExplainedVisuallyHttpLog) {
+  if (!log.response)
+    return
+
   const foundFile = log.response.file
     ? findFileByTitle(log.response.file)
     : null
@@ -112,48 +103,33 @@ function onSelectHttpLog(log: ExplainedVisuallyHttpLog) {
 </script>
 
 <template>
-  <div :class="props.sceneClass">
-    <ExplainedVisuallyBrowser v-click="props.browserClick">
-      <slot name="browser">
-        <span v-if="props.browserAddress" v-click="props.browserAddressClick">
-          {{ props.browserAddress }}
-        </span>
-      </slot>
+  <div class="absolute left-10 right-10 top-1/2 transform -translate-y-1/2 flex fex-row items-center justify-between">
+    <ExplainedVisuallyBrowser v-click="[props.browserClick, props.httpLogsClick]">
+      <span v-if="props.browserAddress" v-click="props.browserAddressClick">
+        {{ props.browserAddress }}
+      </span>
     </ExplainedVisuallyBrowser>
 
     <ExplainedVisuallyEdge
-      v-click="props.requestEdgeClick"
+      v-click="[props.requestEdgeClick, props.httpLogsClick]"
       :text="props.requestEdgeText"
     />
 
     <ExplainedVisuallyServer
-      v-click="props.serverClick"
+      v-click="[props.serverClick, props.httpLogsClick]"
       :logo-alt="props.serverLogoAlt"
       :logo-src="props.serverLogoSrc"
-      :status-class="props.serverStatusClass"
-      :status-click="props.serverStatusClick"
-      :status-icon="props.serverStatusIcon"
-      :status-text="props.serverStatusText"
     >
       <slot name="server" />
-
-      <template #status>
-        <slot name="server-status">
-          <span v-if="props.serverStatusIcon" :class="props.serverStatusIcon" />
-          <span v-if="props.serverStatusText">
-            {{ props.serverStatusText }}
-          </span>
-        </slot>
-      </template>
     </ExplainedVisuallyServer>
 
     <ExplainedVisuallyEdge
-      v-click="props.readFilesEdgeClick"
+      v-click="[props.readFilesEdgeClick, props.httpLogsClick]"
       :text="props.readFilesEdgeText"
     />
 
     <ExplainedVisuallyFileExplorer
-      v-click="props.fileExplorerClick"
+      v-click="[props.fileExplorerClick, props.httpLogsClick]"
       :default-expanded="props.fileExplorerDefaultExpanded"
       :items="props.fileSystemItems"
       @select="onSelectFile"
@@ -162,9 +138,10 @@ function onSelectHttpLog(log: ExplainedVisuallyHttpLog) {
 
   <ExplainedVisuallyHttpLogs
     v-click="props.httpLogsClick"
+    :click="props.httpLogsClick ? props.httpLogsClick + 1 : undefined"
     :items="props.httpLogs"
     :title="props.httpLogsTitle"
-    :class="props.httpLogsClass"
+    class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 h-3/5"
     @select="onSelectHttpLog"
   />
 

@@ -21,11 +21,11 @@ keywords: web,development,vite,plugins,pipeline
 event: MiXiT
 date: 15 avril 2026
 chooseYourOwnAdventure: true
+ready: true
 timing: 0.6
 ---
 
 <!--
-TODO: sur chacune des slides, noter clairement l'objectif de la slide
 TODO: penser à retirer des choses pour simplifier les slides et garder le focus et l'attention
 TODO: revoir le fil conducteur pour y apporter une vraie narration
 TODO: permettre d'envoyer des confettis (à la raycast)
@@ -33,9 +33,11 @@ TODO: pour les slides de choix, faut pas montrer le truc sous le capot, faut pro
 TODO: sur les récaps, teaser la suite pour donner envie de continuer
 TODO: garder un élément dans les slides pour permettre d'accéder au côté interactif
 -->
+<!-- TODO: disable emoji on some slides (like the recap slides for example) (disabled on layout) -->
 <!-- TODO: citer des choses pour les 80% donc du react et du angular à minima -->
 <!-- TODO: utiliser la vitesse pour mettre du rythme (regarder obama pour utiliser les changements de vitesse) -->
 <!-- TODO: running joke sur vite et rapide -->
+<!-- TODO: sur un début de talk, parler plus simplement, souffler, manger ses mots, parler de façon plus famillière -->
 <!--
 (authenticité fausse pour être plus proche, plus accessible, pur être dans le monde des autres)
  -->
@@ -58,7 +60,6 @@ Le vote se fait via Inalia : la slide suivante sera celle qui aura obtenu le plu
 
 # Au cœur d’une pipeline:<br>démystifions Vite et ses plugins
 
-<!-- TODO: sur un début de talk, parler plus simplement, souffler, manger ses mots, parler de façon plus famillière -->
 
 <!--
 Bonjour à tous !
@@ -92,7 +93,7 @@ transition: slide-up
 
 C'est un outil, c'est simple, il est présent partout. Prenez le nom d'une framework que vous connaissez, tant que ce nom n'est pas Next, il y a Vite dedans. [accelerate] Utilisé par Angular, React, Vue, Nuxt, Astro, TanStack, bla bla bla et pleins d'autres, bref, on s'en fou
 
-[slow] La question qui est intéressante, c'est pourquoi Vite fait autant l'unanimité ? Ben parce que c'est un bundler pas comme les autres.
+[slow] La question qu'est intéressante, c'est pourquoi Vite fait autant l'unanimité ? Ben parce que c'est un bundler pas comme les autres.
 -->
 
 
@@ -107,13 +108,13 @@ timing: 1
 
 <!--
 [slow] Peut-être que bundler ça ne parle pas forcément à tout le monde, on va prendre le temps de détailler ça là
-
+gr
 Peut-être que certains d'entre vous on entendu parler de webpack, le bundler historique, qui a dominé le paysage pendant les 10 dernières années, et qui reste aujourd'hui encore très utilisé.
 
 Mais on le voit là, juste là, à un moment donnée ça stagne alors même que le web a continué de progresser,
 
-et ça, ça s'explique quand on regarde le reste. [accelerate] Il est plus tout seul, il y en a d'autres vite, rspack, snowpack, swc, bref, d'autres.
-sauf qu'on voit que c'est vite a pris le dessus
+et ça, ça s'explique quand on regarde le reste. [accelerate] Il est plus tout seul, il y en a d'autres Vite, Rspack, Snowpack, SWC, bref, d'autres.
+sauf qu'on voit que c'est Vite a pris le dessus
 
 [slow] Pourquoi ? Est-ce une hype ? Une réalité ? Que se passe-t-il ?
 
@@ -127,7 +128,9 @@ timing: 0.8
 ---
 
 <!-- TODO: js -> exécutable du web, bundler permet de créeer cette exécutable, racourci sur un compilateur de js même si c'est pas vraiment ça, et c'est incontournable, plus personne ne fait du web snas bundler, vite est devenu le bundler incontournable adopté par tout le monde -->
+<!-- TODO: (à chaque vote, ça peut changer de couleur et d'autres choses) -->
 
+<!-- Ajouter un lien vers la documentation officielle de Vite sur le bundling : https://rolldown.rs/in-depth/why-bundlers#why-do-we-still-need-bundlersn -->
 
 <!--
 Je m'appelle Estéban, je suis ingénieur logiciel chez Takima.
@@ -144,14 +147,14 @@ Aller c'est parti, on y va, j'vous en dit pas plus [never ending sentence]
 
 [never stop] Vous pouvez prendre votre téléphone, et puis flasher le QR code, je vous laisse à vous connecter, prendre le temps de regarder un peu la plateforme, et puis bon, pendant que vous vous connectez, on va commencer.
 
+Je vous l'avez promis. C'est quoi un bundler ?
 
+On a l'habitude de démarrer une application avec un executable, executable produit avec un compilateur. Et ben dans le web, c'est pareil.
+On a un bundler qui va produire un bundle qui permet de démarrer votre application web depuis un navigateur.
+
+Du coup, on peut vraiment voir le bundler comme un compilateur, et le bundle comme l'exécutable du web.
 
 Okk, vous commencez à arriver, trop chouette.
-
-(à chaque vote, ça peut changer de couleur et d'autres choses)
-
-(explication de ce qu'est un bundler)
-(sur la même slide, voir les votes et changer le thème en fonction du résultat)
 
 Trop bien, on a compris ce qu'était un bundler.
 -->
@@ -177,28 +180,25 @@ En 2026 [pause], [slow] est-ce qu'on ne demanderait pas à l'IA de nous le dire 
 
 [enter] Elle regarde sur internet, elle réfléchie, etttttt voilà ! Elle répond... [disillusion]
 
-C'est long. c'est trop long. [fast] et moi bah, j'ai que 45 minutes et j'ai vraiment envie de vous donner un concentré.
+C'est long. c'est trop long. [fast] et moi bah, j'ai que 45 minutes et j'ai vraiment envie de vous transmettre un concentré doooncc là, c'est pas possible.
 -->
 
 ---
 name: Le concentré du fonctionnement de Vite
 group: Vite Core
+layout: center-card
+img: /vite-background.png
 timing: 0
+ready: true
+clicks: 5
 ---
 
-<!-- TODO: center-card avec des bullets points et des couleurs du primary -->
-<!-- TODO: gray ensuite comme dans les signaux -->
-<!-- TODO: faire un composant généric pour le réutiliser partout -->
-<!-- https://github.com/Barbapapazes/talks/blob/86/2025-12-05/src/slides.md#L448-L453 -->
+<ViteOverview />
 
-<ProgressiveList
-  :items="[
-    'Web Server (Request, Response)',
-    'Based on ECMAScript Modules (`import`, `export`)',
-    'Transform Files On-Demand',
-    'Extensible using Plugins'
-  ]
-/>
+::outside::
+
+<ViteEcosystem class="opacity-30" without-clicks />
+
 
 <!--
 [slow] Du coup, bin voici les trucs les plus importants à retenir sur Vite.
@@ -209,7 +209,11 @@ timing: 0
 - Il transforme les fichiers à la demande
 - Et il est entièrement extensible via des plugins
 
-Bah voilà, vous avez tout sur les grandes lignes de ce qu'est Vite.
+[pause]
+
+Bah voilà, vous avez tout!
+
+[pause eau]
 
 Mais heuu, est-ce qu'on rendrait pas ça un peu plus visuel.
 -->
@@ -218,98 +222,67 @@ Mais heuu, est-ce qu'on rendrait pas ça un peu plus visuel.
 name: Le fonctionnement de Vite - Visualisation
 group: Vite Core
 timing: 2.2
+ready: true
 layout: full
 ---
 
 <ViteExplainedVisually />
 
-<!-- TODO: simplifier en retirant des choses au fur et à mesure et à la fin, laisser un maximum de place pour le HTTP Log dans la mesur où on ne regarde que lui... -->
-<!-- TODO: supprimer le fait de démarrer Vite -->
-<!-- TODO: tout afficher d'un coup et ensuite les étudier une à une -->
-
 <!--
-[slow] [click] À droite, un navigateur, [click] à gauche, des fichiers. J'ai pris le template Vite, Vue et TypeScript. [fast] Eh heu quand je dis à gauche à droite, c'est heu sur votre machine que tout ça hein.
+[slow] [click] À droite, un navigateur, [click] à gauche, des fichiers. C'est juste le starter Vite, Vue et TypeScript, rien d'extravaguant. [fast] Eh heu quand je dis à gauche à droite, c'est heu sur la slide parce qu'en vrai, c'est sur votre machine tout ça hein.
 
 [slow] Entre les deux, on place [fast] rapidement [slow] [click] Vite, notre serveur web. [fast] Et puis bon bin, le navigateur, il fait des requêtes HTTP vers Vite qui va lire le système de fichier pour renvoyer l'information.
 
 Pour la suite, je vous propose qu'on se place dans la navigateur et qu'on intercepte [click] ensemble les requêtes HTTP.
 
 [accelerate]
-TODO:
+Au départ, on demande la document, Vite renvoie le fichier index.html avec le client Vite et main.ts.
+Ensuite, le navigateur charge main.ts. On y voit un fichier CSS, Vue et notre app, que le navigateur charge évidemment aussi.
+[open style.css] Regardons le ficher CSS. Ah tiens, Vite renvoie du JavaScript pour le CSS, on y retrouve quand même notre CSS. Ok, étonnant mais pourquoi pas.
+[open App.vue] Et le fichier Vue alors ? Aaaah ahah, c'est du JavaScript, encore. Dans nos fichiers, c'était bien un composant Vue.
 
-[enthusiastic] Trop chouette ! On a maintenant une belle vision d'ensemble.
--->
+Peut importe...
 
-<!--
-Tout commence par [click] un navigateur d'un côté et [click] des fichiers de l'autre. On peut s'y balader et regarder leur contenu. C'est un template Vue et TypeScript, rien d'extraordinaire.
-
-Entre les deux, on va placer [click] Vite. Le navigateur et Vite vont [click] communiquer en HTTP, Vite va [click] lire les fichiers dans le système de fichiers et, tant qu'on y est, [click] démarrons Vite.
-
-Maintenant, revenons dans notre navigateur pour [click] accéder à localhost:5173 et regardons les requêtes et les réponses.
-
-[click] Alors la première évidemment, c'est pour charger le document. Si on regarde la réponse, c'est le fichier index.html, avec le script main.ts et le client Vite en plus par rapport au fichier sur le disque.
-
-[click] Ensuite, c'est le fichier main.ts qui est chargé. On y voit trois imports : l'un pour un fichier style.css, un pour Vue, dont le chemin d'accès a été transformé, et un dernier pour le composant Vue.
-
-Tiens ? Je ne savais pas qu'on pouvait importer, dans le navigateur, des fichiers CSS et des fichiers Vue ! Génial !
-
-Dans les logs, on découvre ensuite [click] le chargement du fichier CSS, puis [click] de Vue, et finalement, [click] de notre fichier Vue.
-
-Par curiosité, qu'est-ce que renvoie Vite pour le fichier CSS et le fichier Vue ?
-
-Ah ! Alors ça, c'est étonnant, c'est du JavaScript. En fouillant un peu, on y retrouve quand même notre fichier de départ.
-
-Mais c'est donc ça, la transformation à la demande dont on a entendu parler juste avant ?
-
-C'est génial ! Mais comment est-ce que ça fonctionne ?
-
-Eh bien, vous faites bien de poser la question : c'est tout l'objectif de cette conférence, [click] comprendre ce qu'il se passe dans Vite.
+[enthusiastic] On a maintenant une belle vision d'ensemble. Trop chouette !
 -->
 
 ---
 name: Tout n'est que plugin
 group: Feature Plugins
 timing: 0.6
-
 layout: image
-img: https://images.unsplash.com/photo-1564089969562-7b8667a4adec?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: /vite-background.png
 ---
 
 <AllAboutPlugins />
 
-<!-- TODO: au centre avec un example et pouf, ça part dans l'écran -->
 <!-- TODO: overlay en bas à gauche -->
 
 <!--
-[whispers] Bon, par contre, j'ai un petit secret à vous dire. Ça reste en vous et moi hein?
+[whispers] Bon, par contre, j'ai un petit secret à vous dire. [small pause] Ça reste en vous et moi hein?
 
-[slow] Dans Vite [pause], toutes les fonctionnalités [pause], sont des plugins. [pause] Toutes !
+[slow] Dans Vite [pause], toutes les fonctionnalités [pause], sont des plugins. [pause] Toutes ! [click]
 
-TODO: écrire
-- HTML
-- JSX
-- CSS
-- Static Assets
-- JSON
-- Glob Import
-- Dynamic Import
-- WebAssembly
-- Web Workers
+[whispers] Et ça, mmmh, c'est vraiment bien parce que ça veut dire que, bah, que, qu'on peut faire tout ce qu'on veut quand on crée un plugin.
 
-[whispers] Et ça, mmmh, c'est vraiment bien parce que ça veut dire qu'on peut faire enfaite, bah, tout ce qu'on veut qu'on fait un plugin.
+Ça m'fait penser, on va explorer l'un d'entre eux après, et vous avez la possibilité de choisir lequel. [show qr code]
 
-TODO: une autre slide
+Gestion des pages HTML ? On peut !
+Support natif du JSX ? C'est intégré !
+Gestion du CSS ? C'est fait aussi !
+Les assets statiques ? C'est no brainer, ça s'occupe même du hash !
+L'import de JSON dans un fichier ? Facile, c'est géré !
+Les glob imports ? Oui, ça fonctionne !
+Les imports dynamiques ? Vous vous en doutez, c'est built-in !
+Et puis, le WebAssembly et les Web Workers, pas besoin de s'en soucier, Vite le gère aussi !
 
-ça m'fait penser, on va explorer l'un d'entre eux après, et vous avez la possibilité de choisir lequel.
-
-X ? on peut ! Y ? on peut ! Z ? on peut ! <en mettre pleins>
-
-Breeeef, on a la possibilité de tout faire.
+Breeeef, tout est possible. Surtout, le point à retenir, de tout ça, ce ne sont que des plugins.
  -->
 
 ---
 name: Tout n'est que plugin - Choices
 group: Feature Plugins
+ready: true
 timing: 0.5
 layout: choices
 choices:
@@ -327,6 +300,7 @@ Et bin c'est parti, explorons <choix> !
 ---
 name: Du CSS importé dans un fichier TypeScript
 group: Feature Plugins
+ready: true
 timing: 0.5
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
@@ -337,7 +311,9 @@ transition: slide-up
 import './style.css'
 ```
 
-<!-- TODO: utiliser css-is-js.png -->
+::outside::
+
+<ClickRevealImage src="/css-is-js.png" />
 
 <!--
 [enthusiastic] Nan oui, oui, alors ça, faut qu'on en parle !
@@ -346,19 +322,20 @@ import './style.css'
 
 Pourquoi ? Parce que l'navigateur, il s'fout de l'extension. Tant que tu lui renvois du JavaScript, c'est ok.
 
-[shocked] Mais ? Ça veut dire qu'on lui renvoie du JavaScript ?
+[shocked] [click] Mais ? Ça veut dire qu'on lui renvoie du JavaScript ?
 -->
 
 ---
 name: Du CSS importé dans un fichier TypeScript - Visualisation
 group: Feature Plugins
+ready: true
 timing: 1.2
+img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
-  - Vite et ses features - RécapWhat are some of the names?
+  - Vite et ses features - Récap
 ---
 
-<!-- TODO: make background image use the frontmatter by default -->
-<BackgroundImage img="https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+<BackgroundImage />
 
 <CssImportedIntoTypeScript class="absolute top-20 left-40 -right-px -bottom-px" />
 
@@ -367,7 +344,7 @@ Pour en avoir le cœur net, je vous propose qu'on aille dans [click] l'inspecteu
 
 On y r'trouve notre index.html. Ce document, il charge l'index.ts. L'index.ts, lui, importe notre style.css.
 
-[impressed] Ooooh, whaaaoo ! Il n'y a pas de CSS là. Heureusement parce que notre navigateur, il n'aurait pas su quoi en faire.
+[impressed] Ooooh, whaaaoo ! Il n'y a pas de CSS là. Heureusement parce que notre navigateur, il aurait pas su quoi en faire.
 
 [slow] Si on fouille un peu, qu'on cherche là dans le fichier, on y retrouve notre CSS. Tout le reste, c'est de la transformation à la volée par Vite.
 -->
@@ -375,6 +352,7 @@ On y r'trouve notre index.html. Ce document, il charge l'index.ts. L'index.ts, l
 ---
 name: Une image chargée dans un fichier TypeScript
 group: Feature Plugins
+ready: true
 timing: 0.5
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
@@ -385,7 +363,9 @@ transition: slide-up
 import img from './image.png'
 ```
 
-<!-- TODO: utiliser img-is-js.png -->
+::outside::
+
+<ClickRevealImage src="/img-is-js.png" />
 
 <!--
 [enthusiastic] Nan oui, oui, alors ça, faut qu'on en parle aussi !
@@ -400,11 +380,12 @@ Pourquoi ? Parce que l'navigateur, il s'fout de l'extension. Tant que tu lui ren
 ---
 name: Une image chargée dans un fichier TypeScript - Visualisation
 group: Feature Plugins
+img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 timing: 1.6
 transition: slide-up
 ---
 
-<BackgroundImage img="https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+<BackgroundImage />
 
 <!-- TODO: keep only one to keep it as simple as possible -->
 <AnImageLoadedIntoTypeScript class="absolute top-20 left-40 -right-px -bottom-px" />
@@ -432,6 +413,7 @@ choices:
 <!-- TODO: n'avoir que le inline dans l'output -->
 <AnImageLoadedIntoTypeScriptBuildTree />
 
+
 <!--
 Au build, deux petites subtilités.
 
@@ -442,13 +424,14 @@ Au build, deux petites subtilités.
 ---
 name: JSX chargé naturellement
 group: Feature Plugins
+ready: true
 timing: 0.3
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
-```ts
+```tsx {6-10}{lines:true}
 import { createRoot } from 'react-dom/client'
 import { Item } from './Item'
 
@@ -466,7 +449,9 @@ const root = createRoot(document.getElementById('app')!)
 root.render(<App />)
 ```
 
-<!-- TODO: utiliser jsx-is-js.png -->
+::outside::
+
+<ClickRevealImage src="/jsx-is-js.png" />
 
 <!--
 [enthusiastic] Nan, oui, oui, alors ça, faut qu'on en parle aussi !
@@ -482,11 +467,12 @@ Pourquoi ? Parce que l'navigateur, il s'fout de l'extension. Tant que tu lui ren
 name: JSX chargé naturellement - Visualisation
 group: Feature Plugins
 timing: 0.8
+img: https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
   - Vite et ses features - Récap
 ---
 
-<BackgroundImage img="https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+<BackgroundImage />
 
 <!-- TODO: rewrite -->
 <ImportMetaGlobIsAnIllusion class="absolute top-20 left-40 -right-px -bottom-px" />
@@ -506,13 +492,13 @@ Tout ça, c'est calculé automatiquement dans Vite par Node.js.
 
 ---
 name: Vite et ses features - Récap
+ready: true
+timing: 0
 layout: recap
 ---
 
-<!-- TODO: faire la slide -->
-
 <RecapList
-  :title="'Vite en 3 points'"
+  title="Vite en 3 points"
   :items="[
     {
       title: 'Un serveur web pour le développement',
@@ -524,74 +510,272 @@ layout: recap
     },
     {
       title: 'Un système de plugins',
-      description: 'Pour étendre ses fonctionnalités et faire tout ce qu\'on veut'
+      description: 'Pour étendre ses fonctionnalités et faire faire tout ce qu\'on veut'
     }
   ]"
 />
 
 <!--
-[slow] Ok, on résume parce que ça commence à faire beaucoup.
+[slow] Ok, je vous propose qu'on se fasse un petit récap parce que ça commence à faire beaucoup.
 
-Vite c'est trois choses :
-1. un serveur web pour le développement où on fait transiter des requêtes qu'on transformera à la volée
-2. un bundler, à la webpack, qui va transformer notre code pour la production
-3. et un système de plugins, pour étendre ses fonctionnalités et faire tout ce qu'on veut.
+Donc...
 
-Pour la suite, c'est dans ce dernier point, sur les plugins, que je vous invite à me suivre.
+Vite c'est [click] trois choses :
+1. [click] un serveur web pour le développement où on fait transiter des requêtes qu'on transformera à la volée
+2. [click] un bundler, à la webpack, qui va transformer notre code pour la production
+3. [click] et un système de plugins, pour étendre ses fonctionnalités et lui faire faire tout ce qu'on veut.
+
+Trop bien ! [confetti] Troooop bien ! C'est qu'on commence à en savoir pleins des choses !
+
+[doubtful] Mais ? [pause] Il y a un point qu'on a pas abordé. Ça veut dire quoi "lui faire faire tout ce qu'on veut" ?
 -->
 
 ---
-name: Les entrailles d'un plugin Vite
+name: Les entrailles d'un plugin Vite - Common Hooks
 group: Inside a Plugin
+ready: true
 timing: 0.9
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
-<!-- TODO: highlight du code -->
+<v-click>
 
 ````md magic-move
 ```ts {*}{lines:true}
-export default function monPlugin() {
+export default function myPlugin() {
   return {
   }
 }
 ```
-
-```ts {*}{lines:true}
-export default function monPlugin() {
+```ts {3}{lines:true}
+export default function myPlugin() {
   return {
-    resolveId(id) { },
-    load(id) { },
-    transform(code, id) { },
+    name: 'my-plugin',
   }
 }
 ```
-
-```ts {*}{lines:true}
-export default function monPlugin() {
+```ts {4-6|*}{lines:true}
+export default function myPlugin() {
   return {
-    name: 'mon-plugin',
-    resolveId(id) { },
-    load(id) { },
-    transform(code, id) { },
+    name: 'my-plugin',
+    resolveId() {},
+    load() {},
+    transform() {},
   }
 }
 ```
 ````
 
+</v-click>
+
 <!--
-TODO: on peut pas dire ça
-Rentrons dans le vif du sujet, parce que c'est quand même pour ça que vous êtes venus. Parlons des plugins Vite.
+Ce que je vous propose, c'est qu'on se build notre premier plugin Vite.
 
-Avant tout, qu'est-ce que c'est ? C'est un moyen d'étendre les fonctionnalités de Vite en s'y branchant à différents moments de son cycle de vie.
+[slow] [click] Un plugin, c'est une fonction qui return un objet.
 
-Concrètement, c'est un objet [click] dans lequel on va définir des méthodes [click] qui vont être appelées par Vite, ni plus ni moins. On retrouve parmi les plus populaires `resolveId`, `load`, `transform`.
+Et puis bah, comme on aime bien donner un petit nom aux choses, [click] on donne un petit nom au plugin.
 
-Et il ne faut pas oublier de donner un petit nom à son plugin [click] : c'est important pour le retrouver quand il y a une erreur !
+Ensuite, [click] on a 3 méthodes qu'on peut utiliser pour agir sur chaque requests.
 
-Voilà, vous venez de faire votre premier plugin Vite, félicitations !
+1. resolveId
+2. load
+3. transform
+
+[pause] [click]
+
+[enthusiastic] Baaah voilà ! Vous venez de faire votre premier plugin Vite ! Félicitations ! Bravo !
+
+[doubtful] Mais heuu, okk, mais il fait rien du tout là notre plugin ??
+
+Ouais, ouais, ouais, [fast] on va changer ça ensemble.
+-->
+
+---
+name: resolveId
+group: Inside a Plugin
+ready: true
+timing: 0
+layout: bottom-left-card
+img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+transition: slide-up
+---
+
+```ts {4-8}{lines:true}
+export function myPlugin() {
+  return {
+    name: 'my-plugin',
+    resolveId(id) { // /src/components/HelloWorld.vue
+      if (id.endsWith('.vue')) {
+        return id
+      }
+    },
+  }
+}
+```
+
+<!--
+Premier hook : resolveId et le plus perturbant.
+
+
+[slow] Ce qu'il nous permet de faire, c'est récupérer l'identifiant d'un module et de le retourner ou d'en retourner un nouveau.
+
+Là, si l'identifiant termine par .vue, on le retourne.
+
+C'est tout.
+
+[reassuring] Si ça vous semble flou, ou d'un intérêt très limité, c'est normal. On ne panique pas, c'est toujours l'effet qu'il fait la première fois.
+-->
+
+---
+name: load
+group: Inside a Plugin
+ready: true
+timing: 0
+layout: bottom-left-card
+img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+transition: slide-up
+---
+
+````md magic-move
+```ts {6-8}{lines:true}
+import { readFile } from 'node:fs/promises'
+
+export function myPlugin() {
+  return {
+    name: 'my-plugin',
+    async load(id) { // /src/components/HelloWorld.vue
+      return await readFile(id, 'utf-8')
+    }
+  },
+}
+```
+```ts {4-7}{lines:true}
+export function myPlugin() {
+  return {
+    name: 'my-plugin',
+    async load(id) { // /content.md
+      return await fetch(`https://api.example.com/modules/${id}`)
+        .then(res => res.text())
+    }
+  },
+}
+```
+```ts {4-6}{lines:true}
+export function myPlugin() {
+  return {
+    name: 'my-plugin',
+    async load() {
+      return "export default 'Hello World'"
+    }
+  },
+}
+```
+````
+
+<!--
+Second hook : load
+
+Lui, permet de passer de l'identifiant d'un module à son contenu.
+
+[fast] Alors, bah, là on le voit, on va lire le fichier sur le disque. [slow] C'est d'ailleurs le comportement par défaut de Vite.
+
+Mais, on n'est pas limité à ça.
+
+[click] Qu'est ce qui nous empêche de le charger depuis une API ?
+
+[click] Ou plus zinzin encore, de retourner un fichier qui n'existe pas ?
+
+Rien ! Tous ces cas fonctionnent.
+
+[enthusiastic] Ok, petit à petit les briques s'assemblent. Le puzzle prend forme. On aime bien.
+-->
+
+---
+name: transform
+group: Inside a Plugin
+ready: true
+timing: 0
+layout: bottom-left-card
+img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+transition: slide-up
+---
+
+````md magic-move
+```ts {4-6}{lines:true}
+export function myPlugin() {
+  return {
+    name: 'my-plugin',
+    transform(code, id) {
+      return code.replace('foo', 'bar')
+    }
+  },
+}
+```
+```ts {4-8}{lines:true}
+export function myPlugin() {
+  return {
+    name: 'my-plugin',
+    transform(code, id) {
+      if (id.endsWith('.vue')) {
+        return transformSFC(code, filename)
+      }
+    }
+  },
+}
+```
+````
+
+<!--
+tranform, ensuite !
+
+Il prend le contenu et l'identifiant d'un module et il permetttttt... de transformer le contenu !
+
+Cas simple, on remplace tous les "foo" par des "bar".
+
+[click] Cas plus complexe, on transforme les fichiers Vue en JavaScript.
+
+[enthusiastic] Okkk, là on comment vraiment, vraiment, à faire des choses intéressantes !
+-->
+
+---
+name: Plusieurs plugins
+group: Inside a Plugin
+ready: true
+timing: 0
+layout: center
+---
+
+<h2 class="text-4xl font-bold">Plusieurs plugins ?</h2>
+
+<!--
+[doubtful] Heuuu, comment on fait, comment on gère s'il y a plusieurs plugins ?
+
+Bah, le mieux qu'on regarde ensemble ?
+-->
+
+---
+name: Les entrailles d'un plugin Vite - Visualisation
+group: Inside a Plugin
+timing: 0.3
+class: p-0!
+---
+
+<VitePluginsTheory />
+
+<!--
+Maintenant que vous avez une meilleure idée de ce qu'est un plugin Vite, plongeons vraiment dans son fonctionnement. Que se passe-t-il quand vous faites `npm run dev` ?
+
+Au démarrage, Vite exécute d'abord les hooks liés au cycle de vie global, comme `options`, `config`, `configResolved` et `buildStart`. Ceux-là ne s'exécutent qu'une seule fois pour lancer la machine.
+
+Ensuite, à chaque requête HTTP pour un module, on entre dans la vraie pipeline : `resolveId`, puis `load`, puis `transform`.
+
+L'identifiant dont on parle ici, c'est généralement le chemin absolu du module que Vite est en train de traiter.
+
+Il y a tout de même une subtilité importante : pour `resolveId`, le premier plugin qui répond gagne ; même chose pour `load`. En revanche, `transform`, lui, passe entre les mains de tous les plugins concernés, dans l'ordre.
+
+Et c'est précisément pour ça que `resolveId` est si utile : il permet de verrouiller l'identité d'un module pour s'assurer que ce sera bien votre plugin qui prendra la main ensuite.
 -->
 
 ---
@@ -607,43 +791,33 @@ img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=
 
 ````md magic-move
 ```ts {*}{lines:true}
-export default function monPlugin() {
+export default function myPlugin() {
   return {
-    name: 'mon-plugin',
   }
 }
 ```
-```ts {*}{lines:true}
-export default function monPlugin() {
+```ts {3}{lines:true}
+export default function myPlugin() {
   return {
-    name: 'mon-plugin',
-    options(options) {
-      return options
-    },
+    name: 'my-plugin',
   }
 }
 ```
-```ts {*}{lines:true}
-export default function monPlugin() {
+```ts {4-6}{lines:true}
+export default function myPlugin() {
   return {
-    name: 'mon-plugin',
-    options(options) {
-      return options
-    },
+    name: 'my-plugin',
     config(config) {
-      return config
+      config.root = 'src'
     },
   }
 }
 ```
 ```ts {*}{lines:true}
-export default function monPlugin() {
+export default function myPlugin() {
   let config = null
   return {
-    name: 'mon-plugin',
-    options(options) {
-      return options
-    },
+    name: 'my-plugin',
     config(config) {
       return config
     },
@@ -654,13 +828,10 @@ export default function monPlugin() {
 }
 ```
 ```ts {*}{lines:true}
-export default function monPlugin() {
+export default function myPlugin() {
   let config = null
   return {
-    name: 'mon-plugin',
-    options(options) {
-      return options
-    },
+    name: 'my-plugin',
     config(config) {
       return config
     },
@@ -672,13 +843,10 @@ export default function monPlugin() {
 }
 ```
 ```ts {*}{lines:true}
-export default function monPlugin() {
+export default function myPlugin() {
   let config = null
   return {
-    name: 'mon-plugin',
-    options(options) {
-      return options
-    },
+    name: 'my-plugin',
     config(config) {
       return config
     },
@@ -693,13 +861,10 @@ export default function monPlugin() {
 }
 ```
 ```ts {*}{lines:true}
-export default function monPlugin() {
+export default function myPlugin() {
   let config = null
   return {
-    name: 'mon-plugin',
-    options(options) {
-      return options
-    },
+    name: 'my-plugin',
     config(config) {
       return config
     },
@@ -719,7 +884,6 @@ export default function monPlugin() {
 <!--
 Dans un plugin Vite, il est aussi possible de se brancher sur le cycle de vie de Vite, avec des hooks comme `options`, `config`, `configResolved`, `buildStart`, `buildEnd` et `closeBundle`.
 
-1. [click] `options` est appelé tout au début. On l'utilise souvent pour modifier la configuration avant qu'elle ne soit réellement exploitée.
 2. [click] `config` est appelé juste après et permet, lui aussi, d'ajuster la configuration avant sa résolution finale. C'est un hook spécifique à Vite.
 3. [click] `configResolved` intervient une fois la configuration complètement calculée. On peut alors récupérer la version finale, celle que Vite va utiliser.
 4. [click] `buildStart` est appelé au démarrage du processus, y compris en développement. C'est souvent un bon moment pour initialiser des ressources.
@@ -727,210 +891,59 @@ Dans un plugin Vite, il est aussi possible de se brancher sur le cycle de vie de
 6. [click] `closeBundle` est appelé tout à la fin du build de production. C'est plus rare, mais parfois très pratique pour les derniers nettoyages.
 -->
 
----
-name: resolveId
-group: Inside a Plugin
-timing: 0
-layout: bottom-right-card
-img: https://images.unsplash.com/photo-1614521185607-c374b6c5609c?q=80&w=1468&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-transition: slide-up
----
 
-```ts
-export function myPlugin() {
-  return {
-    name: 'my-plugin',
-    resolveId(id) {
-      if (id.endsWith('.vue')) {
-        return id
-      }
-    },
-  }
-}
-```
-
-<!--
-Ce premier hook est, à mon sens, le plus abstrait, et probablement le moins intuitif. Si vous ne le saisissez pas tout de suite, pas d'inquiétude : on va le recroiser.
-
-Son rôle, c'est de résoudre un identifiant de module vers son véritable chemin, sur le disque ou de manière virtuelle, en retournant un nouvel identifiant... ou parfois exactement le même.
-
-Et justement, pourquoi retourner le même identifiant ? Parce que pour un import donné, Vite parcourt les plugins et exécute `resolveId`. Au premier qui répond, il s'arrête et utilise cet identifiant pour les étapes suivantes. Donc même si vous ne changez pas l'ID, vous pouvez déjà revendiquer : "c'est moi qui gère ce module".
-
-Ça permet d'éviter qu'un autre plugin interfère ensuite. Ce n'est pas le hook dont on a besoin tous les jours, mais quand on en a besoin, on est bien content qu'il existe.
--->
-
----
-name: load
-group: Inside a Plugin
-timing: 0
-
-layout: bottom-right-card
-img: https://images.unsplash.com/photo-1771793079105-0a3ec959454a?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-transition: slide-up
----
-
-````md magic-move
-```ts {*}{lines:true}
-import { readFile } from 'node:fs/promises'
-
-export function myPlugin() {
-  return {
-    name: 'my-plugin',
-    async load(id) {
-      return await readFile(id, 'utf-8')
-    }
-  },
-}
-```
-```ts {*}{lines:true}
-export function myPlugin() {
-  return {
-    name: 'my-plugin',
-    async load(id) {
-      return await fetch(`https://api.example.com/modules/${id}`)
-        .then(res => res.text())
-    }
-  },
-}
-```
-```ts {*}{lines:true}
-export function myPlugin() {
-  return {
-    name: 'my-plugin',
-    async load(id) {
-      return "export default 'Hello World'"
-    }
-  },
-}
-```
-````
-
-<!--
-Ce second hook, c'est le plus simple à comprendre. Il permet de charger le contenu d'un module à partir de son identifiant.
-
-Par défaut, Vite va lire le fichier sur le disque. Dans les faits, on peut le charger d'où on veut [click], comme depuis une API.
-
-C'est même possible de retourner un fichier qui n'existe pas sur le disque [click]. Dans ce cas, on parle de module virtuel.
--->
-
----
-name: transform
-group: Inside a Plugin
-timing: 0
-layout: bottom-right-card
-img: https://images.unsplash.com/photo-1766431612750-30abe9de0eab?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-transition: slide-up
----
-
-````md magic-move
-```ts {*}{lines:true}
-export function myPlugin() {
-  return {
-    name: 'my-plugin',
-    transform(code, id) {
-      return code.replace('foo', 'bar')
-    }
-  },
-}
-```
-```ts {*}{lines:true}
-export function myPlugin() {
-  return {
-    name: 'my-plugin',
-    transform(code, id) {
-      if (id.endsWith('.vue')) {
-        return transformSFC(code, filename)
-      }
-    }
-  },
-}
-```
-````
-
-<!--
-Enfin, il est temps de parler du hook `transform`, qui est le plus puissant et le plus utilisé.
-
-L'idée est simple : modifier à la volée le code source d'un module avant qu'il ne soit retourné au navigateur. Ici, on vient remplacer tous les `foo` par des `bar`.
-
-Alors, vous vous dites que c'est un exemple très simple, et c'est vrai.
-
-Mais c'est avec cette même fonction [click] que les fichiers `.vue` sont transformés en JavaScript standard que le navigateur peut comprendre.
--->
-
----
-name: La théorie des plugins Vite
-group: Inside a Plugin
-timing: 0.3
-class: p-0!
----
-
-<VitePluginsTheory />
-
-<!--
-
-Maintenant que vous avez une meilleure idée de ce qu'est un plugin Vite, plongeons vraiment dans son fonctionnement. Que se passe-t-il quand vous faites `npm run dev` ?
-
-Au démarrage, Vite exécute d'abord les hooks liés au cycle de vie global, comme `options`, `config`, `configResolved` et `buildStart`. Ceux-là ne s'exécutent qu'une seule fois pour lancer la machine.
-
-Ensuite, à chaque requête HTTP pour un module, on entre dans la vraie pipeline : `resolveId`, puis `load`, puis `transform`.
-
-L'identifiant dont on parle ici, c'est généralement le chemin absolu du module que Vite est en train de traiter.
-
-Il y a tout de même une subtilité importante : pour `resolveId`, le premier plugin qui répond gagne ; même chose pour `load`. En revanche, `transform`, lui, passe entre les mains de tous les plugins concernés, dans l'ordre.
-
-Et c'est précisément pour ça que `resolveId` est si utile : il permet de verrouiller l'identité d'un module pour s'assurer que ce sera bien votre plugin qui prendra la main ensuite.
--->
 
 ---
 name: Le plugin Vite - Récap
+ready: true
+timing: 0
 layout: recap
 ---
 
-<!-- TODO: ne va pas là, peut aller après des examples concrets -->
-
----
-name: Vue Plugin - Exemple
-group: Concrete Examples
-timing: 1.7
-layout: center-card
-img: https://images.unsplash.com/photo-1762281311105-05c0dbc6ff6f?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
----
-
-```vue
-<script setup>
-import { ref } from 'vue'
-
-const msg = ref('Hello World!')
-</script>
-
-<template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" />
-</template>
-```
+<RecapList
+  title="Le plugin Vite en 3 points"
+  :items="[
+    {
+      title: 'Un plugin Vite, c\'est une fonction qui retourne un objet',
+      description: 'L\'objet doit au moins avoir une propriété name'
+    },
+    {
+      title: 'Il y a 3 hooks principaux pour agir sur les modules',
+      description: 'resolveId, load et transform'
+    },
+    {
+      title: 'Il y a aussi des hooks pour le cycle de vie de Vite',
+      description: 'config, configResolved, buildStart, buildEnd et closeBundle'
+    }
+  ]"
+/>
 
 <!--
-Maintenant, passons à la pratique en regardant concrètement le fonctionnement du plugin Vue pour Vite.
+[slow] Ok, là, on vient de voir du concret, [click] on va se faire un petit récap.
 
-Tout commence par `main.ts`, qui importe `App.vue`. Vite reçoit la requête et la fait passer dans sa pipeline de plugins. Le hook `resolveId` du plugin Vue intercepte les requêtes concernées, `load` lit le fichier `.vue` sur le disque, puis `transform` compile les différentes parties du SFC en JavaScript standard compréhensible par le navigateur.
+[click] Un plugin Vite, c'est une fonction qui retourne un objet.
 
-Et ensuite, en fonction des changements que vous faites dans votre composant, le plugin est capable de faire du HMR granulaire. Autrement dit, si vous modifiez uniquement le template, seul le template est recompilé et mis à jour dans le navigateur, sans toucher au script ni au style. C'est exactement ce qui rend le développement avec Vite aussi rapide et agréable.
+[click] Y a 3 hooks principaux pour agir sur les modules : resolveId, load et transform. Le plus utilisé, globalement, c'est transform.
 
-Et là, vous vous dites peut-être qu'il serait quand même pratique de visualiser toute cette pipeline. Je suis bien d'accord avec vous... [click]
+[click] Et puis, on a pleins de hooks pour se brancher sur l'ensemble du cycle de vite de Vite.
+
+Génial ! [confetti] On commence à faire nos premiers plugins. Franchement, si on nous avait dit ça il y a quelques minutes, j'aurais pas cru !
+
+D'ailleurs, maintenant qu'on fait des plugins, à quoi ça ressemble un plugin concret ?
 -->
 
 ---
 name: Auto Import Plugin (unplugin-auto-import) - Exemple
-group: Concrete Examples
+group: Concrete Example
 timing: 0.8
-
-layout: top-right-card
-img: https://images.unsplash.com/photo-1763930677801-5387d376496e?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-transition: slide-up
+layout: bottom-left-card
+img: https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-```vue
-<script lang="ts" setup>
+````md magic-move
+```ts
+import { ref, computed, effect } from 'vue'
+
 const count = ref(0)
 
 const double = computed(() => count.value * 2)
@@ -938,26 +951,58 @@ const double = computed(() => count.value * 2)
 effect(() => {
   console.log(`Count: ${count.value}, Double: ${double.value}`)
 })
-</script>
 ```
+```ts
+const count = ref(0)
 
-<PluginName
-  name="unplugin-auto-import"
-  github="https://github.com/antfu/unplugin-auto-import"
-  class="absolute bottom-10 right-10"
-/>
+const double = computed(() => count.value * 2)
+
+effect(() => {
+  console.log(`Count: ${count.value}, Double: ${double.value}`)
+})
+```
+````
+
+::outside::
+
+<ClickRevealImage src="/how.gif" />
 
 <!--
-Excellent choix parce que ce plugin là, je l'adore. Concrètement, vous n'avez plus besoin d'importer quoi que ce soit, c'est automatique.
+Dans ce bout de code là, rien de particulier !
 
-Par exemple, ce code-là, qui utilise la réactivité de Vue, fonctionne parfaitement alors qu'il n'y a aucun import. Pourquoi ? Tout simplement parce que le plugin va scanner votre code et automatiquement injecter les imports nécessaires. Le point essentiel, c'est que ce n'est pas de l'injection globale, c'est à la demande (on‑demand), donc il n'y a dans votre bundle que ce que vous utilisez vraiment.
+[slow] Maintenant, qu'est-ce qui se passe si [click] on enlève les imports ?
 
-Vous êtes sûrement en train de vous dire que c'est quand même un peu magique, tout ça ?
+Normalement, y a plus rien qui marche. Et pourtant, avec Vite, ça fonctionne toujours !
+
+[shocked] [click] Comment ?
+-->
+
+---
+name: Auto Import Plugin (unplugin-auto-import) - Magic ?
+group: Concrete Example
+ready: true
+timing: 0
+layout: magic-rain
+---
+
+<img src="/magic.gif" class="absolute h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+
+<!--
+[with gesture of magic] De laaaa magiiieee ?
+
+Nan Estéban, ce n'est pas de la magie et d'ailleurs cette slide m'a demandé beaucoup trop temps.
+
+Donc on va prendre un peu de temps pour regarder les émoji.
+
+[meubler]
+
+Mais heu bref, on s'est perdu là... on s'égare.
 -->
 
 ---
 name: Auto Import Plugin (unplugin-auto-import) - Visualisation
-group: Concrete Examples
+group: Concrete Example
+ready: true
 timing: 0.7
 transition: slide-up
 ---
@@ -965,38 +1010,111 @@ transition: slide-up
 <AutoImportPluginExplainedVisually />
 
 <!--
-TODO: texte de la slide
+Ce qu'on pourrait faire, [click] c'est visualiser les backstage.
+
+C'est une bonne idée que vous avez là.
+
+À gauche, le navigateur, à droite les fichiers et au centre, Vite. Dans le main.ts, c'est notre code.
+
+Nous, je vous propose qu'on se place dans le navigateur pour observer les requests.
+
+[click]
+[click]
+
+L'index.html se fait charger, dans lequel on a le main.ts, qui se fait lui même charger.
+
+[surprise] Oh, est-ce qu'on n'aurait pas nos imports qui serait apparus ? Il semble que oui !
+
+Ça pourrait expliquer pourquoi ça fonctionne !
+-->
+
+---
+name: Auto Import Plugin (unplugin-auto-import) - Confused ?
+group: Concrete Example
+ready: true
+timing: 0
+layout: confused-rain
+---
+
+<img src="/confused.gif" class="absolute h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+
+<!--
+[doubtful] Maiiiis qui les a mis là ?
+
+[take time to think about it]
+
+Ah mais oui, un plugin Vite !
 -->
 
 ---
 name: Auto Import Plugin (unplugin-auto-import) - Plugin Internals
-group: Concrete Examples
+group: Concrete Example
+ready: true
 timing: 0.7
-choices:
-  - Visualiser la pipeline
+img: https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+layout: bottom-left-card
 ---
 
+````md magic-move
+```ts {*|6}{lines:true}
+export default function autoImport(options: Options) {
+  let ctx = createContext(options)
+  return {
+    name: 'unplugin-auto-import',
+    async transform(code, id) {
+      return ctx.transform(code, id)
+    },
+  }
+}
+```
+```ts {5-14|*}{lines:true}
+export default function autoImport(options: Options) {
+  let ctx = createContext(options)
+  return {
+    name: 'unplugin-auto-import',
+    async transform(code, id) {
+      const s = new MagicString(code)
+
+      await injectImports(s, id)
+
+      return {
+        code: s.toString(),
+        map: s.generateMap({ source: id }),
+      }
+    },
+  }
+}
+```
+````
+
 <!--
-Alors, c'est vrai qu'on peut parfois confondre ce genre d'outil avec une simple transformation de compilateur, mais ici, aucun doute : c'est bien un plugin Vite.
+Je vous propose qu'on se regarde le plugin Auto Import.
 
-Pour le vérifier, soulevons un peu le capot. Dans un premier temps, Vite charge le fichier, puis le plugin scanne le code dans le hook `transform` et retourne une nouvelle version avec les imports injectés. Toute la partie « on-demand » de la promesse est là.
+C'est lui qu'est 1a l'origin de cette magie et beh en gros, c'est ça son code, quoi.
 
-Là, vous êtes sûrement en train de vous dire que c'est pratique de visualiser la pipeline de la sorte. Et ça tombe bien... [click]
+La ligne intéressante, [click] c'est la 6, dans le hook transform qui permet de modifier le contenu d'un module.
+
+[click] En zoomant dedans, on y découvre ligne 8 l'injection des imports, et c'est là que toute la magie opère.
+
+[fast] Pour chacun des modules du projet, le plugin scan le code, détecte les éléments non importé à importer, les injecte et renvoie le code modifié au navigateur.
+
+Précis, efficace et rapide.
 -->
 
 ---
 name: Visualiser la pipeline
-group: Concrete Examples
 timing: 0.3
-
+img: https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-<BackgroundImage img="https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+<BackgroundImage />
 
 <Card absolute top-14 inset-x-10 -bottom-10>
   <h2 class="text-center mb-2 text-neutral-700">vite-plugin-inspect</h2>
   <iframe src="/__inspect" class="rounded-lg overflow-hidden w-full h-full" />
 </Card>
+
+<!-- TODO: le texte -->
 
 <!--
 Parce qu'il existe un plugin permettant de visualiser l'ensemble de la pipeline de Vite.
@@ -1005,10 +1123,21 @@ Je l'utilise rarement mais c'est véritablement lui qui m'a permis de comprendre
  -->
 
 ---
+name: Concrètement ?
+layout: center
+timing: 0
+---
+
+<h2 class="text-4xl font-bold">Concrètement ?</h2>
+
+<!--
+TODO: qu'est ce qu'on fait ?
+-->
+
+---
 name: Un plugin pour virtualiser
 group: Virtualization
 timing: 1
-
 transition: slide-up
 ---
 
@@ -1540,10 +1669,11 @@ Aujourd'hui, nous n'en verrons qu'un mais rendez-vous compte, les possibilités 
 name: Le HMR (Hot Module Replacement)
 group: Advanced Capabilities
 timing: 0.5
+img: https://images.unsplash.com/photo-1559762691-617a33825bc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
-<BackgroundImage img="https://images.unsplash.com/photo-1559762691-617a33825bc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+<BackgroundImage />
 
 <HmrExplainedVisually class="absolute top-20 left-40 -right-px -bottom-px" />
 

@@ -9,7 +9,7 @@ const props = defineProps<{
   ui?: Partial<typeof explainedVisuallyBrowser.slots>
 }>()
 
-defineSlots<{
+const slots = defineSlots<{
   default?: () => any
 }>()
 
@@ -37,7 +37,7 @@ const ui = computed(() => explainedVisuallyBrowser())
       <div :class="ui.search({ class: props.ui?.search })" />
     </div>
 
-    <div v-if="props.address" :class="ui.address({ class: props.ui?.address })">
+    <div v-if="props.address || !!slots.default" :class="ui.address({ class: props.ui?.address })">
       <slot>
         {{ props.address }}
       </slot>

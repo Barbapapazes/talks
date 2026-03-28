@@ -2,6 +2,10 @@
 import VAfter from '@slidev/client/builtin/VAfter.ts'
 import VClick from '@slidev/client/builtin/VClick.ts'
 
+const props = defineProps<{
+  withoutClicks?: boolean
+}>()
+
 const icons = [
   'i-devicon-angular',
   'i-devicon-react',
@@ -29,7 +33,20 @@ const icons = [
 <template>
   <div class="absolute inset-14 grid grid-cols-4 items-center justify-items-center">
     <template v-for="(icon, index) in icons" :key="index">
-      <component :is="index === 0 ? VClick : VAfter">
+      <template v-if="props.withoutClicks">
+        <img
+          v-if="icon && icon.startsWith('http')"
+          :src="icon"
+          class="size-16 transition"
+        >
+        <span
+          v-else-if="icon"
+          :class="icon"
+          class="size-16"
+        />
+        <span v-else />
+      </template>
+      <component v-else :is="index === 0 ? VClick : VAfter">
         <img
           v-if="icon && icon.startsWith('http')"
           :src="icon"

@@ -31,6 +31,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['slidev-addon-inalia', 'reka-ui'],
+    include: ['slidev-addon-inalia', 'reka-ui', '@tsparticles/engine', '@tsparticles/plugin-emitters', '@tsparticles/slim'],
   },
 })

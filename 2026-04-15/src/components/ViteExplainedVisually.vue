@@ -5,7 +5,9 @@ import type {
 } from './ExplainedVisually/types'
 import appVueFile from 'virtual:vite-file-system:App:vue'
 import indexHtml from 'virtual:vite-file-system:index:html'
+import indexHtmlTransformed from 'virtual:vite-transformed-file:index:html'
 import mainTs from 'virtual:vite-file-system:main:ts'
+import mainTsTransformed from 'virtual:vite-transformed-file:main:ts'
 import packageJson from 'virtual:vite-file-system:package:json'
 import styleCssFile from 'virtual:vite-file-system:style:css'
 import tsconfigAppJson from 'virtual:vite-file-system:tsconfig:app:json'
@@ -79,17 +81,15 @@ const httpLogs = [
     request: highlight('GET http://localhost:5173/', 'http'),
     response: {
       file: 'index.html',
-      code: indexHtml,
+      code: indexHtmlTransformed,
     },
-    click: 8,
   },
   {
     request: highlight('GET http://localhost:5173/src/main.ts?t=1772882882631', 'http'),
     response: {
       file: 'main.ts',
-      code: mainTs,
+      code: mainTsTransformed,
     },
-    click: 9,
   },
   {
     request: highlight('GET http://localhost:5173/src/style.css?t=1772882882631', 'http'),
@@ -97,14 +97,9 @@ const httpLogs = [
       file: 'style.css',
       code: styleCssTransformed,
     },
-    click: 10,
   },
   {
     request: highlight('GET http://localhost:5173/node_modules/.vite/deps/vue.js?v=ed2c93c8', 'http'),
-    response: {
-      code: highlight('/* vue.js content */', 'ts'),
-    },
-    click: 11,
   },
   {
     request: highlight('GET http://localhost:5173/src/App.vue', 'http'),
@@ -112,26 +107,22 @@ const httpLogs = [
       file: 'App.vue',
       code: appVueTransformed,
     },
-    click: 12,
   },
 ] satisfies ExplainedVisuallyHttpLog[]
 </script>
 
 <template>
   <ExplainedVisually
-    :browser-address-click="7"
-    :browser-click="[1, 13]"
+    :browser-address-click="1"
+    :browser-click="1"
     browser-address="localhost:5173"
-    :file-explorer-click="[2, 13]"
+    :file-explorer-click="2"
     :file-explorer-default-expanded="['src']"
     :file-system-items="fileSystem"
     :http-logs="httpLogs"
-    :http-logs-click="[7, 13]"
-    :read-files-edge-click="[5, 13]"
-    :request-edge-click="[4, 13]"
+    :http-logs-click="6"
+    :read-files-edge-click="5"
+    :request-edge-click="4"
     :server-click="3"
-    :server-status-click="[6, 13]"
-    server-status-icon="i-ph-spinner animate-spin animate-duration-[3s] size-4"
-    server-status-text="http://localhost:5173/"
   />
 </template>

@@ -3,7 +3,7 @@ import CardLayout from '../components/CardLayout.vue'
 </script>
 
 <template>
-  <CardLayout position="bottom-center" :img="$frontmatter.img" :img-class="$frontmatter.imgClass">
+  <CardLayout position="bottom-center">
     <slot />
   </CardLayout>
 </template>
