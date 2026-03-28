@@ -23,6 +23,7 @@ catalog:
   '@slidev/cli': 52.1.0
   '@slidev/parser': 52.1.0
   '@slidev/theme-default': ^0.25.0
+  '@tsparticles/confetti': 3.9.1
   '@tsparticles/engine': ^3.9.1
   '@tsparticles/slim': ^3.9.1
   '@types/node': ^25.2.3
