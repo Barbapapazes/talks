@@ -12,7 +12,7 @@ function addSpaceListener() {
   if (spaceListener)
     return
   spaceListener = (e: KeyboardEvent) => {
-    if (e.code === 'Space') {
+    if (e.key === 'Enter' || e.code === 'Enter' || e.code === 'NumpadEnter') {
       e.preventDefault()
       confettiRef.value?.fire()
     }
