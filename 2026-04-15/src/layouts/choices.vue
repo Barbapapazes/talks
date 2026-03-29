@@ -16,7 +16,7 @@ const choices = computed(() => {
 </script>
 
 <template>
-  <div class="h-full slidev-layout grid grid-cols-3 gap-4 items-center choices">
+  <div class="h-full slidev-layout grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 items-center choices">
     <!-- TODO: create a dedicated component in the theme -->
     <img v-if="props.img" :src="props.img" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
 

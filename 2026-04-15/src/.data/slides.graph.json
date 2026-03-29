@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-29T14:17:06.879Z",
+  "generatedAt": "2026-03-29T22:28:48.461Z",
   "nodes": [
     {
       "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
@@ -246,13 +246,14 @@
       "timing": 1.2
     },
     {
-      "id": "le_plugin_vite_r_cap",
+      "id": "concr_tement",
       "index": 24,
-      "name": "Le plugin Vite - Récap",
-      "title": "Le plugin Vite - Récap",
-      "ready": true,
-      "layout": "recap",
-      "timing": 1.1
+      "name": "Concrètement ?",
+      "title": "Concrètement ?",
+      "ready": false,
+      "layout": "center",
+      "group": "Concrete Example",
+      "timing": 0.1
     },
     {
       "id": "auto_import_plugin_unplugin_auto_import_exemple",
@@ -312,41 +313,62 @@
       "timing": 1.2
     },
     {
-      "id": "concr_tement",
+      "id": "le_plugin_vite_r_cap",
       "index": 31,
-      "name": "Concrètement ?",
-      "title": "Concrètement ?",
-      "ready": false,
-      "layout": "center",
-      "timing": 0.1
+      "name": "Le plugin Vite - Récap",
+      "title": "Le plugin Vite - Récap",
+      "ready": true,
+      "layout": "recap",
+      "timing": 1.3
     },
     {
       "id": "un_plugin_pour_virtualiser",
       "index": 32,
       "name": "Un plugin pour virtualiser",
       "title": "Un plugin pour virtualiser",
-      "ready": false,
+      "ready": true,
       "group": "Virtualization",
-      "timing": 1.2
+      "timing": 1.5
+    },
+    {
+      "id": "un_plugin_pour_virtualiser_mind_blowing",
+      "index": 33,
+      "name": "Un plugin pour virtualiser - Mind Blowing",
+      "title": "Un plugin pour virtualiser - Mind Blowing",
+      "ready": true,
+      "layout": "mind-blowing-rain",
+      "group": "Virtualization",
+      "timing": 0.4
     },
     {
       "id": "un_plugin_pour_virtualiser_plugin_internals",
-      "index": 33,
+      "index": 34,
       "name": "Un plugin pour virtualiser - Plugin Internals",
       "title": "Un plugin pour virtualiser - Plugin Internals",
-      "ready": false,
+      "ready": true,
       "layout": "bottom-center-card",
       "group": "Virtualization",
-      "timing": 1.1
+      "timing": 1.4
+    },
+    {
+      "id": "un_plugin_pour_virtualiser_virtual_plugin",
+      "index": 35,
+      "name": "Un plugin pour virtualiser - Virtual Plugin",
+      "title": "Un plugin pour virtualiser - Virtual Plugin",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Virtualization",
+      "timing": 1
     },
     {
       "id": "un_plugin_pour_virtualiser_choices",
-      "index": 34,
+      "index": 36,
       "name": "Un plugin pour virtualiser - Choices",
       "title": "Un plugin pour virtualiser - Choices",
-      "ready": false,
+      "ready": true,
+      "layout": "choices",
       "group": "Virtualization",
-      "timing": 0.7,
+      "timing": 0.1,
       "choices": [
         "Vue Router - Un module virtuel",
         "VitePress - Des data virtuels",
@@ -356,20 +378,20 @@
     },
     {
       "id": "vue_router_un_module_virtuel",
-      "index": 35,
+      "index": 37,
       "name": "Vue Router - Un module virtuel",
       "title": "Vue Router - Un module virtuel",
-      "ready": false,
+      "ready": true,
       "layout": "bottom-center-card",
       "group": "Virtualization",
       "timing": 0.7
     },
     {
       "id": "vue_router_un_module_virtuel_plugin_internals",
-      "index": 36,
+      "index": 38,
       "name": "Vue Router - Un module virtuel - Plugin Internals",
       "title": "Vue Router - Un module virtuel - Plugin Internals",
-      "ready": false,
+      "ready": true,
       "layout": "bottom-center-card",
       "group": "Virtualization",
       "timing": 0.9,
@@ -379,7 +401,7 @@
     },
     {
       "id": "vitepress_des_data_virtuels",
-      "index": 37,
+      "index": 39,
       "name": "VitePress - Des data virtuels",
       "title": "VitePress - Des data virtuels",
       "ready": false,
@@ -389,7 +411,7 @@
     },
     {
       "id": "vitepress_des_data_virtuels_plugin_internals",
-      "index": 38,
+      "index": 40,
       "name": "VitePress - Des data virtuels - Plugin Internals",
       "title": "VitePress - Des data virtuels - Plugin Internals",
       "ready": false,
@@ -402,20 +424,20 @@
     },
     {
       "id": "icons_plugin_des_ic_nes_virtuelles",
-      "index": 39,
+      "index": 41,
       "name": "Icons Plugin - Des icônes virtuelles",
       "title": "Icons Plugin - Des icônes virtuelles",
-      "ready": false,
+      "ready": true,
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.7
     },
     {
       "id": "icons_plugin_des_ic_nes_virtuelles_plugin_internals",
-      "index": 40,
+      "index": 42,
       "name": "Icons Plugin - Des icônes virtuelles - Plugin Internals",
       "title": "Icons Plugin - Des icônes virtuelles - Plugin Internals",
-      "ready": false,
+      "ready": true,
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.8,
@@ -425,7 +447,7 @@
     },
     {
       "id": "infos_plugin_des_infos_virtuelles",
-      "index": 41,
+      "index": 43,
       "name": "Infos Plugin - Des infos virtuelles",
       "title": "Infos Plugin - Des infos virtuelles",
       "ready": false,
@@ -435,7 +457,7 @@
     },
     {
       "id": "infos_plugin_des_infos_virtuelles_plugin_internals",
-      "index": 42,
+      "index": 44,
       "name": "Infos Plugin - Des infos virtuelles - Plugin Internals",
       "title": "Infos Plugin - Des infos virtuelles - Plugin Internals",
       "ready": false,
@@ -448,26 +470,25 @@
     },
     {
       "id": "les_autres_capacit_s_des_plugins",
-      "index": 43,
+      "index": 45,
       "name": "Les autres capacités des plugins",
       "title": "Les autres capacités des plugins",
       "ready": false,
       "group": "Advanced Capabilities",
-      "timing": 0
+      "timing": 0.3
     },
     {
       "id": "les_autres_capacit_s_des_plugins_choices",
-      "index": 44,
+      "index": 46,
       "name": "Les autres capacités des plugins - Choices",
       "title": "Les autres capacités des plugins - Choices",
       "ready": false,
       "group": "Advanced Capabilities",
-      "timing": 2.4,
+      "timing": 0.2,
       "choices": [
         "Le HMR (Hot Module Replacement)",
         "Le middleware - Un fichier virtuel",
         "Run Plugin - Un plugin pour exécuter des commandes",
-        "Virtual Plugin - Un plugin pour virtualiser des modules",
         "Laravel Vite - La communication inter-processus",
         "unplugin-macro - Un plugin pour créer des macros",
         "Nitro - Un backend"
@@ -475,7 +496,7 @@
     },
     {
       "id": "le_hmr_hot_module_replacement",
-      "index": 45,
+      "index": 47,
       "name": "Le HMR (Hot Module Replacement)",
       "title": "Le HMR (Hot Module Replacement)",
       "ready": false,
@@ -484,7 +505,7 @@
     },
     {
       "id": "le_hmr_hot_module_replacement_plugins_internals",
-      "index": 46,
+      "index": 48,
       "name": "Le HMR (Hot Module Replacement) - Plugins Internals",
       "title": "Le HMR (Hot Module Replacement) - Plugins Internals",
       "ready": false,
@@ -496,7 +517,7 @@
     },
     {
       "id": "le_middleware_un_fichier_virtuel",
-      "index": 47,
+      "index": 49,
       "name": "Le middleware - Un fichier virtuel",
       "title": "Le middleware - Un fichier virtuel",
       "ready": false,
@@ -508,7 +529,7 @@
     },
     {
       "id": "run_plugin_un_plugin_pour_ex_cuter_des_commandes",
-      "index": 48,
+      "index": 50,
       "name": "Run Plugin - Un plugin pour exécuter des commandes",
       "title": "Run Plugin - Un plugin pour exécuter des commandes",
       "ready": false,
@@ -518,35 +539,13 @@
     },
     {
       "id": "run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals",
-      "index": 49,
+      "index": 51,
       "name": "Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals",
       "title": "Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals",
       "ready": false,
       "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 0.3,
-      "choices": [
-        "Récap des récap"
-      ]
-    },
-    {
-      "id": "virtual_plugin_un_plugin_pour_virtualiser_des_modules",
-      "index": 50,
-      "name": "Virtual Plugin - Un plugin pour virtualiser des modules",
-      "title": "Virtual Plugin - Un plugin pour virtualiser des modules",
-      "ready": false,
-      "layout": "bottom-center-card",
-      "group": "Advanced Capabilities",
-      "timing": 1.2
-    },
-    {
-      "id": "virtual_plugin_un_plugin_pour_virtualiser_des_modules_plugin_internals",
-      "index": 51,
-      "name": "Virtual Plugin - Un plugin pour virtualiser des modules - Plugin Internals",
-      "title": "Virtual Plugin - Un plugin pour virtualiser des modules - Plugin Internals",
-      "ready": false,
-      "group": "Advanced Capabilities",
-      "timing": 0.6,
       "choices": [
         "Récap des récap"
       ]
@@ -634,7 +633,7 @@
       "ready": true,
       "layout": "bottom-left-card",
       "group": "Deep Dive",
-      "timing": 1.3
+      "timing": 1.5
     },
     {
       "id": "conclusion",
@@ -792,11 +791,11 @@
     },
     {
       "from": "les_entrailles_d_un_plugin_vite_lifecycle_hooks",
-      "to": "le_plugin_vite_r_cap",
+      "to": "concr_tement",
       "label": ""
     },
     {
-      "from": "le_plugin_vite_r_cap",
+      "from": "concr_tement",
       "to": "auto_import_plugin_unplugin_auto_import_exemple",
       "label": ""
     },
@@ -827,21 +826,31 @@
     },
     {
       "from": "visualiser_la_pipeline",
-      "to": "concr_tement",
+      "to": "le_plugin_vite_r_cap",
       "label": ""
     },
     {
-      "from": "concr_tement",
+      "from": "le_plugin_vite_r_cap",
       "to": "un_plugin_pour_virtualiser",
       "label": ""
     },
     {
       "from": "un_plugin_pour_virtualiser",
+      "to": "un_plugin_pour_virtualiser_mind_blowing",
+      "label": ""
+    },
+    {
+      "from": "un_plugin_pour_virtualiser_mind_blowing",
       "to": "un_plugin_pour_virtualiser_plugin_internals",
       "label": ""
     },
     {
       "from": "un_plugin_pour_virtualiser_plugin_internals",
+      "to": "un_plugin_pour_virtualiser_virtual_plugin",
+      "label": ""
+    },
+    {
+      "from": "un_plugin_pour_virtualiser_virtual_plugin",
       "to": "un_plugin_pour_virtualiser_choices",
       "label": ""
     },
@@ -927,11 +936,6 @@
     },
     {
       "from": "les_autres_capacit_s_des_plugins_choices",
-      "to": "virtual_plugin_un_plugin_pour_virtualiser_des_modules",
-      "label": "Virtual Plugin - Un plugin pour virtualiser des modules"
-    },
-    {
-      "from": "les_autres_capacit_s_des_plugins_choices",
       "to": "laravel_vite_la_communication_inter_processus",
       "label": "Laravel Vite - La communication inter-processus"
     },
@@ -967,16 +971,6 @@
     },
     {
       "from": "run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals",
-      "to": "r_cap_des_r_cap",
-      "label": "Récap des récap"
-    },
-    {
-      "from": "virtual_plugin_un_plugin_pour_virtualiser_des_modules",
-      "to": "virtual_plugin_un_plugin_pour_virtualiser_des_modules_plugin_internals",
-      "label": ""
-    },
-    {
-      "from": "virtual_plugin_un_plugin_pour_virtualiser_des_modules_plugin_internals",
       "to": "r_cap_des_r_cap",
       "label": "Récap des récap"
     },

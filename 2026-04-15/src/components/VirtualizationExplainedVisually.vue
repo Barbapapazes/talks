@@ -3,12 +3,10 @@ import type {
   ExplainedVisuallyFileSystemItem,
   ExplainedVisuallyHttpLog,
 } from './ExplainedVisually/types'
-import appVueTransformed from 'virtual:vite-transformed-file:App:ts'
-import appVueFile from 'virtual:vite-file-system:App:vue'
 import indexHtml from 'virtual:vite-file-system:index:html'
-import mainTs from 'virtual:vite-file-system:main:ts'
+import mainTs from 'virtual:vite-file-system:main-virtual:ts'
+import mainTsTransformed from 'virtual:vite-transformed-file:main-virtual:ts'
 import packageJson from 'virtual:vite-file-system:package:json'
-import styleCssFile from 'virtual:vite-file-system:style:css'
 import tsconfigAppJson from 'virtual:vite-file-system:tsconfig:app:json'
 import tsconfigJson from 'virtual:vite-file-system:tsconfig:json'
 import tsconfigNodeJson from 'virtual:vite-file-system:tsconfig:node:json'
@@ -71,22 +69,19 @@ const httpLogs = [
       file: 'index.html',
       code: indexHtml,
     },
-    click: 2,
   },
   {
     request: highlight('GET http://localhost:5173/src/main.ts?t=1772882882631', 'http'),
     response: {
       file: 'main.ts',
-      code: mainTs,
+      code: mainTsTransformed,
     },
-    click: 2,
   },
   {
     request: highlight('GET http://localhost:5173/@id/__x00__virtual:my-module', 'http'),
     response: {
       code: virtualMyModule,
     },
-    click: 2,
   },
 ] satisfies ExplainedVisuallyHttpLog[]
 </script>

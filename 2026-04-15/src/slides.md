@@ -871,42 +871,16 @@ Ensuite, [click] buildStart, appelé au moment où Vite démarre et [click] buil
 -->
 
 ---
-name: Le plugin Vite - Récap
-ready: true
-timing: 1.1
-layout: recap
+name: Concrètement ?
+group: Concrete Example
+timing: 0.1
+layout: center
 ---
 
-<RecapList
-  title="Le plugin Vite en 3 points"
-  :items="[
-    {
-      title: 'Un plugin Vite, c\'est une fonction qui retourne un objet',
-      description: 'L\'objet doit au moins avoir une propriété name'
-    },
-    {
-      title: 'Il y a 3 hooks principaux pour agir sur les modules',
-      description: 'resolveId, load et transform'
-    },
-    {
-      title: 'Il y a aussi des hooks pour le cycle de vie de Vite',
-      description: 'config, configResolved, buildStart, buildEnd et closeBundle'
-    }
-  ]"
-/>
+<h2 class="text-4xl font-bold">Concrètement, ça donne quoi ?</h2>
 
 <!--
-[slow] Ok, là, on vient de voir du concret, [click] on va se faire un petit récap.
-
-[click] Un plugin Vite, c'est une fonction qui retourne un objet.
-
-[click] Y a 3 hooks principaux pour agir sur les modules : resolveId, load et transform. Le plus utilisé, globalement, c'est transform.
-
-[click] Et puis, on a pleins de hooks pour se brancher sur l'ensemble du cycle de vite de Vite.
-
-Génial ! [confetti] On commence à faire nos premiers plugins. Franchement, si on nous avait dit ça il y a quelques minutes, j'aurais pas cru !
-
-D'ailleurs, maintenant qu'on fait des plugins, à quoi ça ressemble un plugin concret ?
+TODO: qu'est ce qu'on fait ?
 -->
 
 ---
@@ -1108,64 +1082,116 @@ Ouais, ça serait vraiment trop que quelqu'un l'ait déjà fait et publié sur n
 -->
 
 ---
-name: Concrètement ?
-layout: center
-timing: 0.1
+name: Le plugin Vite - Récap
+ready: true
+timing: 1.3
+layout: recap
 ---
 
-<h2 class="text-4xl font-bold">Concrètement ?</h2>
+<RecapList
+  title="Le plugin Vite en 3 points"
+  :items="[
+    {
+      title: 'Un plugin Vite, c\'est une fonction qui retourne un objet',
+      description: 'L\'objet doit au moins avoir une propriété name'
+    },
+    {
+      title: 'Il y a 3 hooks principaux pour agir sur les modules',
+      description: 'resolveId, load et transform'
+    },
+    {
+      title: 'Il y a aussi des hooks pour le cycle de vie de Vite',
+      description: 'config, configResolved, buildStart, buildEnd et closeBundle'
+    }
+  ]"
+/>
 
 <!--
-TODO: qu'est ce qu'on fait ?
+[slow] Ok, là, on vient de voir du concret, [click] on va se faire un petit récap.
+
+[click] Un plugin Vite, c'est une fonction qui retourne un objet.
+
+[click] Y a 3 hooks principaux pour agir sur les modules : resolveId, load et transform. Le plus utilisé, globalement, c'est transform.
+
+[click] Et puis, on a pleins de hooks pour se brancher sur l'ensemble du cycle de vite de Vite.
+
+Génial ! [confetti] On commence à faire nos premiers plugins. Franchement, si on nous avait dit ça il y a quelques dizaines de minutes, j'aurais pas cru !
+
+[intrigued] D'ailleurs, je me permets de revenir dessus parce qu'à un moment, on a dit que le hook load pouvait retourner du code qui n'existe pas. Mais, hmmm, qu'est-ce que ça veut dire ?
 -->
 
 ---
 name: Un plugin pour virtualiser
 group: Virtualization
-timing: 1.2
-transition: slide-up
+ready: true
+timing: 1.5
 ---
 
 <VirtualizationExplainedVisually />
 
 <!--
-TODO: évoquer le fait qu'on va ensuite en explorer un
-TODO: gif head boom
+[slow] Je vous invite à vous joindre à moi pour qu'on comprenne ça ensemble.
+
+[fast] Reprenons [click] notre visualisation, à gauche le navigateur, à droite les fichiers et au milieu, Vite, si on regarde main.ts, on y découvre un import vers 'virtual:my-module'. Pourtant ce n'est ni un fichier du projet, ni un module existant [open package.json].
+
+[strange] D'où vient-il ?
+
+[fast] Pour le savoir, je nous invite à regarder les [click] logs du navigateur [click].
+
+index.html, main.ts avec hooo, il y a eu un changement dans le nom de l'import, et notre module qui semble être un fichier JavaScript, tout ce dont on a l'habitude.
+
+[questioning] Vraiment, j'comprends pas d'où il vient ? Est-ce qu'il viendrait de Vite ? Et que Vite serait capable de répondre à des requests avec du code arbitraire, des modules qui n'existent pas, qui serait inventés de toute pièce ?
+
+Ça serait dingue ?!
+
+[pause]
+
+Et c'est le cas.
 -->
 
+---
+name: Un plugin pour virtualiser - Mind Blowing
+group: Virtualization
+ready: true
+timing: 0.4
+layout: mind-blowing-rain
+---
+
+<img src="/mind-blowing.gif" class="absolute h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+
 <!--
-L'une des grandes possibilités offertes par Vite, et très utilisée dans les plugins, c'est cette capacité à générer des modules virtuels.
+[with gesture of mind-blown] Wouaaah, le cerveau au moment où il comprend que Vite peut faire ça, répondre à des requêtes avec des modules qui n'existent pas......
 
-Le mieux pour comprendre ça, c'est de le visualiser. D'un côté, prenons notre navigateur ; de l'autre, prenons notre système de fichiers. Entre les deux, plaçons Vite et observons les requêtes HTTP.
+[slow] Mais, ça nous explique pas comment ça fonctionne.
 
-Pour les deux premières, c'est du classique : on y voit `index.html` et `main.ts`. Maintenant, si on regarde dans `main.ts`, on y voit `import 'virtual:my-module'`. Le truc, c'est que si on cherche ce fichier dans notre système de fichiers, il n'existe pas. Et ce n'est pas non plus dans les `node_modules`, sinon Vite l'aurait traité différemment.
-
-Pourtant, si on regarde la réponse, Vite a bien renvoyé quelque chose.
+On se plonge dedans ?
 -->
 
 ---
 name: Un plugin pour virtualiser - Plugin Internals
 group: Virtualization
-timing: 1.1
+ready: true
+timing: 1.4
 layout: bottom-center-card
-img: https://images.unsplash.com/photo-1710020603990-0c984e7811f3?q=80&w=3268&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+transition: slide-up
 ---
 
 ````md magic-move
-```ts {*}{lines:true}
-export default function myPlugin() {
+```ts {*|3}{lines:true}
+export default function myVirtualModulePlugin() {
   return {
-    name: 'my-plugin',
+    name: 'my-virtual-module-plugin',
   }
 }
 ```
-```ts {*}{lines:true}
-export default function myPlugin() {
+```ts {2,3,7-11}{lines:true}
+export default function myVirtualModulePlugin() {
   const virtualModuleId = 'virtual:my-module'
   const resolvedVirtualModuleId = '\0' + virtualModuleId
 
   return {
-    name: 'my-plugin',
+    name: 'my-virtual-module-plugin',
     resolveId(id) {
       if (id === virtualModuleId) {
         return resolvedVirtualModuleId
@@ -1174,13 +1200,13 @@ export default function myPlugin() {
   }
 }
 ```
-```ts {*}{lines:true}
-export default function myPlugin() {
+```ts {12-16|*}{lines:true}
+export default function myVirtualModulePlugin() {
   const virtualModuleId = 'virtual:my-module'
   const resolvedVirtualModuleId = '\0' + virtualModuleId
 
   return {
-    name: 'my-plugin',
+    name: 'my-virtual-module-plugin',
     resolveId(id) {
       if (id === virtualModuleId) {
         return resolvedVirtualModuleId
@@ -1197,20 +1223,95 @@ export default function myPlugin() {
 ````
 
 <!--
-Alors comment ça fonctionne ?
+Dans la suite, on va prendre le temps de rentrer en profondeur dans plugin qui utilise cette technique là, tu peux déjà choisir lequel.
 
-Tout part d'un module dans lequel on va utiliser deux hooks pour simuler l'existence d'un fichier sur le disque.
+Tout comment par un plugin, [cut] [click] avec son petit nom là, il est tout mignon.
 
-Le premier, `resolveId`, permet de déterminer l'identité du module et, par convention, on va venir la préfixer avec un `\0`.
+Dans [click] le hook resolveId, on intercepte l'identifiant de notre module virtuel et on le préfixe avec un \0. C'est une convention de Rollup, c'est tout, c'est comme ça.
 
-Ensuite, et c'est là que tout se joue, on utilise le hook `load`. On a l'habitude d'y lire des fichiers, mais cette fois-ci, on va créer nous-mêmes le code du module. On écrit dans une string `export const msg = "from virtual module"`, et ce module n'existe pas sur le disque : il n'existe que pour Vite, d'où son appellation de virtuel.
+Ensuite, beh, dans [click] le hook load, on vérifie l'identifiant, et si c'est le notre, on retourne une string qui contient le code de notre module, au lie de lire un fichier sur le disque, puisque bah enfaîte, on retourne une string dans les deux cas.
+
+[click]
+
+Le truc, beh, c'est que c'est un peu pénible à écrire à chaque fois mais heureusement pour nous, il existe vite-plugin-virtual.
+-->
+
+---
+name: Un plugin pour virtualiser - Virtual Plugin
+group: Virtualization
+ready: true
+timing: 1
+layout: bottom-center-card
+img: https://images.unsplash.com/photo-1770323084932-3d1cbe84d31b?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+transition: slide-up
+---
+
+````md magic-move
+```ts {6}{lines:true}
+import { defineConfig } from 'vite'
+import virtual from 'vite-plugin-virtual'
+
+export default defineConfig({
+  plugins: [
+    virtual()
+  ]
+})
+```
+```ts {7-10}{lines:true}
+import { defineConfig } from 'vite'
+import virtual from 'vite-plugin-virtual'
+
+export default defineConfig({
+  plugins: [
+    virtual({
+      'virtual:git:commit': () => {
+        const commit = execSync('git rev-parse HEAD').toString().trim()
+        return `export default "${commit}"`
+      },
+    })
+  ]
+})
+```
+```ts {11-15}{lines:true}
+import { defineConfig } from 'vite'
+import virtual from 'vite-plugin-virtual'
+
+export default defineConfig({
+  plugins: [
+    virtual({
+      'virtual:git:commit': () => {
+        const commit = execSync('git rev-parse HEAD').toString().trim()
+        return `export default "${commit}"`
+      },
+      'virtual:api:data': async () => {
+        const res = await fetch('https://api.example.com/data')
+        const data = await res.json()
+        return `export default ${JSON.stringify(data)}`
+      },
+    })
+  ]
+})
+```
+````
+
+<!--
+TODO: on-demand phylosophy
+
+Dans la suite, on va explorer un vrai plugin et vous avez la possibilité, pour de vrai, de choisir lequel.
+
+Pour utiliser le plugin, c'est super simple. On l'installe, et ensuite, c'est un dictionnaire. La clé, c'est le nom du module virtuel et la valeur, c'est le code, alors ça peut être une string, une fonction, une fonction asynchrone, peu importe.
+
+Et du coup, beh, beh on peut très simplement [click] avoir accès au dernier commit git, [click] ou même faire une request vers une API pour injecter au build time des data.
+
+[enthusiastic] C'est beau, c'est simple ! On adore !
 -->
 
 ---
 name: Un plugin pour virtualiser - Choices
 group: Virtualization
-timing: 0.7
-
+ready: true
+timing: 0.1
+layout: choices
 choices:
   - Vue Router - Un module virtuel
   - VitePress - Des data virtuels
@@ -1219,25 +1320,22 @@ choices:
 ---
 
 <!--
-Le portail est ouvert ; reste à choisir quelle illusion explorer.
+Ok. Ok, j'aime beaucoup ce choix !
 
-"Vue Router - Un module virtuel" montre comment des routes entières peuvent émerger du filesystem.
-"VitePress - Des data virtuels" révèle comment injecter des données calculées au build.
-"Icons Plugin - Des icônes virtuelles" transforme un simple import en bibliothèque d'icônes quasi infinie.
-"Infos Plugin - Des infos virtuelles" fait entrer le temps et Git directement dans votre code.
+Aller, plongeons nous dedans !
 -->
 
 ---
 name: Vue Router - Un module virtuel
 group: Virtualization
+ready: true
 timing: 0.7
-
-layout: bottom-center-card
 img: https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+layout: bottom-center-card
 transition: slide-up
 ---
 
-```ts {*}{lines:true}
+```ts {*|3}{lines:true}
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
@@ -1254,31 +1352,31 @@ createApp(App)
 ```
 
 <!--
-Vue Router, c'est le router officiel de Vue.js. Depuis quelque temps, il dispose d'un plugin pour Vite qui permet de générer automatiquement les routes de son application à partir de la structure de son dossier `src/pages`.
+Vue Router, le router officiel de Vue.js, génère automatiquement les routes en suivant la structure du dossier `src/pages`.
 
-À la ligne 3, on importe `routes` depuis `vue-router/auto-routes`. Le truc, c'est que le package `vue-router` ne contient pas toutes les routes de toutes les applications. En réalité, `vue-router/auto-routes` n'existe pas : c'est un module virtuel.
+La ligne intéressante, [click] c'est la 3 et je vous propose qu'on se plonge dans le plugin qui permet ce comportement pour comprendre pourquoi !
 -->
 
 ---
 name: Vue Router - Un module virtuel - Plugin Internals
 group: Virtualization
+ready: true
 timing: 0.9
-
-layout: bottom-center-card
 img: https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+layout: bottom-center-card
 choices:
   - Les autres capacités des plugins
 ---
 
 ````md magic-move
-```ts
+```ts {*|3}{lines:true}
 export default function autoRoutes() {
   return {
     name: 'auto-routes',
   }
 }
 ```
-```ts
+```ts {4-7}{lines:true}
 export default function autoRoutes() {
   return {
     name: 'auto-routes',
@@ -1290,7 +1388,7 @@ export default function autoRoutes() {
   },
 }
 ```
-```ts
+```ts {11-17|*}{lines:true}
 import fs from 'node:fs/promises'
 
 export default function autoRoutes() {
@@ -1314,9 +1412,13 @@ export default function autoRoutes() {
 ````
 
 <!--
-Si on se plonge dans les entrailles du plugin, on retrouve la même structure que tout à l'heure. Sur le resolveId, on récupère notre ID `vue-router/auto-routes` et on le préfixe avec \0, c'est la convention de Rollup pour les modules virtuels.
+Comme tous les plugins, tout commence par un objet avec [click] un nom.
 
-Ensuite, c'est dans le hook `load` que tout se joue. On va venir lire le contenu du dossier `src/pages`, le traiter pour générer les routes de notre application, puis retourner le code JavaScript qui exporte ces routes. Automatiquement, les routes sont définies, et le développeur n'a plus à les écrire manuellement.
+[click] Le hook resolveId intercepte l'import de vue-router/auto-routes et le préfixe avec \0 pour indiquer que c'est un module virtuel.
+
+[click] Ensuite, le hook load s'occupe de la génération des routes et de créer le code JavaScript qui exporte ces routes.
+
+[click] C'est un plugin avec module virtuel par excellence.
 -->
 
 ---
@@ -1401,13 +1503,14 @@ Sous le capot, c'est le même système de module virtuel que tout à l'heure. Le
 ---
 name: Icons Plugin - Des icônes virtuelles
 group: Virtualization
+ready: true
 timing: 0.7
-layout: center-card
 img: https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+layout: center-card
 transition: slide-up
 ---
 
-```vue
+```vue {*|2,7}{lines:true}
 <script setup>
 import IconAccessibility from '~icons/carbon/accessibility'
 import IconAccountBox from '~icons/mdi/account-box'
@@ -1422,26 +1525,26 @@ import IconAccountBox from '~icons/mdi/account-box'
 <IconsPlugin class="mt-4" />
 
 <!--
-Vous avez sûrement l'habitude d'utiliser des icônes via des SVG, des fonts, ou directement des librairies d'icônes via npm. C'est chouette, mais vous êtes limités aux icônes contenues dans ce que vous utilisez.
+Ah les icônes dans les applications, quel sujet !
 
-Avec `unplugin-icons`, vous avez accès à plus de 200 000 icônes à la demande.
+[click] Le point intéressant ici c'est la ligne 2. L'import commence par un tilde alors qu'il n'existe aucun module commençant par un tilde sur npm
 
-Vous le voyez, vous écrivez le chemin vers votre icône et, automagiquement, elle va être chargée et s'afficher [click].
+Je vous propose qu'on se plonge dans le plugin qui permet ce comportement pour comprendre.
 -->
 
 ---
 name: Icons Plugin - Des icônes virtuelles - Plugin Internals
 group: Virtualization
+ready: true
 timing: 0.8
-
-layout: center-card
 img: https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+layout: center-card
 choices:
   - Les autres capacités des plugins
 ---
 
 ````md magic-move
-```ts {*}{lines:true}
+```ts {*|6}{lines:true}
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -1452,7 +1555,7 @@ export default defineConfig({
   ],
 })
 ```
-```ts {*}{lines:true}
+```ts {7-11}{lines:true}
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -1468,7 +1571,7 @@ export default defineConfig({
   ],
 })
 ```
-```ts {*}{lines:true}
+```ts {13-19}{lines:true}
 import { defineConfig } from 'vite'
 import { loadIcon } from 'iconify'
 
@@ -1495,7 +1598,13 @@ export default defineConfig({
 ````
 
 <!--
-Sous le capot, c'est un jeu de modules virtuels, et on y retrouve la même structure que tout à l'heure. Le gros changement est dans la fonction `load`, où il va utiliser `loadIcon` d'Iconify pour charger l'icône à la demande. Et c'est ça le vrai changement : pas besoin de charger une librairie de 100 Mo dans votre frontend, plus de limites sur les icônes que vous pouvez utiliser, et votre serveur Vite continue à être rapide au démarrage.
+Comme tous les plugins, tout commence par un objet avec [click] un nom.
+
+[click] Le hook resolveId intercepte les imports commençant par `~icons/` et les préfixe avec `\0` pour indiquer que ce sont des modules virtuels.
+
+[click] Ensuite, le hook load utilise la fonction `loadIcon` d'Iconify pour charger l'icône demandée et retourne le code JavaScript qui exporte le SVG de l'icône.
+
+[click] C'est un plugin avec modules virtuels par excellence.
 -->
 
 ---
@@ -1624,7 +1733,7 @@ Pour le temps, on vient exécuter un `new Date()`, et pour le dernier SHA, on vi
 ---
 name: Les autres capacités des plugins
 group: Advanced Capabilities
-timing: 0
+timing: 0.3
 ---
 
 <!--
@@ -1634,12 +1743,11 @@ TODO: inviter les gens à voter avant de présenter les choix en parlant de tout
 ---
 name: Les autres capacités des plugins - Choices
 group: Advanced Capabilities
-timing: 2.4
+timing: 0.2
 choices:
   - Le HMR (Hot Module Replacement)
   - Le middleware - Un fichier virtuel
   - Run Plugin - Un plugin pour exécuter des commandes
-  - Virtual Plugin - Un plugin pour virtualiser des modules
   - Laravel Vite - La communication inter-processus
   - unplugin-macro - Un plugin pour créer des macros
   - Nitro - Un backend
@@ -1832,88 +1940,6 @@ export default defineConfig({
 Plus concrètement, un plugin comme `vite-plugin-run` est implémenté avec le hook `handleHotUpdate`.
 
 À chaque fois qu'un fichier est modifié, le hook est exécuté et les commandes peuvent être lancées.
--->
-
----
-name: Virtual Plugin - Un plugin pour virtualiser des modules
-group: Advanced Capabilities
-timing: 1.2
-
-layout: bottom-center-card
-transition: slide-up
----
-
-```ts {*}{lines:true}
-import { defineConfig } from 'vite'
-import virtual from 'vite-plugin-virtual'
-
-export default defineConfig({
-  plugins: [
-    virtual({
-      'virtual:git:commit': () => {
-        const commit = execSync('git rev-parse HEAD').toString().trim()
-        return `export default "${commit}"`
-      },
-      'virtual:api:data': async () => {
-        const res = await fetch('https://api.example.com/data')
-        const data = await res.json()
-        return `export default ${JSON.stringify(data)}`
-      },
-    })
-  ]
-})
-```
-
-<!--
-Avec Vite, il est possible de créer des modules virtuels, c'est-à-dire de renvoyer au navigateur du code qui n'existe pas sur le disque. La requête est interceptée avant que Vite ne tente de charger le fichier, et le plugin peut retourner du code à la volée.
-
-Par exemple, on peut l'utiliser pour injecter des données au build time, comme un commit git, le résultat d'une API, une configuration particulière, etc.
-
-Le truc, c'est que devoir faire à la main un plugin pour chaque module virtuel, ça peut vite devenir pénible, et `vite-plugin-virtual` est là pour ça. Rien à configurer : juste un mapping entre le nom du module virtuel et le code à retourner, et le tour est joué !
--->
-
----
-name: Virtual Plugin - Un plugin pour virtualiser des modules - Plugin Internals
-group: Advanced Capabilities
-timing: 0.6
-choices:
-  - Récap des récap
----
-
-```ts {*}{lines:true}
-import defineConfig from 'vite'
-
-export default defineConfig({
-  plugins: [
-    {
-      name: 'virtual',
-      resolveId(id) {
-        if (id.startsWith('virtual:')) {
-          return `\0${id}`
-        }
-      },
-      load(id) {
-        if (id === '\0virtual:git:commit') {
-          const commit = execSync('git rev-parse HEAD').toString().trim()
-          return `export default "${commit}"`
-        }
-        if (id === '\0virtual:api:data') {
-          const res = await fetch('https://api.example.com/data')
-          const data = await res.json()
-          return `export default ${JSON.stringify(data)}`
-        }
-      }
-    }
-  ]
-})
-```
-
-<!-- TODO: sortir ce plugin et le mettre après le 34 (en un slide si possible) -->
-
-<!--
-Plus concrètement, un plugin comme `vite-plugin-virtual` est implémenté comme un plugin de module virtuel, avec les hooks `resolveId` et `load`, en suivant les conventions de Rollup.
-
-On va boucler sur toutes les clés dans `resolveId` pour voir si l'import correspond à l'une d'elles, puis faire pareil dans `load` pour trouver la valeur associée et la retourner.
 -->
 
 ---
@@ -2148,7 +2174,7 @@ layout: recap
 name: Dans les profondeurs de la pipeline
 group: Deep Dive
 ready: true
-timing: 1.3
+timing: 1.5
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1553356126-71d9da2295e2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
