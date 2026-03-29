@@ -129,6 +129,9 @@ catalogs:
     fdir:
       specifier: ^6.5.0
       version: 6.5.0
+    fireworks-js:
+      specifier: ^2.10.8
+      version: 2.10.8
     gray-matter:
       specifier: ^4.0.3
       version: 4.0.3
@@ -509,6 +512,9 @@ importers:
       '@tsparticles/confetti':
         specifier: 'catalog:'
         version: 3.9.1
+      fireworks-js:
+        specifier: 'catalog:'
+        version: 2.10.8
       reka-ui:
         specifier: 'catalog:'
         version: 1.0.0-alpha.8(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3))
@@ -3916,6 +3922,9 @@ packages:
   find-up@5.0.0:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
+
+  fireworks-js@2.10.8:
+    resolution: {integrity: sha512-UZNxeJvRmQzLisN4iriWXqKojG9TDJqc0dPmkUw0/+AEQQ3w8z1Jx2YdFSiBGSVb/u4dPTQXU109GMVblzhfpg==}
 
   flat-cache@4.0.1:
     resolution: {integrity: sha512-f7ccFPK3SXFHpx15UIGyRJ/FJQctuKZ0zVuN3frBo4HnK3cay9VEW0R6yPYFHC0AgqhukPzKjq22t5DmAyqGyw==}
@@ -10676,6 +10685,8 @@ snapshots:
     dependencies:
       locate-path: 6.0.0
       path-exists: 4.0.0
+
+  fireworks-js@2.10.8: {}
 
   flat-cache@4.0.1:
     dependencies:

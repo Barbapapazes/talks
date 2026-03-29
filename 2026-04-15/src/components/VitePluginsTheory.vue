@@ -5,13 +5,14 @@ import AppVueTransformed from 'virtual:vite-transformed-file:App:ts'
 
 const plugins = [
   {
-    name: 'Plugin A',
+    name: 'VuePlugin',
+    color: '#42b883',
     resolveId: {
-      input: './App.vue',
-      output: './App.vue',
+      input: '/src/App.vue',
+      output: '/src/App.vue',
     },
     load: {
-      input: './App.vue',
+      input: '/src/App.vue',
       output: AppVue,
     },
     transform: {
@@ -20,7 +21,8 @@ const plugins = [
     },
   },
   {
-    name: 'Plugin B',
+    name: 'CustomPlugin',
+    color: 'var(--slidev-theme-primary)',
     resolveId: {
       input: 'skipped',
       output: '',

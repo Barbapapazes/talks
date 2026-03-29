@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import imagePng from 'virtual:vite-transformed-file:image:ts'
-import indexHtml from 'virtual:vite-transformed-file:index:html'
-import mainTs from 'virtual:vite-transformed-file:main-image:ts'
+import indexHtml from 'virtual:vite-transformed-file:index-jsx:html'
+import mainTs from 'virtual:vite-transformed-file:main:jsx'
+import itemTs from 'virtual:vite-transformed-file:item:jsx'
 import Inspect from '../Inspect/Inspect.vue'
 import type { Request } from '../../types/network-tab'
 
@@ -15,7 +15,7 @@ const requests: Request[] = [
   },
   {
     id: 2,
-    name: 'main.ts',
+    name: 'main.jsx',
     type: 'script',
     initiator: '(index):13',
     waterfallStart: 6,
@@ -24,14 +24,13 @@ const requests: Request[] = [
   },
   {
     id: 3,
-    name: 'image.jpg?import',
-    url: '/src/assets/image.jpg?import',
+    name: 'item.jsx',
     type: 'script',
-    initiator: 'main.ts:1',
+    initiator: 'main.jsx:1',
     waterfallStart: 32,
-    time: 12,
-    response: imagePng,
-  }
+    time: 4,
+    response: itemTs,
+  },
 ]
 </script>
 

@@ -3,8 +3,10 @@ import type { NodeProps } from '@vue-flow/core'
 
 interface HookNodeData {
   label: string
+  signature: string
   plugins: {
     name: string
+    color: string
     input: string
     output: string
   }[]
@@ -34,22 +36,22 @@ function isSelected(pluginName: string) {
 
 <template>
   <div class="w-80 bg-neutral-50 border border-neutral-200 rounded-lg divide-y">
-    <div class="py-1 px-2 text-xl font-semibold">
-      {{ props.data.label }}
+    <div class="py-1 px-2 text-xl font-semibold flex items-center justify-between gap-1">
+      {{ props.data.label }} <span class="font-mono font-normal text-base text-neutral-700">{{ props.data.signature }}</span>
     </div>
 
     <div class="p-1">
-      <div class="bg-neutral-100 rounded-b-md p-1">
+      <div class="bg-neutral-100 rounded-b-md">
         <div
           v-for="plugin in props.data.plugins"
           :key="plugin.name"
-          class="relative"
+          class="relative rounded-md p-1"
           :class="{
-            'bg-blue-100': isSelected(plugin.name),
-            'hover:bg-neutral-200': !isSelected(plugin.name),
+            'bg-[color-mix(in_srgb,_var(--plugin-color)_50%,_white)]': isSelected(plugin.name),
+            'hover:bg-[color-mix(in_srgb,_var(--plugin-color)_25%,_white)]': !isSelected(plugin.name),
           }"
+          :style="`--plugin-color: ${plugin.color}`"
         >
-          <!-- TODO: ajouter la signature de la fonction -->
           {{ plugin.name }}
 
           <button class="absolute inset-0" @click="onClick(plugin.name)" />

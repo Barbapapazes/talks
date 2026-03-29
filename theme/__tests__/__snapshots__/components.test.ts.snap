@@ -169,32 +169,32 @@ exports[`icon > renders correctly with a name and class 1`] = `"<span class="inl
 
 exports[`recapList > renders the title and each recap item 1`] = `
 "<div class="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6">
-  <h1 class="text-5xl font-semibold tracking-tight text-balance">Vite en 3 points</h1>
+  <h1 class="text-3xl font-semibold tracking-tight text-balance text-white">Vite en 3 points</h1>
   <div class="flex flex-col gap-5">
     <article data-recap-list-item="" class="rounded-3xl border border-white/15 bg-white/10 px-6 py-5 shadow-2xl backdrop-blur-sm">
-      <div class="flex items-start gap-5">
-        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-xl font-bold text-black">1</div>
+      <div class="flex gap-5">
+        <div class="w-12 flex items-center justify-center rounded-xl bg-white text-2xl font-bold text-black">1</div>
         <div class="flex-1">
           <h2 class="text-2xl font-semibold leading-tight text-white text-balance">Un serveur web pour le développement</h2>
-          <p class="mt-2 text-lg leading-relaxed text-white/75">Il fait transiter des requêtes qu'on transformera à la volée</p>
+          <p class="mt-[0.25rem] text-lg leading-relaxed text-white/75">Il fait transiter des requêtes qu'on transformera à la volée</p>
         </div>
       </div>
     </article>
     <article data-recap-list-item="" class="rounded-3xl border border-white/15 bg-white/10 px-6 py-5 shadow-2xl backdrop-blur-sm">
-      <div class="flex items-start gap-5">
-        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-xl font-bold text-black">2</div>
+      <div class="flex gap-5">
+        <div class="w-12 flex items-center justify-center rounded-xl bg-white text-2xl font-bold text-black">2</div>
         <div class="flex-1">
           <h2 class="text-2xl font-semibold leading-tight text-white text-balance">Un bundler pour la production</h2>
-          <p class="mt-2 text-lg leading-relaxed text-white/75">Il transforme notre code pour la production</p>
+          <p class="mt-[0.25rem] text-lg leading-relaxed text-white/75">Il transforme notre code pour la production</p>
         </div>
       </div>
     </article>
     <article data-recap-list-item="" class="rounded-3xl border border-white/15 bg-white/10 px-6 py-5 shadow-2xl backdrop-blur-sm">
-      <div class="flex items-start gap-5">
-        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-xl font-bold text-black">3</div>
+      <div class="flex gap-5">
+        <div class="w-12 flex items-center justify-center rounded-xl bg-white text-2xl font-bold text-black">3</div>
         <div class="flex-1">
           <h2 class="text-2xl font-semibold leading-tight text-white text-balance">Un système de plugins</h2>
-          <p class="mt-2 text-lg leading-relaxed text-white/75">Pour étendre ses fonctionnalités et faire tout ce qu'on veut</p>
+          <p class="mt-[0.25rem] text-lg leading-relaxed text-white/75">Pour étendre ses fonctionnalités et faire tout ce qu'on veut</p>
         </div>
       </div>
     </article>

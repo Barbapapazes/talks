@@ -10,6 +10,7 @@ import HookNode from './Nodes/HookNode.vue'
 interface PipelineProps {
   plugins: {
     name: string
+    color: string
     resolveId: {
       input: string | null
       output: string | null
@@ -48,8 +49,10 @@ const nodes = ref<Node[]>([
     type: 'hook',
     data: {
       label: 'resolveId',
+      signature: 'resolveId(id)',
       plugins: props.plugins.map(plugin => ({
         name: plugin.name,
+        color: plugin.color,
         input: plugin.resolveId.input,
         output: plugin.resolveId.output,
       })),
@@ -61,8 +64,10 @@ const nodes = ref<Node[]>([
     type: 'hook',
     data: {
       label: 'load',
+      signature: 'load(id)',
       plugins: props.plugins.map(plugin => ({
         name: plugin.name,
+        color: plugin.color,
         input: plugin.load.input,
         output: plugin.load.output,
       })),
@@ -74,8 +79,10 @@ const nodes = ref<Node[]>([
     type: 'hook',
     data: {
       label: 'transform',
+      signature: 'transform(code, id)',
       plugins: props.plugins.map(plugin => ({
         name: plugin.name,
+        color: plugin.color,
         input: plugin.transform.input,
         output: plugin.transform.output,
       })),
@@ -187,6 +194,11 @@ const selectedPlugin = ref<{
   output: string | null
 } | undefined>(undefined)
 function onPluginClick(hookName: string, pluginName: string) {
+  if (selectedPlugin.value?.name === pluginName && selectedPlugin.value?.hook === hookName) {
+    selectedPlugin.value = undefined
+    return
+  }
+
   const plugin = props.plugins.find(p => p.name === pluginName)
 
   if (!plugin)
@@ -195,8 +207,8 @@ function onPluginClick(hookName: string, pluginName: string) {
   selectedPlugin.value = {
     name: pluginName,
     hook: hookName,
-    input: plugin[hookName as keyof Omit<typeof plugin, 'name'>].input,
-    output: plugin[hookName as keyof Omit<typeof plugin, 'name'>].output,
+    input: plugin[hookName as keyof Omit<typeof plugin, 'name' | 'color'>].input,
+    output: plugin[hookName as keyof Omit<typeof plugin, 'name' | 'color'>].output,
   }
 }
 </script>
@@ -238,7 +250,7 @@ function onPluginClick(hookName: string, pluginName: string) {
       </VueFlow>
     </div>
 
-    <div class="w-1/2 h-full flex flex-col gap-4 p-4">
+    <div v-click class="w-1/2 h-full flex flex-col gap-4 p-4">
       <div class="grow max-h-[calc(50%-0.5rem)] flex flex-col border border-neutral-200 rounded-md flex flex-col overflow-hidden">
         <div class="font-semibold text-sm text-neutral-500 p-2"> input </div>
          <div

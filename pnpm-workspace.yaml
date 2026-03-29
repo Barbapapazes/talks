@@ -45,6 +45,7 @@ catalog:
   eslint: ^10.0.2
   execa: ^9.6.1
   fdir: ^6.5.0
+  fireworks-js: ^2.10.8
   gray-matter: ^4.0.3
   happy-dom: ^20.8.3
   markdown-it: ^14.1.1

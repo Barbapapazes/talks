@@ -1,6 +1,7 @@
 <script lang="ts" setup>
+import { useIsSlideActive, useSlideContext } from '@slidev/client'
 import { confetti, type ConfettiOptions } from '@tsparticles/confetti'
-import { onUnmounted } from 'vue'
+import { computed, onUnmounted, unref, watch } from 'vue'
 
 type ConfettiContainer = NonNullable<Awaited<ReturnType<typeof confetti>>>
 
@@ -10,10 +11,35 @@ const FIRE_COOLDOWN_MS = 350
 const PARTICLE_COUNT = 200
 const PARTICLE_TICKS = 120
 
+const isActive = useIsSlideActive()
+const slideContext = useSlideContext()
+const autoFireClicks = computed(() => resolveAutoFireClicks(unref(slideContext.$frontmatter)?.confettiClicks))
 
 let activeContainer: ConfettiContainer | null = null
 let cleanupTimer: number | null = null
 let lastFireAt = 0
+let lastAutoFireClicks: number | null = null
+let enterListener: ((event: KeyboardEvent) => void) | null = null
+
+function resolveAutoFireClicks(value: unknown) {
+  if (typeof value === 'number' && Number.isFinite(value) && value >= 1)
+    return Math.floor(value)
+
+  if (typeof value !== 'string')
+    return null
+
+  const normalizedValue = value.trim()
+
+  if (!normalizedValue)
+    return null
+
+  const parsedValue = Number(normalizedValue)
+
+  if (!Number.isFinite(parsedValue) || parsedValue < 1)
+    return null
+
+  return Math.floor(parsedValue)
+}
 
 function getCleanupDelayMs(ticks: number) {
   return 8_000 + ticks * 16 // 16ms is the default tick duration in tsParticles, adding some extra time to ensure all particles are cleaned up after they disappear
@@ -29,6 +55,28 @@ function clearPendingConfetti() {
     activeContainer.destroy()
     activeContainer = null
   }
+}
+
+function addEnterListener() {
+  if (enterListener || typeof window === 'undefined')
+    return
+
+  enterListener = (event: KeyboardEvent) => {
+    if (event.key === 'Enter' || event.code === 'Enter' || event.code === 'NumpadEnter') {
+      event.preventDefault()
+      void fire()
+    }
+  }
+
+  window.addEventListener('keydown', enterListener)
+}
+
+function removeEnterListener() {
+  if (!enterListener || typeof window === 'undefined')
+    return
+
+  window.removeEventListener('keydown', enterListener)
+  enterListener = null
 }
 
 async function fire() {
@@ -51,8 +99,7 @@ async function fire() {
     scalar: 2.4,
     ticks: PARTICLE_TICKS,
     zIndex: 2000,
-    drift: 1.2
-    ,
+    drift: 1.2,
     disableForReducedMotion: true,
   }
 
@@ -80,11 +127,44 @@ async function fire() {
   }, getCleanupDelayMs(PARTICLE_TICKS))
 }
 
+watch(isActive, (active) => {
+  if (active) {
+    addEnterListener()
+  }
+  else {
+    removeEnterListener()
+    lastAutoFireClicks = null
+  }
+}, { immediate: true })
+
+watch([
+  isActive,
+  () => unref(slideContext.$clicks),
+  autoFireClicks,
+], ([active, clicks, threshold]) => {
+  if (!active || threshold === null) {
+    lastAutoFireClicks = null
+    return
+  }
+
+  if (clicks < threshold) {
+    if (lastAutoFireClicks === threshold)
+      lastAutoFireClicks = null
+
+    return
+  }
+
+  if (lastAutoFireClicks === threshold)
+    return
+
+  lastAutoFireClicks = threshold
+  void fire()
+}, { immediate: true })
+
 onUnmounted(() => {
+  removeEnterListener()
   clearPendingConfetti()
 })
-
-defineExpose({ fire })
 </script>
 
 <template>
