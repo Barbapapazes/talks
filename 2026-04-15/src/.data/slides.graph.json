@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-29T22:28:48.461Z",
+  "generatedAt": "2026-03-30T19:04:21.699Z",
   "nodes": [
     {
       "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
@@ -251,7 +251,7 @@
       "name": "Concrètement ?",
       "title": "Concrètement ?",
       "ready": false,
-      "layout": "center",
+      "layout": "center-card",
       "group": "Concrete Example",
       "timing": 0.1
     },
@@ -358,7 +358,7 @@
       "ready": true,
       "layout": "bottom-center-card",
       "group": "Virtualization",
-      "timing": 1
+      "timing": 1.1
     },
     {
       "id": "un_plugin_pour_virtualiser_choices",
@@ -384,7 +384,7 @@
       "ready": true,
       "layout": "bottom-center-card",
       "group": "Virtualization",
-      "timing": 0.7
+      "timing": 0.4
     },
     {
       "id": "vue_router_un_module_virtuel_plugin_internals",
@@ -394,7 +394,7 @@
       "ready": true,
       "layout": "bottom-center-card",
       "group": "Virtualization",
-      "timing": 0.9,
+      "timing": 0.7,
       "choices": [
         "Les autres capacités des plugins"
       ]
@@ -404,20 +404,20 @@
       "index": 39,
       "name": "VitePress - Des data virtuels",
       "title": "VitePress - Des data virtuels",
-      "ready": false,
+      "ready": true,
       "layout": "center-card",
       "group": "Virtualization",
-      "timing": 1.2
+      "timing": 0.9
     },
     {
       "id": "vitepress_des_data_virtuels_plugin_internals",
       "index": 40,
       "name": "VitePress - Des data virtuels - Plugin Internals",
       "title": "VitePress - Des data virtuels - Plugin Internals",
-      "ready": false,
+      "ready": true,
       "layout": "center-card",
       "group": "Virtualization",
-      "timing": 0.6,
+      "timing": 0.8,
       "choices": [
         "Les autres capacités des plugins"
       ]
@@ -430,7 +430,7 @@
       "ready": true,
       "layout": "center-card",
       "group": "Virtualization",
-      "timing": 0.7
+      "timing": 0.5
     },
     {
       "id": "icons_plugin_des_ic_nes_virtuelles_plugin_internals",
@@ -450,7 +450,7 @@
       "index": 43,
       "name": "Infos Plugin - Des infos virtuelles",
       "title": "Infos Plugin - Des infos virtuelles",
-      "ready": false,
+      "ready": true,
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.6
@@ -460,10 +460,10 @@
       "index": 44,
       "name": "Infos Plugin - Des infos virtuelles - Plugin Internals",
       "title": "Infos Plugin - Des infos virtuelles - Plugin Internals",
-      "ready": false,
+      "ready": true,
       "layout": "center-card",
       "group": "Virtualization",
-      "timing": 0.8,
+      "timing": 1.1,
       "choices": [
         "Les autres capacités des plugins"
       ]

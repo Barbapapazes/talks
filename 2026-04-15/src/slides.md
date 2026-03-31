@@ -87,15 +87,13 @@ transition: slide-up
 
 <ViteEcosystem />
 
-
 <!--
 [fast] Petit contexte rapide sur Vite
 
-C'est un outil, c'est simple, il est présent partout. Prenez le nom d'une framework que vous connaissez, tant que ce nom n'est pas Next, il y a Vite dedans. [accelerate] Utilisé par Angular, React, Vue, Nuxt, Astro, TanStack, bla bla bla et pleins d'autres, bref, on s'en fou
+C'est un outil, c'est simple, il est présent partout. Prenez le nom d'une framework que vous connaissez, tant que ce nom n'est pas Next, il y a Vite dedans. [accelerate] [click] Utilisé par Angular, React, Vue, Nuxt, Astro, TanStack, bla bla bla et pleins d'autres, bref, on s'en fou
 
 [slow] La question qu'est intéressante, c'est pourquoi Vite fait autant l'unanimité ? Ben parce que c'est un bundler pas comme les autres.
 -->
-
 
 ---
 name: Vite Growth
@@ -108,12 +106,12 @@ timing: 1.4
 
 <!--
 [slow] Peut-être que bundler ça ne parle pas forcément à tout le monde, on va prendre le temps de détailler ça là
-gr
-Peut-être que certains d'entre vous on entendu parler de webpack, le bundler historique, qui a dominé le paysage pendant les 10 dernières années, et qui reste aujourd'hui encore très utilisé.
+
+Peut-être que certains d'entre vous on entendu parler de [click] webpack, le bundler historique, qui a dominé le paysage pendant les 10 dernières années, et qui reste aujourd'hui encore très utilisé.
 
 Mais on le voit là, juste là, à un moment donnée ça stagne alors même que le web a continué de progresser,
 
-et ça, ça s'explique quand on regarde le reste. [accelerate] Il est plus tout seul, il y en a d'autres Vite, Rspack, Snowpack, SWC, bref, d'autres.
+et ça, ça s'explique quand on regarde le reste. [accelerate] [click] Il est plus tout seul, y en a d'autres Vite, Rspack, Snowpack, SWC, bref, d'autres.
 sauf qu'on voit que c'est Vite a pris le dessus
 
 [slow] Pourquoi ? Est-ce une hype ? Une réalité ? Que se passe-t-il ?
@@ -147,7 +145,7 @@ Aller c'est parti, on y va, j'vous en dit pas plus [never ending sentence]
 
 [never stop] Vous pouvez prendre votre téléphone, et puis flasher le QR code, je vous laisse à vous connecter, prendre le temps de regarder un peu la plateforme, et puis bon, pendant que vous vous connectez, on va commencer.
 
-Je vous l'avez promis. C'est quoi un bundler ?
+[slow] Je vous l'avez promis. C'est quoi un bundler ?
 
 On a l'habitude de démarrer une application avec un executable, executable produit avec un compilateur. Et ben dans le web, c'est pareil.
 On a un bundler qui va produire un bundle qui permet de démarrer votre application web depuis un navigateur.
@@ -162,8 +160,8 @@ Trop bien, on a compris ce qu'était un bundler.
 ---
 name: Le fonctionnement de Vite
 group: Vite Core
-timing: 0.9
 ready: true
+timing: 0.9
 layout: ai
 ---
 
@@ -174,7 +172,7 @@ layout: ai
 <!--
 Maintenant, bin, il nous faut comprendre Vite.
 
-En 2026 [pause], [slow] est-ce qu'on ne demanderait pas à l'IA de nous le dire ?
+En 2026 [pause], [slow] est-ce qu'on ne demanderait pas à l'IA de nous le présenter ?
 
 [accelerate] Allez, on lui demande. [enter] "Je suis nouveau dans le monde du développement web, qu'est-ce que Vite et comment est-ce que ça fonctionne ?"
 
@@ -186,10 +184,10 @@ C'est long. c'est trop long. [fast] et moi bah, j'ai que 45 minutes et j'ai vrai
 ---
 name: Le concentré du fonctionnement de Vite
 group: Vite Core
+ready: true
+timing: 0.7
 layout: center-card
 img: /vite-background.png
-timing: 0.7
-ready: true
 clicks: 5
 ---
 
@@ -199,17 +197,16 @@ clicks: 5
 
 <ViteEcosystem class="opacity-30" without-clicks />
 
-
 <!--
 [slow] Du coup, bin voici les trucs les plus importants à retenir sur Vite.
 
 [impact]
-- C'est un serveur web, requête, réponse, HTTP, tout ça
-- Il est basé sur les modules ECMAScript, `import` et `export`
-- Il transforme les fichiers à la demande
-- Et il est entièrement extensible via des plugins
+- [click] C'est un serveur web, requête, réponse, HTTP, tout ça
+- [click] Il est basé sur les modules ECMAScript, `import` et `export`
+- [click] Il transforme les fichiers à la demande
+- [click] Et il est entièrement extensible via des plugins
 
-[pause]
+[click] [pause]
 
 Bah voilà, vous avez tout!
 
@@ -221,8 +218,8 @@ Mais heuu, est-ce qu'on rendrait pas ça un peu plus visuel.
 ---
 name: Le fonctionnement de Vite - Visualisation
 group: Vite Core
-timing: 2.1
 ready: true
+timing: 2.1
 layout: full
 ---
 
@@ -231,17 +228,20 @@ layout: full
 <!--
 [slow] [click] À droite, un navigateur, [click] à gauche, des fichiers. C'est juste le starter Vite, Vue et TypeScript, rien d'extravaguant. [fast] Eh heu quand je dis à gauche à droite, c'est heu sur la slide parce qu'en vrai, c'est sur votre machine tout ça hein.
 
-[slow] Entre les deux, on place [fast] rapidement [slow] [click] Vite, notre serveur web. [fast] Et puis bon bin, le navigateur, il fait des requêtes HTTP vers Vite qui va lire le système de fichier pour renvoyer l'information.
+[slow] Entre les deux, on place [fast] rapidement [slow] [click] Vite, notre serveur web. [fast] Et puis bon bin, le navigateur, il fait des [click] requêtes HTTP vers Vite qui va [click] lire le système de fichier pour renvoyer l'information.
 
-Pour la suite, je vous propose qu'on se place dans la navigateur et qu'on intercepte [click] ensemble les requêtes HTTP.
+Pour la suite, je vous propose qu'on se place dans la navigateur et qu'on intercepte [click] ensemble les requêtes HTTP. [click]
 
 [accelerate]
+[open index.html]
 Au départ, on demande la document, Vite renvoie le fichier index.html avec le client Vite et main.ts.
 Ensuite, le navigateur charge main.ts. On y voit un fichier CSS, Vue et notre app, que le navigateur charge évidemment aussi.
-[open style.css] Regardons le ficher CSS. Ah tiens, Vite renvoie du JavaScript pour le CSS, on y retrouve quand même notre CSS. Ok, étonnant mais pourquoi pas.
-[open App.vue] Et le fichier Vue alors ? Aaaah ahah, c'est du JavaScript, encore. Dans nos fichiers, c'était bien un composant Vue.
 
-Peut importe...
+[open style.css] Regardons le ficher CSS. Ah tiens, Vite renvoie du JavaScript pour le CSS, on y retrouve quand même notre CSS, ookkk, c'est étonnant mais pourquoi pas.
+
+[open App.vue] Et le fichier Vue alors ? Aaaah ? Ahhh ? Ok, tiens, encore du JavaScript. Pourtant c'était bien du Vue dans le fichier du starter.
+
+Maiiis peut importe..., on investiguera ça plus tard.
 
 [enthusiastic] On a maintenant une belle vision d'ensemble. Trop chouette !
 -->
@@ -267,16 +267,16 @@ img: /vite-background.png
 
 Ça m'fait penser, on va explorer l'un d'entre eux après, et vous avez la possibilité de choisir lequel. [show qr code]
 
-Gestion des pages HTML ? On peut !
-Support natif du JSX ? C'est intégré !
-Gestion du CSS ? C'est fait aussi !
-Les assets statiques ? C'est no brainer, ça s'occupe même du hash !
-L'import de JSON dans un fichier ? Facile, c'est géré !
-Les glob imports ? Oui, ça fonctionne !
-Les imports dynamiques ? Vous vous en doutez, c'est built-in !
-Et puis, le WebAssembly et les Web Workers, pas besoin de s'en soucier, Vite le gère aussi !
+- Gestion des pages HTML ? On peut !
+- Support natif du JSX ? C'est intégré !
+- Gestion du CSS ? C'est fait aussi !
+- Les assets statiques ? C'est no brainer, ça s'occupe même du hash !
+- L'import de JSON dans un fichier ? Facile, c'est géré !
+- Les glob imports ? Oui, ça fonctionne !
+- Les imports dynamiques ? Vous vous en doutez, c'est built-in !
+- Et puis, le WebAssembly et les Web Workers, pas besoin de s'en soucier, Vite le gère aussi !
 
-Breeeef, tout est possible. Surtout, le point à retenir, de tout ça, ce ne sont que des plugins.
+Breeeef, tout est possible. Mais surtout surtout surtout, le point à retenir, de tout ça, ce ne sont que des plugins.
 -->
 
 ---
@@ -284,11 +284,11 @@ name: Tout n'est que plugin - Choices
 group: Feature Plugins
 ready: true
 timing: 0.1
-layout: choices
 choices:
   - Du CSS importé dans un fichier TypeScript
   - Une image chargée dans un fichier TypeScript
   - JSX chargé naturellement
+layout: choices
 ---
 
 <!--
@@ -303,7 +303,8 @@ group: Feature Plugins
 ready: true
 timing: 0.6
 layout: bottom-left-card
-img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -320,7 +321,7 @@ import './style.css'
 
 [slow] JavaScript, il autorise pas d'importer du CSS. Pourtant, on le fait et ça marche !
 
-Pourquoi ? Parce que l'navigateur, il s'fout de l'extension. Tant que tu lui renvois du JavaScript, c'est ok.
+Pourquoi ? Parce que l'navigateur, il s'fout de l'extension. Tant que tu lui renvois du JavaScript, il est ok.
 
 [shocked] [click] Mais ? Ça veut dire qu'on lui renvoie du JavaScript ?
 -->
@@ -330,9 +331,10 @@ name: Du CSS importé dans un fichier TypeScript - Visualisation
 group: Feature Plugins
 ready: true
 timing: 0.9
-img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
   - Vite et ses features - Récap
+img: >-
+  https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -344,7 +346,7 @@ Pour en avoir le cœur net, je vous propose qu'on aille dans [click] l'inspecteu
 
 On y r'trouve notre index.html. Ce document, il charge l'index.ts. L'index.ts, lui, importe notre style.css.
 
-[impressed] Ooooh, whaaaoo ! Il n'y a pas de CSS là. Heureusement parce que notre navigateur, il aurait pas su quoi en faire.
+[impressed] Ooooh, whaaaoo ! Y a plus de CSS là. Heureusement parce que notre navigateur, il aurait pas su quoi en faire.
 
 [slow] Si on fouille un peu, qu'on cherche là dans le fichier, on y retrouve notre CSS. Tout le reste, c'est de la transformation à la volée par Vite.
 -->
@@ -355,7 +357,8 @@ group: Feature Plugins
 ready: true
 timing: 0.6
 layout: bottom-left-card
-img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -382,7 +385,8 @@ name: Une image chargée dans un fichier TypeScript - Visualisation
 group: Feature Plugins
 ready: true
 timing: 0.9
-img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -405,10 +409,11 @@ name: Une image chargée dans un fichier TypeScript - Build
 group: Feature Plugins
 ready: true
 timing: 0.3
-layout: bottom-right-card
-img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
   - Vite et ses features - Récap
+layout: bottom-right-card
+img: >-
+  https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <AnImageLoadedIntoTypeScriptBuildTree />
@@ -423,7 +428,8 @@ group: Feature Plugins
 ready: true
 timing: 0.6
 layout: bottom-left-card
-img: https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -464,9 +470,10 @@ name: JSX chargé naturellement - Visualisation
 group: Feature Plugins
 ready: true
 timing: 0.8
-img: https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
   - Vite et ses features - Récap
+img: >-
+  https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -531,7 +538,8 @@ group: Inside a Plugin
 ready: true
 timing: 1.1
 layout: bottom-left-card
-img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -584,7 +592,7 @@ Ensuite, [click] on a 3 méthodes qu'on peut utiliser pour agir sur chaque reque
 
 [doubtful] Mais heuu, okk, mais il fait rien du tout là notre plugin ??
 
-Ouais, ouais, ouais, [fast] on va changer ça ensemble.
+Ouais, ouais, ouais. Juste avant, on va se plonger ensemble dans ces trois hooks.
 -->
 
 ---
@@ -593,7 +601,8 @@ group: Inside a Plugin
 ready: true
 timing: 0.7
 layout: bottom-left-card
-img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -629,7 +638,8 @@ group: Inside a Plugin
 ready: true
 timing: 0.9
 layout: bottom-left-card
-img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -682,7 +692,7 @@ Mais, on n'est pas limité à ça.
 
 [click] Ou plus zinzin encore, de retourner un fichier qui n'existe pas ?
 
-Rien ! Tous ces cas fonctionnent.
+Tous ces cas fonctionnent et sont valides !
 
 [enthusiastic] Ok, petit à petit les briques s'assemblent. Le puzzle prend forme. On aime bien.
 -->
@@ -693,7 +703,8 @@ group: Inside a Plugin
 ready: true
 timing: 0.5
 layout: bottom-left-card
-img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -731,7 +742,7 @@ Cas simple, on remplace tous les "foo" par des "bar".
 
 [click] Cas plus complexe, on transforme les fichiers Vue en JavaScript.
 
-[enthusiastic] Okkk, là on comment vraiment, vraiment, à faire des choses intéressantes !
+[enthusiastic] Okkk, là on a vraiment de quoi faire des choses intéressantes !
 -->
 
 ---
@@ -745,7 +756,7 @@ layout: center
 <h2 class="text-4xl font-bold">Plusieurs plugins ?</h2>
 
 <!--
-[doubtful] Heuuu, comment on fait, comment, comment on gère s'il y a plusieurs plugins ?
+[doubtful] Heuuu, dernier point, comment on fait, comment, comment on gère s'il y a plusieurs plugins ?
 
 [thinking]
 
@@ -763,21 +774,25 @@ class: p-0!
 <VitePluginsTheory />
 
 <!--
-[enthusiastic] Aller, let's go !
+[enthusiastic] Aller, go !
 
-[slow] Nous voici, devant la pipeline de Vite, avec deux plugins. Y'aaa, nos différents hooks, en haut, on reçoit la request du navigateur, en bas, on renvoie la réponse.
+[slow] Nous voici, devant la pipeline de Vite, avec deux plugins. Y'aaa, nos différents hooks, en haut, on reçoit la request du navigateur, en bas, la réponse qui ressort.
 
 Pour chaque hook, le système va itérer sur chacun des plugins et nous, on va regarder [click] l'input et l'output de chaque plugin.
 
 ok, j'ai l'impression que tout est en place, du coup, imaginons, on est une petit request pour le fichier App.vue.
 
-On arrive ici. On rentre dans resolveId, on rencontre VuePlugin, en input, il a bien l'ID de notre fichier et en output, on voir qu'il renvoie cet ID. Du coup, Vite va complètement skip les autres plugins.
+On arrive ici. On rentre dans resolveId, on rencontre VuePlugin, en input, il a bien l'ID de notre fichier et en output, on renvoie cet ID. Du coup, Vite va complètement skip les autres plugins.
 
-Ensuite, on arrive sur load où on va passer de l'identifiant du module à son contenu. Comme VuePlugin a répondu, Vite skip CustomPlugin.
+Ensuite, on arrive sur load où on va passer de l'identifiant du module à son contenu. VuePlugin load le fichier depuis le disque et CustomPlugin se fait skip, une fois de plus, le pauvre.
 
 On finit par transform où VuePlugin transforme le fichier Vue en JavaScript pour le navigateur puis CustomPlugin reçoit cette transformation pour y appliquer d'autres modifications.
 
 Et enfin, on renvoie ce code là au navigateur.
+
+Ok, plus clair Estéban. Merci !
+
+[hesitating] Est-ce qu'on peut faire d'autres choses ?
 -->
 
 ---
@@ -786,7 +801,8 @@ group: Inside a Plugin
 ready: true
 timing: 1.2
 layout: bottom-left-card
-img: https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -861,6 +877,8 @@ export default function myPlugin() {
 ````
 
 <!--
+Oui
+
 [fast] Jusqu'ici, on a vu les hooks liés à la gestion et la transformation à la volée des requests mais il y en a pour s'intégrer directement dans le cycle de vie de Vite.
 
 On a le hook [click] config, appelé juste avant que la configuration soit résolue. C'est le bon moment pour ajuster la configuration.
@@ -874,13 +892,17 @@ Ensuite, [click] buildStart, appelé au moment où Vite démarre et [click] buil
 name: Concrètement ?
 group: Concrete Example
 timing: 0.1
-layout: center
+layout: center-card
+img: >-
+  https://images.unsplash.com/photo-1631106254201-ffbee2305c5b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-<h2 class="text-4xl font-bold">Concrètement, ça donne quoi ?</h2>
+<h2 class="text-4xl font-bold">Concrètement,<br>ça donne quoi ?</h2>
 
 <!--
-TODO: qu'est ce qu'on fait ?
+Mais concrètement, ça donne quoi quand on met tout ça ensemble ?
+
+Qu'est-ce qu'on peut construire ? Parce que ben là, j'ai un peu l'impression qu'on est devant une boite de Lego et qu'on nous a pas filé la notice.
 -->
 
 ---
@@ -889,7 +911,8 @@ group: Concrete Example
 ready: true
 timing: 0.4
 layout: bottom-left-card
-img: https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -920,7 +943,7 @@ effect(() => {
 <ClickRevealImage src="/how.gif" />
 
 <!--
-Dans ce bout de code là, rien de particulier !
+Dans ce bout de code là, bon, on voit rien de particulier.
 
 [slow] Maintenant, qu'est-ce qui se passe si [click] on enlève les imports ?
 
@@ -940,7 +963,7 @@ layout: magic-rain
 <img src="/magic.gif" class="absolute h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
 
 <!--
-[with gesture of magic] De laaaa magiiieee ?
+[with gesture of magic] Est-ce que c'est de la magiiieee ?
 
 Nan Estéban, ce n'est pas de la magie et d'ailleurs cette slide m'a demandé beaucoup trop temps.
 
@@ -964,7 +987,7 @@ transition: slide-up
 <!--
 Ce qu'on pourrait faire, [click] c'est visualiser les backstage.
 
-C'est une bonne idée que vous avez là.
+Et c'est vrai que c'est une bonne idée que vous avez là. J'aime bien.
 
 À gauche, le navigateur, à droite les fichiers et au centre, Vite. Dans le main.ts, c'est notre code.
 
@@ -1003,8 +1026,9 @@ name: Auto Import Plugin (unplugin-auto-import) - Plugin Internals
 group: Concrete Example
 ready: true
 timing: 1
-img: https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 layout: bottom-left-card
+img: >-
+  https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1042,7 +1066,7 @@ export default function autoImport(options: Options) {
 <!--
 Je vous propose qu'on se regarde le plugin Auto Import.
 
-C'est lui qu'est 1a l'origin de cette magie et beh en gros, c'est ça son code, quoi.
+C'est lui qu'est 1a l'origin de cette magie et en gros, c'est ça son code.
 
 La ligne intéressante, [click] c'est la 6, dans le hook transform qui permet de modifier le contenu d'un module.
 
@@ -1057,7 +1081,8 @@ Précis, simple, rapide, efficace.
 name: Visualiser la pipeline
 ready: true
 timing: 1.2
-img: https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -1160,6 +1185,8 @@ layout: mind-blowing-rain
 <img src="/mind-blowing.gif" class="absolute h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
 
 <!--
+TODO: improve
+
 [with gesture of mind-blown] Wouaaah, le cerveau au moment où il comprend que Vite peut faire ça, répondre à des requêtes avec des modules qui n'existent pas......
 
 [slow] Mais, ça nous explique pas comment ça fonctionne.
@@ -1173,7 +1200,8 @@ group: Virtualization
 ready: true
 timing: 1.4
 layout: bottom-center-card
-img: https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1240,9 +1268,10 @@ Le truc, beh, c'est que c'est un peu pénible à écrire à chaque fois mais heu
 name: Un plugin pour virtualiser - Virtual Plugin
 group: Virtualization
 ready: true
-timing: 1
+timing: 1.1
 layout: bottom-center-card
-img: https://images.unsplash.com/photo-1770323084932-3d1cbe84d31b?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1770323084932-3d1cbe84d31b?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1311,12 +1340,12 @@ name: Un plugin pour virtualiser - Choices
 group: Virtualization
 ready: true
 timing: 0.1
-layout: choices
 choices:
   - Vue Router - Un module virtuel
   - VitePress - Des data virtuels
   - Icons Plugin - Des icônes virtuelles
   - Infos Plugin - Des infos virtuelles
+layout: choices
 ---
 
 <!--
@@ -1329,9 +1358,10 @@ Aller, plongeons nous dedans !
 name: Vue Router - Un module virtuel
 group: Virtualization
 ready: true
-timing: 0.7
-img: https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+timing: 0.4
 layout: bottom-center-card
+img: >-
+  https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1361,11 +1391,12 @@ La ligne intéressante, [click] c'est la 3 et je vous propose qu'on se plonge da
 name: Vue Router - Un module virtuel - Plugin Internals
 group: Virtualization
 ready: true
-timing: 0.9
-img: https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-layout: bottom-center-card
+timing: 0.7
 choices:
   - Les autres capacités des plugins
+layout: bottom-center-card
+img: >-
+  https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1418,20 +1449,21 @@ Comme tous les plugins, tout commence par un objet avec [click] un nom.
 
 [click] Ensuite, le hook load s'occupe de la génération des routes et de créer le code JavaScript qui exporte ces routes.
 
-[click] C'est un plugin avec module virtuel par excellence.
+[click] C'est un plugin avec module virtuel par excellence. Une bonne inspiration si vous avez besoin de créer le votre.
 -->
 
 ---
 name: VitePress - Des data virtuels
 group: Virtualization
-timing: 1.2
-
+ready: true
+timing: 0.9
 layout: center-card
-img: https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
-```ts
+```ts {*}{lines:true}
 // example.data.js
 export default {
   load() {
@@ -1442,37 +1474,68 @@ export default {
 }
 ```
 
-```vue
+```vue {3,7}{lines:true}
+<!-- example.vue -->
 <script setup>
 import { data } from './example.data.js'
 </script>
 
 <pre>
-{{ data }}
+{{ data.hello }} <!-- "world" -->
 </pre>
 ```
 
 <!--
-VitePress, c'est un outil qui permet de faire des documentations statiques à partir de fichiers Markdown.
+VitePress, c'est le générateur de documentation de Vue.js et il a cette fonctionnalité intéressante de pouvoir injecter des données dynamiques dans la documentation au moment du build.
 
-Il est fréquent de vouloir récupérer des données dynamiques dans sa documentation, comme, par exemple, des données distantes ou des métadonnées locales, comme la définition de l'API.
+Ici, on a un fichier `example.data.js` qui exporte une fonction `load` qui retourne des données. Ensuite, dans notre composant Vue, on importe ces données et on peut les utiliser dans notre template.
 
-Pour ce faire, VitePress permet de créer un data loader. C'est simplement un fichier suffixé par `.data.js` dans lequel on peut faire ce qu'on veut. Ce fichier est exécuté au build time. Ensuite, au moment de l'import dans un composant Vue, le résultat du data loader est injecté dans le composant.
+Le point à remarquer, c'est qu'on exporte pas l'objet data alors qu'on l'utilise dans le composant.
 
-Du coup, vous pouvez faire un fetch, un readFile, et tout ça ne sera exécuté qu'une seule fois, au moment du build.
- -->
+Je vous propose qu'on se plonge dans le plugin pour comprendre pourquoi !
+-->
 
 ---
 name: VitePress - Des data virtuels - Plugin Internals
 group: Virtualization
-timing: 0.6
-layout: center-card
-img: https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+ready: true
+timing: 0.8
 choices:
   - Les autres capacités des plugins
+layout: center-card
+img: >-
+  https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-```ts
+````md magic-move
+```ts {*|6}{lines:true}
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    {
+      name: 'data-plugin',
+    },
+  ],
+})
+```
+```ts {7-11}{lines:true}
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    {
+      name: 'data-plugin',
+      resolveId(id) {
+        if (id.endsWith('.data.js')) {
+          return `\0${id}`
+        }
+      },
+    },
+  ],
+})
+```
+```ts {12-18|*}{lines:true}
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -1495,18 +1558,26 @@ export default defineConfig({
   ],
 })
 ```
+````
 
 <!--
-Sous le capot, c'est le même système de module virtuel que tout à l'heure. Les fichiers suffixés par `.data.js` sont interceptés dans le hook `resolveId` et préfixés avec `\0`. Ensuite, dans le hook `load`, Vite va exécuter le code du data loader et retourner le résultat sous forme de code JavaScript exporté. C'est ça qui permet d'avoir des données dynamiques dans une documentation statique.
+Comme tous les plugins, tout commence par un objet avec [click] un nom.
+
+[click] Le hook resolveId intercepte les imports de fichiers `.data.js` et les préfixe avec \0 pour indiquer que ce sont des modules virtuels.
+
+[click] Ensuite, le hook load s'occupe d'exécuter le data loader, de récupérer les données et de créer le code JavaScript qui exporte ces données.
+
+[click] C'est un plugin avec module virtuel par excellence. Une bonne inspiration si vous avez besoin de créer le votre.
 -->
 
 ---
 name: Icons Plugin - Des icônes virtuelles
 group: Virtualization
 ready: true
-timing: 0.7
-img: https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+timing: 0.5
 layout: center-card
+img: >-
+  https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1537,10 +1608,11 @@ name: Icons Plugin - Des icônes virtuelles - Plugin Internals
 group: Virtualization
 ready: true
 timing: 0.8
-img: https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-layout: center-card
 choices:
   - Les autres capacités des plugins
+layout: center-card
+img: >-
+  https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1604,20 +1676,21 @@ Comme tous les plugins, tout commence par un objet avec [click] un nom.
 
 [click] Ensuite, le hook load utilise la fonction `loadIcon` d'Iconify pour charger l'icône demandée et retourne le code JavaScript qui exporte le SVG de l'icône.
 
-[click] C'est un plugin avec modules virtuels par excellence.
+[click] C'est un plugin avec modules virtuels par excellence. Une bonne inspiration si vous avez besoin de créer le votre.
 -->
 
 ---
 name: Infos Plugin - Des infos virtuelles
 group: Virtualization
+ready: true
 timing: 0.6
-
 layout: center-card
-img: https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
-```ts
+```ts {*}{lines:true}
 import { sha } from '~build/info'
 import now from '~build/time'
 
@@ -1627,28 +1700,27 @@ console.log(`Build ${sha} at ${now}`)
 <InfoPlugin class="mt-4" />
 
 <!--
-Imaginez que vous vouliez afficher et utiliser le dernier tag Git dans votre application, le dernier SHA pour Sentry, ou simplement la date du dernier build : comment est-ce que vous feriez ?
+Récupérer des informations de build dans son application, c'est un besoin assez courant. On peut imaginer vouloir afficher la dernière version, le dernier commit, ou juste même la dernière date de build.
 
-Un fichier de config que vous mettez à jour à la main avant chaque release ? Avant chaque build ?
+Alors, c'est vrai que, on peut le faire à la main, mais c'est pas très pratique, et justement, un plugin Vite pourrait nous aider.
 
-Vraiment pas pratique.
-
-Et c'est là qu'intervient `vite-plugin-info`.
+On part à sa découverte ?
 -->
 
 ---
 name: Infos Plugin - Des infos virtuelles - Plugin Internals
 group: Virtualization
-timing: 0.8
-
-layout: center-card
-img: https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+ready: true
+timing: 1.1
 choices:
   - Les autres capacités des plugins
+layout: center-card
+img: >-
+  https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
-```ts
+```ts {*|6}{lines:true}
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -1659,7 +1731,7 @@ export default defineConfig({
   ],
 })
 ```
-```ts
+```ts {7-11}{lines:true}
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -1675,7 +1747,7 @@ export default defineConfig({
   ],
 })
 ```
-```ts
+```ts {12-16}{lines:true}
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -1696,7 +1768,7 @@ export default defineConfig({
   ],
 })
 ```
-```ts
+```ts {17-20|*}{lines:true}
 import { execSync } from 'child_process'
 import { defineConfig } from 'vite'
 
@@ -1725,9 +1797,15 @@ export default defineConfig({
 ````
 
 <!--
-Sous le capot, c'est un jeu de modules virtuels, et on y retrouve la même structure que tout à l'heure. Le gros changement, c'est qu'on va venir exécuter du code à ce moment-là pour le figer dans l'application.
+Comme tous les plugins, tout commence par un objet avec [click] un nom.
 
-Pour le temps, on vient exécuter un `new Date()`, et pour le dernier SHA, on vient faire tourner un sous-processus pour le récupérer avant de le retourner au client. Et ça nous donne ce qu'on a vu sur la slide d'avant.
+[click] Le hook resolveId intercepte les imports de `~build/time` et `~build/git` et les préfixe avec `\0` pour indiquer que ce sont des modules virtuels.
+
+[click] Ensuite, le hook load s'occupe d'exécuter du code pour récupérer les informations demandées et de créer le code JavaScript qui exporte ces informations.
+
+[click] De la même manière qu'on vient de le faire pour la date, on peut le faire pour git et en vrai, pour tout ce qu'on veut.
+
+[click] C'est un plugin avec modules virtuels par excellence. Une bonne inspiration si vous avez besoin de créer le votre.
 -->
 
 ---
@@ -1760,7 +1838,8 @@ choices:
 name: Le HMR (Hot Module Replacement)
 group: Advanced Capabilities
 timing: 1.1
-img: https://images.unsplash.com/photo-1559762691-617a33825bc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1559762691-617a33825bc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1798,7 +1877,6 @@ Autrement dit, le HMR n'est pas une magie réservée au cœur de Vite. Les plugi
 name: Le middleware - Un fichier virtuel
 group: Advanced Capabilities
 timing: 1.3
-
 choices:
   - Récap des récap
 ---
@@ -1834,7 +1912,6 @@ On peut imaginer mocker une API pendant le développement avec un middleware, si
 name: Run Plugin - Un plugin pour exécuter des commandes
 group: Advanced Capabilities
 timing: 1.6
-
 layout: bottom-center-card
 transition: slide-up
 ---
@@ -1909,10 +1986,9 @@ Avec cette méthode, on s'enlève une tâche manuelle et on s'assure d'avoir un 
 name: Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals
 group: Advanced Capabilities
 timing: 0.3
-
-layout: bottom-center-card
 choices:
   - Récap des récap
+layout: bottom-center-card
 ---
 
 ```ts {*}{lines:true}
@@ -1963,11 +2039,11 @@ Mais alors, question toute bête : comment Laravel connaît-il l'adresse du serv
 name: Laravel Vite - La communication inter-processus - Plugin Internals
 group: Advanced Capabilities
 timing: 0.7
-
-layout: bottom-center-card
-img: https://images.unsplash.com/photo-1710020603990-0c984e7811f3?q=80&w=1634&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
   - Récap des récap
+layout: bottom-center-card
+img: >-
+  https://images.unsplash.com/photo-1710020603990-0c984e7811f3?q=80&w=1634&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ```ts {*}{lines:true}
@@ -2004,9 +2080,9 @@ Plus concrètement, un plugin comme `vite-plugin-laravel` va se servir du hook `
 name: unplugin-macro - Un plugin pour créer des macros
 group: Advanced Capabilities
 timing: 1
-
 layout: center-card
-img: https://images.unsplash.com/photo-1771533841296-5c6a80a0e24b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1771533841296-5c6a80a0e24b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -2036,11 +2112,11 @@ Au build time, ces deux fonctions vont être détectées, exécutées et remplac
 name: unplugin-macro - Un plugin pour créer des macros - Plugin Internals
 group: Advanced Capabilities
 timing: 0.6
-
-layout: center-card
-img: https://images.unsplash.com/photo-1771533841296-5c6a80a0e24b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 choices:
   - Récap des récap
+layout: center-card
+img: >-
+  https://images.unsplash.com/photo-1771533841296-5c6a80a0e24b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ```ts {*}{lines:true}
@@ -2083,7 +2159,6 @@ C'est un plugin relativement complexe, mais qui démontre que ce système permet
 name: Nitro - Un backend
 group: Advanced Capabilities
 timing: 0.6
-
 ---
 
 <NitroABackend class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -2100,7 +2175,6 @@ Après tout, Vite est un serveur, et il est possible d'y injecter ses propres mi
 name: Nitro - Un backend - Plugin Internals
 group: Advanced Capabilities
 timing: 0.3
-
 choices:
   - Récap des récap
 ---
@@ -2176,7 +2250,8 @@ group: Deep Dive
 ready: true
 timing: 1.5
 layout: bottom-left-card
-img: https://images.unsplash.com/photo-1553356126-71d9da2295e2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1553356126-71d9da2295e2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move

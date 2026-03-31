@@ -41,6 +41,12 @@ Utility scripts used to maintain talks metadata, assets, and deployment helpers.
   - outputs `.data/slides.graph.json`
   - outputs Mermaid text + SVG graph
 
+- `sort-slides-frontmatter.ts` — Reorders Slidev slide frontmatter keys:
+  - leaves the top-level `slides.md` frontmatter block untouched
+  - sorts each slide frontmatter block with this priority: `name`, `group`, `ready`, `timing`, `choices`, `layout`, `img`, `click`/`clicks`, `transition`
+  - sorts any remaining keys alphabetically after those
+  - accepts a talk folder, a `src` folder, or a direct `slides.md` path
+
 - `download-recordings.ts` — For talks with a `recording` URL:
   - downloads audio (`yt-dlp`)
   - normalizes/compresses with `ffmpeg`

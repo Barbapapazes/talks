@@ -55,12 +55,12 @@ flowchart LR
       un_plugin_pour_virtualiser_choices["#37 Un plugin pour virtualiser - Choices"]:::finishedChoice
       vue_router_un_module_virtuel["#38 Vue Router - Un module virtuel"]:::finished
       vue_router_un_module_virtuel_plugin_internals["#39 Vue Router - Un module virtuel - Plugin Internals"]:::finished
-      vitepress_des_data_virtuels["#40 VitePress - Des data virtuels"]:::main
-      vitepress_des_data_virtuels_plugin_internals["#41 VitePress - Des data virtuels - Plugin Internals"]:::main
+      vitepress_des_data_virtuels["#40 VitePress - Des data virtuels"]:::finished
+      vitepress_des_data_virtuels_plugin_internals["#41 VitePress - Des data virtuels - Plugin Internals"]:::finished
       icons_plugin_des_ic_nes_virtuelles["#42 Icons Plugin - Des icônes virtuelles"]:::finished
       icons_plugin_des_ic_nes_virtuelles_plugin_internals["#43 Icons Plugin - Des icônes virtuelles - Plugin Internals"]:::finished
-      infos_plugin_des_infos_virtuelles["#44 Infos Plugin - Des infos virtuelles"]:::main
-      infos_plugin_des_infos_virtuelles_plugin_internals["#45 Infos Plugin - Des infos virtuelles - Plugin Internals"]:::main
+      infos_plugin_des_infos_virtuelles["#44 Infos Plugin - Des infos virtuelles"]:::finished
+      infos_plugin_des_infos_virtuelles_plugin_internals["#45 Infos Plugin - Des infos virtuelles - Plugin Internals"]:::finished
   end
   subgraph Advanced_Capabilities ["Advanced Capabilities"]
       les_autres_capacit_s_des_plugins["#46 Les autres capacités des plugins"]:::main

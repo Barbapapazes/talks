@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { onSlideEnter, onSlideLeave, useNav, useSlideContext } from '@slidev/client'
-import { computed, ref } from 'vue'
+import { useNav, useSlideContext } from '@slidev/client'
+import { computed } from 'vue'
 
 interface ChoicesProps {
   img?: string
@@ -13,10 +13,20 @@ const { slides, go } = useNav()
 const choices = computed(() => {
   return slides.value.filter(slide => $frontmatter.choices.includes(slide.meta.name))
 })
+
+const columns = computed(() => {
+  return choices.value.length === 3 ? 3 : 2
+})
+
+const gridStyle = computed(() => {
+  return {
+    gridTemplateColumns: `repeat(${columns.value}, minmax(0, 1fr))`,
+  }
+})
 </script>
 
 <template>
-  <div class="h-full slidev-layout grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 items-center choices">
+  <div class="h-full slidev-layout grid gap-4 items-center choices" :style="gridStyle">
     <!-- TODO: create a dedicated component in the theme -->
     <img v-if="props.img" :src="props.img" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
 
