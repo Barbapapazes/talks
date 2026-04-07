@@ -54,10 +54,13 @@ describe('fireworks', () => {
     expect(mockFireworks).toHaveBeenCalledTimes(1)
     expect(mockStart).toHaveBeenCalledTimes(1)
     expect(mockFireworks).toHaveBeenCalledWith(expect.any(HTMLDivElement), expect.objectContaining({
-      intensity: 10,
+      intensity: 12,
       delay: {
-        min: 140,
-        max: 220,
+        min: 30,
+        max: 60,
+      },
+      sound: {
+        enabled: false,
       },
     }))
 

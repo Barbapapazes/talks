@@ -6,7 +6,6 @@ import CardLayout from '../components/CardLayout.vue'
   <CardLayout position="center">
     <slot />
 
-    <!-- TODO: add in every layout -->
     <template #outside>
       <slot name="outside" />
     </template>

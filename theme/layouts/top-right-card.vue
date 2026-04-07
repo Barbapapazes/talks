@@ -5,5 +5,9 @@ import CardLayout from '../components/CardLayout.vue'
 <template>
   <CardLayout position="top-right">
     <slot />
+
+    <template #outside>
+      <slot name="outside" />
+    </template>
   </CardLayout>
 </template>

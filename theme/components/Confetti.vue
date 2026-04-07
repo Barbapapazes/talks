@@ -2,10 +2,11 @@
 import { useIsSlideActive, useSlideContext } from '@slidev/client'
 import { confetti, type ConfettiOptions } from '@tsparticles/confetti'
 import { computed, onUnmounted, unref, watch } from 'vue'
+import { useThemeValue } from '../composables/useThemeValue'
 
 type ConfettiContainer = NonNullable<Awaited<ReturnType<typeof confetti>>>
 
-const COLORS = ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722']
+const DEFAULT_COLORS = ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722']
 const CONFETTI_ID = 'recap-confetti'
 const FIRE_COOLDOWN_MS = 350
 const PARTICLE_COUNT = 200
@@ -13,7 +14,9 @@ const PARTICLE_TICKS = 120
 
 const isActive = useIsSlideActive()
 const slideContext = useSlideContext()
+const { resolveThemeValue } = useThemeValue()
 const autoFireClicks = computed(() => resolveAutoFireClicks(unref(slideContext.$frontmatter)?.confettiClicks))
+const confettiColors = computed(() => resolveConfettiColors(resolveThemeValue(unref(slideContext.$frontmatter)?.confettiColors)) || DEFAULT_COLORS)
 
 let activeContainer: ConfettiContainer | null = null
 let cleanupTimer: number | null = null
@@ -39,6 +42,18 @@ function resolveAutoFireClicks(value: unknown) {
     return null
 
   return Math.floor(parsedValue)
+}
+
+function resolveConfettiColors(value: unknown) {
+  if (!Array.isArray(value))
+    return null
+
+  const colors = value
+    .filter((entry): entry is string => typeof entry === 'string')
+    .map(entry => entry.trim())
+    .filter(Boolean)
+
+  return colors.length > 0 ? colors : null
 }
 
 function getCleanupDelayMs(ticks: number) {
@@ -89,7 +104,7 @@ async function fire() {
   clearPendingConfetti()
 
   const shared: ConfettiOptions = {
-    colors: COLORS,
+    colors: confettiColors.value,
     shapes: ['square', 'circle'],
     count: PARTICLE_COUNT,
     startVelocity: 45,

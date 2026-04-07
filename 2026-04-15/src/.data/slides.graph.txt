@@ -65,29 +65,30 @@ flowchart LR
   subgraph Advanced_Capabilities ["Advanced Capabilities"]
       les_autres_capacit_s_des_plugins["#46 Les autres capacités des plugins"]:::main
       les_autres_capacit_s_des_plugins_choices["#47 Les autres capacités des plugins - Choices"]:::choice
-      le_hmr_hot_module_replacement["#48 Le HMR (Hot Module Replacement)"]:::main
-      le_hmr_hot_module_replacement_plugins_internals["#49 Le HMR (Hot Module Replacement) - Plugins Internals"]:::main
-      le_middleware_un_fichier_virtuel["#50 Le middleware - Un fichier virtuel"]:::main
-      run_plugin_un_plugin_pour_ex_cuter_des_commandes["#51 Run Plugin - Un plugin pour exécuter des commandes"]:::main
-      run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals["#52 Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals"]:::main
+      le_hot_module_replacement_hmr["#48 Le Hot Module Replacement (HMR)"]:::main
+      le_hot_module_replacement_hmr_plugins_internals["#49 Le Hot Module Replacement (HMR) - Plugins Internals"]:::main
+      le_middleware_un_fichier_virtuel["#50 Le middleware - Un fichier virtuel"]:::finished
+      run_plugin_un_plugin_pour_ex_cuter_des_commandes["#51 Run Plugin - Un plugin pour exécuter des commandes"]:::finished
+      run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals["#52 Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals"]:::finished
       laravel_vite_la_communication_inter_processus["#53 Laravel Vite - La communication inter-processus"]:::main
       laravel_vite_la_communication_inter_processus_plugin_internals["#54 Laravel Vite - La communication inter-processus - Plugin Internals"]:::main
       unplugin_macro_un_plugin_pour_cr_er_des_macros["#55 unplugin-macro - Un plugin pour créer des macros"]:::main
       unplugin_macro_un_plugin_pour_cr_er_des_macros_plugin_internals["#56 unplugin-macro - Un plugin pour créer des macros - Plugin Internals"]:::main
-      nitro_un_backend["#57 Nitro - Un backend"]:::main
-      nitro_un_backend_plugin_internals["#58 Nitro - Un backend - Plugin Internals"]:::main
+      nitro_un_backend["#57 Nitro - Un backend"]:::finished
+      nitro_un_backend_visualisation["#58 Nitro - Un backend - Visualisation"]:::finished
+      nitro_un_backend_plugin_internals["#59 Nitro - Un backend - Plugin Internals"]:::finished
   end
   subgraph Deep_Dive ["Deep Dive"]
-      dans_les_profondeurs_de_la_pipeline["#60 Dans les profondeurs de la pipeline"]:::finished
+      dans_les_profondeurs_de_la_pipeline["#61 Dans les profondeurs de la pipeline"]:::finished
   end
   au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["#1 Au cœur d’une pipeline : démystifions Vite et ses plugins"]:::finished
   vite_et_ses_features_r_cap["#17 Vite et ses features - Récap"]:::finishedRecap
   visualiser_la_pipeline["#31 Visualiser la pipeline"]:::finished
   le_plugin_vite_r_cap["#32 Le plugin Vite - Récap"]:::finishedRecap
-  r_cap_des_r_cap["#59 Récap des récap"]:::recap
-  conclusion["#61 Conclusion"]:::main
-  votre_tour["#62 Votre tour"]:::finished
-  outro["#63 Outro"]:::finished
+  r_cap_des_r_cap["#60 Récap des récap"]:::recap
+  conclusion["#62 Conclusion"]:::main
+  votre_tour["#63 Votre tour"]:::finished
+  outro["#64 Outro"]:::finished
   au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins --> vite
   vite --> vite_growth
   vite_growth --> le_th_me_des_slides
@@ -139,14 +140,14 @@ flowchart LR
   infos_plugin_des_infos_virtuelles --> infos_plugin_des_infos_virtuelles_plugin_internals
   infos_plugin_des_infos_virtuelles_plugin_internals --> les_autres_capacit_s_des_plugins
   les_autres_capacit_s_des_plugins --> les_autres_capacit_s_des_plugins_choices
-  les_autres_capacit_s_des_plugins_choices --> le_hmr_hot_module_replacement
+  les_autres_capacit_s_des_plugins_choices --> le_hot_module_replacement_hmr
   les_autres_capacit_s_des_plugins_choices --> le_middleware_un_fichier_virtuel
   les_autres_capacit_s_des_plugins_choices --> run_plugin_un_plugin_pour_ex_cuter_des_commandes
   les_autres_capacit_s_des_plugins_choices --> laravel_vite_la_communication_inter_processus
   les_autres_capacit_s_des_plugins_choices --> unplugin_macro_un_plugin_pour_cr_er_des_macros
   les_autres_capacit_s_des_plugins_choices --> nitro_un_backend
-  le_hmr_hot_module_replacement --> le_hmr_hot_module_replacement_plugins_internals
-  le_hmr_hot_module_replacement_plugins_internals --> r_cap_des_r_cap
+  le_hot_module_replacement_hmr --> le_hot_module_replacement_hmr_plugins_internals
+  le_hot_module_replacement_hmr_plugins_internals --> r_cap_des_r_cap
   le_middleware_un_fichier_virtuel --> r_cap_des_r_cap
   run_plugin_un_plugin_pour_ex_cuter_des_commandes --> run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals
   run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals --> r_cap_des_r_cap
@@ -154,7 +155,8 @@ flowchart LR
   laravel_vite_la_communication_inter_processus_plugin_internals --> r_cap_des_r_cap
   unplugin_macro_un_plugin_pour_cr_er_des_macros --> unplugin_macro_un_plugin_pour_cr_er_des_macros_plugin_internals
   unplugin_macro_un_plugin_pour_cr_er_des_macros_plugin_internals --> r_cap_des_r_cap
-  nitro_un_backend --> nitro_un_backend_plugin_internals
+  nitro_un_backend --> nitro_un_backend_visualisation
+  nitro_un_backend_visualisation --> nitro_un_backend_plugin_internals
   nitro_un_backend_plugin_internals --> r_cap_des_r_cap
   r_cap_des_r_cap --> dans_les_profondeurs_de_la_pipeline
   dans_les_profondeurs_de_la_pipeline --> conclusion

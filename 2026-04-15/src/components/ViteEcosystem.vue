@@ -9,9 +9,10 @@ const props = defineProps<{
 const icons = [
   'i-devicon-angular',
   'i-devicon-react',
-  'i-devicon-astro',
   'i-devicon-vuejs',
   'i-devicon-nuxt',
+  'i-devicon-astro',
+  'https://tanstack.com/images/logos/logo-color-600.png',
   'i-devicon-svelte',
   'i-devicon-solidjs',
   'i-devicon-qwik',
@@ -26,7 +27,6 @@ const icons = [
   'i-devicon-tauri',
   'i-logos-slidev',
   'https://vite-ruby.netlify.app/logo.svg',
-  'https://tanstack.com/images/logos/logo-color-600.png',
 ]
 </script>
 

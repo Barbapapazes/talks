@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { useSlideContext } from '@slidev/client'
-import { computed } from 'vue';
+import { computed } from 'vue'
+import { type MaybeThemedValue, useThemeValue } from '../composables/useThemeValue'
 
 interface BackgroundImageProps {
-  img?: string
+  img?: MaybeThemedValue<string>
   alt?: string
   imgClass?: string
 }
@@ -11,16 +12,20 @@ interface BackgroundImageProps {
 const props = defineProps<BackgroundImageProps>()
 
 const { $frontmatter } = useSlideContext()
+const { resolveThemeValue } = useThemeValue()
 
 const img = computed(() => {
-  return props.img || $frontmatter.img
+  return resolveThemeValue(props.img) || resolveThemeValue($frontmatter.img)
 })
+
 const imgClass = computed(() => {
   return props.imgClass || $frontmatter.imgClass
 })
+
 const imgAlt = computed(() => {
   return props.alt || $frontmatter.alt || 'Presentation Image'
 })
+
 const hasImage = computed(() => {
   return !!img.value
 })

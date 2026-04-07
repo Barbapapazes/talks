@@ -35,6 +35,7 @@ vi.mock('@tsparticles/confetti', () => ({
 
 import { nextTick } from 'vue'
 import Confetti from '../components/Confetti.vue'
+import { useCurrentTheme } from '../composables/useCurrentTheme'
 
 function flushMicrotasks() {
   return Promise.resolve()
@@ -47,6 +48,7 @@ describe('confetti', () => {
     for (const key of Object.keys(mockSlideContext.value!.$frontmatter))
       delete mockSlideContext.value!.$frontmatter[key]
 
+    useCurrentTheme().clearCurrentTheme()
     mockConfetti.mockReset()
     mockConfetti.mockResolvedValue({ destroy: vi.fn() })
   })
@@ -94,5 +96,50 @@ describe('confetti', () => {
     await flushMicrotasks()
 
     expect(mockConfetti).toHaveBeenCalledTimes(2)
+  })
+
+  it('uses theme-specific confetti colors from frontmatter', async () => {
+    mockSlideContext.value!.$frontmatter.confettiColors = {
+      default: ['#111111', '#222222'],
+      vite: ['#6C1EB9', '#FFD700'],
+    }
+
+    useCurrentTheme().setCurrentTheme('vite')
+
+    mount(Confetti)
+
+    mockIsSlideActive.ref!.value = true
+    await nextTick()
+
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
+    await flushMicrotasks()
+    await flushMicrotasks()
+
+    expect(mockConfetti).toHaveBeenNthCalledWith(1, 'recap-confetti', expect.objectContaining({
+      colors: ['#6C1EB9', '#FFD700'],
+    }))
+    expect(mockConfetti).toHaveBeenNthCalledWith(2, 'recap-confetti', expect.objectContaining({
+      colors: ['#6C1EB9', '#FFD700'],
+    }))
+  })
+
+  it('falls back to default confetti colors when the theme is cleared', async () => {
+    mockSlideContext.value!.$frontmatter.confettiColors = {
+      default: ['#123456', '#abcdef'],
+      vite: ['#6C1EB9', '#FFD700'],
+    }
+
+    mount(Confetti)
+
+    mockIsSlideActive.ref!.value = true
+    await nextTick()
+
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, cancelable: true }))
+    await flushMicrotasks()
+    await flushMicrotasks()
+
+    expect(mockConfetti).toHaveBeenNthCalledWith(1, 'recap-confetti', expect.objectContaining({
+      colors: ['#123456', '#abcdef'],
+    }))
   })
 })

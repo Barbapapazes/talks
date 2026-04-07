@@ -2,11 +2,13 @@ import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { defineComponent, h, inject, provide } from 'vue'
 
+const slideContext = {
+  $frontmatter: {} as Record<string, unknown>,
+  $clicks: 0,
+}
+
 vi.mock('@slidev/client', () => ({
-  useSlideContext: () => ({
-    $frontmatter: {},
-    $clicks: 0,
-  }),
+  useSlideContext: () => slideContext,
   useIsSlideActive: () => false,
 }))
 
@@ -21,9 +23,16 @@ import Modal from '../components/Modal.vue'
 import ProgressiveList from '../components/ProgressiveList.vue'
 import RecapList from '../components/RecapList.vue'
 import Tree from '../components/Tree.vue'
+import { useCurrentTheme } from '../composables/useCurrentTheme'
 
 afterEach(() => {
   document.body.innerHTML = ''
+  slideContext.$clicks = 0
+
+  for (const key of Object.keys(slideContext.$frontmatter))
+    delete slideContext.$frontmatter[key]
+
+  useCurrentTheme().clearCurrentTheme()
 })
 
 const dialogCloseKey = Symbol('dialog-close')
@@ -127,6 +136,45 @@ describe('backgroundImage', () => {
       props: { img: '/test-image.jpg', imgClass: 'object-top' },
     })
     expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('reads the image for the current theme from frontmatter', () => {
+    slideContext.$frontmatter.img = {
+      vite: '/vite-theme.jpg',
+      webpack: '/webpack-theme.jpg',
+    }
+
+    useCurrentTheme().setCurrentTheme('webpack')
+
+    const wrapper = mount(BackgroundImage)
+
+    expect(wrapper.get('img').attributes('src')).toBe('/webpack-theme.jpg')
+  })
+
+  it('supports themed image props too', () => {
+    useCurrentTheme().setCurrentTheme('vite')
+
+    const wrapper = mount(BackgroundImage, {
+      props: {
+        img: {
+          vite: '/vite-theme.jpg',
+          webpack: '/webpack-theme.jpg',
+        },
+      },
+    })
+
+    expect(wrapper.get('img').attributes('src')).toBe('/vite-theme.jpg')
+  })
+
+  it('falls back to the default image when the theme is cleared', () => {
+    slideContext.$frontmatter.img = {
+      default: '/default-theme.jpg',
+      vite: '/vite-theme.jpg',
+    }
+
+    const wrapper = mount(BackgroundImage)
+
+    expect(wrapper.get('img').attributes('src')).toBe('/default-theme.jpg')
   })
 })
 
@@ -404,19 +452,20 @@ describe('modal', () => {
 
 describe('progressiveList', () => {
   it('dims previously revealed items until an extra click clears the dimming', async () => {
-    const mountProgressiveList = ($clicks: number) => mount(ProgressiveList, {
-      props: {
-        items: ['Glitches', 'Cyclic dependencies', 'Mutable state'],
-      },
-      global: {
-        mocks: {
-          $clicks,
+    const mountProgressiveList = ($clicks: number) => {
+      slideContext.$clicks = $clicks
+
+      return mount(ProgressiveList, {
+        props: {
+          items: ['Glitches', 'Cyclic dependencies', 'Mutable state'],
         },
-        directives: {
-          click: {},
+        global: {
+          directives: {
+            click: {},
+          },
         },
-      },
-    })
+      })
+    }
 
     const afterSecondClick = mountProgressiveList(2).findAll('[data-progressive-list-item]')
     expect(afterSecondClick[0].classes()).toContain('opacity-20')

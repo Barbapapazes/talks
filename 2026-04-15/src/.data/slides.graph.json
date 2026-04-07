@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-30T19:04:21.699Z",
+  "generatedAt": "2026-04-07T06:21:27.940Z",
   "nodes": [
     {
       "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
@@ -33,6 +33,7 @@
       "name": "Le thème des slides",
       "title": "Le thème des slides",
       "ready": false,
+      "layout": "bottom-left-card",
       "group": "Pré-talk",
       "timing": 2.4
     },
@@ -474,6 +475,7 @@
       "name": "Les autres capacités des plugins",
       "title": "Les autres capacités des plugins",
       "ready": false,
+      "layout": "image",
       "group": "Advanced Capabilities",
       "timing": 0.3
     },
@@ -483,10 +485,11 @@
       "name": "Les autres capacités des plugins - Choices",
       "title": "Les autres capacités des plugins - Choices",
       "ready": false,
+      "layout": "choices",
       "group": "Advanced Capabilities",
       "timing": 0.2,
       "choices": [
-        "Le HMR (Hot Module Replacement)",
+        "Le Hot Module Replacement (HMR)",
         "Le middleware - Un fichier virtuel",
         "Run Plugin - Un plugin pour exécuter des commandes",
         "Laravel Vite - La communication inter-processus",
@@ -495,19 +498,19 @@
       ]
     },
     {
-      "id": "le_hmr_hot_module_replacement",
+      "id": "le_hot_module_replacement_hmr",
       "index": 47,
-      "name": "Le HMR (Hot Module Replacement)",
-      "title": "Le HMR (Hot Module Replacement)",
+      "name": "Le Hot Module Replacement (HMR)",
+      "title": "Le Hot Module Replacement (HMR)",
       "ready": false,
       "group": "Advanced Capabilities",
       "timing": 1.1
     },
     {
-      "id": "le_hmr_hot_module_replacement_plugins_internals",
+      "id": "le_hot_module_replacement_hmr_plugins_internals",
       "index": 48,
-      "name": "Le HMR (Hot Module Replacement) - Plugins Internals",
-      "title": "Le HMR (Hot Module Replacement) - Plugins Internals",
+      "name": "Le Hot Module Replacement (HMR) - Plugins Internals",
+      "title": "Le Hot Module Replacement (HMR) - Plugins Internals",
       "ready": false,
       "group": "Advanced Capabilities",
       "timing": 0.9,
@@ -520,7 +523,8 @@
       "index": 49,
       "name": "Le middleware - Un fichier virtuel",
       "title": "Le middleware - Un fichier virtuel",
-      "ready": false,
+      "ready": true,
+      "layout": "center-card",
       "group": "Advanced Capabilities",
       "timing": 1.3,
       "choices": [
@@ -532,7 +536,7 @@
       "index": 50,
       "name": "Run Plugin - Un plugin pour exécuter des commandes",
       "title": "Run Plugin - Un plugin pour exécuter des commandes",
-      "ready": false,
+      "ready": true,
       "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 1.6
@@ -542,7 +546,7 @@
       "index": 51,
       "name": "Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals",
       "title": "Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals",
-      "ready": false,
+      "ready": true,
       "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 0.3,
@@ -600,16 +604,27 @@
       "index": 56,
       "name": "Nitro - Un backend",
       "title": "Nitro - Un backend",
-      "ready": false,
+      "ready": true,
+      "layout": "center",
+      "group": "Advanced Capabilities",
+      "timing": 0
+    },
+    {
+      "id": "nitro_un_backend_visualisation",
+      "index": 57,
+      "name": "Nitro - Un backend - Visualisation",
+      "title": "Nitro - Un backend - Visualisation",
+      "ready": true,
       "group": "Advanced Capabilities",
       "timing": 0.6
     },
     {
       "id": "nitro_un_backend_plugin_internals",
-      "index": 57,
+      "index": 58,
       "name": "Nitro - Un backend - Plugin Internals",
       "title": "Nitro - Un backend - Plugin Internals",
-      "ready": false,
+      "ready": true,
+      "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 0.3,
       "choices": [
@@ -618,7 +633,7 @@
     },
     {
       "id": "r_cap_des_r_cap",
-      "index": 58,
+      "index": 59,
       "name": "Récap des récap",
       "title": "Récap des récap",
       "ready": false,
@@ -627,7 +642,7 @@
     },
     {
       "id": "dans_les_profondeurs_de_la_pipeline",
-      "index": 59,
+      "index": 60,
       "name": "Dans les profondeurs de la pipeline",
       "title": "Dans les profondeurs de la pipeline",
       "ready": true,
@@ -637,7 +652,7 @@
     },
     {
       "id": "conclusion",
-      "index": 60,
+      "index": 61,
       "name": "Conclusion",
       "title": "Conclusion",
       "ready": false,
@@ -646,7 +661,7 @@
     },
     {
       "id": "votre_tour",
-      "index": 61,
+      "index": 62,
       "name": "Votre tour",
       "title": "Votre tour",
       "ready": true,
@@ -655,7 +670,7 @@
     },
     {
       "id": "outro",
-      "index": 62,
+      "index": 63,
       "name": "Outro",
       "title": "Outro",
       "ready": true,
@@ -921,8 +936,8 @@
     },
     {
       "from": "les_autres_capacit_s_des_plugins_choices",
-      "to": "le_hmr_hot_module_replacement",
-      "label": "Le HMR (Hot Module Replacement)"
+      "to": "le_hot_module_replacement_hmr",
+      "label": "Le Hot Module Replacement (HMR)"
     },
     {
       "from": "les_autres_capacit_s_des_plugins_choices",
@@ -950,12 +965,12 @@
       "label": "Nitro - Un backend"
     },
     {
-      "from": "le_hmr_hot_module_replacement",
-      "to": "le_hmr_hot_module_replacement_plugins_internals",
+      "from": "le_hot_module_replacement_hmr",
+      "to": "le_hot_module_replacement_hmr_plugins_internals",
       "label": ""
     },
     {
-      "from": "le_hmr_hot_module_replacement_plugins_internals",
+      "from": "le_hot_module_replacement_hmr_plugins_internals",
       "to": "r_cap_des_r_cap",
       "label": "Récap des récap"
     },
@@ -996,6 +1011,11 @@
     },
     {
       "from": "nitro_un_backend",
+      "to": "nitro_un_backend_visualisation",
+      "label": ""
+    },
+    {
+      "from": "nitro_un_backend_visualisation",
       "to": "nitro_un_backend_plugin_internals",
       "label": ""
     },

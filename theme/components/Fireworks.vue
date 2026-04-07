@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useIsSlideActive } from '@slidev/client'
 import { Fireworks as FireworksAnimation, type FireworksOptions } from 'fireworks-js'
-import { onMounted, onUnmounted, ref, unref, watch } from 'vue'
+import { onUnmounted, ref, unref, watch } from 'vue'
 
 const FIREWORKS_OPTIONS = {
   opacity: 0.1,
@@ -76,17 +76,12 @@ function stopFireworks() {
   activeFireworks = null
 }
 
-onMounted(() => {
-  if (unref(isActive))
-    startFireworks()
-})
-
-watch(isActive, (active) => {
+watch([isActive, container], ([active]) => {
   if (active)
     startFireworks()
   else
     stopFireworks()
-})
+}, { immediate: true })
 
 onUnmounted(() => {
   stopFireworks()
