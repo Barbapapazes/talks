@@ -26,23 +26,10 @@ timing: 0.2
 ---
 
 <!--
-TODO: penser à retirer des choses pour simplifier les slides et garder le focus et l'attention
-TODO: revoir le fil conducteur pour y apporter une vraie narration
-TODO: pour les slides de choix, faut pas montrer le truc sous le capot, faut provider une description plus haut niveau (meubler pour ne pas que ce soit des temps morts, genre faire un récap de récap, ...) (pour ne pas trop tuer le rythme, les instructions peuvent être sur la slide)
-TODO: sur les récaps, teaser la suite pour donner envie de continuer
-TODO: garder un élément dans les slides pour permettre d'accéder au côté interactif
--->
-<!-- TODO: disable emoji on some slides (like the recap slides for example) (disabled on layout) -->
-<!-- TODO: citer des choses pour les 80% donc du react et du angular à minima -->
-<!-- TODO: utiliser la vitesse pour mettre du rythme (regarder obama pour utiliser les changements de vitesse) -->
-<!-- TODO: running joke sur vite et rapide -->
-<!-- TODO: sur un début de talk, parler plus simplement, souffler, manger ses mots, parler de façon plus famillière -->
-<!--
-(authenticité fausse pour être plus proche, plus accessible, pur être dans le monde des autres)
- -->
-
-<!--
-question avec upvote et downvote sur inalia, ça évite les duplicate
+TODO: create talk on inalia.app
+TODO: merge and deploy the upvote questions on inalia.app
+TODO: finir les themes (mainly background and using a --at-apply could be easier)
+TODO: passer l'élément intéractif dans le global bottom
 -->
 
 <!--
@@ -1833,6 +1820,7 @@ TODO: inviter les gens à voter avant de présenter les choix en parlant de tout
 ---
 name: Les autres capacités des plugins - Choices
 group: Advanced Capabilities
+ready: true
 timing: 0.2
 layout: choices
 choices:
@@ -1844,18 +1832,14 @@ choices:
   - Nitro - Un backend
 ---
 
-
-
-<!-- TODO: trop de choix (voir pour tout faire sauter dans le pire des cas, réduire les choix en fonction de la conférence ? intégrer les explications dans les sldies) -->
-<!-- TODO: grosse frustration parce que tous n'explore pas les même choses (on peut pas tout faire -->
-
 <!--
-TODO: comment la slide sur les capacity de vite
+Ok, excellent choix, explorons ça !
 -->
 
 ---
 name: Le Hot Module Replacement (HMR)
 group: Advanced Capabilities
+ready: true
 timing: 1.1
 img: >-
   https://images.unsplash.com/photo-1559762691-617a33825bc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
@@ -1867,13 +1851,9 @@ transition: slide-up
 <HmrExplainedVisually class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
-L'une des grandes forces de Vite, en plus du mode unbundled, c'est son Hot Module Replacement, ou HMR.
+Le Hot Module Replacement, ça permet en développement de mettre à jour sa page sans la recharger et c'est l'une des grandes forces de Vite.
 
-Concrètement, c'est un système qui permet de mettre à jour un fichier à la volée dans le navigateur, sans recharger toute la page.
-
-Le principe est assez simple : Vite surveille les fichiers, détecte une modification, calcule quels modules sont impactés, puis pousse la mise à jour au navigateur via WebSocket.
-
-Ensuite, côté client, Vite applique la mise à jour la plus fine possible. Si le module sait accepter son propre remplacement, on évite un rechargement complet. Et c'est cette précision qui donne cette impression de fluidité presque insolente.
+Pour notifier le client, une connexion websocket est crée entre Vite et le browser. [click] [click] C'est elle que l'on voit là [show websocket connexion].
 -->
 
 ---
@@ -1883,6 +1863,14 @@ timing: 0.9
 choices:
   - Récap des récap
 ---
+
+<!--
+TODO: code
+-->
+
+<!--
+TODO: text
+-->
 
 <!--
 Sous le capot, tout ça repose sur quelques hooks très pratiques.
@@ -1895,8 +1883,8 @@ Autrement dit, le HMR n'est pas une magie réservée au cœur de Vite. Les plugi
 ---
 name: Le middleware - Un fichier virtuel
 group: Advanced Capabilities
-timing: 1.3
 ready: true
+timing: 1.3
 layout: center-card
 img: >-
   https://images.unsplash.com/photo-1721052921257-f1ec18f80e0f?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
@@ -1956,9 +1944,11 @@ import sirv from 'sirv'
 <!--
 Vite, au fond, c'est un serveur web.
 
-Du coup, beh, on peut lui ajouter des middleware pour intercepter les requêtes, modifier les réponses ou injecter des nouvelles pages. Pour ça, on va utiliser le [click] hook configureServer, [click] ajouter un middleware et puis [click] renvoyer se faire une petite API custom rapide. Attention quand même, c'est uniquement disponible en développement.
+Du coup, beh, on peut se brancher dedans pour intercepter les requêtes, modifier les réponses ou injecter des nouvelles pages.
 
-D'ailleurs, [click] c'est cette technique qu'utilise Vite-plugin-inspect pour servir la page où on a pu voir la transformation à la volée de nos modules.
+Pour ça, on va utiliser le [click] hook configureServer, [click] ajouter un middleware et [click] se faire une petite API [fast] rapidement. Attention tout de même, c'est uniquement disponible en développement.
+
+D'ailleurs, [click] c'est cette technique qu'utilise vite-plugin-inspect pour servir une app dans votre app.
 -->
 
 ---
@@ -2073,6 +2063,7 @@ Sous la capot, ça utilise le hook handleHotUpdate. [click] À chaque fois qu'un
 ---
 name: Laravel Vite - La communication inter-processus
 group: Advanced Capabilities
+ready: true
 timing: 0.7
 transition: slide-up
 ---
@@ -2080,11 +2071,11 @@ transition: slide-up
 <CommunicationLaravelVite class="w-3/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
 
 <!--
-Pour celui-là, il faut que je vous donne un peu plus de contexte.
+Un peu de context.
 
-Laravel, c'est du PHP, et Vite, c'est du Node.js, chacun tournant dans son propre processus. En développement, quand on demande une page, on fait une requête à Laravel, qui nous renvoie le HTML avec des assets — JavaScript et CSS — pointant vers le serveur Vite.
+Vite et Laravel tournent dans deux process différents. Du coup, quand on demande une page, la request part vers Laravel puis les assets pointent vers Vite.
 
-Mais alors, question toute bête : comment Laravel connaît-il l'adresse du serveur Vite ?
+Mais du coup, comment est-ce que Laravel connaît l'adresse de Vite ?
 -->
 
 ---
@@ -2105,8 +2096,7 @@ import { ResolvedConfig } from 'vite'
 
 export default function laravel() {
   return [{
-    name: 'laravel',
-    enforce: 'post',
+    name: 'vite-plugin-laravel',
     configureServer(server) {
       server.httpServer?.once('listening', () => {
         const address = server.httpServer?.address()
@@ -2121,6 +2111,10 @@ export default function laravel() {
 }
 ```
 ````
+
+<!--
+TODO: text
+-->
 
 <!--
 Dans son plugin, Laravel demande à Vite d'écrire un fichier `hot` dans le dossier `public` avec l'adresse du serveur Vite.
@@ -2154,6 +2148,8 @@ getRandom()
 buildTime
 ```
 
+<!-- TODO: text -->
+
 <!--
 Les macros en JavaScript, ça n'existe pas. Mais en C, c'est répandu, et ça permet de remplacer un morceau de texte par un autre au moment de la compilation.
 
@@ -2172,6 +2168,8 @@ layout: center-card
 img: >-
   https://images.unsplash.com/photo-1760224254103-3dcc15e4ad9d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
+
+<!-- TODO: simplify -->
 
 ```ts {*}{lines:true}
 import { defineConfig } from 'vite'
@@ -2202,6 +2200,8 @@ export default defineConfig({
   ]
 })
 ```
+
+<!-- TODO: text -->
 
 <!--
 Plus concrètement, le plugin `unplugin-macro` va utiliser le hook `transform` pour trouver les macros, via un parcours de l'AST du code source et la balise `with { type: 'macro' }`, puis les exécuter pour les remplacer par le résultat.
