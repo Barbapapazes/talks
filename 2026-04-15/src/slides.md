@@ -2295,6 +2295,7 @@ C'est une technique tellement élégante pour ajouter un backend, c'est chouette
 
 ---
 name: Récap des récap
+ready: true
 timing: 0
 layout: recap
 ---
@@ -2307,7 +2308,7 @@ layout: recap
       description: 'Chaque requête passe par Vite, qui peut transformer les modules à la volée'
     },
     {
-      title: 'Des plugins pour créer des fichiers qui n\'existent pas',
+      title: 'Des plugins pour créer des modules qui n\'existent pas',
       description: 'Modules virtuels, routes, icônes, infos de build... tout peut être généré à la volée'
     },
     {
@@ -2318,7 +2319,17 @@ layout: recap
 />
 
 <!--
+[enthusiatic] Okkkk, on en a fait du chemin depuis le début !
 
+[slow] On a découvert Vite, sa pipeline et ses plugins, en 45 minutes seulement.
+
+Qu'est-ce [click] qu'on garde en tête de tout ça ?
+
+1. [click] Vite, c'est une pipeline de traitement entre les fichiers et le navigateur. Chaque module peut être transformé à la demande.
+2. [click] Il est possible de créer des modules qui n'existe pas. C'est une technique essentielle et sa simplicité de mise en oeuvre fait la force de Vite.
+3. [click] Vite est entièrement extensible. À partir du moment où il y a Vite dans votre projet, tout peut devenir un plugin. Votre imagination est votre seule limite.
+
+Avec tout ça, vous masterisez Vite comme des chefs [confetti].
 -->
 
 ---
@@ -2460,6 +2471,9 @@ layout: conclusion
 <!--
 [enthusiastic] Beh voilà ! 45 minutes de pure concentré de Vite et vous voilà prêt à construire vos propres plugins.
 
+TODO: model mental de ce qu'il faut keep in mind
+
+Trop chouette ! [confetti] Trop trop chouette !
 
 -->
 
@@ -2485,7 +2499,7 @@ Finalement, en 45 minutes, on a découvert le nécessaire pour réaliser notre p
 
 [pause]
 
-[click] sincèrement, vous pouvez être fière de vous ! Bravo
+[click] Sincèrement, vous pouvez être fière de vous ! Bravo !
 -->
 
 ---
@@ -2495,14 +2509,12 @@ timing: 0.3
 layout: outro2
 ---
 
-<!-- TODO: qr de fin, ma tête, qui je suis, où me retrouver et potentiellement les articles  -->
-
 <!--
 Merci à tous, c'était Estéban.
 
 Ça me ferait très plaisir de pouvoir lire vos retours,
 
-et si l'envie vous en dit, on peut se retrouver sur l'internet.
+et si l'envie vous en dit, on se retrouve sur l'internet.
 
 Merci !
 -->
