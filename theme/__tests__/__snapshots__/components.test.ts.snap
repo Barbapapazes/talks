@@ -9,18 +9,18 @@ exports[`backgroundImage > renders with a custom alt text 1`] = `"<img src="/tes
 exports[`backgroundImage > renders with imgClass applied 1`] = `"<img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover object-top">"`;
 
 exports[`card > renders correctly with default slot 1`] = `
-"<div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-  <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+"<div data-v-29c414df="" class="shell">
+  <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
     <p>Card content</p>
   </div>
 </div>"
 `;
 
 exports[`cardLayout > renders correctly with imgClass 1`] = `
-"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover object-top">
+"<div class="relative slidev-layout theme-root" data-slide-theme="default"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover object-top">
   <div class="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <div data-v-29c414df="" class="shell">
+      <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
       </div>
     </div>
@@ -29,10 +29,10 @@ exports[`cardLayout > renders correctly with imgClass 1`] = `
 `;
 
 exports[`cardLayout > renders correctly with outside slot 1`] = `
-"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
+"<div class="relative slidev-layout theme-root" data-slide-theme="default"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
   <div class="absolute z-10 bottom-10 left-14">
-    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <div data-v-29c414df="" class="shell">
+      <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
       </div>
     </div>
@@ -42,10 +42,10 @@ exports[`cardLayout > renders correctly with outside slot 1`] = `
 `;
 
 exports[`cardLayout > renders correctly with position "bottom-center" 1`] = `
-"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
+"<div class="relative slidev-layout theme-root" data-slide-theme="default"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
   <div class="absolute z-10 bottom-10 left-1/2 -translate-x-1/2">
-    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <div data-v-29c414df="" class="shell">
+      <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
       </div>
     </div>
@@ -54,10 +54,10 @@ exports[`cardLayout > renders correctly with position "bottom-center" 1`] = `
 `;
 
 exports[`cardLayout > renders correctly with position "bottom-left" 1`] = `
-"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
+"<div class="relative slidev-layout theme-root" data-slide-theme="default"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
   <div class="absolute z-10 bottom-10 left-14">
-    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <div data-v-29c414df="" class="shell">
+      <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
       </div>
     </div>
@@ -66,10 +66,10 @@ exports[`cardLayout > renders correctly with position "bottom-left" 1`] = `
 `;
 
 exports[`cardLayout > renders correctly with position "bottom-right" 1`] = `
-"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
+"<div class="relative slidev-layout theme-root" data-slide-theme="default"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
   <div class="absolute z-10 bottom-10 right-14">
-    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <div data-v-29c414df="" class="shell">
+      <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
       </div>
     </div>
@@ -78,10 +78,10 @@ exports[`cardLayout > renders correctly with position "bottom-right" 1`] = `
 `;
 
 exports[`cardLayout > renders correctly with position "center" 1`] = `
-"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
+"<div class="relative slidev-layout theme-root" data-slide-theme="default"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
   <div class="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <div data-v-29c414df="" class="shell">
+      <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
       </div>
     </div>
@@ -90,10 +90,10 @@ exports[`cardLayout > renders correctly with position "center" 1`] = `
 `;
 
 exports[`cardLayout > renders correctly with position "center-left" 1`] = `
-"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
+"<div class="relative slidev-layout theme-root" data-slide-theme="default"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
   <div class="absolute z-10 top-1/2 left-14 -translate-y-1/2">
-    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <div data-v-29c414df="" class="shell">
+      <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
       </div>
     </div>
@@ -102,10 +102,10 @@ exports[`cardLayout > renders correctly with position "center-left" 1`] = `
 `;
 
 exports[`cardLayout > renders correctly with position "center-right" 1`] = `
-"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
+"<div class="relative slidev-layout theme-root" data-slide-theme="default"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
   <div class="absolute z-10 top-1/2 right-14 -translate-y-1/2">
-    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <div data-v-29c414df="" class="shell">
+      <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
       </div>
     </div>
@@ -114,10 +114,10 @@ exports[`cardLayout > renders correctly with position "center-right" 1`] = `
 `;
 
 exports[`cardLayout > renders correctly with position "top-center" 1`] = `
-"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
+"<div class="relative slidev-layout theme-root" data-slide-theme="default"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
   <div class="absolute z-10 top-14 left-1/2 -translate-x-1/2">
-    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <div data-v-29c414df="" class="shell">
+      <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
       </div>
     </div>
@@ -126,10 +126,10 @@ exports[`cardLayout > renders correctly with position "top-center" 1`] = `
 `;
 
 exports[`cardLayout > renders correctly with position "top-left" 1`] = `
-"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
+"<div class="relative slidev-layout theme-root" data-slide-theme="default"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
   <div class="absolute z-10 top-14 left-14">
-    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <div data-v-29c414df="" class="shell">
+      <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
       </div>
     </div>
@@ -138,10 +138,10 @@ exports[`cardLayout > renders correctly with position "top-left" 1`] = `
 `;
 
 exports[`cardLayout > renders correctly with position "top-right" 1`] = `
-"<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
+"<div class="relative slidev-layout theme-root" data-slide-theme="default"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
   <div class="absolute z-10 top-14 right-14">
-    <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
-      <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
+    <div data-v-29c414df="" class="shell">
+      <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
       </div>
     </div>
@@ -151,50 +151,50 @@ exports[`cardLayout > renders correctly with position "top-right" 1`] = `
 
 exports[`footer > renders correctly with default slot 1`] = `"<footer class="absolute left-1/2 -translate-x-1/2 bottom-4"><span>Footer content</span></footer>"`;
 
-exports[`footerItem > renders correctly with default slot 1`] = `"<div class="font-light text-[0.875rem] text-neutral-400 dark:text-neutral-600"><span>Item content</span></div>"`;
+exports[`footerItem > renders correctly with default slot 1`] = `"<div data-v-f7e519aa="" class="item font-light text-[0.875rem]"><span>Item content</span></div>"`;
 
-exports[`footerItem > renders correctly with text prop 1`] = `"<div class="font-light text-[0.875rem] text-neutral-400 dark:text-neutral-600"><span>Footer item text</span></div>"`;
+exports[`footerItem > renders correctly with text prop 1`] = `"<div data-v-f7e519aa="" class="item font-light text-[0.875rem]"><span data-v-f7e519aa="">Footer item text</span></div>"`;
 
 exports[`footerLink > renders correctly with href and text 1`] = `
-"<a class="font-light text-[0.875rem] text-neutral-400 dark:text-neutral-600 flex items-center gap-1" href="https://example.com">
+"<a data-v-f7e519aa="" class="item font-light text-[0.875rem] flex items-center gap-1" href="https://example.com">
   <!--v-if--><span class="whitespace-nowrap">Example</span>
 </a>"
 `;
 
-exports[`footerLink > renders correctly with href, text and icon 1`] = `"<a class="font-light text-[0.875rem] text-neutral-400 dark:text-neutral-600 flex items-center gap-1" href="https://example.com"><span class="i-ph-house-duotone size-4 inline-block"></span><span class="whitespace-nowrap">Example</span></a>"`;
+exports[`footerLink > renders correctly with href, text and icon 1`] = `"<a data-v-f7e519aa="" class="item font-light text-[0.875rem] flex items-center gap-1" href="https://example.com"><span class="i-ph-house-duotone size-4 inline-block"></span><span class="whitespace-nowrap">Example</span></a>"`;
 
 exports[`icon > renders correctly with a name 1`] = `"<span class="inline-flex i-ph-house-duotone"></span>"`;
 
 exports[`icon > renders correctly with a name and class 1`] = `"<span class="inline-flex i-ph-house-duotone size-4"></span>"`;
 
 exports[`recapList > renders the title and each recap item 1`] = `
-"<div class="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6">
-  <h1 class="text-3xl font-semibold tracking-tight text-balance text-white">Vite en 3 points</h1>
-  <div class="flex flex-col gap-5">
-    <article data-recap-list-item="" class="rounded-3xl border border-white/15 bg-white/10 px-6 py-5 shadow-2xl backdrop-blur-sm">
-      <div class="flex gap-5">
-        <div class="w-12 flex items-center justify-center rounded-xl bg-white text-2xl font-bold text-black">1</div>
-        <div class="flex-1">
-          <h2 class="text-2xl font-semibold leading-tight text-white text-balance">Un serveur web pour le développement</h2>
-          <p class="mt-[0.25rem] text-lg leading-relaxed text-white/75">Il fait transiter des requêtes qu'on transformera à la volée</p>
+"<div data-v-14642aff="" class="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6">
+  <h1 data-v-14642aff="" class="title text-3xl font-semibold tracking-tight text-balance">Vite en 3 points</h1>
+  <div data-v-14642aff="" class="flex flex-col gap-5">
+    <article data-v-14642aff="" data-recap-list-item="" class="item px-6 py-5 backdrop-blur-sm">
+      <div data-v-14642aff="" class="flex gap-5">
+        <div data-v-14642aff="" class="index w-12 flex items-center justify-center text-2xl font-bold">1</div>
+        <div data-v-14642aff="" class="flex-1">
+          <h2 data-v-14642aff="" class="item-title text-2xl font-semibold leading-tight text-balance">Un serveur web pour le développement</h2>
+          <p data-v-14642aff="" class="item-description mt-[0.25rem] text-lg leading-relaxed">Il fait transiter des requêtes qu'on transformera à la volée</p>
         </div>
       </div>
     </article>
-    <article data-recap-list-item="" class="rounded-3xl border border-white/15 bg-white/10 px-6 py-5 shadow-2xl backdrop-blur-sm">
-      <div class="flex gap-5">
-        <div class="w-12 flex items-center justify-center rounded-xl bg-white text-2xl font-bold text-black">2</div>
-        <div class="flex-1">
-          <h2 class="text-2xl font-semibold leading-tight text-white text-balance">Un bundler pour la production</h2>
-          <p class="mt-[0.25rem] text-lg leading-relaxed text-white/75">Il transforme notre code pour la production</p>
+    <article data-v-14642aff="" data-recap-list-item="" class="item px-6 py-5 backdrop-blur-sm">
+      <div data-v-14642aff="" class="flex gap-5">
+        <div data-v-14642aff="" class="index w-12 flex items-center justify-center text-2xl font-bold">2</div>
+        <div data-v-14642aff="" class="flex-1">
+          <h2 data-v-14642aff="" class="item-title text-2xl font-semibold leading-tight text-balance">Un bundler pour la production</h2>
+          <p data-v-14642aff="" class="item-description mt-[0.25rem] text-lg leading-relaxed">Il transforme notre code pour la production</p>
         </div>
       </div>
     </article>
-    <article data-recap-list-item="" class="rounded-3xl border border-white/15 bg-white/10 px-6 py-5 shadow-2xl backdrop-blur-sm">
-      <div class="flex gap-5">
-        <div class="w-12 flex items-center justify-center rounded-xl bg-white text-2xl font-bold text-black">3</div>
-        <div class="flex-1">
-          <h2 class="text-2xl font-semibold leading-tight text-white text-balance">Un système de plugins</h2>
-          <p class="mt-[0.25rem] text-lg leading-relaxed text-white/75">Pour étendre ses fonctionnalités et faire tout ce qu'on veut</p>
+    <article data-v-14642aff="" data-recap-list-item="" class="item px-6 py-5 backdrop-blur-sm">
+      <div data-v-14642aff="" class="flex gap-5">
+        <div data-v-14642aff="" class="index w-12 flex items-center justify-center text-2xl font-bold">3</div>
+        <div data-v-14642aff="" class="flex-1">
+          <h2 data-v-14642aff="" class="item-title text-2xl font-semibold leading-tight text-balance">Un système de plugins</h2>
+          <p data-v-14642aff="" class="item-description mt-[0.25rem] text-lg leading-relaxed">Pour étendre ses fonctionnalités et faire tout ce qu'on veut</p>
         </div>
       </div>
     </article>

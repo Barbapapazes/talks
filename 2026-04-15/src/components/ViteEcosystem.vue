@@ -16,9 +16,9 @@ const icons = [
   'i-devicon-svelte',
   'i-devicon-solidjs',
   'i-devicon-qwik',
+  null,
+  null,
   'i-unjs-nitro',
-  null,
-  null,
   'i-devicon-cloudflareworkers',
   'i-devicon-storybook',
   'i-devicon-stackblitz',
@@ -46,7 +46,7 @@ const icons = [
         />
         <span v-else />
       </template>
-      <component v-else :is="index === 0 ? VClick : VAfter">
+      <component :is="index === 0 ? VClick : VAfter" v-else>
         <img
           v-if="icon && icon.startsWith('http')"
           :src="icon"

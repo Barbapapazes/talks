@@ -65,7 +65,7 @@ export default function growthChart() {
           }
         }))
 
-        const months = Array.from(new Set(datasets.flatMap(dataset => Object.keys(dataset.valuesByMonth)))).sort()
+        const months = [...new Set(datasets.flatMap(dataset => Object.keys(dataset.valuesByMonth)))].sort()
 
         const series = datasets.map(dataset => ({
           id: dataset.id,

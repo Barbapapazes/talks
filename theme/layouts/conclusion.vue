@@ -1,7 +1,11 @@
+<script setup lang="ts">
+import ThemeRoot from '../components/ThemeRoot.vue'
+</script>
+
 <template>
-  <div class="h-full grid slidev-layout conclusion">
+  <ThemeRoot class="h-full grid slidev-layout conclusion">
     <div class="my-auto">
       <slot />
     </div>
-  </div>
+  </ThemeRoot>
 </template>

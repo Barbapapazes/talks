@@ -88,7 +88,7 @@ const requests: Request[] = [
     waterfallStart: 6,
     waterfallDuration: 11,
   },
-   {
+  {
     id: 5,
     name: 'App.vue',
     url: '/src/App.vue',

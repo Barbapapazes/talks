@@ -12,7 +12,7 @@ flowchart LR
       vite_growth["#3 Vite Growth"]:::finished
   end
   subgraph Pr__talk ["Pré-talk"]
-      le_th_me_des_slides["#4 Le thème des slides"]:::main
+      le_th_me_des_slides["#4 Le thème des slides"]:::finished
   end
   subgraph Vite_Core ["Vite Core"]
       le_fonctionnement_de_vite["#5 Le fonctionnement de Vite"]:::finished
@@ -20,7 +20,7 @@ flowchart LR
       le_fonctionnement_de_vite_visualisation["#7 Le fonctionnement de Vite - Visualisation"]:::finished
   end
   subgraph Feature_Plugins ["Feature Plugins"]
-      tout_n_est_que_plugin["#8 Tout n'est que plugin"]:::main
+      tout_n_est_que_plugin["#8 Tout n'est que plugin"]:::finished
       tout_n_est_que_plugin_choices["#9 Tout n'est que plugin - Choices"]:::finishedChoice
       du_css_import_dans_un_fichier_typescript["#10 Du CSS importé dans un fichier TypeScript"]:::finished
       du_css_import_dans_un_fichier_typescript_visualisation["#11 Du CSS importé dans un fichier TypeScript - Visualisation"]:::finished
@@ -40,7 +40,7 @@ flowchart LR
       les_entrailles_d_un_plugin_vite_lifecycle_hooks["#24 Les entrailles d'un plugin Vite - Lifecycle Hooks"]:::finished
   end
   subgraph Concrete_Example ["Concrete Example"]
-      concr_tement["#25 Concrètement ?"]:::main
+      concr_tement["#25 Concrètement ?"]:::finished
       auto_import_plugin_unplugin_auto_import_exemple["#26 Auto Import Plugin (unplugin-auto-import) - Exemple"]:::finished
       auto_import_plugin_unplugin_auto_import_magic["#27 Auto Import Plugin (unplugin-auto-import) - Magic ?"]:::finished
       auto_import_plugin_unplugin_auto_import_visualisation["#28 Auto Import Plugin (unplugin-auto-import) - Visualisation"]:::finished
@@ -63,17 +63,17 @@ flowchart LR
       infos_plugin_des_infos_virtuelles_plugin_internals["#45 Infos Plugin - Des infos virtuelles - Plugin Internals"]:::finished
   end
   subgraph Advanced_Capabilities ["Advanced Capabilities"]
-      les_autres_capacit_s_des_plugins["#46 Les autres capacités des plugins"]:::main
-      les_autres_capacit_s_des_plugins_choices["#47 Les autres capacités des plugins - Choices"]:::choice
-      le_hot_module_replacement_hmr["#48 Le Hot Module Replacement (HMR)"]:::main
-      le_hot_module_replacement_hmr_plugins_internals["#49 Le Hot Module Replacement (HMR) - Plugins Internals"]:::main
+      les_autres_capacit_s_des_plugins["#46 Les autres capacités des plugins"]:::finished
+      les_autres_capacit_s_des_plugins_choices["#47 Les autres capacités des plugins - Choices"]:::finishedChoice
+      le_hot_module_replacement_hmr["#48 Le Hot Module Replacement (HMR)"]:::finished
+      le_hot_module_replacement_hmr_plugins_internals["#49 Le Hot Module Replacement (HMR) - Plugins Internals"]:::finished
       le_middleware_un_fichier_virtuel["#50 Le middleware - Un fichier virtuel"]:::finished
       run_plugin_un_plugin_pour_ex_cuter_des_commandes["#51 Run Plugin - Un plugin pour exécuter des commandes"]:::finished
       run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals["#52 Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals"]:::finished
-      laravel_vite_la_communication_inter_processus["#53 Laravel Vite - La communication inter-processus"]:::main
-      laravel_vite_la_communication_inter_processus_plugin_internals["#54 Laravel Vite - La communication inter-processus - Plugin Internals"]:::main
-      unplugin_macro_un_plugin_pour_cr_er_des_macros["#55 unplugin-macro - Un plugin pour créer des macros"]:::main
-      unplugin_macro_un_plugin_pour_cr_er_des_macros_plugin_internals["#56 unplugin-macro - Un plugin pour créer des macros - Plugin Internals"]:::main
+      laravel_vite_la_communication_inter_processus["#53 Laravel Vite - La communication inter-processus"]:::finished
+      laravel_vite_la_communication_inter_processus_plugin_internals["#54 Laravel Vite - La communication inter-processus - Plugin Internals"]:::finished
+      unplugin_macro_un_plugin_pour_cr_er_des_macros["#55 unplugin-macro - Un plugin pour créer des macros"]:::finished
+      unplugin_macro_un_plugin_pour_cr_er_des_macros_plugin_internals["#56 unplugin-macro - Un plugin pour créer des macros - Plugin Internals"]:::finished
       nitro_un_backend["#57 Nitro - Un backend"]:::finished
       nitro_un_backend_visualisation["#58 Nitro - Un backend - Visualisation"]:::finished
       nitro_un_backend_plugin_internals["#59 Nitro - Un backend - Plugin Internals"]:::finished
@@ -85,10 +85,9 @@ flowchart LR
   vite_et_ses_features_r_cap["#17 Vite et ses features - Récap"]:::finishedRecap
   visualiser_la_pipeline["#31 Visualiser la pipeline"]:::finished
   le_plugin_vite_r_cap["#32 Le plugin Vite - Récap"]:::finishedRecap
-  r_cap_des_r_cap["#60 Récap des récap"]:::recap
-  conclusion["#62 Conclusion"]:::main
-  votre_tour["#63 Votre tour"]:::finished
-  outro["#64 Outro"]:::finished
+  r_cap_des_r_cap["#60 Récap des récap"]:::finishedRecap
+  votre_tour["#62 Votre tour"]:::finished
+  outro["#63 Outro"]:::finished
   au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins --> vite
   vite --> vite_growth
   vite_growth --> le_th_me_des_slides
@@ -159,6 +158,5 @@ flowchart LR
   nitro_un_backend_visualisation --> nitro_un_backend_plugin_internals
   nitro_un_backend_plugin_internals --> r_cap_des_r_cap
   r_cap_des_r_cap --> dans_les_profondeurs_de_la_pipeline
-  dans_les_profondeurs_de_la_pipeline --> conclusion
-  conclusion --> votre_tour
+  dans_les_profondeurs_de_la_pipeline --> votre_tour
   votre_tour --> outro

@@ -20,8 +20,8 @@ catalog:
   '@mermaid-js/mermaid-cli': ^11.11.0
   '@shikijs/markdown-it': ^3.22.0
   '@shikijs/transformers': ^4.0.1
-  '@slidev/cli': 52.1.0
-  '@slidev/parser': 52.1.0
+  '@slidev/cli': ^52.1.0
+  '@slidev/parser': ^52.1.0
   '@slidev/theme-default': ^0.25.0
   '@tsparticles/confetti': 3.9.1
   '@tsparticles/engine': ^3.9.1
@@ -60,7 +60,7 @@ catalog:
   seedrandom: ^3.0.5
   shiki: ^4.0.1
   slidev-addon-graph: ^1.0.0
-  slidev-addon-inalia: ^0.2.6
+  slidev-addon-inalia: 0.2.8
   tailwind-variants: ^3.2.2
   taze: ^19.10.0
   tiktoken: ^1.0.22
@@ -86,7 +86,7 @@ catalogs:
     typescript: ~5.9.3
 
 overrides:
-  vite: 8.0.0-beta.16
+  vite: 8.0.7
 
 patchedDependencies:
   cobe: patches/cobe.patch
@@ -94,4 +94,4 @@ patchedDependencies:
 
 shellEmulator: true
 
-trustPolicy: no-downgrade
+# trustPolicy: no-downgrade

@@ -1,7 +1,7 @@
 import type { PluginOption, ResolvedConfig } from 'vite'; import fs from 'node:fs/promises'
 import path from 'node:path'
 import { codeToHtml } from 'shiki'
-import { shikiOptions } from './_shiki';
+import { shikiOptions } from './_shiki'
 
 const colonRegex = /:/g
 

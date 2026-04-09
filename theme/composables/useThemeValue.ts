@@ -1,10 +1,11 @@
-import { useCurrentTheme } from './useCurrentTheme'
+import { useSlideTheme } from './useSlideTheme'
 
 export type ThemedValueMap<T> = Record<string, T>
 export type MaybeThemedValue<T> = T | ThemedValueMap<T>
 
+// TODO: merge with other theme-related composables into a single useTheme composable
 export function useThemeValue() {
-  const { currentTheme } = useCurrentTheme()
+  const { activeTheme } = useSlideTheme()
 
   function isThemedValueMap<T>(value: unknown): value is ThemedValueMap<T> {
     return value !== null && typeof value === 'object' && !Array.isArray(value)
@@ -17,10 +18,7 @@ export function useThemeValue() {
     if (!isThemedValueMap<T>(value))
       return value
 
-    if (!currentTheme.value)
-      return value.default
-
-    return value[currentTheme.value] ?? value.default
+    return value[activeTheme.value] ?? value.default
   }
 
   return {

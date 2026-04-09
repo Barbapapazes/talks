@@ -27,7 +27,7 @@ const positionClasses: Record<CardPosition, string> = {
 
 <template>
   <div class="relative slidev-layout">
-    <BackgroundImage :img="props.img" :class="props.imgClass" />
+    <BackgroundImage :img="props.img" :img-class="props.imgClass" />
     <div class="absolute z-10" :class="positionClasses[props.position]">
       <Card>
         <slot />

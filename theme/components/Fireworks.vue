@@ -1,6 +1,7 @@
 <script lang="ts" setup>
+import type { FireworksOptions } from 'fireworks-js'
 import { useIsSlideActive } from '@slidev/client'
-import { Fireworks as FireworksAnimation, type FireworksOptions } from 'fireworks-js'
+import { Fireworks as FireworksAnimation } from 'fireworks-js'
 import { onUnmounted, ref, unref, watch } from 'vue'
 
 const FIREWORKS_OPTIONS = {

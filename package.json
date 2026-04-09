@@ -72,7 +72,7 @@
     "prettier": "catalog:",
     "prompts": "catalog:",
     "slidev-addon-graph": "catalog:",
-    "slidev-theme-personal": "link:./theme",
+    "slidev-theme-personal": "link:theme",
     "taze": "catalog:",
     "tiktoken": "catalog:",
     "typescript": "catalog:",

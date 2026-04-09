@@ -4,16 +4,14 @@ import type {
   ExplainedVisuallyHttpLog,
 } from './ExplainedVisually/types'
 import indexHtml from 'virtual:vite-file-system:index:html'
-import indexHtmlTransformed from 'virtual:vite-transformed-file:index:html'
 import mainTs from 'virtual:vite-file-system:mainAutoImport:ts'
-import mainTsTransformed from 'virtual:vite-transformed-file:mainAutoImport:ts'
 import packageJson from 'virtual:vite-file-system:package:json'
 import tsconfigAppJson from 'virtual:vite-file-system:tsconfig:app:json'
 import tsconfigJson from 'virtual:vite-file-system:tsconfig:json'
 import tsconfigNodeJson from 'virtual:vite-file-system:tsconfig:node:json'
 import viteConfigTs from 'virtual:vite-file-system:vite.config:ts'
-import appVueTransformed from 'virtual:vite-transformed-file:AppAutoImport:ts'
-import styleCssTransformed from 'virtual:vite-transformed-file:style:ts'
+import indexHtmlTransformed from 'virtual:vite-transformed-file:index:html'
+import mainTsTransformed from 'virtual:vite-transformed-file:mainAutoImport:ts'
 import { useHighlight } from '../composables/useHighlight'
 import ExplainedVisually from './ExplainedVisually.vue'
 

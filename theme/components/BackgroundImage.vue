@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { MaybeThemedValue } from '../composables/useThemeValue'
 import { useSlideContext } from '@slidev/client'
 import { computed } from 'vue'
-import { type MaybeThemedValue, useThemeValue } from '../composables/useThemeValue'
+import { useThemeValue } from '../composables/useThemeValue'
 
 interface BackgroundImageProps {
   img?: MaybeThemedValue<string>
@@ -34,3 +35,17 @@ const hasImage = computed(() => {
 <template>
   <img v-if="hasImage" :src="img" :alt="imgAlt" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover" :class="imgClass">
 </template>
+
+<style scoped>
+html[data-theme='brutaliste'] {
+  img {
+    filter: sepia(1) hue-rotate(20deg) saturate(1.5) brightness(0.9);
+  }
+}
+
+html[data-theme='futuristic'] {
+  img {
+    filter: grayscale(1) brightness(0.4);
+  }
+}
+</style>

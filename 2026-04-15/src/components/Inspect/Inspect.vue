@@ -1,11 +1,11 @@
 <script lang="ts" setup>
+import type { ConsoleEntry } from '../../types/console-tab'
+import type { Request } from '../../types/network-tab'
 import { computed, ref, watch } from 'vue'
 import InspectFilters from './InspectFilters.vue'
 import InspectTabs from './InspectTabs.vue'
 import ConsoleTab from './Tabs/ConsoleTab.vue'
 import NetworkTab from './Tabs/NetworkTab.vue'
-import type { ConsoleEntry } from '../../types/console-tab'
-import type { Request } from '../../types/network-tab'
 
 type InspectTab = 'Console' | 'Network'
 

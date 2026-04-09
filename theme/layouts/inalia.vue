@@ -1,5 +1,9 @@
+<script setup lang="ts">
+import ThemeRoot from '../components/ThemeRoot.vue'
+</script>
+
 <template>
-  <div class="h-full grid slidev-layout inalia">
+  <ThemeRoot class="h-full grid slidev-layout inalia">
     <div class="w-full my-auto">
       <div class="absolute top-1/2 left-1/2 -translate-1/2 space-y-2">
         <div class="flex flex-row items-center gap-2">
@@ -18,5 +22,5 @@
         </p>
       </div>
     </div>
-  </div>
+  </ThemeRoot>
 </template>

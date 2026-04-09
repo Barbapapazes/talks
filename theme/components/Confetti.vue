@@ -1,12 +1,21 @@
 <script lang="ts" setup>
+import type { ConfettiOptions } from '@tsparticles/confetti'
+import type { SupportedSlideTheme } from '../composables/useSlideTheme'
 import { useIsSlideActive, useSlideContext } from '@slidev/client'
-import { confetti, type ConfettiOptions } from '@tsparticles/confetti'
+import { confetti } from '@tsparticles/confetti'
 import { computed, onUnmounted, unref, watch } from 'vue'
-import { useThemeValue } from '../composables/useThemeValue'
+import { useSlideTheme } from '../composables/useSlideTheme'
 
 type ConfettiContainer = NonNullable<Awaited<ReturnType<typeof confetti>>>
 
 const DEFAULT_COLORS = ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722']
+const THEME_CONFETTI_COLORS: Record<SupportedSlideTheme, string[]> = {
+  default: DEFAULT_COLORS,
+  brutaliste: ['#0f0f0f', '#f5f5f4', '#facc15', '#ef4444'],
+  eighties: ['#67e8f9', '#f472b6', '#fde047', '#a78bfa'],
+  futuristic: ['#22d3ee', '#818cf8', '#f472b6', '#34d399'],
+  space: ['#e2e8f0', '#93c5fd', '#818cf8', '#facc15'],
+}
 const CONFETTI_ID = 'recap-confetti'
 const FIRE_COOLDOWN_MS = 350
 const PARTICLE_COUNT = 200
@@ -14,9 +23,9 @@ const PARTICLE_TICKS = 120
 
 const isActive = useIsSlideActive()
 const slideContext = useSlideContext()
-const { resolveThemeValue } = useThemeValue()
+const { visualTheme } = useSlideTheme()
 const autoFireClicks = computed(() => resolveAutoFireClicks(unref(slideContext.$frontmatter)?.confettiClicks))
-const confettiColors = computed(() => resolveConfettiColors(resolveThemeValue(unref(slideContext.$frontmatter)?.confettiColors)) || DEFAULT_COLORS)
+const confettiColors = computed(() => THEME_CONFETTI_COLORS[visualTheme.value] ?? DEFAULT_COLORS)
 
 let activeContainer: ConfettiContainer | null = null
 let cleanupTimer: number | null = null
@@ -42,18 +51,6 @@ function resolveAutoFireClicks(value: unknown) {
     return null
 
   return Math.floor(parsedValue)
-}
-
-function resolveConfettiColors(value: unknown) {
-  if (!Array.isArray(value))
-    return null
-
-  const colors = value
-    .filter((entry): entry is string => typeof entry === 'string')
-    .map(entry => entry.trim())
-    .filter(Boolean)
-
-  return colors.length > 0 ? colors : null
 }
 
 function getCleanupDelayMs(ticks: number) {

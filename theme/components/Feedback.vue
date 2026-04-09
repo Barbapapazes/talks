@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { InaliaQR, InaliaShortUrl, useInaliaTalk } from 'slidev-addon-inalia'
-import { computed } from 'vue';
+import { computed } from 'vue'
 
 const props = defineProps<{
   enablePlaceholder?: boolean
@@ -35,17 +35,17 @@ const shortUrl = computed(() => {
 
 <template>
   <div v-if="talk || props.enablePlaceholder" class="flex justify-center items-center flex-col space-y-2">
-    <div>
+    <div class="theme-feedback-label">
       ⬇️ Votre feedback ⬇️
     </div>
 
     <div
-      class="overflow-hidden shrink-0 inalia rounded-lg size-40"
+      class="theme-feedback-frame shrink-0 inalia rounded-lg size-40"
     >
       <InaliaQR
         :url="url" class="block"
       />
     </div>
-    <InaliaShortUrl :url="shortUrl" class="border-0! text-xs mx-auto" />
+    <InaliaShortUrl :url="shortUrl" class="theme-feedback-url border-0! text-xs mx-auto" />
   </div>
 </template>

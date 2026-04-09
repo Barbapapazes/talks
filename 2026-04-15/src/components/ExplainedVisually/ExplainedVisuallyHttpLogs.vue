@@ -32,8 +32,8 @@ function onSelect(log: ExplainedVisuallyHttpLog) {
         :at="props.click"
       >
         <div
-        class="group relative forward:delay-[--delay] cursor-pointer transition"
-        :style="{ '--delay': `calc(${index} * 50ms)` }"
+          class="group relative forward:delay-[--delay] cursor-pointer transition"
+          :style="{ '--delay': `calc(${index} * 50ms)` }"
         >
           <div class="overflow-auto" v-html="log.request" />
           <button

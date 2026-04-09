@@ -53,25 +53,44 @@ const features = [
 
 <template>
   <div class="h-full flex items-center justify-center">
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-3">
       <template v-for="(feature, index) in features" :key="feature.name">
         <component :is="index === 0 ? VClick : VAfter">
           <Card
             class="transition forward:delay-[--delay]"
             :style="{ '--delay': `calc(${(index % 3) + (Math.floor(index / 3))} * 30ms)` }"
           >
-            <div class="flex flex-row items-center gap-1">
-              <div :class="feature.icon" class="size-5" />
-              <div class="text-sm text-neutral-700">
-                {{ feature.name }}
-              </div>
-            </div>
-            <div class="mt-2 text-xs text-neutral-500">
-              {{ feature.description }}
-            </div>
+            <CardTitle
+             :icon="feature.icon"
+             :title="feature.name"
+            />
+            <CardDescription
+              :description="feature.description"
+              class="mt-2"
+            />
           </Card>
         </component>
       </template>
     </div>
   </div>
 </template>
+
+<style scoped>
+html[data-theme='default'] {
+  .grid {
+    --at-apply: gap-4;
+  }
+}
+
+html[data-theme='brutaliste'] {
+  .grid {
+    --at-apply: gap-8;
+  }
+}
+
+html[data-theme='futuristic'] {
+  .grid {
+    --at-apply: gap-8;
+  }
+}
+</style>

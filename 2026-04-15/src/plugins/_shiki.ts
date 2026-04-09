@@ -1,4 +1,4 @@
-import { transformerRemoveComments } from "@shikijs/transformers";
+import { transformerRemoveComments } from '@shikijs/transformers'
 
 export const shikiOptions = {
   themes: {

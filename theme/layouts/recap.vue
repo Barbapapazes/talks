@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import Confetti from '../components/Confetti.vue'
 import BackgroundImage from '../components/BackgroundImage.vue'
+import Confetti from '../components/Confetti.vue'
 </script>
 
 <template>

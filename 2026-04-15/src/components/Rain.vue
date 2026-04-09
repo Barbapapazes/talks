@@ -1,7 +1,9 @@
 <script lang="ts" setup>
+import type { Container, ICoordinates, IDimension, IOptions, RecursivePartial } from '@tsparticles/engine'
+import type { EmittersEngine } from '@tsparticles/plugin-emitters'
 import { useIsSlideActive } from '@slidev/client'
-import { tsParticles, type Container, type ICoordinates, type IDimension, type IOptions, type RecursivePartial } from '@tsparticles/engine'
-import { loadEmittersPlugin, type EmittersEngine } from '@tsparticles/plugin-emitters'
+import { tsParticles } from '@tsparticles/engine'
+import { loadEmittersPlugin } from '@tsparticles/plugin-emitters'
 import { loadSlim } from '@tsparticles/slim'
 import { nextTick, onUnmounted, useId, watch } from 'vue'
 
@@ -227,11 +229,13 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="rain slidev-layout relative h-full overflow-hidden">
-    <div :id="containerId" aria-hidden="true" class="pointer-events-none absolute inset-0 z-0" />
+  <ThemeRoot class="h-full">
+    <div class="rain slidev-layout relative h-full overflow-hidden">
+      <div :id="containerId" aria-hidden="true" class="pointer-events-none absolute inset-0 z-0" />
 
-    <div class="relative z-10 h-full">
-      <slot />
+      <div class="relative z-10 h-full">
+        <slot />
+      </div>
     </div>
-  </div>
+  </ThemeRoot>
 </template>

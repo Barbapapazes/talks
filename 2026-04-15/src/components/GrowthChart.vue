@@ -6,13 +6,13 @@ import { series as chartSeries } from 'virtual:growth-chart'
 const { $clicks } = useSlideContext()
 
 type DataRecord = [string, number]
-type ChartSeries = {
+interface ChartSeries {
   id: string
   packageName: string
   data: DataRecord[]
 }
 
-type SeriesMeta = {
+interface SeriesMeta {
   label: string
   color: string
   iconClass?: string
@@ -25,12 +25,12 @@ const y = (d: DataRecord) => d[1]
 const palette = ['#A156FE', '#8ED6FB', '#FA3A1F', '#2D9D78', '#F882AF']
 
 const seriesMeta: Record<string, SeriesMeta> = {
-   webpack: {
+  'webpack': {
     label: 'Webpack',
     color: '#8ED6FB',
     iconClass: 'i-devicon-webpack',
   },
-  vite: {
+  'vite': {
     label: 'Vite',
     color: '#A156FE',
     iconSrc: 'https://raw.githubusercontent.com/voidzero-dev/community-design-resources/55902097229cf01cf2a4ceb376f992f5cf306756/brand-assets/vite/vite-icon-color-dark.svg',
@@ -40,7 +40,7 @@ const seriesMeta: Record<string, SeriesMeta> = {
     color: '#FA3A1F',
     iconSrc: 'https://raw.githubusercontent.com/rstackjs/rstack-design-resources/e25f6d56e04bc6ff82dcee6cd1e4c31711b22365/rspack/rspack-logo.svg',
   },
-  snowpack: {
+  'snowpack': {
     label: 'Snowpack',
     color: '#2E5E82',
     iconClass: 'i-simple-icons-snowpack',
@@ -85,7 +85,7 @@ const series = (chartSeries as ChartSeries[]).map((dataset, index) => ({
       >
       <div
         v-else-if="dataset.iconClass"
-        :class="[dataset.iconClass, 'size-5']"
+        class="size-5" :class="[dataset.iconClass]"
       />
       <div
         v-else
@@ -102,16 +102,16 @@ const series = (chartSeries as ChartSeries[]).map((dataset, index) => ({
         v-for="(dataset, index) in series"
         :key="dataset.id"
       >
-      <VisArea
-        v-if="index === 0 ? $clicks >= 1 : $clicks >= 2"
-        :data="dataset.data"
-        :x="x"
-        :y="y"
-        :opacity="0.3"
-        :line="true"
-        :color="dataset.color"
-        :line-color="dataset.color"
-      />
+        <VisArea
+          v-if="index === 0 ? $clicks >= 1 : $clicks >= 2"
+          :data="dataset.data"
+          :x="x"
+          :y="y"
+          :opacity="0.3"
+          :line="true"
+          :color="dataset.color"
+          :line-color="dataset.color"
+        />
       </template>
     </VisXYContainer>
   </div>

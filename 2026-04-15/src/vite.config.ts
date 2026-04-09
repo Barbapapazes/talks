@@ -1,12 +1,12 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import info from 'vite-plugin-info'
-import inspect from 'vite-plugin-inspect'
 import run from 'vite-plugin-run'
 import growthChart from './plugins/growth-chart'
 import viteBuild from './plugins/vite-build'
 import viteFileSystem from './plugins/vite-file-system'
 import viteTransformedFile from './plugins/vite-transformed-file'
+import inspect from 'vite-plugin-inspect'
 
 export default defineConfig({
   plugins: [
@@ -33,4 +33,10 @@ export default defineConfig({
   optimizeDeps: {
     include: ['slidev-addon-inalia', 'reka-ui', '@tsparticles/engine', '@tsparticles/plugin-emitters', '@tsparticles/slim'],
   },
+
+  server: {
+    hmr: {
+      overlay: false,
+    }
+  }
 })

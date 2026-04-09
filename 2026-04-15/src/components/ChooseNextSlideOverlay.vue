@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { onSlideEnter, onSlideLeave } from '@slidev/client'
-import { InaliaQR } from 'slidev-addon-inalia'
-
-const url = 'https://example.com'
+import { onSlideEnter, onSlideLeave, useNav } from '@slidev/client'
+import { InaliaQR, useInaliaQuestion } from 'slidev-addon-inalia'
+import { computed, ref } from 'vue'
 
 const initialDelay = 8_000
 const textRevealDuration = 4_000
@@ -14,8 +12,8 @@ const expandedScale = 2
 const isQrExpanded = ref(false)
 const isTextVisible = ref(false)
 
-let animationTimeouts: ReturnType<typeof window.setTimeout>[] = []
-let cycleInterval: ReturnType<typeof window.setInterval> | undefined
+let animationTimeouts: number[] = []
+let cycleInterval: number | undefined
 let cycleCount = 0
 
 function queueTimeout(callback: () => void, delay: number) {
@@ -75,23 +73,22 @@ onSlideLeave(() => {
   cycleInterval = undefined
   cycleCount = 0
 })
+
+const { currentSlideRoute } = useNav()
+const show = computed(() => (currentSlideRoute.value.meta.slide as any)?.frontmatter?.chooseNextSlide)
+const { isStatic, question } = useInaliaQuestion(() => (currentSlideRoute.value.meta.slide as any)?.frontmatter.inalia?.questionId)
 </script>
 
 <template>
-  <div>
-    <!-- <div
-      class="pointer-events-none fixed inset-0 z-40 bg-black/45 transition-opacity duration-700 ease-in-out"
-      :class="isQrExpanded ? 'opacity-100' : 'opacity-0'"
-    /> -->
-
+  <div v-if="show && !isStatic && question">
     <div
-      class="absolute left-2 top-2 z-50 flex flex-row items-center text-neutral-700 origin-top-left transition-transform ease-in-out"
+      class="absolute left-2 top-2 z-50 flex flex-row items-center origin-top-left transition-transform ease-in-out"
       :style="{ transitionDuration: `${isQrExpanded ? expandDuration : collapseDuration}ms`, transform: `scale(${isQrExpanded ? expandedScale : 1})` }"
     >
       <div
-        class="rounded-sm overflow-hidden size-12 z-10 relative"
+        class="qr overflow-hidden size-12 z-10 relative"
       >
-        <InaliaQR :url="url" />
+        <InaliaQR :url="question?.tiny_url" />
       </div>
 
       <div
@@ -100,13 +97,27 @@ onSlideLeave(() => {
         :style="{ transitionDuration: `${isTextVisible ? textRevealDuration : collapseDuration}ms` }"
       >
         <div
-          class="bg-white rounded-sm px-2 py-1 flex flex-col text-xs transition-shadow duration-700 ease-in-out"
+          class="badge rounded-sm px-2 py-1 flex flex-col text-xs transition-shadow duration-700 ease-in-out"
           :class="isQrExpanded ? 'shadow-xl' : ''"
         >
           <span>Choose the next slide</span>
-          <span>{{ url }}</span>
+          <span class="meta">{{ question?.tiny_url }}</span>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+html[data-theme='default'] {
+  .qr {
+    --at-apply: rounded-sm;
+  }
+  .badge {
+    --at-apply: bg-white rounded-sm shadow-lg text-neutral-700 text-xs;
+  }
+  .meta {
+    --at-apply: text-neutral-500;
+  }
+}
+</style>

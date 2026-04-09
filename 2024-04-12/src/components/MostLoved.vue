@@ -12,7 +12,7 @@ const props = defineProps<{
 const [parent] = useAutoAnimate()
 
 const items = computed(() => {
-  return props.data.toSorted((a, b) => b.count - a.count)
+  return [...props.data].sort((a, b) => b.count - a.count)
 })
 </script>
 

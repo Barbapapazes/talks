@@ -1,6 +1,10 @@
 import { mount } from '@vue/test-utils'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
+import { nextTick } from 'vue'
+import Confetti from '../components/Confetti.vue'
+import { useCurrentTheme } from '../composables/useCurrentTheme'
+
 const { mockIsSlideActive, mockSlideContext, mockConfetti } = vi.hoisted(() => ({
   mockIsSlideActive: { ref: null as { value: boolean } | null },
   mockSlideContext: {
@@ -32,10 +36,6 @@ vi.mock('@slidev/client', async () => {
 vi.mock('@tsparticles/confetti', () => ({
   confetti: mockConfetti,
 }))
-
-import { nextTick } from 'vue'
-import Confetti from '../components/Confetti.vue'
-import { useCurrentTheme } from '../composables/useCurrentTheme'
 
 function flushMicrotasks() {
   return Promise.resolve()
@@ -98,13 +98,8 @@ describe('confetti', () => {
     expect(mockConfetti).toHaveBeenCalledTimes(2)
   })
 
-  it('uses theme-specific confetti colors from frontmatter', async () => {
-    mockSlideContext.value!.$frontmatter.confettiColors = {
-      default: ['#111111', '#222222'],
-      vite: ['#6C1EB9', '#FFD700'],
-    }
-
-    useCurrentTheme().setCurrentTheme('vite')
+  it('uses the current theme confetti palette', async () => {
+    useCurrentTheme().setCurrentTheme('futuristic')
 
     mount(Confetti)
 
@@ -116,19 +111,14 @@ describe('confetti', () => {
     await flushMicrotasks()
 
     expect(mockConfetti).toHaveBeenNthCalledWith(1, 'recap-confetti', expect.objectContaining({
-      colors: ['#6C1EB9', '#FFD700'],
+      colors: ['#22d3ee', '#818cf8', '#f472b6', '#34d399'],
     }))
     expect(mockConfetti).toHaveBeenNthCalledWith(2, 'recap-confetti', expect.objectContaining({
-      colors: ['#6C1EB9', '#FFD700'],
+      colors: ['#22d3ee', '#818cf8', '#f472b6', '#34d399'],
     }))
   })
 
-  it('falls back to default confetti colors when the theme is cleared', async () => {
-    mockSlideContext.value!.$frontmatter.confettiColors = {
-      default: ['#123456', '#abcdef'],
-      vite: ['#6C1EB9', '#FFD700'],
-    }
-
+  it('uses the default theme palette when no current theme is selected', async () => {
     mount(Confetti)
 
     mockIsSlideActive.ref!.value = true
@@ -139,7 +129,7 @@ describe('confetti', () => {
     await flushMicrotasks()
 
     expect(mockConfetti).toHaveBeenNthCalledWith(1, 'recap-confetti', expect.objectContaining({
-      colors: ['#123456', '#abcdef'],
+      colors: ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722'],
     }))
   })
 })

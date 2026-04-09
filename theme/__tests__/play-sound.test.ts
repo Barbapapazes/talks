@@ -1,6 +1,9 @@
 import { mount } from '@vue/test-utils'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
+import { nextTick } from 'vue'
+import PlaySound from '../components/PlaySound.vue'
+
 const { mockIsSlideActive, mockAudioInstances } = vi.hoisted(() => ({
   mockIsSlideActive: { ref: null as { value: boolean } | null },
   mockAudioInstances: [] as MockAudio[],
@@ -32,9 +35,6 @@ class MockAudio {
 }
 
 vi.stubGlobal('Audio', MockAudio)
-
-import { nextTick } from 'vue'
-import PlaySound from '../components/PlaySound.vue'
 
 describe('playSound', () => {
   beforeEach(() => {

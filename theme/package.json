@@ -6,8 +6,8 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "fireworks-js": "catalog:",
     "@tsparticles/confetti": "catalog:",
+    "fireworks-js": "catalog:",
     "reka-ui": "catalog:",
     "tailwind-variants": "catalog:"
   },

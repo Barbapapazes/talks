@@ -2,16 +2,6 @@ import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { defineComponent, h, inject, provide } from 'vue'
 
-const slideContext = {
-  $frontmatter: {} as Record<string, unknown>,
-  $clicks: 0,
-}
-
-vi.mock('@slidev/client', () => ({
-  useSlideContext: () => slideContext,
-  useIsSlideActive: () => false,
-}))
-
 import BackgroundImage from '../components/BackgroundImage.vue'
 import Card from '../components/Card.vue'
 import CardLayout from '../components/CardLayout.vue'
@@ -24,6 +14,16 @@ import ProgressiveList from '../components/ProgressiveList.vue'
 import RecapList from '../components/RecapList.vue'
 import Tree from '../components/Tree.vue'
 import { useCurrentTheme } from '../composables/useCurrentTheme'
+
+const slideContext = {
+  $frontmatter: {} as Record<string, unknown>,
+  $clicks: 0,
+}
+
+vi.mock('@slidev/client', () => ({
+  useSlideContext: () => slideContext,
+  useIsSlideActive: () => false,
+}))
 
 afterEach(() => {
   document.body.innerHTML = ''

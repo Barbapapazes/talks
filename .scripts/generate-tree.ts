@@ -16,7 +16,14 @@ interface GraphNode {
   group: string | undefined
   layout: string | undefined
   timing: number | undefined
+  filePath: string
+  lineNumber: number
   choices?: string[]
+}
+
+interface SlideSourceLocation {
+  filepath: string
+  start: number
 }
 
 interface GraphEdge {
@@ -42,6 +49,16 @@ function slugify(text: string | undefined): string {
 
 function hasChoicesKey(node: GraphNode) {
   return Object.hasOwn(node, 'choices')
+}
+
+function getSlideSourceLocation(slide: { filepath?: string, start?: number, source?: SlideSourceLocation }): SlideSourceLocation {
+  if (slide.source)
+    return slide.source
+
+  return {
+    filepath: slide.filepath ?? '',
+    start: slide.start ?? 0,
+  }
 }
 
 async function generateTree() {
@@ -76,6 +93,7 @@ async function generateTree() {
     const name = slide.frontmatter.name as string | undefined
     const title = slide.title || `Slide ${slide.index + 1}`
     const id = slugify(name || title) || `slide_${slide.index + 1}`
+    const source = getSlideSourceLocation(slide)
 
     const node: GraphNode = {
       id,
@@ -86,6 +104,8 @@ async function generateTree() {
       layout: slide.frontmatter.layout as string | undefined,
       group: slide.frontmatter.group as string | undefined,
       timing: slide.frontmatter.timing as number | undefined,
+      filePath: source.filepath || slidesPath,
+      lineNumber: source.start + 1,
     }
 
     if (slide.frontmatter.choices) {
@@ -209,8 +229,8 @@ async function generateTree() {
     const className = node.layout === 'recap'
       ? (node.ready ? 'finishedRecap' : 'recap')
       : node.choices && node.choices.length > 1
-          ? (node.ready ? 'finishedChoice' : 'choice')
-          : (node.ready ? 'finished' : 'main')
+        ? (node.ready ? 'finishedChoice' : 'choice')
+        : (node.ready ? 'finished' : 'main')
     const line = `  ${sanitizedId}["${label}"]:::${className}`
 
     const group = node.group
@@ -251,6 +271,18 @@ async function generateTree() {
   console.warn(`  - Total choices: ${edges.length}`)
   console.warn(`  - Ready slides: ${nodes.filter(n => n.ready).length}/${nodes.length}`)
   console.warn(`  - Slides with choices: ${nodes.filter(n => n.choices ? n.choices.length > 0 : false).length}`)
+
+  const notReadySlides = nodes.filter(node => !node.ready)
+
+  if (notReadySlides.length > 0) {
+    console.warn(`\nNot ready slides:`)
+    for (const node of notReadySlides) {
+      console.warn(`  - #${node.index + 1} ${node.name || node.title}: ${node.filePath}:${node.lineNumber}`)
+    }
+  }
+  else {
+    console.warn(`\nNot ready slides: none 🎉`)
+  }
 }
 
 generateTree().catch(console.error)

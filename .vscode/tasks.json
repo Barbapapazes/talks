@@ -1,0 +1,71 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "test slidev theme",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"--filter",
+				"slidev-theme-personal",
+				"test"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "test slidev theme",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"--filter",
+				"slidev-theme-personal",
+				"test"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "test slidev theme",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"--filter",
+				"slidev-theme-personal",
+				"test"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "update and test slidev theme",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"--filter",
+				"slidev-theme-personal",
+				"exec",
+				"vitest",
+				"run",
+				"-u"
+			],
+			"isBackground": false,
+			"group": "test"
+		},
+		{
+			"label": "update and test slidev theme",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"--filter",
+				"slidev-theme-personal",
+				"exec",
+				"vitest",
+				"run",
+				"-u"
+			],
+			"isBackground": false,
+			"group": "test"
+		}
+	]
+}

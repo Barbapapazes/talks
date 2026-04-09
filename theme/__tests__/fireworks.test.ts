@@ -1,6 +1,9 @@
 import { flushPromises, mount } from '@vue/test-utils'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
+import { nextTick } from 'vue'
+import SlideFireworks from '../components/Fireworks.vue'
+
 const { mockIsSlideActive, mockFireworks, mockStart, mockStop } = vi.hoisted(() => ({
   mockIsSlideActive: { ref: null as { value: boolean } | null },
   mockFireworks: vi.fn(),
@@ -22,9 +25,6 @@ vi.mock('@slidev/client', async () => {
 vi.mock('fireworks-js', () => ({
   Fireworks: mockFireworks,
 }))
-
-import { nextTick } from 'vue'
-import SlideFireworks from '../components/Fireworks.vue'
 
 describe('fireworks', () => {
   beforeEach(() => {

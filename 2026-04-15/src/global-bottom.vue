@@ -1,73 +1,11 @@
-<script lang="ts" setup>
-import { useNav } from '@slidev/client'
-import { computed, onMounted, ref } from 'vue';
-import { useTimeoutFn } from '@vueuse/core'
-
-const { currentSlideRoute, slides, go, clicks, clicksTotal } = useNav()
-
-const nextJumpTo = ref('')
-const hasJumped = ref(false)
-const timeout = useTimeoutFn(() => hasJumped.value = false, 2_000, { immediate: false })
-
-const currentSlide = computed(() => {
-  return currentSlideRoute.value?.meta.slide as { frontmatter?: { choices?: any[] } }
-})
-const shouldJump = computed(() => {
-  if (!currentSlide.value) return false
-
-  if (!currentSlide.value.frontmatter) return false
-
-  return currentSlide.value.frontmatter.choices?.length === 1
-})
-
-function jumpToChoice() {
-  // Use the stored nextJumpTo value instead of reading from the current slide's frontmatter, to ensure we jump to the intended choice even if the user has already moved to the next slide.
-  const target = slides.value.find(s => s.meta.name === nextJumpTo.value)
-  if (target) {
-    go(target.no)
-    nextJumpTo.value = ''
-    hasJumped.value = true
-    timeout.start()
-  } else {
-    throw new Error(`Target slide "${nextJumpTo.value}" not found`)
-  }
-}
-
-function handleKeydown(e: KeyboardEvent) {
-  if (e.key !== 'ArrowRight') {
-    return
-  }
-
-  if (nextJumpTo.value) {
-    jumpToChoice()
-    return
-  }
-
-  if (!shouldJump.value) {
-    return
-  }
-
-  // Only set the next jump on the latest click to trigger the jump on the next keydown, when going to the next slide.
-  if (clicks.value === clicksTotal.value) {
-    nextJumpTo.value = currentSlide.value!.frontmatter!.choices![0]
-  }
-}
-window.addEventListener('keydown', handleKeydown)
-
-onMounted(() => {
-  // In case the user is already on a slide with a single choice and presses the right arrow key, we want to jump to the next slide immediately.
-  handleKeydown(new KeyboardEvent('keydown', { key: 'ArrowRight' }))
-})
+<script setup lang="ts">
+import ChoiceJumpIndicator from './components/ChoiceJumpIndicator.vue'
+import ChooseNextSlideOverlay from './components/ChooseNextSlideOverlay.vue'
+import ChooseTheme from '../../theme/components/ChooseTheme.vue'
 </script>
 
 <template>
-  <div
-    class="absolute z-100 bottom-2 right-2 rounded-full border border-neutral-200 p-1 transition duration-300"
-    :class="{
-      'opacity-100': hasJumped,
-      'opacity-0': !hasJumped,
-    }"
-  >
-    <div class="i-ph-flow-arrow-light size-4 text-neutral-400" />
-  </div>
+  <ChooseTheme />
+  <ChooseNextSlideOverlay />
+  <ChoiceJumpIndicator />
 </template>

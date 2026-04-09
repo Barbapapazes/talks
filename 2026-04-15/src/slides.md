@@ -23,14 +23,9 @@ date: 15 avril 2026
 chooseYourOwnAdventure: true
 ready: true
 timing: 0.2
+chooseTheme:
+  questionId: 5
 ---
-
-<!--
-TODO: create talk on inalia.app
-TODO: merge and deploy the upvote questions on inalia.app
-TODO: finir les themes (mainly background and using a --at-apply could be easier)
-TODO: passer l'élément intéractif dans le global bottom
--->
 
 <!--
 À lire pour comprendre la construction de ce talk.
@@ -63,7 +58,8 @@ group: Introduction
 ready: true
 timing: 0.8
 layout: center-card
-img: /vite-background.png
+img:
+  default: /vite-background.png
 transition: slide-up
 ---
 
@@ -108,8 +104,12 @@ Et bin ça tombe bien, on va prendre le temps d'en parler
 ---
 name: Le thème des slides
 group: Pré-talk
+ready: true
 timing: 2.4
 layout: bottom-left-card
+img:
+  default: >-
+    https://images.unsplash.com/photo-1513346940221-6f673d962e97?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <div class="flex flex-col gap-2 text-2xl font-bold">
@@ -120,6 +120,10 @@ layout: bottom-left-card
     <span v-click="3">bundler</span> <span v-click="4" class="i-ph-arrow-right-bold inline-block forward:delay-100"></span> <span v-click="4" class="forward:delay-100">bundle</span>
   </div>
 </div>
+
+::outside::
+
+<ChooseThemeOverlay />
 
 <!--
 Je m'appelle Estéban, je suis ingénieur logiciel chez Takima.
@@ -176,9 +180,10 @@ C'est long. c'est trop long. [fast] et moi bah, j'ai que 45 minutes et j'ai vrai
 name: Le concentré du fonctionnement de Vite
 group: Vite Core
 ready: true
-timing: 0.7
+timing: 0.8
 layout: center-card
-img: /vite-background.png
+img:
+  default: /vite-background.png
 clicks: 5
 ---
 
@@ -210,7 +215,7 @@ Mais heuu, est-ce qu'on rendrait pas ça un peu plus visuel.
 name: Le fonctionnement de Vite - Visualisation
 group: Vite Core
 ready: true
-timing: 2.1
+timing: 2.3
 layout: full
 ---
 
@@ -240,12 +245,15 @@ Maiiis bref peut importe..., on investiguera ça plus tard.
 ---
 name: Tout n'est que plugin
 group: Feature Plugins
-timing: 1.9
+ready: true
+timing: 2
 layout: image
-img: /vite-background.png
+img:
+  default: /vite-background.png
+chooseNextSlide: true
+inalia:
+  questionId: 2
 ---
-
-<ChooseNextSlideOverlay />
 
 <AllAboutPlugins />
 
@@ -280,6 +288,8 @@ choices:
   - Une image chargée dans un fichier TypeScript
   - JSX chargé naturellement
 layout: choices
+inalia:
+  questionId: 2
 ---
 
 <!--
@@ -294,8 +304,13 @@ group: Feature Plugins
 ready: true
 timing: 0.6
 layout: bottom-left-card
-img: >-
-  https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1751780607021-5c9c036f8ad4?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1637166185518-058f5896a2e9?q=80&w=3520&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -324,8 +339,13 @@ ready: true
 timing: 0.9
 choices:
   - Vite et ses features - Récap
-img: >-
-  https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1751780607021-5c9c036f8ad4?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1637166185518-058f5896a2e9?q=80&w=3520&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -348,8 +368,13 @@ group: Feature Plugins
 ready: true
 timing: 0.6
 layout: bottom-left-card
-img: >-
-  https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1588421357574-87938a86fa28?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?q=80&w=2755&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -376,8 +401,13 @@ name: Une image chargée dans un fichier TypeScript - Visualisation
 group: Feature Plugins
 ready: true
 timing: 0.9
-img: >-
-  https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1588421357574-87938a86fa28?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?q=80&w=2755&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -403,8 +433,13 @@ timing: 0.3
 choices:
   - Vite et ses features - Récap
 layout: bottom-right-card
-img: >-
-  https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1588421357574-87938a86fa28?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?q=80&w=2755&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <AnImageLoadedIntoTypeScriptBuildTree />
@@ -419,8 +454,13 @@ group: Feature Plugins
 ready: true
 timing: 0.6
 layout: bottom-left-card
-img: >-
-  https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1561016444-14f747499547?q=80&w=3431&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1633182203832-76ede0337ca2?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -463,8 +503,13 @@ ready: true
 timing: 0.8
 choices:
   - Vite et ses features - Récap
-img: >-
-  https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1561016444-14f747499547?q=80&w=3431&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1633182203832-76ede0337ca2?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -488,6 +533,8 @@ name: Vite et ses features - Récap
 ready: true
 timing: 1.2
 layout: recap
+inalia:
+  emoji: false
 ---
 
 <RecapList
@@ -527,10 +574,15 @@ Trop bien ! [confetti] Troooop bien ! C'est qu'on commence à en savoir pleins d
 name: Les entrailles d'un plugin Vite - Common Hooks
 group: Inside a Plugin
 ready: true
-timing: 1.1
+timing: 1.2
 layout: bottom-left-card
-img: >-
-  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1476445704028-a36e0c798192?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -592,8 +644,13 @@ group: Inside a Plugin
 ready: true
 timing: 0.7
 layout: bottom-left-card
-img: >-
-  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1476445704028-a36e0c798192?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -628,8 +685,13 @@ group: Inside a Plugin
 ready: true
 timing: 0.9
 layout: bottom-left-card
-img: >-
-  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1476445704028-a36e0c798192?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -689,10 +751,15 @@ Rien du tout ! Ces 3 comportements sont parfaitement valides !
 name: transform
 group: Inside a Plugin
 ready: true
-timing: 0.5
+timing: 0.6
 layout: bottom-left-card
-img: >-
-  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1476445704028-a36e0c798192?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -737,7 +804,7 @@ Cas simple, on remplace tous les "foo" par des "bar".
 name: Plusieurs plugins
 group: Inside a Plugin
 ready: true
-timing: 0.3
+timing: 0.4
 layout: center
 ---
 
@@ -755,7 +822,7 @@ Bah, le mieux qu'on regarde ensemble ? On fait ça depuis la pipeline de Vite ?
 name: Les entrailles d'un plugin Vite - Visualisation
 group: Inside a Plugin
 ready: true
-timing: 1.7
+timing: 1.9
 class: p-0!
 ---
 
@@ -768,9 +835,9 @@ class: p-0!
 
 Pour chaque hook, le système va itérer sur chacun des plugins et nous, on va regarder [click] l'input et l'output de chaque plugin.
 
-ok, imaginons, on est une petit request pour le fichier App.vue.
+ok, imaginons, on est une petite request pour le fichier App.vue.
 
-On arrive ici. On rentre dans resolveId, on rencontre VuePlugin, en input, il a bien l'ID de notre fichier et en output, on renvoie cet ID. Du coup, Vite va complètement skip les autres plugins.
+On arrive ici. On rentre dans resolveId, on rencontre VuePlugin, en input, il a bien l'ID de notre fichier et en output, on renvoie ce même identifiant. Du coup, Vite va complètement skip les autres plugins.
 
 Ensuite, on arrive sur load où on va passer de l'identifiant du module à son contenu. VuePlugin load le fichier depuis le disque et CustomPlugin se fait skip, une fois de plus, le pauvre.
 
@@ -787,10 +854,17 @@ Ok, plus clair Estéban. Merci !
 name: Les entrailles d'un plugin Vite - Lifecycle Hooks
 group: Inside a Plugin
 ready: true
-timing: 1.2
+timing: 1.3
 layout: bottom-left-card
-img: >-
-  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  eighties: >-
+    https://images.unsplash.com/photo-1722851923372-0886f3aa5b25?q=80&w=1994&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1476445704028-a36e0c798192?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -879,10 +953,12 @@ Ensuite, [click] buildStart, appelé au moment où Vite démarre et [click] buil
 ---
 name: Concrètement ?
 group: Concrete Example
-timing: 0.1
+ready: true
+timing: 0.4
 layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1631106254201-ffbee2305c5b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  default: >-
+    https://images.unsplash.com/photo-1631106254201-ffbee2305c5b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <h2 class="text-4xl font-bold">Concrètement,<br>ça donne quoi ?</h2>
@@ -897,10 +973,15 @@ Qu'est-ce qu'on peut construire ? Parce que ben là, j'ai un peu l'impression qu
 name: Auto Import Plugin (unplugin-auto-import) - Exemple
 group: Concrete Example
 ready: true
-timing: 0.4
+timing: 0.5
 layout: bottom-left-card
-img: >-
-  https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1608249889684-e91ddbdd47cf?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -968,7 +1049,7 @@ Mais heu bref, on s'est perdu là... on s'égare.
 name: Auto Import Plugin (unplugin-auto-import) - Visualisation
 group: Concrete Example
 ready: true
-timing: 0.9
+timing: 1
 transition: slide-up
 ---
 
@@ -1017,8 +1098,13 @@ group: Concrete Example
 ready: true
 timing: 1
 layout: bottom-left-card
-img: >-
-  https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1608249889684-e91ddbdd47cf?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1070,9 +1156,14 @@ Précis, simple, rapide, efficace.
 ---
 name: Visualiser la pipeline
 ready: true
-timing: 1.2
-img: >-
-  https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+timing: 1.1
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2329&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1634834300387-8015d9fb7550?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -1099,8 +1190,10 @@ Heureusement pour nous, Anthony Fu l'a fait !
 ---
 name: Le plugin Vite - Récap
 ready: true
-timing: 1.3
+timing: 1.2
 layout: recap
+inalia:
+  emoji: false
 ---
 
 <RecapList
@@ -1139,7 +1232,7 @@ Génial ! [confetti] On commence à faire nos premiers plugins. Franchement, si 
 name: Un plugin pour virtualiser
 group: Virtualization
 ready: true
-timing: 1.5
+timing: 1.6
 ---
 
 <VirtualizationExplainedVisually />
@@ -1147,13 +1240,13 @@ timing: 1.5
 <!--
 [slow] Ce qu'on pourrait faire maintenant, c'est qu'on comprenne ça ensemble.
 
-[fast] Reprenons [click] notre visualisation, à gauche le navigateur, à droite les fichiers et au milieu, Vite, si on regarde main.ts, on y découvre un import vers 'virtual:my-module'. Pourtant c'est pas un fichier du projet, c'est pas non plus une dépendance [open package.json].
+[fast] Reprenons [click] notre visualisation, à gauche le navigateur, à droite les fichiers et au milieu, Vite, si on regarde main.ts, on y découvre un import vers 'virtual:my-module'. Pourtant [slow] c'est pas un fichier du projet, c'est pas non plus une dépendance [open package.json].
 
 [strange] Mais du coup, ça vient d'où ?
 
 [fast] Pour le savoir, on peut regarder les [click] logs du navigateur [click].
 
-index.html, main.ts avec hooo, il y a eu un changement dans le nom de l'import, et notre module qui semble être un fichier JavaScript, tout ce dont on a l'habitude.
+index.html, main.ts avec hooo, il y a eu un changement dans le nom de l'import, et notre module qui semble être un fichier JavaScript.
 
 [questioning] Vraiment, j'comprends pas d'où il vient ? Est-ce qu'il viendrait de Vite ? Et que Vite serait capable de répondre à des requests avec du code arbitraire, des modules qui n'existent pas, qui serait inventés, générés de toute pièce ?
 
@@ -1186,11 +1279,18 @@ On se plonge dedans ?
 name: Un plugin pour virtualiser - Plugin Internals
 group: Virtualization
 ready: true
-timing: 1.4
+timing: 1.3
 layout: bottom-center-card
-img: >-
-  https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1617957718587-60a442884bee?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1602917495378-afbaf25dc4fa?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
+inalia:
+  questionId: 3
 ---
 
 ````md magic-move
@@ -1238,10 +1338,6 @@ export default function myVirtualModulePlugin() {
 ```
 ````
 
-::outside::
-
-<ChooseNextSlideOverlay />
-
 <!--
 Dans la suite, on va rentrer en profondeur dans un example concret avec un plugin qui utilise cette technique là, tu peux déjà choisir lequel.
 
@@ -1260,14 +1356,19 @@ Le truc, beh, c'est que c'est un peu pénible à écrire à chaque fois, mais, h
 name: Un plugin pour virtualiser - Virtual Plugin
 group: Virtualization
 ready: true
-timing: 1.1
+timing: 0.9
 layout: bottom-center-card
-img: >-
-  https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: >-
+    https://images.unsplash.com/photo-1617957718587-60a442884bee?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1602917495378-afbaf25dc4fa?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
+inalia:
+  questionId: 3
 ---
-
-<!-- TOOD: keep <ChooseNextSlideOverlay /> -->
 
 ````md magic-move
 ```ts {6}{lines:true}
@@ -1318,7 +1419,7 @@ export default defineConfig({
 ````
 
 <!--
-Dans la suite, on va explorer un vrai plugin et vous avez la possibilité, pour de vrai, de choisir lequel.
+Dans la suite, on va explorer un vrai plugin et vous avez la possibilité, de choisir lequel.
 
 Pour utiliser le plugin, c'est super simple. On l'installe, et ensuite, ça s'utilise comme un dictionnaire.
 
@@ -1340,6 +1441,8 @@ choices:
   - Icons Plugin - Des icônes virtuelles
   - Infos Plugin - Des infos virtuelles
 layout: choices
+inalia:
+  questionId: 3
 ---
 
 <!--
@@ -1354,8 +1457,11 @@ group: Virtualization
 ready: true
 timing: 0.4
 layout: bottom-center-card
-img: >-
-  https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 transition: slide-up
 ---
 
@@ -1389,8 +1495,11 @@ timing: 0.7
 choices:
   - Les autres capacités des plugins
 layout: bottom-center-card
-img: >-
-  https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 ---
 
 ````md magic-move
@@ -1452,8 +1561,11 @@ group: Virtualization
 ready: true
 timing: 0.9
 layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 transition: slide-up
 ---
 
@@ -1497,8 +1609,11 @@ timing: 0.8
 choices:
   - Les autres capacités des plugins
 layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 ---
 
 ````md magic-move
@@ -1570,8 +1685,11 @@ group: Virtualization
 ready: true
 timing: 0.5
 layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 transition: slide-up
 ---
 
@@ -1605,8 +1723,11 @@ timing: 0.8
 choices:
   - Les autres capacités des plugins
 layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 ---
 
 ````md magic-move
@@ -1679,8 +1800,11 @@ group: Virtualization
 ready: true
 timing: 0.6
 layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 transition: slide-up
 ---
 
@@ -1709,8 +1833,11 @@ timing: 1.1
 choices:
   - Les autres capacités des plugins
 layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 ---
 
 ````md magic-move
@@ -1805,24 +1932,31 @@ Comme tous les plugins, tout commence par un objet avec [click] un nom.
 ---
 name: Les autres capacités des plugins
 group: Advanced Capabilities
-timing: 0.3
+ready: true
+timing: 0.7
 layout: image
-img: /vite-background.png
+img:
+  default: /vite-background.png
+chooseNextSlide: true
+inalia:
+  questionId: 4
 ---
 
-<!-- TODO: add to global bottom and configure it using frontmatter -->
-<ChooseNextSlideOverlay />
+<OtherCapabilities />
 
 <!--
-TODO: inviter les gens à voter avant de présenter les choix en parlant de tout ce qu'il est possible de faire (tous les expliquer et en présenter uniquement un en détail par la suite)
+On a vu différents hooks, pour agir sur les modules, se brancher sur le cycle de vie de Vite, on a vu la virtualisation, un petit example. Ce que je vous propose, c'est qu'on se plonge concrètement dans les diverses capacités des plugins.
+
+Ça m'fait penser, on va explorer l'une d'entre elles en profondeur, et vous avez la possibilité de choisir laquelle. [show qr code]
+
+TODO: explain the different plugin capabilities
 -->
 
 ---
 name: Les autres capacités des plugins - Choices
 group: Advanced Capabilities
 ready: true
-timing: 0.2
-layout: choices
+timing: 0.1
 choices:
   - Le Hot Module Replacement (HMR)
   - Le middleware - Un fichier virtuel
@@ -1830,7 +1964,11 @@ choices:
   - Laravel Vite - La communication inter-processus
   - unplugin-macro - Un plugin pour créer des macros
   - Nitro - Un backend
+layout: choices
+inalia:
+  questionId: 4
 ---
+
 
 <!--
 Ok, excellent choix, explorons ça !
@@ -1840,9 +1978,12 @@ Ok, excellent choix, explorons ça !
 name: Le Hot Module Replacement (HMR)
 group: Advanced Capabilities
 ready: true
-timing: 1.1
-img: >-
-  https://images.unsplash.com/photo-1559762691-617a33825bc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+timing: 0.5
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1559762691-617a33825bc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 transition: slide-up
 ---
 
@@ -1859,37 +2000,66 @@ Pour notifier le client, une connexion websocket est crée entre Vite et le brow
 ---
 name: Le Hot Module Replacement (HMR) - Plugins Internals
 group: Advanced Capabilities
-timing: 0.9
+ready: true
+timing: 0.6
 choices:
   - Récap des récap
 ---
 
-<!--
-TODO: code
--->
+````md magic-move
+```ts {3}{lines:true}
+export default function myHmrPlugin() {
+  return {
+    name: 'my-hmr-plugin',
+  }
+}
+```
+```ts {4}{lines:true}
+export default function myHmrPlugin() {
+  return {
+    name: 'my-hmr-plugin',
+    handleHotUpdate(ctx) {},
+  }
+}
+```
+```ts {5-11}{lines:true}
+export default function myHmrPlugin() {
+  return {
+    name: 'my-hmr-plugin',
+    handleHotUpdate(ctx) {
+      const { file, server, modules } = ctx
+      if (file.endsWith('.myext')) {
+        const mod = server.moduleGraph.getModuleById(file)
+        if (mod) {
+          server.moduleGraph.invalidateModule(mod)
+        }
+      }
+    },
+  }
+}
+````
 
 <!--
-TODO: text
--->
+Tout commence par un plugin, avec un petit nom. Il est tout mignon.
 
-<!--
-Sous le capot, tout ça repose sur quelques hooks très pratiques.
+Ensuite, [click] pour jouer avec le HMR dans un plugin, on peut utiliser le hook handleHotUpdate.
 
-Le plus connu, c'est `handleHotUpdate`, qui permet à un plugin d'intercepter une modification de fichier et de décider quoi faire : invalider des modules, en renvoyer d'autres, ou même déclencher un rechargement complet si nécessaire.
-
-Autrement dit, le HMR n'est pas une magie réservée au cœur de Vite. Les plugins peuvent eux aussi participer à la stratégie de mise à jour, et c'est ce qui permet d'avoir un HMR intelligent même pour des formats exotiques ou des modules virtuels.
+[click] Il va nous permettre d'intercepter les modifications des fichiers et de décider quoi faire : invalider des modules, en renvoyer d'autres, ou même déclencher un rechargement complet si nécessaire.
 -->
 
 ---
 name: Le middleware - Un fichier virtuel
 group: Advanced Capabilities
 ready: true
-timing: 1.3
-layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1721052921257-f1ec18f80e0f?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+timing: 0.7
 choices:
   - Récap des récap
+layout: center-card
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1721052921257-f1ec18f80e0f?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 ---
 
 ````md magic-move
@@ -1954,11 +2124,14 @@ D'ailleurs, [click] c'est cette technique qu'utilise vite-plugin-inspect pour se
 ---
 name: Run Plugin - Un plugin pour exécuter des commandes
 group: Advanced Capabilities
-timing: 1.6
 ready: true
-img: >-
-  https://images.unsplash.com/photo-1714548213572-7943d5fd3528?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+timing: 1
 layout: bottom-center-card
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1714548213572-7943d5fd3528?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 transition: slide-up
 ---
 
@@ -2012,13 +2185,16 @@ On lui donne un petit nom, parce que, bah, c'est toujours plus sympa, puis on lu
 ---
 name: Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals
 group: Advanced Capabilities
-timing: 0.3
 ready: true
-img: >-
-  https://images.unsplash.com/photo-1714548213572-7943d5fd3528?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+timing: 0.4
 choices:
   - Récap des récap
 layout: bottom-center-card
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1714548213572-7943d5fd3528?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 ---
 
 ````md magic-move
@@ -2064,7 +2240,7 @@ Sous la capot, ça utilise le hook handleHotUpdate. [click] À chaque fois qu'un
 name: Laravel Vite - La communication inter-processus
 group: Advanced Capabilities
 ready: true
-timing: 0.7
+timing: 0.4
 transition: slide-up
 ---
 
@@ -2081,21 +2257,56 @@ Mais du coup, comment est-ce que Laravel connaît l'adresse de Vite ?
 ---
 name: Laravel Vite - La communication inter-processus - Plugin Internals
 group: Advanced Capabilities
-timing: 0.7
+ready: true
+timing: 0.6
 choices:
   - Récap des récap
 layout: bottom-center-card
-img: >-
-  https://images.unsplash.com/photo-1662237693451-b484fb67c8dc?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1662237693451-b484fb67c8dc?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 ---
 
 ````md magic-move
-```ts {*}{lines:true}
+```ts {2-4}{lines:true}
+export default function laravel() {
+  return {
+    name: 'vite-plugin-laravel',
+  }
+}
+```
+```ts {7-9}{lines:true}
+export default function laravel() {
+  return {
+    name: 'vite-plugin-laravel',
+    configureServer(server) {
+      server.httpServer?.once('listening', () => { })
+    }
+  }
+}
+```
+```ts {6-8}{lines:true}
+export default function laravel() {
+  return {
+    name: 'vite-plugin-laravel',
+    configureServer(server) {
+      server.httpServer?.once('listening', () => {
+        const address = server.httpServer?.address()
+        if (isAddressInfo(address)) {
+          const viteDevServerUrl = resolveDevServerUrl(address, server.config)
+        }
+      })
+    }
+  }
+}
+```
+```ts {12}{lines:true}
 import fs from 'node:fs'
-import { ResolvedConfig } from 'vite'
 
 export default function laravel() {
-  return [{
+  return {
     name: 'vite-plugin-laravel',
     configureServer(server) {
       server.httpServer?.once('listening', () => {
@@ -2107,30 +2318,32 @@ export default function laravel() {
         }
       })
     }
-  }]
+  }
 }
 ```
 ````
 
 <!--
-TODO: text
--->
+Tout commence par un plugin, avec un petit nom. Il est tout mignon.
 
-<!--
-Dans son plugin, Laravel demande à Vite d'écrire un fichier `hot` dans le dossier `public` avec l'adresse du serveur Vite.
+Ensuite, [click] on ajoute un callback qui se déclenche au moment où Vite comment à écouter des requêtes.
 
-Laravel peut alors lire le fichier `hot` et générer les bonnes URLs pour les assets. Malin !
+[click] Ça nous permet de récupérer l'adresse du serveur, [click] pour l'écrire dans un fichier.
 
-Plus concrètement, un plugin comme `vite-plugin-laravel` va se servir du hook `configureServer` pour récupérer toutes les informations dont il a besoin et écrire le fichier dès lors que le serveur accepte des requêtes.
+Laravel viendra le lire pour ajuster le path vers les assets.
 -->
 
 ---
 name: unplugin-macro - Un plugin pour créer des macros
 group: Advanced Capabilities
-timing: 1
+ready: true
+timing: 0.4
 layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1760224254103-3dcc15e4ad9d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1760224254103-3dcc15e4ad9d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 transition: slide-up
 ---
 
@@ -2148,30 +2361,52 @@ getRandom()
 buildTime
 ```
 
-<!-- TODO: text -->
-
 <!--
-Les macros en JavaScript, ça n'existe pas. Mais en C, c'est répandu, et ça permet de remplacer un morceau de texte par un autre au moment de la compilation.
+Une macro c'est un morceau de code qui est exécuté au moment de la compilation pour être remplacé par son résultat.
 
-`unplugin-macro` réintroduit ce système. En haut, vous avez vos macros : la première nous donne un nombre aléatoire et la seconde une date. En dessous, on vient importer ces deux fonctions avec un attribut sur l'`import`.
-
-Au build time, ces deux fonctions vont être détectées, exécutées et remplacées par la valeur correspondante. Autrement dit, à chaque fois que vous allez recharger votre application, vous aurez toujours la même valeur.
+En JavaScript, ça n'existe pas mais c'est un comportement que l'on peut reproduire avec un plugin Vite.
 -->
 
 ---
 name: unplugin-macro - Un plugin pour créer des macros - Plugin Internals
 group: Advanced Capabilities
-timing: 0.6
+ready: true
+timing: 0.5
 choices:
   - Récap des récap
 layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1760224254103-3dcc15e4ad9d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1760224254103-3dcc15e4ad9d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 ---
 
-<!-- TODO: simplify -->
+````md magic-move
+```ts {5-7}{lines:true}
+import { defineConfig } from 'vite'
 
-```ts {*}{lines:true}
+export default defineConfig({
+  plugins: [
+    {
+      name: 'unplugin-macro',
+    }
+  ]
+})
+```
+```ts {7}{lines:true}
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    {
+      name: 'macro',
+      async transform(code, id) {}
+    }
+  ]
+})
+```
+```ts {9-10}{lines:true}
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -2181,13 +2416,25 @@ export default defineConfig({
       async transform(code, id) {
         if (id.endsWith('.ts')) {
           const program = babelParse(code)
-          const macroExports = findMacroExports(program)
+          const macros = collectMacro(program)
+        }
+      }
+    }
+  ]
+})
+```
+```ts {12-15}{lines:true}
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    {
+      name: 'macro',
+      async transform(code, id) {
+        if (id.endsWith('.ts')) {
+          const program = babelParse(code)
           const macros = collectMacro(program)
 
-          for (macroExport of macroExports) {
-            const result = await executeMacroExport(macroExport)
-            code = replaceMacroExportWithResult(code, macroExport, result)
-          }
           for (macro of macros) {
             const result = await executeMacro(macro)
             code = replaceMacroWithResult(code, macro, result)
@@ -2200,20 +2447,21 @@ export default defineConfig({
   ]
 })
 ```
-
-<!-- TODO: text -->
+````
 
 <!--
-Plus concrètement, le plugin `unplugin-macro` va utiliser le hook `transform` pour trouver les macros, via un parcours de l'AST du code source et la balise `with { type: 'macro' }`, puis les exécuter pour les remplacer par le résultat.
+Tout commence par un plugin, avec un petit nom.
 
-C'est un plugin relativement complexe, mais qui démontre que ce système permet vraiment de tout faire.
+Ensuite, [click] on utilise le hook transform pour récupérer le code du module. [click] On le parse, on cherche les macros et pour chacune d'elles, [click] on l'exécute et on remplace son code par le résultat de son exécution.
+
+Pas mal non ?!
 -->
 
 ---
 name: Nitro - Un backend
 group: Advanced Capabilities
 ready: true
-timing: 0
+timing: 0.3
 layout: center
 ---
 
@@ -2229,7 +2477,7 @@ Du coup, beh, y'en a qui c'sont dit, et pourquoi ça pourrait pas aussi faire du
 name: Nitro - Un backend - Visualisation
 group: Advanced Capabilities
 ready: true
-timing: 0.6
+timing: 0.4
 ---
 
 <NitroABackend class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -2244,12 +2492,15 @@ Pas mal non ?
 name: Nitro - Un backend - Plugin Internals
 group: Advanced Capabilities
 ready: true
-timing: 0.3
-img: >-
-  https://images.unsplash.com/photo-1698044047367-17eb43a7fd34?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-layout: bottom-center-card
+timing: 0.5
 choices:
   - Récap des récap
+layout: bottom-center-card
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1698044047367-17eb43a7fd34?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 ---
 
 ````md magic-move
@@ -2296,8 +2547,10 @@ C'est une technique tellement élégante pour ajouter un backend, c'est chouette
 ---
 name: Récap des récap
 ready: true
-timing: 0
+timing: 1.3
 layout: recap
+inalia:
+  emoji: false
 ---
 
 <RecapList
@@ -2338,8 +2591,11 @@ group: Deep Dive
 ready: true
 timing: 1.5
 layout: bottom-left-card
-img: >-
-  https://images.unsplash.com/photo-1553356126-71d9da2295e2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img:
+  brutaliste: null
+  default: >-
+    https://images.unsplash.com/photo-1553356126-71d9da2295e2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: null
 ---
 
 ````md magic-move
@@ -2456,25 +2712,6 @@ export default defineConfig({
 [enthusiastic] Second truc !
 
 [fast] [click] Vite exécute tous les hooks les un après les autres. Si vous ne voulez pas que votre plugin intervienne dans une étape, le filtrage se fait [click] dans le hook mais votre hook est quand même exécuté. Ça pose problème avec Rolldown à cause de l'overhead entre Rust et Node.js. Pour contourner ça, on peut extraire [click] les filtres et notre hook n'est appelé que s'ils matchent.
--->
-
----
-name: Conclusion
-timing: 0.2
-layout: conclusion
----
-
-<!-- TODO: juste une punch finale, ce que les gens doivent retenir -->
-
-<!-- TODO: aucune limite et transformation entre les fichiers et le navigateur et même, certains des fichiers peuvent être virtuels. -->
-
-<!--
-[enthusiastic] Beh voilà ! 45 minutes de pure concentré de Vite et vous voilà prêt à construire vos propres plugins.
-
-TODO: model mental de ce qu'il faut keep in mind
-
-Trop chouette ! [confetti] Trop trop chouette !
-
 -->
 
 ---

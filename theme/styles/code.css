@@ -1,32 +1,59 @@
 
-/** Reset */
+/** Theme-aware Shiki mapping */
 
-html.dark .shiki {
-  @apply bg-transparent rounded-none!;
+.theme-root .shiki {
+  background-color: var(--slidev-code-background);
+}
+
+.theme-root[data-slide-theme='default'] .shiki span {
+  color: var(--shiki-default);
+}
+
+.theme-root[data-slide-theme='brutaliste'] .shiki span {
+  color: var(--shiki-brutaliste);
+}
+
+.theme-root[data-slide-theme='eighties'] .shiki span {
+  color: var(--shiki-eighties);
+}
+
+.theme-root[data-slide-theme='futuristic'] .shiki span {
+  color: var(--shiki-futuristic);
+}
+
+.theme-root[data-slide-theme='space'] .shiki span {
+  color: var(--shiki-space);
 }
 
 /** Code Blocks */
 
-.slidev-code {
-  @apply p-4!
+.theme-root .slidev-code.shiki {
+  @apply p-4!;
+  margin: 0;
 }
 
-.slidev-code-block-title {
-  @apply bg-neutral-800 rounded-lg divide-y divide-neutral-600
+.theme-root .slidev-code code {
+  background: transparent !important;
 }
 
-.slidev-code-block-title + .slidev-code-block-title {
-  @apply mt-8
+
+.theme-root .slidev-code-block-title {
+  @apply divide-y;
+  margin: 0;
 }
 
-.slidev-code-block-title-bar {
-  @apply px-4 py-2 flex items-center gap-2
+.theme-root .slidev-code-block-title + .slidev-code-block-title {
+  @apply mt-8;
 }
 
-.slidev-code-block-title-icon {
-  @apply inline-block size-3
+.theme-root .slidev-code-block-title-bar {
+  @apply px-4 py-2 flex items-center gap-2;
 }
 
-.slidev-code-block-title-text {
-  @apply text-neutral-400 text-xs
+.theme-root .slidev-code-block-title-icon {
+  @apply inline-block size-3;
+}
+
+.theme-root .slidev-code-block-title-text {
+  @apply text-xs;
 }

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Pipeline from './Pipeline/Pipeline.vue'
 import AppVue from 'virtual:vite-file-system:App:vue'
 import AppVueTransformed from 'virtual:vite-transformed-file:App:ts'
+import Pipeline from './Pipeline/Pipeline.vue'
 
 const plugins = [
   {

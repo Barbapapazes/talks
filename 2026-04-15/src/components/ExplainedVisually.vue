@@ -53,7 +53,7 @@ const props = withDefaults(defineProps<{
 })
 
 defineSlots<{
-  'server'?: () => any
+  server?: () => any
 }>()
 
 function findFileByTitle(

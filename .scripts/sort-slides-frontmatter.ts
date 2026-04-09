@@ -70,7 +70,7 @@ function serializeFrontmatterLines(frontmatter: Frontmatter, compareKeys = compa
     return []
 
   const serialized = matter.stringify('', sortKeysDeep(frontmatter, compareKeys)).replace(/\r\n/g, '\n')
-  const match = serialized.match(/^---\n([\s\S]*?)\n---(?:\n*)$/)
+  const match = serialized.match(/^---\n([\s\S]*?)\n---\n*$/)
 
   if (!match)
     throw new Error('Unable to serialize frontmatter')

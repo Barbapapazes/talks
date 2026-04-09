@@ -87,3 +87,11 @@ export const technologies = [
   //   href: 'https://unjs.io',
   // },
 ]
+
+export const SUPPORTED_SLIDE_THEMES = [
+  'default',
+  'brutaliste',
+  'eighties',
+  'futuristic',
+  'space',
+] as const

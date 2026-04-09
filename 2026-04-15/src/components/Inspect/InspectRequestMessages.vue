@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { WebSocketMessage } from '../../types/network-tab'
-import { computed, defineComponent, markRaw } from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps<{
   messages: WebSocketMessage[]

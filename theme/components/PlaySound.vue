@@ -94,8 +94,9 @@ watch(() => props.path, (path, _, onCleanup) => {
 }, { immediate: true })
 
 watch(isActive, (active) => {
-  if (active)
+  if (active) {
     addEnterListener()
+  }
   else {
     removeEnterListener()
     stopAudio()

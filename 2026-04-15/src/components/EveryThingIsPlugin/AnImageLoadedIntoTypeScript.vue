@@ -1,9 +1,9 @@
 <script lang="ts" setup>
+import type { Request } from '../../types/network-tab'
 import imagePng from 'virtual:vite-transformed-file:image:ts'
 import indexHtml from 'virtual:vite-transformed-file:index:html'
 import mainTs from 'virtual:vite-transformed-file:main-image:ts'
 import Inspect from '../Inspect/Inspect.vue'
-import type { Request } from '../../types/network-tab'
 
 const requests: Request[] = [
   {
@@ -31,7 +31,7 @@ const requests: Request[] = [
     waterfallStart: 32,
     time: 12,
     response: imagePng,
-  }
+  },
 ]
 </script>
 

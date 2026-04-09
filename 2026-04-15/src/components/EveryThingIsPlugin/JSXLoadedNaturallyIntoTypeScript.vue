@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import indexHtml from 'virtual:vite-transformed-file:index-jsx:html'
-import mainTs from 'virtual:vite-transformed-file:main:jsx'
-import itemTs from 'virtual:vite-transformed-file:item:jsx'
-import Inspect from '../Inspect/Inspect.vue'
 import type { Request } from '../../types/network-tab'
+import indexHtml from 'virtual:vite-transformed-file:index-jsx:html'
+import itemTs from 'virtual:vite-transformed-file:item:jsx'
+import mainTs from 'virtual:vite-transformed-file:main:jsx'
+import Inspect from '../Inspect/Inspect.vue'
 
 const requests: Request[] = [
   {

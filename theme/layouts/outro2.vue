@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import { useSlideContext } from '@slidev/client'
+import { computed } from 'vue'
 import Feedback from '../components/Feedback.vue'
 import Fireworks from '../components/Fireworks.vue'
 import Footer from '../components/Footer.vue'
 import FooterLink from '../components/FooterLink.vue'
+import ThemeRoot from '../components/ThemeRoot.vue'
 import { socials, talks, website } from '../contants'
-import { computed } from 'vue'
+
 const links = [website, talks, ...socials]
 
 const { $frontmatter, $slidev } = useSlideContext()
@@ -16,20 +18,20 @@ const date = computed(() => ($slidev.configs as any).date)
 </script>
 
 <template>
-  <div class="relative h-full overflow-hidden slidev-layout outro2">
+  <ThemeRoot class="relative h-full overflow-hidden slidev-layout outro2">
     <Fireworks />
 
     <div class="z-10 my-auto flex justify-center">
       <div class="flex flex-col gap-2">
-        <span class="font-light text-neutral-700"> C'était </span>
+        <span class="theme-muted-text font-light"> C'était </span>
         <span class="text-2xl font-semibold">{{ title }}</span>
         <div class="flex flex-row items-center gap-2">
-          <span class="font-light text-neutral-700">Pour</span>
+          <span class="theme-muted-text font-light">Pour</span>
           <span class="font-medium">{{ event }}</span>
-          <span class="font-light text-neutral-700">({{ date }})</span>
+          <span class="theme-muted-text font-light">({{ date }})</span>
         </div>
         <div class="flex flex-row items-center gap-2">
-          <span class="font-light text-neutral-700">Présenté par</span>
+          <span class="theme-muted-text font-light">Présenté par</span>
           <div class="flex flex-row items-center gap-2">
             <img src="https://github.com/barbapapazes.png" class="size-6 rounded-full">
             <span class="text-xl">Estéban Soubiran</span>
@@ -37,13 +39,11 @@ const date = computed(() => ($slidev.configs as any).date)
         </div>
       </div>
 
-
       <Feedback
         v-if="$frontmatter.feedback !== false"
         enable-placeholder
         class="absolute left-1/2 -translate-x-1/2 bottom-1/6"
       />
-
 
       <Footer class="flex flex-row gap-2">
         <FooterLink
@@ -56,5 +56,5 @@ const date = computed(() => ($slidev.configs as any).date)
         />
       </Footer>
     </div>
-  </div>
+  </ThemeRoot>
 </template>

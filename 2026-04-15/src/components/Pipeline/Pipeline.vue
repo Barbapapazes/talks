@@ -252,19 +252,23 @@ function onPluginClick(hookName: string, pluginName: string) {
 
     <div v-click class="w-1/2 h-full flex flex-col gap-4 p-4">
       <div class="grow max-h-[calc(50%-0.5rem)] flex flex-col border border-neutral-200 rounded-md flex flex-col overflow-hidden">
-        <div class="font-semibold text-sm text-neutral-500 p-2"> input </div>
-         <div
+        <div class="font-semibold text-sm text-neutral-500 p-2">
+          input
+        </div>
+        <div
           v-if="selectedPlugin && selectedPlugin.input"
-          v-html="selectedPlugin.input"
           class="min-h-0 overflow-auto p-2"
+          v-html="selectedPlugin.input"
         />
       </div>
       <div class="grow max-h-[calc(50%-0.5rem)] flex flex-col border border-neutral-200 rounded-md flex flex-col overflow-hidden">
-        <div class="p-2 font-semibold text-sm text-neutral-500"> output </div>
+        <div class="p-2 font-semibold text-sm text-neutral-500">
+          output
+        </div>
         <div
           v-if="selectedPlugin && selectedPlugin.output"
-          v-html="selectedPlugin.output"
           class="min-h-0 overflow-auto p-2"
+          v-html="selectedPlugin.output"
         />
       </div>
     </div>

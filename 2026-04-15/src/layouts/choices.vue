@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useNav, useSlideContext } from '@slidev/client'
-import { computed } from 'vue'
+import { useInaliaQuestion } from 'slidev-addon-inalia'
+import { computed, watchEffect } from 'vue'
 
 interface ChoicesProps {
   img?: string
@@ -10,33 +11,100 @@ const props = defineProps<ChoicesProps>()
 const { $frontmatter } = useSlideContext()
 const { slides, go } = useNav()
 
-const choices = computed(() => {
-  return slides.value.filter(slide => $frontmatter.choices.includes(slide.meta.name))
+const questionId = computed(() => $frontmatter.inalia?.questionId)
+const { question, data } = useInaliaQuestion(questionId, {
+  staticContent: {
+    question: undefined,
+    type: $frontmatter.type,
+    chart: undefined,
+    data: $frontmatter.data,
+  },
 })
 
-const columns = computed(() => {
-  return choices.value.length === 3 ? 3 : 2
+watchEffect(() => {
+  if (!question.value) {
+    return
+  }
+
+  if (question.value.type !== 'single_select') {
+    throw new Error(`Unsupported question type "${question.value.type}". Only "single_select" is supported.`)
+  }
+
+  for (const choice of question.value.options.choices) {
+    const matchingSlide = slides.value.find(slide => slide.meta?.name === choice.text)
+    if (!matchingSlide) {
+      throw new Error(`Choice "${choice.text}" does not match any slide name.`)
+    }
+  }
+})
+
+const choices = computed(() => slides.value.filter(slide => $frontmatter.choices.includes(slide.meta.name)))
+// TODO: export SelectData
+const total = computed(() => data.value.reduce((sum: number, entry: any) => sum + entry.count, 0))
+const enhancedChoices = computed(() => {
+  return choices.value.map((choice) => {
+    // TODO: export SelectData
+    const entry = data.value.find((entry: any) => entry.label === choice.meta.name) as any | undefined
+    const count = entry ? entry.count : 0
+    const percentage = total.value > 0 ? (count / total.value) * 100 : 0
+    const color = entry ? entry.color : undefined
+
+    return {
+      color,
+      count,
+      fillStyle: {
+        backgroundColor: color,
+        opacity: percentage > 0 ? Math.min(0.18 + percentage / 100 * 0.4, 0.58) : 0,
+        width: `${percentage}%`,
+      },
+      percentage,
+      percentageLabel: `${Math.round(percentage)}%`,
+      slide: choice,
+      total,
+    }
+  })
+})
+
+const cols = computed(() => {
+  return choices.value.length === 3 ? 1 : 2
 })
 
 const gridStyle = computed(() => {
   return {
-    gridTemplateColumns: `repeat(${columns.value}, minmax(0, 1fr))`,
+    gridTemplateColumns: `repeat(${cols.value}, minmax(0, 1fr))`,
   }
 })
 </script>
 
 <template>
-  <div class="h-full slidev-layout grid gap-4 items-center choices" :style="gridStyle">
-    <!-- TODO: create a dedicated component in the theme -->
-    <img v-if="props.img" :src="props.img" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
+  <ThemeRoot class="h-full slidev-layout grid gap-4 items-center justify-center choices" :style="gridStyle">
+    <BackgroundImage :img="$frontmatter.img ?? props.img" :img-class="$frontmatter.imgClass" class="-z-1" />
+    <Card v-for="choice in enhancedChoices" :key="choice.slide.meta.name" class="relative isolate overflow-hidden">
+      <div class="pointer-events-none absolute inset-y-0 left-0 transition-all duration-300 ease-out" :style="choice.fillStyle" />
 
-    <!-- TODO: show the Inalia QR code -->
+      <div class="relative z-10 flex h-full items-center justify-between gap-6">
+        <div class="min-w-0">
+          <div class="font-bold text-xl text-neutral-700">
+            {{ choice.slide.meta.name }}
+          </div>
 
-    <Card v-for="slide in choices" :key="slide.meta.name" class="relative">
-      {{ slide.meta.name }}
+          <div class="mt-2 text-sm text-neutral-500">
+            {{ choice.count }} / {{ choice.total }} · {{ choice.percentageLabel }}
+          </div>
+        </div>
 
-      <!-- TODO: add a description in each slide's frontmatter and display it here -->
-      <button class="absolute inset-0" @click="go(slide.no)" />
+        <div class="shrink-0 text-right text-neutral-700">
+          <div class="text-4xl font-black tabular-nums">
+            {{ choice.count }}
+          </div>
+
+          <div class="text-xs tracking-wide uppercase text-neutral-500">
+            votes
+          </div>
+        </div>
+      </div>
+
+      <button class="absolute inset-0 z-20" :aria-label="`Go to ${choice.slide.meta.name}`" @click="go(choice.slide.no)" />
     </Card>
-  </div>
+  </ThemeRoot>
 </template>
