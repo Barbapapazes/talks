@@ -20,4 +20,4 @@ jobs:
             -H "Content-Type: application/json" \
             -H "CF-Access-Client-Id: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_ID }}" \
             -H "CF-Access-Client-Secret: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_SECRET }}" \
-            -d '{}'
+            -d '{ "url": "${{ secrets.REDEPLOY_URL }}" }'
