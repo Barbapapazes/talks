@@ -39,6 +39,9 @@ watchDeep(data, () => {
   if (entry) {
     document.documentElement.setAttribute('data-theme', entry.label) // TODO: migrate to the composable
     setCurrentTheme(entry.label)
+  } else {
+    document.documentElement.setAttribute('data-theme', 'default')
+    setCurrentTheme(undefined)
   }
 }, { immediate: true })
 </script>

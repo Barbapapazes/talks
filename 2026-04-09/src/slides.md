@@ -9,7 +9,6 @@ fonts:
 themeConfig:
   primary: "#6C1EB9"
 codeCopy: false
-colorSchema: light
 transition: fade-out
 theme: slidev-theme-personal
 addons:
@@ -23,8 +22,6 @@ date: 09 avril 2026
 chooseYourOwnAdventure: true
 ready: true
 timing: 0.2
-chooseTheme:
-  questionId: 5
 ---
 
 <!--
@@ -251,8 +248,6 @@ layout: image
 img:
   default: /vite-background.png
 chooseNextSlide: true
-inalia:
-  questionId: 2
 ---
 
 <AllAboutPlugins />
@@ -289,7 +284,19 @@ choices:
   - JSX chargé naturellement
 layout: choices
 inalia:
-  questionId: 2
+  question: "Tout n'est que plugin"
+  type: "single_select"
+  chart: "bar"
+  data:
+    - label: "Du CSS importé dans un fichier TypeScript"
+      count: 1
+      color: "#a855f7"
+    - label: "Une image chargée dans un fichier TypeScript"
+      count: 1
+      color: "#F1D440"
+    - label: "JSX chargé naturellement"
+      count: 1
+      color: "#61EBF4"
 ---
 
 <!--
@@ -1287,8 +1294,6 @@ img:
   futuristic: >-
     https://images.unsplash.com/photo-1602917495378-afbaf25dc4fa?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
-inalia:
-  questionId: 3
 ---
 
 ````md magic-move
@@ -1364,8 +1369,6 @@ img:
   futuristic: >-
     https://images.unsplash.com/photo-1602917495378-afbaf25dc4fa?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
-inalia:
-  questionId: 3
 ---
 
 ````md magic-move
@@ -1440,7 +1443,22 @@ choices:
   - Infos Plugin - Des infos virtuelles
 layout: choices
 inalia:
-  questionId: 3
+  question: "Quel plugin pour virtualiser voulez-vous explorer ?"
+  type: "single_select"
+  chart: "bar"
+  data:
+    - label: "Vue Router - Un module virtuel"
+      count: 0
+      color: "#a855f7"
+    - label: "VitePress - Des data virtuels"
+      count: 0
+      color: "#a855f7"
+    - label: "Icons Plugin - Des icônes virtuelles"
+      count: 3
+      color: "#a855f7"
+    - label: "Infos Plugin - Des infos virtuelles"
+      count: 0
+      color: "#a855f7"
 ---
 
 <!--
@@ -1936,8 +1954,6 @@ layout: image
 img:
   default: /vite-background.png
 chooseNextSlide: true
-inalia:
-  questionId: 4
 ---
 
 <OtherCapabilities />
@@ -1964,9 +1980,29 @@ choices:
   - Nitro - Un backend
 layout: choices
 inalia:
-  questionId: 4
+  question: "Quelle capacité de plugin voulez-vous explorer ?"
+  type: "single_select"
+  chart: "bar"
+  data:
+    - label: "Le Hot Module Replacement (HMR)"
+      count: 1
+      color: "#a855f7"
+    - label: "Le middleware - Un fichier virtuel"
+      count: 1
+      color: "#a855f7"
+    - label: "Run Plugin - Un plugin pour exécuter des commandes"
+      count: 1
+      color: "#a855f7"
+    - label: "Laravel Vite - La communication inter-processus"
+      count: 0
+      color: "#a855f7"
+    - label: "unplugin-macro - Un plugin pour créer des macros"
+      count: 0
+      color: "#a855f7"
+    - label: "Nitro - Un backend"
+      count: 2
+      color: "#a855f7"
 ---
-
 
 <!--
 Ok, excellent choix, explorons ça !

@@ -18,7 +18,7 @@ defineSlots<FooterItemSlots>()
 <template>
   <Primitive
     :as="props.as"
-    class="theme-footer-item font-light text-[0.875rem]"
+    class="font-light text-[0.875rem] text-neutral-400 dark:text-neutral-600 flex gap-1"
   >
     <slot>
       <span>{{ props.text }}</span>

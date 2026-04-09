@@ -1,15 +1,14 @@
 h1 {
-  font-size: 1.75rem;
-  font-weight: 700!important;
-  color: var(--talk-heading-color);
+  --at-apply: text-neutral-950 text-[1.75rem];
+  font-weight: bold!important;
 }
 
-h1 + :is(p, ul, ol) {
+h1+ :is(p, ul, ol) {
   --at-apply: mt-4;
 }
 
 :is(p, ul, ol) {
-  color: var(--talk-text-color);
+  --at-apply: text-neutral-700;
 }
 
 ul:not(:where(.not-content, .not-content *)) {
@@ -21,13 +20,19 @@ ol:not(:where(.not-content, .not-content *)) {
 }
 
 a:not(:where(footer, footer *)) {
-  --at-apply: font-semibold border-b transition-colors duration-300 ease-out;
-  color: var(--talk-link-color);
-  border-bottom-color: var(--talk-link-border);
+  --at-apply: font-semibold border-b border-b-neutral-200 transition-colors duration-300 ease-out hover:border-b-neutral-400
 }
 
-a:not(:where(footer, footer *)):hover {
-  border-bottom-color: var(--talk-link-border-hover);
+.dark h1 {
+  --at-apply: text-neutral-200;
+}
+
+.dark :is(p, ul, ol) {
+  --at-apply: text-neutral-400;
+}
+
+.dark a:not(:where(footer, footer *)) {
+  --at-apply: border-b-neutral-700 hover:border-b-neutral-500;
 }
 
 /* Because the `presetIcons` does not works, https: //github.com/slidevjs/slidev/issues/2054 */

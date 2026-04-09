@@ -6,6 +6,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 ### 2026
 
+- `fr` [Au cœur d’une pipeline : démystifions Vite et ses plugins](./2026-04-16) - MiXiT
+- `fr` [Au cœur d’une pipeline : démystifions Vite et ses plugins](./2026-04-09) - L'Atelier
 - `fr` [Inertia: Un Anneau pour les gouverner tous.](./2026-01-22) - Vue.js Paris
 
 ### 2025
@@ -47,6 +49,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 <summary>Copy talks list as text</summary>
 
 ```
+2026-04-16 - Au cœur d’une pipeline : démystifions Vite et ses plugins - MiXiT - Lyon, France
+2026-04-09 - Au cœur d’une pipeline : démystifions Vite et ses plugins - L'Atelier - Paris, France
 2026-01-22 - Inertia: Un Anneau pour les gouverner tous. - Vue.js Paris - Paris, France
 2025-12-09 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - Paris TypeScript - Paris, France
 2025-12-05 - La réactivité et les signaux : démystifions la magie du frontend - DevFest Dijon - Dijon, France
@@ -84,11 +88,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Year | Number of Talks |
 |------|-----------------|
-| 2026 | 1 |
+| 2026 | 3 |
 | 2025 | 19 |
 | 2024 | 6 |
 | 2023 | 1 |
-| **Total** | **27** |
+| **Total** | **29** |
 
 ### Talks per Event
 
@@ -101,7 +105,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 | DevFest Toulouse | 1 | 0 | 1 | 0 | 0 |
 | Devoxx France | 4 | 0 | 2 | 1 | 1 |
 | HumanTalks Paris | 2 | 0 | 2 | 0 | 0 |
-| MiXiT | 2 | 0 | 2 | 0 | 0 |
+| L'Atelier | 1 | 1 | 0 | 0 | 0 |
+| MiXiT | 3 | 1 | 2 | 0 | 0 |
 | Node.js Paris | 2 | 0 | 2 | 0 | 0 |
 | Nuxt Nation | 1 | 0 | 0 | 1 | 0 |
 | Paris TypeScript | 3 | 0 | 3 | 0 | 0 |
@@ -114,6 +119,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Talk Title | Total | 2026 | 2025 | 2024 | 2023 |
 |------------|-------|------|------|------|------|
+| Au cœur d’une pipeline : démystifions Vite et ses plugins | 2 | 2 | 0 | 0 | 0 |
 | Découvrons ensemble l'écosystème UnJS | 1 | 0 | 0 | 1 | 0 |
 | Deviens full-stack avec TypeScript | 1 | 0 | 1 | 0 | 0 |
 | En JavaScript, il y a un paquet pour tout... et souvent pour rien. | 6 | 0 | 6 | 0 | 0 |

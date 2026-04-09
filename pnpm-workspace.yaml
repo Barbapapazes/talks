@@ -21,6 +21,7 @@ catalog:
   '@shikijs/markdown-it': ^3.22.0
   '@shikijs/transformers': ^4.0.1
   '@slidev/cli': ^52.1.0
+  '@slidev/client': ^52.14.2
   '@slidev/parser': ^52.1.0
   '@slidev/theme-default': ^0.25.0
   '@tsparticles/confetti': 3.9.1
@@ -93,5 +94,3 @@ patchedDependencies:
   slidev-addon-graph: patches/slidev-addon-graph.patch
 
 shellEmulator: true
-
-# trustPolicy: no-downgrade

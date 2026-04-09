@@ -9,7 +9,7 @@ const hmrMessages: WebSocketMessage[] = [
   {
     id: 1,
     direction: 'received',
-    payload: '{"type":"connected","clientId":"mixit-demo"}',
+    payload: '{"type":"connected","clientId":"latelier-demo"}',
     time: '14:21:03.412',
     type: 'text',
   },
@@ -106,7 +106,7 @@ const requests: Request[] = [
   {
     id: 4,
     name: 'vite-hmr',
-    url: 'ws://localhost:5173/?token=mixit-hmr-demo',
+    url: 'ws://localhost:5173/?token=latelier-hmr-demo',
     method: 'GET',
     status: 101,
     protocol: 'websocket',
