@@ -9,20 +9,12 @@
   color: var(--shiki-default);
 }
 
-.theme-root[data-slide-theme='brutaliste'] .shiki span {
-  color: var(--shiki-brutaliste);
-}
-
-.theme-root[data-slide-theme='eighties'] .shiki span {
-  color: var(--shiki-eighties);
+.theme-root[data-slide-theme='brutalism'] .shiki span {
+  color: var(--shiki-brutalism);
 }
 
 .theme-root[data-slide-theme='futuristic'] .shiki span {
   color: var(--shiki-futuristic);
-}
-
-.theme-root[data-slide-theme='space'] .shiki span {
-  color: var(--shiki-space);
 }
 
 /** Code Blocks */

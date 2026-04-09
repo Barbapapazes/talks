@@ -3,7 +3,6 @@ import { useSlideContext } from '@slidev/client'
 import Feedback from '../components/Feedback.vue'
 import Footer from '../components/Footer.vue'
 import FooterLink from '../components/FooterLink.vue'
-import ThemeRoot from '../components/ThemeRoot.vue'
 import { socials, talks, website } from '../contants'
 
 const links = [website, talks, ...socials]
@@ -12,7 +11,7 @@ const { $frontmatter } = useSlideContext()
 </script>
 
 <template>
-  <ThemeRoot class="h-full grid slidev-layout outro">
+  <div class="h-full grid slidev-layout outro">
     <div class="w-full my-auto">
       <div class="theme-muted-text absolute font-light flex flex-col text-xs top-14 text-end right-14">
         <span>Estéban Soubiran</span>
@@ -32,5 +31,5 @@ const { $frontmatter } = useSlideContext()
         />
       </Footer>
     </div>
-  </ThemeRoot>
+  </div>
 </template>

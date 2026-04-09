@@ -5,7 +5,6 @@ import Feedback from '../components/Feedback.vue'
 import Fireworks from '../components/Fireworks.vue'
 import Footer from '../components/Footer.vue'
 import FooterLink from '../components/FooterLink.vue'
-import ThemeRoot from '../components/ThemeRoot.vue'
 import { socials, talks, website } from '../contants'
 
 const links = [website, talks, ...socials]
@@ -18,7 +17,7 @@ const date = computed(() => ($slidev.configs as any).date)
 </script>
 
 <template>
-  <ThemeRoot class="relative h-full overflow-hidden slidev-layout outro2">
+  <div class="relative h-full overflow-hidden slidev-layout outro2">
     <Fireworks />
 
     <div class="z-10 my-auto flex justify-center">
@@ -56,5 +55,5 @@ const date = computed(() => ($slidev.configs as any).date)
         />
       </Footer>
     </div>
-  </ThemeRoot>
+  </div>
 </template>

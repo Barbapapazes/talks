@@ -101,7 +101,7 @@ const { isStatic, question } = useInaliaQuestion(() => (currentSlideRoute.value.
           :class="isQrExpanded ? 'shadow-xl' : ''"
         >
           <span>Choose the next slide</span>
-          <span class="meta">{{ question?.tiny_url }}</span>
+          <span class="meta">{{ question?.tiny_url.replace('https://', '') }}</span>
         </div>
       </div>
     </div>

@@ -6,10 +6,8 @@ export default defineShikiSetup(() => {
       default: 'github-light',
       dark: 'github-dark',
       light: 'github-light',
-      brutaliste: 'min-light',
-      eighties: 'synthwave-84',
+      brutalism: 'min-light',
       futuristic: 'laserwave',
-      space: 'poimandres',
     },
   }
 })

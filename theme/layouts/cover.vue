@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import Footer from '../components/Footer.vue'
 import FooterItem from '../components/FooterItem.vue'
-import ThemeRoot from '../components/ThemeRoot.vue'
 
 interface CoverProps {
   event: string
@@ -12,7 +11,7 @@ const props = defineProps<CoverProps>()
 </script>
 
 <template>
-  <ThemeRoot class="h-full grid slidev-layout cover">
+  <div class="h-full grid slidev-layout cover">
     <div class="w-full my-auto">
       <slot />
 
@@ -24,5 +23,5 @@ const props = defineProps<CoverProps>()
         </FooterItem>
       </Footer>
     </div>
-  </ThemeRoot>
+  </div>
 </template>

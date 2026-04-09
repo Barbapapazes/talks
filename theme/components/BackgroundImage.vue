@@ -37,7 +37,7 @@ const hasImage = computed(() => {
 </template>
 
 <style scoped>
-html[data-theme='brutaliste'] {
+html[data-theme='brutalism'] {
   img {
     filter: sepia(1) hue-rotate(20deg) saturate(1.5) brightness(0.9);
   }

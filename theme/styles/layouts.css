@@ -1,12 +1,5 @@
-#slide-content {
-  color: var(--talk-text-color);
-}
-
 .slidev-layout {
   --at-apply: px-14 h-full py-10 text-[1.1rem];
-  background: var(--talk-background);
-  color: var(--talk-text-color);
-  transition: background 250ms ease, color 250ms ease;
 }
 
 .slidev-layout.cover h1 {

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useNav, useSlideContext } from '@slidev/client'
-import { useInaliaQuestion } from 'slidev-addon-inalia'
+import { useInaliaQuestion, type SelectData } from 'slidev-addon-inalia'
 import { computed, watchEffect } from 'vue'
 
 interface ChoicesProps {
@@ -39,12 +39,10 @@ watchEffect(() => {
 })
 
 const choices = computed(() => slides.value.filter(slide => $frontmatter.choices.includes(slide.meta.name)))
-// TODO: export SelectData
-const total = computed(() => data.value.reduce((sum: number, entry: any) => sum + entry.count, 0))
+const total = computed(() => (data.value as SelectData).reduce((sum: number, entry) => sum + entry.count, 0))
 const enhancedChoices = computed(() => {
   return choices.value.map((choice) => {
-    // TODO: export SelectData
-    const entry = data.value.find((entry: any) => entry.label === choice.meta.name) as any | undefined
+    const entry = (data.value as SelectData).find((entry) => entry.label === choice.meta.name)
     const count = entry ? entry.count : 0
     const percentage = total.value > 0 ? (count / total.value) * 100 : 0
     const color = entry ? entry.color : undefined
@@ -77,7 +75,7 @@ const gridStyle = computed(() => {
 </script>
 
 <template>
-  <ThemeRoot class="h-full slidev-layout grid gap-4 items-center justify-center choices" :style="gridStyle">
+  <div class="h-full slidev-layout grid gap-4 items-center justify-center choices" :style="gridStyle">
     <BackgroundImage :img="$frontmatter.img ?? props.img" :img-class="$frontmatter.imgClass" class="-z-1" />
     <Card v-for="choice in enhancedChoices" :key="choice.slide.meta.name" class="relative isolate overflow-hidden">
       <div class="pointer-events-none absolute inset-y-0 left-0 transition-all duration-300 ease-out" :style="choice.fillStyle" />
@@ -106,5 +104,5 @@ const gridStyle = computed(() => {
 
       <button class="absolute inset-0 z-20" :aria-label="`Go to ${choice.slide.meta.name}`" @click="go(choice.slide.no)" />
     </Card>
-  </ThemeRoot>
+  </div>
 </template>

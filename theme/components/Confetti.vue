@@ -11,10 +11,8 @@ type ConfettiContainer = NonNullable<Awaited<ReturnType<typeof confetti>>>
 const DEFAULT_COLORS = ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722']
 const THEME_CONFETTI_COLORS: Record<SupportedSlideTheme, string[]> = {
   default: DEFAULT_COLORS,
-  brutaliste: ['#0f0f0f', '#f5f5f4', '#facc15', '#ef4444'],
-  eighties: ['#67e8f9', '#f472b6', '#fde047', '#a78bfa'],
+  brutalism: ['#0f0f0f', '#f5f5f4', '#facc15', '#ef4444'],
   futuristic: ['#22d3ee', '#818cf8', '#f472b6', '#34d399'],
-  space: ['#e2e8f0', '#93c5fd', '#818cf8', '#facc15'],
 }
 const CONFETTI_ID = 'recap-confetti'
 const FIRE_COOLDOWN_MS = 350

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { useSlideContext } from '@slidev/client'
 import { watchDeep } from '@vueuse/core';
-import { useInaliaQuestion } from 'slidev-addon-inalia';
-import { computed, watch } from 'vue';
+import { useInaliaQuestion, type SelectData } from 'slidev-addon-inalia';
+import { computed, watch, type DeepReadonly } from 'vue';
 import { SUPPORTED_SLIDE_THEMES } from '../contants';
 import { useCurrentTheme } from '../composables/useCurrentTheme'
 
@@ -34,8 +34,7 @@ watch(question, () => {
   }
 }, { immediate: true })
 watchDeep(data, () => {
-  // TODO: export SelectData from the addon and use it here instead of "any"
-  const entry = [...(data.value as any[])].sort((a: any, b: any) => b.count - a.count)[0]
+  const entry = [...(data.value as SelectData)].sort((a, b) => b.count - a.count)[0]
 
   if (entry) {
     document.documentElement.setAttribute('data-theme', entry.label) // TODO: migrate to the composable

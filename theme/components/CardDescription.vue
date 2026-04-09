@@ -17,9 +17,9 @@ html[data-theme='default'] {
   }
 }
 
-html[data-theme='brutaliste'] {
+html[data-theme='brutalism'] {
   .description {
-    --at-apply: text-[var(--theme-brutaliste-text-muted)];
+    --at-apply: text-[var(--theme-brutalism-text-muted)];
   }
 }
 

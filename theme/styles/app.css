@@ -1,5 +1,6 @@
 h1 {
-  --at-apply: font-bold text-[1.75rem];
+  font-size: 1.75rem;
+  font-weight: 700!important;
   color: var(--talk-heading-color);
 }
 

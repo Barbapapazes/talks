@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import BackgroundImage from '../components/BackgroundImage.vue'
-import ThemeRoot from '../components/ThemeRoot.vue'
+import { useSlideContext } from '@slidev/client'
+
+const { $frontmatter } = useSlideContext()
 </script>
 
 <template>
-  <ThemeRoot class="relative slidev-layout">
+  <div class="relative slidev-layout">
     <BackgroundImage :img="$frontmatter.img" :img-class="$frontmatter.imgClass" class="-z-1" />
     <slot />
-  </ThemeRoot>
+  </div>
 </template>

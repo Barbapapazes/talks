@@ -82,7 +82,7 @@ html[data-theme='default'] {
   }
 }
 
-html[data-theme='brutaliste'] {
+html[data-theme='brutalism'] {
   .grid {
     --at-apply: gap-8;
   }

@@ -43,7 +43,7 @@ const shortUrl = computed(() => {
       class="theme-feedback-frame shrink-0 inalia rounded-lg size-40"
     >
       <InaliaQR
-        :url="url" class="block"
+        :url="url" class="block border-0!"
       />
     </div>
     <InaliaShortUrl :url="shortUrl" class="theme-feedback-url border-0! text-xs mx-auto" />

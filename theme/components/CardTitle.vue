@@ -21,9 +21,9 @@ html[data-theme='default'] {
   }
 }
 
-html[data-theme='brutaliste'] {
+html[data-theme='brutalism'] {
   .title {
-    --at-apply: text-[var(--theme-brutaliste-text-default)] font-bold;
+    --at-apply: text-[var(--theme-brutalism-text-default)] font-bold;
   }
 }
 

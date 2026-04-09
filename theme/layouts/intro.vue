@@ -4,7 +4,6 @@ import VClick from '@slidev/client/builtin/VClick.ts'
 import LatestArticles from 'virtual:latest-articles'
 import Footer from '../components/Footer.vue'
 import FooterLink from '../components/FooterLink.vue'
-import ThemeRoot from '../components/ThemeRoot.vue'
 import { socials, technologies, website } from '../contants'
 
 interface IntroProps {
@@ -17,7 +16,7 @@ const links = [website, ...socials]
 </script>
 
 <template>
-  <ThemeRoot class="slidev-layout intro">
+  <div class="slidev-layout intro">
     <div class="flex flex-col h-full">
       <div class="flex flex-row justify-between items-center">
         <div class="flex flex-col gap-4">
@@ -103,5 +102,5 @@ const links = [website, ...socials]
         <img src="/takima/taking-control.png" class="absolute h-1/3 bottom-4 left-2/3 -translate-x-1/2 rotate-2 drop-shadow-md duration-300 ease-out forward:delay-100">
       </VAfter>
     </template> -->
-  </ThemeRoot>
+  </div>
 </template>

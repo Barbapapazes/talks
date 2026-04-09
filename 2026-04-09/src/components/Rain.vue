@@ -229,7 +229,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <ThemeRoot class="h-full">
+  <div class="h-full">
     <div class="rain slidev-layout relative h-full overflow-hidden">
       <div :id="containerId" aria-hidden="true" class="pointer-events-none absolute inset-0 z-0" />
 
@@ -237,5 +237,5 @@ onUnmounted(() => {
         <slot />
       </div>
     </div>
-  </ThemeRoot>
+  </div>
 </template>

@@ -32,9 +32,9 @@ html[data-theme='default'] {
   }
 }
 
-html[data-theme='brutaliste'] {
+html[data-theme='brutalism'] {
   .card {
-    --at-apply: border border-4 bg-[var(--theme-brutaliste-primary)] border-[var(--theme-brutaliste-border-default)] shadow-[var(--theme-brutaliste-shadow-default)];
+    --at-apply: border border-4 bg-[var(--theme-brutalism-primary)] border-[var(--theme-brutalism-border-default)] shadow-[var(--theme-brutalism-shadow-default)];
   }
 }
 

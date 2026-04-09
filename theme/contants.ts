@@ -90,8 +90,6 @@ export const technologies = [
 
 export const SUPPORTED_SLIDE_THEMES = [
   'default',
-  'brutaliste',
-  'eighties',
+  'brutalism',
   'futuristic',
-  'space',
 ] as const
