@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Trigger
         run: |
-          curl -X POST https://talks-trigger-redeploy-linked-websites.soubiran.dev \
+          curl -X POST https://redeploy.soubiran.dev \
             -H "Content-Type: application/json" \
             -H "CF-Access-Client-Id: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_ID }}" \
             -H "CF-Access-Client-Secret: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_SECRET }}" \
