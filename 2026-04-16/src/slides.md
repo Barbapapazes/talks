@@ -824,10 +824,11 @@ Bah, le mieux qu'on regarde ensemble ? On fait ça depuis la pipeline de Vite ?
 ---
 name: Les entrailles d'un plugin Vite - Visualisation
 group: Inside a Plugin
-ready: true
 timing: 1.9
 class: p-0!
 ---
+
+<!-- TODO: revoir la transition -->
 
 <VitePluginsTheory />
 
@@ -852,6 +853,31 @@ Ok, plus clair Estéban. Merci !
 
 [hesitating] Est-ce qu'on peut faire d'autres choses avec les plugins ?
 -->
+
+---
+name: Visualiser la pipeline
+group: Inside a Plugin
+timing: 1.1
+img:
+  brutalism: >-
+    https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2329&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  default: >-
+    https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  futuristic: >-
+    https://images.unsplash.com/photo-1634834300387-8015d9fb7550?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+---
+
+<!-- TODO: déplacer après plusieurs plugins -->
+<!-- TODO: revoir complètement le ton du texte -->
+
+<BackgroundImage />
+
+<Card v-click absolute top-14 inset-x-10 -bottom-10>
+  <h2 class="text-center mb-2 text-neutral-700 flex flex-row items-center justify-center gap-2"><span class="i-vscode-icons-file-type-npm inline-block size-5"></span>vite-plugin-inspect</h2>
+  <iframe src="/__inspect" class="rounded-lg overflow-hidden w-full h-full" />
+</Card>
+
+<!-- TODO: text -->
 
 ---
 name: Les entrailles d'un plugin Vite - Lifecycle Hooks
@@ -970,6 +996,37 @@ Mais concrètement, ça donne quoi quand on met tout ça ensemble ?
 
 Qu'est-ce qu'on peut construire ? Parce que ben là, j'ai un peu l'impression qu'on est devant une boite de Lego mais qu'on nous a pas filé la notice. Comment qu'on fait ?
 -->
+
+---
+name: Simple Transform Plugin
+group: Concrete Example
+timing: 0
+---
+
+---
+name: Simple Transform Plugin - Visualisation
+group: Concrete Example
+timing: 0
+---
+
+---
+name: Simple Transform Plugin - Internals
+group: Concrete Example
+timing: 0
+---
+
+---
+name: External Markdown Loader Plugin
+group: Concrete Example
+timing: 0
+---
+
+---
+name: External Markdown Loader Plugin - Visualisation
+group: Concrete Example
+timing: 0
+---
+
 
 ---
 name: Auto Import Plugin (unplugin-auto-import) - Exemple
@@ -1161,42 +1218,6 @@ Précis, simple, rapide, efficace.
 -->
 
 ---
-name: Visualiser la pipeline
-timing: 1.1
-img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2329&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  default: >-
-    https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1634834300387-8015d9fb7550?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
----
-
-<!-- TODO: déplacer après plusieurs plugins -->
-<!-- TODO: revoir complètement le ton du texte -->
-
-<BackgroundImage />
-
-<Card v-click absolute top-14 inset-x-10 -bottom-10>
-  <h2 class="text-center mb-2 text-neutral-700 flex flex-row items-center justify-center gap-2"><span class="i-vscode-icons-file-type-npm inline-block size-5"></span>vite-plugin-inspect</h2>
-  <iframe src="/__inspect" class="rounded-lg overflow-hidden w-full h-full" />
-</Card>
-
-<!--
-[fast] Tout ça c'est trop chouette, on a compris la système, on a compris ce qu'il se passait, on a compris qu'il y avait des transformations à la volée, mais baaaah [wait], rien nous dit que c'est vraiment exactement comme ça.
-
-[slow] Ça serait pratique si on avait un tool pour visualiser toutes les transformations, visualiser toute la pipeline, un tool même qu'on pourrait installer dans tous nos projets... [thinking]
-
-[click]
-
-En plus, ce tool, on pourrait l'appeler vite-plugin-inspect et pour chacun des fichiers qui passe dans Vite, on visualiserait la pipeline et les différentes transformations.
-
-[show a Vue and a CSS file using the iframe]
-
-Heureusement pour nous, Anthony Fu l'a fait !
--->
-
----
 name: Le plugin Vite - Récap
 timing: 1.2
 layout: recap
@@ -1205,6 +1226,7 @@ inalia:
 ---
 
 <!-- TODO: about the fact the resolveId hasn't been used in our examples until now -->
+<!-- TODO: second slide sur les 3 hooks -->
 
 <RecapList
   title="Le plugin Vite en 3 points"
@@ -1237,6 +1259,14 @@ Génial ! [confetti] On commence à faire nos premiers plugins. Franchement, si 
 
 [intrigued] D'ailleurs, on a dit que le hook load pouvait retourner du code qui n'existe pas. Mais, hmmm, qu'est-ce que ça veut dire ?
 -->
+
+---
+name: Le plugin Vite - 3 hooks Récap
+timing: 0
+layout: recap
+inalia:
+  emoji: false
+---
 
 ---
 name: Un plugin pour virtualiser
@@ -1503,7 +1533,7 @@ group: Virtualization
 ready: true
 timing: 0.7
 choices:
-  - Les autres capacités des plugins
+  - Virtualization - Récap
 layout: bottom-center-card
 img:
   brutalism: null
@@ -1617,7 +1647,7 @@ group: Virtualization
 ready: true
 timing: 0.8
 choices:
-  - Les autres capacités des plugins
+  - Virtualization - Récap
 layout: center-card
 img:
   brutalism: null
@@ -1731,7 +1761,7 @@ group: Virtualization
 ready: true
 timing: 0.8
 choices:
-  - Les autres capacités des plugins
+  - Virtualization - Récap
 layout: center-card
 img:
   brutalism: null
@@ -1841,7 +1871,7 @@ group: Virtualization
 ready: true
 timing: 1.1
 choices:
-  - Les autres capacités des plugins
+  - Virtualization - Récap
 layout: center-card
 img:
   brutalism: null
@@ -1940,6 +1970,16 @@ Comme tous les plugins, tout commence par un objet avec [click] un nom.
 -->
 
 ---
+name: Virtualization - Récap
+timing: 0
+layout: recap
+inalia:
+  emoji: false
+---
+
+<!-- TODO: -->
+
+---
 name: Les autres capacités des plugins
 group: Advanced Capabilities
 timing: 0.7
@@ -1951,7 +1991,6 @@ inalia:
   questionId: 4
 ---
 
-<!-- TODO: ajouter un récap avant ça -->
 <!-- TODO: more time on this slides to make sure every one really understands -->
 
 <OtherCapabilities />

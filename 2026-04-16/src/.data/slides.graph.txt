@@ -36,58 +36,65 @@ flowchart LR
       load["#20 load"]:::finished
       transform["#21 transform"]:::finished
       plusieurs_plugins["#22 Plusieurs plugins"]:::finished
-      les_entrailles_d_un_plugin_vite_visualisation["#23 Les entrailles d'un plugin Vite - Visualisation"]:::finished
-      les_entrailles_d_un_plugin_vite_lifecycle_hooks["#24 Les entrailles d'un plugin Vite - Lifecycle Hooks"]:::finished
+      les_entrailles_d_un_plugin_vite_visualisation["#23 Les entrailles d'un plugin Vite - Visualisation"]:::main
+      visualiser_la_pipeline["#24 Visualiser la pipeline"]:::main
+      les_entrailles_d_un_plugin_vite_lifecycle_hooks["#25 Les entrailles d'un plugin Vite - Lifecycle Hooks"]:::finished
   end
   subgraph Concrete_Example ["Concrete Example"]
-      concr_tement["#25 Concrètement ?"]:::main
-      auto_import_plugin_unplugin_auto_import_exemple["#26 Auto Import Plugin (unplugin-auto-import) - Exemple"]:::main
-      auto_import_plugin_unplugin_auto_import_magic["#27 Auto Import Plugin (unplugin-auto-import) - Magic ?"]:::main
-      auto_import_plugin_unplugin_auto_import_visualisation["#28 Auto Import Plugin (unplugin-auto-import) - Visualisation"]:::main
-      auto_import_plugin_unplugin_auto_import_confused["#29 Auto Import Plugin (unplugin-auto-import) - Confused ?"]:::main
-      auto_import_plugin_unplugin_auto_import_plugin_internals["#30 Auto Import Plugin (unplugin-auto-import) - Plugin Internals"]:::main
+      concr_tement["#26 Concrètement ?"]:::main
+      simple_transform_plugin["#27 Simple Transform Plugin"]:::main
+      simple_transform_plugin_visualisation["#28 Simple Transform Plugin - Visualisation"]:::main
+      simple_transform_plugin_internals["#29 Simple Transform Plugin - Internals"]:::main
+      external_markdown_loader_plugin["#30 External Markdown Loader Plugin"]:::main
+      external_markdown_loader_plugin_visualisation["#31 External Markdown Loader Plugin - Visualisation"]:::main
+      auto_import_plugin_unplugin_auto_import_exemple["#32 Auto Import Plugin (unplugin-auto-import) - Exemple"]:::main
+      auto_import_plugin_unplugin_auto_import_magic["#33 Auto Import Plugin (unplugin-auto-import) - Magic ?"]:::main
+      auto_import_plugin_unplugin_auto_import_visualisation["#34 Auto Import Plugin (unplugin-auto-import) - Visualisation"]:::main
+      auto_import_plugin_unplugin_auto_import_confused["#35 Auto Import Plugin (unplugin-auto-import) - Confused ?"]:::main
+      auto_import_plugin_unplugin_auto_import_plugin_internals["#36 Auto Import Plugin (unplugin-auto-import) - Plugin Internals"]:::main
   end
   subgraph Virtualization ["Virtualization"]
-      un_plugin_pour_virtualiser["#33 Un plugin pour virtualiser"]:::finished
-      un_plugin_pour_virtualiser_mind_blowing["#34 Un plugin pour virtualiser - Mind Blowing"]:::finished
-      un_plugin_pour_virtualiser_plugin_internals["#35 Un plugin pour virtualiser - Plugin Internals"]:::finished
-      un_plugin_pour_virtualiser_virtual_plugin["#36 Un plugin pour virtualiser - Virtual Plugin"]:::finished
-      un_plugin_pour_virtualiser_choices["#37 Un plugin pour virtualiser - Choices"]:::finishedChoice
-      vue_router_un_module_virtuel["#38 Vue Router - Un module virtuel"]:::finished
-      vue_router_un_module_virtuel_plugin_internals["#39 Vue Router - Un module virtuel - Plugin Internals"]:::finished
-      vitepress_des_data_virtuels["#40 VitePress - Des data virtuels"]:::finished
-      vitepress_des_data_virtuels_plugin_internals["#41 VitePress - Des data virtuels - Plugin Internals"]:::finished
-      icons_plugin_des_ic_nes_virtuelles["#42 Icons Plugin - Des icônes virtuelles"]:::finished
-      icons_plugin_des_ic_nes_virtuelles_plugin_internals["#43 Icons Plugin - Des icônes virtuelles - Plugin Internals"]:::finished
-      infos_plugin_des_infos_virtuelles["#44 Infos Plugin - Des infos virtuelles"]:::finished
-      infos_plugin_des_infos_virtuelles_plugin_internals["#45 Infos Plugin - Des infos virtuelles - Plugin Internals"]:::finished
+      un_plugin_pour_virtualiser["#39 Un plugin pour virtualiser"]:::finished
+      un_plugin_pour_virtualiser_mind_blowing["#40 Un plugin pour virtualiser - Mind Blowing"]:::finished
+      un_plugin_pour_virtualiser_plugin_internals["#41 Un plugin pour virtualiser - Plugin Internals"]:::finished
+      un_plugin_pour_virtualiser_virtual_plugin["#42 Un plugin pour virtualiser - Virtual Plugin"]:::finished
+      un_plugin_pour_virtualiser_choices["#43 Un plugin pour virtualiser - Choices"]:::finishedChoice
+      vue_router_un_module_virtuel["#44 Vue Router - Un module virtuel"]:::finished
+      vue_router_un_module_virtuel_plugin_internals["#45 Vue Router - Un module virtuel - Plugin Internals"]:::finished
+      vitepress_des_data_virtuels["#46 VitePress - Des data virtuels"]:::finished
+      vitepress_des_data_virtuels_plugin_internals["#47 VitePress - Des data virtuels - Plugin Internals"]:::finished
+      icons_plugin_des_ic_nes_virtuelles["#48 Icons Plugin - Des icônes virtuelles"]:::finished
+      icons_plugin_des_ic_nes_virtuelles_plugin_internals["#49 Icons Plugin - Des icônes virtuelles - Plugin Internals"]:::finished
+      infos_plugin_des_infos_virtuelles["#50 Infos Plugin - Des infos virtuelles"]:::finished
+      infos_plugin_des_infos_virtuelles_plugin_internals["#51 Infos Plugin - Des infos virtuelles - Plugin Internals"]:::finished
   end
   subgraph Advanced_Capabilities ["Advanced Capabilities"]
-      les_autres_capacit_s_des_plugins["#46 Les autres capacités des plugins"]:::main
-      les_autres_capacit_s_des_plugins_choices["#47 Les autres capacités des plugins - Choices"]:::finishedChoice
-      le_hot_module_replacement_hmr["#48 Le Hot Module Replacement (HMR)"]:::finished
-      le_hot_module_replacement_hmr_plugins_internals["#49 Le Hot Module Replacement (HMR) - Plugins Internals"]:::finished
-      le_middleware_un_fichier_virtuel["#50 Le middleware - Un fichier virtuel"]:::finished
-      run_plugin_un_plugin_pour_ex_cuter_des_commandes["#51 Run Plugin - Un plugin pour exécuter des commandes"]:::finished
-      run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals["#52 Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals"]:::finished
-      laravel_vite_la_communication_inter_processus["#53 Laravel Vite - La communication inter-processus"]:::finished
-      laravel_vite_la_communication_inter_processus_plugin_internals["#54 Laravel Vite - La communication inter-processus - Plugin Internals"]:::finished
-      unplugin_macro_un_plugin_pour_cr_er_des_macros["#55 unplugin-macro - Un plugin pour créer des macros"]:::finished
-      unplugin_macro_un_plugin_pour_cr_er_des_macros_plugin_internals["#56 unplugin-macro - Un plugin pour créer des macros - Plugin Internals"]:::finished
-      nitro_un_backend["#57 Nitro - Un backend"]:::finished
-      nitro_un_backend_visualisation["#58 Nitro - Un backend - Visualisation"]:::finished
-      nitro_un_backend_plugin_internals["#59 Nitro - Un backend - Plugin Internals"]:::finished
+      les_autres_capacit_s_des_plugins["#53 Les autres capacités des plugins"]:::main
+      les_autres_capacit_s_des_plugins_choices["#54 Les autres capacités des plugins - Choices"]:::finishedChoice
+      le_hot_module_replacement_hmr["#55 Le Hot Module Replacement (HMR)"]:::finished
+      le_hot_module_replacement_hmr_plugins_internals["#56 Le Hot Module Replacement (HMR) - Plugins Internals"]:::finished
+      le_middleware_un_fichier_virtuel["#57 Le middleware - Un fichier virtuel"]:::finished
+      run_plugin_un_plugin_pour_ex_cuter_des_commandes["#58 Run Plugin - Un plugin pour exécuter des commandes"]:::finished
+      run_plugin_un_plugin_pour_ex_cuter_des_commandes_plugin_internals["#59 Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals"]:::finished
+      laravel_vite_la_communication_inter_processus["#60 Laravel Vite - La communication inter-processus"]:::finished
+      laravel_vite_la_communication_inter_processus_plugin_internals["#61 Laravel Vite - La communication inter-processus - Plugin Internals"]:::finished
+      unplugin_macro_un_plugin_pour_cr_er_des_macros["#62 unplugin-macro - Un plugin pour créer des macros"]:::finished
+      unplugin_macro_un_plugin_pour_cr_er_des_macros_plugin_internals["#63 unplugin-macro - Un plugin pour créer des macros - Plugin Internals"]:::finished
+      nitro_un_backend["#64 Nitro - Un backend"]:::finished
+      nitro_un_backend_visualisation["#65 Nitro - Un backend - Visualisation"]:::finished
+      nitro_un_backend_plugin_internals["#66 Nitro - Un backend - Plugin Internals"]:::finished
   end
   subgraph Deep_Dive ["Deep Dive"]
-      dans_les_profondeurs_de_la_pipeline["#61 Dans les profondeurs de la pipeline"]:::finished
+      dans_les_profondeurs_de_la_pipeline["#68 Dans les profondeurs de la pipeline"]:::finished
   end
   au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["#1 Au cœur d’une pipeline : démystifions Vite et ses plugins"]:::finished
   vite_et_ses_features_r_cap["#17 Vite et ses features - Récap"]:::finishedRecap
-  visualiser_la_pipeline["#31 Visualiser la pipeline"]:::main
-  le_plugin_vite_r_cap["#32 Le plugin Vite - Récap"]:::recap
-  r_cap_des_r_cap["#60 Récap des récap"]:::finishedRecap
-  votre_tour["#62 Votre tour"]:::finished
-  outro["#63 Outro"]:::finished
+  le_plugin_vite_r_cap["#37 Le plugin Vite - Récap"]:::recap
+  le_plugin_vite_3_hooks_r_cap["#38 Le plugin Vite - 3 hooks Récap"]:::recap
+  virtualization_r_cap["#52 Virtualization - Récap"]:::recap
+  r_cap_des_r_cap["#67 Récap des récap"]:::recap
+  votre_tour["#69 Votre tour"]:::finished
+  outro["#70 Outro"]:::finished
   au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins --> vite
   vite --> vite_growth
   vite_growth --> le_th_me_des_slides
@@ -112,16 +119,22 @@ flowchart LR
   load --> transform
   transform --> plusieurs_plugins
   plusieurs_plugins --> les_entrailles_d_un_plugin_vite_visualisation
-  les_entrailles_d_un_plugin_vite_visualisation --> les_entrailles_d_un_plugin_vite_lifecycle_hooks
+  les_entrailles_d_un_plugin_vite_visualisation --> visualiser_la_pipeline
+  visualiser_la_pipeline --> les_entrailles_d_un_plugin_vite_lifecycle_hooks
   les_entrailles_d_un_plugin_vite_lifecycle_hooks --> concr_tement
-  concr_tement --> auto_import_plugin_unplugin_auto_import_exemple
+  concr_tement --> simple_transform_plugin
+  simple_transform_plugin --> simple_transform_plugin_visualisation
+  simple_transform_plugin_visualisation --> simple_transform_plugin_internals
+  simple_transform_plugin_internals --> external_markdown_loader_plugin
+  external_markdown_loader_plugin --> external_markdown_loader_plugin_visualisation
+  external_markdown_loader_plugin_visualisation --> auto_import_plugin_unplugin_auto_import_exemple
   auto_import_plugin_unplugin_auto_import_exemple --> auto_import_plugin_unplugin_auto_import_magic
   auto_import_plugin_unplugin_auto_import_magic --> auto_import_plugin_unplugin_auto_import_visualisation
   auto_import_plugin_unplugin_auto_import_visualisation --> auto_import_plugin_unplugin_auto_import_confused
   auto_import_plugin_unplugin_auto_import_confused --> auto_import_plugin_unplugin_auto_import_plugin_internals
-  auto_import_plugin_unplugin_auto_import_plugin_internals --> visualiser_la_pipeline
-  visualiser_la_pipeline --> le_plugin_vite_r_cap
-  le_plugin_vite_r_cap --> un_plugin_pour_virtualiser
+  auto_import_plugin_unplugin_auto_import_plugin_internals --> le_plugin_vite_r_cap
+  le_plugin_vite_r_cap --> le_plugin_vite_3_hooks_r_cap
+  le_plugin_vite_3_hooks_r_cap --> un_plugin_pour_virtualiser
   un_plugin_pour_virtualiser --> un_plugin_pour_virtualiser_mind_blowing
   un_plugin_pour_virtualiser_mind_blowing --> un_plugin_pour_virtualiser_plugin_internals
   un_plugin_pour_virtualiser_plugin_internals --> un_plugin_pour_virtualiser_virtual_plugin
@@ -131,13 +144,14 @@ flowchart LR
   un_plugin_pour_virtualiser_choices --> icons_plugin_des_ic_nes_virtuelles
   un_plugin_pour_virtualiser_choices --> infos_plugin_des_infos_virtuelles
   vue_router_un_module_virtuel --> vue_router_un_module_virtuel_plugin_internals
-  vue_router_un_module_virtuel_plugin_internals --> les_autres_capacit_s_des_plugins
+  vue_router_un_module_virtuel_plugin_internals --> virtualization_r_cap
   vitepress_des_data_virtuels --> vitepress_des_data_virtuels_plugin_internals
-  vitepress_des_data_virtuels_plugin_internals --> les_autres_capacit_s_des_plugins
+  vitepress_des_data_virtuels_plugin_internals --> virtualization_r_cap
   icons_plugin_des_ic_nes_virtuelles --> icons_plugin_des_ic_nes_virtuelles_plugin_internals
-  icons_plugin_des_ic_nes_virtuelles_plugin_internals --> les_autres_capacit_s_des_plugins
+  icons_plugin_des_ic_nes_virtuelles_plugin_internals --> virtualization_r_cap
   infos_plugin_des_infos_virtuelles --> infos_plugin_des_infos_virtuelles_plugin_internals
-  infos_plugin_des_infos_virtuelles_plugin_internals --> les_autres_capacit_s_des_plugins
+  infos_plugin_des_infos_virtuelles_plugin_internals --> virtualization_r_cap
+  virtualization_r_cap --> les_autres_capacit_s_des_plugins
   les_autres_capacit_s_des_plugins --> les_autres_capacit_s_des_plugins_choices
   les_autres_capacit_s_des_plugins_choices --> le_hot_module_replacement_hmr
   les_autres_capacit_s_des_plugins_choices --> le_middleware_un_fichier_virtuel
