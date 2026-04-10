@@ -26,8 +26,9 @@ timing: 0.2
 ---
 
 <!-- TODO: regularly add QR code to access the Inalia voting page -->
-<!-- TODO: remove futuristic and use flower -->
 <!-- TODO: remove background for brutalist slides (and change colors from time to times) -->
+<!-- TODO: maybe? remove confused and magic gif and rain -->
+<!-- TODO: somehting about and what about the build after the first concrete example? -->
 
 <!--
 À lire pour comprendre la construction de ce talk.
@@ -308,12 +309,10 @@ ready: true
 timing: 0.6
 layout: bottom-left-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1751780607021-5c9c036f8ad4?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1637166185518-058f5896a2e9?q=80&w=3520&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 transition: slide-up
 ---
 
@@ -343,12 +342,10 @@ timing: 0.9
 choices:
   - Vite et ses features - Récap
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1751780607021-5c9c036f8ad4?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1637166185518-058f5896a2e9?q=80&w=3520&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 ---
 
 <BackgroundImage />
@@ -372,12 +369,10 @@ ready: true
 timing: 0.6
 layout: bottom-left-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1588421357574-87938a86fa28?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?q=80&w=2755&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 transition: slide-up
 ---
 
@@ -405,12 +400,10 @@ group: Feature Plugins
 ready: true
 timing: 0.9
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1588421357574-87938a86fa28?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?q=80&w=2755&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 transition: slide-up
 ---
 
@@ -437,12 +430,10 @@ choices:
   - Vite et ses features - Récap
 layout: bottom-right-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1588421357574-87938a86fa28?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?q=80&w=2755&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 ---
 
 <AnImageLoadedIntoTypeScriptBuildTree />
@@ -458,12 +449,10 @@ ready: true
 timing: 0.6
 layout: bottom-left-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1561016444-14f747499547?q=80&w=3431&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1633182203832-76ede0337ca2?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 transition: slide-up
 ---
 
@@ -507,12 +496,10 @@ timing: 0.8
 choices:
   - Vite et ses features - Récap
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1561016444-14f747499547?q=80&w=3431&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1633182203832-76ede0337ca2?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 ---
 
 <BackgroundImage />
@@ -580,12 +567,10 @@ ready: true
 timing: 1.2
 layout: bottom-left-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1476445704028-a36e0c798192?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 transition: slide-up
 ---
 
@@ -648,12 +633,10 @@ ready: true
 timing: 0.7
 layout: bottom-left-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1476445704028-a36e0c798192?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 transition: slide-up
 ---
 
@@ -689,12 +672,10 @@ ready: true
 timing: 0.9
 layout: bottom-left-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1476445704028-a36e0c798192?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 transition: slide-up
 ---
 
@@ -757,12 +738,10 @@ ready: true
 timing: 0.6
 layout: bottom-left-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1476445704028-a36e0c798192?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 transition: slide-up
 ---
 
@@ -859,12 +838,10 @@ name: Visualiser la pipeline
 group: Inside a Plugin
 timing: 1.1
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2329&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1634834300387-8015d9fb7550?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 ---
 
 <!-- TODO: déplacer après plusieurs plugins -->
@@ -886,12 +863,10 @@ ready: true
 timing: 1.3
 layout: bottom-left-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1476445704028-a36e0c798192?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 ---
 
 ````md magic-move
@@ -987,7 +962,7 @@ img:
     https://images.unsplash.com/photo-1631106254201-ffbee2305c5b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-<!-- TODO: rework examples (simple transform to replace a __build_time__ placeholder in the index.html file) en réutilisant la visualisation pour que tout le monde comprenne, second example avec un load d'un fichier markdown d'une API et un transform qui change le markdown en html via markdown it -->
+<!-- TODO: rework examples (simple transform to replace a __build_time__ placeholder (in an js file) en réutilisant la visualisation pour que tout le monde comprenne, second example avec un load d'un fichier markdown d'une API et un transform qui change le markdown en html via markdown it -->
 
 <h2 class="text-4xl font-bold">Concrètement,<br>ça donne quoi ?</h2>
 
@@ -1001,7 +976,10 @@ Qu'est-ce qu'on peut construire ? Parce que ben là, j'ai un peu l'impression qu
 name: Simple Transform Plugin
 group: Concrete Example
 timing: 0
+layout: center
 ---
+
+<!-- TODO: text -->
 
 ---
 name: Simple Transform Plugin - Visualisation
@@ -1009,11 +987,52 @@ group: Concrete Example
 timing: 0
 ---
 
+<SimpleTransformPluginExplainedVisually />
+
+<!-- TODO: text -->
+
 ---
 name: Simple Transform Plugin - Internals
 group: Concrete Example
 timing: 0
+layout: bottom-left-card
+img:
+  brutalism: false
+  default:
+  flowers:
 ---
+
+````md magic-move
+```ts {*}{lines:true}
+export default function simpleTransform() {
+  return {
+    name: "simple-transform",
+  }
+}
+```
+```ts {4-6}{lines:true}
+export default function simpleTransform() {
+  return {
+    name: "simple-transform",
+    tranform(code) {
+      return code.replace("__BUILD_TIME__", new Date().toString())
+    }
+  }
+}
+```
+```ts {*}{lines:true}
+export default function simpleTransform() {
+  return {
+    name: "simple-transform",
+    tranform(code) {
+      return code.replace("__BUILD_TIME__", new Date().toString())
+    }
+  }
+}
+```
+````
+
+<!-- TODO: text -->
 
 ---
 name: External Markdown Loader Plugin
@@ -1021,201 +1040,104 @@ group: Concrete Example
 timing: 0
 ---
 
+<!-- TODO: text -->
+
 ---
 name: External Markdown Loader Plugin - Visualisation
 group: Concrete Example
 timing: 0
 ---
 
+<ExternalMarkdownLoaderPluginExplainedVisually />
+
+<!-- TODO: text -->
 
 ---
-name: Auto Import Plugin (unplugin-auto-import) - Exemple
+name: External Markdown Loader Plugin - Internals
 group: Concrete Example
-timing: 0.5
+timing: 0
 layout: bottom-left-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  default: >-
-    https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1608249889684-e91ddbdd47cf?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
+  default:
+  flowers:
 ---
-
-<!-- TODO: remove -->
 
 ````md magic-move
-```ts
-import { ref, computed, effect } from 'vue'
-
-const count = ref(0)
-
-const double = computed(() => count.value * 2)
-
-effect(() => {
-  console.log(`Count: ${count.value}, Double: ${double.value}`)
-})
-```
-```ts
-const count = ref(0)
-
-const double = computed(() => count.value * 2)
-
-effect(() => {
-  console.log(`Count: ${count.value}, Double: ${double.value}`)
-})
-```
-````
-
-::outside::
-
-<ClickRevealImage src="/how.gif" />
-
-<!--
-En vrai, quoi de mieux qu'un bonne example ?
-
-Dans ce bout de code là, bon, rien de particulier.
-
-[slow] Maintenant, qu'est-ce qui se passe si [click] on enlève les imports ?
-
-Normalement, y a plus rien qui marche. Et pourtant, avec Vite, ça fonctionne toujours !
-
-[shocked] [click] Comment ?
--->
-
----
-name: Auto Import Plugin (unplugin-auto-import) - Magic ?
-group: Concrete Example
-timing: 0.5
-layout: magic-rain
----
-
-<!-- TODO: remove -->
-
-<img src="/magic.gif" class="absolute h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-
-<!--
-[with gesture of magic] Est-ce que c'est de la magiiieee ?
-
-Nan Estéban, ce n'est pas de la magie et d'ailleurs cette slide m'a demandé beaucoup trop temps.
-
-Donc on va prendre un peu de temps pour admirer les émoji.
-
-[meubler]
-
-Mais heu bref, on s'est perdu là... on s'égare.
--->
-
----
-name: Auto Import Plugin (unplugin-auto-import) - Visualisation
-group: Concrete Example
-timing: 1
-transition: slide-up
----
-
-<!-- TODO: remove -->
-
-<AutoImportPluginExplainedVisually />
-
-<!--
-Ce qu'on pourrait faire, [click] c'est visualiser les backstage.
-
-Et c'est vrai que c'est une bonne idée que vous avez là. J'aime bien.
-
-À gauche, le navigateur, à droite les fichiers et au centre, Vite. Dans le main.ts, c'est notre code.
-
-Nous, je vous propose qu'on se place dans le navigateur pour observer les requests.
-
-[click]
-[click]
-
-L'index.html se fait charger, dans lequel on a le main.ts, qui se fait lui même charger.
-
-[surprise] Oh, est-ce qu'on n'aurait pas nos imports qui serait apparus ? Il semble que oui !
-
-Ça pourrait expliquer pourquoi ça fonctionne !
--->
-
----
-name: Auto Import Plugin (unplugin-auto-import) - Confused ?
-group: Concrete Example
-timing: 0.2
-layout: confused-rain
----
-
-<!-- TODO: remove -->
-
-<img src="/confused.gif" class="absolute h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-
-<!--
-[doubtful] Maiiiis qui les a mis là ?
-
-[take time to think about it]
-
-Ah mais oui, un plugin Vite !
--->
-
----
-name: Auto Import Plugin (unplugin-auto-import) - Plugin Internals
-group: Concrete Example
-timing: 1
-layout: bottom-left-card
-img:
-  brutalism: >-
-    https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  default: >-
-    https://images.unsplash.com/photo-1773981921708-3517523b3a7e?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1608249889684-e91ddbdd47cf?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
----
-
-<!-- TODO: remove -->
-
-````md magic-move
-```ts {*|6}{lines:true}
-export default function autoImport(options: Options) {
-  let ctx = createContext(options)
+```ts {*}{lines:true}
+export default function externalMarkdown() {
   return {
-    name: 'unplugin-auto-import',
-    async transform(code, id) {
-      return ctx.transform(code, id)
-    },
+    name: "external-markdown",
   }
 }
 ```
-```ts {5-14|*}{lines:true}
-export default function autoImport(options: Options) {
-  let ctx = createContext(options)
+```ts {4-10}{lines:true}
+export default function externalMarkdown() {
   return {
-    name: 'unplugin-auto-import',
-    async transform(code, id) {
-      const s = new MagicString(code)
-
-      await injectImports(s, id)
-
-      return {
-        code: s.toString(),
-        map: s.generateMap({ source: id }),
+    name: "external-markdown",
+    async load(id) {
+      if (!id.endsWidth(".md")) {
+        return
       }
+
+      return fetch(`https://api.example.com/${id}`).then(res => res.text())
     },
+  }
+}
+```
+```ts {4,15-21}{lines:true}
+import markdownit from 'markdown-it'
+
+export default function externalMarkdown() {
+  const md = markdownit()
+
+  return {
+    name: "external-markdown",
+    async load(id) {
+      if (!id.endsWidth(".md")) {
+        return
+      }
+
+      return fetch(`https://api.example.com/${id}`).then(res => res.text())
+    },
+    async transform(code, id) {
+      if (!id.endsWidth(".md")) {
+        return
+      }
+
+      return md.render(code)
+    }
+  }
+}
+```
+```ts {*}{lines:true}
+import markdownit from 'markdown-it'
+
+export default function externalMarkdown() {
+  const md = markdownit()
+
+  return {
+    name: "external-markdown",
+    async load(id) {
+      if (!id.endsWidth(".md")) {
+        return
+      }
+
+      return fetch(`https://api.example.com/${id}`).then(res => res.text())
+    },
+    async transform(code, id) {
+      if (!id.endsWidth(".md")) {
+        return
+      }
+
+      return md.render(code)
+    }
   }
 }
 ```
 ````
 
-<!--
-Je vous propose qu'on se regarde le plugin Auto Import.
-
-C'est lui qu'est à l'origin de cette magie et en gros, c'est ça son code.
-
-La ligne intéressante, [click] c'est la 6, dans le hook transform qui permet de modifier le contenu d'un module.
-
-[click] En zoomant dedans, on y découvre l'injection des imports ligne 8, et c'est là que toute la magie opère.
-
-[fast] Pour chacun des modules du projet, le plugin scan le code, détecte les éléments non importé à importer, les injecte et renvoie le code modifié au navigateur.
-
-Précis, simple, rapide, efficace.
--->
+<!-- TODO: text -->
 
 ---
 name: Le plugin Vite - Récap
@@ -1322,12 +1244,10 @@ ready: true
 timing: 1.3
 layout: bottom-center-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1617957718587-60a442884bee?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1602917495378-afbaf25dc4fa?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 transition: slide-up
 inalia:
   questionId: 3
@@ -1399,12 +1319,10 @@ ready: true
 timing: 0.9
 layout: bottom-center-card
 img:
-  brutalism: >-
-    https://images.unsplash.com/photo-1617957718587-60a442884bee?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: >-
-    https://images.unsplash.com/photo-1602917495378-afbaf25dc4fa?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers:
 transition: slide-up
 inalia:
   questionId: 3
@@ -1498,10 +1416,10 @@ ready: true
 timing: 0.4
 layout: bottom-center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 transition: slide-up
 ---
 
@@ -1536,10 +1454,10 @@ choices:
   - Virtualization - Récap
 layout: bottom-center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 ---
 
 ````md magic-move
@@ -1602,10 +1520,10 @@ ready: true
 timing: 0.9
 layout: center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 transition: slide-up
 ---
 
@@ -1650,10 +1568,10 @@ choices:
   - Virtualization - Récap
 layout: center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 ---
 
 ````md magic-move
@@ -1726,10 +1644,10 @@ ready: true
 timing: 0.5
 layout: center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 transition: slide-up
 ---
 
@@ -1764,10 +1682,10 @@ choices:
   - Virtualization - Récap
 layout: center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 ---
 
 ````md magic-move
@@ -1841,10 +1759,10 @@ ready: true
 timing: 0.6
 layout: center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 transition: slide-up
 ---
 
@@ -1874,10 +1792,10 @@ choices:
   - Virtualization - Récap
 layout: center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 ---
 
 ````md magic-move
@@ -2031,10 +1949,10 @@ group: Advanced Capabilities
 ready: true
 timing: 0.5
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1559762691-617a33825bc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 transition: slide-up
 ---
 
@@ -2111,10 +2029,10 @@ choices:
   - Récap des récap
 layout: center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1721052921257-f1ec18f80e0f?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 ---
 
 ````md magic-move
@@ -2183,10 +2101,10 @@ ready: true
 timing: 1
 layout: bottom-center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1714548213572-7943d5fd3528?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 transition: slide-up
 ---
 
@@ -2246,10 +2164,10 @@ choices:
   - Récap des récap
 layout: bottom-center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1714548213572-7943d5fd3528?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 ---
 
 ````md magic-move
@@ -2318,10 +2236,10 @@ choices:
   - Récap des récap
 layout: bottom-center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1662237693451-b484fb67c8dc?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 ---
 
 ````md magic-move
@@ -2395,10 +2313,10 @@ ready: true
 timing: 0.4
 layout: center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1760224254103-3dcc15e4ad9d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 transition: slide-up
 ---
 
@@ -2431,10 +2349,10 @@ choices:
   - Récap des récap
 layout: center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1760224254103-3dcc15e4ad9d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 ---
 
 ````md magic-move
@@ -2552,10 +2470,10 @@ choices:
   - Récap des récap
 layout: bottom-center-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1698044047367-17eb43a7fd34?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 ---
 
 ````md magic-move
@@ -2600,15 +2518,26 @@ C'est une technique tellement élégante pour ajouter un backend, c'est chouette
 -->
 
 ---
-name: Récap des récap
-timing: 1.3
-layout: recap
+nane: Everything fron the start
+timing: 0
 inalia:
   emoji: false
 ---
 
-<!-- TODO: faire une second page avec du code -->
 <!-- TODO: rappel de tout ce qu'on a vu depuis le début et ensuite, récap du récap -->
+
+<!-- TODO: text -->
+
+---
+name: Récap des récap - List
+timing: 1.3
+layout: recap
+transition: slide-up
+inalia:
+  emoji: false
+---
+
+<!-- TODO: adapt text -->
 
 <RecapList
   title="Ce qu'il faut garder en tête"
@@ -2643,16 +2572,28 @@ Avec tout ça, vous masterisez Vite comme des chefs [confetti].
 -->
 
 ---
+name: Récap des récap - Code
+timing: 0
+layout: recap
+inalia:
+  emoji: false
+---
+
+<!-- TODO: faire une second page avec du code -->
+
+<!-- TODO: text -->
+
+---
 name: Dans les profondeurs de la pipeline
 group: Deep Dive
 ready: true
 timing: 1.5
 layout: bottom-left-card
 img:
-  brutalism: null
+  brutalism: false
   default: >-
     https://images.unsplash.com/photo-1553356126-71d9da2295e2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  futuristic: null
+  flowers: null
 ---
 
 ````md magic-move
