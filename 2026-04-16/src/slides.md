@@ -1147,9 +1147,6 @@ inalia:
   emoji: false
 ---
 
-<!-- TODO: about the fact the resolveId hasn't been used in our examples until now -->
-<!-- TODO: second slide sur les 3 hooks -->
-
 <RecapList
   title="Le plugin Vite en 3 points"
   :items="[
@@ -1189,6 +1186,36 @@ layout: recap
 inalia:
   emoji: false
 ---
+
+<!-- TODO: about the fact the resolveId hasn't been used in our examples until now, code that does not exists -->
+<!-- TODO: second slide sur les 3 hooks -->
+
+```ts {*|4-6|7-9|10-12|*}{lines:true}
+export default function myPlugin() {
+  return {
+    name: "my-plugin",
+    resolveId(id) {
+      // Used to...
+    },
+    load(id) {
+      // Used to...
+    }
+    tranform(code, id) {
+      // Used to...
+    }
+  }
+}
+```
+
+<!-- TODO: text -->
+
+---
+name: Un plugin pour virtualiser - Intro
+group: Virtualization
+timing: 0
+---
+
+<!-- TODO: text -->
 
 ---
 name: Un plugin pour virtualiser
