@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.30.3",
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "build": "pnpm -r run --workspace-concurrency=-1 build && pnpm run generate:redirects && pnpm run generate:meta",
     "export": "pnpm -r run --workspace-concurrency=1 export",
@@ -69,7 +69,6 @@
     "openai": "catalog:",
     "pathe": "catalog:",
     "playwright-chromium": "catalog:",
-    "prettier": "catalog:",
     "prompts": "catalog:",
     "slidev-addon-graph": "catalog:",
     "slidev-theme-personal": "link:theme",

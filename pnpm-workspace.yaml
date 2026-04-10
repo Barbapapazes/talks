@@ -7,87 +7,72 @@ catalog:
   '@antfu/eslint-config': ^7.6.1
   '@dagrejs/dagre': ^2.0.4
   '@formkit/auto-animate': ^0.9.0
-  '@iconify-json/devicon': ^1.2.59
+  '@iconify-json/devicon': ^1.2.62
   '@iconify-json/heroicons': ^1.2.3
-  '@iconify-json/logos': ^1.2.10
-  '@iconify-json/lucide': ^1.2.95
+  '@iconify-json/logos': ^1.2.11
+  '@iconify-json/lucide': ^1.2.102
   '@iconify-json/mdi': ^1.2.3
   '@iconify-json/noto': ^1.2.7
   '@iconify-json/ph': ^1.2.2
-  '@iconify-json/simple-icons': ^1.2.72
+  '@iconify-json/simple-icons': ^1.2.77
   '@iconify-json/unjs': ^1.2.3
-  '@iconify-json/vscode-icons': ^1.2.44
-  '@mermaid-js/mermaid-cli': ^11.11.0
-  '@shikijs/markdown-it': ^3.22.0
-  '@shikijs/transformers': ^4.0.1
-  '@slidev/cli': ^52.1.0
+  '@iconify-json/vscode-icons': ^1.2.45
+  '@mermaid-js/mermaid-cli': ^11.12.0
+  '@shikijs/markdown-it': ^3.23.0
+  '@shikijs/transformers': ^4.0.2
+  '@slidev/cli': ^52.14.2
   '@slidev/client': ^52.14.2
-  '@slidev/parser': ^52.1.0
+  '@slidev/parser': ^52.14.2
   '@slidev/theme-default': ^0.25.0
   '@tsparticles/confetti': 3.9.1
   '@tsparticles/engine': ^3.9.1
   '@tsparticles/slim': ^3.9.1
-  '@types/node': ^25.2.3
+  '@types/node': ^25.6.0
   '@types/prompts': ^2.4.9
-  '@unocss/eslint-plugin': ^66.6.3
+  '@unocss/eslint-plugin': ^66.6.8
   '@unovis/ts': ^1.6.4
   '@unovis/vue': 1.4.3-beta.0
-  '@vitejs/plugin-vue': ^6.0.4
+  '@vitejs/plugin-vue': ^6.0.5
   '@vue-flow/background': ^1.3.2
   '@vue-flow/core': ^1.48.2
   '@vue/test-utils': ^2.4.6
-  '@vue/tsconfig': ^0.9.0
+  '@vue/tsconfig': ^0.9.1
   '@vueuse/core': ^14.2.1
   add: ^2.0.6
   alien-signals: ^3.1.2
   cloudflare: ^5.2.0
   cobe: ^0.6.5
-  dotenv: ^17.3.1
-  eslint: ^10.0.2
+  dotenv: ^17.4.1
+  eslint: ^10.1.0
   execa: ^9.6.1
   fdir: ^6.5.0
   fireworks-js: ^2.10.8
   gray-matter: ^4.0.3
-  happy-dom: ^20.8.3
+  happy-dom: ^20.8.9
   markdown-it: ^14.1.1
   ofetch: ^1.5.1
-  openai: ^6.22.0
+  openai: ^6.34.0
   pathe: ^2.0.3
-  playwright-chromium: ^1.58.2
-  pnpm: ^10.30.3
-  prettier: ^3.8.1
+  playwright-chromium: ^1.59.1
+  pnpm: ^10.33.0
   prompts: ^2.4.2
   reka-ui: 1.0.0-alpha.8
   seedrandom: ^3.0.5
-  shiki: ^4.0.1
+  shiki: ^4.0.2
   slidev-addon-graph: ^1.0.0
   slidev-addon-inalia: 0.2.8
   tailwind-variants: ^3.2.2
-  taze: ^19.10.0
+  taze: ^19.11.0
   tiktoken: ^1.0.22
   typescript: ^5.9.3
-  vite: ^8.0.0-beta.16
   vite-plugin-info: ^0.4.1
   vite-plugin-inspect: ^11.3.3
   vite-plugin-run: ^0.6.1
-  vitest: ^4.0.18
-  vue: ^3.5.29
-  wrangler: ^4.63.0
+  vitest: ^4.1.4
+  vue: ^3.5.32
+  wrangler: ^4.80.0
 
 catalogMode: prefer
-
-catalogs:
-  conflicts_@types/node_h25_3_5:
-    '@types/node': ^25.3.5
-  conflicts_@vitejs/plugin-vue_h6_0_4:
-    '@vitejs/plugin-vue': ^6.0.4
-  conflicts_@vue/tsconfig_h0_9_0:
-    '@vue/tsconfig': ^0.9.0
-  conflicts_typescript_t5_9_3:
-    typescript: ~5.9.3
-
-overrides:
-  vite: 8.0.7
 
 patchedDependencies:
   cobe: patches/cobe.patch
