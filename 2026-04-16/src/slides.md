@@ -26,7 +26,8 @@ timing: 0.2
 ---
 
 <!-- TODO: regularly add QR code to access the Inalia voting page -->
-<!-- TODO: remove background for brutalist slides (and change colors from time to times) -->
+<!-- TODO: explained visually should be used to explain the issue we are facing -->
+<!-- TODO: handle false for images -->
 <!-- TODO: maybe? remove confused and magic gif and rain -->
 <!-- TODO: somehting about and what about the build after the first concrete example? -->
 
