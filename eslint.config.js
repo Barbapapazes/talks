@@ -10,4 +10,10 @@ export default antfu({
     './2026-04-15/src/.vite-transformed/**/*',
     './2026-04-15/src/.vite-build/**/*',
   ],
+}).append({
+  files: ['**/src/slides.md'],
+  rules: {
+    'markdown/no-multiple-h1': 'off',
+    'markdown/require-alt-text': 'off',
+  },
 })

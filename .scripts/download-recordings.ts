@@ -9,6 +9,7 @@ import { getPackagesJson } from './_utils.ts'
 import 'dotenv/config'
 
 const exec = promisify(_exec)
+const SILENCE_END_RE = /silence_end: (\d+\.?\d*)/g
 
 const openai = new OpenAI()
 
@@ -129,11 +130,10 @@ async function downloadAudio(packageJson: string) {
 
         // parse silence_end lines and pick last silence_end (closest to window end)
         const silenceEnds: number[] = []
-        const re = /silence_end: (\d+\.?\d*)/g
-        let m
+        let match: RegExpExecArray | null
         // eslint-disable-next-line no-cond-assign
-        while ((m = re.exec(sd))) {
-          silenceEnds.push(Number(m[1]))
+        while ((match = SILENCE_END_RE.exec(sd))) {
+          silenceEnds.push(Number(match[1]))
         }
 
         if (silenceEnds.length > 0) {

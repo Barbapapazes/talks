@@ -1,6 +1,6 @@
 ---
-mode: 'agent'
-model: GPT-5
+agent: 'agent'
+model: GPT-5 mini (copilot)
 description: Translate talk transcripts between English and French; preserve meaning and technical tokens; write to transcript.fr.md or transcript.en.md; do not modify versions.
 ---
 
