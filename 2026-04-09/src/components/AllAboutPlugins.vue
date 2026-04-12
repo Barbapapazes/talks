@@ -61,8 +61,8 @@ const features = [
             :style="{ '--delay': `calc(${(index % 3) + (Math.floor(index / 3))} * 30ms)` }"
           >
             <CardTitle
-             :icon="feature.icon"
-             :title="feature.name"
+              :icon="feature.icon"
+              :title="feature.name"
             />
             <CardDescription
               :description="feature.description"

@@ -1,9 +1,15 @@
 <script lang="ts" setup>
 import type { NodeProps } from '@vue-flow/core'
+import ViteHookPills from '../../ViteHookPills.vue'
+
+type HookName = 'resolveId' | 'load' | 'transform'
 
 interface HookNodeData {
   label: string
-  signature: string
+  hook: {
+    name: HookName
+    args?: string
+  }
   plugins: {
     name: string
     color: string
@@ -25,19 +31,24 @@ const props = defineProps<HookNodeProps>()
 const emits = defineEmits<HookNodeEmits>()
 
 function onClick(pluginName: string) {
-  emits('pluginClick', props.data.label, pluginName)
+  emits('pluginClick', props.data.hook.name, pluginName)
 }
 
 function isSelected(pluginName: string) {
   return props.selectedPlugin?.name === pluginName
-    && props.selectedPlugin?.hook === props.data.label
+    && props.selectedPlugin?.hook === props.data.hook.name
 }
 </script>
 
 <template>
   <div class="w-80 bg-neutral-50 border border-neutral-200 rounded-lg divide-y">
-    <div class="py-1 px-2 text-xl font-semibold flex items-center justify-between gap-1">
-      {{ props.data.label }} <span class="font-mono font-normal text-base text-neutral-700">{{ props.data.signature }}</span>
+    <div class="flex justify-between items-center px-2 py-1">
+      <span class="font-semibold">{{ props.data.label }}</span>
+
+      <ViteHookPills
+        size="sm"
+        :hooks="[{ name: props.data.hook.name, args: props.data.hook.args }]"
+      />
     </div>
 
     <div class="p-1">

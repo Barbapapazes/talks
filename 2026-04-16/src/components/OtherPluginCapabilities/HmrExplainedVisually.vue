@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { Request, WebSocketMessage } from '../types/network-tab'
+import type { Request, WebSocketMessage } from '../../types/network-tab'
 import appVueTransformed from 'virtual:vite-transformed-file:App:ts'
 import indexHtml from 'virtual:vite-transformed-file:index:html'
 import mainTs from 'virtual:vite-transformed-file:main:ts'
-import Inspect from './Inspect/Inspect.vue'
+import Inspect from '../Inspect/Inspect.vue'
 
 const hmrMessages: WebSocketMessage[] = [
   {

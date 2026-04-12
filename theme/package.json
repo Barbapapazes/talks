@@ -7,8 +7,10 @@
   },
   "dependencies": {
     "@tsparticles/confetti": "catalog:",
+    "@vueuse/core": "catalog:",
     "fireworks-js": "catalog:",
     "reka-ui": "catalog:",
+    "slidev-addon-inalia": "catalog:",
     "tailwind-variants": "catalog:"
   },
   "devDependencies": {

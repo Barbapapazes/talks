@@ -9,9 +9,11 @@
   },
   "include": [
     "../../theme/modules.d.ts",
+    "../../theme/components/**/*.vue",
+    "../../theme/composables/**/*.ts",
     "./modules.d.ts",
     "./global-bottom.vue",
     "./layouts/*.vue",
     "./components/**/*.vue"
-, "../../theme/components/ChooseTheme.vue"  ]
+  ]
 }

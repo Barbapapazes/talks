@@ -106,16 +106,17 @@ Et bin ça tombe bien, on va prendre le temps d'en parler
 -->
 
 ---
-name: Le thème des slides
-group: Pré-talk
+name: Slide Theme
+group: Pre-talk
+ready: true
 timing: 2.4
 layout: bottom-left-card
 img:
+  brutalism: false
   default: >-
-    https://images.unsplash.com/photo-1513346940221-6f673d962e97?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+    https://images.unsplash.com/photo-1615099833617-01e3d6dbe2e4?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: null
 ---
-
-<!-- TODO: changer le background -->
 
 <div class="flex flex-col gap-2 text-2xl font-bold">
   <div class="flex flex-row items-center gap-2">
@@ -158,7 +159,7 @@ Et trop bien, on a compris ce qu'était un bundler.
 -->
 
 ---
-name: Le fonctionnement de Vite
+name: How Vite Works
 group: Vite Core
 ready: true
 timing: 0.9
@@ -182,7 +183,7 @@ C'est long. c'est trop long. [fast] et moi bah, j'ai que 45 minutes et j'ai vrai
 -->
 
 ---
-name: Le concentré du fonctionnement de Vite
+name: Vite in a Nutshell
 group: Vite Core
 ready: true
 timing: 0.8
@@ -217,7 +218,7 @@ Mais heuu, est-ce qu'on rendrait pas ça un peu plus visuel.
 -->
 
 ---
-name: Le fonctionnement de Vite - Visualisation
+name: How Vite Works - Visualization
 group: Vite Core
 ready: true
 timing: 2.3
@@ -244,11 +245,11 @@ Ensuite, le navigateur charge main.ts. On y voit un fichier CSS, Vue et notre ap
 
 Maiiis bref peut importe..., on investiguera ça plus tard.
 
-[enthusiastic] L'important, c'est qu'on a maintenant une belle vision d'ensemble de Vite et ça, c'est top !
+[enthusiastic] Ce qui compte maintenant, c'est qu'on ait une bonne vision du fonctionnement de Vite.
 -->
 
 ---
-name: Tout n'est que plugin
+name: Everything Is a Plugin
 group: Feature Plugins
 ready: true
 timing: 2
@@ -260,7 +261,7 @@ inalia:
   questionId: 2
 ---
 
-<AllAboutPlugins />
+<EverythingIsAPlugin />
 
 <!--
 [whispers] Bon, par contre, j'ai un petit secret à vous dire. [small pause] Ça reste en vous et moi hein?
@@ -284,15 +285,20 @@ Breeeef, tout est possible. Mais surtout surtout surtout, le point à retenir, d
 -->
 
 ---
-name: Tout n'est que plugin - Choices
+name: Everything Is a Plugin - Choices
 group: Feature Plugins
 ready: true
 timing: 0.1
 choices:
-  - Du CSS importé dans un fichier TypeScript
-  - Une image chargée dans un fichier TypeScript
-  - JSX chargé naturellement
+  - CSS Imported into a TypeScript File
+  - An Image Loaded in a TypeScript File
+  - JSX Loaded Naturally
 layout: choices
+img:
+  brutalism: false
+  default: >-
+    https://images.unsplash.com/photo-1613901282632-bf2ad28d2369?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: null
 inalia:
   questionId: 2
 ---
@@ -304,7 +310,7 @@ Et bin c'est parti, explorons <choix> !
 -->
 
 ---
-name: Du CSS importé dans un fichier TypeScript
+name: CSS Imported into a TypeScript File
 group: Feature Plugins
 ready: true
 timing: 0.6
@@ -313,7 +319,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 transition: slide-up
 ---
 
@@ -336,22 +342,22 @@ Pourquoi ? Parce que l'navigateur, il s'fout de l'extension. Tant que tu lui ren
 -->
 
 ---
-name: Du CSS importé dans un fichier TypeScript - Visualisation
+name: CSS Imported into a TypeScript File - Visualization
 group: Feature Plugins
 ready: true
 timing: 0.9
 choices:
-  - Vite et ses features - Récap
+  - Vite and Its Features - Recap
 img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 ---
 
 <BackgroundImage />
 
-<CssImportedIntoTypeScript class="absolute top-20 left-40 -right-px -bottom-px" />
+<CssImportedIntoATypeScriptFile class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
 Pour en avoir le cœur net, je vous propose qu'on aille dans [click] l'inspecteur de notre navigateur. On va y observer les requêtes et les réponses.
@@ -364,7 +370,7 @@ On y r'trouve notre index.html. Ce document, il charge l'index.ts. L'index.ts, l
 -->
 
 ---
-name: Une image chargée dans un fichier TypeScript
+name: An Image Loaded in a TypeScript File
 group: Feature Plugins
 ready: true
 timing: 0.6
@@ -373,7 +379,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 transition: slide-up
 ---
 
@@ -396,7 +402,7 @@ Pourquoi ? Parce que l'navigateur, il s'fout de l'extension. Tant que tu lui ren
 -->
 
 ---
-name: Une image chargée dans un fichier TypeScript - Visualisation
+name: An Image Loaded in a TypeScript File - Visualization
 group: Feature Plugins
 ready: true
 timing: 0.9
@@ -404,13 +410,13 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 transition: slide-up
 ---
 
 <BackgroundImage />
 
-<AnImageLoadedIntoTypeScript class="absolute top-20 left-40 -right-px -bottom-px" />
+<AnImageLoadedInATypeScriptFile class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
 Pour en avoir le cœur net, je vous propose qu'on aille dans [click] l'inspecteur de notre navigateur pour y observer les requêtes et les réponses.
@@ -423,28 +429,28 @@ On y r'trouve notre index.html qui charge main.ts qui lui-même charge notre ima
 -->
 
 ---
-name: Une image chargée dans un fichier TypeScript - Build
+name: An Image Loaded in a TypeScript File - Build
 group: Feature Plugins
 ready: true
 timing: 0.3
 choices:
-  - Vite et ses features - Récap
+  - Vite and Its Features - Recap
 layout: bottom-right-card
 img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 ---
 
-<AnImageLoadedIntoTypeScriptBuildTree />
+<AnImageLoadedInATypeScriptFileBuildTree />
 
 <!--
 Au build, Vite va inliner les images de moins de 4ko pour réduire le nombre de requêtes et ajouter un hash dans le nom des autres pour facilement invalider les caches.
 -->
 
 ---
-name: JSX chargé naturellement
+name: JSX Loaded Naturally
 group: Feature Plugins
 ready: true
 timing: 0.6
@@ -453,7 +459,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 transition: slide-up
 ---
 
@@ -490,22 +496,22 @@ Pourquoi ? Parce que l'navigateur, il s'fout de l'extension. Tant que tu lui ren
 -->
 
 ---
-name: JSX chargé naturellement - Visualisation
+name: JSX Loaded Naturally - Visualization
 group: Feature Plugins
 ready: true
 timing: 0.8
 choices:
-  - Vite et ses features - Récap
+  - Vite and Its Features - Recap
 img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 ---
 
 <BackgroundImage />
 
-<JSXLoadedNaturallyIntoTypeScript class="absolute top-20 left-40 -right-px -bottom-px" />
+<JSXLoadedNaturally class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
 Pour en avoir le cœur net, je vous propose qu'on aille dans [click] l'inspecteur de notre navigateur pour y observer les requêtes et les réponses.
@@ -520,7 +526,7 @@ Il fait la même chose sur item.jsx !
 -->
 
 ---
-name: Vite et ses features - Récap
+name: Vite and Its Features - Recap
 ready: true
 timing: 1.2
 layout: recap
@@ -529,19 +535,19 @@ inalia:
 ---
 
 <RecapList
-  title="Vite en 3 points"
+  title="Vite in 3 Points"
   :items="[
     {
-      title: 'Un serveur web pour le développement',
-      description: 'Il fait transiter des requêtes qu\'on transformera à la volée'
+      title: 'A web server for development',
+      description: 'It handles requests that can be transformed on demand'
     },
     {
-      title: 'Un bundler pour la production',
-      description: 'Il transforme notre code pour la production'
+      title: 'A bundler for production',
+      description: 'It transforms our code for production'
     },
     {
-      title: 'Un système de plugins',
-      description: 'Pour étendre ses fonctionnalités et faire faire tout ce qu\'on veut'
+      title: 'A plugin system',
+      description: 'To extend its features and make it do whatever we want'
     }
   ]"
 />
@@ -562,16 +568,16 @@ Trop bien ! [confetti] Troooop bien ! C'est qu'on commence à en savoir pleins d
 -->
 
 ---
-name: Les entrailles d'un plugin Vite - Common Hooks
+name: Inside a Vite Plugin - Common Hooks
 group: Inside a Plugin
 ready: true
-timing: 1.2
+timing: 1.1
 layout: bottom-left-card
 img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 transition: slide-up
 ---
 
@@ -620,7 +626,7 @@ Ensuite, [click] on a 3 méthodes, hooks qu'on peut utiliser pour agir sur chaqu
 
 [pause] [click]
 
-[enthusiastic] Baaah voilà ! Vous venez de faire votre premier plugin Vite ! Félicitations ! Bravo !
+[enthusiastic] Et voilà, vous venez de faire votre premier plugin. Félicitations.
 
 [doubtful] Mais heuu, okk, mais il fait rien du tout là notre plugin ??
 
@@ -637,7 +643,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 transition: slide-up
 ---
 
@@ -670,13 +676,13 @@ C'est tout. C'est tout ce qu'il fait.
 name: load
 group: Inside a Plugin
 ready: true
-timing: 0.9
+timing: 0.8
 layout: bottom-left-card
 img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 transition: slide-up
 ---
 
@@ -728,8 +734,6 @@ Mais, [click] qu'est ce qui nous empêche de le charger depuis une API ?
 Ou plus zinzin encore, [click] de retourner un fichier qui n'existe pas ?
 
 Rien du tout ! Ces 3 comportements sont parfaitement valides !
-
-[enthusiastic] Ok, petit à petit les briques s'assemblent. Le puzzle prend forme. On aime bien.
 -->
 
 ---
@@ -742,7 +746,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 transition: slide-up
 ---
 
@@ -784,14 +788,14 @@ Cas simple, on remplace tous les "foo" par des "bar".
 -->
 
 ---
-name: Plusieurs plugins
+name: Multiple Plugins
 group: Inside a Plugin
 ready: true
 timing: 0.4
 layout: center
 ---
 
-<h2 class="text-4xl font-bold">Plusieurs plugins ?</h2>
+<h2 class="text-4xl font-bold">Multiple plugins?</h2>
 
 <!--
 [doubtful] Heuuu, ah ouais nan quand même, comment on fait, comment, comment on gère s'il y a plusieurs plugins ?
@@ -802,13 +806,12 @@ Bah, le mieux qu'on regarde ensemble ? On fait ça depuis la pipeline de Vite ?
 -->
 
 ---
-name: Les entrailles d'un plugin Vite - Visualisation
+name: Inside a Vite Plugin - Visualization
 group: Inside a Plugin
+ready: true
 timing: 1.9
 class: p-0!
 ---
-
-<!-- TODO: revoir la transition -->
 
 <VitePluginsTheory />
 
@@ -831,22 +834,20 @@ Et enfin, on renvoie ce code là au navigateur.
 
 Ok, plus clair Estéban. Merci !
 
-[hesitating] Est-ce qu'on peut faire d'autres choses avec les plugins ?
+Alors ça, c'est très chouette comme visualisation mais c'est dans mes slides.
 -->
 
 ---
-name: Visualiser la pipeline
+name: Visualizing the Pipeline
 group: Inside a Plugin
-timing: 1.1
+ready: true
+timing: 0.5
 img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 ---
-
-<!-- TODO: déplacer après plusieurs plugins -->
-<!-- TODO: revoir complètement le ton du texte -->
 
 <BackgroundImage />
 
@@ -855,10 +856,16 @@ img:
   <iframe src="/__inspect" class="rounded-lg overflow-hidden w-full h-full" />
 </Card>
 
-<!-- TODO: text -->
+<!--
+J'ai encore mieux pour vous.
+
+Il existe un [click] plugin Vite vite-plugin-inspect qui peut se mettre dans n'importe quel project Vite et qui permet de visualiser la pipeline, les différents hooks appelé et les différentes transformations des plugins sur vos fichiers.
+
+[examples with a .vue and .css file]
+-->
 
 ---
-name: Les entrailles d'un plugin Vite - Lifecycle Hooks
+name: Inside a Vite Plugin - Lifecycle Hooks
 group: Inside a Plugin
 ready: true
 timing: 1.3
@@ -867,7 +874,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 ---
 
 ````md magic-move
@@ -954,53 +961,76 @@ Ensuite, [click] buildStart, appelé au moment où Vite démarre et [click] buil
 -->
 
 ---
-name: Concrètement ?
+name: In Practice?
 group: Concrete Example
-timing: 0.4
+ready: true
+timing: 0.6
 layout: center-card
 img:
   default: >-
     https://images.unsplash.com/photo-1631106254201-ffbee2305c5b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-<!-- TODO: rework examples (simple transform to replace a __build_time__ placeholder (in an js file) en réutilisant la visualisation pour que tout le monde comprenne, second example avec un load d'un fichier markdown d'une API et un transform qui change le markdown en html via markdown it -->
-
-<h2 class="text-4xl font-bold">Concrètement,<br>ça donne quoi ?</h2>
+<h2 class="text-4xl font-bold">So what does<br>that look like?</h2>
 
 <!--
 Mais concrètement, ça donne quoi quand on met tout ça ensemble ?
 
 Qu'est-ce qu'on peut construire ? Parce que ben là, j'ai un peu l'impression qu'on est devant une boite de Lego mais qu'on nous a pas filé la notice. Comment qu'on fait ?
+
+Du coup, ce que je vous propose, c'est qu'on se build des p'tits plugins Vite.
 -->
 
 ---
 name: Simple Transform Plugin
 group: Concrete Example
-timing: 0
+ready: true
+timing: 0.2
 layout: center
 ---
 
-<!-- TODO: text -->
+<h2 class="text-4xl font-bold">Simple Transform Plugin</h2>
+
+<!--
+Le premier, c'est simple transform plugin.
+
+Alors, qu'est-ce qui va nous permettre de faire ?
+-->
 
 ---
-name: Simple Transform Plugin - Visualisation
+name: Simple Transform Plugin - Visualization
 group: Concrete Example
-timing: 0
+ready: true
+timing: 0.5
 ---
 
 <SimpleTransformPluginExplainedVisually />
 
-<!-- TODO: text -->
+<!--
+Pour bien comprendre, je vous propose qu'on [click] reprennent notre visualisation.
+
+Dans le fichier main.ts, on va trouver ce code avec une constant build time. L'objectif c'est de la remplacer avec la date de build.
+
+[click]
+[click]
+
+Concrètement, c'est pouvoir passer ce ça, à ça.
+
+Et pour le faire, on va développer un plugin.
+-->
 
 ---
 name: Simple Transform Plugin - Internals
 group: Concrete Example
-timing: 0
+ready: true
+timing: 0.4
 layout: bottom-left-card
 img:
   brutalism: false
-  default:
-  flowers:
+  default: >-
+    https://images.unsplash.com/photo-1484589065579-248aad0d8b13?q=80&w=1359&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1471696035578-3d8c78d99684?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1011,21 +1041,11 @@ export default function simpleTransform() {
   }
 }
 ```
-```ts {4-6}{lines:true}
+```ts {4-6|*}{lines:true}
 export default function simpleTransform() {
   return {
     name: "simple-transform",
-    tranform(code) {
-      return code.replace("__BUILD_TIME__", new Date().toString())
-    }
-  }
-}
-```
-```ts {*}{lines:true}
-export default function simpleTransform() {
-  return {
-    name: "simple-transform",
-    tranform(code) {
+    transform(code) {
       return code.replace("__BUILD_TIME__", new Date().toString())
     }
   }
@@ -1033,35 +1053,59 @@ export default function simpleTransform() {
 ```
 ````
 
-<!-- TODO: text -->
+<!--
+Notre plugin, il commence par un petit nom.
+
+Ensuite, on va [click] utiliser le hook transform pour remplacer la string build time par la date.
+
+Avec ça, le navigateur va recevoir le fichier comme on l'a vu juste avant.
+-->
 
 ---
 name: External Markdown Loader Plugin
 group: Concrete Example
-timing: 0
+ready: true
+timing: 0.1
+layout: center
 ---
 
-<!-- TODO: text -->
+<h2 class="text-4xl font-bold">External Markdown Loader</h2>
+
+<!--
+Pour le second plugin, on va faire un plugin de chargement de Markdown.
+-->
 
 ---
-name: External Markdown Loader Plugin - Visualisation
+name: External Markdown Loader Plugin - Visualization
 group: Concrete Example
-timing: 0
+ready: true
+timing: 0.6
 ---
 
 <ExternalMarkdownLoaderPluginExplainedVisually />
 
-<!-- TODO: text -->
+<!--
+Pour bien comprendre, on va [click] reprendre notre visualisation.
+
+Dans le fichier main.ts, on charge de l'HTML depuis un import daily-news.md. Ce fichier, il n'existe pas sur le disque.
+
+[click] [click]
+
+Pourtant, si on se penche sur les logs HTTP, on le voit et il contient bien de l'HTML. Ça, c'est grâce au plugin qu'on va développer.
+-->
 
 ---
 name: External Markdown Loader Plugin - Internals
 group: Concrete Example
-timing: 0
+ready: true
+timing: 0.6
 layout: bottom-left-card
 img:
   brutalism: false
-  default:
-  flowers:
+  default: >-
+    https://images.unsplash.com/photo-1609083590460-7b8cc0ca65f8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1447875569765-2b3db822bec9?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1076,17 +1120,16 @@ export default function externalMarkdown() {
 export default function externalMarkdown() {
   return {
     name: "external-markdown",
-    async load(id) {
-      if (!id.endsWidth(".md")) {
+    async load(id) { // /src/daily-news.md
+      if (!id.endsWidth(".md"))
         return
-      }
 
       return fetch(`https://api.example.com/${id}`).then(res => res.text())
     },
   }
 }
 ```
-```ts {4,15-21}{lines:true}
+```ts {4,15-21|*}{lines:true}
 import markdownit from 'markdown-it'
 
 export default function externalMarkdown() {
@@ -1094,74 +1137,54 @@ export default function externalMarkdown() {
 
   return {
     name: "external-markdown",
-    async load(id) {
-      if (!id.endsWidth(".md")) {
+    async load(id) { // /src/daily-news.md
+      if (!id.endsWidth(".md"))
         return
-      }
 
       return fetch(`https://api.example.com/${id}`).then(res => res.text())
     },
     async transform(code, id) {
-      if (!id.endsWidth(".md")) {
+      if (!id.endsWidth(".md"))
         return
-      }
 
-      return md.render(code)
-    }
-  }
-}
-```
-```ts {*}{lines:true}
-import markdownit from 'markdown-it'
-
-export default function externalMarkdown() {
-  const md = markdownit()
-
-  return {
-    name: "external-markdown",
-    async load(id) {
-      if (!id.endsWidth(".md")) {
-        return
-      }
-
-      return fetch(`https://api.example.com/${id}`).then(res => res.text())
-    },
-    async transform(code, id) {
-      if (!id.endsWidth(".md")) {
-        return
-      }
-
-      return md.render(code)
+      return `const html = "${md.render(code)}"\n\nexport default html`
     }
   }
 }
 ```
 ````
 
-<!-- TODO: text -->
+<!--
+Tout commence par cette function qui retourne un objet avec un nom.
+
+[click] On commence par utiliser le hook load pour charger le contenu du fichier Markdown depuis une API.
+
+[click] Ensuite, on utilise le hook transform pour convertir le Markdown en HTML via markdown-it et pour exporter ce HTML en tant que module JavaScript.
+-->
 
 ---
-name: Le plugin Vite - Récap
-timing: 1.2
+name: The Vite Plugin - Recap
+ready: true
+timing: 0.7
 layout: recap
 inalia:
   emoji: false
 ---
 
 <RecapList
-  title="Le plugin Vite en 3 points"
+  title="The Vite Plugin in 3 Points"
   :items="[
     {
-      title: 'Un plugin Vite, c\'est une fonction qui retourne un objet',
-      description: 'L\'objet doit au moins avoir une propriété name'
+      title: 'A Vite plugin is a function that returns an object',
+      description: 'That object must at least have a name property'
     },
     {
-      title: 'Il y a 3 hooks principaux pour agir sur les modules',
-      description: 'resolveId, load et transform'
+      title: 'There are 3 main hooks to act on modules',
+      description: 'resolveId, load, and transform'
     },
     {
-      title: 'Il y a aussi des hooks pour le cycle de vie de Vite',
-      description: 'config, configResolved, buildStart, buildEnd et closeBundle'
+      title: 'There are also hooks for Vite\'s lifecycle',
+      description: 'config, configResolved, buildStart, buildEnd, and closeBundle'
     }
   ]"
 />
@@ -1174,63 +1197,80 @@ inalia:
 [click] Y a 3 hooks principaux pour agir sur les modules : resolveId, load et transform. Le plus utilisé, globalement, c'est transform.
 
 [click] Et puis, on a pleins de hooks pour se brancher sur l'ensemble du cycle de vite de Vite.
-
-Génial ! [confetti] On commence à faire nos premiers plugins. Franchement, si on nous avait dit ça il y a quelques dizaines de minutes, j'aurais pas cru !
-
-[intrigued] D'ailleurs, on a dit que le hook load pouvait retourner du code qui n'existe pas. Mais, hmmm, qu'est-ce que ça veut dire ?
 -->
 
 ---
-name: Le plugin Vite - 3 hooks Récap
-timing: 0
+name: The Vite Plugin - 3 Hooks Recap
+ready: true
+timing: 1.2
 layout: recap
 inalia:
   emoji: false
 ---
 
-<!-- TODO: about the fact the resolveId hasn't been used in our examples until now, code that does not exists -->
-<!-- TODO: second slide sur les 3 hooks -->
+<Card class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
 
 ```ts {*|4-6|7-9|10-12|*}{lines:true}
 export default function myPlugin() {
   return {
     name: "my-plugin",
     resolveId(id) {
-      // Used to...
+      // Used to intercept the module identifier and return a new one
     },
     load(id) {
-      // Used to...
+      // Used to return the content of a module given its identifier
     }
-    tranform(code, id) {
-      // Used to...
+    transform(code, id) {
+      // Used to transform the content of a module given its identifier
     }
   }
 }
 ```
 
-<!-- TODO: text -->
+</Card>
+
+<!--
+
+La structure d'un plugin Vite, elle ressemble à ça. Une fonction qui retourne un objet avec un nom et les 3 hooks principaux.
+
+1. resolveId, pour intercepter l'identifiant d'un module et en retourner un nouveau
+2. load, pour retourner le contenu d'un module à partir de son identifiant
+3. transform, pour transformer le contenu d'un module à partir de son identifiant
+
+[pause]
+
+Génial ! [confetti] On commence à faire nos premiers plugins. Franchement, si on nous avait dit ça il y a quelques dizaines de minutes, j'aurais pas cru !
+
+[pause]
+
+[intrigued] D'ailleurs, on a dit que le hook load pouvait retourner du code qui n'existe pas. Mais, hmmm, qu'est-ce que ça veut dire ?
+-->
 
 ---
-name: Un plugin pour virtualiser - Intro
-group: Virtualization
-timing: 0
----
-
-<!-- TODO: text -->
-
----
-name: Un plugin pour virtualiser
+name: A Plugin for Virtualization - Intro
 group: Virtualization
 ready: true
-timing: 1.6
+timing: 0.1
+layout: center
+---
+
+<h2 class="text-4xl font-bold">A Plugin for Virtualization</h2>
+
+<!--
+Ça veut dire qu'on peut virtualiser des modules.
+-->
+
+---
+name: A Plugin for Virtualization
+group: Virtualization
+ready: true
+timing: 1.5
 ---
 
 <VirtualizationExplainedVisually />
 
 <!--
-[slow] Ce qu'on pourrait faire maintenant, c'est qu'on comprenne ça ensemble.
-
-[fast] Reprenons [click] notre visualisation, à gauche le navigateur, à droite les fichiers et au milieu, Vite, si on regarde main.ts, on y découvre un import vers 'virtual:my-module'. Pourtant [slow] c'est pas un fichier du projet, c'est pas non plus une dépendance [open package.json].
+[fast] Pour comprendre ça ensemble, reprenons [click] notre visualisation, à gauche le navigateur, à droite les fichiers et au milieu, Vite, si on regarde main.ts, on y découvre un import vers 'virtual:my-module'. Pourtant [slow] c'est pas un fichier du projet, c'est pas non plus une dépendance [open package.json].
 
 [strange] Mais du coup, ça vient d'où ?
 
@@ -1248,7 +1288,7 @@ Et c'est le cas.
 -->
 
 ---
-name: Un plugin pour virtualiser - Mind Blowing
+name: A Plugin for Virtualization - Mind Blowing
 group: Virtualization
 ready: true
 timing: 0.4
@@ -1266,7 +1306,7 @@ On se plonge dedans ?
 -->
 
 ---
-name: Un plugin pour virtualiser - Plugin Internals
+name: A Plugin for Virtualization - Plugin Internals
 group: Virtualization
 ready: true
 timing: 1.3
@@ -1275,7 +1315,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 transition: slide-up
 inalia:
   questionId: 3
@@ -1327,7 +1367,7 @@ export default function myVirtualModulePlugin() {
 ````
 
 <!--
-Dans la suite, on va rentrer en profondeur dans un example concret avec un plugin qui utilise cette technique là, tu peux déjà choisir lequel.
+[important] Dans la suite, on va rentrer en profondeur dans un example concret avec un plugin qui utilise cette technique là, tu peux déjà choisir lequel.
 
 Mais pour nous, maintenant, là, tout commence par un plugin, [click] avec son petit nom là, il est tout mignon.
 
@@ -1341,7 +1381,7 @@ Le truc, beh, c'est que c'est un peu pénible à écrire à chaque fois, mais, h
 -->
 
 ---
-name: Un plugin pour virtualiser - Virtual Plugin
+name: A Plugin for Virtualization - Virtual Plugin
 group: Virtualization
 ready: true
 timing: 0.9
@@ -1350,14 +1390,14 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers:
+  flowers: null
 transition: slide-up
 inalia:
   questionId: 3
 ---
 
 ````md magic-move
-```ts {6}{lines:true}
+```ts {2,6}{lines:true}
 import { defineConfig } from 'vite'
 import virtual from 'vite-plugin-virtual'
 
@@ -1417,15 +1457,14 @@ Et du coup, beh, beh on peut très simplement [click] avoir accès au dernier co
 -->
 
 ---
-name: Un plugin pour virtualiser - Choices
+name: A Plugin for Virtualization - Choices
 group: Virtualization
-ready: true
 timing: 0.1
 choices:
-  - Vue Router - Un module virtuel
-  - VitePress - Des data virtuels
-  - Icons Plugin - Des icônes virtuelles
-  - Infos Plugin - Des infos virtuelles
+  - Vue Router - A Virtual Module
+  - VitePress - Virtual Data
+  - Icons Plugin - Virtual Icons
+  - Info Plugin - Virtual Information
 layout: choices
 inalia:
   questionId: 3
@@ -1438,7 +1477,7 @@ Aller, plongeons nous dedans !
 -->
 
 ---
-name: Vue Router - Un module virtuel
+name: Vue Router - A Virtual Module
 group: Virtualization
 ready: true
 timing: 0.4
@@ -1474,12 +1513,12 @@ La ligne intéressante, [click] c'est la 3 et je vous propose qu'on se plonge da
 -->
 
 ---
-name: Vue Router - Un module virtuel - Plugin Internals
+name: Vue Router - A Virtual Module - Plugin Internals
 group: Virtualization
 ready: true
 timing: 0.7
 choices:
-  - Virtualization - Récap
+  - Virtualization - Recap
 layout: bottom-center-card
 img:
   brutalism: false
@@ -1542,7 +1581,7 @@ Comme tous les plugins, tout commence par un objet avec [click] un nom.
 -->
 
 ---
-name: VitePress - Des data virtuels
+name: VitePress - Virtual Data
 group: Virtualization
 ready: true
 timing: 0.9
@@ -1588,12 +1627,12 @@ Je vous propose qu'on se plonge dans le plugin pour comprendre pourquoi !
 -->
 
 ---
-name: VitePress - Des data virtuels - Plugin Internals
+name: VitePress - Virtual Data - Plugin Internals
 group: Virtualization
 ready: true
 timing: 0.8
 choices:
-  - Virtualization - Récap
+  - Virtualization - Recap
 layout: center-card
 img:
   brutalism: false
@@ -1666,7 +1705,7 @@ Comme tous les plugins, tout commence par un objet avec [click] un nom.
 -->
 
 ---
-name: Icons Plugin - Des icônes virtuelles
+name: Icons Plugin - Virtual Icons
 group: Virtualization
 ready: true
 timing: 0.5
@@ -1702,12 +1741,12 @@ Je vous propose qu'on se plonge dans le plugin qui permet ce comportement pour c
 -->
 
 ---
-name: Icons Plugin - Des icônes virtuelles - Plugin Internals
+name: Icons Plugin - Virtual Icons - Plugin Internals
 group: Virtualization
 ready: true
 timing: 0.8
 choices:
-  - Virtualization - Récap
+  - Virtualization - Recap
 layout: center-card
 img:
   brutalism: false
@@ -1781,7 +1820,7 @@ Comme tous les plugins, tout commence par un objet avec [click] un nom.
 -->
 
 ---
-name: Infos Plugin - Des infos virtuelles
+name: Info Plugin - Virtual Information
 group: Virtualization
 ready: true
 timing: 0.6
@@ -1812,12 +1851,12 @@ On part à sa découverte ?
 -->
 
 ---
-name: Infos Plugin - Des infos virtuelles - Plugin Internals
+name: Info Plugin - Virtual Information - Plugin Internals
 group: Virtualization
 ready: true
 timing: 1.1
 choices:
-  - Virtualization - Récap
+  - Virtualization - Recap
 layout: center-card
 img:
   brutalism: false
@@ -1916,17 +1955,42 @@ Comme tous les plugins, tout commence par un objet avec [click] un nom.
 -->
 
 ---
-name: Virtualization - Récap
+name: Virtualization - Recap
 timing: 0
 layout: recap
 inalia:
   emoji: false
 ---
 
-<!-- TODO: -->
+<Card class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+
+```ts
+export default function myVirtualModulePlugin() {
+  const virtualModuleId = 'virtual:my-module'
+  const resolvedVirtualModuleId = `\0${virtualModuleId}`
+
+  return {
+    name: 'my-virtual-module-plugin',
+    resolveId(id) {
+      if (id === virtualModuleId) {
+        return resolvedVirtualModuleId
+      }
+    },
+    load(id) {
+      if (id === resolvedVirtualModuleId) {
+        // Do whatever you want
+      }
+    },
+  }
+}
+```
+
+</Card>
+
+<!-- TODO: text -->
 
 ---
-name: Les autres capacités des plugins
+name: Other Plugin Capabilities
 group: Advanced Capabilities
 timing: 0.7
 layout: image
@@ -1939,7 +2003,7 @@ inalia:
 
 <!-- TODO: more time on this slides to make sure every one really understands -->
 
-<OtherCapabilities />
+<OtherPluginCapabilities />
 
 <!--
 On a vu différents hooks, pour agir sur les modules, se brancher sur le cycle de vie de Vite, on a vu la virtualisation, un petit example. Ce que je vous propose, c'est qu'on se plonge concrètement dans les diverses capacités des plugins.
@@ -1950,17 +2014,16 @@ TODO: explain the different plugin capabilities
 -->
 
 ---
-name: Les autres capacités des plugins - Choices
+name: Other Plugin Capabilities - Choices
 group: Advanced Capabilities
-ready: true
 timing: 0.1
 choices:
-  - Le Hot Module Replacement (HMR)
-  - Le middleware - Un fichier virtuel
-  - Run Plugin - Un plugin pour exécuter des commandes
-  - Laravel Vite - La communication inter-processus
-  - unplugin-macro - Un plugin pour créer des macros
-  - Nitro - Un backend
+  - Hot Module Replacement (HMR)
+  - Middleware - A Virtual File
+  - Run Plugin - A Plugin for Running Commands
+  - Laravel Vite - Inter-process Communication
+  - unplugin-macro - A Plugin for Creating Macros
+  - Nitro - A Backend
 layout: choices
 inalia:
   questionId: 4
@@ -1972,14 +2035,14 @@ Ok, excellent choix, explorons ça !
 -->
 
 ---
-name: Le Hot Module Replacement (HMR)
+name: Hot Module Replacement (HMR)
 group: Advanced Capabilities
 ready: true
 timing: 0.5
 img:
   brutalism: false
   default: >-
-    https://images.unsplash.com/photo-1559762691-617a33825bc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+    https://images.unsplash.com/photo-1654198340681-a2e0fc449f1b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
   flowers: null
 transition: slide-up
 ---
@@ -1995,15 +2058,18 @@ Pour notifier le client, une connexion websocket est crée entre Vite et le brow
 -->
 
 ---
-name: Le Hot Module Replacement (HMR) - Plugins Internals
+name: Hot Module Replacement (HMR) - Plugin Internals
 group: Advanced Capabilities
 ready: true
 timing: 0.6
+choices:
+  - It was always the same pipeline
 layout: center-card
 img:
-  default: https://images.unsplash.com/photo-1615099833617-01e3d6dbe2e4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-choices:
-  - Récap des récap
+  brutalism: false
+  default: >-
+    https://images.unsplash.com/photo-1654198340681-a2e0fc449f1b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: null
 ---
 
 ````md magic-move
@@ -2049,12 +2115,12 @@ Ensuite, [click] pour jouer avec le HMR dans un plugin, on peut utiliser le hook
 -->
 
 ---
-name: Le middleware - Un fichier virtuel
+name: Middleware - A Virtual File
 group: Advanced Capabilities
 ready: true
 timing: 0.7
 choices:
-  - Récap des récap
+  - It was always the same pipeline
 layout: center-card
 img:
   brutalism: false
@@ -2123,7 +2189,7 @@ D'ailleurs, [click] c'est cette technique qu'utilise vite-plugin-inspect pour se
 -->
 
 ---
-name: Run Plugin - Un plugin pour exécuter des commandes
+name: Run Plugin - A Plugin for Running Commands
 group: Advanced Capabilities
 ready: true
 timing: 1
@@ -2184,12 +2250,12 @@ On lui donne un petit nom, parce que, bah, c'est toujours plus sympa, puis on lu
 -->
 
 ---
-name: Run Plugin - Un plugin pour exécuter des commandes - Plugin Internals
+name: Run Plugin - A Plugin for Running Commands - Plugin Internals
 group: Advanced Capabilities
 ready: true
 timing: 0.4
 choices:
-  - Récap des récap
+  - It was always the same pipeline
 layout: bottom-center-card
 img:
   brutalism: false
@@ -2238,7 +2304,7 @@ Sous la capot, ça utilise le hook handleHotUpdate. [click] À chaque fois qu'un
 -->
 
 ---
-name: Laravel Vite - La communication inter-processus
+name: Laravel Vite - Inter-process Communication
 group: Advanced Capabilities
 ready: true
 timing: 0.4
@@ -2256,12 +2322,12 @@ Mais du coup, comment est-ce que Laravel connaît l'adresse de Vite ?
 -->
 
 ---
-name: Laravel Vite - La communication inter-processus - Plugin Internals
+name: Laravel Vite - Inter-process Communication - Plugin Internals
 group: Advanced Capabilities
 ready: true
 timing: 0.6
 choices:
-  - Récap des récap
+  - It was always the same pipeline
 layout: bottom-center-card
 img:
   brutalism: false
@@ -2335,7 +2401,7 @@ Laravel viendra le lire pour ajuster le path vers les assets.
 -->
 
 ---
-name: unplugin-macro - Un plugin pour créer des macros
+name: unplugin-macro - A Plugin for Creating Macros
 group: Advanced Capabilities
 ready: true
 timing: 0.4
@@ -2369,12 +2435,12 @@ En JavaScript, ça n'existe pas mais c'est un comportement que l'on peut reprodu
 -->
 
 ---
-name: unplugin-macro - Un plugin pour créer des macros - Plugin Internals
+name: unplugin-macro - A Plugin for Creating Macros - Plugin Internals
 group: Advanced Capabilities
 ready: true
 timing: 0.5
 choices:
-  - Récap des récap
+  - It was always the same pipeline
 layout: center-card
 img:
   brutalism: false
@@ -2459,14 +2525,14 @@ Pas mal non ?!
 -->
 
 ---
-name: Nitro - Un backend
+name: Nitro - A Backend
 group: Advanced Capabilities
 ready: true
 timing: 0.3
 layout: center
 ---
 
-<h2 class="text-4xl font-bold">Nitro as a backend</h2>
+<h2 class="text-4xl font-bold">Nitro as a Backend</h2>
 
 <!--
 Vite, c'est trop fort pour le frontend.
@@ -2475,7 +2541,7 @@ Du coup, beh, y'en a qui c'sont dit, et pourquoi ça pourrait pas aussi faire du
 -->
 
 ---
-name: Nitro - Un backend - Visualisation
+name: Nitro - A Backend - Visualization
 group: Advanced Capabilities
 ready: true
 timing: 0.4
@@ -2490,12 +2556,12 @@ Pas mal non ?
 -->
 
 ---
-name: Nitro - Un backend - Plugin Internals
+name: Nitro - A Backend - Plugin Internals
 group: Advanced Capabilities
 ready: true
 timing: 0.5
 choices:
-  - Récap des récap
+  - It was always the same pipeline
 layout: bottom-center-card
 img:
   brutalism: false
@@ -2546,18 +2612,46 @@ C'est une technique tellement élégante pour ajouter un backend, c'est chouette
 -->
 
 ---
-nane: Everything fron the start
-timing: 0
+name: It was always the same pipeline
+ready: true
+timing: 1.5
 inalia:
   emoji: false
 ---
 
-<!-- TODO: rappel de tout ce qu'on a vu depuis le début et ensuite, récap du récap -->
+<ItWasAlwaysTheSamePipeline />
 
-<!-- TODO: text -->
+<!--
+[slow] Depuis le début, on a vu plein d'exemples différents : du CSS, du JSX, des modules virtuels, du HMR, des middlewares, des macros, voire même du backend.
+
+[click]
+
+Mais en réalité, on parle toujours de la même machine.
+
+[click]
+
+À gauche, le navigateur fait une requête, ou bien un changement de fichier déclenche un événement. [click] Cette information entre dans la pipeline de Vite.
+
+[click]
+
+Et ensuite, on retrouve toujours les mêmes grandes étapes :
+
+- resolveId pour intercepter ou rediriger un module,
+- load pour lire un fichier, charger des données ou générer du code,
+- transform pour convertir le tout en JavaScript exploitable par le navigateur.
+
+[click]
+
+Et autour de cette pipeline, on a tous les autres super-pouvoirs : le HMR, les middlewares, les side-effects, l'intégration avec d'autres outils.
+
+[slow]
+
+Donc peu importe l'exemple qu'on a croisé aujourd'hui, depuis le début, on explorait toujours la même pipeline.
+-->
 
 ---
-name: Récap des récap - List
+name: Final Recap - List
+ready: true
 timing: 1.3
 layout: recap
 transition: slide-up
@@ -2565,22 +2659,20 @@ inalia:
   emoji: false
 ---
 
-<!-- TODO: adapt text -->
-
 <RecapList
-  title="Ce qu'il faut garder en tête"
+  title="What to Keep in Mind"
   :items="[
     {
-      title: 'Une pipeline entre vos fichiers et le navigateur',
-      description: 'Chaque requête passe par Vite, qui peut transformer les modules à la volée'
+      title: 'A pipeline between your files and the browser',
+      description: 'Each request goes through Vite, which can transform modules on demand'
     },
     {
-      title: 'Des plugins pour créer des modules qui n\'existent pas',
-      description: 'Modules virtuels, routes, icônes, infos de build... tout peut être généré à la volée'
+      title: 'Plugins can create modules that do not exist',
+      description: 'Virtual modules, routes, icons, build info... everything can be generated on demand'
     },
     {
-      title: 'Tout peut être étendu par un plugin',
-      description: 'Transformation de code, HMR, middlewares, side-effects, macros, backend...'
+      title: 'Everything can be extended by a plugin',
+      description: 'Code transformation, HMR, middlewares, side effects, macros, backend...'
     }
   ]"
 />
@@ -2600,27 +2692,91 @@ Avec tout ça, vous masterisez Vite comme des chefs [confetti].
 -->
 
 ---
-name: Récap des récap - Code
-timing: 0
+name: Final Recap - Code
+ready: true
+timing: 1.2
 layout: recap
 inalia:
   emoji: false
 ---
 
-<!-- TODO: faire une second page avec du code -->
+<Card class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
 
-<!-- TODO: text -->
+````md magic-move
+```ts {3-7}{lines:true}
+export default defineConfig({
+  plugins: [
+    (() => {
+      return {
+        name: 'my-awesome-plugin',
+      }
+    })()
+  ]
+})
+```
+```ts {6-8}{lines:true}
+export default defineConfig({
+  plugins: [
+    (() => {
+      return {
+        name: 'my-awesome-plugin',
+        resolveId(id) {}, // if you want to create virtual modules
+        load(id) {}, // if you want to create virtual modules
+        transform(code, id) {}, // if you want to transform modules
+      }
+    })()
+  ]
+})
+```
+```ts {9-11|*}{lines:true}
+export default defineConfig({
+  plugins: [
+    (() => {
+      return {
+        name: 'my-awesome-plugin',
+        resolveId(id) {}, // if you want to create virtual modules
+        load(id) {}, // if you want to create virtual modules
+        transform(code, id) {}, // if you want to transform modules
+        handleHotUpdate(ctx) {}, // if you want to handle HMR
+        configureServer(server) {}, // if you want to do something to the dev server
+        // ... and many more hooks for different capabilities
+      }
+    })()
+  ]
+})
+```
+````
+
+</Card>
+
+<!--
+D'un point de vue code, un plugin Vite, c'est un objet avec un nom et des hooks. Les hooks sont optionnels, vous n'avez pas besoin de tous les implémenter pour faire un super plugin.
+
+Pour agir sur une requête, on a à disposition:
+
+1. resolveId
+2. load
+3. transform
+
+Et puis il est possible de trigger des side-effects avec handleHotUpdate ou carrément se brancher dans le serveur web avec configureServer.
+
+Et on a même pleins d'autres hooks pour se brancher dans le cycle de vie de Vite, faire des optimisations, jouer avec la configuration, etc.
+
+Bref, tout est extensible, c'est super puissant.
+
+Avec tout ça, vous avez toutes les clés pour construire vos propres plugins Vite !
+-->
 
 ---
-name: Dans les profondeurs de la pipeline
+name: Deep Inside the Pipeline
 group: Deep Dive
 ready: true
-timing: 1.5
+timing: 1.4
 layout: bottom-left-card
 img:
   brutalism: false
   default: >-
-    https://images.unsplash.com/photo-1553356126-71d9da2295e2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+    https://images.unsplash.com/photo-1632260260864-caf7fde5ec36?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
   flowers: null
 ---
 
@@ -2729,7 +2885,7 @@ export default defineConfig({
 ````
 
 <!--
-[slow] Maintenant qu'on est autonome pour construire nos plugins, je vous propose un petit bonus, deux petits trucs pour aller plus loin.
+[slow] Pour ceux qui voudrait aller plus loin, j'ai deux petits trucs pour à vous partager.
 
 [enthusiastic] Premier truc !
 
@@ -2741,14 +2897,14 @@ export default defineConfig({
 -->
 
 ---
-name: Votre tour
+name: Your Turn
 ready: true
 timing: 0.5
 layout: keep-in-mind
 confettiClicks: 1
 ---
 
-En <span class="text-primary">45 minutes</span>, vous avez découvert<br>le nécessaire pour réaliser<br><span class="text-primary">votre plugin Vite</span>.
+In <span class="text-primary">45 minutes</span>, you discovered<br>what you need to build<br><span class="text-primary">your Vite plugin</span>.
 
 ::outside::
 

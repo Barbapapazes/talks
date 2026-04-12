@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import ExplainedVisuallyBrowser from './ExplainedVisually/ExplainedVisuallyBrowser.vue'
-import ExplainedVisuallyServer from './ExplainedVisually/ExplainedVisuallyServer.vue'
+import ExplainedVisuallyBrowser from '../ExplainedVisually/ExplainedVisuallyBrowser.vue'
+import ExplainedVisuallyServer from '../ExplainedVisually/ExplainedVisuallyServer.vue'
 </script>
 
 <template>

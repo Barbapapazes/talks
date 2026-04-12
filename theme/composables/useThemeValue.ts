@@ -15,10 +15,14 @@ export function useThemeValue() {
     if (value === undefined)
       return undefined
 
+    if (value === false) {
+      return undefined
+    }
+
     if (!isThemedValueMap<T>(value))
       return value
 
-    return value[activeTheme.value] ?? value.default
+    return value[activeTheme.value] || value.default
   }
 
   return {

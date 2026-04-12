@@ -1,7 +1,15 @@
+catalogMode: prefer
+
+shellEmulator: true
+trustPolicy: no-downgrade
+
 packages:
   - .worker
   - '**/src'
   - theme
+patchedDependencies:
+  cobe: patches/cobe.patch
+  slidev-addon-graph: patches/slidev-addon-graph.patch
 
 catalog:
   '@antfu/eslint-config': ^7.6.1
@@ -65,17 +73,10 @@ catalog:
   taze: ^19.11.0
   tiktoken: ^1.0.22
   typescript: ^5.9.3
+  vite: ^0.0.0
   vite-plugin-info: ^0.4.1
   vite-plugin-inspect: ^11.3.3
   vite-plugin-run: ^0.6.1
   vitest: ^4.1.4
   vue: ^3.5.32
   wrangler: ^4.80.0
-
-catalogMode: prefer
-
-patchedDependencies:
-  cobe: patches/cobe.patch
-  slidev-addon-graph: patches/slidev-addon-graph.patch
-
-shellEmulator: true

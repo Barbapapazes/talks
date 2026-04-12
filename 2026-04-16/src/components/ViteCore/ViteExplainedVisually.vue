@@ -2,7 +2,7 @@
 import type {
   ExplainedVisuallyFileSystemItem,
   ExplainedVisuallyHttpLog,
-} from './ExplainedVisually/types'
+} from '../ExplainedVisually/types'
 import appVueFile from 'virtual:vite-file-system:App:vue'
 import indexHtml from 'virtual:vite-file-system:index:html'
 import mainTs from 'virtual:vite-file-system:main:ts'
@@ -16,8 +16,8 @@ import appVueTransformed from 'virtual:vite-transformed-file:App:ts'
 import indexHtmlTransformed from 'virtual:vite-transformed-file:index:html'
 import mainTsTransformed from 'virtual:vite-transformed-file:main:ts'
 import styleCssTransformed from 'virtual:vite-transformed-file:style:ts'
-import { useHighlight } from '../composables/useHighlight'
-import ExplainedVisually from './ExplainedVisually.vue'
+import { useHighlight } from '../../composables/useHighlight'
+import ExplainedVisually from '../ExplainedVisually.vue'
 
 const { highlight } = useHighlight()
 

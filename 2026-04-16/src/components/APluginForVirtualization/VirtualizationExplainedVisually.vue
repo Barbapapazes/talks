@@ -2,7 +2,7 @@
 import type {
   ExplainedVisuallyFileSystemItem,
   ExplainedVisuallyHttpLog,
-} from './ExplainedVisually/types'
+} from '../ExplainedVisually/types'
 import indexHtml from 'virtual:vite-file-system:index:html'
 import mainTs from 'virtual:vite-file-system:main-virtual:ts'
 import packageJson from 'virtual:vite-file-system:package:json'
@@ -10,10 +10,12 @@ import tsconfigAppJson from 'virtual:vite-file-system:tsconfig:app:json'
 import tsconfigJson from 'virtual:vite-file-system:tsconfig:json'
 import tsconfigNodeJson from 'virtual:vite-file-system:tsconfig:node:json'
 import viteConfigTs from 'virtual:vite-file-system:vite.config:ts'
+import indexHtmlTransformed from 'virtual:vite-transformed-file:index:html'
 import mainTsTransformed from 'virtual:vite-transformed-file:main-virtual:ts'
 import virtualMyModule from 'virtual:vite-transformed-file:my-module:ts'
-import { useHighlight } from '../composables/useHighlight'
-import ExplainedVisually from './ExplainedVisually.vue'
+import { useHighlight } from '../../composables/useHighlight'
+import ExplainedVisually from '../ExplainedVisually.vue'
+import ViteHookPills from '../ViteHookPills.vue'
 
 const { highlight } = useHighlight()
 
@@ -67,7 +69,7 @@ const httpLogs = [
     request: highlight('GET http://localhost:5173/', 'http'),
     response: {
       file: 'index.html',
-      code: indexHtml,
+      code: indexHtmlTransformed,
     },
   },
   {
@@ -102,5 +104,12 @@ const httpLogs = [
     :server-status-click="1"
     server-status-icon="i-lucide-ghost size-4"
     server-status-text="@vitejs/plugin-vue"
-  />
+  >
+    <template #server>
+      <ViteHookPills
+        class="absolute -bottom-8 left-1/2 -translate-x-1/2"
+        :hooks="['resolveId', 'load']"
+      />
+    </template>
+  </ExplainedVisually>
 </template>

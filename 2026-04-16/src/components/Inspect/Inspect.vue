@@ -104,7 +104,7 @@ function onSelectTab(tab: string) {
 
     <InspectFilters v-if="shouldShowFilters" />
 
-    <div class="relative min-h-0 grow bg-neutral-900 shiki-dark overflow-scroll">
+    <div class="relative min-h-0 grow bg-neutral-900 shiki-dark overflow-auto">
       <ConsoleTab
         v-if="currentTab === 'Console' && consoleData"
         :entries="consoleData.entries"

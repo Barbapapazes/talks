@@ -1,12 +1,12 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import info from 'vite-plugin-info'
+import inspect from 'vite-plugin-inspect'
 import run from 'vite-plugin-run'
 import growthChart from './plugins/growth-chart'
 import viteBuild from './plugins/vite-build'
 import viteFileSystem from './plugins/vite-file-system'
 import viteTransformedFile from './plugins/vite-transformed-file'
-import inspect from 'vite-plugin-inspect'
 
 export default defineConfig({
   plugins: [
@@ -19,7 +19,7 @@ export default defineConfig({
     run([
       {
         name: 'generate-tree',
-        run: ['pnpm', '-w', 'run', 'generate:tree', '2026-04-15'],
+        run: ['pnpm', '-w', 'run', 'generate:tree', '2026-04-16'],
         condition: file => file.endsWith('slides.md'),
         throttle: 1_000,
       },
@@ -37,6 +37,6 @@ export default defineConfig({
   server: {
     hmr: {
       overlay: false,
-    }
-  }
+    },
+  },
 })

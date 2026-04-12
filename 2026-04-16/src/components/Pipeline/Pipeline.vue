@@ -49,7 +49,10 @@ const nodes = ref<Node[]>([
     type: 'hook',
     data: {
       label: 'resolveId',
-      signature: 'resolveId(id)',
+      hook: {
+        name: 'resolveId',
+        args: 'id',
+      },
       plugins: props.plugins.map(plugin => ({
         name: plugin.name,
         color: plugin.color,
@@ -64,7 +67,10 @@ const nodes = ref<Node[]>([
     type: 'hook',
     data: {
       label: 'load',
-      signature: 'load(id)',
+      hook: {
+        name: 'load',
+        args: 'id',
+      },
       plugins: props.plugins.map(plugin => ({
         name: plugin.name,
         color: plugin.color,
@@ -79,7 +85,10 @@ const nodes = ref<Node[]>([
     type: 'hook',
     data: {
       label: 'transform',
-      signature: 'transform(code, id)',
+      hook: {
+        name: 'transform',
+        args: 'code, id',
+      },
       plugins: props.plugins.map(plugin => ({
         name: plugin.name,
         color: plugin.color,
@@ -227,13 +236,13 @@ function onPluginClick(hookName: string, pluginName: string) {
         :max-zoom="1"
         @nodes-initialized="layoutGraph()"
       >
-        <template #node-request="requestProps">
+        <template #node-request>
           <div>
             request
           </div>
         </template>
 
-        <template #node-response="responseProps">
+        <template #node-response>
           <div>
             response
           </div>

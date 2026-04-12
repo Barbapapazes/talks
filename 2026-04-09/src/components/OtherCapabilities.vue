@@ -2,12 +2,12 @@
 import VAfter from '@slidev/client/builtin/VAfter.ts'
 import VClick from '@slidev/client/builtin/VClick.ts'
 
-  // - Le Hot Module Replacement (HMR)
-  // - Le middleware - Un fichier virtuel
-  // - Run Plugin - Un plugin pour exécuter des commandes
-  // - Laravel Vite - La communication inter-processus
-  // - unplugin-macro - Un plugin pour créer des macros
-  // - Nitro - Un backend
+// - Le Hot Module Replacement (HMR)
+// - Le middleware - Un fichier virtuel
+// - Run Plugin - Un plugin pour exécuter des commandes
+// - Laravel Vite - La communication inter-processus
+// - unplugin-macro - Un plugin pour créer des macros
+// - Nitro - Un backend
 const features = [
   {
     icon: '',
@@ -38,7 +38,7 @@ const features = [
     icon: '',
     name: 'Server Framework',
     description: 'Extend Vite\'s dev server capabilities to build custom backends, APIs, or full-stack applications.',
-  }
+  },
 ]
 </script>
 

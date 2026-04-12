@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BackgroundImage from '../components/BackgroundImage.vue'
 import { useSlideContext } from '@slidev/client'
+import BackgroundImage from '../components/BackgroundImage.vue'
 
 const { $frontmatter } = useSlideContext()
 </script>

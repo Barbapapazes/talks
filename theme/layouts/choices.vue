@@ -1,6 +1,7 @@
 <script lang="ts" setup>
+import type { SelectData } from 'slidev-addon-inalia'
 import { useNav, useSlideContext } from '@slidev/client'
-import { useInaliaQuestion, type SelectData } from 'slidev-addon-inalia'
+import { useInaliaQuestion } from 'slidev-addon-inalia'
 import { computed, watchEffect } from 'vue'
 
 interface ChoicesProps {
@@ -43,7 +44,7 @@ const choices = computed(() => slides.value.filter(slide => $frontmatter.choices
 const total = computed(() => (data.value as SelectData).reduce((sum: number, entry) => sum + entry.count, 0))
 const enhancedChoices = computed(() => {
   return choices.value.map((choice) => {
-    const entry = (data.value as SelectData).find((entry) => entry.label === choice.meta.name)
+    const entry = (data.value as SelectData).find(entry => entry.label === choice.meta.name)
     const count = entry ? entry.count : 0
     const percentage = total.value > 0 ? (count / total.value) * 100 : 0
     const color = entry ? entry.color : undefined

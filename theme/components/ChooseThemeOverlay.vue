@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useSlideContext } from '@slidev/client'
-import { useInaliaQuestion, InaliaQR, InaliaShortUrl } from 'slidev-addon-inalia'
+import { InaliaQR, InaliaShortUrl, useInaliaQuestion } from 'slidev-addon-inalia'
 import { computed } from 'vue'
 
 const { $slidev } = useSlideContext()

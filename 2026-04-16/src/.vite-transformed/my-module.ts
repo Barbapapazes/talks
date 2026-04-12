@@ -1,1 +1,1 @@
-export default "This is a virtual module"
+export default 'This is a virtual module'

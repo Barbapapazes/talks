@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { onSlideEnter, onSlideLeave, useNav } from '@slidev/client'
+import { onSlideEnter, onSlideLeave } from '@slidev/client'
 import { InaliaQR, useInaliaQuestion } from 'slidev-addon-inalia'
 import { computed, ref } from 'vue'
+import { useChooseNextSlide } from '../composables/useChooseNextSlide'
 
 const initialDelay = 8_000
 const textRevealDuration = 4_000
@@ -9,12 +10,18 @@ const expandDuration = 6_000
 const collapseDuration = 1_000
 const expandedScale = 2
 
+const { questionId, showChooseNextSlide } = useChooseNextSlide()
+
 const isQrExpanded = ref(false)
 const isTextVisible = ref(false)
 
 let animationTimeouts: number[] = []
 let cycleInterval: number | undefined
 let cycleCount = 0
+
+const { isStatic, question } = useInaliaQuestion(() => questionId.value)
+
+const show = computed(() => showChooseNextSlide.value && !isStatic.value && question.value)
 
 function queueTimeout(callback: () => void, delay: number) {
   const timeout = window.setTimeout(callback, delay)
@@ -55,6 +62,10 @@ function scheduleQrAnimation() {
 }
 
 onSlideEnter(() => {
+  if (!showChooseNextSlide.value) {
+    return
+  }
+
   if (cycleInterval)
     window.clearInterval(cycleInterval)
 
@@ -73,21 +84,15 @@ onSlideLeave(() => {
   cycleInterval = undefined
   cycleCount = 0
 })
-
-const { currentSlideRoute } = useNav()
-const show = computed(() => (currentSlideRoute.value.meta.slide as any)?.frontmatter?.chooseNextSlide)
-const { isStatic, question } = useInaliaQuestion(() => (currentSlideRoute.value.meta.slide as any)?.frontmatter.inalia?.questionId)
 </script>
 
 <template>
-  <div v-if="show && !isStatic && question">
+  <div v-if="show && question">
     <div
       class="absolute left-2 top-2 z-50 flex flex-row items-center origin-top-left transition-transform ease-in-out"
       :style="{ transitionDuration: `${isQrExpanded ? expandDuration : collapseDuration}ms`, transform: `scale(${isQrExpanded ? expandedScale : 1})` }"
     >
-      <div
-        class="qr overflow-hidden size-12 z-10 relative"
-      >
+      <div class="qr overflow-hidden size-12 z-10 relative">
         <InaliaQR :url="question?.tiny_url" />
       </div>
 

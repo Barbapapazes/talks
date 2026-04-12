@@ -1,10 +1,11 @@
 <script lang="ts" setup>
+import type { SelectData } from 'slidev-addon-inalia'
 import { useSlideContext } from '@slidev/client'
-import { watchDeep } from '@vueuse/core';
-import { useInaliaQuestion, type SelectData } from 'slidev-addon-inalia';
-import { computed, watch, type DeepReadonly } from 'vue';
-import { SUPPORTED_SLIDE_THEMES } from '../contants';
+import { watchDeep } from '@vueuse/core'
+import { useInaliaQuestion } from 'slidev-addon-inalia'
+import { computed, watch } from 'vue'
 import { useCurrentTheme } from '../composables/useCurrentTheme'
+import { SUPPORTED_SLIDE_THEMES } from '../contants'
 
 const { $slidev } = useSlideContext()
 const canChooseTheme = computed(() => ($slidev.configs as any).chooseTheme?.questionId)
@@ -39,7 +40,8 @@ watchDeep(data, () => {
   if (entry) {
     document.documentElement.setAttribute('data-theme', entry.label) // TODO: migrate to the composable
     setCurrentTheme(entry.label)
-  } else {
+  }
+  else {
     document.documentElement.setAttribute('data-theme', 'default')
     setCurrentTheme(undefined)
   }

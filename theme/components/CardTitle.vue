@@ -6,12 +6,12 @@ const props = defineProps<{
 </script>
 
 <template>
-   <div class="title flex flex-row items-center gap-1">
-      <div v-if="props.icon" :class="props.icon" class="size-5" />
-      <div class="text-sm">
-        {{ props.title }}
-      </div>
+  <div class="title flex flex-row items-center gap-1">
+    <div v-if="props.icon" :class="props.icon" class="size-5" />
+    <div class="text-sm">
+      {{ props.title }}
     </div>
+  </div>
 </template>
 
 <style scoped>
