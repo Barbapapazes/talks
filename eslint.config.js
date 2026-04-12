@@ -6,4 +6,10 @@ export default antfu({
   vue: true,
 
   unocss: true,
+}).append({
+  files: ['**/src/slides.md'],
+  rules: {
+    'markdown/no-multiple-h1': 'off',
+    'markdown/require-alt-text': 'off',
+  },
 })

@@ -3,6 +3,8 @@
 import { defineConfig } from 'vite'
 import LatestArticles from './plugins/latest-articles'
 
+const CODE_BLOCK_TITLE_RE = /\[(.*?)\]/
+
 const codeBlockIcons = {
   // package managers
   'pnpm': 'i-vscode-icons-file-type-light-pnpm',
@@ -81,7 +83,7 @@ export default defineConfig({
           md.renderer.rules.fence = (...args) => {
             const [tokens, idx] = args
             const token = tokens[idx]
-            const title = token.info.match(/\[(.*?)\]/)
+            const title = token.info.match(CODE_BLOCK_TITLE_RE)
 
             if (!title) {
               return fenceRule(...args)

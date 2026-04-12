@@ -1,5 +1,7 @@
 import type { MetaEntry } from './_types'
 
+const DATE_HYPHEN_RE = /-/g
+
 /**
  * Calculate statistics from talks metadata
  */
@@ -180,7 +182,7 @@ rclone copy . perso:talks-soubiran-dev --filter-from ./copy-assets.txt
 export function generateTalkReadmeContent(meta: MetaEntry): string {
   const content = `# ${meta.name}
 
-${meta.date.replace(/-/g, '/')} - [${meta.event}](${meta.event_url})
+${meta.date.replace(DATE_HYPHEN_RE, '/')} - [${meta.event}](${meta.event_url})
 `
   return content
 }
