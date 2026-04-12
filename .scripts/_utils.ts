@@ -2,6 +2,8 @@ import { readdir } from 'node:fs/promises'
 import { fdir as Fdir } from 'fdir'
 import prompts from 'prompts'
 
+const TALK_FOLDER_RE = /^\d{4}-/
+
 export function getPackagesJson() {
   return new Fdir()
     .withBasePath()
@@ -20,7 +22,7 @@ export async function selectDeck() {
   const folders = (await readdir(new URL('..', import.meta.url), { withFileTypes: true }))
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name)
-    .filter(folder => folder.match(/^\d{4}-/))
+    .filter(folder => TALK_FOLDER_RE.test(folder))
     .sort((a, b) => -a.localeCompare(b))
 
   return prompts([
