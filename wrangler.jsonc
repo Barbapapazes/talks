@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
+  "name": "talks",
+  "compatibility_date": "2026-04-12",
+  "assets": {
+    "directory": "dist"
+  },
+  "preview_urls": false,
+  "workers_dev": false
+}
