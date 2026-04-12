@@ -1,4 +1,4 @@
-name: Trigger redeploy of linked websites
+name: Redeploy soubiran.dev
 
 on:
   push:
@@ -9,7 +9,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  trigger-worker:
+  redeploy:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     permissions: {}
