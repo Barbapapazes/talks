@@ -4,7 +4,7 @@ import { useSlideContext } from '@slidev/client'
 import { watchDeep } from '@vueuse/core'
 import { useInaliaQuestion } from 'slidev-addon-inalia'
 import { computed, watch } from 'vue'
-import { useCurrentTheme } from '../composables/useCurrentTheme'
+import { useTheme } from '../composables/useTheme'
 import { SUPPORTED_SLIDE_THEMES } from '../contants'
 
 const { $slidev } = useSlideContext()
@@ -18,7 +18,7 @@ const { question, data } = useInaliaQuestion(() => questionId.value, {
     data: undefined,
   },
 })
-const { setCurrentTheme } = useCurrentTheme()
+const { activeTheme, setCurrentTheme, syncThemeDocument } = useTheme()
 watch(question, () => {
   if (!question.value) {
     return
@@ -37,13 +37,13 @@ watch(question, () => {
 watchDeep(data, () => {
   const entry = [...(data.value as SelectData)].sort((a, b) => b.count - a.count)[0]
 
-  if (entry) {
-    document.documentElement.setAttribute('data-theme', entry.label) // TODO: migrate to the composable
+  if (entry && entry.count > 0) {
     setCurrentTheme(entry.label)
+    syncThemeDocument()
   }
   else {
-    document.documentElement.setAttribute('data-theme', 'default')
     setCurrentTheme(undefined)
+    syncThemeDocument(activeTheme.value)
   }
 }, { immediate: true })
 </script>

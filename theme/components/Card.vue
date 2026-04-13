@@ -1,5 +1,11 @@
+<script setup lang="ts">
+const props = defineProps<{
+  ignoreTheme?: boolean
+}>()
+</script>
+
 <template>
-  <div class="shell">
+  <div class="shell" :class="{ 'ignore-theme': ignoreTheme }">
     <div class="surface overflow-hidden h-full w-full p-6">
       <slot />
     </div>
@@ -7,7 +13,8 @@
 </template>
 
 <style scoped>
-html[data-theme='default'] {
+html[data-theme='default'],
+html[data-theme='flowers'] {
   .shell {
     --at-apply: border border-12 border-white/30 shadow-lg rounded-3xl;
   }
@@ -18,24 +25,22 @@ html[data-theme='default'] {
 }
 
 html[data-theme='brutalism'] {
-  .shell {
-    --at-apply: border border-4 bg-[var(--theme-brutalism-primary)] border-[var(--theme-brutalism-border-default)] shadow-[var(--theme-brutalism-shadow-default)];
+  .ignore-theme.shell {
+    --at-apply: border border-12 border-white/30 shadow-lg rounded-3xl;
   }
 
-  .surface {
-    --at-apply: text-[var(--theme-brutalism-text-default)];
+  .ignore-theme .surface {
+    --at-apply: bg-white rounded-xl shadow-lg;
   }
 }
 
-html[data-theme='futuristic'] {
-    .shell {
-      --at-apply: rounded-md backdrop-blur;
-      background-color: color-mix(in oklab, var(--theme-futuristic-primary)60%, transparent);
-      box-shadow: var(--theme-futuristic-shadow-default);
-    }
+html[data-theme='brutalism'] {
+  :not(.ignore-theme).shell {
+    --at-apply: border border-4 bg-[var(--theme-brutalism-primary)] border-[var(--theme-brutalism-border-default)] shadow-[var(--theme-brutalism-shadow-default)];
+  }
 
-  .surface {
-    --at-apply: text-[var(--theme-futuristic-text-default)];
+  :not(.ignore-theme) .surface {
+    --at-apply: text-[var(--theme-brutalism-text-default)];
   }
 }
 </style>

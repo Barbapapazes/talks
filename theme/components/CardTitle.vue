@@ -15,7 +15,8 @@ const props = defineProps<{
 </template>
 
 <style scoped>
-html[data-theme='default'] {
+html[data-theme='default'],
+html[data-theme='flowers'] {
   .title {
     --at-apply: text-neutral-700 font-semibold;
   }
@@ -24,12 +25,6 @@ html[data-theme='default'] {
 html[data-theme='brutalism'] {
   .title {
     --at-apply: text-[var(--theme-brutalism-text-default)] font-bold;
-  }
-}
-
-html[data-theme='futuristic'] {
-  .title {
-    --at-apply: text-[var(--theme-futuristic-text-default)] font-light;
   }
 }
 </style>

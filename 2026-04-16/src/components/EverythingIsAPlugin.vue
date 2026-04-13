@@ -76,19 +76,14 @@ const features = [
 </template>
 
 <style scoped>
-html[data-theme='default'] {
+html[data-theme='default'],
+html[data-theme='flowers'] {
   .grid {
     --at-apply: gap-4;
   }
 }
 
 html[data-theme='brutalism'] {
-  .grid {
-    --at-apply: gap-8;
-  }
-}
-
-html[data-theme='futuristic'] {
   .grid {
     --at-apply: gap-8;
   }

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { MaybeThemedValue } from '../composables/useThemeValue'
+import type { MaybeThemedValue } from '../composables/useTheme'
 import { useSlideContext } from '@slidev/client'
 import { computed } from 'vue'
-import { useThemeValue } from '../composables/useThemeValue'
+import { useTheme } from '../composables/useTheme'
 
 interface BackgroundImageProps {
   img?: MaybeThemedValue<string>
@@ -13,7 +13,7 @@ interface BackgroundImageProps {
 const props = defineProps<BackgroundImageProps>()
 
 const { $frontmatter } = useSlideContext()
-const { resolveThemeValue } = useThemeValue()
+const { resolveThemeValue } = useTheme()
 
 const img = computed(() => {
   return resolveThemeValue(props.img) || resolveThemeValue($frontmatter.img)

@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { nextTick } from 'vue'
 import Confetti from '../components/Confetti.vue'
-import { useCurrentTheme } from '../composables/useCurrentTheme'
+import { useTheme } from '../composables/useTheme'
 
 const { mockIsSlideActive, mockSlideContext, mockConfetti } = vi.hoisted(() => ({
   mockIsSlideActive: { ref: null as { value: boolean } | null },
@@ -11,6 +11,9 @@ const { mockIsSlideActive, mockSlideContext, mockConfetti } = vi.hoisted(() => (
     value: null as {
       $frontmatter: Record<string, unknown>
       $clicks: number
+      $slidev: {
+        configs: Record<string, unknown>
+      }
     } | null,
   },
   mockConfetti: vi.fn(),
@@ -22,6 +25,9 @@ vi.mock('@slidev/client', async () => {
   const slideContext = reactive({
     $frontmatter: reactive<Record<string, unknown>>({}),
     $clicks: 0,
+    $slidev: reactive({
+      configs: reactive<Record<string, unknown>>({}),
+    }),
   })
 
   mockIsSlideActive.ref = isSlideActive
@@ -47,8 +53,10 @@ describe('confetti', () => {
     mockSlideContext.value!.$clicks = 0
     for (const key of Object.keys(mockSlideContext.value!.$frontmatter))
       delete mockSlideContext.value!.$frontmatter[key]
+    for (const key of Object.keys(mockSlideContext.value!.$slidev.configs))
+      delete mockSlideContext.value!.$slidev.configs[key]
 
-    useCurrentTheme().clearCurrentTheme()
+    useTheme().clearCurrentTheme()
     mockConfetti.mockReset()
     mockConfetti.mockResolvedValue({ destroy: vi.fn() })
   })
@@ -99,7 +107,7 @@ describe('confetti', () => {
   })
 
   it('uses the current theme confetti palette', async () => {
-    useCurrentTheme().setCurrentTheme('futuristic')
+    useTheme().setCurrentTheme('flowers')
 
     mount(Confetti)
 
@@ -111,10 +119,10 @@ describe('confetti', () => {
     await flushMicrotasks()
 
     expect(mockConfetti).toHaveBeenNthCalledWith(1, 'recap-confetti', expect.objectContaining({
-      colors: ['#22d3ee', '#818cf8', '#f472b6', '#34d399'],
+      colors: ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722'],
     }))
     expect(mockConfetti).toHaveBeenNthCalledWith(2, 'recap-confetti', expect.objectContaining({
-      colors: ['#22d3ee', '#818cf8', '#f472b6', '#34d399'],
+      colors: ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722'],
     }))
   })
 

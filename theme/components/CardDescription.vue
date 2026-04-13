@@ -11,7 +11,8 @@ const props = defineProps<{
 </template>
 
 <style scoped>
-html[data-theme='default'] {
+html[data-theme='default'],
+html[data-theme='flowers'] {
   .description {
     --at-apply: text-neutral-500;
   }
@@ -20,12 +21,6 @@ html[data-theme='default'] {
 html[data-theme='brutalism'] {
   .description {
     --at-apply: text-[var(--theme-brutalism-text-muted)];
-  }
-}
-
-html[data-theme='futuristic'] {
-  .description {
-    --at-apply: text-[var(--theme-futuristic-text-muted)];
   }
 }
 </style>

@@ -10,22 +10,3 @@ html[data-theme='brutalism'] {
 
   --theme-brutalism-shadow-default: 12px 12px 0 rgba(9, 9, 11, 0.95);
 }
-
-html[data-theme='futuristic'] {
-  --theme-futuristic-primary: #00ffff;
-
-  --theme-futuristic-text-default: #000000;
-  --theme-futuristic-text-muted: rgba(148, 163, 184, 0.9);
-  --theme-futuristic-text-highlight: #22d3ee;
-  --theme-futuristic-background-default:
-    radial-gradient(circle at 18% 20%, rgba(34, 211, 238, 0.16), transparent 20%),
-    radial-gradient(circle at 82% 12%, rgba(129, 140, 248, 0.18), transparent 24%),
-    linear-gradient(180deg, #040816 0%, #08142c 48%, #0f1f44 100%);
-
-  --theme-futuristic-border-default: rgba(34, 211, 238, 0.26);
-
-  --theme-futuristic-shadow-default:
-    0 0 0 1px rgba(34, 211, 238, 0.60),
-    0 18px 48px rgba(14, 165, 233, 0.50),
-    0 0 28px rgba(129, 140, 248, 0.40);
-}

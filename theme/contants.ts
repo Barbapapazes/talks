@@ -91,5 +91,5 @@ export const technologies = [
 export const SUPPORTED_SLIDE_THEMES = [
   'default',
   'brutalism',
-  'futuristic',
+  'flowers',
 ] as const

@@ -102,7 +102,7 @@ onSlideLeave(() => {
         :style="{ transitionDuration: `${isTextVisible ? textRevealDuration : collapseDuration}ms` }"
       >
         <div
-          class="badge rounded-sm px-2 py-1 flex flex-col text-xs transition-shadow duration-700 ease-in-out"
+          class="badge px-2 py-1 flex flex-col text-xs transition-shadow duration-700 ease-in-out"
           :class="isQrExpanded ? 'shadow-xl' : ''"
         >
           <span>Choose the next slide</span>
@@ -114,15 +114,24 @@ onSlideLeave(() => {
 </template>
 
 <style scoped>
-html[data-theme='default'] {
+html[data-theme='default'],
+html[data-theme='flowers'] {
   .qr {
     --at-apply: rounded-sm;
   }
   .badge {
-    --at-apply: bg-white rounded-sm shadow-lg text-neutral-700 text-xs;
+    --at-apply: bg-white rounded-sm shadow-lg text-neutral-700;
   }
   .meta {
     --at-apply: text-neutral-500;
+  }
+}
+html[data-theme='brutalism'] {
+  .badge {
+    --at-apply: bg-red-500 text-white;
+  }
+  .meta {
+    --at-apply: text-red-200;
   }
 }
 </style>

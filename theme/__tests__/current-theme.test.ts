@@ -1,12 +1,22 @@
-import { beforeEach, describe, expect, it } from 'vitest'
-import { useCurrentTheme } from '../composables/useCurrentTheme'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { useTheme } from '../composables/useTheme'
 
-describe('useCurrentTheme', () => {
-  const firstConsumer = useCurrentTheme()
-  const secondConsumer = useCurrentTheme()
+vi.mock('@slidev/client', () => ({
+  useSlideContext: () => ({
+    $slidev: {
+      configs: {},
+    },
+  }),
+}))
+
+describe('useTheme current theme state', () => {
+  const firstConsumer = useTheme()
+  const secondConsumer = useTheme()
 
   beforeEach(() => {
     firstConsumer.clearCurrentTheme()
+    firstConsumer.unblockThemeSelection()
+    document.documentElement.removeAttribute('data-theme')
   })
 
   it('shares the current theme across consumers', () => {
@@ -20,5 +30,25 @@ describe('useCurrentTheme', () => {
     firstConsumer.setCurrentTheme('   ')
 
     expect(firstConsumer.currentTheme.value).toBeUndefined()
+  })
+
+  it('can temporarily force the default theme and then restore the selected one', () => {
+    firstConsumer.setCurrentTheme('brutalism')
+
+    expect(firstConsumer.activeTheme.value).toBe('brutalism')
+
+    firstConsumer.blockThemeSelection()
+    firstConsumer.syncThemeDocument()
+
+    expect(firstConsumer.isThemeSelectionBlocked.value).toBe(true)
+    expect(firstConsumer.activeTheme.value).toBe('default')
+    expect(document.documentElement.getAttribute('data-theme')).toBe('default')
+
+    firstConsumer.unblockThemeSelection()
+    firstConsumer.syncThemeDocument()
+
+    expect(firstConsumer.isThemeSelectionBlocked.value).toBe(false)
+    expect(firstConsumer.activeTheme.value).toBe('brutalism')
+    expect(document.documentElement.getAttribute('data-theme')).toBe('brutalism')
   })
 })

@@ -77,18 +77,18 @@ const gridStyle = computed(() => {
 </script>
 
 <template>
-  <div class="h-full slidev-layout grid gap-4 items-center justify-center choices" :style="gridStyle">
+  <div class="h-full slidev-layout grid gap-4 justify-center choices" :style="gridStyle">
     <BackgroundImage :img="$frontmatter.img ?? props.img" :img-class="$frontmatter.imgClass" class="-z-1" />
     <Card v-for="choice in enhancedChoices" :key="choice.slide.meta.name" class="relative isolate overflow-hidden">
       <div class="pointer-events-none absolute inset-y-0 left-0 transition-all duration-300 ease-out" :style="choice.fillStyle" />
 
       <div class="relative z-10 flex h-full items-center justify-between gap-6">
         <div class="min-w-0">
-          <div class="font-bold text-xl text-neutral-700">
+          <div class="font-bold text-lg text-neutral-700">
             {{ choice.slide.meta.name }}
           </div>
 
-          <div class="mt-2 text-sm text-neutral-500">
+          <div class="mt-1 text-xs text-neutral-500">
             {{ choice.count }} / {{ choice.total }} · {{ choice.percentageLabel }}
           </div>
         </div>
@@ -108,3 +108,11 @@ const gridStyle = computed(() => {
     </Card>
   </div>
 </template>
+
+<style scoped>
+html[data-theme='brutalism'] {
+  .choices {
+    --at-apply: gap-12
+  }
+}
+</style>

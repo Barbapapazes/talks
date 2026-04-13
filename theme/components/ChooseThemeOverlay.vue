@@ -26,7 +26,8 @@ const { isStatic, question } = useInaliaQuestion(() => questionId.value, {
 </template>
 
 <style scoped>
-html[data-theme='default'] {
+html[data-theme='default'],
+html[data-theme='flowers'] {
   .card {
     --at-apply: rounded-lg bg-white text-neutral-700
   }
@@ -36,9 +37,5 @@ html[data-theme='brutalism'] {
   .card {
     --at-apply: border border-4 bg-[var(--theme-brutalism-primary)] border-[var(--theme-brutalism-border-default)] shadow-[var(--theme-brutalism-shadow-default)];
   }
-}
-
-html[data-theme='futuristic'] {
-
 }
 </style>

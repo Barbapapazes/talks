@@ -1,18 +1,18 @@
 <script lang="ts" setup>
 import type { ConfettiOptions } from '@tsparticles/confetti'
-import type { SupportedSlideTheme } from '../composables/useSlideTheme'
+import type { SupportedSlideTheme } from '../composables/useTheme'
 import { useIsSlideActive, useSlideContext } from '@slidev/client'
 import { confetti } from '@tsparticles/confetti'
 import { computed, onUnmounted, unref, watch } from 'vue'
-import { useSlideTheme } from '../composables/useSlideTheme'
+import { useTheme } from '../composables/useTheme'
 
 type ConfettiContainer = NonNullable<Awaited<ReturnType<typeof confetti>>>
 
 const DEFAULT_COLORS = ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722']
 const THEME_CONFETTI_COLORS: Record<SupportedSlideTheme, string[]> = {
   default: DEFAULT_COLORS,
+  flowers: DEFAULT_COLORS,
   brutalism: ['#0f0f0f', '#f5f5f4', '#facc15', '#ef4444'],
-  futuristic: ['#22d3ee', '#818cf8', '#f472b6', '#34d399'],
 }
 const CONFETTI_ID = 'recap-confetti'
 const FIRE_COOLDOWN_MS = 350
@@ -21,7 +21,7 @@ const PARTICLE_TICKS = 120
 
 const isActive = useIsSlideActive()
 const slideContext = useSlideContext()
-const { visualTheme } = useSlideTheme()
+const { visualTheme } = useTheme()
 const autoFireClicks = computed(() => resolveAutoFireClicks(unref(slideContext.$frontmatter)?.confettiClicks))
 const confettiColors = computed(() => THEME_CONFETTI_COLORS[visualTheme.value] ?? DEFAULT_COLORS)
 

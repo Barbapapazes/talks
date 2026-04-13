@@ -13,11 +13,14 @@ import Modal from '../components/Modal.vue'
 import ProgressiveList from '../components/ProgressiveList.vue'
 import RecapList from '../components/RecapList.vue'
 import Tree from '../components/Tree.vue'
-import { useCurrentTheme } from '../composables/useCurrentTheme'
+import { useTheme } from '../composables/useTheme'
 
 const slideContext = {
   $frontmatter: {} as Record<string, unknown>,
   $clicks: 0,
+  $slidev: {
+    configs: {} as Record<string, unknown>,
+  },
 }
 
 vi.mock('@slidev/client', () => ({
@@ -32,7 +35,10 @@ afterEach(() => {
   for (const key of Object.keys(slideContext.$frontmatter))
     delete slideContext.$frontmatter[key]
 
-  useCurrentTheme().clearCurrentTheme()
+  for (const key of Object.keys(slideContext.$slidev.configs))
+    delete slideContext.$slidev.configs[key]
+
+  useTheme().clearCurrentTheme()
 })
 
 const dialogCloseKey = Symbol('dialog-close')
@@ -144,7 +150,7 @@ describe('backgroundImage', () => {
       webpack: '/webpack-theme.jpg',
     }
 
-    useCurrentTheme().setCurrentTheme('webpack')
+    useTheme().setCurrentTheme('webpack')
 
     const wrapper = mount(BackgroundImage)
 
@@ -152,7 +158,7 @@ describe('backgroundImage', () => {
   })
 
   it('supports themed image props too', () => {
-    useCurrentTheme().setCurrentTheme('vite')
+    useTheme().setCurrentTheme('vite')
 
     const wrapper = mount(BackgroundImage, {
       props: {

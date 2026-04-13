@@ -1,51 +1,55 @@
 
 /** Theme-aware Shiki mapping */
 
-.theme-root .shiki {
+.shiki {
   background-color: var(--slidev-code-background);
 }
 
-.theme-root[data-slide-theme='default'] .shiki span {
+html[data-theme='default'] .shiki span {
   color: var(--shiki-default);
 }
 
-.theme-root[data-slide-theme='brutalism'] .shiki span {
+html[data-theme='brutalism'] pre.shiki {
+  background-color: white;
+  border-radius: 0!important;
+}
+html[data-theme='brutalism'] .shiki span {
   color: var(--shiki-brutalism);
 }
 
-.theme-root[data-slide-theme='futuristic'] .shiki span {
-  color: var(--shiki-futuristic);
+html[data-theme='flowers'] .shiki span {
+  color: var(--shiki-flowers);
 }
 
 /** Code Blocks */
 
-.theme-root .slidev-code.shiki {
-  @apply p-4!;
+.slidev-code.shiki {
+  --at-apply: p-4!;
   margin: 0;
 }
 
-.theme-root .slidev-code code {
+.slidev-code code {
   background: transparent !important;
 }
 
 
-.theme-root .slidev-code-block-title {
-  @apply divide-y;
+.slidev-code-block-title {
+  --at-apply: divide-y;
   margin: 0;
 }
 
-.theme-root .slidev-code-block-title + .slidev-code-block-title {
-  @apply mt-8;
+.slidev-code-block-title + .slidev-code-block-title {
+  --at-apply: mt-8;
 }
 
-.theme-root .slidev-code-block-title-bar {
-  @apply px-4 py-2 flex items-center gap-2;
+.slidev-code-block-title-bar {
+  --at-apply: px-4 py-2 flex items-center gap-2;
 }
 
-.theme-root .slidev-code-block-title-icon {
-  @apply inline-block size-3;
+.slidev-code-block-title-icon {
+  --at-apply: inline-block size-3;
 }
 
-.theme-root .slidev-code-block-title-text {
-  @apply text-xs;
+.slidev-code-block-title-text {
+  --at-apply: text-xs;
 }

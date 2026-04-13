@@ -23,13 +23,13 @@ date: 16 avril 2026
 chooseYourOwnAdventure: true
 ready: true
 timing: 0.2
+chooseTheme:
+  questionId: 1
 ---
 
 <!-- TODO: regularly add QR code to access the Inalia voting page -->
 <!-- TODO: explained visually should be used to explain the issue we are facing -->
-<!-- TODO: handle false for images -->
 <!-- TODO: maybe? remove confused and magic gif and rain -->
-<!-- TODO: somehting about and what about the build after the first concrete example? -->
 
 <!--
 À lire pour comprendre la construction de ce talk.
@@ -44,7 +44,6 @@ Le vote se fait via Inalia : la slide suivante sera celle qui aura obtenu le plu
 -->
 
 # Au cœur d’une pipeline:<br>démystifions Vite et ses plugins
-
 
 <!--
 Bonjour à tous !
@@ -115,7 +114,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1615099833617-01e3d6dbe2e4?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <div class="flex flex-col gap-2 text-2xl font-bold">
@@ -255,6 +254,7 @@ ready: true
 timing: 2
 layout: image
 img:
+  brutalism: false
   default: /vite-background.png
 chooseNextSlide: true
 inalia:
@@ -298,7 +298,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1613901282632-bf2ad28d2369?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 inalia:
   questionId: 2
 ---
@@ -319,7 +319,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1515865404355-ddb5b0910878?q=80&w=2338&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -352,7 +352,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1515865404355-ddb5b0910878?q=80&w=2338&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -379,7 +379,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -410,7 +410,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -440,7 +440,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <AnImageLoadedInATypeScriptFileBuildTree />
@@ -459,7 +459,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1516834474-48c0abc2a902?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -506,7 +506,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1516834474-48c0abc2a902?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -577,7 +577,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -643,7 +643,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -682,7 +682,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -746,7 +746,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -846,14 +846,14 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1494972308805-463bc619d34e?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
 
 <Card v-click absolute top-14 inset-x-10 -bottom-10>
   <h2 class="text-center mb-2 text-neutral-700 flex flex-row items-center justify-center gap-2"><span class="i-vscode-icons-file-type-npm inline-block size-5"></span>vite-plugin-inspect</h2>
-  <iframe src="/__inspect" class="rounded-lg overflow-hidden w-full h-full" />
+  <iframe src="/__inspect" class="overflow-hidden w-full h-full" />
 </Card>
 
 <!--
@@ -874,7 +874,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1208,7 +1208,7 @@ inalia:
   emoji: false
 ---
 
-<Card class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<Card class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" ignore-theme>
 
 ```ts {*|4-6|7-9|10-12|*}{lines:true}
 export default function myPlugin() {
@@ -1315,8 +1315,9 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
+chooseNextSlide: true
 inalia:
   questionId: 3
 ---
@@ -1390,8 +1391,9 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
+chooseNextSlide: true
 inalia:
   questionId: 3
 ---
@@ -1459,6 +1461,7 @@ Et du coup, beh, beh on peut très simplement [click] avoir accès au dernier co
 ---
 name: A Plugin for Virtualization - Choices
 group: Virtualization
+ready: true
 timing: 0.1
 choices:
   - Vue Router - A Virtual Module
@@ -1466,6 +1469,11 @@ choices:
   - Icons Plugin - Virtual Icons
   - Info Plugin - Virtual Information
 layout: choices
+img:
+  brutalism: false
+  default: >-
+    https://images.unsplash.com/photo-1613901282632-bf2ad28d2369?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 inalia:
   questionId: 3
 ---
@@ -1486,7 +1494,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1523973448290-eef2e7611c43?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1518,13 +1526,13 @@ group: Virtualization
 ready: true
 timing: 0.7
 choices:
-  - Virtualization - Recap
+  - Virtualization - Recap - List
 layout: bottom-center-card
 img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1523973448290-eef2e7611c43?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1590,7 +1598,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1492981564641-ab59d661b021?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1632,13 +1640,13 @@ group: Virtualization
 ready: true
 timing: 0.8
 choices:
-  - Virtualization - Recap
+  - Virtualization - Recap - List
 layout: center-card
 img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1492981564641-ab59d661b021?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1714,7 +1722,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1580595999172-787970a962d8?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1746,13 +1754,13 @@ group: Virtualization
 ready: true
 timing: 0.8
 choices:
-  - Virtualization - Recap
+  - Virtualization - Recap - List
 layout: center-card
 img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1580595999172-787970a962d8?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1829,7 +1837,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1554494583-c4e1649bfe71?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1856,13 +1864,13 @@ group: Virtualization
 ready: true
 timing: 1.1
 choices:
-  - Virtualization - Recap
+  - Virtualization - Recap - List
 layout: center-card
 img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1554494583-c4e1649bfe71?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1955,14 +1963,50 @@ Comme tous les plugins, tout commence par un objet avec [click] un nom.
 -->
 
 ---
-name: Virtualization - Recap
-timing: 0
+name: Virtualization - Recap - List
+ready: true
+timing: 1.2
 layout: recap
 inalia:
   emoji: false
 ---
 
-<Card class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<RecapList
+  title="Virtualization in 3 Points"
+  :items="[
+    {
+      title: 'Vite can respond to requests with virtual modules',
+      description: 'Modules that do not exist on the disk but are generated on the fly by a plugin'
+    },
+    {
+      title: 'To create a virtual module, use the resolveId and load hooks',
+      description: 'Take the ownership of an import with resolveId and return the code with load'
+    },
+    {
+      title: 'Used in many plugins and very powerful',
+      description: 'It allows you to inject dynamic data, generate code on the fly, and much more'
+    }
+  ]"
+/>
+
+<!--
+Ok, on vient de voir du virtuel dans tous les sens, [click] on va se faire un petit récap.
+
+- [click] Vite peut répondre à des requêtes avec des modules virtuels, c'est à dire des modules qui n'existent pas sur le disque mais qui sont générés à la volée par un plugin.
+- [click] Pour créer un module virtuel, il faut utiliser les hooks resolveId et load. Avec resolveId, on prend la main sur un import spécifique, et avec load, on retourne le code de ce module.
+- [click] C'est une technique utilisée dans beaucoup de plugins et c'est très puissant. Ça permet d'injecter des données dynamiques, de générer du code à la volée, et les possibilités sont sans limites.
+-->
+
+---
+name: Virtualization - Recap - Code
+ready: true
+timing: 0.7
+layout: recap
+inalia:
+  emoji: false
+---
+
+<Card class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" ignore-theme>
 
 ```ts
 export default function myVirtualModulePlugin() {
@@ -1987,21 +2031,35 @@ export default function myVirtualModulePlugin() {
 
 </Card>
 
-<!-- TODO: text -->
+<!--
+D'un point de vu technique, un plugin pour virtualiser un module, ça n'est pas plus complexe que ça.
+
+resolveId pour intercepter et prendre la main sur un import spécifique et load pour générer et retourner le code de ce module.
+
+Dans la fonction load, vous pouvez faire absolument tout ce que vous voulez
+
+- lecture de fichiers
+- exécution de commandes
+- appels d'API
+
+Tout.
+
+He beh, c'est qu'on progresse vachement vite !
+-->
 
 ---
 name: Other Plugin Capabilities
 group: Advanced Capabilities
+ready: true
 timing: 0.7
 layout: image
 img:
+  brutalism: false
   default: /vite-background.png
 chooseNextSlide: true
 inalia:
   questionId: 4
 ---
-
-<!-- TODO: more time on this slides to make sure every one really understands -->
 
 <OtherPluginCapabilities />
 
@@ -2010,12 +2068,13 @@ On a vu différents hooks, pour agir sur les modules, se brancher sur le cycle d
 
 Ça m'fait penser, on va explorer l'une d'entre elles en profondeur, et vous avez la possibilité de choisir laquelle. [show qr code]
 
-TODO: explain the different plugin capabilities
+[explain the different plugin capabilities]
 -->
 
 ---
 name: Other Plugin Capabilities - Choices
 group: Advanced Capabilities
+ready: true
 timing: 0.1
 choices:
   - Hot Module Replacement (HMR)
@@ -2025,6 +2084,11 @@ choices:
   - unplugin-macro - A Plugin for Creating Macros
   - Nitro - A Backend
 layout: choices
+img:
+  brutalism: false
+  default: >-
+    https://images.unsplash.com/photo-1613901282632-bf2ad28d2369?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 inalia:
   questionId: 4
 ---
@@ -2043,7 +2107,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1654198340681-a2e0fc449f1b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -2069,7 +2133,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1654198340681-a2e0fc449f1b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2126,7 +2190,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1721052921257-f1ec18f80e0f?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1601379329542-31c59347e2b8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2198,7 +2262,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1714548213572-7943d5fd3528?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1558860671-c7811ccf4862?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -2261,7 +2325,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1714548213572-7943d5fd3528?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1558860671-c7811ccf4862?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2333,7 +2397,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1662237693451-b484fb67c8dc?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1592125661285-79820f2fdf7a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2410,7 +2474,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1760224254103-3dcc15e4ad9d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1560238786-aa5717f6ba63?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -2446,7 +2510,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1760224254103-3dcc15e4ad9d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1560238786-aa5717f6ba63?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2567,7 +2631,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1698044047367-17eb43a7fd34?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1480511361210-b1b966c8d614?q=80&w=1321&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2700,7 +2764,7 @@ inalia:
   emoji: false
 ---
 
-<Card class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<Card class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" ignore-theme>
 
 ````md magic-move
 ```ts {3-7}{lines:true}
@@ -2777,7 +2841,7 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1632260260864-caf7fde5ec36?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: null
+  flowers: https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move

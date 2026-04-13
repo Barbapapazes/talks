@@ -1,12 +1,13 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { useCurrentTheme } from '../composables/useCurrentTheme'
-import { useSlideTheme } from '../composables/useSlideTheme'
+import { useTheme } from '../composables/useTheme'
 
 const { mockSlideContext } = vi.hoisted(() => ({
   mockSlideContext: {
     value: null as {
-      $frontmatter: Record<string, unknown>
+      $slidev: {
+        configs: Record<string, unknown>
+      }
     } | null,
   },
 }))
@@ -14,7 +15,9 @@ const { mockSlideContext } = vi.hoisted(() => ({
 vi.mock('@slidev/client', async () => {
   const { reactive } = await import('vue')
   const slideContext = reactive({
-    $frontmatter: reactive<Record<string, unknown>>({}),
+    $slidev: reactive({
+      configs: reactive<Record<string, unknown>>({}),
+    }),
   })
 
   mockSlideContext.value = slideContext
@@ -24,14 +27,14 @@ vi.mock('@slidev/client', async () => {
   }
 })
 
-describe('useSlideTheme', () => {
-  const theme = useCurrentTheme()
-  const slideTheme = useSlideTheme()
+describe('useTheme slide theme state', () => {
+  const theme = useTheme()
+  const slideTheme = useTheme()
 
   beforeEach(() => {
     theme.clearCurrentTheme()
-    for (const key of Object.keys(mockSlideContext.value!.$frontmatter))
-      delete mockSlideContext.value!.$frontmatter[key]
+    for (const key of Object.keys(mockSlideContext.value!.$slidev.configs))
+      delete mockSlideContext.value!.$slidev.configs[key]
   })
 
   it('uses the default theme when no current theme is selected', () => {
@@ -40,36 +43,29 @@ describe('useSlideTheme', () => {
     expect(slideTheme.visualTheme.value).toBe('default')
   })
 
-  it('uses frontmatter defaultTheme when no current theme is selected', () => {
-    mockSlideContext.value!.$frontmatter.defaultTheme = 'space'
+  it('uses configured defaultTheme when no current theme is selected', () => {
+    mockSlideContext.value!.$slidev.configs.defaultTheme = 'space'
 
     expect(slideTheme.defaultTheme.value).toBe('space')
     expect(slideTheme.activeTheme.value).toBe('space')
-    expect(slideTheme.visualTheme.value).toBe('space')
+    expect(slideTheme.visualTheme.value).toBe('default')
   })
 
   it('uses the current theme when one is selected', () => {
-    mockSlideContext.value!.$frontmatter.defaultTheme = 'space'
+    mockSlideContext.value!.$slidev.configs.defaultTheme = 'space'
     theme.setCurrentTheme('space')
 
     expect(slideTheme.activeTheme.value).toBe('space')
-    expect(slideTheme.visualTheme.value).toBe('space')
+    expect(slideTheme.visualTheme.value).toBe('default')
   })
 
-  it('prefers the current theme over frontmatter defaultTheme', () => {
-    mockSlideContext.value!.$frontmatter.defaultTheme = 'space'
+  it('prefers the current theme over configured defaultTheme', () => {
+    mockSlideContext.value!.$slidev.configs.defaultTheme = 'space'
     theme.setCurrentTheme('futuristic')
 
     expect(slideTheme.defaultTheme.value).toBe('space')
     expect(slideTheme.activeTheme.value).toBe('futuristic')
-    expect(slideTheme.visualTheme.value).toBe('futuristic')
-  })
-
-  it('supports futuristic as a visual theme', () => {
-    theme.setCurrentTheme('futuristic')
-
-    expect(slideTheme.activeTheme.value).toBe('futuristic')
-    expect(slideTheme.visualTheme.value).toBe('futuristic')
+    expect(slideTheme.visualTheme.value).toBe('default')
   })
 
   it('falls back to the default visual theme for unsupported theme ids', () => {
@@ -79,8 +75,15 @@ describe('useSlideTheme', () => {
     expect(slideTheme.visualTheme.value).toBe('default')
   })
 
-  it('falls back to default when frontmatter defaultTheme is not defined or empty', () => {
-    mockSlideContext.value!.$frontmatter.defaultTheme = '   '
+  it('supports brutalism as a visual theme', () => {
+    theme.setCurrentTheme('brutalism')
+
+    expect(slideTheme.activeTheme.value).toBe('brutalism')
+    expect(slideTheme.visualTheme.value).toBe('brutalism')
+  })
+
+  it('falls back to default when configured defaultTheme is not defined or empty', () => {
+    mockSlideContext.value!.$slidev.configs.defaultTheme = '   '
 
     expect(slideTheme.defaultTheme.value).toBe('default')
     expect(slideTheme.activeTheme.value).toBe('default')

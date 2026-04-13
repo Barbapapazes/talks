@@ -1,12 +1,13 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { useCurrentTheme } from '../composables/useCurrentTheme'
-import { useThemeValue } from '../composables/useThemeValue'
+import { useTheme } from '../composables/useTheme'
 
 const { mockSlideContext } = vi.hoisted(() => ({
   mockSlideContext: {
     value: null as {
-      $frontmatter: Record<string, unknown>
+      $slidev: {
+        configs: Record<string, unknown>
+      }
     } | null,
   },
 }))
@@ -14,7 +15,9 @@ const { mockSlideContext } = vi.hoisted(() => ({
 vi.mock('@slidev/client', async () => {
   const { reactive } = await import('vue')
   const slideContext = reactive({
-    $frontmatter: reactive<Record<string, unknown>>({}),
+    $slidev: reactive({
+      configs: reactive<Record<string, unknown>>({}),
+    }),
   })
 
   mockSlideContext.value = slideContext
@@ -24,14 +27,14 @@ vi.mock('@slidev/client', async () => {
   }
 })
 
-describe('useThemeValue', () => {
-  const theme = useCurrentTheme()
-  const themeValue = useThemeValue()
+describe('useTheme themed values', () => {
+  const theme = useTheme()
+  const themeValue = useTheme()
 
   beforeEach(() => {
     theme.clearCurrentTheme()
-    for (const key of Object.keys(mockSlideContext.value!.$frontmatter))
-      delete mockSlideContext.value!.$frontmatter[key]
+    for (const key of Object.keys(mockSlideContext.value!.$slidev.configs))
+      delete mockSlideContext.value!.$slidev.configs[key]
   })
 
   it('returns the exact match for the current theme', () => {
@@ -50,8 +53,8 @@ describe('useThemeValue', () => {
     })).toBe('fallback')
   })
 
-  it('uses frontmatter defaultTheme when no theme is selected', () => {
-    mockSlideContext.value!.$frontmatter.defaultTheme = 'space'
+  it('uses configured defaultTheme when no theme is selected', () => {
+    mockSlideContext.value!.$slidev.configs.defaultTheme = 'space'
 
     expect(themeValue.resolveThemeValue({
       default: 'fallback',
@@ -66,5 +69,14 @@ describe('useThemeValue', () => {
       default: 'fallback',
       vite: 'purple',
     })).toBe('fallback')
+  })
+
+  it('treats false as an explicit disable for the active theme', () => {
+    theme.setCurrentTheme('brutalism')
+
+    expect(themeValue.resolveThemeValue({
+      default: 'fallback',
+      brutalism: false,
+    })).toBeUndefined()
   })
 })

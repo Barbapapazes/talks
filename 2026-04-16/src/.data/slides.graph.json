@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-12T18:30:36.010Z",
+  "generatedAt": "2026-04-13T09:33:10.898Z",
   "nodes": [
     {
       "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
@@ -20,7 +20,7 @@
       "group": "Introduction",
       "timing": 0.8,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 59
+      "lineNumber": 58
     },
     {
       "id": "vite_growth",
@@ -31,7 +31,7 @@
       "group": "Introduction",
       "timing": 1.4,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 84
+      "lineNumber": 83
     },
     {
       "id": "slide_theme",
@@ -43,7 +43,7 @@
       "group": "Pre-talk",
       "timing": 2.4,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 108
+      "lineNumber": 107
     },
     {
       "id": "how_vite_works",
@@ -55,7 +55,7 @@
       "group": "Vite Core",
       "timing": 0.9,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 161
+      "lineNumber": 160
     },
     {
       "id": "vite_in_a_nutshell",
@@ -67,7 +67,7 @@
       "group": "Vite Core",
       "timing": 0.8,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 185
+      "lineNumber": 184
     },
     {
       "id": "how_vite_works_visualization",
@@ -79,7 +79,7 @@
       "group": "Vite Core",
       "timing": 2.3,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 220
+      "lineNumber": 219
     },
     {
       "id": "everything_is_a_plugin",
@@ -91,7 +91,7 @@
       "group": "Feature Plugins",
       "timing": 2,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 251
+      "lineNumber": 250
     },
     {
       "id": "everything_is_a_plugin_choices",
@@ -466,19 +466,19 @@
       "group": "Virtualization",
       "timing": 0.9,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1383
+      "lineNumber": 1384
     },
     {
       "id": "a_plugin_for_virtualization_choices",
       "index": 39,
       "name": "A Plugin for Virtualization - Choices",
       "title": "A Plugin for Virtualization - Choices",
-      "ready": false,
+      "ready": true,
       "layout": "choices",
       "group": "Virtualization",
       "timing": 0.1,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1459,
+      "lineNumber": 1461,
       "choices": [
         "Vue Router - A Virtual Module",
         "VitePress - Virtual Data",
@@ -496,7 +496,7 @@
       "group": "Virtualization",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1479
+      "lineNumber": 1487
     },
     {
       "id": "vue_router_a_virtual_module_plugin_internals",
@@ -508,9 +508,9 @@
       "group": "Virtualization",
       "timing": 0.7,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1515,
+      "lineNumber": 1523,
       "choices": [
-        "Virtualization - Recap"
+        "Virtualization - Recap - List"
       ]
     },
     {
@@ -523,7 +523,7 @@
       "group": "Virtualization",
       "timing": 0.9,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1583
+      "lineNumber": 1591
     },
     {
       "id": "vitepress_virtual_data_plugin_internals",
@@ -535,9 +535,9 @@
       "group": "Virtualization",
       "timing": 0.8,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1629,
+      "lineNumber": 1637,
       "choices": [
-        "Virtualization - Recap"
+        "Virtualization - Recap - List"
       ]
     },
     {
@@ -550,7 +550,7 @@
       "group": "Virtualization",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1707
+      "lineNumber": 1715
     },
     {
       "id": "icons_plugin_virtual_icons_plugin_internals",
@@ -562,9 +562,9 @@
       "group": "Virtualization",
       "timing": 0.8,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1743,
+      "lineNumber": 1751,
       "choices": [
-        "Virtualization - Recap"
+        "Virtualization - Recap - List"
       ]
     },
     {
@@ -577,7 +577,7 @@
       "group": "Virtualization",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1822
+      "lineNumber": 1830
     },
     {
       "id": "info_plugin_virtual_information_plugin_internals",
@@ -589,45 +589,56 @@
       "group": "Virtualization",
       "timing": 1.1,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1853,
+      "lineNumber": 1861,
       "choices": [
-        "Virtualization - Recap"
+        "Virtualization - Recap - List"
       ]
     },
     {
-      "id": "virtualization_recap",
+      "id": "virtualization_recap_list",
       "index": 48,
-      "name": "Virtualization - Recap",
-      "title": "Virtualization - Recap",
-      "ready": false,
+      "name": "Virtualization - Recap - List",
+      "title": "Virtualization - Recap - List",
+      "ready": true,
       "layout": "recap",
-      "timing": 0,
+      "timing": 1.2,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1957
+      "lineNumber": 1965
+    },
+    {
+      "id": "virtualization_recap_code",
+      "index": 49,
+      "name": "Virtualization - Recap - Code",
+      "title": "Virtualization - Recap - Code",
+      "ready": true,
+      "layout": "recap",
+      "timing": 0.7,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2000
     },
     {
       "id": "other_plugin_capabilities",
-      "index": 49,
+      "index": 50,
       "name": "Other Plugin Capabilities",
       "title": "Other Plugin Capabilities",
-      "ready": false,
+      "ready": true,
       "layout": "image",
       "group": "Advanced Capabilities",
       "timing": 0.7,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1992
+      "lineNumber": 2050
     },
     {
       "id": "other_plugin_capabilities_choices",
-      "index": 50,
+      "index": 51,
       "name": "Other Plugin Capabilities - Choices",
       "title": "Other Plugin Capabilities - Choices",
-      "ready": false,
+      "ready": true,
       "layout": "choices",
       "group": "Advanced Capabilities",
       "timing": 0.1,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2016,
+      "lineNumber": 2074,
       "choices": [
         "Hot Module Replacement (HMR)",
         "Middleware - A Virtual File",
@@ -639,18 +650,18 @@
     },
     {
       "id": "hot_module_replacement_hmr",
-      "index": 51,
+      "index": 52,
       "name": "Hot Module Replacement (HMR)",
       "title": "Hot Module Replacement (HMR)",
       "ready": true,
       "group": "Advanced Capabilities",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2037
+      "lineNumber": 2101
     },
     {
       "id": "hot_module_replacement_hmr_plugin_internals",
-      "index": 52,
+      "index": 53,
       "name": "Hot Module Replacement (HMR) - Plugin Internals",
       "title": "Hot Module Replacement (HMR) - Plugin Internals",
       "ready": true,
@@ -658,14 +669,14 @@
       "group": "Advanced Capabilities",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2060,
+      "lineNumber": 2124,
       "choices": [
         "It was always the same pipeline"
       ]
     },
     {
       "id": "middleware_a_virtual_file",
-      "index": 53,
+      "index": 54,
       "name": "Middleware - A Virtual File",
       "title": "Middleware - A Virtual File",
       "ready": true,
@@ -673,14 +684,14 @@
       "group": "Advanced Capabilities",
       "timing": 0.7,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2117,
+      "lineNumber": 2181,
       "choices": [
         "It was always the same pipeline"
       ]
     },
     {
       "id": "run_plugin_a_plugin_for_running_commands",
-      "index": 54,
+      "index": 55,
       "name": "Run Plugin - A Plugin for Running Commands",
       "title": "Run Plugin - A Plugin for Running Commands",
       "ready": true,
@@ -688,11 +699,11 @@
       "group": "Advanced Capabilities",
       "timing": 1,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2191
+      "lineNumber": 2255
     },
     {
       "id": "run_plugin_a_plugin_for_running_commands_plugin_internals",
-      "index": 55,
+      "index": 56,
       "name": "Run Plugin - A Plugin for Running Commands - Plugin Internals",
       "title": "Run Plugin - A Plugin for Running Commands - Plugin Internals",
       "ready": true,
@@ -700,25 +711,25 @@
       "group": "Advanced Capabilities",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2252,
+      "lineNumber": 2316,
       "choices": [
         "It was always the same pipeline"
       ]
     },
     {
       "id": "laravel_vite_inter_process_communication",
-      "index": 56,
+      "index": 57,
       "name": "Laravel Vite - Inter-process Communication",
       "title": "Laravel Vite - Inter-process Communication",
       "ready": true,
       "group": "Advanced Capabilities",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2306
+      "lineNumber": 2370
     },
     {
       "id": "laravel_vite_inter_process_communication_plugin_internals",
-      "index": 57,
+      "index": 58,
       "name": "Laravel Vite - Inter-process Communication - Plugin Internals",
       "title": "Laravel Vite - Inter-process Communication - Plugin Internals",
       "ready": true,
@@ -726,14 +737,14 @@
       "group": "Advanced Capabilities",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2324,
+      "lineNumber": 2388,
       "choices": [
         "It was always the same pipeline"
       ]
     },
     {
       "id": "unplugin_macro_a_plugin_for_creating_macros",
-      "index": 58,
+      "index": 59,
       "name": "unplugin-macro - A Plugin for Creating Macros",
       "title": "unplugin-macro - A Plugin for Creating Macros",
       "ready": true,
@@ -741,11 +752,11 @@
       "group": "Advanced Capabilities",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2403
+      "lineNumber": 2467
     },
     {
       "id": "unplugin_macro_a_plugin_for_creating_macros_plugin_internals",
-      "index": 59,
+      "index": 60,
       "name": "unplugin-macro - A Plugin for Creating Macros - Plugin Internals",
       "title": "unplugin-macro - A Plugin for Creating Macros - Plugin Internals",
       "ready": true,
@@ -753,14 +764,14 @@
       "group": "Advanced Capabilities",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2437,
+      "lineNumber": 2501,
       "choices": [
         "It was always the same pipeline"
       ]
     },
     {
       "id": "nitro_a_backend",
-      "index": 60,
+      "index": 61,
       "name": "Nitro - A Backend",
       "title": "Nitro - A Backend",
       "ready": true,
@@ -768,22 +779,22 @@
       "group": "Advanced Capabilities",
       "timing": 0.3,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2527
+      "lineNumber": 2591
     },
     {
       "id": "nitro_a_backend_visualization",
-      "index": 61,
+      "index": 62,
       "name": "Nitro - A Backend - Visualization",
       "title": "Nitro - A Backend - Visualization",
       "ready": true,
       "group": "Advanced Capabilities",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2543
+      "lineNumber": 2607
     },
     {
       "id": "nitro_a_backend_plugin_internals",
-      "index": 62,
+      "index": 63,
       "name": "Nitro - A Backend - Plugin Internals",
       "title": "Nitro - A Backend - Plugin Internals",
       "ready": true,
@@ -791,46 +802,46 @@
       "group": "Advanced Capabilities",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2558,
+      "lineNumber": 2622,
       "choices": [
         "It was always the same pipeline"
       ]
     },
     {
       "id": "it_was_always_the_same_pipeline",
-      "index": 63,
+      "index": 64,
       "name": "It was always the same pipeline",
       "title": "It was always the same pipeline",
       "ready": true,
       "timing": 1.5,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2614
+      "lineNumber": 2678
     },
     {
       "id": "final_recap_list",
-      "index": 64,
+      "index": 65,
       "name": "Final Recap - List",
       "title": "Final Recap - List",
       "ready": true,
       "layout": "recap",
       "timing": 1.3,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2652
+      "lineNumber": 2716
     },
     {
       "id": "final_recap_code",
-      "index": 65,
+      "index": 66,
       "name": "Final Recap - Code",
       "title": "Final Recap - Code",
       "ready": true,
       "layout": "recap",
       "timing": 1.2,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2694
+      "lineNumber": 2758
     },
     {
       "id": "deep_inside_the_pipeline",
-      "index": 66,
+      "index": 67,
       "name": "Deep Inside the Pipeline",
       "title": "Deep Inside the Pipeline",
       "ready": true,
@@ -838,29 +849,29 @@
       "group": "Deep Dive",
       "timing": 1.4,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2770
+      "lineNumber": 2834
     },
     {
       "id": "your_turn",
-      "index": 67,
+      "index": 68,
       "name": "Your Turn",
       "title": "Your Turn",
       "ready": true,
       "layout": "keep-in-mind",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2899
+      "lineNumber": 2963
     },
     {
       "id": "outro",
-      "index": 68,
+      "index": 69,
       "name": "Outro",
       "title": "Outro",
       "ready": true,
       "layout": "outro2",
       "timing": 0.3,
       "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2924
+      "lineNumber": 2988
     }
   ],
   "edges": [
@@ -1096,8 +1107,8 @@
     },
     {
       "from": "vue_router_a_virtual_module_plugin_internals",
-      "to": "virtualization_recap",
-      "label": "Virtualization - Recap"
+      "to": "virtualization_recap_list",
+      "label": "Virtualization - Recap - List"
     },
     {
       "from": "vitepress_virtual_data",
@@ -1106,8 +1117,8 @@
     },
     {
       "from": "vitepress_virtual_data_plugin_internals",
-      "to": "virtualization_recap",
-      "label": "Virtualization - Recap"
+      "to": "virtualization_recap_list",
+      "label": "Virtualization - Recap - List"
     },
     {
       "from": "icons_plugin_virtual_icons",
@@ -1116,8 +1127,8 @@
     },
     {
       "from": "icons_plugin_virtual_icons_plugin_internals",
-      "to": "virtualization_recap",
-      "label": "Virtualization - Recap"
+      "to": "virtualization_recap_list",
+      "label": "Virtualization - Recap - List"
     },
     {
       "from": "info_plugin_virtual_information",
@@ -1126,11 +1137,16 @@
     },
     {
       "from": "info_plugin_virtual_information_plugin_internals",
-      "to": "virtualization_recap",
-      "label": "Virtualization - Recap"
+      "to": "virtualization_recap_list",
+      "label": "Virtualization - Recap - List"
     },
     {
-      "from": "virtualization_recap",
+      "from": "virtualization_recap_list",
+      "to": "virtualization_recap_code",
+      "label": ""
+    },
+    {
+      "from": "virtualization_recap_code",
       "to": "other_plugin_capabilities",
       "label": ""
     },
