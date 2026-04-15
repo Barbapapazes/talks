@@ -14,7 +14,7 @@ transition: fade-out
 theme: slidev-theme-personal
 addons:
   - slidev-addon-inalia
-title: "Au cœur d’une pipeline : démystifions Vite et ses plugins"
+title: "Au cœur d'une pipeline : démystifions Vite et ses plugins"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: web,development,vite,plugins,pipeline
@@ -29,7 +29,6 @@ chooseTheme:
 
 <!-- TODO: regularly add QR code to access the Inalia voting page -->
 <!-- TODO: explained visually should be used to explain the issue we are facing -->
-<!-- TODO: maybe? remove confused and magic gif and rain -->
 
 <!--
 À lire pour comprendre la construction de ce talk.
@@ -43,7 +42,7 @@ Ces fichiers sont générés à partir de ce fichier slides.md, qui contient l'e
 Le vote se fait via Inalia : la slide suivante sera celle qui aura obtenu le plus de voix.
 -->
 
-# Au cœur d’une pipeline:<br>démystifions Vite et ses plugins
+# Au cœur d'une pipeline:<br>démystifions Vite et ses plugins
 
 <!--
 Bonjour à tous !
@@ -114,7 +113,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1615099833617-01e3d6dbe2e4?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <div class="flex flex-col gap-2 text-2xl font-bold">
@@ -192,7 +192,7 @@ img:
 clicks: 5
 ---
 
-<ViteOverview />
+<ViteInANutshell />
 
 ::outside::
 
@@ -227,6 +227,8 @@ layout: full
 <ViteExplainedVisually />
 
 <!--
+[take your time]
+
 [slow] [click] À gauche, un navigateur, [click] à droite, des fichiers. C'est juste le starter Vite, Vue et TypeScript, rien d'extravaguant. [fast] Eh heu quand je dis à gauche à droite, c'est heu sur la slide parce qu'en vrai, c'est sur votre machine tout ça hein.
 
 [slow] Entre les deux, on place [fast] rapidement [slow] [click] Vite. [fast] Et puis bon bin, le navigateur, il fait des [click] requêtes HTTP vers Vite, il va [click] lire le système de fichier et il va renvoyer l'information.
@@ -245,6 +247,58 @@ Ensuite, le navigateur charge main.ts. On y voit un fichier CSS, Vue et notre ap
 Maiiis bref peut importe..., on investiguera ça plus tard.
 
 [enthusiastic] Ce qui compte maintenant, c'est qu'on ait une bonne vision du fonctionnement de Vite.
+
+Mais du coup, pourquoi Vite a pris le dessus ?
+-->
+
+---
+name: Why Vite Took Over
+group: Vite Core
+timing: 0
+layout: center-card
+img:
+  default: /vite-background.png
+clicks: 6
+---
+
+<WhyViteTookOver />
+
+<!--
+[slow] Vite, il a pris le dessus parce qu'il a su répondre à des besoins qui étaient devenus critiques pour les développeurs.
+
+1. [click] Native ESM: Vite utilise les modules ECMAScript natifs du navigateur, ce qui élimine le besoin de bundler pendant le développement et accélère considérablement le temps de démarrage.
+2. [click] Dev server performance: Grâce à l'utilisation d'esbuild pour la transformation rapide du code, Vite offre des performances de serveur de développement exceptionnelles, même pour les grands projets.
+3. [click] On-demand transformation: Vite transforme les fichiers à la demande, ce qui signifie que seuls les fichiers nécessaires sont transformés et servis, réduisant ainsi le temps de chargement.
+4. [click] Simplified configuration: Vite propose une configuration plus simple et plus intuitive que les bundlers traditionnels, ce qui facilite la prise en main et la personnalisation.
+5. [click] Ecosystem alignment: Vite a été conçu pour s'intégrer parfaitement avec les frameworks modernes et les outils de développement dont Rollup dont il tire l'interface pour les plugins, ce qui a contribué à son adoption rapide dans la communauté.
+
+-->
+
+---
+name: Some Definitions
+group: Vite Core
+ready: true
+timing: 0.9
+layout: center
+img:
+  brutalism: false
+  default: >-
+    https://images.unsplash.com/photo-1575573560187-ea323357d550?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1528907298109-e64971adc8e5?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+---
+
+<SomeDefinitions />
+
+<!--
+D'ailleurs, on va voir beaucoup de concepts, je vous propose qu'on prenne quelques minutes pour les définir.
+
+1. module ECMAScript : Un fichier JavaScript qui utilise import / export.
+2. identifiant de module : La chaîne utilisée pour désigner un module dans un import. Par example : 'vue', './App.vue', 'virtual:my-module'.
+3. Hook: Une fonction qu'un plugin expose pour intervenir à une étape précise de la pipeline. Par example : resolveId, load, transform.
+4. Module virtuel: Un module qui n'existe pas sur le disque, mais qui est généré à la volée par un plugin.
+
+https://chatgpt.com/share/69dd6e09-59d4-8326-80ea-147f076d29e0
 -->
 
 ---
@@ -298,7 +352,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1613901282632-bf2ad28d2369?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 inalia:
   questionId: 2
 ---
@@ -319,7 +374,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1515865404355-ddb5b0910878?q=80&w=2338&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1515865404355-ddb5b0910878?q=80&w=2338&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -352,7 +408,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1579792685643-a4bb28186899?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1515865404355-ddb5b0910878?q=80&w=2338&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1515865404355-ddb5b0910878?q=80&w=2338&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -379,7 +436,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -410,7 +468,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -440,7 +499,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <AnImageLoadedInATypeScriptFileBuildTree />
@@ -459,7 +519,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1516834474-48c0abc2a902?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1516834474-48c0abc2a902?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -506,7 +567,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1667502102967-b952788b714e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1516834474-48c0abc2a902?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1516834474-48c0abc2a902?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -577,7 +639,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -643,7 +706,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -682,7 +746,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -746,7 +811,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -846,7 +912,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1494972308805-463bc619d34e?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1494972308805-463bc619d34e?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -874,7 +941,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1315,7 +1383,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 chooseNextSlide: true
 inalia:
@@ -1391,7 +1460,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 chooseNextSlide: true
 inalia:
@@ -1473,7 +1543,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1613901282632-bf2ad28d2369?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 inalia:
   questionId: 3
 ---
@@ -1494,7 +1565,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1523973448290-eef2e7611c43?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1523973448290-eef2e7611c43?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1532,7 +1604,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1654119862536-9f1dde8ea53f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1523973448290-eef2e7611c43?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1523973448290-eef2e7611c43?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1598,7 +1671,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1492981564641-ab59d661b021?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1492981564641-ab59d661b021?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1646,7 +1720,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1750017675871-76518031b2e1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1492981564641-ab59d661b021?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1492981564641-ab59d661b021?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1722,7 +1797,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1580595999172-787970a962d8?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1580595999172-787970a962d8?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1760,7 +1836,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1643391144986-22915262cb85?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1580595999172-787970a962d8?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1580595999172-787970a962d8?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1837,7 +1914,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1554494583-c4e1649bfe71?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1554494583-c4e1649bfe71?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1870,7 +1948,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1554494583-c4e1649bfe71?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1554494583-c4e1649bfe71?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2088,7 +2167,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1613901282632-bf2ad28d2369?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 inalia:
   questionId: 4
 ---
@@ -2107,7 +2187,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1654198340681-a2e0fc449f1b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -2133,7 +2214,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1654198340681-a2e0fc449f1b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1630168185910-60bcbf5cc8c3?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2190,7 +2272,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1721052921257-f1ec18f80e0f?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1601379329542-31c59347e2b8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1601379329542-31c59347e2b8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2262,7 +2345,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1714548213572-7943d5fd3528?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1558860671-c7811ccf4862?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1558860671-c7811ccf4862?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -2325,7 +2409,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1714548213572-7943d5fd3528?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1558860671-c7811ccf4862?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1558860671-c7811ccf4862?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2397,7 +2482,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1662237693451-b484fb67c8dc?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1592125661285-79820f2fdf7a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1592125661285-79820f2fdf7a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2474,7 +2560,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1760224254103-3dcc15e4ad9d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1560238786-aa5717f6ba63?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1560238786-aa5717f6ba63?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -2510,7 +2597,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1760224254103-3dcc15e4ad9d?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1560238786-aa5717f6ba63?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1560238786-aa5717f6ba63?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2631,7 +2719,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1698044047367-17eb43a7fd34?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1480511361210-b1b966c8d614?q=80&w=1321&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1480511361210-b1b966c8d614?q=80&w=1321&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -2841,7 +2930,8 @@ img:
   brutalism: false
   default: >-
     https://images.unsplash.com/photo-1632260260864-caf7fde5ec36?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  flowers: >-
+    https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move

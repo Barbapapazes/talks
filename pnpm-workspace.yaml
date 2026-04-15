@@ -79,3 +79,6 @@ catalog:
   vitest: ^4.1.4
   vue: ^3.5.32
   wrangler: ^4.80.0
+catalogs:
+  conflicts_alien-signals_h1_0_13:
+    alien-signals: ^1.0.13

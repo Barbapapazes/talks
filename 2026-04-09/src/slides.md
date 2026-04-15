@@ -13,7 +13,7 @@ transition: fade-out
 theme: slidev-theme-personal
 addons:
   - slidev-addon-inalia
-title: "Au cœur d’une pipeline : démystifions Vite et ses plugins"
+title: "Au cœur d'une pipeline : démystifions Vite et ses plugins"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: web,development,vite,plugins,pipeline
@@ -36,7 +36,7 @@ Ces fichiers sont générés à partir de ce fichier slides.md, qui contient l'e
 Le vote se fait via Inalia : la slide suivante sera celle qui aura obtenu le plus de voix.
 -->
 
-# Au cœur d’une pipeline:<br>démystifions Vite et ses plugins
+# Au cœur d'une pipeline:<br>démystifions Vite et ses plugins
 
 
 <!--

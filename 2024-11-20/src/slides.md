@@ -132,7 +132,7 @@ Donc si on résume, on a une action qui déclenche une transmission d'informatio
   type="text"
   chart=""
   :data="[
-    'Bonjour', 'Loader de chargement', 'Une notification', 'Le bouton réagit', 'Le bouton change de couleur', 'Un loader s’affiche', 'Un wizz !', 'un changement d\'état visuel', 'Alert', 'Modal', 'Un spinner', 'Wizz', 'Par un loader', 'mmh', 'Coucou', 'Popover', 'Toastr', '() !', 'Alors quoi?', 'Popup', 'Toastttt', 'Skeleton', 'Changement de page', 'DROP DATABASE;', 'Une popin de l\'enfer', 'Couleur'
+    'Bonjour', 'Loader de chargement', 'Une notification', 'Le bouton réagit', 'Le bouton change de couleur', 'Un loader s'affiche', 'Un wizz !', 'un changement d\'état visuel', 'Alert', 'Modal', 'Un spinner', 'Wizz', 'Par un loader', 'mmh', 'Coucou', 'Popover', 'Toastr', '() !', 'Alors quoi?', 'Popup', 'Toastttt', 'Skeleton', 'Changement de page', 'DROP DATABASE;', 'Une popin de l\'enfer', 'Couleur'
   ]"
 />
 

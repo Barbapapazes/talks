@@ -22,7 +22,7 @@ function onClick() {
 </script>
 
 <template>
-  <div class="w-1px opacity-10 bg-current m-1 lg:m-2"></div>
+  <div class="w-1px opacity-10 bg-current m-1 lg:m-2" />
   <button class="slidev-icon-btn" :title="title" @click="onClick">
     <div class="i-carbon:bee" />
   </button>

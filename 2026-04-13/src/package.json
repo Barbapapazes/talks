@@ -1,0 +1,39 @@
+{
+  "name": "takima",
+  "type": "module",
+  "event": {
+    "name": "Takima",
+    "url": "https://takima.fr/",
+    "location": {
+      "city": "Paris",
+      "country": "France",
+      "latitude": 48.80486167446941,
+      "longitude": 2.324595137047259
+    }
+  },
+  "private": true,
+  "description": "Plongée au cœur de la pipeline de Vite : découvrez son fonctionnement interne et comment prendre le contrôle avec des plugins personnalisés.",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2026-04-13/takima/ --out ../../dist/2026-04-13/takima",
+    "export": "slidev export --per-slide --output ../2026-04-13-takima.pdf",
+    "thumbnail:cp": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
+    "thumbnail": "slidev export --per-slide --range 1 --format png",
+    "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
+    "thumbnail:cp:dark": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
+    "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
+  },
+  "dependencies": {
+    "@shikijs/transformers": "catalog:",
+    "@unovis/ts": "catalog:",
+    "@unovis/vue": "catalog:",
+    "@vueuse/core": "catalog:",
+    "slidev-addon-inalia": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vite-plugin-info": "catalog:",
+    "vite-plugin-inspect": "catalog:",
+    "vite-plugin-run": "catalog:"
+  }
+}

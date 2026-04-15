@@ -1,5 +1,5 @@
-Voici les spécificités clés d’Inertia et ses grandes features, avec des exemples concrets (Laravel + Vue 3).
-Ce sont les mécanismes qui font qu’Inertia n’est pas “juste une navigation AJAX”.
+Voici les spécificités clés d'Inertia et ses grandes features, avec des exemples concrets (Laravel + Vue 3).
+Ce sont les mécanismes qui font qu'Inertia n'est pas “juste une navigation AJAX”.
 
 ⸻
 
@@ -51,7 +51,7 @@ Ce que fait Inertia :
 - Intercepte le clic
 - Fait une requête XHR
 - Remplace le composant courant
-- Conserve l’état si nécessaire
+- Conserve l'état si nécessaire
 
 ➡️ SPA-like, sans vue-router.
 
@@ -84,7 +84,7 @@ Ce que ça gère automatiquement
 </div>
 ```
 
-➡️ C’est l’une des raisons principales d’adopter Inertia.
+➡️ C'est l'une des raisons principales d'adopter Inertia.
 
 ⸻
 
@@ -128,7 +128,7 @@ const page = usePage()
 page.props.auth.user
 ```
 
-Cas d’usage :
+Cas d'usage :
 - User connecté
 - Permissions
 - Flash messages
@@ -201,7 +201,7 @@ defineOptions({
 })
 ```
 
-➡️ Le layout n’est pas détruit entre navigations
+➡️ Le layout n'est pas détruit entre navigations
 ➡️ Très utile pour menus, états UI, scroll
 
 ⸻
@@ -246,7 +246,7 @@ return back()->with('flash', 'Saved');
 Ce qui rend Inertia spécifique (résumé)
 - Pages = composants frontend
 - Routing = serveur
-- Pas d’API REST
+- Pas d'API REST
 - Formulaires ultra intégrés
 - Validation serveur native
 - Optimisations fines (lazy, partial, preserve)
@@ -261,4 +261,4 @@ Si tu devais retenir 3 features clés :
 2.  useForm (formulaires + validation)
 3.  Shared / partial / lazy props (performance sans complexité)
 
-C’est cet ensemble qui fait qu’Inertia est simple sans être limité.
+C'est cet ensemble qui fait qu'Inertia est simple sans être limité.

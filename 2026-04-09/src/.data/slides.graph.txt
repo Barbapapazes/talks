@@ -81,7 +81,7 @@ flowchart LR
   subgraph Deep_Dive ["Deep Dive"]
       dans_les_profondeurs_de_la_pipeline["#61 Dans les profondeurs de la pipeline"]:::finished
   end
-  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["#1 Au cœur d’une pipeline : démystifions Vite et ses plugins"]:::finished
+  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["#1 Au cœur d'une pipeline : démystifions Vite et ses plugins"]:::finished
   vite_et_ses_features_r_cap["#17 Vite et ses features - Récap"]:::finishedRecap
   visualiser_la_pipeline["#31 Visualiser la pipeline"]:::finished
   le_plugin_vite_r_cap["#32 Le plugin Vite - Récap"]:::finishedRecap

@@ -10,6 +10,6 @@ const file = defineModel<ExplainedVisuallySelectedFile | null>({ required: true 
     :title="file ? `File ${file.file}` : undefined"
     @update:open="() => file = null"
   >
-    <div v-if="file" class="min-h-0 flex-1 overflow-auto p-4" v-html="file.code" />
+    <div v-if="file" class="min-h-0 flex-1 text-xl overflow-auto p-4" v-html="file.code" />
   </Modal>
 </template>

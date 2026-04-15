@@ -6,8 +6,9 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 ### 2026
 
-- `fr` [Au cœur d’une pipeline : démystifions Vite et ses plugins](./2026-04-16) - MiXiT
-- `fr` [Au cœur d’une pipeline : démystifions Vite et ses plugins](./2026-04-09) - L'Atelier
+- `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-16) - MiXiT
+- `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-13) - Takima
+- `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-09) - L'Atelier
 - `fr` [En JavaScript, il y a un paquet pour tout... et souvent pour rien.](./2026-02-13) - Touraine Tech
 - `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2026-02-12) - Touraine Tech
 - `fr` [Inertia: Un Anneau pour les gouverner tous.](./2026-01-22) - Vue.js Paris
@@ -51,8 +52,9 @@ Slides from my [talks](https://soubiran.dev/talks).
 <summary>Copy talks list as text</summary>
 
 ```
-2026-04-16 - Au cœur d’une pipeline : démystifions Vite et ses plugins - MiXiT - Lyon, France
-2026-04-09 - Au cœur d’une pipeline : démystifions Vite et ses plugins - L'Atelier - Paris, France
+2026-04-16 - Au cœur d'une pipeline : démystifions Vite et ses plugins - MiXiT - Lyon, France
+2026-04-13 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Takima - Paris, France
+2026-04-09 - Au cœur d'une pipeline : démystifions Vite et ses plugins - L'Atelier - Paris, France
 2026-02-13 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - Touraine Tech - Tours, France
 2026-02-12 - La réactivité et les signaux : démystifions la magie du frontend - Touraine Tech - Tours, France
 2026-01-22 - Inertia: Un Anneau pour les gouverner tous. - Vue.js Paris - Paris, France
@@ -92,11 +94,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Year | Number of Talks |
 |------|-----------------|
-| 2026 | 3 |
+| 2026 | 6 |
 | 2025 | 19 |
 | 2024 | 6 |
 | 2023 | 1 |
-| **Total** | **29** |
+| **Total** | **32** |
 
 ### Talks per Event
 
@@ -116,6 +118,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 | Paris TypeScript | 3 | 0 | 3 | 0 | 0 |
 | PragVue | 1 | 0 | 0 | 1 | 0 |
 | StrasbourgJS | 2 | 0 | 1 | 1 | 0 |
+| Takima | 1 | 1 | 0 | 0 | 0 |
 | TakiMeet | 1 | 0 | 0 | 1 | 0 |
 | Touraine Tech | 2 | 2 | 0 | 0 | 0 |
 | Vue.js Paris | 2 | 1 | 0 | 1 | 0 |
@@ -124,7 +127,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Talk Title | Total | 2026 | 2025 | 2024 | 2023 |
 |------------|-------|------|------|------|------|
-| Au cœur d’une pipeline : démystifions Vite et ses plugins | 2 | 2 | 0 | 0 | 0 |
+| Au cœur d'une pipeline : démystifions Vite et ses plugins | 3 | 3 | 0 | 0 | 0 |
 | Découvrons ensemble l'écosystème UnJS | 1 | 0 | 0 | 1 | 0 |
 | Deviens full-stack avec TypeScript | 1 | 0 | 1 | 0 | 0 |
 | En JavaScript, il y a un paquet pour tout... et souvent pour rien. | 7 | 1 | 6 | 0 | 0 |

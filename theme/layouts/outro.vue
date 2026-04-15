@@ -13,7 +13,9 @@ const { $frontmatter } = useSlideContext()
 <template>
   <div class="h-full grid slidev-layout outro">
     <div class="w-full my-auto">
-      <div class="theme-muted-text absolute font-light flex flex-col text-xs top-14 text-end right-14">
+      <slot />
+
+      <div class="absolute font-light flex flex-col text-xs top-14 text-end right-14 text-neutral-600">
         <span>Estéban Soubiran</span>
         <span> esteban@soubiran.dev </span>
       </div>

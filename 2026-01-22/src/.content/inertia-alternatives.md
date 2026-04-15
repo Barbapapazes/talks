@@ -1,4 +1,4 @@
-Voici un comparatif structuré des **principales alternatives à Inertia** si tu veux **éviter son approche SPA monolithique (sans API)**. On traite les avantages et inconvénients de chaque solution pour t’aider à choisir selon ton projet.
+Voici un comparatif structuré des **principales alternatives à Inertia** si tu veux **éviter son approche SPA monolithique (sans API)**. On traite les avantages et inconvénients de chaque solution pour t'aider à choisir selon ton projet.
 
 ---
 
@@ -13,7 +13,7 @@ Frontend riche consommant une **API** (REST ou GraphQL) fournie par ton backend 
 
 * **SEO et performances** : SSR (Server-Side Rendering) et/ou SSG (Static Site Generation) natifs → excellents temps de chargement et indexation.
 * **Ecosystème mature** : modules, plugins, bonnes pratiques établies.
-* **Frontend découplé** : ton backend peut aussi servir d’API pour d’autres clients (mobile, desktop).
+* **Frontend découplé** : ton backend peut aussi servir d'API pour d'autres clients (mobile, desktop).
 * **Flexibilité de rendu** : pages SSR, SSG, CSR selon besoins. ([LinkedIn][1])
 
 **Inconvénients**
@@ -22,7 +22,7 @@ Frontend riche consommant une **API** (REST ou GraphQL) fournie par ton backend 
 * **Dev + build tools** : nécessite Node.js pour SSR/SSG, configuration parfois lourde.
 * **Stack split** : frontend et backend sont souvent déployés indépendamment.
 
-**Quand c’est une bonne option**
+**Quand c'est une bonne option**
 
 * Blog public ou site avec SEO important
 * Produit qui doit être utilisé par plusieurs clients (mobile app, API externe)
@@ -37,16 +37,16 @@ Components interactifs rendus **HTML côté serveur**, avec interactivité autom
 
 **Avantages**
 
-* **Conserve Blade** : tu restes dans l’écosystème Laravel/PHP, logique backend → UI réactive sans JS complexe. ([Redberry International][2])
+* **Conserve Blade** : tu restes dans l'écosystème Laravel/PHP, logique backend → UI réactive sans JS complexe. ([Redberry International][2])
 * Très bon pour des pages dynamiques simples ou des outils internes.
-* **Pas d’API ni build tools** pour JS lourds.
+* **Pas d'API ni build tools** pour JS lourds.
 
 **Inconvénients**
 
-* **Moins “SPA”** qu’une application frontend complète : transitions page par page.
+* **Moins “SPA”** qu'une application frontend complète : transitions page par page.
 * Interactions très complexes (drag-&-drop, animations JS avancées) sont plus pénibles.
 
-**Quand c’est une bonne option**
+**Quand c'est une bonne option**
 
 * Back-offices, admin panels sans besoin de SPA complète
 * Projets Laravel où tu veux minimiser le JavaScript
@@ -70,7 +70,7 @@ Construis une **SPA complète** avec Vue/React/Svelte + router frontend (vue-rou
 * **API à maintenir** → versioning, authentification, endpoints, documentation.
 * Dev front/back souvent indépendants → coordination nécessaire. ([Medium][3])
 
-**Quand c’est une bonne option**
+**Quand c'est une bonne option**
 
 * Apps très interactives / produits SaaS
 * Multi-plateformes (mobile + web)
@@ -91,10 +91,10 @@ Tu retournes du **HTML rendu serveur** pour chaque requête. Tu peux enrichir av
 
 **Inconvénients**
 
-* UX moins fluide qu’une SPA (rechargements entre pages).
+* UX moins fluide qu'une SPA (rechargements entre pages).
 * Interactions JS complexes doivent être gérées manuellement.
 
-**Quand c’est une bonne option**
+**Quand c'est une bonne option**
 
 * Blog, site marketing, sites sans besoin de SPA
 
@@ -113,7 +113,7 @@ Navigation et interactivité via **HTML partiel et WebSockets**, sans framework 
 
 **Inconvénients**
 
-* Écosystème moins mature en PHP qu’en Rails.
+* Écosystème moins mature en PHP qu'en Rails.
 * Patterns spécifiques à apprendre.
 
 ---

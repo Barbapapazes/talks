@@ -31,7 +31,7 @@ Translation rules (Do)
 - Keep existing markers like [inaudible] in place and untranslated.
 - If the speaker states their name, keep it exactly as: Estéban Soubiran.
 
-Don’t
+Don't
 - Do not summarize, omit, or add content.
 - Do not translate code tokens, CLI flags, library/package names, or URLs.
 - Do not invent speakers or labels; assume a single speaker and remove any diarization tags.
@@ -56,13 +56,13 @@ Typography and punctuation
 - French target: use French typographic conventions when natural:
   - Prefer « … » or “ … ” consistently; either is acceptable.
   - Insert (narrow) non-breaking spaces before : ; ! ? when appropriate.
-  - Translate common contractions idiomatically (e.g., “that’s” → « c’est »).
+  - Translate common contractions idiomatically (e.g., “that's” → « c'est »).
 
 Tiny examples
 - EN → FR
-  Input: Today I’m going to talk about Nuxt 3. It ships with an API server.
-  Output: Aujourd’hui, je vais parler de Nuxt 3. Il est livré avec un serveur d’API.
+  Input: Today I'm going to talk about Nuxt 3. It ships with an API server.
+  Output: Aujourd'hui, je vais parler de Nuxt 3. Il est livré avec un serveur d'API.
 
 - FR → EN
-  Input: Aujourd’hui, je vais parler de Nuxt 3. Il est livré avec un serveur d’API.
-  Output: Today, I’m going to talk about Nuxt 3. It comes with an API server.
+  Input: Aujourd'hui, je vais parler de Nuxt 3. Il est livré avec un serveur d'API.
+  Output: Today, I'm going to talk about Nuxt 3. It comes with an API server.

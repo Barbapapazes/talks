@@ -69,7 +69,7 @@ const contentAttrs = computed(() => ({
         >
           <DialogTitle
             v-if="hasTitle"
-            class="text-base font-semibold text-neutral-700 dark:text-neutral-100"
+            class="text-2xl font-semibold text-neutral-700 dark:text-neutral-100"
           >
             <slot name="title">
               {{ props.title }}
@@ -78,7 +78,7 @@ const contentAttrs = computed(() => ({
 
           <DialogDescription
             v-if="hasDescription"
-            class="mt-1 text-sm text-neutral-500 dark:text-neutral-400"
+            class="mt-1 text-lg text-neutral-500 dark:text-neutral-400"
           >
             <slot name="description">
               {{ props.description }}
@@ -98,7 +98,7 @@ const contentAttrs = computed(() => ({
         <DialogClose
           v-if="props.showClose"
           :aria-label="props.closeLabel"
-          class="absolute right-3 top-3 inline-flex size-8 items-center justify-center rounded-full text-xl leading-none text-neutral-400 transition hover:bg-neutral-100 hover:text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
+          class="absolute right-3 top-3 inline-flex size-8 items-center justify-center rounded-full text-2xl leading-none text-neutral-400 transition hover:bg-neutral-100 hover:text-neutral-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
         >
           <span aria-hidden="true">×</span>
         </DialogClose>

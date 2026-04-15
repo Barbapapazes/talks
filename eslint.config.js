@@ -6,9 +6,9 @@ export default antfu({
   vue: true,
   unocss: true,
   ignores: [
-    './2026-04-15/src/.vite/**/*',
-    './2026-04-15/src/.vite-transformed/**/*',
-    './2026-04-15/src/.vite-build/**/*',
+    './**/src/.vite/**/*',
+    './**/src/.vite-transformed/**/*',
+    './**/src/.vite-build/**/*',
   ],
 }).append({
   files: ['**/src/slides.md'],

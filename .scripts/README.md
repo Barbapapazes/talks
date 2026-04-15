@@ -11,7 +11,7 @@ Utility scripts used to maintain talks metadata, assets, and deployment helpers.
 
 ## Scripts
 
-- `select-deck.ts` — Prompts for a talk folder, then runs `pnpm run <args...>` in that deck’s `src` folder.
+- `select-deck.ts` — Prompts for a talk folder, then runs `pnpm run <args...>` in that deck's `src` folder.
   - Special case: with `dev`, opens the selected `slides.md` in VS Code before starting.
 
 - `ready-deck.ts` — Interactive “prepare for publish” flow for one deck:
@@ -28,11 +28,11 @@ Utility scripts used to maintain talks metadata, assets, and deployment helpers.
 
 - `generate-readme.ts` — Regenerates the repository root `README.md` from discovered talk metadata.
 
-- `generate-talk-readme.ts` — Regenerates each talk folder’s `README.md` from metadata.
+- `generate-talk-readme.ts` — Regenerates each talk folder's `README.md` from metadata.
 
 - `generate-redirects.ts` — Builds `dist/_redirects` for talk routes (`pdf`, `src`, and optional `recording/audio/transcript/article`) and appends root `_redirects` entries.
 
-- `generate-thumbnails.ts` — Loops through all talks and runs each deck’s thumbnail generation/copy commands (light + dark).
+- `generate-thumbnails.ts` — Loops through all talks and runs each deck's thumbnail generation/copy commands (light + dark).
 
 - `optimize-thumbnails.ts` — Runs `optipng` on generated thumbnails and prints per-file + total size savings.
 
