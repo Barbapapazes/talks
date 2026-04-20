@@ -21,12 +21,10 @@ jobs:
             -H "CF-Access-Client-Id: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_ID }}" \
             -H "CF-Access-Client-Secret: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_SECRET }}" \
             -d '{
+              "deploy_hook_url": "${{ secrets.CLOUDFLARE_SOUBIRAN_DEV_DEPLOY_HOOK }}",
               "cloudflare": {
                 "to_wait": {
                   "worker": "talks"
                 },
-                "to_redeploy": {
-                  "worker": "soubiran-dev"
-                }
               }
             }'
