@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Trigger
         run: |
-          curl -X POST https://redeploy.soubiran.dev/url \
+          curl --fail-with-body --silent --show-error -X POST https://redeploy.soubiran.dev/url \
             -H "Content-Type: application/json" \
             -H "CF-Access-Client-Id: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_ID }}" \
             -H "CF-Access-Client-Secret: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_SECRET }}" \
@@ -25,6 +25,6 @@ jobs:
               "cloudflare": {
                 "to_wait": {
                   "worker": "talks"
-                },
+                }
               }
             }'
