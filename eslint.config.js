@@ -4,8 +4,12 @@ export default antfu({
   stylistic: true,
   typescript: true,
   vue: true,
-
   unocss: true,
+  ignores: [
+    './**/src/.vite/**/*',
+    './**/src/.vite-transformed/**/*',
+    './**/src/.vite-build/**/*',
+  ],
 }).append({
   files: ['**/src/slides.md'],
   rules: {

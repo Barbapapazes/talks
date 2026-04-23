@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import BackgroundImage from './BackgroundImage.vue'
 import Card from './Card.vue'
 
 export type CardPosition = 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 
 interface CardLayoutProps {
   position: CardPosition
-  img: string
+  img?: string
   imgClass?: string
 }
 
@@ -26,8 +27,8 @@ const positionClasses: Record<CardPosition, string> = {
 
 <template>
   <div class="relative slidev-layout">
-    <img :src="props.img" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover" :class="props.imgClass">
-    <div class="absolute" :class="positionClasses[props.position]">
+    <BackgroundImage :img="props.img" :img-class="props.imgClass" />
+    <div class="absolute z-10" :class="positionClasses[props.position]">
       <Card>
         <slot />
       </Card>

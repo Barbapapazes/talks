@@ -1,5 +1,6 @@
 {
   "name": "vuejs-paris",
+  "type": "module",
   "event": {
     "name": "Vue.js Paris",
     "url": "https://www.meetup.com/fr-FR/vuejs-paris/",
@@ -23,6 +24,7 @@
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
   "devDependencies": {
-    "@shikijs/markdown-it": "^3.23.0"
+    "@shikijs/markdown-it": "catalog:",
+    "typescript": "catalog:"
   }
 }

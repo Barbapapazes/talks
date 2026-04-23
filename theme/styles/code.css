@@ -1,32 +1,55 @@
 
-/** Reset */
+/** Theme-aware Shiki mapping */
 
-html.dark .shiki {
-  @apply bg-transparent rounded-none!;
+.shiki {
+  background-color: var(--slidev-code-background);
+}
+
+html[data-theme='default'] .shiki span {
+  color: var(--shiki-default);
+}
+
+html[data-theme='brutalism'] pre.shiki {
+  background-color: white;
+  border-radius: 0!important;
+}
+html[data-theme='brutalism'] .shiki span {
+  color: var(--shiki-brutalism);
+}
+
+html[data-theme='flowers'] .shiki span {
+  color: var(--shiki-flowers);
 }
 
 /** Code Blocks */
 
-.slidev-code {
-  @apply p-4!
+.slidev-code.shiki {
+  --at-apply: p-4!;
+  margin: 0;
 }
 
+.slidev-code code {
+  background: transparent !important;
+}
+
+
 .slidev-code-block-title {
-  @apply bg-neutral-800 rounded-lg divide-y divide-neutral-600
+  --at-apply: divide-y;
+  margin: 0;
 }
 
 .slidev-code-block-title + .slidev-code-block-title {
-  @apply mt-8
+  --at-apply: mt-8;
 }
 
 .slidev-code-block-title-bar {
-  @apply px-4 py-2 flex items-center gap-2
+  --at-apply: px-4 py-2 flex items-center gap-2;
 }
 
 .slidev-code-block-title-icon {
-  @apply inline-block size-3
+  --at-apply: inline-block size-3;
 }
 
 .slidev-code-block-title-text {
-  @apply text-neutral-400 text-xs
+  --at-apply: text-xs;
 }

@@ -23,6 +23,6 @@
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
   "devDependencies": {
-    "alien-signals": "^3.1.2"
+    "alien-signals": "catalog:"
   }
 }

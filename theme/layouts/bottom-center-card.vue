@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import CardLayout from '../components/CardLayout.vue'
+
+defineOptions({ inheritAttrs: false })
 </script>
 
 <template>
-  <CardLayout position="bottom-center" :img="$frontmatter.img" :img-class="$frontmatter.imgClass">
+  <CardLayout position="bottom-center">
     <slot />
+
+    <template #outside>
+      <slot name="outside" />
+    </template>
   </CardLayout>
 </template>

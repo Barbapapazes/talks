@@ -1,4 +1,5 @@
 {
+  "eslint.enable": false,
   // Enable the ESlint flat config support
   "eslint.useFlatConfig": true,
   // Disable the default formatter, use eslint instead
@@ -66,11 +67,21 @@
     "yaml",
     "toml"
   ],
+
   "cSpell.words": [
     "challengée",
     "cloudflare",
+    "github",
+    "inalia",
+    "laravel",
+    "Laravel",
+    "Rolldown",
+    "rspack",
+    "slidev",
     "Slidev",
     "soubiran",
     "Unpoly"
-  ]
+  ],
+
+  "vitest.disableWorkspaceWarning": true
 }
