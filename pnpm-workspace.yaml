@@ -55,7 +55,7 @@ catalog:
   pathe: ^2.0.3
   playwright-chromium: ^1.60.0
   prompts: ^2.4.2
-  reka-ui: 1.0.0-alpha.8
+  reka-ui: 2.9.7
   seedrandom: ^3.0.5
   slidev-addon-graph: ^1.0.0
   slidev-addon-inalia: ^0.2.9
