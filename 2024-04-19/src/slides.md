@@ -22,7 +22,7 @@ keywords: unjs,web,devoxxfr,development
 
 <h1 flex="~ col">
   <span>Unifié et Universel,</span>
-  <span flex="~ row gap-4">le <span v-mark.yellow.underline.delay300="{at:1,padding:-8,seed:42}">JavaScript</span><span flex="~ items-center"> avec <img src="/unjs.svg" h-12 ml-6 mr-2 />UnJS</span></span>
+  <span flex="~ row gap-4">le <span v-mark.yellow.underline.delay300="{at:1,padding:-8,seed:42}">JavaScript</span><span flex="~ items-center"> avec <img src="./assets/unjs.svg" h-12 ml-6 mr-2 />UnJS</span></span>
 </h1>
 
 <div abs-br mx-10 my-11 flex="~ col gap-4 items-end" text-left>
@@ -663,7 +663,7 @@ name: nitro
 
 ::right::
 
-<img src="/nitro.png" rounded />
+<img src="./assets/nitro.png" rounded />
 
 <div text-center mt-2>
   <a href="https://nitro.unjs.io" target="_blank" class="border-none! op50">nitro.unjs.io</a>

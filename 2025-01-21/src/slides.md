@@ -265,8 +265,8 @@ layout: center-y
 ---
 
 ```ts [start/routes.ts]
-import PostsController from '#controllers/posts_controller'
 import router from '@adonisjs/core/services/router'
+import PostsController from '#controllers/posts_controller'
 
 router.get('posts', [PostsController, 'index'])
 router.post('posts', [PostsController, 'store'])
@@ -407,8 +407,8 @@ layout: center-y
 ---
 
 ```ts [app/http/controllers/session_controller.ts]
-import User from '#models/user'
 import { HttpContext } from '@adonisjs/core/http'
+import User from '#models/user'
 
 export default class SessionController {
   async store({ request }: HttpContext) {
@@ -472,10 +472,10 @@ layout: center-y
 ---
 
 ```ts [app/policies/post_policy.ts]
-import Post from '#models/post'
-import User from '#models/user'
 import { BasePolicy } from '@adonisjs/bouncer'
 import { AuthorizerResponse } from '@adonisjs/bouncer/types'
+import Post from '#models/post'
+import User from '#models/user'
 
 export default class PostPolicy extends BasePolicy {
   create(user: User): AuthorizerResponse {
@@ -535,8 +535,8 @@ layout: center-y
 ---
 
 ```ts [tests/http/posts/index.ts]
-import Post from '#models/post'
 import { test } from '@japa/runner'
+import Post from '#models/post'
 
 test.group('Posts', () => {
   test('get a list of posts', async ({ client }) => {
@@ -615,8 +615,8 @@ layout: center-y
 ---
 
 ```ts [tests/http/repositories/index.ts]
-import RepositoriesService from '#contracts/repositories_services'
 import app from '@adonisjs/core/services/app'
+import RepositoriesService from '#contracts/repositories_services'
 
 test('get all repositories', async ({ client }) => {
   class FakeRepositoriesService implements RepositoriesService {
@@ -661,7 +661,7 @@ class: h-full
 name: "Aller plus loin"
 ---
 
-<img src="/series-adocasts.png" alt="Adocasts" class="aspect-video absolute inset-0" />
+<img src="./assets/series-adocasts.png" alt="Adocasts" class="aspect-video absolute inset-0" />
 
 <a href="https://adocasts.com" target="_blank" class="absolute bottom-6 right-6 text-xs text-neutral-700">Adocasts</a>
 

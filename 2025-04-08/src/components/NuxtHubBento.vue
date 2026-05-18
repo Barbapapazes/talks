@@ -4,7 +4,7 @@
 
 <template>
   <div class="grid grid-cols-12 grid-rows-12 h-full w-full">
-    <img src="/nuxthub.svg" class="mx-8 col-start-5 col-end-9 row-start-6 row-end-8 self-center">
+    <img src="../assets/nuxthub.svg" class="mx-8 col-start-5 col-end-9 row-start-6 row-end-8 self-center">
 
     <div class="col-start-5 col-end-9 text-sm row-start-8 row-end-9 text-center op-40">
       The Nuxt full-stack companion.
@@ -55,19 +55,19 @@
     </div>
 
     <div v-click class="rounded row-start-1 overflow-hidden col-start-5 duration-800 border border-gray-800 shadow mx-4 row-end-6 col-end-11">
-      <img src="/nuxthub-admin-deployment-dark.svg" class="rounded h-full w-full object-cover object-top">
+      <img src="../assets/nuxthub-admin-deployment-dark.svg" class="rounded h-full w-full object-cover object-top">
     </div>
 
     <div v-after class="mb-2 row-start-1 row-end-3 border border-gray-800 rounded shadow duration-800 delay-300 col-start-11 col-end-13">
-      <img src="/nuxthub-admin-database-dark.svg" class="rounded h-full w-full object-cover object-top-left">
+      <img src="../assets/nuxthub-admin-database-dark.svg" class="rounded h-full w-full object-cover object-top-left">
     </div>
 
     <div v-after class="my-2 col-start-11 col-end-13 row-start-3 row-end-5 border border-gray-800 rounded shadow duration-800 delay-600">
-      <img src="/nuxthub-admin-blob-dark.svg" class="rounded h-full w-full object-cover object-top-left">
+      <img src="../assets/nuxthub-admin-blob-dark.svg" class="rounded h-full w-full object-cover object-top-left">
     </div>
 
     <div v-after class="my-2 col-start-11 col-end-13 row-start-5 border border-gray-800 rounded shadow duration-800 row-end-7 delay-900">
-      <img src="/nuxthub-admin-cache-dark.svg" class="rounded h-full w-full object-cover object-top-left">
+      <img src="../assets/nuxthub-admin-cache-dark.svg" class="rounded h-full w-full object-cover object-top-left">
     </div>
 
     <div class="col-start-1 col-end-5 grid grid-cols-2 mt-2 row-start-9 row-end-13 grid-rows-3">

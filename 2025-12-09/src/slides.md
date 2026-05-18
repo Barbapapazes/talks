@@ -45,10 +45,10 @@ Avant d'aller plus loin, si vous souhaitez réaliser un talk, que ce soit sur le
 name: `is-string` downloads
 ---
 
-<img src="/is-string-downloads.png" class="absolute top-1/2 left-1/2 translate--1/2 max-w-3/5" />
+<img src="./assets/is-string-downloads.png" class="absolute top-1/2 left-1/2 translate--1/2 max-w-3/5" />
 <v-clicks>
-  <img src="/is-string,react-downloads.png" class="absolute top-1/2 left-1/2 translate--1/2 max-w-3/5" />
-  <img src="/is-string,react,tailwindcss-downloads.png" class="absolute top-1/2 left-1/2 translate--1/2 max-w-3/5" />
+  <img src="./assets/is-string,react-downloads.png" class="absolute top-1/2 left-1/2 translate--1/2 max-w-3/5" />
+  <img src="./assets/is-string,react,tailwindcss-downloads.png" class="absolute top-1/2 left-1/2 translate--1/2 max-w-3/5" />
 </v-clicks>
 
 <!--
@@ -83,7 +83,7 @@ Le problème, c'est que lors de l'installation d'un package, on ne télécharge 
 name: Heaviest Objects in the Universe
 ---
 
-<img src="/nodemodules.png" class="absolute top-1/2 left-1/2 translate--1/2 max-w-3/5" />
+<img src="./assets/nodemodules.png" class="absolute top-1/2 left-1/2 translate--1/2 max-w-3/5" />
 
 <!--
 
@@ -108,7 +108,7 @@ name: node-modules.dev
 ---
 
 <a href="https://node-modules.dev/" target="_blank" class="absolute top-1/2 left-1/2 translate--1/2 w-full border-none">
-  <img src="/node-modules.dev.png" class="" />
+  <img src="./assets/node-modules.dev.png" class="" />
 </a>
 
 <!--
@@ -130,7 +130,7 @@ layout: center-card
 img: https://images.unsplash.com/photo-1489976908522-aabacf277f49?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
-<img src="/e18e.png" class="w-60" />
+<img src="./assets/e18e.png" class="w-60" />
 
 <div class="mt-4 flex items-center gap-2 text-4xl">
   <span class="bg-gradient-to-br from-[#7cb560] to-[#cf8c3c] bg-clip-text text-transparent font-bold">e18e</span>
@@ -161,7 +161,7 @@ name: pkg-size
 ---
 
 <a href="https://pkg-size.dev/" target="_blank" class="absolute top-1/2 left-1/2 translate--1/2 w-120 border-none">
-  <img src="/pkg-size.dev.png" class="mx-auto rounded-xl" />
+  <img src="./assets/pkg-size.dev.png" class="mx-auto rounded-xl" />
 </a>
 
 ---
@@ -169,7 +169,7 @@ name: deptree
 ---
 
 <a href="https://deptree.rschristian.dev/" target="_blank" class="absolute top-1/2 left-1/2 translate--1/2 w-120 border-none">
-  <img src="/deptree.rschristian.dev.png" class="mx-auto rounded-xl" />
+  <img src="./assets/deptree.rschristian.dev.png" class="mx-auto rounded-xl" />
 </a>
 
 ---
@@ -177,7 +177,7 @@ name: npmgraph
 ---
 
 <a href="https://npmgraph.js.org/" target="_blank" class="absolute top-1/2 left-1/2 translate--1/2 w-120 border-none">
-  <img src="/npmgraph.js.org.png" class="rounded-xl" />
+  <img src="./assets/npmgraph.js.org.png" class="rounded-xl" />
 </a>
 
 ---

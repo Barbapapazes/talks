@@ -116,7 +116,7 @@ layout: center
 name: More than an app and a server
 ---
 
-<img src="/nuxt=vue+nitro.svg" w="1/2" m="t-12" mx="auto" />
+<img src="./assets/nuxt=vue+nitro.svg" w="1/2" m="t-12" mx="auto" />
 
 <div v-click absolute right="1/2" bottom="10" text-sm text-black bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
   <span>More features</span>
@@ -165,7 +165,7 @@ Then, show the NuxtHub module.
 name: State of our full-stack app
 ---
 
-<img src="/nuxt=vue+nitro+database.svg" w="1/2" m="t-12" mx="auto" />
+<img src="./assets/nuxt=vue+nitro+database.svg" w="1/2" m="t-12" mx="auto" />
 
 <div v-click absolute right="1/2" bottom="10" text-sm text-black bg="primary" p="x-4 y-2" rounded flex="~ row items-center gap-2" tracking="wider" notification="centered">
   <span>More features</span>
@@ -202,7 +202,7 @@ npx nuxi module add auth-utils
 name: State of our full-stack app
 ---
 
-<img src="/nuxt=vue+nitro+database+auth.svg" w="1/2" m="t-12" mx="auto" />
+<img src="./assets/nuxt=vue+nitro+database+auth.svg" w="1/2" m="t-12" mx="auto" />
 
 ---
 name: Let's go online
@@ -215,12 +215,12 @@ layout: center
 </h1>
 
 <div v-click flex="~ row justify-center items-center gap-2">
-  <img w="8" src="/cf-pages.svg" />
-  <img w="8" src="/cf-kv.svg" />
-  <img w="8" src="/cf-d1.svg" />
-  <img w="8" src="/cf-r2.svg" />
-  <img w="8" src="/cf-vectorize.svg" />
-  <img w="8" src="/cf-web-analytics.svg" />
+  <img w="8" src="./assets/cf-pages.svg" />
+  <img w="8" src="./assets/cf-kv.svg" />
+  <img w="8" src="./assets/cf-d1.svg" />
+  <img w="8" src="./assets/cf-r2.svg" />
+  <img w="8" src="./assets/cf-vectorize.svg" />
+  <img w="8" src="./assets/cf-web-analytics.svg" />
 </div>
 
 <!-- All of these works on the edge but [click] ... -->
@@ -303,7 +303,7 @@ name: State of our full-stack app
 class: relative
 ---
 
-<img src="/full-stack=vue+nitro+hub+cloudflare.svg" absolute w="3/4" right="1/2" bottom="1/2" translate="1/2" mx="auto" />
+<img src="./assets/full-stack=vue+nitro+hub+cloudflare.svg" absolute w="3/4" right="1/2" bottom="1/2" translate="1/2" mx="auto" />
 
 ---
 name: A little of AI

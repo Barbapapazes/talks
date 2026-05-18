@@ -4,7 +4,7 @@
 
 <template>
   <div class="grid grid-cols-12 grid-rows-12 h-full w-full">
-    <img src="/nuxthub.svg" class="col-start-5 row-start-6 col-end-9 row-end-8 mx-8 self-center">
+    <img src="../assets/nuxthub.svg" class="col-start-5 row-start-6 col-end-9 row-end-8 mx-8 self-center">
 
     <div class="col-start-5 row-start-8 col-end-9 row-end-9 text-center text-sm op-40">
       The Nuxt full-stack companion.
@@ -55,19 +55,19 @@
     </div>
 
     <div v-click class="col-start-5 row-start-1 col-end-11 row-end-6 mx-4 overflow-hidden border border-gray-800 rounded shadow duration-800">
-      <img src="/nuxthub-admin-deployment-dark.svg" class="h-full w-full rounded object-cover object-top">
+      <img src="../assets/nuxthub-admin-deployment-dark.svg" class="h-full w-full rounded object-cover object-top">
     </div>
 
     <div v-after class="col-start-11 row-start-1 col-end-13 row-end-3 mb-2 border border-gray-800 rounded shadow duration-800 delay-300">
-      <img src="/nuxthub-admin-database-dark.svg" class="h-full w-full rounded object-cover object-top-left">
+      <img src="../assets/nuxthub-admin-database-dark.svg" class="h-full w-full rounded object-cover object-top-left">
     </div>
 
     <div v-after class="col-start-11 row-start-3 col-end-13 row-end-5 my-2 border border-gray-800 rounded shadow duration-800 delay-600">
-      <img src="/nuxthub-admin-blob-dark.svg" class="h-full w-full rounded object-cover object-top-left">
+      <img src="../assets/nuxthub-admin-blob-dark.svg" class="h-full w-full rounded object-cover object-top-left">
     </div>
 
     <div v-after class="col-start-11 row-start-5 col-end-13 row-end-7 my-2 border border-gray-800 rounded shadow duration-800 delay-900">
-      <img src="/nuxthub-admin-cache-dark.svg" class="h-full w-full rounded object-cover object-top-left">
+      <img src="../assets/nuxthub-admin-cache-dark.svg" class="h-full w-full rounded object-cover object-top-left">
     </div>
 
     <div class="grid col-start-1 row-start-9 col-end-5 row-end-13 grid-cols-2 grid-rows-3 mt-2">

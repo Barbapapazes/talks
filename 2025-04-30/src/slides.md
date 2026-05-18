@@ -358,9 +358,9 @@ transition: slide-down
 ---
 
 <div class="flex">
-  <img v-click src="/push.png" alt="push" class="w-1/2" />
+  <img v-click src="./assets/push.png" alt="push" class="w-1/2" />
 
-  <img v-click src="/pull.png" alt="pull" class="w-1/2" />
+  <img v-click src="./assets/pull.png" alt="pull" class="w-1/2" />
 </div>
 
 ---
@@ -447,7 +447,7 @@ transition: slide-down
 ---
 
 <div class="size-full flex items-center justify-center">
-  <img src="/alien-signals.png" alt="alien signals" class="w-full" />
+  <img src="./assets/alien-signals.png" alt="alien signals" class="w-full" />
 </div>
 
 ---

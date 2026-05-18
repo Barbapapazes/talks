@@ -25,7 +25,7 @@ keywords: unjs,web,strasbourgjs,development
 
 <h1 flex="~ col">
   <span>Découvrons <span v-mark.yellow.underline.delay300="{at:1,padding:-8,seed:42}">ensemble</span></span>
-  <span flex="~ items-center">l'écosystème <img src="/unjs.svg" h-12 ml-6 mr-2 />UnJS</span>
+  <span flex="~ items-center">l'écosystème <img src="./assets/unjs.svg" h-12 ml-6 mr-2 />UnJS</span>
 </h1>
 
 <div abs-br mx-10 my-11 flex="~ col gap-4 items-end" text-left>
@@ -814,7 +814,7 @@ consola.warn('A new version is available')
 consola.success('Project built!')
 ```
 
-![](/consola.png)
+![](./assets/consola.png)
 
 <!--
 Dans sa manière la plus simple, consola, c'est exactement comme le `Console` qu'on connait tous sauf que c'est plus joli dans la console ou le navigateur.
@@ -1109,7 +1109,7 @@ name: nitro
 
 ::right::
 
-<img src="/nitro.png" rounded />
+<img src="./assets/nitro.png" rounded />
 
 <div text-center mt-2>
   <a href="https://nitro.unjs.io" target="_blank" class="border-none! op50">nitro.unjs.io</a>
