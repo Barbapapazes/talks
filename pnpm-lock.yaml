@@ -8,9 +8,6 @@ overrides:
   vite: 8.0.0-beta.14
 
 patchedDependencies:
-  cobe:
-    hash: d933c317a81e4d20c691cfe083898d3ef67fde9cda63d68eecde493962d77f43
-    path: patches/cobe.patch
   slidev-addon-graph:
     hash: 7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7
     path: patches/slidev-addon-graph.patch
@@ -32,8 +29,8 @@ importers:
         specifier: 1.4.3-beta.0
         version: 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.25(typescript@5.9.3))
       cobe:
-        specifier: ^0.6.5
-        version: 0.6.5(patch_hash=d933c317a81e4d20c691cfe083898d3ef67fde9cda63d68eecde493962d77f43)
+        specifier: ^2.0.1
+        version: 2.0.1
       seedrandom:
         specifier: ^3.0.5
         version: 3.0.5
@@ -2107,8 +2104,8 @@ packages:
     resolution: {integrity: sha512-ujdnoq2Kxb8s3ItNBtnYeXdm07FcU0u8ARAT1lQ2YdMwQC+cdiXX8KoqMVuglztILivceTtp4ivqGSmEmhBUJw==}
     engines: {node: '>=12'}
 
-  cobe@0.6.5:
-    resolution: {integrity: sha512-MA8bu81EFY6JjQpj+FovEuhyJ25khx2Q7Lh+ot/UkCJe5yKyDgzdc6u2lGZIOmsZTXK6Itg1i4lQZIJZbPWnAg==}
+  cobe@2.0.1:
+    resolution: {integrity: sha512-aaa6vcIlaC8C1SF50LDH0Anybo/EAXnrxqe+bwvr4+YUtZydqjeBjTTD7ziCCkbRrRGSns3I3F6cZsf3W+L+ag==}
 
   codemirror-theme-vars@0.1.2:
     resolution: {integrity: sha512-WTau8X2q58b0SOAY9DO+iQVw8JKVEgyQIqArp2D732tcc+pobbMta3bnVMdQdmgwuvNrOFFr6HoxPRoQOgooFA==}
@@ -3870,9 +3867,6 @@ packages:
 
   perfect-debounce@2.0.0:
     resolution: {integrity: sha512-fkEH/OBiKrqqI/yIgjR92lMfs2K8105zt/VT6+7eTjNwisrsh47CeIED9z58zI7DfKdH3uHAn25ziRZn3kgAow==}
-
-  phenomenon@1.6.0:
-    resolution: {integrity: sha512-7h9/fjPD3qNlgggzm88cY58l9sudZ6Ey+UmZsizfhtawO6E3srZQXywaNm2lBwT72TbpHYRPy7ytIHeBUD/G0A==}
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
@@ -7351,9 +7345,7 @@ snapshots:
     dependencies:
       is-regexp: 3.1.0
 
-  cobe@0.6.5(patch_hash=d933c317a81e4d20c691cfe083898d3ef67fde9cda63d68eecde493962d77f43):
-    dependencies:
-      phenomenon: 1.6.0
+  cobe@2.0.1: {}
 
   codemirror-theme-vars@0.1.2: {}
 
@@ -9329,8 +9321,6 @@ snapshots:
   perfect-debounce@1.0.0: {}
 
   perfect-debounce@2.0.0: {}
-
-  phenomenon@1.6.0: {}
 
   picocolors@1.1.1: {}
 

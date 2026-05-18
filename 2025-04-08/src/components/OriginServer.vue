@@ -91,6 +91,6 @@ const locations = [
   </div>
 
   <Transition name="zoom">
-    <Globe v-if="showGlobe" ref="globe" :phi="0" :theta="0" :rotation="false" :speed="0.01" :markers="[{ location: paris, size: 0.1 }]" class="relative z-10 mx-auto" />
+    <Globe v-if="showGlobe" ref="globe" :phi="0" :theta="0" :rotation="false" :speed="0.01" :markers="[{ location: paris, size: 0.04 }]" class="relative z-10 mx-auto" />
   </Transition>
 </template>

@@ -25,7 +25,7 @@ keywords: nuxt,nuxthub,full-stack,apps,web,development
   </p>
 </div>
 
-<Globe class="absolute z-10 top-2/5 left-1/2 transform -translate-x-1/2" :size="1000" :speed="0.001" :markers="[{ location: [44.833328, -0.56667], size: 0.04 }]" />
+<Globe class="absolute z-10 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/5" :size="1000" :speed="0.001" :markers="[{ location: [44.833328, -0.56667], size: 0.02 }]" />
 
 <div class="absolute right-6 bottom-6 flex flex-col gap-4 items-end">
   <span class="text-sm op-40">HumanTalks Paris</span>

@@ -1,13 +1,22 @@
-catalogMode: prefer
-shellEmulator: true
-trustPolicy: no-downgrade
-
 packages:
   - '**/src'
   - theme
 
+catalogMode: prefer
+
+ignoredBuiltDependencies:
+  - '@tsparticles/engine'
+  - esbuild
+  - maplibre-gl
+  - playwright-chromium
+  - vue-demi
+
 overrides:
   vite: 8.0.0-beta.14
+
 patchedDependencies:
-  cobe: patches/cobe.patch
   slidev-addon-graph: patches/slidev-addon-graph.patch
+
+shellEmulator: true
+
+trustPolicy: no-downgrade
