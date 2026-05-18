@@ -26,7 +26,7 @@
     "@tsparticles/engine": "^3.9.1",
     "@tsparticles/slim": "^3.9.1",
     "@unovis/vue": "1.4.3-beta.0",
-    "cobe": "^0.6.5",
+    "cobe": "^2.0.0",
     "seedrandom": "^3.0.5",
     "slidev-addon-inalia": "^0.2.6"
   },
