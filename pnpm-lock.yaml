@@ -147,6 +147,9 @@ catalogs:
     vitest:
       specifier: ^4.1.6
       version: 4.1.6
+    vue:
+      specifier: ^3.5.34
+      version: 3.5.34
 
 patchedDependencies:
   slidev-addon-graph: 7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7
@@ -589,6 +592,9 @@ importers:
       vitest:
         specifier: 'catalog:'
         version: 4.1.6(@types/node@25.9.0)(happy-dom@20.9.0)(vite@8.0.13(@types/node@25.9.0)(jiti@2.6.1)(yaml@2.9.0))
+      vue:
+        specifier: 'catalog:'
+        version: 3.5.34(typescript@6.0.3)
 
 packages:
 

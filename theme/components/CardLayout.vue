@@ -7,6 +7,7 @@ interface CardLayoutProps {
   position: CardPosition
   img: string
   imgClass?: string
+  positionClass?: string
 }
 
 const props = defineProps<CardLayoutProps>()
@@ -27,7 +28,7 @@ const positionClasses: Record<CardPosition, string> = {
 <template>
   <div class="relative slidev-layout">
     <img :src="props.img" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover" :class="props.imgClass">
-    <div class="absolute" :class="positionClasses[props.position]">
+    <div class="absolute" :class="[positionClasses[props.position], props.positionClass]">
       <Card>
         <slot />
       </Card>

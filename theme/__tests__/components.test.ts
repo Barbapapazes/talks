@@ -114,6 +114,19 @@ describe('cardLayout', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
+  it('applies custom positionClass to the positioned card container', () => {
+    const wrapper = mount(CardLayout, {
+      props: {
+        position: 'bottom-left',
+        img: '/test-image.jpg',
+        positionClass: 'right-2/5',
+      },
+      slots: { default: '<p>Card content</p>' },
+    })
+
+    expect(wrapper.find('.absolute.bottom-10.left-14.right-2\\/5').exists()).toBe(true)
+  })
+
   it('renders correctly with outside slot', () => {
     const wrapper = mount(CardLayout, {
       props: {
