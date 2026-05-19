@@ -1,0 +1,3 @@
+.shiki-dark .shiki * {
+  color: var(--shiki-dark) !important;
+}

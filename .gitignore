@@ -6,3 +6,4 @@ dist
 .env
 *.pdf
 *.mp3
+*.tsbuildinfo

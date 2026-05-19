@@ -21,7 +21,7 @@ Editing rules (Do)
 - If the speaker states their name, transcribe it exactly as "Estéban Soubiran".
 - Normalize whitespace and merge broken lines.
 
-Don’t
+Don't
 - Do not summarize, reorder, or add content.
 - Do not change technical terms or code tokens.
 - Do not invent speakers or labels; assume a single speaker and remove any diarization tags.
@@ -34,7 +34,7 @@ Numbers, dates, and units
 
 Acronyms and casing
 - Keep acronyms uppercase (e.g., API, HTTP).
-- Don’t expand acronyms unless the speaker expands them.
+- Don't expand acronyms unless the speaker expands them.
 
 Language
 - Talks are only in English or French.
@@ -54,4 +54,4 @@ Formatting cues
 
 Tiny example
 Input (noisy): "So, uh, today I'm gonna, um, talk about Nuxt. Nuxt 4, I mean—well, sorry—Nuxt 3. It ships with an API server."
-Output (clean): Today I’m going to talk about Nuxt. Nuxt 3 ships with an API server.
+Output (clean): Today I'm going to talk about Nuxt. Nuxt 3 ships with an API server.

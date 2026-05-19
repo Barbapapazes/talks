@@ -6,18 +6,28 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@slidev/types": "catalog:",
-    "reka-ui": "catalog:",
-    "tailwind-variants": "catalog:"
+    "@slidev/client": "catalog:slidev",
+    "@slidev/types": "catalog:slidev",
+    "@tsparticles/confetti": "catalog:ui",
+    "@vueuse/core": "catalog:ui",
+    "fireworks-js": "catalog:ui",
+    "reka-ui": "catalog:ui",
+    "slidev-addon-graph": "catalog:slidev",
+    "slidev-addon-inalia": "catalog:slidev",
+    "tailwind-variants": "catalog:ui"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "catalog:",
-    "@vue/test-utils": "catalog:",
-    "@vue/tsconfig": "catalog:",
-    "happy-dom": "catalog:",
-    "typescript": "catalog:",
-    "vite": "catalog:",
-    "vitest": "catalog:",
-    "vue": "catalog:"
+    "@shikijs/markdown-it": "catalog:ui",
+    "@vitejs/plugin-vue": "catalog:build",
+    "@vue/test-utils": "catalog:test",
+    "@vue/tsconfig": "catalog:build",
+    "happy-dom": "catalog:test",
+    "markdown-it": "catalog:scripts",
+    "tiktoken": "catalog:scripts",
+    "typescript": "catalog:build",
+    "unocss": "catalog:build",
+    "vite": "catalog:build",
+    "vitest": "catalog:test",
+    "vue": "catalog:test"
   }
 }

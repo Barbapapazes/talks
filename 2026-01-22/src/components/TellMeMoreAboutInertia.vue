@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+import ChatAnimation from '@theme/components/Chat/ChatAnimation.vue'
 import { assistantHtmlFrames } from 'virtual:ai:tell-me-more-about-inertia'
-import ChatAnimation from './ChatAnimation.vue'
 
 const props = defineProps<{
   userPrompt: string

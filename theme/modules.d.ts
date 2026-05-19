@@ -4,3 +4,9 @@ declare module 'virtual:latest-articles' {
   const articles: Article[]
   export default articles
 }
+
+declare module 'virtual:ai:*' {
+  export const assistantHtmlFrames: string[]
+  export const rawMarkdown: string
+  export const tokenCount: number
+}

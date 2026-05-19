@@ -1,0 +1,176 @@
+%%{init: {"flowchart": {"htmlLabels": true, "curve": "basis"}} }%%
+flowchart LR
+  classDef default font-family:sans-serif
+  classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+  classDef choice fill:#f9f9f9,stroke:#333,stroke-width:1px
+  classDef finished fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+  classDef finishedChoice fill:#dcedc8,stroke:#558b2f,stroke-width:2px
+  classDef recap fill:#ede7f6,stroke:#6a1b9a,stroke-width:2px
+  classDef finishedRecap fill:#e1bee7,stroke:#7b1fa2,stroke-width:2px
+  subgraph Introduction ["Introduction"]
+      vite["#2 Vite"]:::finished
+      vite_growth["#3 Vite Growth"]:::finished
+  end
+  subgraph Pre_talk ["Pre-talk"]
+      slide_theme["#4 Slide Theme"]:::finished
+  end
+  subgraph Vite_Core ["Vite Core"]
+      how_vite_works["#5 How Vite Works"]:::finished
+      vite_in_a_nutshell["#6 Vite in a Nutshell"]:::finished
+      how_vite_works_visualization["#7 How Vite Works - Visualization"]:::finished
+  end
+  subgraph Feature_Plugins ["Feature Plugins"]
+      everything_is_a_plugin["#8 Everything Is a Plugin"]:::finished
+      everything_is_a_plugin_choices["#9 Everything Is a Plugin - Choices"]:::finishedChoice
+      css_imported_into_a_typescript_file["#10 CSS Imported into a TypeScript File"]:::finished
+      css_imported_into_a_typescript_file_visualization["#11 CSS Imported into a TypeScript File - Visualization"]:::finished
+      an_image_loaded_in_a_typescript_file["#12 An Image Loaded in a TypeScript File"]:::finished
+      an_image_loaded_in_a_typescript_file_visualization["#13 An Image Loaded in a TypeScript File - Visualization"]:::finished
+      an_image_loaded_in_a_typescript_file_build["#14 An Image Loaded in a TypeScript File - Build"]:::finished
+      jsx_loaded_naturally["#15 JSX Loaded Naturally"]:::finished
+      jsx_loaded_naturally_visualization["#16 JSX Loaded Naturally - Visualization"]:::finished
+  end
+  subgraph Inside_a_Plugin ["Inside a Plugin"]
+      inside_a_vite_plugin_common_hooks["#18 Inside a Vite Plugin - Common Hooks"]:::finished
+      resolveid["#19 resolveId"]:::finished
+      load["#20 load"]:::finished
+      transform["#21 transform"]:::finished
+      multiple_plugins["#22 Multiple Plugins"]:::finished
+      inside_a_vite_plugin_visualization["#23 Inside a Vite Plugin - Visualization"]:::finished
+      visualizing_the_pipeline["#24 Visualizing the Pipeline"]:::finished
+      inside_a_vite_plugin_lifecycle_hooks["#25 Inside a Vite Plugin - Lifecycle Hooks"]:::finished
+  end
+  subgraph Concrete_Example ["Concrete Example"]
+      in_practice["#26 In Practice?"]:::finished
+      simple_transform_plugin["#27 Simple Transform Plugin"]:::finished
+      simple_transform_plugin_visualization["#28 Simple Transform Plugin - Visualization"]:::finished
+      simple_transform_plugin_internals["#29 Simple Transform Plugin - Internals"]:::finished
+      external_markdown_loader_plugin["#30 External Markdown Loader Plugin"]:::finished
+      external_markdown_loader_plugin_visualization["#31 External Markdown Loader Plugin - Visualization"]:::finished
+      external_markdown_loader_plugin_internals["#32 External Markdown Loader Plugin - Internals"]:::finished
+  end
+  subgraph Virtualization ["Virtualization"]
+      a_plugin_for_virtualization_intro["#35 A Plugin for Virtualization - Intro"]:::finished
+      a_plugin_for_virtualization["#36 A Plugin for Virtualization"]:::finished
+      a_plugin_for_virtualization_mind_blowing["#37 A Plugin for Virtualization - Mind Blowing"]:::finished
+      a_plugin_for_virtualization_plugin_internals["#38 A Plugin for Virtualization - Plugin Internals"]:::finished
+      a_plugin_for_virtualization_virtual_plugin["#39 A Plugin for Virtualization - Virtual Plugin"]:::finished
+      a_plugin_for_virtualization_choices["#40 A Plugin for Virtualization - Choices"]:::finishedChoice
+      vue_router_a_virtual_module["#41 Vue Router - A Virtual Module"]:::finished
+      vue_router_a_virtual_module_plugin_internals["#42 Vue Router - A Virtual Module - Plugin Internals"]:::finished
+      vitepress_virtual_data["#43 VitePress - Virtual Data"]:::finished
+      vitepress_virtual_data_plugin_internals["#44 VitePress - Virtual Data - Plugin Internals"]:::finished
+      icons_plugin_virtual_icons["#45 Icons Plugin - Virtual Icons"]:::finished
+      icons_plugin_virtual_icons_plugin_internals["#46 Icons Plugin - Virtual Icons - Plugin Internals"]:::finished
+      info_plugin_virtual_information["#47 Info Plugin - Virtual Information"]:::finished
+      info_plugin_virtual_information_plugin_internals["#48 Info Plugin - Virtual Information - Plugin Internals"]:::finished
+  end
+  subgraph Advanced_Capabilities ["Advanced Capabilities"]
+      other_plugin_capabilities["#51 Other Plugin Capabilities"]:::finished
+      other_plugin_capabilities_choices["#52 Other Plugin Capabilities - Choices"]:::finishedChoice
+      hot_module_replacement_hmr["#53 Hot Module Replacement (HMR)"]:::finished
+      hot_module_replacement_hmr_plugin_internals["#54 Hot Module Replacement (HMR) - Plugin Internals"]:::finished
+      middleware_a_virtual_file["#55 Middleware - A Virtual File"]:::finished
+      run_plugin_a_plugin_for_running_commands["#56 Run Plugin - A Plugin for Running Commands"]:::finished
+      run_plugin_a_plugin_for_running_commands_plugin_internals["#57 Run Plugin - A Plugin for Running Commands - Plugin Internals"]:::finished
+      laravel_vite_inter_process_communication["#58 Laravel Vite - Inter-process Communication"]:::finished
+      laravel_vite_inter_process_communication_plugin_internals["#59 Laravel Vite - Inter-process Communication - Plugin Internals"]:::finished
+      unplugin_macro_a_plugin_for_creating_macros["#60 unplugin-macro - A Plugin for Creating Macros"]:::finished
+      unplugin_macro_a_plugin_for_creating_macros_plugin_internals["#61 unplugin-macro - A Plugin for Creating Macros - Plugin Internals"]:::finished
+      nitro_a_backend["#62 Nitro - A Backend"]:::finished
+      nitro_a_backend_visualization["#63 Nitro - A Backend - Visualization"]:::finished
+      nitro_a_backend_plugin_internals["#64 Nitro - A Backend - Plugin Internals"]:::finished
+  end
+  subgraph Deep_Dive ["Deep Dive"]
+      deep_inside_the_pipeline["#68 Deep Inside the Pipeline"]:::finished
+  end
+  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["#1 Au cœur d'une pipeline : démystifions Vite et ses plugins"]:::finished
+  vite_and_its_features_recap["#17 Vite and Its Features - Recap"]:::finishedRecap
+  the_vite_plugin_recap["#33 The Vite Plugin - Recap"]:::finishedRecap
+  the_vite_plugin_3_hooks_recap["#34 The Vite Plugin - 3 Hooks Recap"]:::finishedRecap
+  virtualization_recap_list["#49 Virtualization - Recap - List"]:::finishedRecap
+  virtualization_recap_code["#50 Virtualization - Recap - Code"]:::finishedRecap
+  it_was_always_the_same_pipeline["#65 It was always the same pipeline"]:::finished
+  final_recap_list["#66 Final Recap - List"]:::finishedRecap
+  final_recap_code["#67 Final Recap - Code"]:::finishedRecap
+  your_turn["#69 Your Turn"]:::finished
+  outro["#70 Outro"]:::finished
+  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins --> vite
+  vite --> vite_growth
+  vite_growth --> slide_theme
+  slide_theme --> how_vite_works
+  how_vite_works --> vite_in_a_nutshell
+  vite_in_a_nutshell --> how_vite_works_visualization
+  how_vite_works_visualization --> everything_is_a_plugin
+  everything_is_a_plugin --> everything_is_a_plugin_choices
+  everything_is_a_plugin_choices --> css_imported_into_a_typescript_file
+  everything_is_a_plugin_choices --> an_image_loaded_in_a_typescript_file
+  everything_is_a_plugin_choices --> jsx_loaded_naturally
+  css_imported_into_a_typescript_file --> css_imported_into_a_typescript_file_visualization
+  css_imported_into_a_typescript_file_visualization --> vite_and_its_features_recap
+  an_image_loaded_in_a_typescript_file --> an_image_loaded_in_a_typescript_file_visualization
+  an_image_loaded_in_a_typescript_file_visualization --> an_image_loaded_in_a_typescript_file_build
+  an_image_loaded_in_a_typescript_file_build --> vite_and_its_features_recap
+  jsx_loaded_naturally --> jsx_loaded_naturally_visualization
+  jsx_loaded_naturally_visualization --> vite_and_its_features_recap
+  vite_and_its_features_recap --> inside_a_vite_plugin_common_hooks
+  inside_a_vite_plugin_common_hooks --> resolveid
+  resolveid --> load
+  load --> transform
+  transform --> multiple_plugins
+  multiple_plugins --> inside_a_vite_plugin_visualization
+  inside_a_vite_plugin_visualization --> visualizing_the_pipeline
+  visualizing_the_pipeline --> inside_a_vite_plugin_lifecycle_hooks
+  inside_a_vite_plugin_lifecycle_hooks --> in_practice
+  in_practice --> simple_transform_plugin
+  simple_transform_plugin --> simple_transform_plugin_visualization
+  simple_transform_plugin_visualization --> simple_transform_plugin_internals
+  simple_transform_plugin_internals --> external_markdown_loader_plugin
+  external_markdown_loader_plugin --> external_markdown_loader_plugin_visualization
+  external_markdown_loader_plugin_visualization --> external_markdown_loader_plugin_internals
+  external_markdown_loader_plugin_internals --> the_vite_plugin_recap
+  the_vite_plugin_recap --> the_vite_plugin_3_hooks_recap
+  the_vite_plugin_3_hooks_recap --> a_plugin_for_virtualization_intro
+  a_plugin_for_virtualization_intro --> a_plugin_for_virtualization
+  a_plugin_for_virtualization --> a_plugin_for_virtualization_mind_blowing
+  a_plugin_for_virtualization_mind_blowing --> a_plugin_for_virtualization_plugin_internals
+  a_plugin_for_virtualization_plugin_internals --> a_plugin_for_virtualization_virtual_plugin
+  a_plugin_for_virtualization_virtual_plugin --> a_plugin_for_virtualization_choices
+  a_plugin_for_virtualization_choices --> vue_router_a_virtual_module
+  a_plugin_for_virtualization_choices --> vitepress_virtual_data
+  a_plugin_for_virtualization_choices --> icons_plugin_virtual_icons
+  a_plugin_for_virtualization_choices --> info_plugin_virtual_information
+  vue_router_a_virtual_module --> vue_router_a_virtual_module_plugin_internals
+  vue_router_a_virtual_module_plugin_internals --> virtualization_recap_list
+  vitepress_virtual_data --> vitepress_virtual_data_plugin_internals
+  vitepress_virtual_data_plugin_internals --> virtualization_recap_list
+  icons_plugin_virtual_icons --> icons_plugin_virtual_icons_plugin_internals
+  icons_plugin_virtual_icons_plugin_internals --> virtualization_recap_list
+  info_plugin_virtual_information --> info_plugin_virtual_information_plugin_internals
+  info_plugin_virtual_information_plugin_internals --> virtualization_recap_list
+  virtualization_recap_list --> virtualization_recap_code
+  virtualization_recap_code --> other_plugin_capabilities
+  other_plugin_capabilities --> other_plugin_capabilities_choices
+  other_plugin_capabilities_choices --> hot_module_replacement_hmr
+  other_plugin_capabilities_choices --> middleware_a_virtual_file
+  other_plugin_capabilities_choices --> run_plugin_a_plugin_for_running_commands
+  other_plugin_capabilities_choices --> laravel_vite_inter_process_communication
+  other_plugin_capabilities_choices --> unplugin_macro_a_plugin_for_creating_macros
+  other_plugin_capabilities_choices --> nitro_a_backend
+  hot_module_replacement_hmr --> hot_module_replacement_hmr_plugin_internals
+  hot_module_replacement_hmr_plugin_internals --> it_was_always_the_same_pipeline
+  middleware_a_virtual_file --> it_was_always_the_same_pipeline
+  run_plugin_a_plugin_for_running_commands --> run_plugin_a_plugin_for_running_commands_plugin_internals
+  run_plugin_a_plugin_for_running_commands_plugin_internals --> it_was_always_the_same_pipeline
+  laravel_vite_inter_process_communication --> laravel_vite_inter_process_communication_plugin_internals
+  laravel_vite_inter_process_communication_plugin_internals --> it_was_always_the_same_pipeline
+  unplugin_macro_a_plugin_for_creating_macros --> unplugin_macro_a_plugin_for_creating_macros_plugin_internals
+  unplugin_macro_a_plugin_for_creating_macros_plugin_internals --> it_was_always_the_same_pipeline
+  nitro_a_backend --> nitro_a_backend_visualization
+  nitro_a_backend_visualization --> nitro_a_backend_plugin_internals
+  nitro_a_backend_plugin_internals --> it_was_always_the_same_pipeline
+  it_was_always_the_same_pipeline --> final_recap_list
+  final_recap_list --> final_recap_code
+  final_recap_code --> deep_inside_the_pipeline
+  deep_inside_the_pipeline --> your_turn
+  your_turn --> outro

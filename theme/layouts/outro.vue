@@ -1,10 +1,13 @@
 <script lang="ts" setup>
+import { useSlideContext } from '@slidev/client'
 import Feedback from '../components/Feedback.vue'
 import Footer from '../components/Footer.vue'
 import FooterLink from '../components/FooterLink.vue'
 import { socials, talks, website } from '../contants'
 
 const links = [website, talks, ...socials]
+
+const { $frontmatter } = useSlideContext()
 </script>
 
 <template>

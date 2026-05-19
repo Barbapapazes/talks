@@ -1,0 +1,12 @@
+html[data-theme='brutalism'] {
+  --theme-brutalism-primary: #facc15;
+
+  --theme-brutalism-text-default: #09090b;
+  --theme-brutalism-text-muted: #3f3f46;
+  --theme-brutalism-text-highlight: #09090b;
+  --theme-brutalism-background-default: #f4efe2;
+
+  --theme-brutalism-border-default: rgba(9, 9, 11, 0.95);
+
+  --theme-brutalism-shadow-default: 12px 12px 0 rgba(9, 9, 11, 0.95);
+}

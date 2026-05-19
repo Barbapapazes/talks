@@ -1,0 +1,1308 @@
+{
+  "generatedAt": "2026-04-15T10:47:55.111Z",
+  "nodes": [
+    {
+      "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
+      "index": 0,
+      "title": "Au cœur d'une pipeline : démystifions Vite et ses plugins",
+      "ready": true,
+      "timing": 0.2,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1
+    },
+    {
+      "id": "vite",
+      "index": 1,
+      "name": "Vite",
+      "title": "Vite",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Introduction",
+      "timing": 0.8,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 57
+    },
+    {
+      "id": "vite_growth",
+      "index": 2,
+      "name": "Vite Growth",
+      "title": "Vite Growth",
+      "ready": true,
+      "group": "Introduction",
+      "timing": 1.4,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 82
+    },
+    {
+      "id": "slide_theme",
+      "index": 3,
+      "name": "Slide Theme",
+      "title": "Slide Theme",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Pre-talk",
+      "timing": 2.4,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 106
+    },
+    {
+      "id": "how_vite_works",
+      "index": 4,
+      "name": "How Vite Works",
+      "title": "How Vite Works",
+      "ready": true,
+      "layout": "ai",
+      "group": "Vite Core",
+      "timing": 0.9,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 160
+    },
+    {
+      "id": "vite_in_a_nutshell",
+      "index": 5,
+      "name": "Vite in a Nutshell",
+      "title": "Vite in a Nutshell",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Vite Core",
+      "timing": 0.8,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 184
+    },
+    {
+      "id": "how_vite_works_visualization",
+      "index": 6,
+      "name": "How Vite Works - Visualization",
+      "title": "How Vite Works - Visualization",
+      "ready": true,
+      "layout": "full",
+      "group": "Vite Core",
+      "timing": 2.3,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 219
+    },
+    {
+      "id": "why_vite_took_over",
+      "index": 7,
+      "name": "Why Vite Took Over",
+      "title": "Why Vite Took Over",
+      "ready": false,
+      "layout": "center-card",
+      "group": "Vite Core",
+      "timing": 0,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 254
+    },
+    {
+      "id": "some_definitions",
+      "index": 8,
+      "name": "Some Definitions",
+      "title": "Some Definitions",
+      "ready": true,
+      "layout": "center",
+      "group": "Vite Core",
+      "timing": 0.9,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 277
+    },
+    {
+      "id": "everything_is_a_plugin",
+      "index": 9,
+      "name": "Everything Is a Plugin",
+      "title": "Everything Is a Plugin",
+      "ready": true,
+      "layout": "image",
+      "group": "Feature Plugins",
+      "timing": 2,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 304
+    },
+    {
+      "id": "everything_is_a_plugin_choices",
+      "index": 10,
+      "name": "Everything Is a Plugin - Choices",
+      "title": "Everything Is a Plugin - Choices",
+      "ready": true,
+      "layout": "choices",
+      "group": "Feature Plugins",
+      "timing": 0.1,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 341,
+      "choices": [
+        "CSS Imported into a TypeScript File",
+        "An Image Loaded in a TypeScript File",
+        "JSX Loaded Naturally"
+      ]
+    },
+    {
+      "id": "css_imported_into_a_typescript_file",
+      "index": 11,
+      "name": "CSS Imported into a TypeScript File",
+      "title": "CSS Imported into a TypeScript File",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Feature Plugins",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 367
+    },
+    {
+      "id": "css_imported_into_a_typescript_file_visualization",
+      "index": 12,
+      "name": "CSS Imported into a TypeScript File - Visualization",
+      "title": "CSS Imported into a TypeScript File - Visualization",
+      "ready": true,
+      "group": "Feature Plugins",
+      "timing": 0.9,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 400,
+      "choices": [
+        "Vite and Its Features - Recap"
+      ]
+    },
+    {
+      "id": "an_image_loaded_in_a_typescript_file",
+      "index": 13,
+      "name": "An Image Loaded in a TypeScript File",
+      "title": "An Image Loaded in a TypeScript File",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Feature Plugins",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 429
+    },
+    {
+      "id": "an_image_loaded_in_a_typescript_file_visualization",
+      "index": 14,
+      "name": "An Image Loaded in a TypeScript File - Visualization",
+      "title": "An Image Loaded in a TypeScript File - Visualization",
+      "ready": true,
+      "group": "Feature Plugins",
+      "timing": 0.9,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 462
+    },
+    {
+      "id": "an_image_loaded_in_a_typescript_file_build",
+      "index": 15,
+      "name": "An Image Loaded in a TypeScript File - Build",
+      "title": "An Image Loaded in a TypeScript File - Build",
+      "ready": true,
+      "layout": "bottom-right-card",
+      "group": "Feature Plugins",
+      "timing": 0.3,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 490,
+      "choices": [
+        "Vite and Its Features - Recap"
+      ]
+    },
+    {
+      "id": "jsx_loaded_naturally",
+      "index": 16,
+      "name": "JSX Loaded Naturally",
+      "title": "JSX Loaded Naturally",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Feature Plugins",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 512
+    },
+    {
+      "id": "jsx_loaded_naturally_visualization",
+      "index": 17,
+      "name": "JSX Loaded Naturally - Visualization",
+      "title": "JSX Loaded Naturally - Visualization",
+      "ready": true,
+      "group": "Feature Plugins",
+      "timing": 0.8,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 559,
+      "choices": [
+        "Vite and Its Features - Recap"
+      ]
+    },
+    {
+      "id": "vite_and_its_features_recap",
+      "index": 18,
+      "name": "Vite and Its Features - Recap",
+      "title": "Vite and Its Features - Recap",
+      "ready": true,
+      "layout": "recap",
+      "timing": 1.2,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 590
+    },
+    {
+      "id": "inside_a_vite_plugin_common_hooks",
+      "index": 19,
+      "name": "Inside a Vite Plugin - Common Hooks",
+      "title": "Inside a Vite Plugin - Common Hooks",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Inside a Plugin",
+      "timing": 1.1,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 632
+    },
+    {
+      "id": "resolveid",
+      "index": 20,
+      "name": "resolveId",
+      "title": "resolveId",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Inside a Plugin",
+      "timing": 0.7,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 699
+    },
+    {
+      "id": "load",
+      "index": 21,
+      "name": "load",
+      "title": "load",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Inside a Plugin",
+      "timing": 0.8,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 739
+    },
+    {
+      "id": "transform",
+      "index": 22,
+      "name": "transform",
+      "title": "transform",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Inside a Plugin",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 804
+    },
+    {
+      "id": "multiple_plugins",
+      "index": 23,
+      "name": "Multiple Plugins",
+      "title": "Multiple Plugins",
+      "ready": true,
+      "layout": "center",
+      "group": "Inside a Plugin",
+      "timing": 0.4,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 856
+    },
+    {
+      "id": "inside_a_vite_plugin_visualization",
+      "index": 24,
+      "name": "Inside a Vite Plugin - Visualization",
+      "title": "Inside a Vite Plugin - Visualization",
+      "ready": true,
+      "group": "Inside a Plugin",
+      "timing": 1.9,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 874
+    },
+    {
+      "id": "visualizing_the_pipeline",
+      "index": 25,
+      "name": "Visualizing the Pipeline",
+      "title": "Visualizing the Pipeline",
+      "ready": true,
+      "group": "Inside a Plugin",
+      "timing": 0.5,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 906
+    },
+    {
+      "id": "inside_a_vite_plugin_lifecycle_hooks",
+      "index": 26,
+      "name": "Inside a Vite Plugin - Lifecycle Hooks",
+      "title": "Inside a Vite Plugin - Lifecycle Hooks",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Inside a Plugin",
+      "timing": 1.3,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 934
+    },
+    {
+      "id": "in_practice",
+      "index": 27,
+      "name": "In Practice?",
+      "title": "In Practice?",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Concrete Example",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1031
+    },
+    {
+      "id": "simple_transform_plugin",
+      "index": 28,
+      "name": "Simple Transform Plugin",
+      "title": "Simple Transform Plugin",
+      "ready": true,
+      "layout": "center",
+      "group": "Concrete Example",
+      "timing": 0.2,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1052
+    },
+    {
+      "id": "simple_transform_plugin_visualization",
+      "index": 29,
+      "name": "Simple Transform Plugin - Visualization",
+      "title": "Simple Transform Plugin - Visualization",
+      "ready": true,
+      "group": "Concrete Example",
+      "timing": 0.5,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1068
+    },
+    {
+      "id": "simple_transform_plugin_internals",
+      "index": 30,
+      "name": "Simple Transform Plugin - Internals",
+      "title": "Simple Transform Plugin - Internals",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Concrete Example",
+      "timing": 0.4,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1090
+    },
+    {
+      "id": "external_markdown_loader_plugin",
+      "index": 31,
+      "name": "External Markdown Loader Plugin",
+      "title": "External Markdown Loader Plugin",
+      "ready": true,
+      "layout": "center",
+      "group": "Concrete Example",
+      "timing": 0.1,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1132
+    },
+    {
+      "id": "external_markdown_loader_plugin_visualization",
+      "index": 32,
+      "name": "External Markdown Loader Plugin - Visualization",
+      "title": "External Markdown Loader Plugin - Visualization",
+      "ready": true,
+      "group": "Concrete Example",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1146
+    },
+    {
+      "id": "external_markdown_loader_plugin_internals",
+      "index": 33,
+      "name": "External Markdown Loader Plugin - Internals",
+      "title": "External Markdown Loader Plugin - Internals",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Concrete Example",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1165
+    },
+    {
+      "id": "the_vite_plugin_recap",
+      "index": 34,
+      "name": "The Vite Plugin - Recap",
+      "title": "The Vite Plugin - Recap",
+      "ready": true,
+      "layout": "recap",
+      "timing": 0.7,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1233
+    },
+    {
+      "id": "the_vite_plugin_3_hooks_recap",
+      "index": 35,
+      "name": "The Vite Plugin - 3 Hooks Recap",
+      "title": "The Vite Plugin - 3 Hooks Recap",
+      "ready": true,
+      "layout": "recap",
+      "timing": 1.2,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1270
+    },
+    {
+      "id": "a_plugin_for_virtualization_intro",
+      "index": 36,
+      "name": "A Plugin for Virtualization - Intro",
+      "title": "A Plugin for Virtualization - Intro",
+      "ready": true,
+      "layout": "center",
+      "group": "Virtualization",
+      "timing": 0.1,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1317
+    },
+    {
+      "id": "a_plugin_for_virtualization",
+      "index": 37,
+      "name": "A Plugin for Virtualization",
+      "title": "A Plugin for Virtualization",
+      "ready": true,
+      "group": "Virtualization",
+      "timing": 1.5,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1331
+    },
+    {
+      "id": "a_plugin_for_virtualization_mind_blowing",
+      "index": 38,
+      "name": "A Plugin for Virtualization - Mind Blowing",
+      "title": "A Plugin for Virtualization - Mind Blowing",
+      "ready": true,
+      "layout": "mind-blowing-rain",
+      "group": "Virtualization",
+      "timing": 0.4,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1358
+    },
+    {
+      "id": "a_plugin_for_virtualization_plugin_internals",
+      "index": 39,
+      "name": "A Plugin for Virtualization - Plugin Internals",
+      "title": "A Plugin for Virtualization - Plugin Internals",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Virtualization",
+      "timing": 1.3,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1376
+    },
+    {
+      "id": "a_plugin_for_virtualization_virtual_plugin",
+      "index": 40,
+      "name": "A Plugin for Virtualization - Virtual Plugin",
+      "title": "A Plugin for Virtualization - Virtual Plugin",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Virtualization",
+      "timing": 0.9,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1453
+    },
+    {
+      "id": "a_plugin_for_virtualization_choices",
+      "index": 41,
+      "name": "A Plugin for Virtualization - Choices",
+      "title": "A Plugin for Virtualization - Choices",
+      "ready": true,
+      "layout": "choices",
+      "group": "Virtualization",
+      "timing": 0.1,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1531,
+      "choices": [
+        "Vue Router - A Virtual Module",
+        "VitePress - Virtual Data",
+        "Icons Plugin - Virtual Icons",
+        "Info Plugin - Virtual Information"
+      ]
+    },
+    {
+      "id": "vue_router_a_virtual_module",
+      "index": 42,
+      "name": "Vue Router - A Virtual Module",
+      "title": "Vue Router - A Virtual Module",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Virtualization",
+      "timing": 0.4,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1558
+    },
+    {
+      "id": "vue_router_a_virtual_module_plugin_internals",
+      "index": 43,
+      "name": "Vue Router - A Virtual Module - Plugin Internals",
+      "title": "Vue Router - A Virtual Module - Plugin Internals",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Virtualization",
+      "timing": 0.7,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1595,
+      "choices": [
+        "Virtualization - Recap - List"
+      ]
+    },
+    {
+      "id": "vitepress_virtual_data",
+      "index": 44,
+      "name": "VitePress - Virtual Data",
+      "title": "VitePress - Virtual Data",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Virtualization",
+      "timing": 0.9,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1664
+    },
+    {
+      "id": "vitepress_virtual_data_plugin_internals",
+      "index": 45,
+      "name": "VitePress - Virtual Data - Plugin Internals",
+      "title": "VitePress - Virtual Data - Plugin Internals",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Virtualization",
+      "timing": 0.8,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1711,
+      "choices": [
+        "Virtualization - Recap - List"
+      ]
+    },
+    {
+      "id": "icons_plugin_virtual_icons",
+      "index": 46,
+      "name": "Icons Plugin - Virtual Icons",
+      "title": "Icons Plugin - Virtual Icons",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Virtualization",
+      "timing": 0.5,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1790
+    },
+    {
+      "id": "icons_plugin_virtual_icons_plugin_internals",
+      "index": 47,
+      "name": "Icons Plugin - Virtual Icons - Plugin Internals",
+      "title": "Icons Plugin - Virtual Icons - Plugin Internals",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Virtualization",
+      "timing": 0.8,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1827,
+      "choices": [
+        "Virtualization - Recap - List"
+      ]
+    },
+    {
+      "id": "info_plugin_virtual_information",
+      "index": 48,
+      "name": "Info Plugin - Virtual Information",
+      "title": "Info Plugin - Virtual Information",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Virtualization",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1907
+    },
+    {
+      "id": "info_plugin_virtual_information_plugin_internals",
+      "index": 49,
+      "name": "Info Plugin - Virtual Information - Plugin Internals",
+      "title": "Info Plugin - Virtual Information - Plugin Internals",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Virtualization",
+      "timing": 1.1,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1939,
+      "choices": [
+        "Virtualization - Recap - List"
+      ]
+    },
+    {
+      "id": "virtualization_recap_list",
+      "index": 50,
+      "name": "Virtualization - Recap - List",
+      "title": "Virtualization - Recap - List",
+      "ready": true,
+      "layout": "recap",
+      "timing": 1.2,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2044
+    },
+    {
+      "id": "virtualization_recap_code",
+      "index": 51,
+      "name": "Virtualization - Recap - Code",
+      "title": "Virtualization - Recap - Code",
+      "ready": true,
+      "layout": "recap",
+      "timing": 0.7,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2079
+    },
+    {
+      "id": "other_plugin_capabilities",
+      "index": 52,
+      "name": "Other Plugin Capabilities",
+      "title": "Other Plugin Capabilities",
+      "ready": true,
+      "layout": "image",
+      "group": "Advanced Capabilities",
+      "timing": 0.7,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2129
+    },
+    {
+      "id": "other_plugin_capabilities_choices",
+      "index": 53,
+      "name": "Other Plugin Capabilities - Choices",
+      "title": "Other Plugin Capabilities - Choices",
+      "ready": true,
+      "layout": "choices",
+      "group": "Advanced Capabilities",
+      "timing": 0.1,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2153,
+      "choices": [
+        "Hot Module Replacement (HMR)",
+        "Middleware - A Virtual File",
+        "Run Plugin - A Plugin for Running Commands",
+        "Laravel Vite - Inter-process Communication",
+        "unplugin-macro - A Plugin for Creating Macros",
+        "Nitro - A Backend"
+      ]
+    },
+    {
+      "id": "hot_module_replacement_hmr",
+      "index": 54,
+      "name": "Hot Module Replacement (HMR)",
+      "title": "Hot Module Replacement (HMR)",
+      "ready": true,
+      "group": "Advanced Capabilities",
+      "timing": 0.5,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2181
+    },
+    {
+      "id": "hot_module_replacement_hmr_plugin_internals",
+      "index": 55,
+      "name": "Hot Module Replacement (HMR) - Plugin Internals",
+      "title": "Hot Module Replacement (HMR) - Plugin Internals",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2205,
+      "choices": [
+        "It was always the same pipeline"
+      ]
+    },
+    {
+      "id": "middleware_a_virtual_file",
+      "index": 56,
+      "name": "Middleware - A Virtual File",
+      "title": "Middleware - A Virtual File",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0.7,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2263,
+      "choices": [
+        "It was always the same pipeline"
+      ]
+    },
+    {
+      "id": "run_plugin_a_plugin_for_running_commands",
+      "index": 57,
+      "name": "Run Plugin - A Plugin for Running Commands",
+      "title": "Run Plugin - A Plugin for Running Commands",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Advanced Capabilities",
+      "timing": 1,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2338
+    },
+    {
+      "id": "run_plugin_a_plugin_for_running_commands_plugin_internals",
+      "index": 58,
+      "name": "Run Plugin - A Plugin for Running Commands - Plugin Internals",
+      "title": "Run Plugin - A Plugin for Running Commands - Plugin Internals",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0.4,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2400,
+      "choices": [
+        "It was always the same pipeline"
+      ]
+    },
+    {
+      "id": "laravel_vite_inter_process_communication",
+      "index": 59,
+      "name": "Laravel Vite - Inter-process Communication",
+      "title": "Laravel Vite - Inter-process Communication",
+      "ready": true,
+      "group": "Advanced Capabilities",
+      "timing": 0.4,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2455
+    },
+    {
+      "id": "laravel_vite_inter_process_communication_plugin_internals",
+      "index": 60,
+      "name": "Laravel Vite - Inter-process Communication - Plugin Internals",
+      "title": "Laravel Vite - Inter-process Communication - Plugin Internals",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2473,
+      "choices": [
+        "It was always the same pipeline"
+      ]
+    },
+    {
+      "id": "unplugin_macro_a_plugin_for_creating_macros",
+      "index": 61,
+      "name": "unplugin-macro - A Plugin for Creating Macros",
+      "title": "unplugin-macro - A Plugin for Creating Macros",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0.4,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2553
+    },
+    {
+      "id": "unplugin_macro_a_plugin_for_creating_macros_plugin_internals",
+      "index": 62,
+      "name": "unplugin-macro - A Plugin for Creating Macros - Plugin Internals",
+      "title": "unplugin-macro - A Plugin for Creating Macros - Plugin Internals",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0.5,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2588,
+      "choices": [
+        "It was always the same pipeline"
+      ]
+    },
+    {
+      "id": "nitro_a_backend",
+      "index": 63,
+      "name": "Nitro - A Backend",
+      "title": "Nitro - A Backend",
+      "ready": true,
+      "layout": "center",
+      "group": "Advanced Capabilities",
+      "timing": 0.3,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2679
+    },
+    {
+      "id": "nitro_a_backend_visualization",
+      "index": 64,
+      "name": "Nitro - A Backend - Visualization",
+      "title": "Nitro - A Backend - Visualization",
+      "ready": true,
+      "group": "Advanced Capabilities",
+      "timing": 0.4,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2695
+    },
+    {
+      "id": "nitro_a_backend_plugin_internals",
+      "index": 65,
+      "name": "Nitro - A Backend - Plugin Internals",
+      "title": "Nitro - A Backend - Plugin Internals",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Advanced Capabilities",
+      "timing": 0.5,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2710,
+      "choices": [
+        "It was always the same pipeline"
+      ]
+    },
+    {
+      "id": "it_was_always_the_same_pipeline",
+      "index": 66,
+      "name": "It was always the same pipeline",
+      "title": "It was always the same pipeline",
+      "ready": true,
+      "timing": 1.5,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2767
+    },
+    {
+      "id": "final_recap_list",
+      "index": 67,
+      "name": "Final Recap - List",
+      "title": "Final Recap - List",
+      "ready": true,
+      "layout": "recap",
+      "timing": 1.3,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2805
+    },
+    {
+      "id": "final_recap_code",
+      "index": 68,
+      "name": "Final Recap - Code",
+      "title": "Final Recap - Code",
+      "ready": true,
+      "layout": "recap",
+      "timing": 1.2,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2847
+    },
+    {
+      "id": "deep_inside_the_pipeline",
+      "index": 69,
+      "name": "Deep Inside the Pipeline",
+      "title": "Deep Inside the Pipeline",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Deep Dive",
+      "timing": 1.4,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2923
+    },
+    {
+      "id": "your_turn",
+      "index": 70,
+      "name": "Your Turn",
+      "title": "Your Turn",
+      "ready": true,
+      "layout": "keep-in-mind",
+      "timing": 0.5,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 3053
+    },
+    {
+      "id": "outro",
+      "index": 71,
+      "name": "Outro",
+      "title": "Outro",
+      "ready": true,
+      "layout": "outro2",
+      "timing": 0.3,
+      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "lineNumber": 3078
+    }
+  ],
+  "edges": [
+    {
+      "from": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
+      "to": "vite",
+      "label": ""
+    },
+    {
+      "from": "vite",
+      "to": "vite_growth",
+      "label": ""
+    },
+    {
+      "from": "vite_growth",
+      "to": "slide_theme",
+      "label": ""
+    },
+    {
+      "from": "slide_theme",
+      "to": "how_vite_works",
+      "label": ""
+    },
+    {
+      "from": "how_vite_works",
+      "to": "vite_in_a_nutshell",
+      "label": ""
+    },
+    {
+      "from": "vite_in_a_nutshell",
+      "to": "how_vite_works_visualization",
+      "label": ""
+    },
+    {
+      "from": "how_vite_works_visualization",
+      "to": "why_vite_took_over",
+      "label": ""
+    },
+    {
+      "from": "why_vite_took_over",
+      "to": "some_definitions",
+      "label": ""
+    },
+    {
+      "from": "some_definitions",
+      "to": "everything_is_a_plugin",
+      "label": ""
+    },
+    {
+      "from": "everything_is_a_plugin",
+      "to": "everything_is_a_plugin_choices",
+      "label": ""
+    },
+    {
+      "from": "everything_is_a_plugin_choices",
+      "to": "css_imported_into_a_typescript_file",
+      "label": "CSS Imported into a TypeScript File"
+    },
+    {
+      "from": "everything_is_a_plugin_choices",
+      "to": "an_image_loaded_in_a_typescript_file",
+      "label": "An Image Loaded in a TypeScript File"
+    },
+    {
+      "from": "everything_is_a_plugin_choices",
+      "to": "jsx_loaded_naturally",
+      "label": "JSX Loaded Naturally"
+    },
+    {
+      "from": "css_imported_into_a_typescript_file",
+      "to": "css_imported_into_a_typescript_file_visualization",
+      "label": ""
+    },
+    {
+      "from": "css_imported_into_a_typescript_file_visualization",
+      "to": "vite_and_its_features_recap",
+      "label": "Vite and Its Features - Recap"
+    },
+    {
+      "from": "an_image_loaded_in_a_typescript_file",
+      "to": "an_image_loaded_in_a_typescript_file_visualization",
+      "label": ""
+    },
+    {
+      "from": "an_image_loaded_in_a_typescript_file_visualization",
+      "to": "an_image_loaded_in_a_typescript_file_build",
+      "label": ""
+    },
+    {
+      "from": "an_image_loaded_in_a_typescript_file_build",
+      "to": "vite_and_its_features_recap",
+      "label": "Vite and Its Features - Recap"
+    },
+    {
+      "from": "jsx_loaded_naturally",
+      "to": "jsx_loaded_naturally_visualization",
+      "label": ""
+    },
+    {
+      "from": "jsx_loaded_naturally_visualization",
+      "to": "vite_and_its_features_recap",
+      "label": "Vite and Its Features - Recap"
+    },
+    {
+      "from": "vite_and_its_features_recap",
+      "to": "inside_a_vite_plugin_common_hooks",
+      "label": ""
+    },
+    {
+      "from": "inside_a_vite_plugin_common_hooks",
+      "to": "resolveid",
+      "label": ""
+    },
+    {
+      "from": "resolveid",
+      "to": "load",
+      "label": ""
+    },
+    {
+      "from": "load",
+      "to": "transform",
+      "label": ""
+    },
+    {
+      "from": "transform",
+      "to": "multiple_plugins",
+      "label": ""
+    },
+    {
+      "from": "multiple_plugins",
+      "to": "inside_a_vite_plugin_visualization",
+      "label": ""
+    },
+    {
+      "from": "inside_a_vite_plugin_visualization",
+      "to": "visualizing_the_pipeline",
+      "label": ""
+    },
+    {
+      "from": "visualizing_the_pipeline",
+      "to": "inside_a_vite_plugin_lifecycle_hooks",
+      "label": ""
+    },
+    {
+      "from": "inside_a_vite_plugin_lifecycle_hooks",
+      "to": "in_practice",
+      "label": ""
+    },
+    {
+      "from": "in_practice",
+      "to": "simple_transform_plugin",
+      "label": ""
+    },
+    {
+      "from": "simple_transform_plugin",
+      "to": "simple_transform_plugin_visualization",
+      "label": ""
+    },
+    {
+      "from": "simple_transform_plugin_visualization",
+      "to": "simple_transform_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "simple_transform_plugin_internals",
+      "to": "external_markdown_loader_plugin",
+      "label": ""
+    },
+    {
+      "from": "external_markdown_loader_plugin",
+      "to": "external_markdown_loader_plugin_visualization",
+      "label": ""
+    },
+    {
+      "from": "external_markdown_loader_plugin_visualization",
+      "to": "external_markdown_loader_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "external_markdown_loader_plugin_internals",
+      "to": "the_vite_plugin_recap",
+      "label": ""
+    },
+    {
+      "from": "the_vite_plugin_recap",
+      "to": "the_vite_plugin_3_hooks_recap",
+      "label": ""
+    },
+    {
+      "from": "the_vite_plugin_3_hooks_recap",
+      "to": "a_plugin_for_virtualization_intro",
+      "label": ""
+    },
+    {
+      "from": "a_plugin_for_virtualization_intro",
+      "to": "a_plugin_for_virtualization",
+      "label": ""
+    },
+    {
+      "from": "a_plugin_for_virtualization",
+      "to": "a_plugin_for_virtualization_mind_blowing",
+      "label": ""
+    },
+    {
+      "from": "a_plugin_for_virtualization_mind_blowing",
+      "to": "a_plugin_for_virtualization_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "a_plugin_for_virtualization_plugin_internals",
+      "to": "a_plugin_for_virtualization_virtual_plugin",
+      "label": ""
+    },
+    {
+      "from": "a_plugin_for_virtualization_virtual_plugin",
+      "to": "a_plugin_for_virtualization_choices",
+      "label": ""
+    },
+    {
+      "from": "a_plugin_for_virtualization_choices",
+      "to": "vue_router_a_virtual_module",
+      "label": "Vue Router - A Virtual Module"
+    },
+    {
+      "from": "a_plugin_for_virtualization_choices",
+      "to": "vitepress_virtual_data",
+      "label": "VitePress - Virtual Data"
+    },
+    {
+      "from": "a_plugin_for_virtualization_choices",
+      "to": "icons_plugin_virtual_icons",
+      "label": "Icons Plugin - Virtual Icons"
+    },
+    {
+      "from": "a_plugin_for_virtualization_choices",
+      "to": "info_plugin_virtual_information",
+      "label": "Info Plugin - Virtual Information"
+    },
+    {
+      "from": "vue_router_a_virtual_module",
+      "to": "vue_router_a_virtual_module_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "vue_router_a_virtual_module_plugin_internals",
+      "to": "virtualization_recap_list",
+      "label": "Virtualization - Recap - List"
+    },
+    {
+      "from": "vitepress_virtual_data",
+      "to": "vitepress_virtual_data_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "vitepress_virtual_data_plugin_internals",
+      "to": "virtualization_recap_list",
+      "label": "Virtualization - Recap - List"
+    },
+    {
+      "from": "icons_plugin_virtual_icons",
+      "to": "icons_plugin_virtual_icons_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "icons_plugin_virtual_icons_plugin_internals",
+      "to": "virtualization_recap_list",
+      "label": "Virtualization - Recap - List"
+    },
+    {
+      "from": "info_plugin_virtual_information",
+      "to": "info_plugin_virtual_information_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "info_plugin_virtual_information_plugin_internals",
+      "to": "virtualization_recap_list",
+      "label": "Virtualization - Recap - List"
+    },
+    {
+      "from": "virtualization_recap_list",
+      "to": "virtualization_recap_code",
+      "label": ""
+    },
+    {
+      "from": "virtualization_recap_code",
+      "to": "other_plugin_capabilities",
+      "label": ""
+    },
+    {
+      "from": "other_plugin_capabilities",
+      "to": "other_plugin_capabilities_choices",
+      "label": ""
+    },
+    {
+      "from": "other_plugin_capabilities_choices",
+      "to": "hot_module_replacement_hmr",
+      "label": "Hot Module Replacement (HMR)"
+    },
+    {
+      "from": "other_plugin_capabilities_choices",
+      "to": "middleware_a_virtual_file",
+      "label": "Middleware - A Virtual File"
+    },
+    {
+      "from": "other_plugin_capabilities_choices",
+      "to": "run_plugin_a_plugin_for_running_commands",
+      "label": "Run Plugin - A Plugin for Running Commands"
+    },
+    {
+      "from": "other_plugin_capabilities_choices",
+      "to": "laravel_vite_inter_process_communication",
+      "label": "Laravel Vite - Inter-process Communication"
+    },
+    {
+      "from": "other_plugin_capabilities_choices",
+      "to": "unplugin_macro_a_plugin_for_creating_macros",
+      "label": "unplugin-macro - A Plugin for Creating Macros"
+    },
+    {
+      "from": "other_plugin_capabilities_choices",
+      "to": "nitro_a_backend",
+      "label": "Nitro - A Backend"
+    },
+    {
+      "from": "hot_module_replacement_hmr",
+      "to": "hot_module_replacement_hmr_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "hot_module_replacement_hmr_plugin_internals",
+      "to": "it_was_always_the_same_pipeline",
+      "label": "It was always the same pipeline"
+    },
+    {
+      "from": "middleware_a_virtual_file",
+      "to": "it_was_always_the_same_pipeline",
+      "label": "It was always the same pipeline"
+    },
+    {
+      "from": "run_plugin_a_plugin_for_running_commands",
+      "to": "run_plugin_a_plugin_for_running_commands_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "run_plugin_a_plugin_for_running_commands_plugin_internals",
+      "to": "it_was_always_the_same_pipeline",
+      "label": "It was always the same pipeline"
+    },
+    {
+      "from": "laravel_vite_inter_process_communication",
+      "to": "laravel_vite_inter_process_communication_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "laravel_vite_inter_process_communication_plugin_internals",
+      "to": "it_was_always_the_same_pipeline",
+      "label": "It was always the same pipeline"
+    },
+    {
+      "from": "unplugin_macro_a_plugin_for_creating_macros",
+      "to": "unplugin_macro_a_plugin_for_creating_macros_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "unplugin_macro_a_plugin_for_creating_macros_plugin_internals",
+      "to": "it_was_always_the_same_pipeline",
+      "label": "It was always the same pipeline"
+    },
+    {
+      "from": "nitro_a_backend",
+      "to": "nitro_a_backend_visualization",
+      "label": ""
+    },
+    {
+      "from": "nitro_a_backend_visualization",
+      "to": "nitro_a_backend_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "nitro_a_backend_plugin_internals",
+      "to": "it_was_always_the_same_pipeline",
+      "label": "It was always the same pipeline"
+    },
+    {
+      "from": "it_was_always_the_same_pipeline",
+      "to": "final_recap_list",
+      "label": ""
+    },
+    {
+      "from": "final_recap_list",
+      "to": "final_recap_code",
+      "label": ""
+    },
+    {
+      "from": "final_recap_code",
+      "to": "deep_inside_the_pipeline",
+      "label": ""
+    },
+    {
+      "from": "deep_inside_the_pipeline",
+      "to": "your_turn",
+      "label": ""
+    },
+    {
+      "from": "your_turn",
+      "to": "outro",
+      "label": ""
+    }
+  ]
+}

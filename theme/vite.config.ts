@@ -1,9 +1,8 @@
 /// <reference types="@slidev/types" />
 
 import { defineConfig } from 'vite'
-import LatestArticles from './plugins/latest-articles'
-
-const CODE_BLOCK_TITLE_RE = /\[(.*?)\]/
+import ai from './plugins/ai'
+import latestArticles from './plugins/latest-articles'
 
 const codeBlockIcons = {
   // package managers
@@ -61,9 +60,12 @@ const codeBlockIcons = {
   'terminal': 'i-vscode-icons-file-type-shell',
 }
 
+const markdownItTitleRegex = /\[(.*?)\]/
+
 export default defineConfig({
   plugins: [
-    LatestArticles(),
+    latestArticles(),
+    ai(),
   ],
 
   slidev: {
@@ -83,7 +85,7 @@ export default defineConfig({
           md.renderer.rules.fence = (...args) => {
             const [tokens, idx] = args
             const token = tokens[idx]
-            const title = token.info.match(CODE_BLOCK_TITLE_RE)
+            const title = token.info.match(markdownItTitleRegex)
 
             if (!title) {
               return fenceRule(...args)

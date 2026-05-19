@@ -67,18 +67,29 @@ export const technologies = [
     href: 'https://nuxt.com',
   },
   {
+    icon: 'i-logos-java',
+    text: 'Java',
+    href: 'https://www.java.com',
+  },
+  {
     icon: 'i-logos-spring-icon',
     text: 'Spring',
     href: 'https://spring.io',
   },
-  {
-    icon: 'i-logos-kotlin-icon',
-    text: 'Kotlin',
-    href: 'https://kotlinlang.org',
-  },
+  // {
+  //   icon: 'i-logos-kotlin-icon',
+  //   text: 'Kotlin',
+  //   href: 'https://kotlinlang.org',
+  // },
   // {
   //   icon: 'i-logos-unjs',
   //   text: 'UnJS',
   //   href: 'https://unjs.io',
   // },
 ]
+
+export const SUPPORTED_SLIDE_THEMES = [
+  'default',
+  'brutalism',
+  'flowers',
+] as const

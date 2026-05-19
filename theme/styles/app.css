@@ -1,8 +1,9 @@
 h1 {
-  --at-apply: text-neutral-950 font-bold text-[1.75rem];
+  --at-apply: text-neutral-950 text-[1.75rem];
+  font-weight: bold!important;
 }
 
-h1 + :is(p, ul, ol) {
+h1+ :is(p, ul, ol) {
   --at-apply: mt-4;
 }
 

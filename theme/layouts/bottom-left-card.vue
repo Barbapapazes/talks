@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import CardLayout from '../components/CardLayout.vue'
+
+defineOptions({ inheritAttrs: false })
 </script>
 
 <template>

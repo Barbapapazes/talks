@@ -134,7 +134,7 @@ layout: section
 <!--
 Tout au long de cette présentation, nous allons avoir un fil rouge.
 
-Ce fil rouge, nous l’appellerons [Atom](1) et c'est lui, ce petit robot.
+Ce fil rouge, nous l'appellerons [Atom](1) et c'est lui, ce petit robot.
 
 [1]: Il s'agit du nom du robot de Real Steel.
 -->
