@@ -40,7 +40,6 @@ export default defineConfig({
         name: 'generate-tree',
         run: ['pnpm', '-w', 'run', 'generate:tree', '2026-04-16'],
         condition: file => file.endsWith('slides.md'),
-        throttle: 1_000,
       },
     ]),
   ],

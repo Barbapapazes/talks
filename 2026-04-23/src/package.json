@@ -38,11 +38,13 @@
     "@vue-flow/background": "catalog:ui",
     "@vue-flow/core": "catalog:ui",
     "@vueuse/core": "catalog:ui",
+    "@vueuse/shared": "catalog:ui",
     "reka-ui": "catalog:ui",
     "shiki": "catalog:ui",
     "slidev-addon-inalia": "catalog:slidev",
     "slidev-theme-personal": "workspace:*",
-    "tailwind-variants": "catalog:ui"
+    "tailwind-variants": "catalog:ui",
+    "vue-demi": "catalog:ui"
   },
   "devDependencies": {
     "@slidev/cli": "catalog:build",
