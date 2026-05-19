@@ -2,6 +2,7 @@
 import { tv } from 'tailwind-variants'
 import { computed } from 'vue'
 import ExplainedVisuallyBox from './ExplainedVisuallyBox.vue'
+import viteIconColorDark from '../../assets/vite-icon-color-dark.svg'
 
 const props = withDefaults(defineProps<{
   logoAlt?: string
@@ -10,7 +11,7 @@ const props = withDefaults(defineProps<{
   ui?: Partial<typeof explainedVisuallyServer.slots>
 }>(), {
   logoAlt: 'Server logo',
-  logoSrc: '/vite-icon-color-dark.svg',
+  logoSrc: viteIconColorDark,
 })
 
 defineSlots<{

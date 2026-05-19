@@ -24,7 +24,7 @@ html[data-theme='flowers'] .shiki span {
 /** Code Blocks */
 
 .slidev-code.shiki {
-  --at-apply: p-4!;
+  padding: 1rem !important;
   margin: 0;
 }
 

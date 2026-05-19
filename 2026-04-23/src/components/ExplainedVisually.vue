@@ -7,6 +7,7 @@ import type {
   ExplainedVisuallySelectedResponse,
 } from './ExplainedVisually/types'
 import { ref } from 'vue'
+import viteIconColorDark from '../assets/vite-icon-color-dark.svg'
 import ExplainedVisuallyBrowser from './ExplainedVisually/ExplainedVisuallyBrowser.vue'
 import ExplainedVisuallyCodeModal from './ExplainedVisually/ExplainedVisuallyCodeModal.vue'
 import ExplainedVisuallyEdge from './ExplainedVisually/ExplainedVisuallyEdge.vue'
@@ -49,7 +50,7 @@ const props = withDefaults(defineProps<{
   requestEdgeText: 'HTTP Requests',
   serverClick: undefined,
   serverLogoAlt: 'Server logo',
-  serverLogoSrc: '/vite-icon-color-dark.svg',
+  serverLogoSrc: viteIconColorDark,
 })
 
 defineSlots<{

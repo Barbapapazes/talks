@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import ExplainedVisuallyBrowser from './ExplainedVisually/ExplainedVisuallyBrowser.vue'
 import ExplainedVisuallyServer from './ExplainedVisually/ExplainedVisuallyServer.vue'
+import nitroLogo from '../assets/nitro.svg'
 </script>
 
 <template>
@@ -23,6 +24,6 @@ import ExplainedVisuallyServer from './ExplainedVisually/ExplainedVisuallyServer
         <div class="i-lucide-arrow-left" /> Send Response
       </div>
     </div>
-    <ExplainedVisuallyServer v-click="5" logo-src="/nitro.svg" class="w-40" />
+    <ExplainedVisuallyServer v-click="5" :logo-src="nitroLogo" class="w-40" />
   </div>
 </template>

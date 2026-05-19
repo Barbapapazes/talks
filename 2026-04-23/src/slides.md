@@ -56,11 +56,11 @@ ready: true
 timing: 0.8
 layout: center-card
 img:
-  default: /vite-background.png
+  default: ./assets/vite-background.png
 transition: slide-up
 ---
 
-<img src="/vite-logo-color-dark.svg" />
+<img src="./assets/vite-logo-color-dark.svg" />
 
 ::outside::
 
@@ -183,7 +183,7 @@ ready: true
 timing: 0.8
 layout: center-card
 img:
-  default: /vite-background.png
+  default: ./assets/vite-background.png
 clicks: 5
 ---
 
@@ -252,7 +252,7 @@ group: Vite Core
 timing: 0
 layout: center-card
 img:
-  default: /vite-background.png
+  default: ./assets/vite-background.png
 clicks: 6
 ---
 
@@ -304,7 +304,7 @@ timing: 2
 layout: image
 img:
   brutalism: false
-  default: /vite-background.png
+  default: ./assets/vite-background.png
 chooseNextSlide: true
 ---
 
@@ -390,7 +390,8 @@ import './style.css'
 
 ::outside::
 
-<ClickRevealImage src="/css-is-js.png" />
+<div v-click class="theme-click-reveal-overlay absolute z-10 inset-0 backdrop-blur-md" />
+<img v-after src="./assets/css-is-js.png" alt="CSS imported as JavaScript visualization" class="absolute z-20 h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
 
 <!--
 [enthusiastic] Nan oui, oui, alors ça, faut qu'on en parle !
@@ -452,7 +453,8 @@ import img from './image.png'
 
 ::outside::
 
-<ClickRevealImage src="/img-is-js.png" />
+<div v-click class="theme-click-reveal-overlay absolute z-10 inset-0 backdrop-blur-md" />
+<img v-after src="./assets/img-is-js.png" alt="Image imported as JavaScript visualization" class="absolute z-20 h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
 
 <!--
 [enthusiastic] Nan oui, oui, alors ça, faut qu'on en parle aussi !
@@ -549,7 +551,8 @@ root.render(<App />)
 
 ::outside::
 
-<ClickRevealImage src="/jsx-is-js.png" />
+<div v-click class="theme-click-reveal-overlay absolute z-10 inset-0 backdrop-blur-md" />
+<img v-after src="./assets/jsx-is-js.png" alt="JSX transformed into JavaScript visualization" class="absolute z-20 h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
 
 <!--
 [enthusiastic] Nan, oui, oui, alors ça, faut qu'on en parle aussi !
@@ -1368,7 +1371,7 @@ timing: 0.4
 layout: mind-blowing-rain
 ---
 
-<img src="/mind-blowing.gif" class="absolute h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+<img src="./assets/mind-blowing.gif" class="absolute h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
 
 <!--
 [with gesture of mind-blown] Ça s'est le moment où j'ai compris que Vite peut faire ça, répondre à des requêtes avec des modules qui n'existent pas......
@@ -2150,7 +2153,7 @@ timing: 0.7
 layout: image
 img:
   brutalism: false
-  default: /vite-background.png
+  default: ./assets/vite-background.png
 chooseNextSlide: true
 ---
 
@@ -3097,8 +3100,8 @@ In <span class="text-primary">45 minutes</span>, you discovered<br>what you need
 
 ::outside::
 
-<img v-click src="/good-job.gif" class="absolute left-10 bottom-10 w-50" />
-<img v-after src="/good-job.gif" class="absolute right-10 bottom-10 w-50" />
+<img v-click src="./assets/good-job.gif" class="absolute left-10 bottom-10 w-50" />
+<img v-after src="./assets/good-job.gif" class="absolute right-10 bottom-10 w-50" />
 
 <!--
 Compréhension de Vite, de sa pipeline, transformation de modules sur demande et la génération de modules virtuels, exploration de l'écosystème, c'est qu'on en a fait des choses.

@@ -150,9 +150,15 @@ catalogs:
     '@formkit/auto-animate':
       specifier: ^0.9.0
       version: 0.9.0
+    '@shikijs/langs':
+      specifier: ^4.1.0
+      version: 4.1.0
     '@shikijs/markdown-it':
       specifier: ^4.0.2
       version: 4.0.2
+    '@shikijs/themes':
+      specifier: ^4.1.0
+      version: 4.1.0
     '@shikijs/transformers':
       specifier: ^4.1.0
       version: 4.1.0
@@ -958,6 +964,12 @@ importers:
       '@dagrejs/dagre':
         specifier: catalog:ui
         version: 3.0.0
+      '@shikijs/langs':
+        specifier: catalog:ui
+        version: 4.1.0
+      '@shikijs/themes':
+        specifier: catalog:ui
+        version: 4.1.0
       '@shikijs/transformers':
         specifier: catalog:ui
         version: 4.1.0
@@ -1028,6 +1040,12 @@ importers:
       '@dagrejs/dagre':
         specifier: catalog:ui
         version: 3.0.0
+      '@shikijs/langs':
+        specifier: catalog:ui
+        version: 4.1.0
+      '@shikijs/themes':
+        specifier: catalog:ui
+        version: 4.1.0
       '@shikijs/transformers':
         specifier: catalog:ui
         version: 4.1.0
@@ -1098,6 +1116,12 @@ importers:
       '@dagrejs/dagre':
         specifier: catalog:ui
         version: 3.0.0
+      '@shikijs/langs':
+        specifier: catalog:ui
+        version: 4.1.0
+      '@shikijs/themes':
+        specifier: catalog:ui
+        version: 4.1.0
       '@shikijs/transformers':
         specifier: catalog:ui
         version: 4.1.0
@@ -1168,6 +1192,12 @@ importers:
       '@dagrejs/dagre':
         specifier: catalog:ui
         version: 3.0.0
+      '@shikijs/langs':
+        specifier: catalog:ui
+        version: 4.1.0
+      '@shikijs/themes':
+        specifier: catalog:ui
+        version: 4.1.0
       '@shikijs/transformers':
         specifier: catalog:ui
         version: 4.1.0

@@ -13,6 +13,7 @@
   },
   "private": true,
   "description": "Plongée au cœur de la pipeline de Vite : découvrez son fonctionnement interne et comment prendre le contrôle avec des plugins personnalisés.",
+  "recording": "https://youtu.be/mO_QtztG4Sc",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-04-23/devoxxfr/ --out ../../dist/2026-04-23/devoxxfr",
@@ -25,6 +26,8 @@
   },
   "dependencies": {
     "@dagrejs/dagre": "catalog:ui",
+    "@shikijs/langs": "catalog:ui",
+    "@shikijs/themes": "catalog:ui",
     "@shikijs/transformers": "catalog:ui",
     "@slidev/client": "catalog:slidev",
     "@tsparticles/engine": "catalog:ui",

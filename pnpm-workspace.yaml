@@ -71,7 +71,9 @@ catalogs:
   ui:
     '@dagrejs/dagre': ^3.0.0
     '@formkit/auto-animate': ^0.9.0
+    '@shikijs/langs': ^4.1.0
     '@shikijs/markdown-it': ^4.0.2
+    '@shikijs/themes': ^4.1.0
     '@shikijs/transformers': ^4.1.0
     '@tsparticles/confetti': ^4.0.4
     '@tsparticles/engine': ^3.9.1

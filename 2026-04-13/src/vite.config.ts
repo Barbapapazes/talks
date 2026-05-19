@@ -8,6 +8,25 @@ import viteBuild from './plugins/vite-build'
 import viteFileSystem from './plugins/vite-file-system'
 import viteTransformedFile from './plugins/vite-transformed-file'
 
+const optimizedDependencies = [
+  '@dagrejs/dagre',
+  '@shikijs/langs',
+  '@shikijs/themes',
+  '@shikijs/transformers',
+  '@tsparticles/engine',
+  '@tsparticles/plugin-emitters',
+  '@tsparticles/slim',
+  '@unovis/ts',
+  '@unovis/vue',
+  '@vue-flow/background',
+  '@vue-flow/core',
+  '@vueuse/core',
+  'reka-ui',
+  'shiki',
+  'slidev-addon-inalia',
+  'tailwind-variants',
+]
+
 export default defineConfig({
   plugins: [
     inspect(),
@@ -31,7 +50,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['slidev-addon-inalia', 'reka-ui', '@tsparticles/engine', '@tsparticles/plugin-emitters', '@tsparticles/slim'],
+    include: optimizedDependencies,
   },
 
   server: {

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import ExplainedVisuallyBrowser from './ExplainedVisually/ExplainedVisuallyBrowser.vue'
 import ExplainedVisuallyServer from './ExplainedVisually/ExplainedVisuallyServer.vue'
+import laravelLogo from '../assets/laravel.svg'
 </script>
 
 <template>
@@ -14,7 +15,7 @@ import ExplainedVisuallyServer from './ExplainedVisually/ExplainedVisuallyServer
         <div class="i-lucide-arrow-left" /> Send Page
       </div>
     </div>
-    <ExplainedVisuallyServer v-click="2" logo-src="/laravel.svg" class="w-full h-full" />
+    <ExplainedVisuallyServer v-click="2" :logo-src="laravelLogo" class="w-full h-full" />
     <div class="my-8 flex flex-col justify-between text-neutral-500">
       <div v-click="5" class="flex flex-row items-center justify-center gap-2">
         Ask Assets <div class="i-lucide-arrow-right" />

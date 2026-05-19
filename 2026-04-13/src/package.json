@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "@dagrejs/dagre": "catalog:ui",
+    "@shikijs/langs": "catalog:ui",
+    "@shikijs/themes": "catalog:ui",
     "@shikijs/transformers": "catalog:ui",
     "@slidev/client": "catalog:slidev",
     "@tsparticles/engine": "catalog:ui",
