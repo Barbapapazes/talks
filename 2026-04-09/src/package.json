@@ -43,6 +43,7 @@
     "slidev-addon-inalia": "catalog:slidev",
     "slidev-theme-personal": "workspace:*",
     "tailwind-variants": "catalog:ui",
+    "vue": "catalog:test",
     "vue-demi": "catalog:ui"
   },
   "devDependencies": {

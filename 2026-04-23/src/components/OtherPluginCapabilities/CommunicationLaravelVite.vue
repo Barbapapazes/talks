@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import laravelLogo from '../../assets/laravel.svg'
 import ExplainedVisuallyBrowser from '../ExplainedVisually/ExplainedVisuallyBrowser.vue'
 import ExplainedVisuallyServer from '../ExplainedVisually/ExplainedVisuallyServer.vue'
-import laravelLogo from '../../assets/laravel.svg'
 </script>
 
 <template>

@@ -107,9 +107,9 @@ const DialogCloseStub = defineComponent({
     const close = inject<() => void>(dialogCloseKey, () => {})
 
     return () => h('button', {
-      type: 'button',
+      'type': 'button',
       'aria-label': attrs['aria-label'] as string | undefined,
-      onClick: close,
+      'onClick': close,
     }, slots.default?.())
   },
 })

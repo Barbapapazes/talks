@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T14:55:25.255Z",
+  "generatedAt": "2026-05-19T22:10:39.835Z",
   "nodes": [
     {
       "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
@@ -7,7 +7,7 @@
       "title": "Au cœur d'une pipeline : démystifions Vite et ses plugins",
       "ready": true,
       "timing": 0.2,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1
     },
     {
@@ -19,7 +19,7 @@
       "layout": "center-card",
       "group": "Introduction",
       "timing": 0.8,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 52
     },
     {
@@ -30,7 +30,7 @@
       "ready": true,
       "group": "Introduction",
       "timing": 1.4,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 77
     },
     {
@@ -42,7 +42,7 @@
       "layout": "bottom-left-card",
       "group": "Pré-talk",
       "timing": 2.4,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 101
     },
     {
@@ -54,7 +54,7 @@
       "layout": "ai",
       "group": "Vite Core",
       "timing": 0.9,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 152
     },
     {
@@ -66,7 +66,7 @@
       "layout": "center-card",
       "group": "Vite Core",
       "timing": 0.8,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 176
     },
     {
@@ -78,7 +78,7 @@
       "layout": "full",
       "group": "Vite Core",
       "timing": 2.3,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 211
     },
     {
@@ -90,7 +90,7 @@
       "layout": "image",
       "group": "Feature Plugins",
       "timing": 2,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 242
     },
     {
@@ -102,7 +102,7 @@
       "layout": "choices",
       "group": "Feature Plugins",
       "timing": 0.1,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 276,
       "choices": [
         "Du CSS importé dans un fichier TypeScript",
@@ -119,7 +119,7 @@
       "layout": "bottom-left-card",
       "group": "Feature Plugins",
       "timing": 0.6,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 308
     },
     {
@@ -130,7 +130,7 @@
       "ready": true,
       "group": "Feature Plugins",
       "timing": 0.9,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 343,
       "choices": [
         "Vite et ses features - Récap"
@@ -145,7 +145,7 @@
       "layout": "bottom-left-card",
       "group": "Feature Plugins",
       "timing": 0.6,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 373
     },
     {
@@ -156,7 +156,7 @@
       "ready": true,
       "group": "Feature Plugins",
       "timing": 0.9,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 408
     },
     {
@@ -168,7 +168,7 @@
       "layout": "bottom-right-card",
       "group": "Feature Plugins",
       "timing": 0.3,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 437,
       "choices": [
         "Vite et ses features - Récap"
@@ -183,7 +183,7 @@
       "layout": "bottom-left-card",
       "group": "Feature Plugins",
       "timing": 0.6,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 460
     },
     {
@@ -194,7 +194,7 @@
       "ready": true,
       "group": "Feature Plugins",
       "timing": 0.8,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 509,
       "choices": [
         "Vite et ses features - Récap"
@@ -208,7 +208,7 @@
       "ready": true,
       "layout": "recap",
       "timing": 1.2,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 541
     },
     {
@@ -220,7 +220,7 @@
       "layout": "bottom-left-card",
       "group": "Inside a Plugin",
       "timing": 1.2,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 583
     },
     {
@@ -232,7 +232,7 @@
       "layout": "bottom-left-card",
       "group": "Inside a Plugin",
       "timing": 0.7,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 651
     },
     {
@@ -244,7 +244,7 @@
       "layout": "bottom-left-card",
       "group": "Inside a Plugin",
       "timing": 0.9,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 692
     },
     {
@@ -256,7 +256,7 @@
       "layout": "bottom-left-card",
       "group": "Inside a Plugin",
       "timing": 0.6,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 760
     },
     {
@@ -268,7 +268,7 @@
       "layout": "center",
       "group": "Inside a Plugin",
       "timing": 0.4,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 813
     },
     {
@@ -279,7 +279,7 @@
       "ready": true,
       "group": "Inside a Plugin",
       "timing": 1.9,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 831
     },
     {
@@ -291,7 +291,7 @@
       "layout": "bottom-left-card",
       "group": "Inside a Plugin",
       "timing": 1.3,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 863
     },
     {
@@ -303,7 +303,7 @@
       "layout": "center-card",
       "group": "Concrete Example",
       "timing": 0.4,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 961
     },
     {
@@ -315,7 +315,7 @@
       "layout": "bottom-left-card",
       "group": "Concrete Example",
       "timing": 0.5,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 980
     },
     {
@@ -327,7 +327,7 @@
       "layout": "magic-rain",
       "group": "Concrete Example",
       "timing": 0.5,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1035
     },
     {
@@ -338,7 +338,7 @@
       "ready": true,
       "group": "Concrete Example",
       "timing": 1,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1057
     },
     {
@@ -350,7 +350,7 @@
       "layout": "confused-rain",
       "group": "Concrete Example",
       "timing": 0.2,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1086
     },
     {
@@ -362,7 +362,7 @@
       "layout": "bottom-left-card",
       "group": "Concrete Example",
       "timing": 1,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1104
     },
     {
@@ -372,7 +372,7 @@
       "title": "Visualiser la pipeline",
       "ready": true,
       "timing": 1.1,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1165
     },
     {
@@ -383,7 +383,7 @@
       "ready": true,
       "layout": "recap",
       "timing": 1.2,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1199
     },
     {
@@ -394,7 +394,7 @@
       "ready": true,
       "group": "Virtualization",
       "timing": 1.6,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1240
     },
     {
@@ -406,7 +406,7 @@
       "layout": "mind-blowing-rain",
       "group": "Virtualization",
       "timing": 0.4,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1269
     },
     {
@@ -418,7 +418,7 @@
       "layout": "bottom-center-card",
       "group": "Virtualization",
       "timing": 1.3,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1287
     },
     {
@@ -430,7 +430,7 @@
       "layout": "bottom-center-card",
       "group": "Virtualization",
       "timing": 0.9,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1362
     },
     {
@@ -442,7 +442,7 @@
       "layout": "choices",
       "group": "Virtualization",
       "timing": 0.1,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1438,
       "choices": [
         "Vue Router - Un module virtuel",
@@ -460,7 +460,7 @@
       "layout": "bottom-center-card",
       "group": "Virtualization",
       "timing": 0.4,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1474
     },
     {
@@ -472,7 +472,7 @@
       "layout": "bottom-center-card",
       "group": "Virtualization",
       "timing": 0.7,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1510,
       "choices": [
         "Les autres capacités des plugins"
@@ -487,7 +487,7 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.9,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1578
     },
     {
@@ -499,7 +499,7 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.8,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1624,
       "choices": [
         "Les autres capacités des plugins"
@@ -514,7 +514,7 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.5,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1702
     },
     {
@@ -526,7 +526,7 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.8,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1738,
       "choices": [
         "Les autres capacités des plugins"
@@ -541,7 +541,7 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.6,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1817
     },
     {
@@ -553,7 +553,7 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 1.1,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1848,
       "choices": [
         "Les autres capacités des plugins"
@@ -568,7 +568,7 @@
       "layout": "image",
       "group": "Advanced Capabilities",
       "timing": 0.7,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1952
     },
     {
@@ -580,7 +580,7 @@
       "layout": "choices",
       "group": "Advanced Capabilities",
       "timing": 0.1,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 1973,
       "choices": [
         "Le Hot Module Replacement (HMR)",
@@ -599,7 +599,7 @@
       "ready": true,
       "group": "Advanced Capabilities",
       "timing": 0.5,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2015
     },
     {
@@ -611,7 +611,7 @@
       "layout": "center-card",
       "group": "Advanced Capabilities",
       "timing": 0.6,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2038,
       "choices": [
         "Récap des récap"
@@ -626,7 +626,7 @@
       "layout": "center-card",
       "group": "Advanced Capabilities",
       "timing": 0.7,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2092,
       "choices": [
         "Récap des récap"
@@ -641,7 +641,7 @@
       "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 1,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2166
     },
     {
@@ -653,7 +653,7 @@
       "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 0.4,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2227,
       "choices": [
         "Récap des récap"
@@ -667,7 +667,7 @@
       "ready": true,
       "group": "Advanced Capabilities",
       "timing": 0.4,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2281
     },
     {
@@ -679,7 +679,7 @@
       "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 0.6,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2299,
       "choices": [
         "Récap des récap"
@@ -694,7 +694,7 @@
       "layout": "center-card",
       "group": "Advanced Capabilities",
       "timing": 0.4,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2378
     },
     {
@@ -706,7 +706,7 @@
       "layout": "center-card",
       "group": "Advanced Capabilities",
       "timing": 0.5,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2412,
       "choices": [
         "Récap des récap"
@@ -721,7 +721,7 @@
       "layout": "center",
       "group": "Advanced Capabilities",
       "timing": 0.3,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2502
     },
     {
@@ -732,7 +732,7 @@
       "ready": true,
       "group": "Advanced Capabilities",
       "timing": 0.4,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2518
     },
     {
@@ -744,7 +744,7 @@
       "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 0.5,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2533,
       "choices": [
         "Récap des récap"
@@ -758,7 +758,7 @@
       "ready": true,
       "layout": "recap",
       "timing": 1.3,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2589
     },
     {
@@ -770,7 +770,7 @@
       "layout": "bottom-left-card",
       "group": "Deep Dive",
       "timing": 1.5,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2630
     },
     {
@@ -781,7 +781,7 @@
       "ready": true,
       "layout": "keep-in-mind",
       "timing": 0.5,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2759
     },
     {
@@ -792,7 +792,7 @@
       "ready": true,
       "layout": "outro2",
       "timing": 0.3,
-      "filePath": "/workspaces/talks/2026-04-09/src/slides.md",
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-09/src/slides.md",
       "lineNumber": 2784
     }
   ],

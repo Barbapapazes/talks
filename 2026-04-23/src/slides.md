@@ -9,7 +9,6 @@ fonts:
 themeConfig:
   primary: "#6C1EB9"
 codeCopy: false
-colorSchema: light
 transition: fade-out
 theme: slidev-theme-personal
 addons:
@@ -18,8 +17,8 @@ title: "Au cœur d'une pipeline : démystifions Vite et ses plugins"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: web,development,vite,plugins,pipeline
-event: MiXiT
-date: 16 avril 2026
+event: Devoxx France
+date: 23 avril 2026
 chooseYourOwnAdventure: true
 ready: true
 timing: 0.2
@@ -1289,13 +1288,13 @@ inalia:
 ```ts {*|4-6|7-9|10-12|*}{lines:true}
 export default function myPlugin() {
   return {
-    name: "my-plugin",
+    name: 'my-plugin',
     resolveId(id) {
       // Used to intercept the module identifier and return a new one
     },
     load(id) {
       // Used to return the content of a module given its identifier
-    }
+    },
     transform(code, id) {
       // Used to transform the content of a module given its identifier
     }

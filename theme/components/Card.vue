@@ -5,7 +5,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="shell" :class="{ 'ignore-theme': ignoreTheme }">
+  <div class="shell" :class="{ 'ignore-theme': props.ignoreTheme }">
     <div class="surface overflow-hidden h-full w-full p-6">
       <slot />
     </div>

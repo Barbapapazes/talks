@@ -227,13 +227,13 @@ function onPluginClick(hookName: string, pluginName: string) {
         :max-zoom="1"
         @nodes-initialized="layoutGraph()"
       >
-        <template #node-request="requestProps">
+        <template #node-request>
           <div>
             request
           </div>
         </template>
 
-        <template #node-response="responseProps">
+        <template #node-response>
           <div>
             response
           </div>

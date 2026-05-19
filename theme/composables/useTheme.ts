@@ -45,26 +45,6 @@ export function useTheme() {
     isThemeSelectionBlocked.value = !isThemeSelectionBlocked.value
   }
 
-  /**
-   * Sync the currently effective theme to the DOM.
-   *
-   * Most CSS in the theme is driven by `html[data-theme="..."]`, so whenever
-   * the effective theme changes we need to mirror it on the document element.
-   *
-   * By default this uses `activeTheme`, but callers can override it when they
-   * want to force a specific value explicitly.
-   */
-  function syncThemeDocument(theme = activeTheme.value) {
-    if (typeof document === 'undefined')
-      return
-
-    document.documentElement.setAttribute('data-theme', theme)
-  }
-
-  function isThemedValueMap<T>(value: unknown): value is ThemedValueMap<T> {
-    return value !== null && typeof value === 'object' && !Array.isArray(value)
-  }
-
   const defaultTheme = computed(() => {
     return normalizeThemeId(($slidev.configs as { defaultTheme?: string }).defaultTheme) ?? 'default'
   })
@@ -86,6 +66,26 @@ export function useTheme() {
 
     return normalizeThemeId(currentTheme.value) ?? defaultTheme.value
   })
+
+  /**
+   * Sync the currently effective theme to the DOM.
+   *
+   * Most CSS in the theme is driven by `html[data-theme="..."]`, so whenever
+   * the effective theme changes we need to mirror it on the document element.
+   *
+   * By default this uses `activeTheme`, but callers can override it when they
+   * want to force a specific value explicitly.
+   */
+  function syncThemeDocument(theme = activeTheme.value) {
+    if (typeof document === 'undefined')
+      return
+
+    document.documentElement.setAttribute('data-theme', theme)
+  }
+
+  function isThemedValueMap<T>(value: unknown): value is ThemedValueMap<T> {
+    return value !== null && typeof value === 'object' && !Array.isArray(value)
+  }
 
   /**
    * The supported visual theme variant used by theme-specific UI styling.

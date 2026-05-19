@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import nitroLogo from '../../assets/nitro.svg'
 import ExplainedVisuallyBrowser from '../ExplainedVisually/ExplainedVisuallyBrowser.vue'
 import ExplainedVisuallyServer from '../ExplainedVisually/ExplainedVisuallyServer.vue'
-import nitroLogo from '../../assets/nitro.svg'
 </script>
 
 <template>

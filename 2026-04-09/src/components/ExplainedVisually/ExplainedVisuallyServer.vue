@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { tv } from 'tailwind-variants'
 import { computed } from 'vue'
-import ExplainedVisuallyBox from './ExplainedVisuallyBox.vue'
 import viteIconColorDark from '../../assets/vite-icon-color-dark.svg'
+import ExplainedVisuallyBox from './ExplainedVisuallyBox.vue'
 
 const props = withDefaults(defineProps<{
   logoAlt?: string

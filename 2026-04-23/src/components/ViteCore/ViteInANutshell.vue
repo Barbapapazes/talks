@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ProgressiveList from '@theme/components/ProgressiveList.vue';
+import ProgressiveList from '@theme/components/ProgressiveList.vue'
 
 const items = [
   '<span class="text-primary">Web Server</span>',
