@@ -5,5 +5,5 @@ export function onSlideEnter(callback: () => void) {
 }
 
 export function resetSlideEnterCallbacks() {
-  slideEnterCallbacks.length = 0
+  slideEnterCallbacks.splice(0)
 }
