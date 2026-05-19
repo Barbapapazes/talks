@@ -27,7 +27,7 @@ const items: DataItem[] = [
 </script>
 
 <template>
-  <SlidevGraph
+  <LazySlidevGraph
     id="double-linked-list"
     :clicks="0"
     :items="items"

@@ -13,9 +13,9 @@ interface CardLayoutProps {
 const props = defineProps<CardLayoutProps>()
 
 const positionClasses: Record<CardPosition, string> = {
-  'top-left': 'top-14 left-14',
-  'top-center': 'top-14 left-1/2 -translate-x-1/2',
-  'top-right': 'top-14 right-14',
+  'top-left': 'top-10 left-14',
+  'top-center': 'top-10 left-1/2 -translate-x-1/2',
+  'top-right': 'top-10 right-14',
   'center-left': 'top-1/2 left-14 -translate-y-1/2',
   'center': 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
   'center-right': 'top-1/2 right-14 -translate-y-1/2',
