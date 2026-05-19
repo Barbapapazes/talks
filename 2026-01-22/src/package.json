@@ -24,10 +24,13 @@
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
   "dependencies": {
-    "reka-ui": "catalog:"
+    "reka-ui": "catalog:ui",
+    "slidev-addon-inalia": "catalog:slidev",
+    "slidev-theme-personal": "workspace:*"
   },
   "devDependencies": {
-    "@shikijs/markdown-it": "catalog:",
-    "vite": "catalog:"
+    "@shikijs/markdown-it": "catalog:ui",
+    "@slidev/cli": "catalog:build",
+    "vite": "catalog:build"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-15T10:47:55.111Z",
+  "generatedAt": "2026-05-19T13:36:58.163Z",
   "nodes": [
     {
       "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
@@ -7,7 +7,7 @@
       "title": "Au cœur d'une pipeline : démystifions Vite et ses plugins",
       "ready": true,
       "timing": 0.2,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
       "lineNumber": 1
     },
     {
@@ -19,8 +19,8 @@
       "layout": "center-card",
       "group": "Introduction",
       "timing": 0.8,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 57
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 54
     },
     {
       "id": "vite_growth",
@@ -30,8 +30,8 @@
       "ready": true,
       "group": "Introduction",
       "timing": 1.4,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 82
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 79
     },
     {
       "id": "slide_theme",
@@ -42,8 +42,8 @@
       "layout": "bottom-left-card",
       "group": "Pre-talk",
       "timing": 2.4,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 106
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 103
     },
     {
       "id": "how_vite_works",
@@ -54,8 +54,8 @@
       "layout": "ai",
       "group": "Vite Core",
       "timing": 0.9,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 160
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 157
     },
     {
       "id": "vite_in_a_nutshell",
@@ -66,8 +66,8 @@
       "layout": "center-card",
       "group": "Vite Core",
       "timing": 0.8,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 184
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 181
     },
     {
       "id": "how_vite_works_visualization",
@@ -78,8 +78,8 @@
       "layout": "full",
       "group": "Vite Core",
       "timing": 2.3,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 219
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 216
     },
     {
       "id": "why_vite_took_over",
@@ -90,8 +90,8 @@
       "layout": "center-card",
       "group": "Vite Core",
       "timing": 0,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 254
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 251
     },
     {
       "id": "some_definitions",
@@ -102,8 +102,8 @@
       "layout": "center",
       "group": "Vite Core",
       "timing": 0.9,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 277
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 274
     },
     {
       "id": "everything_is_a_plugin",
@@ -114,8 +114,8 @@
       "layout": "image",
       "group": "Feature Plugins",
       "timing": 2,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 304
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 301
     },
     {
       "id": "everything_is_a_plugin_choices",
@@ -126,8 +126,8 @@
       "layout": "choices",
       "group": "Feature Plugins",
       "timing": 0.1,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 341,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 336,
       "choices": [
         "CSS Imported into a TypeScript File",
         "An Image Loaded in a TypeScript File",
@@ -143,8 +143,8 @@
       "layout": "bottom-left-card",
       "group": "Feature Plugins",
       "timing": 0.6,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 367
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 374
     },
     {
       "id": "css_imported_into_a_typescript_file_visualization",
@@ -154,8 +154,8 @@
       "ready": true,
       "group": "Feature Plugins",
       "timing": 0.9,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 400,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 407,
       "choices": [
         "Vite and Its Features - Recap"
       ]
@@ -169,8 +169,8 @@
       "layout": "bottom-left-card",
       "group": "Feature Plugins",
       "timing": 0.6,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 429
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 436
     },
     {
       "id": "an_image_loaded_in_a_typescript_file_visualization",
@@ -180,8 +180,8 @@
       "ready": true,
       "group": "Feature Plugins",
       "timing": 0.9,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 462
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 469
     },
     {
       "id": "an_image_loaded_in_a_typescript_file_build",
@@ -192,8 +192,8 @@
       "layout": "bottom-right-card",
       "group": "Feature Plugins",
       "timing": 0.3,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 490,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 497,
       "choices": [
         "Vite and Its Features - Recap"
       ]
@@ -207,8 +207,8 @@
       "layout": "bottom-left-card",
       "group": "Feature Plugins",
       "timing": 0.6,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 512
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 519
     },
     {
       "id": "jsx_loaded_naturally_visualization",
@@ -218,8 +218,8 @@
       "ready": true,
       "group": "Feature Plugins",
       "timing": 0.8,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 559,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 566,
       "choices": [
         "Vite and Its Features - Recap"
       ]
@@ -232,8 +232,8 @@
       "ready": true,
       "layout": "recap",
       "timing": 1.2,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 590
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 597
     },
     {
       "id": "inside_a_vite_plugin_common_hooks",
@@ -244,8 +244,8 @@
       "layout": "bottom-left-card",
       "group": "Inside a Plugin",
       "timing": 1.1,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 632
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 639
     },
     {
       "id": "resolveid",
@@ -256,8 +256,8 @@
       "layout": "bottom-left-card",
       "group": "Inside a Plugin",
       "timing": 0.7,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 699
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 706
     },
     {
       "id": "load",
@@ -268,8 +268,8 @@
       "layout": "bottom-left-card",
       "group": "Inside a Plugin",
       "timing": 0.8,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 739
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 746
     },
     {
       "id": "transform",
@@ -280,8 +280,8 @@
       "layout": "bottom-left-card",
       "group": "Inside a Plugin",
       "timing": 0.6,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 804
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 811
     },
     {
       "id": "multiple_plugins",
@@ -292,8 +292,8 @@
       "layout": "center",
       "group": "Inside a Plugin",
       "timing": 0.4,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 856
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 863
     },
     {
       "id": "inside_a_vite_plugin_visualization",
@@ -303,8 +303,8 @@
       "ready": true,
       "group": "Inside a Plugin",
       "timing": 1.9,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 874
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 881
     },
     {
       "id": "visualizing_the_pipeline",
@@ -314,8 +314,8 @@
       "ready": true,
       "group": "Inside a Plugin",
       "timing": 0.5,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 906
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 913
     },
     {
       "id": "inside_a_vite_plugin_lifecycle_hooks",
@@ -326,8 +326,8 @@
       "layout": "bottom-left-card",
       "group": "Inside a Plugin",
       "timing": 1.3,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 934
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 941
     },
     {
       "id": "in_practice",
@@ -338,8 +338,8 @@
       "layout": "center-card",
       "group": "Concrete Example",
       "timing": 0.6,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1031
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1038
     },
     {
       "id": "simple_transform_plugin",
@@ -350,8 +350,8 @@
       "layout": "center",
       "group": "Concrete Example",
       "timing": 0.2,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1052
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1059
     },
     {
       "id": "simple_transform_plugin_visualization",
@@ -361,8 +361,8 @@
       "ready": true,
       "group": "Concrete Example",
       "timing": 0.5,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1068
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1075
     },
     {
       "id": "simple_transform_plugin_internals",
@@ -373,8 +373,8 @@
       "layout": "bottom-left-card",
       "group": "Concrete Example",
       "timing": 0.4,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1090
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1097
     },
     {
       "id": "external_markdown_loader_plugin",
@@ -385,8 +385,8 @@
       "layout": "center",
       "group": "Concrete Example",
       "timing": 0.1,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1132
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1139
     },
     {
       "id": "external_markdown_loader_plugin_visualization",
@@ -396,8 +396,8 @@
       "ready": true,
       "group": "Concrete Example",
       "timing": 0.6,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1146
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1153
     },
     {
       "id": "external_markdown_loader_plugin_internals",
@@ -408,8 +408,8 @@
       "layout": "bottom-left-card",
       "group": "Concrete Example",
       "timing": 0.6,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1165
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1172
     },
     {
       "id": "the_vite_plugin_recap",
@@ -419,8 +419,8 @@
       "ready": true,
       "layout": "recap",
       "timing": 0.7,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1233
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1240
     },
     {
       "id": "the_vite_plugin_3_hooks_recap",
@@ -430,8 +430,8 @@
       "ready": true,
       "layout": "recap",
       "timing": 1.2,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1270
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1277
     },
     {
       "id": "a_plugin_for_virtualization_intro",
@@ -442,8 +442,8 @@
       "layout": "center",
       "group": "Virtualization",
       "timing": 0.1,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1317
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1324
     },
     {
       "id": "a_plugin_for_virtualization",
@@ -453,8 +453,8 @@
       "ready": true,
       "group": "Virtualization",
       "timing": 1.5,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1331
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1338
     },
     {
       "id": "a_plugin_for_virtualization_mind_blowing",
@@ -465,8 +465,8 @@
       "layout": "mind-blowing-rain",
       "group": "Virtualization",
       "timing": 0.4,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1358
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1365
     },
     {
       "id": "a_plugin_for_virtualization_plugin_internals",
@@ -477,8 +477,8 @@
       "layout": "bottom-center-card",
       "group": "Virtualization",
       "timing": 1.3,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1376
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1383
     },
     {
       "id": "a_plugin_for_virtualization_virtual_plugin",
@@ -489,8 +489,8 @@
       "layout": "bottom-center-card",
       "group": "Virtualization",
       "timing": 0.9,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1453
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1458
     },
     {
       "id": "a_plugin_for_virtualization_choices",
@@ -501,8 +501,8 @@
       "layout": "choices",
       "group": "Virtualization",
       "timing": 0.1,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1531,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1534,
       "choices": [
         "Vue Router - A Virtual Module",
         "VitePress - Virtual Data",
@@ -519,8 +519,8 @@
       "layout": "bottom-center-card",
       "group": "Virtualization",
       "timing": 0.4,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1558
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1576
     },
     {
       "id": "vue_router_a_virtual_module_plugin_internals",
@@ -531,8 +531,8 @@
       "layout": "bottom-center-card",
       "group": "Virtualization",
       "timing": 0.7,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1595,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1613,
       "choices": [
         "Virtualization - Recap - List"
       ]
@@ -546,8 +546,8 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.9,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1664
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1682
     },
     {
       "id": "vitepress_virtual_data_plugin_internals",
@@ -558,8 +558,8 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.8,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1711,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1729,
       "choices": [
         "Virtualization - Recap - List"
       ]
@@ -573,8 +573,8 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.5,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1790
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1808
     },
     {
       "id": "icons_plugin_virtual_icons_plugin_internals",
@@ -585,8 +585,8 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.8,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1827,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1845,
       "choices": [
         "Virtualization - Recap - List"
       ]
@@ -600,8 +600,8 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 0.6,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1907
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1925
     },
     {
       "id": "info_plugin_virtual_information_plugin_internals",
@@ -612,8 +612,8 @@
       "layout": "center-card",
       "group": "Virtualization",
       "timing": 1.1,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1939,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 1957,
       "choices": [
         "Virtualization - Recap - List"
       ]
@@ -626,8 +626,8 @@
       "ready": true,
       "layout": "recap",
       "timing": 1.2,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2044
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2062
     },
     {
       "id": "virtualization_recap_code",
@@ -637,8 +637,8 @@
       "ready": true,
       "layout": "recap",
       "timing": 0.7,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2079
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2097
     },
     {
       "id": "other_plugin_capabilities",
@@ -649,8 +649,8 @@
       "layout": "image",
       "group": "Advanced Capabilities",
       "timing": 0.7,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2129
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2147
     },
     {
       "id": "other_plugin_capabilities_choices",
@@ -661,8 +661,8 @@
       "layout": "choices",
       "group": "Advanced Capabilities",
       "timing": 0.1,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2153,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2169,
       "choices": [
         "Hot Module Replacement (HMR)",
         "Middleware - A Virtual File",
@@ -680,8 +680,8 @@
       "ready": true,
       "group": "Advanced Capabilities",
       "timing": 0.5,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2181
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2218
     },
     {
       "id": "hot_module_replacement_hmr_plugin_internals",
@@ -692,8 +692,8 @@
       "layout": "center-card",
       "group": "Advanced Capabilities",
       "timing": 0.6,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2205,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2242,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -707,8 +707,8 @@
       "layout": "center-card",
       "group": "Advanced Capabilities",
       "timing": 0.7,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2263,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2300,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -722,8 +722,8 @@
       "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 1,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2338
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2375
     },
     {
       "id": "run_plugin_a_plugin_for_running_commands_plugin_internals",
@@ -734,8 +734,8 @@
       "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 0.4,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2400,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2437,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -748,8 +748,8 @@
       "ready": true,
       "group": "Advanced Capabilities",
       "timing": 0.4,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2455
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2492
     },
     {
       "id": "laravel_vite_inter_process_communication_plugin_internals",
@@ -760,8 +760,8 @@
       "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 0.6,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2473,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2510,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -775,8 +775,8 @@
       "layout": "center-card",
       "group": "Advanced Capabilities",
       "timing": 0.4,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2553
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2590
     },
     {
       "id": "unplugin_macro_a_plugin_for_creating_macros_plugin_internals",
@@ -787,8 +787,8 @@
       "layout": "center-card",
       "group": "Advanced Capabilities",
       "timing": 0.5,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2588,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2625,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -802,8 +802,8 @@
       "layout": "center",
       "group": "Advanced Capabilities",
       "timing": 0.3,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2679
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2716
     },
     {
       "id": "nitro_a_backend_visualization",
@@ -813,8 +813,8 @@
       "ready": true,
       "group": "Advanced Capabilities",
       "timing": 0.4,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2695
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2732
     },
     {
       "id": "nitro_a_backend_plugin_internals",
@@ -825,8 +825,8 @@
       "layout": "bottom-center-card",
       "group": "Advanced Capabilities",
       "timing": 0.5,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2710,
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2747,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -838,8 +838,8 @@
       "title": "It was always the same pipeline",
       "ready": true,
       "timing": 1.5,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2767
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2804
     },
     {
       "id": "final_recap_list",
@@ -849,8 +849,8 @@
       "ready": true,
       "layout": "recap",
       "timing": 1.3,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2805
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2842
     },
     {
       "id": "final_recap_code",
@@ -860,8 +860,8 @@
       "ready": true,
       "layout": "recap",
       "timing": 1.2,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2847
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2884
     },
     {
       "id": "deep_inside_the_pipeline",
@@ -872,8 +872,8 @@
       "layout": "bottom-left-card",
       "group": "Deep Dive",
       "timing": 1.4,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2923
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 2960
     },
     {
       "id": "your_turn",
@@ -883,8 +883,8 @@
       "ready": true,
       "layout": "keep-in-mind",
       "timing": 0.5,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 3053
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 3090
     },
     {
       "id": "outro",
@@ -894,8 +894,8 @@
       "ready": true,
       "layout": "outro2",
       "timing": 0.3,
-      "filePath": "/Users/esoub/dev/p/talks/2026-04-16/src/slides.md",
-      "lineNumber": 3078
+      "filePath": "/workspaces/talks/2026-04-16/src/slides.md",
+      "lineNumber": 3115
     }
   ],
   "edges": [

@@ -24,16 +24,29 @@
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
   "dependencies": {
-    "@shikijs/transformers": "catalog:",
-    "@unovis/ts": "catalog:",
-    "@unovis/vue": "catalog:",
-    "@vueuse/core": "catalog:",
-    "slidev-addon-inalia": "catalog:"
+    "@dagrejs/dagre": "catalog:ui",
+    "@shikijs/transformers": "catalog:ui",
+    "@slidev/client": "catalog:slidev",
+    "@tsparticles/engine": "catalog:ui",
+    "@tsparticles/plugin-emitters": "catalog:ui",
+    "@tsparticles/slim": "catalog:ui",
+    "@unovis/ts": "catalog:ui",
+    "@unovis/vue": "catalog:ui",
+    "@vue-flow/background": "catalog:ui",
+    "@vue-flow/core": "catalog:ui",
+    "@vueuse/core": "catalog:ui",
+    "reka-ui": "catalog:ui",
+    "shiki": "catalog:ui",
+    "slidev-addon-inalia": "catalog:slidev",
+    "slidev-theme-personal": "workspace:*",
+    "tailwind-variants": "catalog:ui"
   },
   "devDependencies": {
-    "typescript": "catalog:",
-    "vite-plugin-info": "catalog:",
-    "vite-plugin-inspect": "catalog:",
-    "vite-plugin-run": "catalog:"
+    "@slidev/cli": "catalog:build",
+    "typescript": "catalog:build",
+    "vite": "catalog:build",
+    "vite-plugin-info": "catalog:vite-talk",
+    "vite-plugin-inspect": "catalog:vite-talk",
+    "vite-plugin-run": "catalog:vite-talk"
   }
 }

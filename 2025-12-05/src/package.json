@@ -23,10 +23,14 @@
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
   "dependencies": {
-    "reka-ui": "catalog:"
+    "reka-ui": "catalog:ui",
+    "slidev-addon-graph": "catalog:slidev",
+    "slidev-addon-inalia": "catalog:slidev",
+    "slidev-theme-personal": "workspace:*"
   },
   "devDependencies": {
-    "alien-signals": "catalog:",
-    "vite": "catalog:"
+    "@slidev/cli": "catalog:build",
+    "alien-signals": "catalog:ui",
+    "vite": "catalog:build"
   }
 }

@@ -23,12 +23,7 @@ date: 16 avril 2026
 chooseYourOwnAdventure: true
 ready: true
 timing: 0.2
-chooseTheme:
-  questionId: 1
 ---
-
-<!-- TODO: regularly add QR code to access the Inalia voting page -->
-<!-- TODO: explained visually should be used to explain the issue we are facing -->
 
 <!--
 À lire pour comprendre la construction de ce talk.
@@ -311,8 +306,6 @@ img:
   brutalism: false
   default: /vite-background.png
 chooseNextSlide: true
-inalia:
-  questionId: 2
 ---
 
 <EverythingIsAPlugin />
@@ -355,7 +348,19 @@ img:
   flowers: >-
     https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 inalia:
-  questionId: 2
+  question: "Tout n'est que plugin"
+  type: single_select
+  data:
+    - label: 'CSS Imported into a TypeScript File'
+      color: '#a855f7'
+      count: 34
+    - label: 'An Image Loaded in a TypeScript File'
+      color: '#55F76B'
+      count: 23
+    - label: 'JSX Loaded Naturally'
+      color: '#55F3F7'
+      count: 20
+  chart: bar
 ---
 
 <!--
@@ -1387,8 +1392,6 @@ img:
     https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 chooseNextSlide: true
-inalia:
-  questionId: 3
 ---
 
 ````md magic-move
@@ -1464,8 +1467,6 @@ img:
     https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 chooseNextSlide: true
-inalia:
-  questionId: 3
 ---
 
 ````md magic-move
@@ -1546,7 +1547,22 @@ img:
   flowers: >-
     https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 inalia:
-  questionId: 3
+  question: 'Un plugin pour virtualiser'
+  type: single_select
+  data:
+    - label: 'Vue Router - A Virtual Module'
+      color: '#1BBB4C'
+      count: 27
+    - label: 'VitePress - Virtual Data'
+      color: '#5574F7'
+      count: 10
+    - label: 'Icons Plugin - Virtual Icons'
+      color: '#F7D655'
+      count: 29
+    - label: 'Info Plugin - Virtual Information'
+      color: '#55F7F2'
+      count: 6
+  chart: bar
 ---
 
 <!--
@@ -2136,8 +2152,6 @@ img:
   brutalism: false
   default: /vite-background.png
 chooseNextSlide: true
-inalia:
-  questionId: 4
 ---
 
 <OtherPluginCapabilities />
@@ -2170,7 +2184,28 @@ img:
   flowers: >-
     https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 inalia:
-  questionId: 4
+  question: 'Les autres capacités des plugins'
+  type: single_select
+  data:
+    - label: 'Hot Module Replacement (HMR)'
+      color: '#F7F255'
+      count: 15
+    - label: 'Middleware - A Virtual File'
+      color: '#55EDF7'
+      count: 6
+    - label: 'Run Plugin - A Plugin for Running Commands'
+      color: '#F7B855'
+      count: 8
+    - label: 'Laravel Vite - Inter-process Communication'
+      color: '#F75555'
+      count: 7
+    - label: 'unplugin-macro - A Plugin for Creating Macros'
+      color: '#B0EB7D'
+      count: 3
+    - label: 'Nitro - A Backend'
+      color: '#7D27CF'
+      count: 16
+  chart: bar
 ---
 
 

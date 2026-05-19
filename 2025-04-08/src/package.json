@@ -23,9 +23,18 @@
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
   "dependencies": {
-    "reka-ui": "catalog:"
+    "@slidev/client": "catalog:slidev",
+    "@tsparticles/engine": "catalog:ui",
+    "@tsparticles/slim": "catalog:ui",
+    "cobe": "catalog:ui",
+    "reka-ui": "catalog:ui",
+    "slidev-addon-inalia": "catalog:slidev",
+    "slidev-theme-personal": "workspace:*"
   },
   "devDependencies": {
-    "vite": "catalog:"
+    "@slidev/cli": "catalog:build",
+    "@slidev/types": "catalog:slidev",
+    "unocss": "catalog:build",
+    "vite": "catalog:build"
   }
 }
