@@ -1106,6 +1106,9 @@ importers:
       tailwind-variants:
         specifier: catalog:ui
         version: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@3.4.19(yaml@2.9.0))
+      vue-demi:
+        specifier: catalog:ui
+        version: 0.14.10(vue@3.5.34(typescript@6.0.3))
     devDependencies:
       '@slidev/cli':
         specifier: catalog:build
@@ -1185,6 +1188,9 @@ importers:
       tailwind-variants:
         specifier: catalog:ui
         version: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@3.4.19(yaml@2.9.0))
+      vue-demi:
+        specifier: catalog:ui
+        version: 0.14.10(vue@3.5.34(typescript@6.0.3))
     devDependencies:
       '@slidev/cli':
         specifier: catalog:build
@@ -1264,6 +1270,9 @@ importers:
       tailwind-variants:
         specifier: catalog:ui
         version: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@3.4.19(yaml@2.9.0))
+      vue-demi:
+        specifier: catalog:ui
+        version: 0.14.10(vue@3.5.34(typescript@6.0.3))
     devDependencies:
       '@slidev/cli':
         specifier: catalog:build
