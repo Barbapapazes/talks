@@ -1,11 +1,18 @@
+import { resetSlideEnterCallbacks, slideEnterCallbacks } from '@slidev/client'
 import { mount } from '@vue/test-utils'
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
+import { nextTick } from 'vue'
 import Card from '../components/Card.vue'
 import CardLayout from '../components/CardLayout.vue'
 import Footer from '../components/Footer.vue'
 import FooterItem from '../components/FooterItem.vue'
 import FooterLink from '../components/FooterLink.vue'
 import Icon from '../components/Icon.vue'
+import LazySlidevGraph from '../components/LazySlidevGraph.vue'
+
+beforeEach(() => {
+  resetSlideEnterCallbacks()
+})
 
 describe('card', () => {
   it('renders correctly with default slot', () => {
@@ -139,5 +146,62 @@ describe('cardLayout', () => {
       },
     })
     expect(wrapper.html()).toMatchSnapshot()
+  })
+})
+
+describe('lazySlidevGraph', () => {
+  const slidevGraphStub = {
+    name: 'SlidevGraph',
+    props: ['id', 'items', 'clicks'],
+    template: '<div data-test="slidev-graph" :data-id="id" :data-clicks="clicks" :data-items-count="items.length" />',
+  }
+
+  it('does not render the graph before the slide is entered', () => {
+    const wrapper = mount(LazySlidevGraph, {
+      props: {
+        id: 'graph-theory',
+        items: [],
+      },
+      global: {
+        stubs: {
+          SlidevGraph: slidevGraphStub,
+        },
+      },
+    })
+
+    expect(slideEnterCallbacks).toHaveLength(1)
+    expect(wrapper.find('[data-test="slidev-graph"]').exists()).toBe(false)
+  })
+
+  it('renders the graph on slide enter and forwards props', async () => {
+    const items = [
+      {
+        name: 'a',
+        display: 'A',
+        color: '#dc2626',
+        clicks: 1,
+      },
+    ]
+
+    const wrapper = mount(LazySlidevGraph, {
+      props: {
+        id: 'graph-theory',
+        items,
+      },
+      global: {
+        stubs: {
+          SlidevGraph: slidevGraphStub,
+        },
+      },
+    })
+
+    slideEnterCallbacks[0]!()
+    await nextTick()
+
+    const graph = wrapper.get('[data-test="slidev-graph"]')
+    expect(graph.attributes('data-id')).toBe('graph-theory')
+    expect(graph.attributes('data-clicks')).toBe('0')
+    expect(graph.attributes('data-items-count')).toBe('1')
+    expect(wrapper.getComponent({ name: 'SlidevGraph' }).props('items')).toEqual(items)
   })
 })

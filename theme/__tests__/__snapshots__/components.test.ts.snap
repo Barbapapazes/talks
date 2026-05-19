@@ -107,7 +107,7 @@ exports[`cardLayout > renders correctly with position "center-right" 1`] = `
 
 exports[`cardLayout > renders correctly with position "top-center" 1`] = `
 "<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
-  <div class="absolute top-14 left-1/2 -translate-x-1/2">
+  <div class="absolute top-10 left-1/2 -translate-x-1/2">
     <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
       <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
         <p>Card content</p>
@@ -119,7 +119,7 @@ exports[`cardLayout > renders correctly with position "top-center" 1`] = `
 
 exports[`cardLayout > renders correctly with position "top-left" 1`] = `
 "<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
-  <div class="absolute top-14 left-14">
+  <div class="absolute top-10 left-14">
     <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
       <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
         <p>Card content</p>
@@ -131,7 +131,7 @@ exports[`cardLayout > renders correctly with position "top-left" 1`] = `
 
 exports[`cardLayout > renders correctly with position "top-right" 1`] = `
 "<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" class="absolute top-0 left-0 w-full h-full object-cover">
-  <div class="absolute top-14 right-14">
+  <div class="absolute top-10 right-14">
     <div class="border border-12 border-white/30 shadow-2xl rounded-3xl">
       <div class="overflow-hidden h-full w-full bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-lg">
         <p>Card content</p>
