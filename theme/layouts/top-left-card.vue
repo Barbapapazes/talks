@@ -5,7 +5,7 @@ defineOptions({ inheritAttrs: false })
 </script>
 
 <template>
-  <CardLayout position="top-left">
+  <CardLayout position="top-left" :img="$frontmatter.img" :img-class="$frontmatter.imgClass" :position-class="$frontmatter.positionClass">
     <slot />
 
     <template #outside>

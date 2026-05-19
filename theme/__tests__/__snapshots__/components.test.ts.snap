@@ -115,7 +115,7 @@ exports[`cardLayout > renders correctly with position "center-right" 1`] = `
 
 exports[`cardLayout > renders correctly with position "top-center" 1`] = `
 "<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
-  <div class="absolute z-10 top-14 left-1/2 -translate-x-1/2">
+  <div class="absolute z-10 top-10 left-1/2 -translate-x-1/2">
     <div data-v-29c414df="" class="shell">
       <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
@@ -127,7 +127,7 @@ exports[`cardLayout > renders correctly with position "top-center" 1`] = `
 
 exports[`cardLayout > renders correctly with position "top-left" 1`] = `
 "<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
-  <div class="absolute z-10 top-14 left-14">
+  <div class="absolute z-10 top-10 left-14">
     <div data-v-29c414df="" class="shell">
       <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>
@@ -139,7 +139,7 @@ exports[`cardLayout > renders correctly with position "top-left" 1`] = `
 
 exports[`cardLayout > renders correctly with position "top-right" 1`] = `
 "<div class="relative slidev-layout"><img src="/test-image.jpg" alt="Presentation Image" aria-hidden="true" class="absolute top-0 left-0 w-full h-full object-cover">
-  <div class="absolute z-10 top-14 right-14">
+  <div class="absolute z-10 top-10 right-14">
     <div data-v-29c414df="" class="shell">
       <div data-v-29c414df="" class="surface overflow-hidden h-full w-full p-6">
         <p>Card content</p>

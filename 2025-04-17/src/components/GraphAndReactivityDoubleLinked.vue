@@ -35,7 +35,7 @@ const items: DataItem[] = [
 </script>
 
 <template>
-  <SlidevGraph
+  <LazySlidevGraph
     id="graph-and-reactivity"
     :clicks="0"
     :items="items"

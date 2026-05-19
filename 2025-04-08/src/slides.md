@@ -25,7 +25,7 @@ keywords: nuxt,nuxthub,full-stack,apps,web,development
   </p>
 </div>
 
-<Globe class="absolute z-10 top-2/5 left-1/2 transform -translate-x-1/2" :size="1000" :speed="0.001" :markers="[{ location: [44.833328, -0.56667], size: 0.04 }]" />
+<Globe class="absolute z-10 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/5" :size="1000" :speed="0.001" :markers="[{ location: [44.833328, -0.56667], size: 0.02 }]" />
 
 <div class="absolute right-6 bottom-6 flex flex-col gap-4 items-end">
   <span class="text-sm op-40">HumanTalks Paris</span>
@@ -209,10 +209,10 @@ clicks: 10
 <v-click at="1">
   <Card class="mt-12 flex flex-row justify-center items-center gap-2 overflow-hidden">
     <v-clicks>
-      <img class="w-8" src="/cf-kv.svg" />
-      <img class="w-8" src="/cf-d1.svg" />
-      <img class="w-7" src="/cf-r2.svg" />
-      <img class="w-8" src="/cf-queues.svg" />
+      <img class="w-8" src="./assets/cf-kv.svg" />
+      <img class="w-8" src="./assets/cf-d1.svg" />
+      <img class="w-7" src="./assets/cf-r2.svg" />
+      <img class="w-8" src="./assets/cf-queues.svg" />
     </v-clicks>
   </Card>
 </v-click>
@@ -220,11 +220,11 @@ clicks: 10
 <v-click at="5">
   <Card class="mt-8 flex flex-row justify-center items-center gap-2 overflow-hidden">
     <v-clicks>
-      <img class="w-8" src="/cf-pages.svg" />
-      <img class="w-8" src="/cf-vectorize.svg" />
-      <img class="w-8" src="/cf-web-analytics.svg" />
-      <img class="w-8" src="/cf-workflows.svg" />
-      <img class="w-8" src="/cf-do.svg" />
+      <img class="w-8" src="./assets/cf-pages.svg" />
+      <img class="w-8" src="./assets/cf-vectorize.svg" />
+      <img class="w-8" src="./assets/cf-web-analytics.svg" />
+      <img class="w-8" src="./assets/cf-workflows.svg" />
+      <img class="w-8" src="./assets/cf-do.svg" />
     </v-clicks>
   </Card>
 </v-click>

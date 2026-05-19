@@ -90,7 +90,7 @@ Et tant qu'on est à apprendre à ce connaître, est-ce que Inertia ça vous par
 name: Qu'est-ce que je fais ici ?
 ---
 
-<img src="/devoxx-2023.jpg" class="absolute inset-0" />
+<img src="./assets/devoxx-2023.jpg" class="absolute inset-0" />
 
 <!--
 

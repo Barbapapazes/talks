@@ -9,8 +9,9 @@
     "@tsparticles/confetti": "catalog:",
     "@vueuse/core": "catalog:",
     "fireworks-js": "catalog:",
-    "reka-ui": "catalog:",
     "slidev-addon-inalia": "catalog:",
+    "@slidev/types": "catalog:",
+    "reka-ui": "catalog:",
     "tailwind-variants": "catalog:"
   },
   "devDependencies": {
@@ -19,6 +20,8 @@
     "@vue/tsconfig": "catalog:",
     "happy-dom": "catalog:",
     "typescript": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "vite": "catalog:",
+    "vue": "catalog:"
   }
 }

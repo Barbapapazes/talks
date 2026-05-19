@@ -1,6 +1,7 @@
+import { resetSlideEnterCallbacks, slideEnterCallbacks } from '@slidev/client'
 import { mount } from '@vue/test-utils'
-import { afterEach, describe, expect, it, vi } from 'vitest'
-import { defineComponent, h, inject, provide } from 'vue'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { defineComponent, h, inject, nextTick, provide } from 'vue'
 
 import BackgroundImage from '../components/BackgroundImage.vue'
 import Card from '../components/Card.vue'
@@ -9,6 +10,7 @@ import Footer from '../components/Footer.vue'
 import FooterItem from '../components/FooterItem.vue'
 import FooterLink from '../components/FooterLink.vue'
 import Icon from '../components/Icon.vue'
+import LazySlidevGraph from '../components/LazySlidevGraph.vue'
 import Modal from '../components/Modal.vue'
 import ProgressiveList from '../components/ProgressiveList.vue'
 import RecapList from '../components/RecapList.vue'
@@ -23,10 +25,19 @@ const slideContext = {
   },
 }
 
-vi.mock('@slidev/client', () => ({
-  useSlideContext: () => slideContext,
-  useIsSlideActive: () => false,
-}))
+vi.mock('@slidev/client', async () => {
+  const actual = await vi.importActual<typeof import('@slidev/client')>('@slidev/client')
+
+  return {
+    ...actual,
+    useSlideContext: () => slideContext,
+    useIsSlideActive: () => false,
+  }
+})
+
+beforeEach(() => {
+  resetSlideEnterCallbacks()
+})
 
 afterEach(() => {
   document.body.innerHTML = ''
@@ -96,9 +107,9 @@ const DialogCloseStub = defineComponent({
     const close = inject<() => void>(dialogCloseKey, () => {})
 
     return () => h('button', {
-      'type': 'button',
+      type: 'button',
       'aria-label': attrs['aria-label'] as string | undefined,
-      'onClick': close,
+      onClick: close,
     }, slots.default?.())
   },
 })
@@ -291,6 +302,19 @@ describe('cardLayout', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
+  it('applies custom positionClass to the positioned card container', () => {
+    const wrapper = mount(CardLayout, {
+      props: {
+        position: 'bottom-left',
+        img: '/test-image.jpg',
+        positionClass: 'right-2/5',
+      },
+      slots: { default: '<p>Card content</p>' },
+    })
+
+    expect(wrapper.find('.absolute.bottom-10.left-14.right-2\\/5').exists()).toBe(true)
+  })
+
   it('renders correctly with outside slot', () => {
     const wrapper = mount(CardLayout, {
       props: {
@@ -416,7 +440,7 @@ describe('modal', () => {
     expect(wrapper.text()).not.toContain('Invisible content')
   })
 
-  it('renders dialog content, title and footer when open', async () => {
+  it('renders dialog content, title and footer when open', () => {
     const wrapper = mount(Modal, {
       ...modalMountOptions,
       props: {
@@ -457,7 +481,7 @@ describe('modal', () => {
 })
 
 describe('progressiveList', () => {
-  it('dims previously revealed items until an extra click clears the dimming', async () => {
+  it('dims previously revealed items until an extra click clears the dimming', () => {
     const mountProgressiveList = ($clicks: number) => {
       slideContext.$clicks = $clicks
 
@@ -518,5 +542,62 @@ describe('recapList', () => {
 
     expect(wrapper.findAll('[data-recap-list-item]')).toHaveLength(3)
     expect(wrapper.html()).toMatchSnapshot()
+  })
+})
+
+describe('lazySlidevGraph', () => {
+  const slidevGraphStub = {
+    name: 'SlidevGraph',
+    props: ['id', 'items', 'clicks'],
+    template: '<div data-test="slidev-graph" :data-id="id" :data-clicks="clicks" :data-items-count="items.length" />',
+  }
+
+  it('does not render the graph before the slide is entered', () => {
+    const wrapper = mount(LazySlidevGraph, {
+      props: {
+        id: 'graph-theory',
+        items: [],
+      },
+      global: {
+        stubs: {
+          SlidevGraph: slidevGraphStub,
+        },
+      },
+    })
+
+    expect(slideEnterCallbacks).toHaveLength(1)
+    expect(wrapper.find('[data-test="slidev-graph"]').exists()).toBe(false)
+  })
+
+  it('renders the graph on slide enter and forwards props', async () => {
+    const items = [
+      {
+        name: 'a',
+        display: 'A',
+        color: '#dc2626',
+        clicks: 1,
+      },
+    ]
+
+    const wrapper = mount(LazySlidevGraph, {
+      props: {
+        id: 'graph-theory',
+        items,
+      },
+      global: {
+        stubs: {
+          SlidevGraph: slidevGraphStub,
+        },
+      },
+    })
+
+    slideEnterCallbacks[0]!()
+    await nextTick()
+
+    const graph = wrapper.get('[data-test="slidev-graph"]')
+    expect(graph.attributes('data-id')).toBe('graph-theory')
+    expect(graph.attributes('data-clicks')).toBe('0')
+    expect(graph.attributes('data-items-count')).toBe('1')
+    expect(wrapper.getComponent({ name: 'SlidevGraph' }).props('items')).toEqual(items)
   })
 })

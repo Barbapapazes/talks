@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@11.1.0",
   "scripts": {
     "build": "pnpm -r run --workspace-concurrency=-1 build && pnpm run generate:redirects && pnpm run generate:meta",
     "export": "pnpm -r run --workspace-concurrency=1 export",
@@ -27,19 +27,30 @@
   "dependencies": {
     "@dagrejs/dagre": "catalog:",
     "@formkit/auto-animate": "catalog:",
+    "@iconify-json/mdi": "catalog:",
     "@iconify-json/unjs": "catalog:",
+    "@mermaid-js/mermaid-cli": "catalog:",
+    "@shikijs/transformers": "catalog:",
+    "@slidev/client": "catalog:",
+    "@slidev/parser": "catalog:",
+    "@tsparticles/confetti": "catalog:",
     "@tsparticles/engine": "catalog:",
     "@tsparticles/slim": "catalog:",
+    "@unovis/ts": "catalog:",
     "@unovis/vue": "catalog:",
     "@vue-flow/background": "catalog:",
     "@vue-flow/core": "catalog:",
-    "add": "catalog:",
+    "@vueuse/core": "catalog:",
     "cobe": "catalog:",
+    "fireworks-js": "catalog:",
     "pnpm": "catalog:",
     "seedrandom": "catalog:",
     "shiki": "catalog:",
     "slidev-addon-inalia": "catalog:",
-    "tailwind-variants": "catalog:"
+    "tailwind-variants": "catalog:",
+    "vite-plugin-info": "catalog:",
+    "vite-plugin-inspect": "catalog:",
+    "vite-plugin-run": "catalog:"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
@@ -53,8 +64,8 @@
     "@iconify-json/simple-icons": "catalog:",
     "@iconify-json/vscode-icons": "catalog:",
     "@mermaid-js/mermaid-cli": "catalog:",
-    "@slidev/cli": "catalog:",
     "@slidev/parser": "catalog:",
+    "@slidev/cli": "catalog:",
     "@slidev/theme-default": "catalog:",
     "@types/node": "catalog:",
     "@types/prompts": "catalog:",
@@ -71,10 +82,10 @@
     "playwright-chromium": "catalog:",
     "prompts": "catalog:",
     "slidev-addon-graph": "catalog:",
-    "slidev-theme-personal": "link:theme",
+    "vite-plugin-info": "catalog:",
+    "slidev-theme-personal": "link:./theme",
     "taze": "catalog:",
     "tiktoken": "catalog:",
-    "typescript": "catalog:",
-    "vite-plugin-info": "catalog:"
+    "typescript": "catalog:"
   }
 }

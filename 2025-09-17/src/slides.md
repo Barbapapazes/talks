@@ -165,7 +165,7 @@ img: https://images.unsplash.com/photo-1522248053824-07f955114b0f?q=80&w=2340&au
 imgClass: blur-sm
 ---
 
-<img src="/ndi.jpeg" class="size-60 rounded-md">
+<img src="./assets/ndi.jpeg" class="size-60 rounded-md">
 
 <!--
 Ça, c'est moi. Et je me rends compte que je ne me fais pas de cadeau en faisant ça. C'était à ma première Nuit de l'Info, donc en décembre 2018. À ce moment-là, je découvre le développement web et j'accroche de suite. Un grand canva, blanc, dans lequel vous pouvez faire absolument tout ce que vous voulez. Quelle liberté.
@@ -182,7 +182,7 @@ layout: center
   :items="[
     {
       icon: 'i-ph-pen-nib-straight-duotone',
-      img: '/tutoring-platform.png',
+      img: '../assets/tutoring-platform.png',
       date: '2020',
       title: 'Tutoring Platform',
       stack: [
@@ -202,7 +202,7 @@ layout: center
     },
     {
       icon: 'i-ph-graph-duotone',
-      img: '/team.jpeg',
+      img: '../assets/team.jpeg',
       date: '2021',
       title: 'Insamee',
       stack: [
@@ -218,7 +218,7 @@ layout: center
     },
     {
       icon: 'i-ph-envelope-simple-duotone',
-      img: '/voting-platform.png',
+      img: '../assets/voting-platform.png',
       date: '2022',
       title: 'Voting Platform',
       stack: [

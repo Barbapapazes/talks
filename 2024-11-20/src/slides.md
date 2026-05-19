@@ -259,7 +259,7 @@ layout: center
 ---
 
 <h1 class="relative font-serif flex gap-2">
-  <img src="/pinia-colada.svg" class="size-12 absolute top-1/2 -translate-y-1/2 right-full" /> Pinia Colada
+  <img src="./assets/pinia-colada.svg" class="size-12 absolute top-1/2 -translate-y-1/2 right-full" /> Pinia Colada
 </h1>
 
 <p>

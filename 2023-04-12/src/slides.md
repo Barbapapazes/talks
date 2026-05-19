@@ -30,7 +30,7 @@ keywords: unpoly,web,devoxxfr,development
 </div>
 
 <div abs-br class="-right-12 -bottom-12">
-  <img src="/green-cloud.png" />
+  <img src="./assets/green-cloud.png" />
 </div>
 
 <div abs-br mx-10 my-12 flex="~ col" text-sm text-right>
@@ -119,15 +119,15 @@ layout: section
 
 <v-click>
   <div abs-br class="-right-12 -bottom-12">
-    <img src="/green-cloud.png" scale-110 />
+    <img src="./assets/green-cloud.png" scale-110 />
   </div>
 
   <div abs-br class="-right-4 -bottom-4">
-    <img src="/yellow-cloud.png" scale-105 />
+    <img src="./assets/yellow-cloud.png" scale-105 />
   </div>
 
   <div abs-br right-24 bottom-8>
-    <img src="/atom.png" h-64 />
+    <img src="./assets/atom.png" h-64 />
   </div>
 </v-click>
 
@@ -148,7 +148,7 @@ name: Atom et son application
 </h1>
 
 <div abs-tr mr-16 mt-8>
-  <img src="/classement-des-associations.png" w-12 h-12 />
+  <img src="./assets/classement-des-associations.png" w-12 h-12 />
 </div>
 
 <ul v-click relative mt-12 text-2xl>
@@ -254,7 +254,7 @@ name: Le parcours d'Atom - API JSON
 
 <div mt-12 grid="~ cols-5" gap-y-8>
   <div relative>
-    <img src="/atom.png" absolute h-30 scale-x--100 class="top-1/2 left-1/2 transform translate--1/2" />
+    <img src="./assets/atom.png" absolute h-30 scale-x--100 class="top-1/2 left-1/2 transform translate--1/2" />
   </div>
   <div v-click border-1 border-red-900 border-opacity-80 bg-red-900 bg-opacity-10 rounded-md p-3>
     <div text-red-400>
@@ -371,7 +371,7 @@ name: Le parcours d'Atom - Front-end
 
 <div mt-12 grid="~ cols-5" gap-y-8>
   <div relative>
-    <img src="/atom.png" absolute h-30 scale-x--100 class="top-1/2 left-1/2 transform translate--1/2" />
+    <img src="./assets/atom.png" absolute h-30 scale-x--100 class="top-1/2 left-1/2 transform translate--1/2" />
   </div>
   <div v-click border-1 border-red-900 border-opacity-80 bg-red-900 bg-opacity-10 rounded-md p-3>
     <div text-red-400>
@@ -692,7 +692,7 @@ name: Normal page flow
 # Flux classique des pages
 
 <div mt-20>
-  <img src="/classic_page_flow.png" />
+  <img src="./assets/classic_page_flow.png" />
 </div>
 
 <!--
@@ -706,7 +706,7 @@ name: Flux Unpoly des pages
 # Flux Unpoly des pages
 
 <div mt-20>
-  <img src="/unpoly_page_flow.png" />
+  <img src="./assets/unpoly_page_flow.png" />
 </div>
 
 <!--
