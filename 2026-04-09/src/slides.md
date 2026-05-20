@@ -56,7 +56,7 @@ ready: true
 timing: 0.8
 layout: center-card
 img:
-  default: /vite-background.png
+  default: ./vite-background.png
 transition: slide-up
 ---
 
@@ -180,7 +180,7 @@ ready: true
 timing: 0.8
 layout: center-card
 img:
-  default: /vite-background.png
+  default: ./vite-background.png
 clicks: 5
 ---
 
@@ -246,7 +246,7 @@ ready: true
 timing: 2
 layout: image
 img:
-  default: /vite-background.png
+  default: ./vite-background.png
 chooseNextSlide: true
 ---
 
@@ -1956,7 +1956,7 @@ ready: true
 timing: 0.7
 layout: image
 img:
-  default: /vite-background.png
+  default: ./vite-background.png
 chooseNextSlide: true
 ---
 
