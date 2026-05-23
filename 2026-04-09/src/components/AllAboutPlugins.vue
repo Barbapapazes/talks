@@ -76,6 +76,7 @@ const features = [
 </template>
 
 <style scoped>
+html:not([data-theme]),
 html[data-theme='default'] {
   .grid {
     --at-apply: gap-4;

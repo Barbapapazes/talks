@@ -24,18 +24,6 @@ ready: true
 timing: 0.2
 ---
 
-<!--
-À lire pour comprendre la construction de ce talk.
-
-Ce talk place l'audience au centre : ce sont les spectateur·rice·s qui choisissent le déroulé. Les choix du public déterminent les slides affichées.
-
-Important : tous les chemins sont déjà écrits — il n'y a pas de création de contenu à la volée. La vue d'ensemble se trouve dans `.data/slides.graph.svg` (et `.data/slides.graph.txt` pour la version Mermaid) ; elle représente toutes les slides et leurs liens. Certaines boucles peuvent sembler exister, mais les participant·e·s ne peuvent pas visiter deux fois la même slide, sauf pour les slides de choix.
-
-Ces fichiers sont générés à partir de ce fichier slides.md, qui contient l'ensemble des slides et les liens définis via la clé `choices` de chaque slide. Une slide sans clé `choices` est suivie automatiquement par la slide suivante dans l'ordre du fichier.
-
-Le vote se fait via Inalia : la slide suivante sera celle qui aura obtenu le plus de voix.
--->
-
 # Au cœur d'une pipeline:<br>démystifions Vite et ses plugins
 
 <!--
@@ -54,8 +42,7 @@ group: Introduction
 ready: true
 timing: 0.8
 layout: center-card
-img:
-  default: ./vite-background.png
+img: ./vite-background.png
 transition: slide-up
 ---
 
@@ -101,14 +88,10 @@ Et bin ça tombe bien, on va prendre le temps d'en parler
 name: What is a Bundler?
 group: Introduction
 ready: true
-timing: 2.4
+timing: 0.8
 layout: bottom-left-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1615099833617-01e3d6dbe2e4?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1615099833617-01e3d6dbe2e4?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <div class="flex flex-col gap-2 text-2xl font-bold">
@@ -121,20 +104,6 @@ img:
 </div>
 
 <!--
-Je m'appelle Estéban, je suis ingénieur logiciel chez Takima.
-
-J'ai une confidence à vous faire, je suis addict au front, j'ai découvert Vite, y quelques années et j'ai eu envie de vous partager en 45 minutes un concentré de tout ça.
-
-[pause]
-
-[fast] J'ai un autre truc à vous dire, aujourd'hui, heu, p'tit nouveauté, [slow] je vais vous laisser le contrôle complet du talk, [accelerate] alors attention, quand je dis complet, c'est pas tout, c'est, c'est les trucs les plus importantes, c'est à dire qu'en faite, [slow] vous allez pouvoir choisir le thème de cette conférence.
-
-Aller c'est parti, on y va, j'vous en dit pas plus [never ending sentence]
-
-[play waiting music] [wait]
-
-[never stop] Vous pouvez prendre votre téléphone, et puis flasher le QR code, je vous laisse à vous connecter, prendre le temps de regarder un peu la plateforme, et puis bon, pendant que vous vous connectez, on va commencer.
-
 [slow] Je vous l'avez promis. C'est quoi un bundler ?
 
 On a l'habitude de démarrer une application avec un executable, executable produit avec un compilateur. Et ben dans le web, c'est pareil.
@@ -142,9 +111,7 @@ On a un bundler qui va produire un bundle qui permet de démarrer votre applicat
 
 Du coup, on peut vraiment voir le bundler comme un compilateur, et le bundle comme l'exécutable du web.
 
-Okk, vous commencez à arriver, trop chouette.
-
-Et trop bien, on a compris ce qu'était un bundler.
+Trop chouette, on a compris ce qu'était un bundler !
 -->
 
 ---
@@ -168,7 +135,7 @@ En 2026 [pause], [slow] est-ce qu'on ne demanderait pas à l'IA de nous le prés
 
 [enter] Elle regarde sur internet, elle réfléchie, etttttt voilà ! Elle répond...?? [disillusion]
 
-C'est long. c'est trop long. [fast] et moi bah, j'ai que 45 minutes et j'ai vraiment envie de vous transmettre un concentré doooncc là, c'est pas possible.
+C'est long. c'est trop long. [fast] et moi bah, j'ai que 20 minutes et j'ai vraiment envie de vous transmettre un concentré doooncc là, c'est pas possible.
 -->
 
 ---
@@ -177,8 +144,7 @@ group: Vite Core
 ready: true
 timing: 0.8
 layout: center-card
-img:
-  default: ./vite-background.png
+img: ./vite-background.png
 clicks: 5
 ---
 
@@ -247,8 +213,7 @@ group: Vite Core
 timing: 1.8
 ready: true
 layout: center-card
-img:
-  default: ./vite-background.png
+img: ./vite-background.png
 clicks: 6
 ---
 
@@ -271,12 +236,8 @@ group: Vite Core
 ready: true
 timing: 0.9
 layout: center
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1575573560187-ea323357d550?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1528907298109-e64971adc8e5?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1575573560187-ea323357d550?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <SomeDefinitions />
@@ -296,11 +257,9 @@ https://chatgpt.com/share/69dd6e09-59d4-8326-80ea-147f076d29e0
 name: Everything Is a Plugin
 group: Feature Plugins
 ready: true
-timing: 2
+timing: 1.9
 layout: image
-img:
-  brutalism: false
-  default: ./vite-background.png
+img: ./vite-background.png
 ---
 
 <EverythingIsAPlugin />
@@ -312,8 +271,6 @@ img:
 
 [whispers] Et ça, mmmh, c'est vraiment bien parce que ça veut dire que, bah, que, qu'on peut faire tout ce qu'on veut quand on crée un plugin.
 
-Ça m'fait penser, on va explorer l'un d'entre eux après, et vous avez la possibilité de choisir lequel. [show qr code]
-
 - Gestion des pages HTML ? On peut !
 - Support natif du JSX ? C'est intégré !
 - Gestion du CSS ? C'est fait aussi !
@@ -324,6 +281,8 @@ img:
 - Et puis, le WebAssembly et les Web Workers, pas besoin de s'en soucier, Vite le gère aussi !
 
 Breeeef, tout est possible. Mais surtout surtout surtout, le point à retenir, de tout ça, ce ne sont que des plugins.
+
+Et je vous propose qu'on s'explore celui sur les assets statiques.
 -->
 
 ---
@@ -332,12 +291,8 @@ group: Feature Plugins
 ready: true
 timing: 0.6
 layout: bottom-left-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -365,12 +320,8 @@ name: An Image Loaded in a TypeScript File - Visualization
 group: Feature Plugins
 ready: true
 timing: 0.9
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -394,12 +345,8 @@ group: Feature Plugins
 ready: true
 timing: 0.3
 layout: bottom-right-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1458929526027-052f5d6a3c5e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <AnImageLoadedInATypeScriptFileBuildTree />
@@ -456,12 +403,8 @@ group: Inside a Plugin
 ready: true
 timing: 1.1
 layout: bottom-left-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -496,7 +439,7 @@ export default function myPlugin() {
 </v-click>
 
 <!--
-Ce que je vous propose, c'est qu'on se build notre premier plugin Vite.
+Pour bien le comprendre, je vous propose qu'on se build notre premier plugin Vite.
 
 [slow] [click] Un plugin, c'est une fonction qui return un objet.
 
@@ -523,12 +466,8 @@ group: Inside a Plugin
 ready: true
 timing: 0.7
 layout: bottom-left-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -563,12 +502,8 @@ group: Inside a Plugin
 ready: true
 timing: 0.8
 layout: bottom-left-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -628,12 +563,8 @@ group: Inside a Plugin
 ready: true
 timing: 0.6
 layout: bottom-left-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -729,12 +660,8 @@ name: Visualizing the Pipeline
 group: Inside a Plugin
 ready: true
 timing: 0.5
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1494972308805-463bc619d34e?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1557264337-e8a93017fe92?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 <BackgroundImage />
@@ -758,12 +685,8 @@ group: Inside a Plugin
 ready: true
 timing: 1.3
 layout: bottom-left-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1552084089-2abe7dc04d7a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -847,27 +770,6 @@ On a le hook [click] config, appelé juste avant que la configuration soit réso
 Une fois qu'elle est résolue, [click] le hook configResolved est appelé, essentiel pour récupérer la configuration de Vite et l'utiliser plus tard.
 
 Ensuite, [click] buildStart, appelé au moment où Vite démarre et [click] buildEnd, appelé quand Vite s'arrête. Dans le premier on va y faire des pré-traitement pour préparer le terrain et dans le second, on va utiliser pour faire des effets de bord, comme générer un sitemap.
--->
-
----
-name: In Practice?
-group: Concrete Example
-ready: true
-timing: 0.6
-layout: center-card
-img:
-  default: >-
-    https://images.unsplash.com/photo-1631106254201-ffbee2305c5b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
----
-
-<h2 class="text-4xl font-bold">So what does<br>that look like?</h2>
-
-<!--
-Mais concrètement, ça donne quoi quand on met tout ça ensemble ?
-
-Qu'est-ce qu'on peut construire ? Parce que ben là, j'ai un peu l'impression qu'on est devant une boite de Lego mais qu'on nous a pas filé la notice. Comment qu'on fait ?
-
-Du coup, ce que je vous propose, c'est qu'on se build des p'tits plugins Vite.
 -->
 
 ---
@@ -992,25 +894,7 @@ index.html, main.ts avec hooo, il y a eu un changement dans le nom de l'import, 
 
 [pause]
 
-Et c'est le cas.
--->
-
----
-name: A Plugin for Virtualization - Mind Blowing
-group: Virtualization
-ready: true
-timing: 0.4
-layout: mind-blowing-rain
----
-
-<img src="./assets/mind-blowing.gif" class="absolute h-4/5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-
-<!--
-[with gesture of mind-blown] Ça s'est le moment où j'ai compris que Vite peut faire ça, répondre à des requêtes avec des modules qui n'existent pas......
-
-[slow] Mais, ça nous explique pas comment ça fonctionne.
-
-On se plonge dedans ?
+Et c'est le cas. On se plonge dedans ?
 -->
 
 ---
@@ -1019,12 +903,8 @@ group: Virtualization
 ready: true
 timing: 1.3
 layout: bottom-center-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1093,12 +973,8 @@ group: Virtualization
 ready: true
 timing: 0.9
 layout: bottom-center-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1767482061466-0b4cd8958c86?q=80&w=3264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1163,17 +1039,27 @@ Et du coup, beh, beh on peut très simplement [click] avoir accès au dernier co
 -->
 
 ---
+name: Info Plugin
+group: Virtualization
+ready: true
+timing: 0.2
+layout: center
+---
+
+<h2 class="text-4xl font-bold">Info Plugin</h2>
+
+<!--
+Pour bien comprendre le concept, regardons un exemple concret, le plugin vite-plugin-info qui permet d'injecter des informations de build dans notre application.
+-->
+
+---
 name: Info Plugin - Virtual Information
 group: Virtualization
 ready: true
 timing: 0.6
 layout: center-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1554494583-c4e1649bfe71?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 ---
 
@@ -1200,12 +1086,8 @@ group: Virtualization
 ready: true
 timing: 1.1
 layout: center-card
-img:
-  brutalism: false
-  default: >-
-    https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  flowers: >-
-    https://images.unsplash.com/photo-1554494583-c4e1649bfe71?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+img: >-
+  https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 ---
 
 ````md magic-move
@@ -1388,9 +1270,7 @@ group: Advanced Capabilities
 ready: true
 timing: 0.7
 layout: image
-img:
-  brutalism: false
-  default: ./vite-background.png
+img: ./vite-background.png
 ---
 
 <OtherPluginCapabilities />
@@ -1529,7 +1409,7 @@ layout: keep-in-mind
 confettiClicks: 1
 ---
 
-In <span class="text-primary">45 minutes</span>, you discovered<br>what you need to build<br><span class="text-primary">your Vite plugin</span>.
+In <span class="text-primary">20 minutes</span>, you discovered<br>what you need to build<br><span class="text-primary">your Vite plugin</span>.
 
 ::outside::
 
@@ -1539,7 +1419,7 @@ In <span class="text-primary">45 minutes</span>, you discovered<br>what you need
 <!--
 Compréhension de Vite, de sa pipeline, transformation de modules sur demande et la génération de modules virtuels, exploration de l'écosystème, c'est qu'on en a fait des choses.
 
-Finalement, en 45 minutes, on a découvert le nécessaire pour réaliser notre plugin Vite.
+Finalement, en 20 minutes, on a découvert le nécessaire pour réaliser notre plugin Vite.
 
 [pause]
 
@@ -1548,12 +1428,15 @@ Finalement, en 45 minutes, on a découvert le nécessaire pour réaliser notre p
 
 ---
 name: Outro
-ready: true
-timing: 0.3
+timing: 1
 layout: outro2
 ---
 
 <!--
+TODO: second QR code pour le contenu additionnel
+
+Ce qui est chouette, c'est que ce soir, j'ai envie de vous faire un cadeau à tous. En scannant ce QR code, vous pouvez avoir accès à du contenu additionnel pour concrétiser votre maîtrise de Vite et même aller plus loin dans certain des concepts qu'on a vu ensemble. C'est du contenu exclusif, uniquement disponible derrière ce QR code.
+
 Merci à tous, c'était Estéban.
 
 Ça me ferait très plaisir de pouvoir lire vos retours,

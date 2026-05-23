@@ -13,7 +13,7 @@ const items = [
       {
         title: 'assets',
         children: [
-          { title: 'image-DNpSpoYj.jpg' },
+          { title: 'image-BTTwLOJ2.jpg' },
           { title: 'index-CglLWvq0.js' },
         ],
       },

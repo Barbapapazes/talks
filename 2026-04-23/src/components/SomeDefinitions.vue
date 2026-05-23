@@ -59,6 +59,7 @@ import Card from '@theme/components/Card.vue'
 </template>
 
 <style scoped>
+html:not([data-theme]),
 html[data-theme='default'],
 html[data-theme='flowers'] {
   .title {

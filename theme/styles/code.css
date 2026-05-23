@@ -5,6 +5,7 @@
   background-color: var(--slidev-code-background);
 }
 
+html:not([data-theme]) .shiki span,
 html[data-theme='default'] .shiki span {
   color: var(--shiki-default);
 }

@@ -58,5 +58,8 @@
     "tiktoken": "catalog:scripts",
     "typescript": "catalog:build",
     "unocss": "catalog:build"
+  },
+  "dependencies": {
+    "vue": "catalog:test"
   }
 }

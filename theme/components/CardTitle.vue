@@ -15,6 +15,7 @@ const props = defineProps<{
 </template>
 
 <style scoped>
+html:not([data-theme]),
 html[data-theme='default'],
 html[data-theme='flowers'] {
   .title {

@@ -76,6 +76,7 @@ const features = [
 </template>
 
 <style scoped>
+html:not([data-theme]),
 html[data-theme='default'],
 html[data-theme='flowers'] {
   .grid {
