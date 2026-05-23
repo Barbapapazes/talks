@@ -24,6 +24,9 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
+  "dependencies": {
+    "vue": "catalog:test"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:lint",
     "@iconify-json/devicon": "catalog:icons",
@@ -58,8 +61,5 @@
     "tiktoken": "catalog:scripts",
     "typescript": "catalog:build",
     "unocss": "catalog:build"
-  },
-  "dependencies": {
-    "vue": "catalog:test"
   }
 }
