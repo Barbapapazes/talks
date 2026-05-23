@@ -1,0 +1,648 @@
+{
+  "generatedAt": "2026-05-23T07:14:42.745Z",
+  "nodes": [
+    {
+      "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
+      "index": 0,
+      "title": "Au cœur d'une pipeline : démystifions Vite et ses plugins",
+      "ready": true,
+      "timing": 0.2,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1
+    },
+    {
+      "id": "vite",
+      "index": 1,
+      "name": "Vite",
+      "title": "Vite",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Introduction",
+      "timing": 0.8,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 51
+    },
+    {
+      "id": "vite_growth",
+      "index": 2,
+      "name": "Vite Growth",
+      "title": "Vite Growth",
+      "ready": true,
+      "group": "Introduction",
+      "timing": 1.4,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 76
+    },
+    {
+      "id": "what_is_a_bundler",
+      "index": 3,
+      "name": "What is a Bundler?",
+      "title": "What is a Bundler?",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Introduction",
+      "timing": 2.4,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 100
+    },
+    {
+      "id": "how_vite_works",
+      "index": 4,
+      "name": "How Vite Works",
+      "title": "How Vite Works",
+      "ready": true,
+      "layout": "ai",
+      "group": "Vite Core",
+      "timing": 0.9,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 150
+    },
+    {
+      "id": "vite_in_a_nutshell",
+      "index": 5,
+      "name": "Vite in a Nutshell",
+      "title": "Vite in a Nutshell",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Vite Core",
+      "timing": 0.8,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 174
+    },
+    {
+      "id": "how_vite_works_visualization",
+      "index": 6,
+      "name": "How Vite Works - Visualization",
+      "title": "How Vite Works - Visualization",
+      "ready": true,
+      "layout": "full",
+      "group": "Vite Core",
+      "timing": 2.3,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 209
+    },
+    {
+      "id": "why_vite_took_over",
+      "index": 7,
+      "name": "Why Vite Took Over",
+      "title": "Why Vite Took Over",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Vite Core",
+      "timing": 0,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 244
+    },
+    {
+      "id": "some_definitions",
+      "index": 8,
+      "name": "Some Definitions",
+      "title": "Some Definitions",
+      "ready": true,
+      "layout": "center",
+      "group": "Vite Core",
+      "timing": 0.9,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 268
+    },
+    {
+      "id": "everything_is_a_plugin",
+      "index": 9,
+      "name": "Everything Is a Plugin",
+      "title": "Everything Is a Plugin",
+      "ready": true,
+      "layout": "image",
+      "group": "Feature Plugins",
+      "timing": 2,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 295
+    },
+    {
+      "id": "an_image_loaded_in_a_typescript_file",
+      "index": 10,
+      "name": "An Image Loaded in a TypeScript File",
+      "title": "An Image Loaded in a TypeScript File",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Feature Plugins",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 329
+    },
+    {
+      "id": "an_image_loaded_in_a_typescript_file_visualization",
+      "index": 11,
+      "name": "An Image Loaded in a TypeScript File - Visualization",
+      "title": "An Image Loaded in a TypeScript File - Visualization",
+      "ready": true,
+      "group": "Feature Plugins",
+      "timing": 0.9,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 363
+    },
+    {
+      "id": "an_image_loaded_in_a_typescript_file_build",
+      "index": 12,
+      "name": "An Image Loaded in a TypeScript File - Build",
+      "title": "An Image Loaded in a TypeScript File - Build",
+      "ready": true,
+      "layout": "bottom-right-card",
+      "group": "Feature Plugins",
+      "timing": 0.3,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 391
+    },
+    {
+      "id": "vite_and_its_features_recap",
+      "index": 13,
+      "name": "Vite and Its Features - Recap",
+      "title": "Vite and Its Features - Recap",
+      "ready": true,
+      "layout": "recap",
+      "timing": 1.2,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 411
+    },
+    {
+      "id": "inside_a_vite_plugin_common_hooks",
+      "index": 14,
+      "name": "Inside a Vite Plugin - Common Hooks",
+      "title": "Inside a Vite Plugin - Common Hooks",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Inside a Plugin",
+      "timing": 1.1,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 453
+    },
+    {
+      "id": "resolveid",
+      "index": 15,
+      "name": "resolveId",
+      "title": "resolveId",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Inside a Plugin",
+      "timing": 0.7,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 520
+    },
+    {
+      "id": "load",
+      "index": 16,
+      "name": "load",
+      "title": "load",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Inside a Plugin",
+      "timing": 0.8,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 560
+    },
+    {
+      "id": "transform",
+      "index": 17,
+      "name": "transform",
+      "title": "transform",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Inside a Plugin",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 625
+    },
+    {
+      "id": "multiple_plugins",
+      "index": 18,
+      "name": "Multiple Plugins",
+      "title": "Multiple Plugins",
+      "ready": true,
+      "layout": "center",
+      "group": "Inside a Plugin",
+      "timing": 0.4,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 677
+    },
+    {
+      "id": "inside_a_vite_plugin_visualization",
+      "index": 19,
+      "name": "Inside a Vite Plugin - Visualization",
+      "title": "Inside a Vite Plugin - Visualization",
+      "ready": true,
+      "group": "Inside a Plugin",
+      "timing": 1.9,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 695
+    },
+    {
+      "id": "visualizing_the_pipeline",
+      "index": 20,
+      "name": "Visualizing the Pipeline",
+      "title": "Visualizing the Pipeline",
+      "ready": true,
+      "group": "Inside a Plugin",
+      "timing": 0.5,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 727
+    },
+    {
+      "id": "inside_a_vite_plugin_lifecycle_hooks",
+      "index": 21,
+      "name": "Inside a Vite Plugin - Lifecycle Hooks",
+      "title": "Inside a Vite Plugin - Lifecycle Hooks",
+      "ready": true,
+      "layout": "bottom-left-card",
+      "group": "Inside a Plugin",
+      "timing": 1.3,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 755
+    },
+    {
+      "id": "in_practice",
+      "index": 22,
+      "name": "In Practice?",
+      "title": "In Practice?",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Concrete Example",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 852
+    },
+    {
+      "id": "the_vite_plugin_recap",
+      "index": 23,
+      "name": "The Vite Plugin - Recap",
+      "title": "The Vite Plugin - Recap",
+      "ready": true,
+      "layout": "recap",
+      "timing": 0.7,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 873
+    },
+    {
+      "id": "the_vite_plugin_3_hooks_recap",
+      "index": 24,
+      "name": "The Vite Plugin - 3 Hooks Recap",
+      "title": "The Vite Plugin - 3 Hooks Recap",
+      "ready": true,
+      "layout": "recap",
+      "timing": 1.2,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 910
+    },
+    {
+      "id": "a_plugin_for_virtualization_intro",
+      "index": 25,
+      "name": "A Plugin for Virtualization - Intro",
+      "title": "A Plugin for Virtualization - Intro",
+      "ready": true,
+      "layout": "center",
+      "group": "Virtualization",
+      "timing": 0.1,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 957
+    },
+    {
+      "id": "a_plugin_for_virtualization",
+      "index": 26,
+      "name": "A Plugin for Virtualization",
+      "title": "A Plugin for Virtualization",
+      "ready": true,
+      "group": "Virtualization",
+      "timing": 1.5,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 971
+    },
+    {
+      "id": "a_plugin_for_virtualization_mind_blowing",
+      "index": 27,
+      "name": "A Plugin for Virtualization - Mind Blowing",
+      "title": "A Plugin for Virtualization - Mind Blowing",
+      "ready": true,
+      "layout": "mind-blowing-rain",
+      "group": "Virtualization",
+      "timing": 0.4,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 998
+    },
+    {
+      "id": "a_plugin_for_virtualization_plugin_internals",
+      "index": 28,
+      "name": "A Plugin for Virtualization - Plugin Internals",
+      "title": "A Plugin for Virtualization - Plugin Internals",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Virtualization",
+      "timing": 1.3,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1016
+    },
+    {
+      "id": "a_plugin_for_virtualization_virtual_plugin",
+      "index": 29,
+      "name": "A Plugin for Virtualization - Virtual Plugin",
+      "title": "A Plugin for Virtualization - Virtual Plugin",
+      "ready": true,
+      "layout": "bottom-center-card",
+      "group": "Virtualization",
+      "timing": 0.9,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1090
+    },
+    {
+      "id": "info_plugin_virtual_information",
+      "index": 30,
+      "name": "Info Plugin - Virtual Information",
+      "title": "Info Plugin - Virtual Information",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Virtualization",
+      "timing": 0.6,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1165
+    },
+    {
+      "id": "info_plugin_virtual_information_plugin_internals",
+      "index": 31,
+      "name": "Info Plugin - Virtual Information - Plugin Internals",
+      "title": "Info Plugin - Virtual Information - Plugin Internals",
+      "ready": true,
+      "layout": "center-card",
+      "group": "Virtualization",
+      "timing": 1.1,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1197
+    },
+    {
+      "id": "virtualization_recap_list",
+      "index": 32,
+      "name": "Virtualization - Recap - List",
+      "title": "Virtualization - Recap - List",
+      "ready": true,
+      "layout": "recap",
+      "timing": 1.2,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1300
+    },
+    {
+      "id": "virtualization_recap_code",
+      "index": 33,
+      "name": "Virtualization - Recap - Code",
+      "title": "Virtualization - Recap - Code",
+      "ready": true,
+      "layout": "recap",
+      "timing": 0.7,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1335
+    },
+    {
+      "id": "other_plugin_capabilities",
+      "index": 34,
+      "name": "Other Plugin Capabilities",
+      "title": "Other Plugin Capabilities",
+      "ready": true,
+      "layout": "image",
+      "group": "Advanced Capabilities",
+      "timing": 0.7,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1385
+    },
+    {
+      "id": "final_recap_list",
+      "index": 35,
+      "name": "Final Recap - List",
+      "title": "Final Recap - List",
+      "ready": true,
+      "layout": "recap",
+      "timing": 1.3,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1406
+    },
+    {
+      "id": "final_recap_code",
+      "index": 36,
+      "name": "Final Recap - Code",
+      "title": "Final Recap - Code",
+      "ready": true,
+      "layout": "recap",
+      "timing": 1.2,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1448
+    },
+    {
+      "id": "your_turn",
+      "index": 37,
+      "name": "Your Turn",
+      "title": "Your Turn",
+      "ready": true,
+      "layout": "keep-in-mind",
+      "timing": 0.5,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1524
+    },
+    {
+      "id": "outro",
+      "index": 38,
+      "name": "Outro",
+      "title": "Outro",
+      "ready": true,
+      "layout": "outro2",
+      "timing": 0.3,
+      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
+      "lineNumber": 1549
+    }
+  ],
+  "edges": [
+    {
+      "from": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
+      "to": "vite",
+      "label": ""
+    },
+    {
+      "from": "vite",
+      "to": "vite_growth",
+      "label": ""
+    },
+    {
+      "from": "vite_growth",
+      "to": "what_is_a_bundler",
+      "label": ""
+    },
+    {
+      "from": "what_is_a_bundler",
+      "to": "how_vite_works",
+      "label": ""
+    },
+    {
+      "from": "how_vite_works",
+      "to": "vite_in_a_nutshell",
+      "label": ""
+    },
+    {
+      "from": "vite_in_a_nutshell",
+      "to": "how_vite_works_visualization",
+      "label": ""
+    },
+    {
+      "from": "how_vite_works_visualization",
+      "to": "why_vite_took_over",
+      "label": ""
+    },
+    {
+      "from": "why_vite_took_over",
+      "to": "some_definitions",
+      "label": ""
+    },
+    {
+      "from": "some_definitions",
+      "to": "everything_is_a_plugin",
+      "label": ""
+    },
+    {
+      "from": "everything_is_a_plugin",
+      "to": "an_image_loaded_in_a_typescript_file",
+      "label": ""
+    },
+    {
+      "from": "an_image_loaded_in_a_typescript_file",
+      "to": "an_image_loaded_in_a_typescript_file_visualization",
+      "label": ""
+    },
+    {
+      "from": "an_image_loaded_in_a_typescript_file_visualization",
+      "to": "an_image_loaded_in_a_typescript_file_build",
+      "label": ""
+    },
+    {
+      "from": "an_image_loaded_in_a_typescript_file_build",
+      "to": "vite_and_its_features_recap",
+      "label": ""
+    },
+    {
+      "from": "vite_and_its_features_recap",
+      "to": "inside_a_vite_plugin_common_hooks",
+      "label": ""
+    },
+    {
+      "from": "inside_a_vite_plugin_common_hooks",
+      "to": "resolveid",
+      "label": ""
+    },
+    {
+      "from": "resolveid",
+      "to": "load",
+      "label": ""
+    },
+    {
+      "from": "load",
+      "to": "transform",
+      "label": ""
+    },
+    {
+      "from": "transform",
+      "to": "multiple_plugins",
+      "label": ""
+    },
+    {
+      "from": "multiple_plugins",
+      "to": "inside_a_vite_plugin_visualization",
+      "label": ""
+    },
+    {
+      "from": "inside_a_vite_plugin_visualization",
+      "to": "visualizing_the_pipeline",
+      "label": ""
+    },
+    {
+      "from": "visualizing_the_pipeline",
+      "to": "inside_a_vite_plugin_lifecycle_hooks",
+      "label": ""
+    },
+    {
+      "from": "inside_a_vite_plugin_lifecycle_hooks",
+      "to": "in_practice",
+      "label": ""
+    },
+    {
+      "from": "in_practice",
+      "to": "the_vite_plugin_recap",
+      "label": ""
+    },
+    {
+      "from": "the_vite_plugin_recap",
+      "to": "the_vite_plugin_3_hooks_recap",
+      "label": ""
+    },
+    {
+      "from": "the_vite_plugin_3_hooks_recap",
+      "to": "a_plugin_for_virtualization_intro",
+      "label": ""
+    },
+    {
+      "from": "a_plugin_for_virtualization_intro",
+      "to": "a_plugin_for_virtualization",
+      "label": ""
+    },
+    {
+      "from": "a_plugin_for_virtualization",
+      "to": "a_plugin_for_virtualization_mind_blowing",
+      "label": ""
+    },
+    {
+      "from": "a_plugin_for_virtualization_mind_blowing",
+      "to": "a_plugin_for_virtualization_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "a_plugin_for_virtualization_plugin_internals",
+      "to": "a_plugin_for_virtualization_virtual_plugin",
+      "label": ""
+    },
+    {
+      "from": "a_plugin_for_virtualization_virtual_plugin",
+      "to": "info_plugin_virtual_information",
+      "label": ""
+    },
+    {
+      "from": "info_plugin_virtual_information",
+      "to": "info_plugin_virtual_information_plugin_internals",
+      "label": ""
+    },
+    {
+      "from": "info_plugin_virtual_information_plugin_internals",
+      "to": "virtualization_recap_list",
+      "label": ""
+    },
+    {
+      "from": "virtualization_recap_list",
+      "to": "virtualization_recap_code",
+      "label": ""
+    },
+    {
+      "from": "virtualization_recap_code",
+      "to": "other_plugin_capabilities",
+      "label": ""
+    },
+    {
+      "from": "other_plugin_capabilities",
+      "to": "final_recap_list",
+      "label": ""
+    },
+    {
+      "from": "final_recap_list",
+      "to": "final_recap_code",
+      "label": ""
+    },
+    {
+      "from": "final_recap_code",
+      "to": "your_turn",
+      "label": ""
+    },
+    {
+      "from": "your_turn",
+      "to": "outro",
+      "label": ""
+    }
+  ]
+}

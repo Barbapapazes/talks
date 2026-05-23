@@ -6,4 +6,7 @@ export default defineConfig({
   write: true,
   interactive: true,
   maturityPeriod: 7,
+  ignorePaths: [
+    '**/.vite',
+  ]
 })

@@ -250,6 +250,7 @@ name: Why Vite Took Over
 group: Vite Core
 timing: 0
 layout: center-card
+ready: true
 img:
   default: ./vite-background.png
 clicks: 6

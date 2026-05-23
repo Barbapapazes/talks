@@ -1,0 +1,100 @@
+%%{init: {"flowchart": {"htmlLabels": true, "curve": "basis"}} }%%
+flowchart LR
+  classDef default font-family:sans-serif
+  classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+  classDef choice fill:#f9f9f9,stroke:#333,stroke-width:1px
+  classDef finished fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+  classDef finishedChoice fill:#dcedc8,stroke:#558b2f,stroke-width:2px
+  classDef recap fill:#ede7f6,stroke:#6a1b9a,stroke-width:2px
+  classDef finishedRecap fill:#e1bee7,stroke:#7b1fa2,stroke-width:2px
+  subgraph Introduction ["Introduction"]
+      vite["#2 Vite"]:::finished
+      vite_growth["#3 Vite Growth"]:::finished
+      what_is_a_bundler["#4 What is a Bundler?"]:::finished
+  end
+  subgraph Vite_Core ["Vite Core"]
+      how_vite_works["#5 How Vite Works"]:::finished
+      vite_in_a_nutshell["#6 Vite in a Nutshell"]:::finished
+      how_vite_works_visualization["#7 How Vite Works - Visualization"]:::finished
+      why_vite_took_over["#8 Why Vite Took Over"]:::finished
+      some_definitions["#9 Some Definitions"]:::finished
+  end
+  subgraph Feature_Plugins ["Feature Plugins"]
+      everything_is_a_plugin["#10 Everything Is a Plugin"]:::finished
+      an_image_loaded_in_a_typescript_file["#11 An Image Loaded in a TypeScript File"]:::finished
+      an_image_loaded_in_a_typescript_file_visualization["#12 An Image Loaded in a TypeScript File - Visualization"]:::finished
+      an_image_loaded_in_a_typescript_file_build["#13 An Image Loaded in a TypeScript File - Build"]:::finished
+  end
+  subgraph Inside_a_Plugin ["Inside a Plugin"]
+      inside_a_vite_plugin_common_hooks["#15 Inside a Vite Plugin - Common Hooks"]:::finished
+      resolveid["#16 resolveId"]:::finished
+      load["#17 load"]:::finished
+      transform["#18 transform"]:::finished
+      multiple_plugins["#19 Multiple Plugins"]:::finished
+      inside_a_vite_plugin_visualization["#20 Inside a Vite Plugin - Visualization"]:::finished
+      visualizing_the_pipeline["#21 Visualizing the Pipeline"]:::finished
+      inside_a_vite_plugin_lifecycle_hooks["#22 Inside a Vite Plugin - Lifecycle Hooks"]:::finished
+  end
+  subgraph Concrete_Example ["Concrete Example"]
+      in_practice["#23 In Practice?"]:::finished
+  end
+  subgraph Virtualization ["Virtualization"]
+      a_plugin_for_virtualization_intro["#26 A Plugin for Virtualization - Intro"]:::finished
+      a_plugin_for_virtualization["#27 A Plugin for Virtualization"]:::finished
+      a_plugin_for_virtualization_mind_blowing["#28 A Plugin for Virtualization - Mind Blowing"]:::finished
+      a_plugin_for_virtualization_plugin_internals["#29 A Plugin for Virtualization - Plugin Internals"]:::finished
+      a_plugin_for_virtualization_virtual_plugin["#30 A Plugin for Virtualization - Virtual Plugin"]:::finished
+      info_plugin_virtual_information["#31 Info Plugin - Virtual Information"]:::finished
+      info_plugin_virtual_information_plugin_internals["#32 Info Plugin - Virtual Information - Plugin Internals"]:::finished
+  end
+  subgraph Advanced_Capabilities ["Advanced Capabilities"]
+      other_plugin_capabilities["#35 Other Plugin Capabilities"]:::finished
+  end
+  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["#1 Au cœur d'une pipeline : démystifions Vite et ses plugins"]:::finished
+  vite_and_its_features_recap["#14 Vite and Its Features - Recap"]:::finishedRecap
+  the_vite_plugin_recap["#24 The Vite Plugin - Recap"]:::finishedRecap
+  the_vite_plugin_3_hooks_recap["#25 The Vite Plugin - 3 Hooks Recap"]:::finishedRecap
+  virtualization_recap_list["#33 Virtualization - Recap - List"]:::finishedRecap
+  virtualization_recap_code["#34 Virtualization - Recap - Code"]:::finishedRecap
+  final_recap_list["#36 Final Recap - List"]:::finishedRecap
+  final_recap_code["#37 Final Recap - Code"]:::finishedRecap
+  your_turn["#38 Your Turn"]:::finished
+  outro["#39 Outro"]:::finished
+  au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins --> vite
+  vite --> vite_growth
+  vite_growth --> what_is_a_bundler
+  what_is_a_bundler --> how_vite_works
+  how_vite_works --> vite_in_a_nutshell
+  vite_in_a_nutshell --> how_vite_works_visualization
+  how_vite_works_visualization --> why_vite_took_over
+  why_vite_took_over --> some_definitions
+  some_definitions --> everything_is_a_plugin
+  everything_is_a_plugin --> an_image_loaded_in_a_typescript_file
+  an_image_loaded_in_a_typescript_file --> an_image_loaded_in_a_typescript_file_visualization
+  an_image_loaded_in_a_typescript_file_visualization --> an_image_loaded_in_a_typescript_file_build
+  an_image_loaded_in_a_typescript_file_build --> vite_and_its_features_recap
+  vite_and_its_features_recap --> inside_a_vite_plugin_common_hooks
+  inside_a_vite_plugin_common_hooks --> resolveid
+  resolveid --> load
+  load --> transform
+  transform --> multiple_plugins
+  multiple_plugins --> inside_a_vite_plugin_visualization
+  inside_a_vite_plugin_visualization --> visualizing_the_pipeline
+  visualizing_the_pipeline --> inside_a_vite_plugin_lifecycle_hooks
+  inside_a_vite_plugin_lifecycle_hooks --> in_practice
+  in_practice --> the_vite_plugin_recap
+  the_vite_plugin_recap --> the_vite_plugin_3_hooks_recap
+  the_vite_plugin_3_hooks_recap --> a_plugin_for_virtualization_intro
+  a_plugin_for_virtualization_intro --> a_plugin_for_virtualization
+  a_plugin_for_virtualization --> a_plugin_for_virtualization_mind_blowing
+  a_plugin_for_virtualization_mind_blowing --> a_plugin_for_virtualization_plugin_internals
+  a_plugin_for_virtualization_plugin_internals --> a_plugin_for_virtualization_virtual_plugin
+  a_plugin_for_virtualization_virtual_plugin --> info_plugin_virtual_information
+  info_plugin_virtual_information --> info_plugin_virtual_information_plugin_internals
+  info_plugin_virtual_information_plugin_internals --> virtualization_recap_list
+  virtualization_recap_list --> virtualization_recap_code
+  virtualization_recap_code --> other_plugin_capabilities
+  other_plugin_capabilities --> final_recap_list
+  final_recap_list --> final_recap_code
+  final_recap_code --> your_turn
+  your_turn --> outro

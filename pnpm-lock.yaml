@@ -1280,6 +1280,94 @@ importers:
       '@slidev/cli':
         specifier: catalog:build
         version: 52.15.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@nuxt/kit@3.21.6)(@types/markdown-it@14.1.2)(@types/node@25.9.0)(@vue/compiler-sfc@3.5.34)(markdown-it@14.1.1)(playwright-chromium@1.60.0)(postcss@8.5.14)(react@19.2.6)
+      '@vue/tsconfig':
+        specifier: catalog:build
+        version: 0.9.1(typescript@6.0.3)(vue@3.5.34(typescript@6.0.3))
+      typescript:
+        specifier: catalog:build
+        version: 6.0.3
+      vite:
+        specifier: catalog:build
+        version: 8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite-plugin-info:
+        specifier: catalog:vite-talk
+        version: 0.4.1(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite-plugin-inspect:
+        specifier: catalog:vite-talk
+        version: 12.0.0-beta.2(@nuxt/kit@3.21.6)(typescript@6.0.3)(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite-plugin-run:
+        specifier: catalog:vite-talk
+        version: 0.9.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
+
+  2026-06-09/src:
+    dependencies:
+      '@dagrejs/dagre':
+        specifier: catalog:ui
+        version: 3.0.0
+      '@shikijs/langs':
+        specifier: catalog:ui
+        version: 4.1.0
+      '@shikijs/themes':
+        specifier: catalog:ui
+        version: 4.1.0
+      '@shikijs/transformers':
+        specifier: catalog:ui
+        version: 4.1.0
+      '@slidev/client':
+        specifier: catalog:slidev
+        version: 52.15.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@nuxt/kit@3.21.6)(@vue/compiler-sfc@3.5.34)(react@19.2.6)(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
+      '@tsparticles/engine':
+        specifier: catalog:ui
+        version: 3.9.1
+      '@tsparticles/plugin-emitters':
+        specifier: catalog:ui
+        version: 3.9.1
+      '@tsparticles/slim':
+        specifier: catalog:ui
+        version: 4.0.3
+      '@unovis/ts':
+        specifier: catalog:ui
+        version: 1.4.3-beta.0
+      '@unovis/vue':
+        specifier: catalog:ui
+        version: 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.34(typescript@6.0.3))
+      '@vue-flow/background':
+        specifier: catalog:ui
+        version: 1.3.2(@vue-flow/core@1.48.2(vue@3.5.34(typescript@6.0.3)))(vue@3.5.34(typescript@6.0.3))
+      '@vue-flow/core':
+        specifier: catalog:ui
+        version: 1.48.2(vue@3.5.34(typescript@6.0.3))
+      '@vueuse/core':
+        specifier: catalog:ui
+        version: 14.3.0(vue@3.5.34(typescript@6.0.3))
+      '@vueuse/shared':
+        specifier: catalog:ui
+        version: 14.3.0(vue@3.5.34(typescript@6.0.3))
+      reka-ui:
+        specifier: catalog:ui
+        version: 2.9.7(vue@3.5.34(typescript@6.0.3))
+      shiki:
+        specifier: catalog:ui
+        version: 4.1.0
+      slidev-addon-inalia:
+        specifier: catalog:slidev
+        version: 0.2.9(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@nuxt/kit@3.21.6)(@types/markdown-it@14.1.2)(@types/node@25.9.0)(@vue/compiler-sfc@3.5.34)(markdown-it@14.1.1)(playwright-chromium@1.60.0)(postcss@8.5.14)(react@19.2.6)(socket.io-client@4.8.3)(tailwindcss@3.4.19(yaml@2.9.0))(typescript@6.0.3)
+      slidev-theme-personal:
+        specifier: workspace:*
+        version: link:../../theme
+      tailwind-variants:
+        specifier: catalog:ui
+        version: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@3.4.19(yaml@2.9.0))
+      vue-demi:
+        specifier: catalog:ui
+        version: 0.14.10(vue@3.5.34(typescript@6.0.3))
+    devDependencies:
+      '@slidev/cli':
+        specifier: catalog:build
+        version: 52.15.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@nuxt/kit@3.21.6)(@types/markdown-it@14.1.2)(@types/node@25.9.0)(@vue/compiler-sfc@3.5.34)(markdown-it@14.1.1)(playwright-chromium@1.60.0)(postcss@8.5.14)(react@19.2.6)
+      '@vue/tsconfig':
+        specifier: catalog:build
+        version: 0.9.1(typescript@6.0.3)(vue@3.5.34(typescript@6.0.3))
       typescript:
         specifier: catalog:build
         version: 6.0.3
@@ -8522,8 +8610,8 @@ snapshots:
       '@slidev/types': 52.15.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@nuxt/kit@3.21.6)(@vue/compiler-sfc@3.5.34)(typescript@5.9.3)(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
       '@unocss/extractor-mdc': 66.6.8
       '@unocss/reset': 66.6.8
-      '@vitejs/plugin-vue': 6.0.7(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))
-      '@vitejs/plugin-vue-jsx': 5.1.5(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))
+      '@vitejs/plugin-vue': 6.0.7(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))
+      '@vitejs/plugin-vue-jsx': 5.1.5(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))
       ansis: 4.3.0
       chokidar: 5.0.0
       cli-progress: 3.12.0
@@ -8558,14 +8646,14 @@ snapshots:
       resolve-global: 2.0.0
       semver: 7.8.0
       shiki: 4.0.2
-      shiki-magic-move: 1.3.0(react@19.2.6)(shiki@4.0.2)(vue@3.5.34(typescript@6.0.3))
+      shiki-magic-move: 1.3.0(react@19.2.6)(shiki@4.0.2)(vue@3.5.34(typescript@5.9.3))
       sirv: 3.0.2
       source-map-js: 1.2.1
       typescript: 5.9.3
       unhead: 2.1.15
       unocss: 66.6.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
       unplugin-icons: 23.0.1(@vue/compiler-sfc@3.5.34)
-      unplugin-vue-components: 32.0.0(@nuxt/kit@3.21.6)(vue@3.5.34(typescript@6.0.3))
+      unplugin-vue-components: 32.0.0(@nuxt/kit@3.21.6)(vue@3.5.34(typescript@5.9.3))
       unplugin-vue-markdown: 30.0.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
       untun: 0.1.3
       uqr: 0.1.3
@@ -8573,7 +8661,7 @@ snapshots:
       vite-plugin-inspect: 11.3.3(@nuxt/kit@3.21.6)(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
       vite-plugin-remote-assets: 2.1.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
       vite-plugin-static-copy: 4.1.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
-      vite-plugin-vue-server-ref: 1.0.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))
+      vite-plugin-vue-server-ref: 1.0.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))
       vitefu: 1.1.3(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
       vue: 3.5.34(typescript@5.9.3)
       yaml: 2.9.0
@@ -8743,7 +8831,7 @@ snapshots:
       ansis: 4.3.0
       drauu: 1.0.0
       file-saver: 2.0.5
-      floating-vue: 5.2.2(@nuxt/kit@3.21.6)(vue@3.5.34(typescript@5.9.3))
+      floating-vue: 5.2.2(@nuxt/kit@3.21.6)(vue@3.5.34(typescript@6.0.3))
       fuse.js: 7.3.0
       katex: 0.16.47
       lz-string: 1.5.0
@@ -8803,7 +8891,7 @@ snapshots:
       ansis: 4.3.0
       drauu: 1.0.0
       file-saver: 2.0.5
-      floating-vue: 5.2.2(@nuxt/kit@3.21.6)(vue@3.5.34(typescript@5.9.3))
+      floating-vue: 5.2.2(@nuxt/kit@3.21.6)(vue@3.5.34(typescript@6.0.3))
       fuse.js: 7.3.0
       katex: 0.16.47
       lz-string: 1.5.0
@@ -8924,8 +9012,8 @@ snapshots:
     dependencies:
       '@antfu/utils': 9.3.0
       '@shikijs/markdown-it': 4.0.2
-      '@vitejs/plugin-vue': 6.0.7(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))
-      '@vitejs/plugin-vue-jsx': 5.1.5(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))
+      '@vitejs/plugin-vue': 6.0.7(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))
+      '@vitejs/plugin-vue-jsx': 5.1.5(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))
       katex: 0.16.47
       mermaid: 11.15.0
       monaco-editor: 0.55.1
@@ -8936,9 +9024,9 @@ snapshots:
       vite-plugin-inspect: 11.3.3(@nuxt/kit@3.21.6)(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
       vite-plugin-remote-assets: 2.1.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
       vite-plugin-static-copy: 4.1.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
-      vite-plugin-vue-server-ref: 1.0.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))
+      vite-plugin-vue-server-ref: 1.0.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))
       vue: 3.5.34(typescript@5.9.3)
-      vue-router: 5.0.7(@vue/compiler-sfc@3.5.34)(vue@3.5.34(typescript@6.0.3))
+      vue-router: 5.0.7(@vue/compiler-sfc@3.5.34)(vue@3.5.34(typescript@5.9.3))
     transitivePeerDependencies:
       - '@emnapi/core'
       - '@emnapi/runtime'
@@ -8961,8 +9049,8 @@ snapshots:
     dependencies:
       '@antfu/utils': 9.3.0
       '@shikijs/markdown-it': 4.0.2
-      '@vitejs/plugin-vue': 6.0.7(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))
-      '@vitejs/plugin-vue-jsx': 5.1.5(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))
+      '@vitejs/plugin-vue': 6.0.7(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))
+      '@vitejs/plugin-vue-jsx': 5.1.5(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))
       katex: 0.16.47
       mermaid: 11.15.0
       monaco-editor: 0.55.1
@@ -8973,9 +9061,9 @@ snapshots:
       vite-plugin-inspect: 11.3.3(@nuxt/kit@3.21.6)(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
       vite-plugin-remote-assets: 2.1.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
       vite-plugin-static-copy: 4.1.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))
-      vite-plugin-vue-server-ref: 1.0.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))
+      vite-plugin-vue-server-ref: 1.0.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))
       vue: 3.5.34(typescript@6.0.3)
-      vue-router: 5.0.7(@vue/compiler-sfc@3.5.34)(vue@3.5.34(typescript@6.0.3))
+      vue-router: 5.0.7(@vue/compiler-sfc@3.5.34)(vue@3.5.34(typescript@5.9.3))
     transitivePeerDependencies:
       - '@emnapi/core'
       - '@emnapi/runtime'
@@ -10046,7 +10134,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@vitejs/plugin-vue-jsx@5.1.5(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))':
+  '@vitejs/plugin-vue-jsx@5.1.5(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/plugin-syntax-typescript': 7.28.6(@babel/core@7.29.0)
@@ -10058,11 +10146,29 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@6.0.7(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))':
+  '@vitejs/plugin-vue-jsx@5.1.5(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))':
+    dependencies:
+      '@babel/core': 7.29.0
+      '@babel/plugin-syntax-typescript': 7.28.6(@babel/core@7.29.0)
+      '@babel/plugin-transform-typescript': 7.28.6(@babel/core@7.29.0)
+      '@rolldown/pluginutils': 1.0.1
+      '@vue/babel-plugin-jsx': 2.0.1(@babel/core@7.29.0)
+      vite: 8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0)
+      vue: 3.5.34(typescript@6.0.3)
+    transitivePeerDependencies:
+      - supports-color
+
+  '@vitejs/plugin-vue@6.0.7(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       vite: 8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0)
       vue: 3.5.34(typescript@5.9.3)
+
+  '@vitejs/plugin-vue@6.0.7(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3))':
+    dependencies:
+      '@rolldown/pluginutils': 1.0.1
+      vite: 8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0)
+      vue: 3.5.34(typescript@6.0.3)
 
   '@vitest/eslint-plugin@1.6.17(@typescript-eslint/eslint-plugin@8.59.3(@typescript-eslint/parser@8.59.3(eslint@10.4.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.4.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.4.0(jiti@2.7.0))(typescript@6.0.3)(vitest@4.1.6(@types/node@25.9.0)(happy-dom@20.9.0)(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0)))':
     dependencies:
@@ -10138,6 +10244,16 @@ snapshots:
       vue: 3.5.34(typescript@6.0.3)
     transitivePeerDependencies:
       - '@vue/composition-api'
+
+  '@vue-macros/common@3.1.2(vue@3.5.34(typescript@5.9.3))':
+    dependencies:
+      '@vue/compiler-sfc': 3.5.34
+      ast-kit: 2.2.0
+      local-pkg: 1.1.2
+      magic-string-ast: 1.0.3
+      unplugin-utils: 0.3.1
+    optionalDependencies:
+      vue: 3.5.34(typescript@5.9.3)
 
   '@vue-macros/common@3.1.2(vue@3.5.34(typescript@6.0.3))':
     dependencies:
@@ -10327,7 +10443,7 @@ snapshots:
 
   '@vueuse/shared@13.9.0(vue@3.5.34(typescript@6.0.3))':
     dependencies:
-      vue: 3.5.34(typescript@5.9.3)
+      vue: 3.5.34(typescript@6.0.3)
 
   '@vueuse/shared@14.3.0(vue@3.5.34(typescript@6.0.3))':
     dependencies:
@@ -11565,6 +11681,14 @@ snapshots:
     dependencies:
       '@floating-ui/dom': 1.1.1
       vue: 3.5.34(typescript@5.9.3)
+      vue-resize: 2.0.0-alpha.1(vue@3.5.34(typescript@5.9.3))
+    optionalDependencies:
+      '@nuxt/kit': 3.21.6
+
+  floating-vue@5.2.2(@nuxt/kit@3.21.6)(vue@3.5.34(typescript@6.0.3)):
+    dependencies:
+      '@floating-ui/dom': 1.1.1
+      vue: 3.5.34(typescript@6.0.3)
       vue-resize: 2.0.0-alpha.1(vue@3.5.34(typescript@6.0.3))
     optionalDependencies:
       '@nuxt/kit': 3.21.6
@@ -13352,7 +13476,7 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki-magic-move@1.3.0(react@19.2.6)(shiki@4.0.2)(vue@3.5.34(typescript@6.0.3)):
+  shiki-magic-move@1.3.0(react@19.2.6)(shiki@4.0.2)(vue@3.5.34(typescript@5.9.3)):
     dependencies:
       diff-match-patch-es: 1.0.1
       ohash: 2.0.11
@@ -13360,6 +13484,15 @@ snapshots:
       react: 19.2.6
       shiki: 4.0.2
       vue: 3.5.34(typescript@5.9.3)
+
+  shiki-magic-move@1.3.0(react@19.2.6)(shiki@4.0.2)(vue@3.5.34(typescript@6.0.3)):
+    dependencies:
+      diff-match-patch-es: 1.0.1
+      ohash: 2.0.11
+    optionalDependencies:
+      react: 19.2.6
+      shiki: 4.0.2
+      vue: 3.5.34(typescript@6.0.3)
 
   shiki@4.0.2:
     dependencies:
@@ -14012,7 +14145,7 @@ snapshots:
       pathe: 2.0.3
       picomatch: 4.0.4
 
-  unplugin-vue-components@32.0.0(@nuxt/kit@3.21.6)(vue@3.5.34(typescript@6.0.3)):
+  unplugin-vue-components@32.0.0(@nuxt/kit@3.21.6)(vue@3.5.34(typescript@5.9.3)):
     dependencies:
       chokidar: 5.0.0
       local-pkg: 1.1.2
@@ -14024,6 +14157,21 @@ snapshots:
       unplugin: 3.0.0
       unplugin-utils: 0.3.1
       vue: 3.5.34(typescript@5.9.3)
+    optionalDependencies:
+      '@nuxt/kit': 3.21.6
+
+  unplugin-vue-components@32.0.0(@nuxt/kit@3.21.6)(vue@3.5.34(typescript@6.0.3)):
+    dependencies:
+      chokidar: 5.0.0
+      local-pkg: 1.1.2
+      magic-string: 0.30.21
+      mlly: 1.8.2
+      obug: 2.1.1
+      picomatch: 4.0.4
+      tinyglobby: 0.2.16
+      unplugin: 3.0.0
+      unplugin-utils: 0.3.1
+      vue: 3.5.34(typescript@6.0.3)
     optionalDependencies:
       '@nuxt/kit': 3.21.6
 
@@ -14206,7 +14354,7 @@ snapshots:
       tinyglobby: 0.2.16
       vite: 8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0)
 
-  vite-plugin-vue-server-ref@1.0.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3)):
+  vite-plugin-vue-server-ref@1.0.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@5.9.3)):
     dependencies:
       debug: 4.4.3
       klona: 2.0.6
@@ -14214,6 +14362,17 @@ snapshots:
       ufo: 1.6.4
       vite: 8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0)
       vue: 3.5.34(typescript@5.9.3)
+    transitivePeerDependencies:
+      - supports-color
+
+  vite-plugin-vue-server-ref@1.0.0(vite@8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.34(typescript@6.0.3)):
+    dependencies:
+      debug: 4.4.3
+      klona: 2.0.6
+      mlly: 1.8.2
+      ufo: 1.6.4
+      vite: 8.0.13(@types/node@25.9.0)(jiti@2.7.0)(yaml@2.9.0)
+      vue: 3.5.34(typescript@6.0.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -14286,9 +14445,36 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  vue-resize@2.0.0-alpha.1(vue@3.5.34(typescript@5.9.3)):
+    dependencies:
+      vue: 3.5.34(typescript@5.9.3)
+
   vue-resize@2.0.0-alpha.1(vue@3.5.34(typescript@6.0.3)):
     dependencies:
       vue: 3.5.34(typescript@6.0.3)
+
+  vue-router@5.0.7(@vue/compiler-sfc@3.5.34)(vue@3.5.34(typescript@5.9.3)):
+    dependencies:
+      '@babel/generator': 8.0.0-rc.5
+      '@vue-macros/common': 3.1.2(vue@3.5.34(typescript@5.9.3))
+      '@vue/devtools-api': 8.1.2
+      ast-walker-scope: 0.8.3
+      chokidar: 5.0.0
+      json5: 2.2.3
+      local-pkg: 1.1.2
+      magic-string: 0.30.21
+      mlly: 1.8.2
+      muggle-string: 0.4.1
+      pathe: 2.0.3
+      picomatch: 4.0.4
+      scule: 1.3.0
+      tinyglobby: 0.2.16
+      unplugin: 3.0.0
+      unplugin-utils: 0.3.1
+      vue: 3.5.34(typescript@5.9.3)
+      yaml: 2.9.0
+    optionalDependencies:
+      '@vue/compiler-sfc': 3.5.34
 
   vue-router@5.0.7(@vue/compiler-sfc@3.5.34)(vue@3.5.34(typescript@6.0.3)):
     dependencies:
@@ -14308,7 +14494,7 @@ snapshots:
       tinyglobby: 0.2.16
       unplugin: 3.0.0
       unplugin-utils: 0.3.1
-      vue: 3.5.34(typescript@5.9.3)
+      vue: 3.5.34(typescript@6.0.3)
       yaml: 2.9.0
     optionalDependencies:
       '@vue/compiler-sfc': 3.5.34

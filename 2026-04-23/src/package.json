@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@slidev/cli": "catalog:build",
+    "@vue/tsconfig": "catalog:build",
     "typescript": "catalog:build",
     "vite": "catalog:build",
     "vite-plugin-info": "catalog:vite-talk",
