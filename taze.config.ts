@@ -8,5 +8,5 @@ export default defineConfig({
   maturityPeriod: 7,
   ignorePaths: [
     '**/.vite',
-  ]
+  ],
 })
