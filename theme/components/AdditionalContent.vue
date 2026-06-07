@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { InaliaQR } from 'slidev-addon-inalia'
 import { useSlideContext } from '@slidev/client'
+import { InaliaQR } from 'slidev-addon-inalia'
 
 const { $frontmatter } = useSlideContext()
 </script>

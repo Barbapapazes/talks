@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { useSlideContext } from '@slidev/client'
 import { computed } from 'vue'
+import AdditionalContent from '../components/AdditionalContent.vue'
 import Feedback from '../components/Feedback.vue'
 import Fireworks from '../components/Fireworks.vue'
 import Footer from '../components/Footer.vue'
 import FooterLink from '../components/FooterLink.vue'
 import { socials, talks, website } from '../contants'
-import AdditionalContent from '../components/AdditionalContent.vue'
 
 const links = [website, talks, ...socials]
 
