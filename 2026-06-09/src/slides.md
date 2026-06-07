@@ -42,7 +42,7 @@ group: Introduction
 ready: true
 timing: 0.8
 layout: center-card
-img: ./vite-background.png
+img: /vite-background.png
 transition: slide-up
 ---
 
@@ -144,7 +144,7 @@ group: Vite Core
 ready: true
 timing: 0.8
 layout: center-card
-img: ./vite-background.png
+img: /vite-background.png
 clicks: 5
 ---
 
@@ -213,7 +213,7 @@ group: Vite Core
 timing: 1.8
 ready: true
 layout: center-card
-img: ./vite-background.png
+img: /vite-background.png
 clicks: 6
 ---
 
@@ -259,7 +259,7 @@ group: Feature Plugins
 ready: true
 timing: 1.9
 layout: image
-img: ./vite-background.png
+img: /vite-background.png
 ---
 
 <EverythingIsAPlugin />
@@ -761,8 +761,6 @@ export default function myPlugin() {
 ````
 
 <!--
-Oui
-
 [fast] Jusqu'ici, on a vu les hooks liés à la gestion et la transformation à la volée des requests mais il y en a pour s'intégrer directement dans le cycle de vie de Vite.
 
 On a le hook [click] config, appelé juste avant que la configuration soit résolue. C'est le bon moment pour ajuster la configuration.
@@ -820,7 +818,7 @@ inalia:
 
 <Card class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" ignore-theme>
 
-```ts {*|4-6|7-9|10-12|*}{lines:true}
+```ts {*}{lines:true}
 export default function myPlugin() {
   return {
     name: 'my-plugin',
@@ -840,12 +838,7 @@ export default function myPlugin() {
 </Card>
 
 <!--
-
 La structure d'un plugin Vite, elle ressemble à ça. Une fonction qui retourne un objet avec un nom et les 3 hooks principaux.
-
-1. resolveId, pour intercepter l'identifiant d'un module et en retourner un nouveau
-2. load, pour retourner le contenu d'un module à partir de son identifiant
-3. transform, pour transformer le contenu d'un module à partir de son identifiant
 
 [pause]
 
@@ -954,9 +947,7 @@ export default function myVirtualModulePlugin() {
 ````
 
 <!--
-[important] Dans la suite, on va rentrer en profondeur dans un example concret avec un plugin qui utilise cette technique là, tu peux déjà choisir lequel.
-
-Mais pour nous, maintenant, là, tout commence par un plugin, [click] avec son petit nom là, il est tout mignon.
+Tout commence par un plugin, [click] avec son petit nom là, il est tout mignon.
 
 Dans [click] le hook resolveId, on intercepte l'identifiant de notre module virtuel et on le préfixe avec un \0 pour le marquer comme virtuel.
 
@@ -1036,147 +1027,6 @@ La clé, c'est le nom du module virtuel et la valeur, c'est le code.
 Et du coup, beh, beh on peut très simplement [click] avoir accès au dernier commit git, [click] ou même faire une request vers une API pour injecter au build time des data.
 
 [enthusiastic] C'est beau, c'est simple ! On adore !
--->
-
----
-name: Info Plugin
-group: Virtualization
-ready: true
-timing: 0.2
-layout: center
----
-
-<h2 class="text-4xl font-bold">Info Plugin</h2>
-
-<!--
-Pour bien comprendre le concept, regardons un exemple concret, le plugin vite-plugin-info qui permet d'injecter des informations de build dans notre application.
--->
-
----
-name: Info Plugin - Virtual Information
-group: Virtualization
-ready: true
-timing: 0.6
-layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-transition: slide-up
----
-
-```ts {*}{lines:true}
-import { sha } from '~build/info'
-import now from '~build/time'
-
-console.log(`Build ${sha} at ${now}`)
-```
-
-<InfoPlugin class="mt-4" />
-
-<!--
-Récupérer des informations de build dans son application, c'est un besoin assez courant. On peut imaginer vouloir afficher la dernière version, le dernier commit, ou juste même la dernière date de build.
-
-Alors, c'est vrai que, on peut le faire à la main, mais c'est pas très pratique, et justement, un plugin Vite pourrait nous aider.
-
-On part à sa découverte ?
--->
-
----
-name: Info Plugin - Virtual Information - Plugin Internals
-group: Virtualization
-ready: true
-timing: 1.1
-layout: center-card
-img: >-
-  https://images.unsplash.com/photo-1663725143572-158403ee3c06?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
----
-
-````md magic-move
-```ts {*|6}{lines:true}
-import { defineConfig } from 'vite'
-
-export default defineConfig({
-  plugins: [
-    {
-      name: 'build-info',
-    },
-  ],
-})
-```
-```ts {7-11}{lines:true}
-import { defineConfig } from 'vite'
-
-export default defineConfig({
-  plugins: [
-    {
-      name: 'build-info',
-      resolveId(id) {
-        if (id === '~build/time') {
-          return '\0~build/time'
-        }
-      },
-    },
-  ],
-})
-```
-```ts {12-16}{lines:true}
-import { defineConfig } from 'vite'
-
-export default defineConfig({
-  plugins: [
-    {
-      name: 'build-info',
-      resolveId(id) {
-        if (id === '~build/time') {
-          return '\0~build/time'
-        }
-      },
-      load(id) {
-        if (id === '\0~build/time') {
-          return `export default ${JSON.stringify(new Date().toISOString())}`
-        }
-      },
-    },
-  ],
-})
-```
-```ts {17-20|*}{lines:true}
-import { execSync } from 'child_process'
-import { defineConfig } from 'vite'
-
-export default defineConfig({
-  plugins: [
-    {
-      name: 'build-info',
-      resolveId(id) {
-        if (id === '~build/time' || id === '~build/git') {
-          return '\0' + id
-        }
-      },
-      load(id) {
-        if (id === '\0~build/time') {
-          return `export default ${JSON.stringify(new Date().toISOString())}`
-        }
-        if (id === '\0~build/git') {
-          const sha = execSync('git rev-parse HEAD').toString().trim()
-          return `export default ${JSON.stringify(sha)}`
-        }
-      },
-    },
-  ],
-})
-```
-````
-
-<!--
-Comme tous les plugins, tout commence par un objet avec [click] un nom.
-
-[click] Le hook resolveId intercepte les imports de `~build/time` et `~build/git` et les préfixe avec `\0` pour indiquer que ce sont des modules virtuels.
-
-[click] Ensuite, le hook load s'occupe d'exécuter du code pour récupérer les informations demandées et de créer le code JavaScript qui exporte ces informations.
-
-[click] De la même manière qu'on vient de le faire pour la date, on peut le faire pour git et en vrai, pour tout ce qu'on veut.
-
-[click] C'est un plugin avec modules virtuels par excellence. Une bonne inspiration si vous avez besoin de créer le votre.
 -->
 
 ---
@@ -1270,7 +1120,7 @@ group: Advanced Capabilities
 ready: true
 timing: 0.7
 layout: image
-img: ./vite-background.png
+img: /vite-background.png
 ---
 
 <OtherPluginCapabilities />
@@ -1430,11 +1280,11 @@ Finalement, en 20 minutes, on a découvert le nécessaire pour réaliser notre p
 name: Outro
 timing: 1
 layout: outro2
+ready: true
+additionalContentUrl: https://gifts.talks.soubiran.dev/talks/au-coeur-dune-pipeline-demystifions-vite-et-ses-plugins/subscriptions/create
 ---
 
 <!--
-TODO: second QR code pour le contenu additionnel
-
 Ce qui est chouette, c'est que ce soir, j'ai envie de vous faire un cadeau à tous. En scannant ce QR code, vous pouvez avoir accès à du contenu additionnel pour concrétiser votre maîtrise de Vite et même aller plus loin dans certain des concepts qu'on a vu ensemble. C'est du contenu exclusif, uniquement disponible derrière ce QR code.
 
 Merci à tous, c'était Estéban.
