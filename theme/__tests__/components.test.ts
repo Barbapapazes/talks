@@ -395,7 +395,7 @@ describe('tree', () => {
                 title: 'assets',
                 children: [
                   {
-                    title: 'image-DNpSpoYj.jpg',
+                    title: 'image-BTTwLOJ2.jpg',
                   },
                   {
                     title: 'vite.config.ts',

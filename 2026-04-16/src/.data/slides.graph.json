@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T22:10:46.061Z",
+  "generatedAt": "2026-05-23T07:10:22.277Z",
   "nodes": [
     {
       "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
@@ -86,7 +86,7 @@
       "index": 7,
       "name": "Why Vite Took Over",
       "title": "Why Vite Took Over",
-      "ready": false,
+      "ready": true,
       "layout": "center-card",
       "group": "Vite Core",
       "timing": 0,
@@ -103,7 +103,7 @@
       "group": "Vite Core",
       "timing": 0.9,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 273
+      "lineNumber": 274
     },
     {
       "id": "everything_is_a_plugin",
@@ -115,7 +115,7 @@
       "group": "Feature Plugins",
       "timing": 2,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 300
+      "lineNumber": 301
     },
     {
       "id": "everything_is_a_plugin_choices",
@@ -127,7 +127,7 @@
       "group": "Feature Plugins",
       "timing": 0.1,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 335,
+      "lineNumber": 336,
       "choices": [
         "CSS Imported into a TypeScript File",
         "An Image Loaded in a TypeScript File",
@@ -144,7 +144,7 @@
       "group": "Feature Plugins",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 373
+      "lineNumber": 374
     },
     {
       "id": "css_imported_into_a_typescript_file_visualization",
@@ -155,7 +155,7 @@
       "group": "Feature Plugins",
       "timing": 0.9,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 406,
+      "lineNumber": 407,
       "choices": [
         "Vite and Its Features - Recap"
       ]
@@ -170,7 +170,7 @@
       "group": "Feature Plugins",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 435
+      "lineNumber": 436
     },
     {
       "id": "an_image_loaded_in_a_typescript_file_visualization",
@@ -181,7 +181,7 @@
       "group": "Feature Plugins",
       "timing": 0.9,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 468
+      "lineNumber": 469
     },
     {
       "id": "an_image_loaded_in_a_typescript_file_build",
@@ -193,7 +193,7 @@
       "group": "Feature Plugins",
       "timing": 0.3,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 496,
+      "lineNumber": 497,
       "choices": [
         "Vite and Its Features - Recap"
       ]
@@ -208,7 +208,7 @@
       "group": "Feature Plugins",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 518
+      "lineNumber": 519
     },
     {
       "id": "jsx_loaded_naturally_visualization",
@@ -219,7 +219,7 @@
       "group": "Feature Plugins",
       "timing": 0.8,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 565,
+      "lineNumber": 566,
       "choices": [
         "Vite and Its Features - Recap"
       ]
@@ -233,7 +233,7 @@
       "layout": "recap",
       "timing": 1.2,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 596
+      "lineNumber": 597
     },
     {
       "id": "inside_a_vite_plugin_common_hooks",
@@ -245,7 +245,7 @@
       "group": "Inside a Plugin",
       "timing": 1.1,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 638
+      "lineNumber": 639
     },
     {
       "id": "resolveid",
@@ -257,7 +257,7 @@
       "group": "Inside a Plugin",
       "timing": 0.7,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 705
+      "lineNumber": 706
     },
     {
       "id": "load",
@@ -269,7 +269,7 @@
       "group": "Inside a Plugin",
       "timing": 0.8,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 745
+      "lineNumber": 746
     },
     {
       "id": "transform",
@@ -281,7 +281,7 @@
       "group": "Inside a Plugin",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 810
+      "lineNumber": 811
     },
     {
       "id": "multiple_plugins",
@@ -293,7 +293,7 @@
       "group": "Inside a Plugin",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 862
+      "lineNumber": 863
     },
     {
       "id": "inside_a_vite_plugin_visualization",
@@ -304,7 +304,7 @@
       "group": "Inside a Plugin",
       "timing": 1.9,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 880
+      "lineNumber": 881
     },
     {
       "id": "visualizing_the_pipeline",
@@ -315,7 +315,7 @@
       "group": "Inside a Plugin",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 912
+      "lineNumber": 913
     },
     {
       "id": "inside_a_vite_plugin_lifecycle_hooks",
@@ -327,7 +327,7 @@
       "group": "Inside a Plugin",
       "timing": 1.3,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 940
+      "lineNumber": 941
     },
     {
       "id": "in_practice",
@@ -339,7 +339,7 @@
       "group": "Concrete Example",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1037
+      "lineNumber": 1038
     },
     {
       "id": "simple_transform_plugin",
@@ -351,7 +351,7 @@
       "group": "Concrete Example",
       "timing": 0.2,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1058
+      "lineNumber": 1059
     },
     {
       "id": "simple_transform_plugin_visualization",
@@ -362,7 +362,7 @@
       "group": "Concrete Example",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1074
+      "lineNumber": 1075
     },
     {
       "id": "simple_transform_plugin_internals",
@@ -374,7 +374,7 @@
       "group": "Concrete Example",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1096
+      "lineNumber": 1097
     },
     {
       "id": "external_markdown_loader_plugin",
@@ -386,7 +386,7 @@
       "group": "Concrete Example",
       "timing": 0.1,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1138
+      "lineNumber": 1139
     },
     {
       "id": "external_markdown_loader_plugin_visualization",
@@ -397,7 +397,7 @@
       "group": "Concrete Example",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1152
+      "lineNumber": 1153
     },
     {
       "id": "external_markdown_loader_plugin_internals",
@@ -409,7 +409,7 @@
       "group": "Concrete Example",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1171
+      "lineNumber": 1172
     },
     {
       "id": "the_vite_plugin_recap",
@@ -420,7 +420,7 @@
       "layout": "recap",
       "timing": 0.7,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1239
+      "lineNumber": 1240
     },
     {
       "id": "the_vite_plugin_3_hooks_recap",
@@ -431,7 +431,7 @@
       "layout": "recap",
       "timing": 1.2,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1276
+      "lineNumber": 1277
     },
     {
       "id": "a_plugin_for_virtualization_intro",
@@ -443,7 +443,7 @@
       "group": "Virtualization",
       "timing": 0.1,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1323
+      "lineNumber": 1324
     },
     {
       "id": "a_plugin_for_virtualization",
@@ -454,7 +454,7 @@
       "group": "Virtualization",
       "timing": 1.5,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1337
+      "lineNumber": 1338
     },
     {
       "id": "a_plugin_for_virtualization_mind_blowing",
@@ -466,7 +466,7 @@
       "group": "Virtualization",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1364
+      "lineNumber": 1365
     },
     {
       "id": "a_plugin_for_virtualization_plugin_internals",
@@ -478,7 +478,7 @@
       "group": "Virtualization",
       "timing": 1.3,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1382
+      "lineNumber": 1383
     },
     {
       "id": "a_plugin_for_virtualization_virtual_plugin",
@@ -490,7 +490,7 @@
       "group": "Virtualization",
       "timing": 0.9,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1457
+      "lineNumber": 1458
     },
     {
       "id": "a_plugin_for_virtualization_choices",
@@ -502,7 +502,7 @@
       "group": "Virtualization",
       "timing": 0.1,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1533,
+      "lineNumber": 1534,
       "choices": [
         "Vue Router - A Virtual Module",
         "VitePress - Virtual Data",
@@ -520,7 +520,7 @@
       "group": "Virtualization",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1575
+      "lineNumber": 1576
     },
     {
       "id": "vue_router_a_virtual_module_plugin_internals",
@@ -532,7 +532,7 @@
       "group": "Virtualization",
       "timing": 0.7,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1612,
+      "lineNumber": 1613,
       "choices": [
         "Virtualization - Recap - List"
       ]
@@ -547,7 +547,7 @@
       "group": "Virtualization",
       "timing": 0.9,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1681
+      "lineNumber": 1682
     },
     {
       "id": "vitepress_virtual_data_plugin_internals",
@@ -559,7 +559,7 @@
       "group": "Virtualization",
       "timing": 0.8,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1728,
+      "lineNumber": 1729,
       "choices": [
         "Virtualization - Recap - List"
       ]
@@ -574,7 +574,7 @@
       "group": "Virtualization",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1807
+      "lineNumber": 1808
     },
     {
       "id": "icons_plugin_virtual_icons_plugin_internals",
@@ -586,7 +586,7 @@
       "group": "Virtualization",
       "timing": 0.8,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1844,
+      "lineNumber": 1845,
       "choices": [
         "Virtualization - Recap - List"
       ]
@@ -601,7 +601,7 @@
       "group": "Virtualization",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1924
+      "lineNumber": 1925
     },
     {
       "id": "info_plugin_virtual_information_plugin_internals",
@@ -613,7 +613,7 @@
       "group": "Virtualization",
       "timing": 1.1,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 1956,
+      "lineNumber": 1957,
       "choices": [
         "Virtualization - Recap - List"
       ]
@@ -627,7 +627,7 @@
       "layout": "recap",
       "timing": 1.2,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2061
+      "lineNumber": 2062
     },
     {
       "id": "virtualization_recap_code",
@@ -638,7 +638,7 @@
       "layout": "recap",
       "timing": 0.7,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2096
+      "lineNumber": 2097
     },
     {
       "id": "other_plugin_capabilities",
@@ -650,7 +650,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.7,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2146
+      "lineNumber": 2147
     },
     {
       "id": "other_plugin_capabilities_choices",
@@ -662,7 +662,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.1,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2168,
+      "lineNumber": 2169,
       "choices": [
         "Hot Module Replacement (HMR)",
         "Middleware - A Virtual File",
@@ -681,7 +681,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2217
+      "lineNumber": 2218
     },
     {
       "id": "hot_module_replacement_hmr_plugin_internals",
@@ -693,7 +693,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2241,
+      "lineNumber": 2242,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -708,7 +708,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.7,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2299,
+      "lineNumber": 2300,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -723,7 +723,7 @@
       "group": "Advanced Capabilities",
       "timing": 1,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2374
+      "lineNumber": 2375
     },
     {
       "id": "run_plugin_a_plugin_for_running_commands_plugin_internals",
@@ -735,7 +735,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2436,
+      "lineNumber": 2437,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -749,7 +749,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2491
+      "lineNumber": 2492
     },
     {
       "id": "laravel_vite_inter_process_communication_plugin_internals",
@@ -761,7 +761,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.6,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2509,
+      "lineNumber": 2510,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -776,7 +776,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2589
+      "lineNumber": 2590
     },
     {
       "id": "unplugin_macro_a_plugin_for_creating_macros_plugin_internals",
@@ -788,7 +788,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2624,
+      "lineNumber": 2625,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -803,7 +803,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.3,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2715
+      "lineNumber": 2716
     },
     {
       "id": "nitro_a_backend_visualization",
@@ -814,7 +814,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.4,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2731
+      "lineNumber": 2732
     },
     {
       "id": "nitro_a_backend_plugin_internals",
@@ -826,7 +826,7 @@
       "group": "Advanced Capabilities",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2746,
+      "lineNumber": 2747,
       "choices": [
         "It was always the same pipeline"
       ]
@@ -839,7 +839,7 @@
       "ready": true,
       "timing": 1.5,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2803
+      "lineNumber": 2804
     },
     {
       "id": "final_recap_list",
@@ -850,7 +850,7 @@
       "layout": "recap",
       "timing": 1.3,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2841
+      "lineNumber": 2842
     },
     {
       "id": "final_recap_code",
@@ -861,7 +861,7 @@
       "layout": "recap",
       "timing": 1.2,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2883
+      "lineNumber": 2884
     },
     {
       "id": "deep_inside_the_pipeline",
@@ -873,7 +873,7 @@
       "group": "Deep Dive",
       "timing": 1.4,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 2959
+      "lineNumber": 2960
     },
     {
       "id": "your_turn",
@@ -884,7 +884,7 @@
       "layout": "keep-in-mind",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 3089
+      "lineNumber": 3090
     },
     {
       "id": "outro",
@@ -895,7 +895,7 @@
       "layout": "outro2",
       "timing": 0.3,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-04-16/src/slides.md",
-      "lineNumber": 3114
+      "lineNumber": 3115
     }
   ],
   "edges": [

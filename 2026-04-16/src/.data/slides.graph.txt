@@ -18,7 +18,7 @@ flowchart LR
       how_vite_works["#5 How Vite Works"]:::finished
       vite_in_a_nutshell["#6 Vite in a Nutshell"]:::finished
       how_vite_works_visualization["#7 How Vite Works - Visualization"]:::finished
-      why_vite_took_over["#8 Why Vite Took Over"]:::main
+      why_vite_took_over["#8 Why Vite Took Over"]:::finished
       some_definitions["#9 Some Definitions"]:::finished
   end
   subgraph Feature_Plugins ["Feature Plugins"]

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useSlideContext } from '@slidev/client'
 import { computed } from 'vue'
+import AdditionalContent from '../components/AdditionalContent.vue'
 import Feedback from '../components/Feedback.vue'
 import Fireworks from '../components/Fireworks.vue'
 import Footer from '../components/Footer.vue'
@@ -38,11 +39,16 @@ const date = computed(() => ($slidev.configs as any).date)
         </div>
       </div>
 
-      <Feedback
-        v-if="$frontmatter.feedback !== false"
-        enable-placeholder
-        class="absolute left-1/2 -translate-x-1/2 bottom-1/6"
-      />
+      <div
+        class="absolute left-1/2 -translate-x-1/2 bottom-1/6 flex flex-row items-start gap-8"
+      >
+        <Feedback
+          v-if="$frontmatter.feedback !== false"
+          enable-placeholder
+        />
+
+        <AdditionalContent />
+      </div>
 
       <Footer class="flex flex-row gap-2">
         <FooterLink

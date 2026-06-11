@@ -26,6 +26,7 @@ const { isStatic, question } = useInaliaQuestion(() => questionId.value, {
 </template>
 
 <style scoped>
+html:not([data-theme]),
 html[data-theme='default'],
 html[data-theme='flowers'] {
   .card {
