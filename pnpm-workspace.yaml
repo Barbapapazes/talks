@@ -2,7 +2,7 @@ catalogMode: prefer
 
 shellEmulator: true
 
-trustPolicy: no-downgrade
+trustPolicy: off
 
 packages:
   - '**/src'
