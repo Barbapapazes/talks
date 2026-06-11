@@ -36,24 +36,21 @@ flowchart LR
       inside_a_vite_plugin_lifecycle_hooks["#22 Inside a Vite Plugin - Lifecycle Hooks"]:::finished
   end
   subgraph Virtualization ["Virtualization"]
-      a_plugin_for_virtualization_intro["#25 A Plugin for Virtualization - Intro"]:::finished
-      a_plugin_for_virtualization["#26 A Plugin for Virtualization"]:::finished
-      a_plugin_for_virtualization_plugin_internals["#27 A Plugin for Virtualization - Plugin Internals"]:::finished
-      a_plugin_for_virtualization_virtual_plugin["#28 A Plugin for Virtualization - Virtual Plugin"]:::finished
+      a_plugin_for_virtualization_intro["#24 A Plugin for Virtualization - Intro"]:::finished
+      a_plugin_for_virtualization["#25 A Plugin for Virtualization"]:::finished
+      a_plugin_for_virtualization_plugin_internals["#26 A Plugin for Virtualization - Plugin Internals"]:::finished
+      a_plugin_for_virtualization_virtual_plugin["#27 A Plugin for Virtualization - Virtual Plugin"]:::finished
   end
   subgraph Advanced_Capabilities ["Advanced Capabilities"]
-      other_plugin_capabilities["#31 Other Plugin Capabilities"]:::finished
+      other_plugin_capabilities["#29 Other Plugin Capabilities"]:::finished
   end
   au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins["#1 Au cœur d'une pipeline : démystifions Vite et ses plugins"]:::finished
   vite_and_its_features_recap["#14 Vite and Its Features - Recap"]:::finishedRecap
   the_vite_plugin_recap["#23 The Vite Plugin - Recap"]:::finishedRecap
-  the_vite_plugin_3_hooks_recap["#24 The Vite Plugin - 3 Hooks Recap"]:::finishedRecap
-  virtualization_recap_list["#29 Virtualization - Recap - List"]:::finishedRecap
-  virtualization_recap_code["#30 Virtualization - Recap - Code"]:::finishedRecap
-  final_recap_list["#32 Final Recap - List"]:::finishedRecap
-  final_recap_code["#33 Final Recap - Code"]:::finishedRecap
-  your_turn["#34 Your Turn"]:::finished
-  outro["#35 Outro"]:::finished
+  virtualization_recap_list["#28 Virtualization - Recap - List"]:::finishedRecap
+  final_recap_list["#30 Final Recap - List"]:::finishedRecap
+  your_turn["#31 Your Turn"]:::finished
+  outro["#32 Outro"]:::finished
   au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins --> vite
   vite --> vite_growth
   vite_growth --> what_is_a_bundler
@@ -76,15 +73,12 @@ flowchart LR
   inside_a_vite_plugin_visualization --> visualizing_the_pipeline
   visualizing_the_pipeline --> inside_a_vite_plugin_lifecycle_hooks
   inside_a_vite_plugin_lifecycle_hooks --> the_vite_plugin_recap
-  the_vite_plugin_recap --> the_vite_plugin_3_hooks_recap
-  the_vite_plugin_3_hooks_recap --> a_plugin_for_virtualization_intro
+  the_vite_plugin_recap --> a_plugin_for_virtualization_intro
   a_plugin_for_virtualization_intro --> a_plugin_for_virtualization
   a_plugin_for_virtualization --> a_plugin_for_virtualization_plugin_internals
   a_plugin_for_virtualization_plugin_internals --> a_plugin_for_virtualization_virtual_plugin
   a_plugin_for_virtualization_virtual_plugin --> virtualization_recap_list
-  virtualization_recap_list --> virtualization_recap_code
-  virtualization_recap_code --> other_plugin_capabilities
+  virtualization_recap_list --> other_plugin_capabilities
   other_plugin_capabilities --> final_recap_list
-  final_recap_list --> final_recap_code
-  final_recap_code --> your_turn
+  final_recap_list --> your_turn
   your_turn --> outro

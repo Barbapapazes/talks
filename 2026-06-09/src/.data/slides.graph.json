@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T20:23:33.680Z",
+  "generatedAt": "2026-06-11T09:27:10.549Z",
   "nodes": [
     {
       "id": "au_c_ur_d_une_pipeline_d_mystifions_vite_et_ses_plugins",
@@ -269,19 +269,8 @@
       "lineNumber": 773
     },
     {
-      "id": "the_vite_plugin_3_hooks_recap",
-      "index": 23,
-      "name": "The Vite Plugin - 3 Hooks Recap",
-      "title": "The Vite Plugin - 3 Hooks Recap",
-      "ready": true,
-      "layout": "recap",
-      "timing": 1.2,
-      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 810
-    },
-    {
       "id": "a_plugin_for_virtualization_intro",
-      "index": 24,
+      "index": 23,
       "name": "A Plugin for Virtualization - Intro",
       "title": "A Plugin for Virtualization - Intro",
       "ready": true,
@@ -289,22 +278,22 @@
       "group": "Virtualization",
       "timing": 0.1,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 852
+      "lineNumber": 810
     },
     {
       "id": "a_plugin_for_virtualization",
-      "index": 25,
+      "index": 24,
       "name": "A Plugin for Virtualization",
       "title": "A Plugin for Virtualization",
       "ready": true,
       "group": "Virtualization",
       "timing": 1.5,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 866
+      "lineNumber": 824
     },
     {
       "id": "a_plugin_for_virtualization_plugin_internals",
-      "index": 26,
+      "index": 25,
       "name": "A Plugin for Virtualization - Plugin Internals",
       "title": "A Plugin for Virtualization - Plugin Internals",
       "ready": true,
@@ -312,11 +301,11 @@
       "group": "Virtualization",
       "timing": 1.3,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 893
+      "lineNumber": 851
     },
     {
       "id": "a_plugin_for_virtualization_virtual_plugin",
-      "index": 27,
+      "index": 26,
       "name": "A Plugin for Virtualization - Virtual Plugin",
       "title": "A Plugin for Virtualization - Virtual Plugin",
       "ready": true,
@@ -324,33 +313,22 @@
       "group": "Virtualization",
       "timing": 0.9,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 961
+      "lineNumber": 919
     },
     {
       "id": "virtualization_recap_list",
-      "index": 28,
+      "index": 27,
       "name": "Virtualization - Recap - List",
       "title": "Virtualization - Recap - List",
       "ready": true,
       "layout": "recap",
       "timing": 1.2,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 1032
-    },
-    {
-      "id": "virtualization_recap_code",
-      "index": 29,
-      "name": "Virtualization - Recap - Code",
-      "title": "Virtualization - Recap - Code",
-      "ready": true,
-      "layout": "recap",
-      "timing": 0.7,
-      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 1067
+      "lineNumber": 990
     },
     {
       "id": "other_plugin_capabilities",
-      "index": 30,
+      "index": 28,
       "name": "Other Plugin Capabilities",
       "title": "Other Plugin Capabilities",
       "ready": true,
@@ -358,51 +336,40 @@
       "group": "Advanced Capabilities",
       "timing": 0.7,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 1117
+      "lineNumber": 1025
     },
     {
       "id": "final_recap_list",
-      "index": 31,
+      "index": 29,
       "name": "Final Recap - List",
       "title": "Final Recap - List",
       "ready": true,
       "layout": "recap",
       "timing": 1.3,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 1136
-    },
-    {
-      "id": "final_recap_code",
-      "index": 32,
-      "name": "Final Recap - Code",
-      "title": "Final Recap - Code",
-      "ready": true,
-      "layout": "recap",
-      "timing": 1.2,
-      "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 1178
+      "lineNumber": 1044
     },
     {
       "id": "your_turn",
-      "index": 33,
+      "index": 30,
       "name": "Your Turn",
       "title": "Your Turn",
       "ready": true,
       "layout": "keep-in-mind",
       "timing": 0.5,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 1254
+      "lineNumber": 1086
     },
     {
       "id": "outro",
-      "index": 34,
+      "index": 31,
       "name": "Outro",
       "title": "Outro",
       "ready": true,
       "layout": "outro2",
       "timing": 1,
       "filePath": "/Users/esoub/dev/p/barbapapazes/talks/2026-06-09/src/slides.md",
-      "lineNumber": 1279
+      "lineNumber": 1111
     }
   ],
   "edges": [
@@ -518,11 +485,6 @@
     },
     {
       "from": "the_vite_plugin_recap",
-      "to": "the_vite_plugin_3_hooks_recap",
-      "label": ""
-    },
-    {
-      "from": "the_vite_plugin_3_hooks_recap",
       "to": "a_plugin_for_virtualization_intro",
       "label": ""
     },
@@ -548,11 +510,6 @@
     },
     {
       "from": "virtualization_recap_list",
-      "to": "virtualization_recap_code",
-      "label": ""
-    },
-    {
-      "from": "virtualization_recap_code",
       "to": "other_plugin_capabilities",
       "label": ""
     },
@@ -563,11 +520,6 @@
     },
     {
       "from": "final_recap_list",
-      "to": "final_recap_code",
-      "label": ""
-    },
-    {
-      "from": "final_recap_code",
       "to": "your_turn",
       "label": ""
     },
