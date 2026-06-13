@@ -6,6 +6,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 ### 2026
 
+- `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-09) - Paris TypeScript
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-23) - Devoxx France
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-16) - MiXiT
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-13) - Takima
@@ -53,6 +54,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 <summary>Copy talks list as text</summary>
 
 ```
+2026-06-09 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Paris TypeScript - Paris, France
 2026-04-23 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Devoxx France - Paris, France
 2026-04-16 - Au cœur d'une pipeline : démystifions Vite et ses plugins - MiXiT - Lyon, France
 2026-04-13 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Takima - Paris, France
@@ -96,11 +98,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Year | Number of Talks |
 |------|-----------------|
-| 2026 | 7 |
+| 2026 | 8 |
 | 2025 | 19 |
 | 2024 | 6 |
 | 2023 | 1 |
-| **Total** | **33** |
+| **Total** | **34** |
 
 ### Talks per Event
 
@@ -117,7 +119,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 | MiXiT | 3 | 1 | 2 | 0 | 0 |
 | Node.js Paris | 2 | 0 | 2 | 0 | 0 |
 | Nuxt Nation | 1 | 0 | 0 | 1 | 0 |
-| Paris TypeScript | 3 | 0 | 3 | 0 | 0 |
+| Paris TypeScript | 4 | 1 | 3 | 0 | 0 |
 | PragVue | 1 | 0 | 0 | 1 | 0 |
 | StrasbourgJS | 2 | 0 | 1 | 1 | 0 |
 | Takima | 1 | 1 | 0 | 0 | 0 |
@@ -129,7 +131,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Talk Title | Total | 2026 | 2025 | 2024 | 2023 |
 |------------|-------|------|------|------|------|
-| Au cœur d'une pipeline : démystifions Vite et ses plugins | 4 | 4 | 0 | 0 | 0 |
+| Au cœur d'une pipeline : démystifions Vite et ses plugins | 5 | 5 | 0 | 0 | 0 |
 | Découvrons ensemble l'écosystème UnJS | 1 | 0 | 0 | 1 | 0 |
 | Deviens full-stack avec TypeScript | 1 | 0 | 1 | 0 | 0 |
 | En JavaScript, il y a un paquet pour tout... et souvent pour rien. | 7 | 1 | 6 | 0 | 0 |
