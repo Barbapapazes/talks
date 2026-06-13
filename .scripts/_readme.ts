@@ -47,14 +47,53 @@ export function calculateStatistics(meta: MetaEntry[]) {
     return acc
   }, {})
 
+  // Group talks with a recording by year
+  const talksWithRecordingByYear = meta.reduce<Record<number, number>>((acc, metaEntry) => {
+    if (!metaEntry.recording_url) {
+      return acc
+    }
+
+    const year = dateToYear(metaEntry.date)
+
+    if (!acc[year]) {
+      acc[year] = 0
+    }
+
+    acc[year]++
+    return acc
+  }, {})
+
+  // Group talks by city
+  const talksByCity = meta.reduce<Record<string, { total: number, byYear: Record<number, number> }>>((acc, metaEntry) => {
+    const year = dateToYear(metaEntry.date)
+    const city = metaEntry.location.city
+
+    if (!acc[city]) {
+      acc[city] = { total: 0, byYear: {} }
+    }
+
+    acc[city].total++
+
+    if (!acc[city].byYear[year]) {
+      acc[city].byYear[year] = 0
+    }
+
+    acc[city].byYear[year]++
+    return acc
+  }, {})
+
   const years = Object.keys(talksByYear).map(Number).sort((a, b) => b - a)
+  const totalTalksWithRecording = meta.filter(metaEntry => Boolean(metaEntry.recording_url)).length
 
   return {
     talksByYear,
     talksByEvent,
     talksByTitle,
+    talksWithRecordingByYear,
+    talksByCity,
     years,
     totalTalks: meta.length,
+    totalTalksWithRecording,
   }
 }
 
@@ -64,7 +103,7 @@ export function calculateStatistics(meta: MetaEntry[]) {
 export function generateReadmeContent(meta: MetaEntry[]): string {
   const stats = calculateStatistics(meta)
 
-  const { talksByYear, talksByEvent, talksByTitle, years, totalTalks } = stats
+  const { talksByYear, talksByEvent, talksByTitle, talksWithRecordingByYear, talksByCity, years, totalTalks, totalTalksWithRecording } = stats
 
   // Group talks for listing
   const talksGroupedByYear = meta.reduce<Record<number, MetaEntry[]>>((acc, metaEntry) => {
@@ -163,8 +202,38 @@ Slides from my [talks](https://soubiran.dev/talks).
     content += `| ${title} | ${data.count} | ${yearCounts} |\n`
   }
 
+  content += `\n### Talks with Recording
+
+| Year | With Recording | Without Recording | Coverage |
+|------|----------------|-------------------|----------|
+`
+
+  for (const year of years) {
+    const withRecording = talksWithRecordingByYear[year] || 0
+    const totalForYear = talksByYear[year]
+    const withoutRecording = totalForYear - withRecording
+    const coverage = formatPercent(withRecording, totalForYear)
+
+    content += `| ${year} | ${withRecording} | ${withoutRecording} | ${coverage} |\n`
+  }
+
+  content += `| **Total** | **${totalTalksWithRecording}** | **${totalTalks - totalTalksWithRecording}** | **${formatPercent(totalTalksWithRecording, totalTalks)}** |\n\n`
+
+  content += `### Talks per City
+
+| City | Total | ${years.join(' | ')} |
+|------|-------|${years.map(() => '------').join('|')}|
+`
+
+  const cityEntries = Object.entries(talksByCity).sort((a, b) => a[0].localeCompare(b[0]))
+
+  for (const [city, data] of cityEntries) {
+    const yearCounts = years.map(year => data.byYear[year] || 0).join(' | ')
+    content += `| ${city} | ${data.total} | ${yearCounts} |\n`
+  }
+
   // Add footer with copy assets command
-  content += `---
+  content += `\n---
 
 Copy assets to S3 bucket:
 
@@ -189,4 +258,12 @@ ${meta.date.replace(DATE_HYPHEN_RE, '/')} - [${meta.event}](${meta.event_url})
 
 function dateToYear(dateStr: string): number {
   return Number(dateStr.slice(0, 4))
+}
+
+function formatPercent(value: number, total: number): string {
+  if (total === 0) {
+    return '0%'
+  }
+
+  return `${Math.round((value / total) * 100)}%`
 }

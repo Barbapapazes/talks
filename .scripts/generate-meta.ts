@@ -33,6 +33,7 @@ async function generateMeta() {
     data: meta,
     statistics: {
       totalTalks: statistics.totalTalks,
+      totalTalksWithRecording: statistics.totalTalksWithRecording,
       talksByYear: statistics.talksByYear,
       talksByEvent: Object.fromEntries(
         Object.entries(statistics.talksByEvent).map(([event, data]) => [event, {
@@ -43,6 +44,13 @@ async function generateMeta() {
       talksByTitle: Object.fromEntries(
         Object.entries(statistics.talksByTitle).map(([title, data]) => [title, {
           count: data.count,
+          byYear: data.byYear,
+        }]),
+      ),
+      talksWithRecordingByYear: statistics.talksWithRecordingByYear,
+      talksByCity: Object.fromEntries(
+        Object.entries(statistics.talksByCity).map(([city, data]) => [city, {
+          total: data.total,
           byYear: data.byYear,
         }]),
       ),

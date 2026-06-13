@@ -13,7 +13,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-09) - L'Atelier
 - `fr` [En JavaScript, il y a un paquet pour tout... et souvent pour rien.](./2026-02-13) - Touraine Tech
 - `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2026-02-12) - Touraine Tech
-- `fr` [Inertia: Un Anneau pour les gouverner tous.](./2026-01-22) - Vue.js Paris
+- `fr` [Inertia: Un Anneau pour les gouverner tous](./2026-01-22) - Vue.js Paris
 
 ### 2025
 
@@ -61,7 +61,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 2026-04-09 - Au cœur d'une pipeline : démystifions Vite et ses plugins - L'Atelier - Paris, France
 2026-02-13 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - Touraine Tech - Tours, France
 2026-02-12 - La réactivité et les signaux : démystifions la magie du frontend - Touraine Tech - Tours, France
-2026-01-22 - Inertia: Un Anneau pour les gouverner tous. - Vue.js Paris - Paris, France
+2026-01-22 - Inertia: Un Anneau pour les gouverner tous - Vue.js Paris - Paris, France
 2025-12-09 - En JavaScript, il y a un paquet pour tout... et souvent pour rien. - Paris TypeScript - Paris, France
 2025-12-05 - La réactivité et les signaux : démystifions la magie du frontend - DevFest Dijon - Dijon, France
 2025-11-13 - La réactivité et les signaux : démystifions la magie du frontend - DevFest Toulouse - Toulouse, France
@@ -136,8 +136,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 | Deviens full-stack avec TypeScript | 1 | 0 | 1 | 0 | 0 |
 | En JavaScript, il y a un paquet pour tout... et souvent pour rien. | 7 | 1 | 6 | 0 | 0 |
 | Fluidifier l'expérience utilisateur | 1 | 0 | 0 | 1 | 0 |
-| Inertia: Un Anneau pour les gouverner tous | 2 | 0 | 2 | 0 | 0 |
-| Inertia: Un Anneau pour les gouverner tous. | 1 | 1 | 0 | 0 | 0 |
+| Inertia: Un Anneau pour les gouverner tous | 3 | 1 | 2 | 0 | 0 |
 | La réactivité et les signaux : démystifions la magie du frontend | 9 | 1 | 8 | 0 | 0 |
 | Nuxt, NuxtHub et le full-stack | 1 | 0 | 0 | 1 | 0 |
 | Ship Nuxt apps that scale | 2 | 0 | 1 | 1 | 0 |
@@ -145,6 +144,33 @@ Slides from my [talks](https://soubiran.dev/talks).
 | Unpoly pour reprendre le contrôle ! | 1 | 0 | 0 | 0 | 1 |
 | Vous n'avez pas besoin de ces nouvelles API Node.js | 1 | 0 | 1 | 0 | 0 |
 | You've dreamed it? Create full-stack apps with Nuxt! | 1 | 0 | 0 | 1 | 0 |
+
+### Talks with Recording
+
+| Year | With Recording | Without Recording | Coverage |
+|------|----------------|-------------------|----------|
+| 2026 | 1 | 7 | 13% |
+| 2025 | 6 | 13 | 32% |
+| 2024 | 3 | 3 | 50% |
+| 2023 | 1 | 0 | 100% |
+| **Total** | **11** | **23** | **32%** |
+
+### Talks per City
+
+| City | Total | 2026 | 2025 | 2024 | 2023 |
+|------|-------|------|------|------|------|
+| Bordeaux | 2 | 0 | 2 | 0 | 0 |
+| Dijon | 1 | 0 | 1 | 0 | 0 |
+| Lyon | 3 | 1 | 2 | 0 | 0 |
+| Nantes | 1 | 0 | 1 | 0 | 0 |
+| Online | 1 | 0 | 0 | 1 | 0 |
+| Paris | 18 | 5 | 9 | 3 | 1 |
+| Prague | 1 | 0 | 0 | 1 | 0 |
+| Rennes | 2 | 0 | 2 | 0 | 0 |
+| Strasbourg | 2 | 0 | 1 | 1 | 0 |
+| Toulouse | 1 | 0 | 1 | 0 | 0 |
+| Tours | 2 | 2 | 0 | 0 | 0 |
+
 ---
 
 Copy assets to S3 bucket:

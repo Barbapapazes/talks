@@ -13,7 +13,7 @@ transition: fade-out
 theme: slidev-theme-personal
 addons:
   - slidev-addon-inalia
-title: "Inertia: Un Anneau pour les gouverner tous."
+title: "Inertia: Un Anneau pour les gouverner tous"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: web,development,inertia,spa,laravel,vue,react,svelte,framework
@@ -21,7 +21,7 @@ event: Vue.js Paris
 date: 22 janvier 2026
 ---
 
-# Inertia: Un Anneau<br />pour les gouverner tous.
+# Inertia: Un Anneau<br />pour les gouverner tous
 
 <!--
 
