@@ -6,6 +6,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 ### 2026
 
+- `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-18) - Voxxed Days Luxembourg
+- `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-12) - DevLille
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-09) - Paris TypeScript
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-23) - Devoxx France
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-16) - MiXiT
@@ -54,6 +56,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 <summary>Copy talks list as text</summary>
 
 ```
+2026-06-18 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Voxxed Days Luxembourg - Luxembourg, Luxembourg
+2026-06-12 - Au cœur d'une pipeline : démystifions Vite et ses plugins - DevLille - Lille, France
 2026-06-09 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Paris TypeScript - Paris, France
 2026-04-23 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Devoxx France - Paris, France
 2026-04-16 - Au cœur d'une pipeline : démystifions Vite et ses plugins - MiXiT - Lyon, France
@@ -113,6 +117,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 | DevFest Dijon | 1 | 0 | 1 | 0 | 0 |
 | Devfest Nantes | 1 | 0 | 1 | 0 | 0 |
 | DevFest Toulouse | 1 | 0 | 1 | 0 | 0 |
+| DevLille | 1 | 1 | 0 | 0 | 0 |
 | Devoxx France | 5 | 1 | 2 | 1 | 1 |
 | HumanTalks Paris | 2 | 0 | 2 | 0 | 0 |
 | L'Atelier | 1 | 1 | 0 | 0 | 0 |
@@ -125,6 +130,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 | Takima | 1 | 1 | 0 | 0 | 0 |
 | TakiMeet | 1 | 0 | 0 | 1 | 0 |
 | Touraine Tech | 2 | 2 | 0 | 0 | 0 |
+| Voxxed Days Luxembourg | 1 | 1 | 0 | 0 | 0 |
 | Vue.js Paris | 2 | 1 | 0 | 1 | 0 |
 
 ### Talks by Title

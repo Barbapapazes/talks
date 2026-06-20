@@ -1,0 +1,18 @@
+<script lang="ts" setup>
+import ChatAnimation from '@theme/components/Chat/ChatAnimation.vue'
+import { assistantHtmlFrames } from 'virtual:ai:vite-explained-with-ai'
+
+const props = defineProps<{
+  userPrompt: string
+}>()
+</script>
+
+<template>
+  <ChatAnimation
+    :user-prompt="props.userPrompt"
+    :assistant-html-frames="assistantHtmlFrames"
+    :typewriter-char-delay-ms="30"
+    :search-duration-ms="1500"
+    :thinking-duration-ms="3000"
+  />
+</template>
