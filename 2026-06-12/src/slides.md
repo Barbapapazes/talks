@@ -17,13 +17,11 @@ title: "Au cœur d'une pipeline : démystifions Vite et ses plugins"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: web,development,vite,plugins,pipeline
-event: Devoxx France
-date: 23 avril 2026
+event: DevLille
+date: 12 juin 2026
 chooseYourOwnAdventure: true
 ready: true
 timing: 0.2
-chooseTheme:
-  questionId: 1
 ---
 
 <!--
@@ -57,7 +55,7 @@ ready: true
 timing: 0.8
 layout: center-card
 img:
-  default: /vite-background.png
+  default: ./vite-background.png
 transition: slide-up
 ---
 
@@ -184,7 +182,7 @@ ready: true
 timing: 0.8
 layout: center-card
 img:
-  default: /vite-background.png
+  default: ./vite-background.png
 clicks: 5
 ---
 
@@ -254,7 +252,7 @@ timing: 0
 layout: center-card
 ready: true
 img:
-  default: /vite-background.png
+  default: ./vite-background.png
 clicks: 6
 ---
 
@@ -306,10 +304,8 @@ timing: 2
 layout: image
 img:
   brutalism: false
-  default: /vite-background.png
+  default: ./vite-background.png
 chooseNextSlide: true
-inalia:
-  questionId: 2
 ---
 
 <EverythingIsAPlugin />
@@ -352,7 +348,19 @@ img:
   flowers: >-
     https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 inalia:
-  questionId: 2
+  question: "Tout n'est que plugin"
+  type: single_select
+  data:
+    - label: 'CSS Imported into a TypeScript File'
+      color: '#a855f7'
+      count: 27
+    - label: 'An Image Loaded in a TypeScript File'
+      color: '#64F755'
+      count: 27
+    - label: 'JSX Loaded Naturally'
+      color: '#55F7F6'
+      count: 33
+  chart: bar
 ---
 
 <!--
@@ -1369,8 +1377,6 @@ img:
     https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 chooseNextSlide: true
-inalia:
-  questionId: 3
 ---
 
 ````md magic-move
@@ -1446,8 +1452,6 @@ img:
     https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 transition: slide-up
 chooseNextSlide: true
-inalia:
-  questionId: 3
 ---
 
 ````md magic-move
@@ -1527,8 +1531,24 @@ img:
     https://images.unsplash.com/photo-1613901282632-bf2ad28d2369?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
   flowers: >-
     https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
 inalia:
-  questionId: 3
+  question: 'Un plugin pour virtualiser'
+  type: single_select
+  data:
+    - label: 'Vue Router - A Virtual Module'
+      color: '#55F773'
+      count: 40
+    - label: 'VitePress - Virtual Data'
+      color: '#5567F7'
+      count: 14
+    - label: 'Icons Plugin - Virtual Icons'
+      color: '#DEE23A'
+      count: 13
+    - label: 'Info Plugin - Virtual Information'
+      color: '#55D1F7'
+      count: 7
+  chart: bar
 ---
 
 <!--
@@ -2116,10 +2136,8 @@ timing: 0.7
 layout: image
 img:
   brutalism: false
-  default: /vite-background.png
+  default: ./vite-background.png
 chooseNextSlide: true
-inalia:
-  questionId: 4
 ---
 
 <OtherPluginCapabilities />
@@ -2152,7 +2170,28 @@ img:
   flowers: >-
     https://images.unsplash.com/photo-1488928741225-2aaf732c96cc?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 inalia:
-  questionId: 4
+  question: 'Les autres capacités des plugins'
+  type: single_select
+  data:
+    - label: 'Hot Module Replacement (HMR)'
+      color: '#C7F755'
+      count: 23
+    - label: 'Middleware - A Virtual File'
+      color: '#55EBF7'
+      count: 7
+    - label: 'Run Plugin - A Plugin for Running Commands'
+      color: '#F7B155'
+      count: 4
+    - label: 'Laravel Vite - Inter-process Communication'
+      color: '#F76755'
+      count: 5
+    - label: 'unplugin-macro - A Plugin for Creating Macros'
+      color: '#8EF755'
+      count: 0
+    - label: 'Nitro - A Backend'
+      color: '#a855f7'
+      count: 13
+  chart: bar
 ---
 
 

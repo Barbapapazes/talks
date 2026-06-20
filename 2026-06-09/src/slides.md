@@ -42,7 +42,7 @@ group: Introduction
 ready: true
 timing: 0.8
 layout: center-card
-img: /vite-background.png
+img: ./vite-background.png
 transition: slide-up
 ---
 
@@ -144,7 +144,7 @@ group: Vite Core
 ready: true
 timing: 0.8
 layout: center-card
-img: /vite-background.png
+img: ./vite-background.png
 clicks: 5
 ---
 
@@ -213,7 +213,7 @@ group: Vite Core
 timing: 1.8
 ready: true
 layout: center-card
-img: /vite-background.png
+img: ./vite-background.png
 clicks: 6
 ---
 
@@ -259,7 +259,7 @@ group: Feature Plugins
 ready: true
 timing: 1.9
 layout: image
-img: /vite-background.png
+img: ./vite-background.png
 ---
 
 <EverythingIsAPlugin />
@@ -1028,7 +1028,7 @@ group: Advanced Capabilities
 ready: true
 timing: 0.7
 layout: image
-img: /vite-background.png
+img: ./vite-background.png
 ---
 
 <OtherPluginCapabilities />
