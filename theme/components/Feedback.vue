@@ -3,12 +3,17 @@ import { InaliaQR, InaliaShortUrl, useInaliaTalk } from 'slidev-addon-inalia'
 import { computed } from 'vue'
 
 const props = defineProps<{
+  customFeedbackUrl?: string
   enablePlaceholder?: boolean
 }>()
 
 const { talk } = useInaliaTalk()
 
 const url = computed(() => {
+  if (props.customFeedbackUrl) {
+    return props.customFeedbackUrl
+  }
+
   if (talk) {
     return talk.urls.tiny_feedback
   }
@@ -21,6 +26,10 @@ const url = computed(() => {
 })
 
 const shortUrl = computed(() => {
+  if (props.customFeedbackUrl) {
+    return props.customFeedbackUrl.replace(/^https?:\/\//, '')
+  }
+
   if (talk) {
     return talk.urls.tiny_feedback
   }
