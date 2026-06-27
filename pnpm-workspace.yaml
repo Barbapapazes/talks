@@ -76,7 +76,7 @@ catalogs:
     '@shikijs/themes': ^4.1.0
     '@shikijs/transformers': ^4.1.0
     '@tsparticles/confetti': ^4.0.4
-    '@tsparticles/engine': ^3.9.1
+    '@tsparticles/engine': ^4.0.0
     '@tsparticles/plugin-emitters': ^3.9.1
     '@tsparticles/slim': ^4.0.3
     '@unovis/ts': 1.4.3-beta.0
