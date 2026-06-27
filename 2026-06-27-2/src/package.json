@@ -15,8 +15,8 @@
   "description": "Plongée au cœur de la pipeline de Vite : découvrez son fonctionnement interne et comment prendre le contrôle avec des plugins personnalisés.",
   "scripts": {
     "dev": "slidev",
-    "build": "slidev build --base /2026-06-27-1/asynconf/ --out ../../dist/2026-06-27-1/asynconf",
-    "export": "slidev export --per-slide --wait-until none --output ../2026-06-27-1-asynconf.pdf",
+    "build": "slidev build --base /2026-06-27-2/asynconf/ --out ../../dist/2026-06-27-2/asynconf",
+    "export": "slidev export --per-slide --wait-until none --output ../2026-06-27-2-asynconf.pdf",
     "thumbnail:cp": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
     "thumbnail": "slidev export --per-slide --range 1 --format png",
     "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
