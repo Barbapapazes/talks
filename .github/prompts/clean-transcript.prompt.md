@@ -1,6 +1,6 @@
 ---
 agent: 'agent'
-model: GPT-5 mini (copilot)
+model: GPT-5.4 (copilot)
 description: Improve automatic transcription of audio files by enhancing accuracy and reducing errors.
 ---
 

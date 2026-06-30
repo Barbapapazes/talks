@@ -10,6 +10,7 @@
       "longitude": 0.7028678082506143
     }
   },
+  "recording": "https://youtu.be/LBc7S0yv9xY",
   "private": true,
   "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
   "scripts": {

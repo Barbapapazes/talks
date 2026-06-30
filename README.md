@@ -160,11 +160,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Year | With Recording | Without Recording | Coverage |
 |------|----------------|-------------------|----------|
-| 2026 | 1 | 11 | 8% |
+| 2026 | 4 | 8 | 33% |
 | 2025 | 6 | 13 | 32% |
 | 2024 | 3 | 3 | 50% |
 | 2023 | 1 | 0 | 100% |
-| **Total** | **11** | **27** | **29%** |
+| **Total** | **14** | **24** | **37%** |
 
 ### Talks per City
 

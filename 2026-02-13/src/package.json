@@ -10,6 +10,7 @@
       "longitude": 0.7028678082506143
     }
   },
+  "recording": "https://youtu.be/nCRJlW_Zjm8",
   "private": true,
   "description": "Explorez le paradoxe des packages JavaScript : omniprésents mais souvent inutiles. Apprenez à optimiser vos dépendances efficacement.",
   "scripts": {

@@ -11,6 +11,7 @@
       "longitude": 3.0780877271604523
     }
   },
+  "recording": "https://youtu.be/AwhemfKsd8k",
   "private": true,
   "description": "Plongée au cœur de la pipeline de Vite : découvrez son fonctionnement interne et comment prendre le contrôle avec des plugins personnalisés.",
   "scripts": {
