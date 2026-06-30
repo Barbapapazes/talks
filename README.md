@@ -6,6 +6,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 ### 2026
 
+- `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2026-06-27-1) - Asynconf
+- `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-27-2) - Asynconf
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-18) - Voxxed Days Luxembourg
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-12) - DevLille
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-09) - Paris TypeScript
@@ -56,6 +58,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 <summary>Copy talks list as text</summary>
 
 ```
+2026-06-27 - La réactivité et les signaux : démystifions la magie du frontend - Asynconf - Paris, France
+2026-06-27 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Asynconf - Paris, France
 2026-06-18 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Voxxed Days Luxembourg - Luxembourg, Luxembourg
 2026-06-12 - Au cœur d'une pipeline : démystifions Vite et ses plugins - DevLille - Lille, France
 2026-06-09 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Paris TypeScript - Paris, France
@@ -102,16 +106,17 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Year | Number of Talks |
 |------|-----------------|
-| 2026 | 8 |
+| 2026 | 12 |
 | 2025 | 19 |
 | 2024 | 6 |
 | 2023 | 1 |
-| **Total** | **34** |
+| **Total** | **38** |
 
 ### Talks per Event
 
 | Event | Total | 2026 | 2025 | 2024 | 2023 |
 |-------|-------|------|------|------|------|
+| Asynconf | 2 | 2 | 0 | 0 | 0 |
 | BDX I/O | 2 | 0 | 2 | 0 | 0 |
 | BreizhCamp | 2 | 0 | 2 | 0 | 0 |
 | DevFest Dijon | 1 | 0 | 1 | 0 | 0 |
@@ -137,13 +142,13 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Talk Title | Total | 2026 | 2025 | 2024 | 2023 |
 |------------|-------|------|------|------|------|
-| Au cœur d'une pipeline : démystifions Vite et ses plugins | 5 | 5 | 0 | 0 | 0 |
+| Au cœur d'une pipeline : démystifions Vite et ses plugins | 8 | 8 | 0 | 0 | 0 |
 | Découvrons ensemble l'écosystème UnJS | 1 | 0 | 0 | 1 | 0 |
 | Deviens full-stack avec TypeScript | 1 | 0 | 1 | 0 | 0 |
 | En JavaScript, il y a un paquet pour tout... et souvent pour rien. | 7 | 1 | 6 | 0 | 0 |
 | Fluidifier l'expérience utilisateur | 1 | 0 | 0 | 1 | 0 |
 | Inertia: Un Anneau pour les gouverner tous | 3 | 1 | 2 | 0 | 0 |
-| La réactivité et les signaux : démystifions la magie du frontend | 9 | 1 | 8 | 0 | 0 |
+| La réactivité et les signaux : démystifions la magie du frontend | 10 | 2 | 8 | 0 | 0 |
 | Nuxt, NuxtHub et le full-stack | 1 | 0 | 0 | 1 | 0 |
 | Ship Nuxt apps that scale | 2 | 0 | 1 | 1 | 0 |
 | Unifié et Universel, le JavaScript avec UnJS | 1 | 0 | 0 | 1 | 0 |
@@ -155,11 +160,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Year | With Recording | Without Recording | Coverage |
 |------|----------------|-------------------|----------|
-| 2026 | 1 | 7 | 13% |
+| 2026 | 1 | 11 | 8% |
 | 2025 | 6 | 13 | 32% |
 | 2024 | 3 | 3 | 50% |
 | 2023 | 1 | 0 | 100% |
-| **Total** | **11** | **23** | **32%** |
+| **Total** | **11** | **27** | **29%** |
 
 ### Talks per City
 
@@ -167,10 +172,12 @@ Slides from my [talks](https://soubiran.dev/talks).
 |------|-------|------|------|------|------|
 | Bordeaux | 2 | 0 | 2 | 0 | 0 |
 | Dijon | 1 | 0 | 1 | 0 | 0 |
+| Lille | 1 | 1 | 0 | 0 | 0 |
+| Luxembourg | 1 | 1 | 0 | 0 | 0 |
 | Lyon | 3 | 1 | 2 | 0 | 0 |
 | Nantes | 1 | 0 | 1 | 0 | 0 |
 | Online | 1 | 0 | 0 | 1 | 0 |
-| Paris | 18 | 5 | 9 | 3 | 1 |
+| Paris | 20 | 7 | 9 | 3 | 1 |
 | Prague | 1 | 0 | 0 | 1 | 0 |
 | Rennes | 2 | 0 | 2 | 0 | 0 |
 | Strasbourg | 2 | 0 | 1 | 1 | 0 |

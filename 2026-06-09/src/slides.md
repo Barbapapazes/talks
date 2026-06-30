@@ -1113,7 +1113,6 @@ name: Outro
 timing: 1
 layout: outro2
 ready: true
-additionalContentUrl: https://gifts.talks.soubiran.dev/talks/au-coeur-dune-pipeline-demystifions-vite-et-ses-plugins/subscriptions/create
 ---
 
 <!--

@@ -496,7 +496,6 @@ C'est d'ailleurs l'un des grands changements dans Vue Vapor où la ganularité d
 ---
 name: Outro
 layout: outro2
-customFeedbackUrl: https://inalia.app/f/rsClYt
 ready: true
 ---
 
