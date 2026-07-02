@@ -9,9 +9,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 - `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2026-06-27-1) - Asynconf
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-27-2) - Asynconf
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-18) - Voxxed Days Luxembourg
+- `fr` [Le futur du développeur : IA, compétences et obsolescence](./2026-06-16) - NCL Days
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-12) - DevLille
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-09) - Paris TypeScript
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-23) - Devoxx France
+- `fr` [Rester en mouvement dans un monde instable : l'agentivité comme levier](./2026-04-17) - MiXiT
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-16) - MiXiT
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-13) - Takima
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-09) - L'Atelier
@@ -61,9 +63,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 2026-06-27 - La réactivité et les signaux : démystifions la magie du frontend - Asynconf - Paris, France
 2026-06-27 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Asynconf - Paris, France
 2026-06-18 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Voxxed Days Luxembourg - Luxembourg, Luxembourg
+2026-06-16 - Le futur du développeur : IA, compétences et obsolescence - NCL Days - Online, Online
 2026-06-12 - Au cœur d'une pipeline : démystifions Vite et ses plugins - DevLille - Lille, France
 2026-06-09 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Paris TypeScript - Paris, France
 2026-04-23 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Devoxx France - Paris, France
+2026-04-17 - Rester en mouvement dans un monde instable : l'agentivité comme levier - MiXiT - Lyon, France
 2026-04-16 - Au cœur d'une pipeline : démystifions Vite et ses plugins - MiXiT - Lyon, France
 2026-04-13 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Takima - Paris, France
 2026-04-09 - Au cœur d'une pipeline : démystifions Vite et ses plugins - L'Atelier - Paris, France
@@ -106,11 +110,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Year | Number of Talks |
 |------|-----------------|
-| 2026 | 12 |
+| 2026 | 14 |
 | 2025 | 19 |
 | 2024 | 6 |
 | 2023 | 1 |
-| **Total** | **38** |
+| **Total** | **40** |
 
 ### Talks per Event
 
@@ -126,7 +130,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 | Devoxx France | 5 | 1 | 2 | 1 | 1 |
 | HumanTalks Paris | 2 | 0 | 2 | 0 | 0 |
 | L'Atelier | 1 | 1 | 0 | 0 | 0 |
-| MiXiT | 3 | 1 | 2 | 0 | 0 |
+| MiXiT | 4 | 2 | 2 | 0 | 0 |
+| NCL Days | 1 | 1 | 0 | 0 | 0 |
 | Node.js Paris | 2 | 0 | 2 | 0 | 0 |
 | Nuxt Nation | 1 | 0 | 0 | 1 | 0 |
 | Paris TypeScript | 4 | 1 | 3 | 0 | 0 |
@@ -149,7 +154,9 @@ Slides from my [talks](https://soubiran.dev/talks).
 | Fluidifier l'expérience utilisateur | 1 | 0 | 0 | 1 | 0 |
 | Inertia: Un Anneau pour les gouverner tous | 3 | 1 | 2 | 0 | 0 |
 | La réactivité et les signaux : démystifions la magie du frontend | 10 | 2 | 8 | 0 | 0 |
+| Le futur du développeur : IA, compétences et obsolescence | 1 | 1 | 0 | 0 | 0 |
 | Nuxt, NuxtHub et le full-stack | 1 | 0 | 0 | 1 | 0 |
+| Rester en mouvement dans un monde instable : l'agentivité comme levier | 1 | 1 | 0 | 0 | 0 |
 | Ship Nuxt apps that scale | 2 | 0 | 1 | 1 | 0 |
 | Unifié et Universel, le JavaScript avec UnJS | 1 | 0 | 0 | 1 | 0 |
 | Unpoly pour reprendre le contrôle ! | 1 | 0 | 0 | 0 | 1 |
@@ -160,11 +167,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Year | With Recording | Without Recording | Coverage |
 |------|----------------|-------------------|----------|
-| 2026 | 4 | 8 | 33% |
+| 2026 | 6 | 8 | 43% |
 | 2025 | 6 | 13 | 32% |
 | 2024 | 3 | 3 | 50% |
 | 2023 | 1 | 0 | 100% |
-| **Total** | **14** | **24** | **37%** |
+| **Total** | **16** | **24** | **40%** |
 
 ### Talks per City
 
@@ -174,9 +181,9 @@ Slides from my [talks](https://soubiran.dev/talks).
 | Dijon | 1 | 0 | 1 | 0 | 0 |
 | Lille | 1 | 1 | 0 | 0 | 0 |
 | Luxembourg | 1 | 1 | 0 | 0 | 0 |
-| Lyon | 3 | 1 | 2 | 0 | 0 |
+| Lyon | 4 | 2 | 2 | 0 | 0 |
 | Nantes | 1 | 0 | 1 | 0 | 0 |
-| Online | 1 | 0 | 0 | 1 | 0 |
+| Online | 2 | 1 | 0 | 1 | 0 |
 | Paris | 20 | 7 | 9 | 3 | 1 |
 | Prague | 1 | 0 | 0 | 1 | 0 |
 | Rennes | 2 | 0 | 2 | 0 | 0 |

@@ -1,0 +1,34 @@
+{
+  "name": "ncldays",
+  "type": "module",
+  "event": {
+    "name": "NCL Days",
+    "url": "https://www.ncldays.fr/",
+    "location": {
+      "city": "Online",
+      "country": "Online",
+      "latitude": 0,
+      "longitude": 0
+    }
+  },
+  "private": true,
+  "description": "Dans un monde en perpétuel changement, développer son agentivité permet de prendre de meilleures décisions, d'agir avec intention et de rester acteur malgré l'incertitude.",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2026-06-16/ncldays/ --out ../../dist/2026-06-16/ncldays",
+    "export": "echo \"No export for this talk as Google Slides is used\" && exit 0",
+    "thumbnail:cp": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
+    "thumbnail": "slidev export --per-slide --range 1 --format png",
+    "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
+    "thumbnail:cp:dark": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
+    "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
+  },
+  "dependencies": {
+    "@slidev/client": "catalog:slidev",
+    "slidev-theme-personal": "workspace:*"
+  },
+  "devDependencies": {
+    "@slidev/cli": "catalog:build",
+    "typescript": "catalog:build"
+  }
+}

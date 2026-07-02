@@ -1218,6 +1218,22 @@ importers:
         specifier: catalog:vite-talk
         version: 0.9.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(yaml@2.9.0))
 
+  2026-04-17/src:
+    dependencies:
+      '@slidev/client':
+        specifier: catalog:slidev
+        version: 52.16.0(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.39)(lightningcss@1.32.0)(react@19.2.7)(rolldown@1.1.3)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(yaml@2.9.0))
+      slidev-theme-personal:
+        specifier: workspace:*
+        version: link:../../theme
+    devDependencies:
+      '@slidev/cli':
+        specifier: catalog:build
+        version: 52.16.0(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.39)(lightningcss@1.32.0)(markdown-it@14.2.0)(playwright-chromium@1.61.1)(postcss@8.5.16)(react@19.2.7)(rolldown@1.1.3)
+      typescript:
+        specifier: catalog:build
+        version: 6.0.3
+
   2026-04-23/src:
     dependencies:
       '@dagrejs/dagre':
@@ -1472,6 +1488,22 @@ importers:
       vite-plugin-run:
         specifier: catalog:vite-talk
         version: 0.9.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(yaml@2.9.0))
+
+  2026-06-16/src:
+    dependencies:
+      '@slidev/client':
+        specifier: catalog:slidev
+        version: 52.16.0(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.39)(lightningcss@1.32.0)(react@19.2.7)(rolldown@1.1.3)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(yaml@2.9.0))
+      slidev-theme-personal:
+        specifier: workspace:*
+        version: link:../../theme
+    devDependencies:
+      '@slidev/cli':
+        specifier: catalog:build
+        version: 52.16.0(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.39)(lightningcss@1.32.0)(markdown-it@14.2.0)(playwright-chromium@1.61.1)(postcss@8.5.16)(react@19.2.7)(rolldown@1.1.3)
+      typescript:
+        specifier: catalog:build
+        version: 6.0.3
 
   2026-06-18/src:
     dependencies:
