@@ -11,7 +11,7 @@ themeConfig:
 codeCopy: false
 transition: fade-out
 theme: slidev-theme-personal
-title: "Le futur du développeur : IA, compétences et obsolescence"
+title: "Rester en mouvement dans un monde instable : l'agentivité comme levier"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: ai,developer,future,skills
@@ -19,4 +19,4 @@ event: MiXiT
 date: 17 avril 2026
 ---
 
-# Le futur du développeur : IA, compétences et obsolescence
+# Rester en mouvement dans un monde instable : l'agentivité comme levier

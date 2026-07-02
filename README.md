@@ -9,11 +9,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 - `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2026-06-27-1) - Asynconf
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-27-2) - Asynconf
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-18) - Voxxed Days Luxembourg
-- `fr` [Le futur du développeur : IA, compétences et obsolescence](./2026-06-16) - NCL Days
+- `fr` [Rester en mouvement dans un monde instable : l'agentivité comme levier](./2026-06-16) - NCL Days
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-12) - DevLille
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-09) - Paris TypeScript
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-23) - Devoxx France
-- `fr` [Rester en mouvement dans un monde instable : l'agentivité comme levier](./2026-04-17) - MiXiT
+- `fr` [Le futur du développeur : IA, compétences et obsolescence](./2026-04-17) - MiXiT
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-16) - MiXiT
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-13) - Takima
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-04-09) - L'Atelier
@@ -63,11 +63,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 2026-06-27 - La réactivité et les signaux : démystifions la magie du frontend - Asynconf - Paris, France
 2026-06-27 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Asynconf - Paris, France
 2026-06-18 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Voxxed Days Luxembourg - Luxembourg, Luxembourg
-2026-06-16 - Le futur du développeur : IA, compétences et obsolescence - NCL Days - Online, Online
+2026-06-16 - Rester en mouvement dans un monde instable : l'agentivité comme levier - NCL Days - Online, Online
 2026-06-12 - Au cœur d'une pipeline : démystifions Vite et ses plugins - DevLille - Lille, France
 2026-06-09 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Paris TypeScript - Paris, France
 2026-04-23 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Devoxx France - Paris, France
-2026-04-17 - Rester en mouvement dans un monde instable : l'agentivité comme levier - MiXiT - Lyon, France
+2026-04-17 - Le futur du développeur : IA, compétences et obsolescence - MiXiT - Lyon, France
 2026-04-16 - Au cœur d'une pipeline : démystifions Vite et ses plugins - MiXiT - Lyon, France
 2026-04-13 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Takima - Paris, France
 2026-04-09 - Au cœur d'une pipeline : démystifions Vite et ses plugins - L'Atelier - Paris, France
