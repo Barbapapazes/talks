@@ -55,7 +55,7 @@ catalogs:
     pathe: ^2.0.3
     playwright-chromium: ^1.61.0
     prompts: ^2.4.2
-    taze: ^19.14.1
+    taze: ^20.0.0
     tiktoken: ^1.0.22
   slidev:
     '@slidev/client': ^52.15.2
