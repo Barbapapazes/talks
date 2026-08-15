@@ -13,7 +13,7 @@
   },
   "recording": "https://youtu.be/AwhemfKsd8k",
   "private": true,
-  "description": "Plongée au cœur de la pipeline de Vite : découvrez son fonctionnement interne et comment prendre le contrôle avec des plugins personnalisés.",
+  "description": "Explorez la pipeline de Vite, où chaque requête traverse résolution, chargement et transformation, pour comprendre et créer des plugins, des modules virtuels et des intégrations sur mesure.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-06-12/devlille/ --out ../../dist/2026-06-12/devlille",

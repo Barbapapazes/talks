@@ -12,7 +12,7 @@
     }
   },
   "private": true,
-  "description": "Découvrez Inertia.js, le pont élégant entre Laravel et Vue/React qui simplifie la création d'applications full-stack modernes.",
+  "description": "Découvrez comment Inertia.js modernise le monolithe web en associant Laravel à Vue, React ou Svelte pour des interfaces réactives sans API REST séparée.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-01-22/vuejs-paris/ --out ../../dist/2026-01-22/vuejs-paris",

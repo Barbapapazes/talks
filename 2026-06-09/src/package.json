@@ -12,7 +12,7 @@
     }
   },
   "private": true,
-  "description": "Plongée au cœur de la pipeline de Vite : découvrez son fonctionnement interne et comment prendre le contrôle avec des plugins personnalisés.",
+  "description": "Découvrez le fonctionnement essentiel de Vite : serveur de développement ESM, transformations à la demande, système de plugins et modules virtuels.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-06-09/paris-typescript/ --out ../../dist/2026-06-09/paris-typescript",

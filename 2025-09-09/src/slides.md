@@ -16,7 +16,7 @@ addons:
 title: "Inertia: Un Anneau pour les gouverner tous"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: web,development,full-stack,inertia,javascript,laravel
+keywords: inertiajs,laravel,vue,react,full-stack,monolith
 event: HumanTalks Paris
 date: 9 septembre 2025
 ---

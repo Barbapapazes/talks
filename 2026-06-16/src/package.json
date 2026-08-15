@@ -12,7 +12,7 @@
     }
   },
   "private": true,
-  "description": "Dans un monde en perpétuel changement, développer son agentivité permet de prendre de meilleures décisions, d'agir avec intention et de rester acteur malgré l'incertitude.",
+  "description": "Explorez l'agentivité comme une compétence d'adaptation : prendre des décisions intentionnelles, agir malgré l'incertitude et rester en mouvement dans un environnement instable.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-06-16/ncldays/ --out ../../dist/2026-06-16/ncldays",

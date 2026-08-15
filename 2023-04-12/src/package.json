@@ -11,7 +11,7 @@
     }
   },
   "private": true,
-  "description": "Découvrez Unpoly, une bibliothèque JavaScript permettant de créer des applications web progressives sans framework frontend lourd.",
+  "description": "Découvrez Unpoly, une bibliothèque JavaScript HTML-first qui apporte navigation rapide, fragments de page, formulaires et interactions modernes aux applications rendues côté serveur.",
   "recording": "https://youtu.be/MIM6E_XMRHQ",
   "scripts": {
     "dev": "slidev",

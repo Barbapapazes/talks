@@ -11,7 +11,7 @@
     }
   },
   "private": true,
-  "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
+  "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes.",
   "article": "https://soubiran.dev/posts/twice-in-one-day-speaking-at-bdx-io-2025-at-bordeaux",
   "scripts": {
     "dev": "slidev",

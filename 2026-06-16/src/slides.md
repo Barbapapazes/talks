@@ -14,7 +14,7 @@ theme: slidev-theme-personal
 title: "Rester en mouvement dans un monde instable : l'agentivité comme levier"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: ai,developer,future,skills
+keywords: agency,decision-making,adaptability,professional-development,uncertainty,personal-growth
 event: MiXiT
 date: 17 avril 2026
 ---

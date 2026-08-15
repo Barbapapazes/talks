@@ -11,7 +11,7 @@
     }
   },
   "private": true,
-  "description": "Améliorez l'expérience utilisateur en créant des interfaces fluides et réactives grâce aux techniques modernes de développement web.",
+  "description": "Concevez des retours d'interface fluides et fiables en choisissant entre loaders, optimistic UI et skeleton fallbacks, avec une mise en pratique dans Vue et Pinia Colada.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-11-20/takimeet/ --out ../../dist/2024-11-20/takimeet",

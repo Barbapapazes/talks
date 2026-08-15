@@ -12,7 +12,7 @@
     }
   },
   "private": true,
-  "description": "Plongée au cœur de la pipeline de Vite : découvrez son fonctionnement interne et comment prendre le contrôle avec des plugins personnalisés.",
+  "description": "Décryptez comment Vite traite chaque requête avec ses transformations, plugins, modules virtuels, middleware et HMR afin d'étendre le développement web moderne.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-06-18/voxxeddays-luxembourg/ --out ../../dist/2026-06-18/voxxeddays-luxembourg",

@@ -11,7 +11,7 @@
     }
   },
   "private": true,
-  "description": "Découvrez pourquoi certaines nouvelles API Node.js ne sont pas nécessaires et comment les alternatives existantes font mieux le travail.",
+  "description": "Prenez du recul sur les nouvelles API Node.js, de --watch et node:test à parseArgs, .env et SQLite, pour adopter les outils dont vos projets ont réellement besoin.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-03-05/nodejs-paris/ --out ../../dist/2025-03-05/nodejs-paris",

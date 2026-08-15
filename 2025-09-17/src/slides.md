@@ -16,7 +16,7 @@ addons:
 title: "Inertia: Un Anneau pour les gouverner tous"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: web,development,full-stack,inertia,javascript,adonis
+keywords: inertiajs,adonisjs,typescript,full-stack,monolith,server-driven-ui
 event: Node.js Paris
 date: 17 septembre 2025
 ---

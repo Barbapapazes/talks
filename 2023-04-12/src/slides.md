@@ -13,7 +13,7 @@ transition: fade-out
 title: Unpoly pour reprendre le contrôle !
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: unpoly,web,devoxxfr,development
+keywords: unpoly,progressive-enhancement,server-rendered-applications,html-over-the-wire,web-performance
 ---
 
 <h1 relative z-1>

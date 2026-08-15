@@ -20,7 +20,7 @@ growSeed: 7
 title: Découvrons ensemble l'écosystème UnJS
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: unjs,web,strasbourgjs,development
+keywords: unjs,typescript,npm-packages,developer-tooling,edge-computing,cross-runtime
 ---
 
 <h1 flex="~ col">

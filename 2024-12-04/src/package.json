@@ -11,7 +11,7 @@
     }
   },
   "private": true,
-  "description": "Explorez NuxtHub, la plateforme de déploiement full-stack pour Nuxt, et simplifiez la mise en production de vos applications.",
+  "description": "Découvrez comment Nuxt et NuxtHub réunissent frontend, API, base de données, stockage et déploiement Cloudflare dans une expérience full-stack cohérente.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-12-04/vuejs-paris/ --out ../../dist/2024-12-04/vuejs-paris",

@@ -17,7 +17,7 @@ addons:
 title: Deviens full-stack avec TypeScript
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: adonis,adonisjs,full-stack,apps,web,development
+keywords: adonisjs,typescript,backend,full-stack,web-architecture,testing
 event: Paris TypeScript
 date: 21 janvier 2025
 ---

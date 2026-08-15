@@ -17,7 +17,7 @@ addons:
 title: "La réactivité et les signaux : démystifions la magie du frontend"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: web,development,vue,reactivity,frontend
+keywords: frontend-reactivity,signals,dependency-tracking,computed-values,effects,vue
 event: DevFest Dijon
 date: 05 décembre 2025
 ---

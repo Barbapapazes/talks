@@ -15,7 +15,7 @@ addons:
 title: You've dreamed it? Create full-stack apps with Nuxt!
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: nuxt,nuxthub,full-stack,apps,web,development
+keywords: nuxt,nitro,nuxthub,full-stack,cloudflare,edge-computing
 ---
 
 <div op="60" font="400">

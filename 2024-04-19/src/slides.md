@@ -17,7 +17,7 @@ growSeed: 7
 title: Unifié et Universel, le JavaScript avec UnJS
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: unjs,web,devoxxfr,development
+keywords: unjs,typescript,npm-packages,developer-tooling,edge-computing,cross-runtime
 ---
 
 <h1 flex="~ col">

@@ -16,7 +16,7 @@ addons:
 title: "En JavaScript, il y a un paquet pour tout... et souvent pour rien."
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: web,development,e18e,web,performance
+keywords: javascript,dependencies,package-management,bundle-size,performance,e18e
 event: Devoxx France
 date: 18 avril 2025
 ---

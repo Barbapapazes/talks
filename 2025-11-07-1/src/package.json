@@ -11,7 +11,7 @@
     }
   },
   "private": true,
-  "description": "Explorez le paradoxe des packages JavaScript : omniprésents mais souvent inutiles. Apprenez à optimiser vos dépendances efficacement.",
+  "description": "Analysez le coût des dépendances JavaScript superflues et apprenez à réduire l'empreinte des packages, du bundle et de la chaîne de production.",
   "article": "https://soubiran.dev/posts/twice-in-one-day-speaking-at-bdx-io-2025-at-bordeaux",
   "scripts": {
     "dev": "slidev",

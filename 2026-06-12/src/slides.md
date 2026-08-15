@@ -16,7 +16,7 @@ addons:
 title: "Au cœur d'une pipeline : démystifions Vite et ses plugins"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: web,development,vite,plugins,pipeline
+keywords: vite,bundlers,esm,plugin-development,module-transforms,virtual-modules
 event: DevLille
 date: 12 juin 2026
 chooseYourOwnAdventure: true

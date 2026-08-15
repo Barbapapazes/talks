@@ -12,7 +12,7 @@
   },
   "recording": "https://youtu.be/nCRJlW_Zjm8",
   "private": true,
-  "description": "Explorez le paradoxe des packages JavaScript : omniprésents mais souvent inutiles. Apprenez à optimiser vos dépendances efficacement.",
+  "description": "Analysez le coût des dépendances JavaScript superflues et apprenez à réduire l'empreinte des packages, du bundle et de la chaîne de production.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-02-13/touraine-tech/ --out ../../dist/2026-02-13/touraine-tech",

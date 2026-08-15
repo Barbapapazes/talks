@@ -16,7 +16,7 @@ addons:
 title: Nuxt, NuxtHub et le full-stack
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: nuxt,nuxthub,full-stack,apps,web,development
+keywords: nuxt,nitro,nuxthub,full-stack,cloudflare,edge-computing
 ---
 
 <div class="relative">

@@ -16,7 +16,7 @@ addons:
 title: "Inertia: Un Anneau pour les gouverner tous"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: web,development,inertia,spa,laravel,vue,react,svelte,framework
+keywords: inertiajs,laravel,vue,react,svelte,full-stack,monolith
 event: Vue.js Paris
 date: 22 janvier 2026
 ---

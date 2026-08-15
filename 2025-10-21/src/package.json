@@ -11,7 +11,7 @@
     }
   },
   "private": true,
-  "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
+  "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-10-21/strasbourgjs/ --out ../../dist/2025-10-21/strasbourgjs",

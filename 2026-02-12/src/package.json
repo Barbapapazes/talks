@@ -12,7 +12,7 @@
   },
   "recording": "https://youtu.be/LBc7S0yv9xY",
   "private": true,
-  "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
+  "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-02-12/touraine-tech/ --out ../../dist/2026-02-12/touraine-tech",

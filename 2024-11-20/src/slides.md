@@ -16,7 +16,7 @@ addons:
 title: Fluidifier l'expérience utilisateur
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: web,development
+keywords: user-experience,optimistic-ui,loading-states,skeleton-screens,pinia-colada,vue
 ---
 
 <h1 class="text-center font-serif">

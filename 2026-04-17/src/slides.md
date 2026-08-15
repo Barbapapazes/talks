@@ -14,7 +14,7 @@ theme: slidev-theme-personal
 title: "Le futur du développeur : IA, compétences et obsolescence"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: ai,developer,future,skills
+keywords: artificial-intelligence,software-development,developer-careers,professional-skills,automation,technology-trends
 event: NCL Days
 date: 16 juin 2026
 ---

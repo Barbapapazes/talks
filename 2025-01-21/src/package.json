@@ -11,7 +11,7 @@
     }
   },
   "private": true,
-  "description": "Devenez développeur full-stack en maîtrisant TypeScript côté backend avec AdonisJS, un framework élégant et type-safe.",
+  "description": "Découvrez comment AdonisJS met TypeScript au service du backend avec routage, ORM, validation, authentification, autorisation, tests et architecture applicative.",
   "recording": "https://youtu.be/xKrok6ZtHUk",
   "scripts": {
     "dev": "slidev",

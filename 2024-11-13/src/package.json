@@ -11,7 +11,7 @@
     }
   },
   "private": true,
-  "description": "Découvrez comment déployer et faire évoluer vos applications Nuxt en production avec les meilleures pratiques et outils modernes.",
+  "description": "Learn how NuxtHub brings Nuxt applications to production with Cloudflare's edge platform, managed data services, deployment tooling, and a scalable full-stack architecture.",
   "recording": "https://youtu.be/I4-YfEn8K0w",
   "scripts": {
     "dev": "slidev",

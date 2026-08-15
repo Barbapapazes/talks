@@ -11,7 +11,7 @@
     }
   },
   "private": true,
-  "description": "Explorez l'écosystème UnJS et ses packages universels pour construire des applications JavaScript performantes et multiplateforme.",
+  "description": "Explorez UnJS, son écosystème de bibliothèques TypeScript universelles et les outils qui simplifient la création de packages npm compatibles avec tous les runtimes.",
   "recording": "https://youtu.be/mPcJXqaBLFM",
   "article": "https://soubiran.dev/posts/my-first-meetup-talk-a-dive-into-the-large-unjs-ecosystem",
   "scripts": {

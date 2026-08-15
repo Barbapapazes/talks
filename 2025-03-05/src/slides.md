@@ -16,7 +16,7 @@ addons:
 title: Vous n'avez pas besoin de ces nouvelles API Node.js
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
-keywords: typescript,nodejs,node,web,development
+keywords: nodejs,nodejs-apis,yagni,developer-tooling,package-managers,runtimes
 event: Node.js Paris
 date: 05 mars 2025
 ---

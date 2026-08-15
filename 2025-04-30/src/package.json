@@ -11,7 +11,7 @@
     }
   },
   "private": true,
-  "description": "Comprenez la réactivité et les signaux dans les frameworks frontend modernes : du fonctionnement interne aux cas d'usage pratiques.",
+  "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes.",
   "recording": "https://youtu.be/3PcrqsBVGgA",
   "article": "https://soubiran.dev/posts/the-conference-for-ethics-and-diversity-in-tech-mixit-2025",
   "scripts": {

@@ -13,7 +13,7 @@
   },
   "recording": "https://youtu.be/wL8EbLLGaVo",
   "private": true,
-  "description": "L'IA transforme profondément le métier de développeur. Comprendre cette mutation, prioriser les compétences qui comptent vraiment et rester acteur de son évolution devient essentiel.",
+  "description": "Examinez comment l'IA redéfinit le métier de développeur, les compétences à entretenir et les façons de rester acteur de son évolution professionnelle face à l'automatisation.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-04-17/mixit/ --out ../../dist/2026-04-17/mixit",
