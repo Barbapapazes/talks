@@ -29,6 +29,23 @@ async function generateMeta() {
   // Ensure dist directory exists
   mkdirSync('dist', { recursive: true })
 
+  const talks = meta
+    .filter(entry => entry.transcript_url)
+    .map(entry => ({
+      id: entry.prefix,
+      language: entry.language,
+      name: entry.name,
+      description: entry.description,
+      date: entry.date,
+      event: entry.event,
+      event_url: entry.event_url,
+      url: entry.url,
+      recording_url: entry.recording_url,
+      github_url: entry.github_url,
+      transcript_url: entry.transcript_url,
+      article_url: entry.article_url,
+    }))
+
   writeFileSync(join('dist', 'meta.json'), JSON.stringify({
     data: meta,
     statistics: {
@@ -56,6 +73,8 @@ async function generateMeta() {
       ),
     },
   }))
+
+  writeFileSync(join('dist', 'talks.json'), JSON.stringify(talks))
 }
 
 generateMeta()
