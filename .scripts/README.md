@@ -25,6 +25,8 @@ Utility scripts used to maintain talks metadata, assets, and deployment helpers.
   - full talks metadata array
   - computed statistics (by year, event, title)
   - duplicate talk guard (`name + event`)
+  - `dist/talks.json`, an MCP-friendly catalog of every talk, including
+    normalized topics, event location, and public links
 
 - `generate-readme.ts` — Regenerates the repository root `README.md` from discovered talk metadata.
 

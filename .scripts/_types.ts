@@ -23,6 +23,7 @@ export interface Package {
 export interface MetaEntry {
   language: string
   name: string
+  topics: string[]
   date: string
   prefix: string
   event: string
@@ -39,4 +40,31 @@ export interface MetaEntry {
   transcript_url?: string
   article_url?: string
   location: Location
+}
+
+export interface TalkCatalogEntry {
+  id: string
+  title: string
+  description?: string
+  date: string
+  presentationLanguage: string
+  topics: string[]
+  event: {
+    name: string
+    url: string
+    location: Pick<Location, 'city' | 'country'>
+  }
+  links: {
+    slides: string
+    source: string
+    pdf: string
+    recording?: string
+    audio?: string
+    transcript?: string
+    article?: string
+  }
+}
+
+export interface TalksCatalog {
+  data: TalkCatalogEntry[]
 }

@@ -3,17 +3,25 @@ import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import matter from 'gray-matter'
 
+interface TalkFrontmatter {
+  title?: string
+  keywords?: string | string[]
+  htmlAttrs?: {
+    lang?: string
+  }
+}
+
 export async function generateMetaEntry(dir: string): Promise<MetaEntry> {
   const pkg = await readFile(join(dir, 'src', 'package.json'), 'utf-8')
   const slides = await readFile(join(dir, 'src', 'slides.md'), 'utf-8')
 
   const packageJson = JSON.parse(pkg) as Package
-  const frontmatter = matter(slides).data
+  const frontmatter = matter(slides).data as TalkFrontmatter
 
   return talkMetaEntryMapper(dir, packageJson, frontmatter)
 }
 
-function talkMetaEntryMapper(dir: string, pkg: Package, frontmatter: Record<string, any>): MetaEntry {
+function talkMetaEntryMapper(dir: string, pkg: Package, frontmatter: TalkFrontmatter): MetaEntry {
   const prefix = `${dir}/${pkg.name}`
   const url = `https://talks.soubiran.dev/${prefix}`
   const thumbnail_url = `${url}/thumbnail.png`
@@ -26,8 +34,9 @@ function talkMetaEntryMapper(dir: string, pkg: Package, frontmatter: Record<stri
   const article_url = `${url}/article`
 
   return {
-    language: frontmatter.htmlAttrs.lang,
-    name: frontmatter.title,
+    language: frontmatter.htmlAttrs?.lang ?? 'en',
+    name: frontmatter.title ?? pkg.name,
+    topics: normalizeTopics(frontmatter.keywords),
     event: pkg.event.name,
     event_url: pkg.event.url,
     prefix,
@@ -46,4 +55,18 @@ function talkMetaEntryMapper(dir: string, pkg: Package, frontmatter: Record<stri
     article_url: pkg.article ? article_url : undefined,
     location: pkg.event.location,
   }
+}
+
+function normalizeTopics(keywords: TalkFrontmatter['keywords']): string[] {
+  if (!keywords) {
+    return []
+  }
+
+  const values = Array.isArray(keywords) ? keywords : keywords.split(',')
+
+  return [...new Set(
+    values
+      .map(topic => topic.trim().toLowerCase())
+      .filter(Boolean),
+  )]
 }
