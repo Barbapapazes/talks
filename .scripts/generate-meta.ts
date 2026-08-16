@@ -1,27 +1,22 @@
-import type { MetaEntry, TalkCatalogEntry, TalksCatalog } from './_types.ts'
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'pathe'
-import { generateMetaEntry } from './_meta.ts'
+import { createTalksCatalog, generateTalkEntries } from './_meta.ts'
 import { calculateStatistics } from './_readme.ts'
 import { getPackagesJson } from './_utils.ts'
+import type { MetaEntry } from './_types.ts'
 
 async function generateMeta() {
-  const meta = await loadMetaEntries()
+  const packagesJson = getPackagesJson()
+  const talks = await Promise.all(packagesJson.map(packageJson => generateTalkEntries(packageJson.split('/')[0])))
+  const meta = talks.map(talk => talk.meta)
   assertUniqueTalks(meta)
 
-  const statistics = serializeStatistics(calculateStatistics(meta))
-  const talks = createTalksCatalog(meta)
+  const statistics = calculateStatistics(meta)
 
   mkdirSync('dist', { recursive: true })
 
-  writeJson('meta.json', { data: meta, statistics })
-  writeJson('talks.json', talks)
-}
-
-function loadMetaEntries(): Promise<MetaEntry[]> {
-  return Promise.all(
-    getPackagesJson().map(packageJsonPath => generateMetaEntry(packageJsonPath.split('/')[0])),
-  )
+  writeJson('meta.json', { data: meta, statistics: serializeStatistics(statistics) })
+  writeJson('talks.json', createTalksCatalog(talks.map(talk => talk.catalog)))
 }
 
 function assertUniqueTalks(entries: MetaEntry[]) {
@@ -49,44 +44,10 @@ function serializeStatistics(statistics: ReturnType<typeof calculateStatistics>)
   }
 }
 
-function createTalksCatalog(entries: MetaEntry[]): TalksCatalog {
-  return {
-    data: entries.map(toTalkCatalogEntry),
-  }
-}
-
 function writeJson(fileName: string, data: unknown) {
   const content = JSON.stringify(data)
 
   writeFileSync(join('dist', fileName), content)
-}
-
-function toTalkCatalogEntry(entry: MetaEntry): TalkCatalogEntry {
-  return {
-    id: entry.prefix,
-    title: entry.name,
-    description: entry.description,
-    date: entry.date,
-    presentationLanguage: entry.language,
-    topics: entry.topics,
-    event: {
-      name: entry.event,
-      url: entry.event_url,
-      location: {
-        city: entry.location.city,
-        country: entry.location.country,
-      },
-    },
-    links: {
-      slides: entry.url,
-      source: entry.github_url ?? entry.url,
-      pdf: entry.pdf_url,
-      recording: entry.recording_url,
-      audio: entry.audio_url,
-      transcript: entry.transcript_url,
-      article: entry.article_url,
-    },
-  }
 }
 
 generateMeta()

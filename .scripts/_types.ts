@@ -42,29 +42,41 @@ export interface MetaEntry {
   location: Location
 }
 
+export interface TalkCatalogEvent {
+  name: string
+  url: string
+  location: Pick<Location, 'city' | 'country'>
+}
+
+export interface TalkCatalogLinks {
+  slides: string
+  source: string
+  pdf: string
+  recording?: string
+  audio?: string
+  transcript?: string
+  article?: string
+}
+
 export interface TalkCatalogEntry {
   id: string
+  type: 'talk'
   title: string
-  description?: string
   date: string
-  presentationLanguage: string
+  url: string
+  language: string
   topics: string[]
-  event: {
-    name: string
-    url: string
-    location: Pick<Location, 'city' | 'country'>
-  }
-  links: {
-    slides: string
-    source: string
-    pdf: string
-    recording?: string
-    audio?: string
-    transcript?: string
-    article?: string
-  }
+  event: TalkCatalogEvent
+  links: TalkCatalogLinks
+  description?: string
 }
 
 export interface TalksCatalog {
+  schemaVersion: '1.0'
+  generatedAt: string
+  site: {
+    id: 'talks.soubiran.dev'
+    url: 'https://talks.soubiran.dev'
+  }
   data: TalkCatalogEntry[]
 }

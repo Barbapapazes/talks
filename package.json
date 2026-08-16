@@ -15,6 +15,7 @@
     "clean": "rm -rf dist && rm -rf slides-export",
     "generate:redirects": "node .scripts/generate-redirects.ts",
     "generate:meta": "node .scripts/generate-meta.ts",
+    "test:catalog": "vitest run .scripts/_meta.test.ts",
     "generate:readme": "node .scripts/generate-readme.ts",
     "generate:talk-readme": "node .scripts/generate-talk-readme.ts",
     "generate:tree": "node .scripts/generate-tree.ts",
