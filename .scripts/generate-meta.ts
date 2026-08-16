@@ -1,9 +1,9 @@
+import type { MetaEntry } from './_types.ts'
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'pathe'
 import { createTalksCatalog, generateTalkEntries } from './_meta.ts'
 import { calculateStatistics } from './_readme.ts'
 import { getPackagesJson } from './_utils.ts'
-import type { MetaEntry } from './_types.ts'
 
 async function generateMeta() {
   const packagesJson = getPackagesJson()
