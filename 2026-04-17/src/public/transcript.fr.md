@@ -1,6 +1,6 @@
 Bonjour à tous, j’espère que vous allez bien. C’est très plaisant de vous voir aussi nombreux. Vous continuez quand même à rentrer, donc c’est trop cool.
 
-Vous vous entassez un petit peu dans le fond. Vous l’avez vu sur le programme, on était censés être deux. Malheureusement, je serai tout seul : Julia n’a pas pu se joindre à nous aujourd’hui, donc je vais essayer d’assurer ça tout seul.
+Vous vous entassez un petit peu dans le fond. Vous l’avez vu sur le programme, on était censés être deux. Malheureusement, je serai tout seul : Julie n’a pas pu se joindre à nous aujourd’hui, donc je vais essayer d’assurer ça tout seul.
 
 Ce n’était pas prévu, mais ce n’est pas très grave. J’aimerais peut-être qu’on fasse ça sous un format un peu différent de ce qui était prévu.
 

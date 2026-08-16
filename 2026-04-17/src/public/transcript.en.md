@@ -1,6 +1,6 @@
 Hello everyone, I hope you're doing well. It's really nice to see so many of you. You're still coming in, so that's great.
 
-You're a bit packed towards the back. As you saw on the programme, there were supposed to be two of us. Unfortunately, I'll be alone: Julia couldn't join us today, so I'll try to handle this on my own.
+You're a bit packed towards the back. As you saw on the programme, there were supposed to be two of us. Unfortunately, I'll be alone: Julie couldn't join us today, so I'll try to handle this on my own.
 
 It wasn't planned, but it's not a big deal. I might even do this in a slightly different format than what was planned.
 
