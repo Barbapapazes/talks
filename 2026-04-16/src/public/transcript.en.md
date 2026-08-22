@@ -1,3 +1,6 @@
+---
+id: 2026-04-16/mixit
+---
 Hello everyone, I hope you're doing well. I'm very happy to see so many of you here today.
 
 Before we start, I suggest we all take a little photo together. To keep a small memento, if you don't want to be in the photo, put both hands on your head.

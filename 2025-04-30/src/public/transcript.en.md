@@ -1,3 +1,6 @@
+---
+id: 2025-04-30/mixit
+---
 Hello everyone and thank you for being here today. We’re going to talk about a topic I really enjoy and that’s not often well explained online: signal-based reactivity, and try to understand what’s going on in our front end.
 
 Before going further, please scan the QR code. You’ll find my socials, a question not to open right away so we can keep the flow, a link to rate the talk—preferably at the end—and reactions at the bottom of the page to react in real time.

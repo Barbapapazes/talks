@@ -55,6 +55,8 @@ Utility scripts used to maintain talks metadata, assets, and deployment helpers.
   - transcribes chunks with OpenAI (`gpt-4o-transcribe`)
   - writes/updates `src/public/transcript.en.md`
 
+- `update-transcripts-frontmatter.ts` — Adds or updates each English and French transcript's canonical talk `id` frontmatter from the talk metadata.
+
 - `redeploy-worker.ts` — Uses Cloudflare API to re-trigger the currently active worker build/deployment.
 
 ## Environment variables

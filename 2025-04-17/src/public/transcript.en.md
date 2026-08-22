@@ -1,3 +1,6 @@
+---
+id: 2025-04-17/devoxxfr
+---
 Hello everyone, I’m very happy to be at Devoxx today to talk about a topic I really enjoy: signal reactivity in the front end. There are many of you—I didn’t expect such interest, and that’s very cool.
 
 Before we begin, please scan the QR code to access an interactive page. You’ll find my socials, questions we’ll answer as we go, a link to rate the talk at the end, a place to ask questions for the Q&A session, and real-time reactions if something resonates with you.

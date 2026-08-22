@@ -1,3 +1,6 @@
+---
+id: 2026-02-13/touraine-tech
+---
 I’m going to talk to you about a topic that’s very close to my heart. It’s something we often don’t give much time or importance to, and that’s JavaScript packages.
 
 Before going any further, I invite you to scan the QR code right there. It will take you to a page where you’ll be able to find all my socials, answer questions — for now, don’t do that, we’ll do it as we go —, find the link to leave me feedback, which I’d recommend doing at the end if you want to be objective, and, at any point, react to what I’m saying if you like it, if you agree, or if you simply think it’s funny.

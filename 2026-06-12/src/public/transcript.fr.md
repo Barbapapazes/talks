@@ -1,3 +1,6 @@
+---
+id: 2026-06-12/devlille
+---
 Bonjour à tous, j'espère que vous allez bien.
 
 Je suis très heureux d'être ici avec vous, et je suis très heureux de vous voir aussi nombreux pour parler de Vite et de ses plugins.

@@ -1,3 +1,6 @@
+---
+id: 2026-02-12/touraine-tech
+---
 Bonjour tout le monde et bienvenue.
 
 Aujourd'hui, on va parler d'un sujet qui me tient beaucoup à cœur, qu'on a tendance à beaucoup utiliser, mais dont on ne sait pas forcément comment ça marche en profondeur. Aujourd'hui, on va parler des signaux et de la réactivité.

@@ -1,3 +1,6 @@
+---
+id: 2025-01-21/paris-typescript
+---
 Hello everyone, I’m very happy to be here tonight to talk about how to become full‑stack with TypeScript. It’s my first time here, but not my first talk.
 
 My name is Estéban Soubiran. I’m a full‑stack web developer at MaiaSpace. MaiaSpace builds lightweight partially reusable launch vehicles—in short, we launch rockets into space.

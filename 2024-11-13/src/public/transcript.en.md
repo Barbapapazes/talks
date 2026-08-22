@@ -1,3 +1,6 @@
+---
+id: 2024-11-13/nuxtnation
+---
 Hello everyone, I’m thrilled to be here today.
 
 Since the launch of Nuxt 3, the tagline has been “create performant and production-grade full-stack web apps.” But what does that really mean, and how does it stand today?

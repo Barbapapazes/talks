@@ -14,7 +14,8 @@ Target language
   - If source is French → output English.
 
 Output format
-- Return only the translated transcript text. No headings, explanations, timestamps, or metadata.
+- Preserve the source transcript's YAML frontmatter exactly, including its `id`; translate only the body.
+- Return only the translated transcript text and its preserved frontmatter. No headings, explanations, or timestamps.
 - Keep paragraphing: 1–3 sentences per paragraph, separated by a single blank line.
 - Do not include the source text; output must be translation only.
 - File naming and destination:

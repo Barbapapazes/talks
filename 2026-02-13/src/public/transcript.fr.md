@@ -1,3 +1,6 @@
+---
+id: 2026-02-13/touraine-tech
+---
 Je vais vous présenter un sujet qui me tient beaucoup à cœur. On n’y accorde pas souvent beaucoup de temps ni beaucoup d’importance, et c’est celui des paquets en JavaScript.
 
 Avant d’aller plus loin, je vous invite à scanner le QR code qui est juste là. Il va vous amener sur une page sur laquelle vous allez pouvoir retrouver l’ensemble de mes réseaux, répondre à des questions — pour l’instant, ne le faites pas, on le fera au fur et à mesure —, retrouver le lien pour me laisser un feedback, ce que je vous conseille plutôt de faire à la fin si vous voulez être objectif, et puis, à tout moment, réagir à ce que je dis si vous aimez, si vous êtes d’accord ou si simplement vous trouvez ça drôle.

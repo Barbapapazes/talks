@@ -1,3 +1,6 @@
+---
+id: 2026-04-23/devoxxfr
+---
 Hello everyone, I hope you’re doing well. We’re going to start without slides, that’s okay.
 
 I’m very happy that you’re here. I no longer have a microphone, but I have slides and everything I need. To get things started, I suggest we take a photo together: if you don’t want to be in the photo, put your hand in front of your face. Smile.

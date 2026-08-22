@@ -1,3 +1,6 @@
+---
+id: 2024-04-12/strasbourgjs
+---
 Hello everyone. I’m very happy to be here; I hope you’re doing well. There aren’t many of us, but you’re very spread out.
 
 We’re going to discover what UnJS is together. We’ll do it interactively for two reasons: ask your questions at any time, and build the talk together. Get your phones ready to scan a few QR codes during the presentation; the more responsive we are, the sooner we’ll grab beers.

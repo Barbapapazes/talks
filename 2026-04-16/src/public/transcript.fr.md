@@ -1,3 +1,6 @@
+---
+id: 2026-04-16/mixit
+---
 Bonjour à tous, j'espère que vous allez bien. Je suis très heureux que vous soyez aussi nombreux aujourd'hui.
 
 Avant de commencer, je vous propose qu'on fasse tous ensemble une petite photo. Pour garder un petit souvenir, si jamais vous ne voulez pas être sur la photo, vous mettez vos deux mains sur votre tête.

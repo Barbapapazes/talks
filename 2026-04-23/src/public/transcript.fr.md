@@ -1,3 +1,6 @@
+---
+id: 2026-04-23/devoxxfr
+---
 Bonjour à tous, j'espère que vous allez bien. Nous allons démarrer sans slides, ce n'est pas grave.
 
 Je suis très heureux que vous soyez là. Je n'ai plus de micro, mais j'ai des slides et tout le nécessaire. Pour bien commencer, je vous propose qu'on prenne une photo tous ensemble : si vous ne voulez pas être sur la photo, mettez une main devant votre visage. Souriez.

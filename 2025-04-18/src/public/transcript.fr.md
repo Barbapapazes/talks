@@ -1,3 +1,6 @@
+---
+id: 2025-04-18/devoxxfr
+---
 Bonjour à tous, très heureux aujourd’hui d’être à Devoxx pour vous parler d’un sujet assez méconnu mais que j’aime beaucoup: les paquets en JavaScript. Aujourd’hui, on a des paquets pour tout… et très souvent des paquets pour rien. C’est exactement ce qu’on va explorer.
 
 Avant de commencer, je vous invite à scanner le QR code ici. Vous arriverez sur un petit tableau de bord avec tous mes réseaux et une question; pour l’instant, ne cliquez pas dessus, on y répondra plus tard.
