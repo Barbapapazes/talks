@@ -1,0 +1,21 @@
+name: Synchronize content
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  synchronize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npx @soubiran/content talks --glob './**/public/transcript.*.md'
+        env:
+          CF_ACCESS_CLIENT_ID: ${{ secrets.CONTENT_CF_ACCESS_CLIENT_ID }}
+          CF_ACCESS_CLIENT_SECRET: ${{ secrets.CONTENT_CF_ACCESS_CLIENT_SECRET }}
