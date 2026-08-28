@@ -50,6 +50,8 @@ export interface TalkCatalogEvent {
 
 export interface TalkCatalogLinks {
   slides: string
+  thumbnail: string
+  thumbnailDark: string
   source: string
   pdf: string
   recording?: string

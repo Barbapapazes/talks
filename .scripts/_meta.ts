@@ -96,6 +96,8 @@ export function toTalkCatalogEntry(entry: MetaEntry, frontmatter: Record<string,
     },
     links: {
       slides: entry.url,
+      thumbnail: entry.thumbnail_url,
+      thumbnailDark: entry.thumbnail_dark_url,
       source: entry.github_url ?? `${entry.url}/src`,
       pdf: entry.pdf_url,
       ...(entry.recording_url ? { recording: entry.recording_url } : {}),

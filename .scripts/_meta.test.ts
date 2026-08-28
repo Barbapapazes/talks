@@ -50,6 +50,8 @@ describe('talk catalog', () => {
       },
       links: {
         slides: 'https://talks.soubiran.dev/2025-11-07-2/llm-catalogs',
+        thumbnail: 'https://talks.soubiran.dev/2025-11-07-2/llm-catalogs/thumbnail.png',
+        thumbnailDark: 'https://talks.soubiran.dev/2025-11-07-2/llm-catalogs/thumbnail-dark.png',
         source: 'https://talks.soubiran.dev/2025-11-07-2/llm-catalogs/src',
         pdf: 'https://talks.soubiran.dev/2025-11-07-2/llm-catalogs/pdf',
         recording: 'https://talks.soubiran.dev/2025-11-07-2/llm-catalogs/recording',
@@ -73,6 +75,8 @@ describe('talk catalog', () => {
 
     expect(entry.links).toEqual({
       slides: 'https://talks.soubiran.dev/2026-01-22/llm-catalogs',
+      thumbnail: 'https://talks.soubiran.dev/2026-01-22/llm-catalogs/thumbnail.png',
+      thumbnailDark: 'https://talks.soubiran.dev/2026-01-22/llm-catalogs/thumbnail-dark.png',
       source: 'https://talks.soubiran.dev/2026-01-22/llm-catalogs/src',
       pdf: 'https://talks.soubiran.dev/2026-01-22/llm-catalogs/pdf',
     })
