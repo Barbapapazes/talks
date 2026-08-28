@@ -90,6 +90,8 @@ export function toTalkCatalogEntry(entry: MetaEntry, frontmatter: Record<string,
       location: {
         city: entry.location.city,
         country: entry.location.country,
+        latitude: entry.location.latitude,
+        longitude: entry.location.longitude,
       },
     },
     links: {

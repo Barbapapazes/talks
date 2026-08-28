@@ -12,10 +12,12 @@ async function generateMeta() {
   assertUniqueTalks(meta)
 
   const statistics = calculateStatistics(meta)
+  const serializedStatistics = serializeStatistics(statistics)
 
   mkdirSync('dist', { recursive: true })
 
-  writeJson('meta.json', { data: meta, statistics: serializeStatistics(statistics) })
+  writeJson('meta.json', { data: meta, statistics: serializedStatistics })
+  writeJson('statistics.json', serializedStatistics)
   writeJson('talks.json', createTalksCatalog(talks.map(talk => talk.catalog)))
 }
 

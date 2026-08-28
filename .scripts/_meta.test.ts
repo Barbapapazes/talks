@@ -44,6 +44,8 @@ describe('talk catalog', () => {
         location: {
           city: 'Paris',
           country: 'France',
+          latitude: 48.8566,
+          longitude: 2.3522,
         },
       },
       links: {

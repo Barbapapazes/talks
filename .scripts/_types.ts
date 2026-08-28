@@ -45,7 +45,7 @@ export interface MetaEntry {
 export interface TalkCatalogEvent {
   name: string
   url: string
-  location: Pick<Location, 'city' | 'country'>
+  location: Location
 }
 
 export interface TalkCatalogLinks {
