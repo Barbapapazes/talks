@@ -1,5 +1,20 @@
 {
   "name": "human-talks",
+  "date": "2025-04-08",
+  "sourceLanguage": "fr",
+  "topics": ["nuxt", "nitro", "nuxthub", "full-stack", "cloudflare", "edge-computing"],
+  "locales": {
+    "en": {
+      "id": "ee5d72eb-39da-4454-8af6-3ab453c14ad3",
+      "title": "Ship Nuxt apps that scale",
+      "description": "Learn how NuxtHub uses Cloudflare to deploy full-stack Nuxt applications, manage data, and scale without infrastructure overhead."
+    },
+    "fr": {
+      "id": "ab073ed0-8c30-4986-b457-23560ff45e35",
+      "title": "Ship Nuxt apps that scale",
+      "description": "Découvrez comment NuxtHub s'appuie sur Cloudflare pour déployer des applications Nuxt full-stack, gérer les données et passer à l'échelle sans complexité d'infrastructure."
+    }
+  },
   "event": {
     "name": "HumanTalks Paris",
     "url": "https://humantalks.paris/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Découvrez comment NuxtHub s'appuie sur Cloudflare pour déployer des applications Nuxt full-stack, gérer les données et passer à l'échelle sans complexité d'infrastructure.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-04-08/human-talks/ --out ../../dist/2025-04-08/human-talks",

@@ -1,5 +1,20 @@
 {
   "name": "latelier",
+  "date": "2026-04-09",
+  "sourceLanguage": "fr",
+  "topics": ["vite", "bundlers", "esm", "plugin-development", "module-transforms", "virtual-modules"],
+  "locales": {
+    "en": {
+      "id": "fe3f3d42-5509-402d-8ea9-4750c546d9d9",
+      "title": "Inside a pipeline: demystifying Vite and its plugins",
+      "description": "Follow a Vite request through resolution, loading, and transformation to understand and build plugins, virtual modules, and custom integrations."
+    },
+    "fr": {
+      "id": "4304b4a7-37d3-43b0-ad9b-fa6909c57d8a",
+      "title": "Au cœur d'une pipeline : démystifions Vite et ses plugins",
+      "description": "Explorez la pipeline de Vite, où chaque requête traverse résolution, chargement et transformation, pour comprendre et créer des plugins, des modules virtuels et des intégrations sur mesure."
+    }
+  },
   "type": "module",
   "event": {
     "name": "L'Atelier",
@@ -12,7 +27,6 @@
     }
   },
   "private": true,
-  "description": "Explorez la pipeline de Vite, où chaque requête traverse résolution, chargement et transformation, pour comprendre et créer des plugins, des modules virtuels et des intégrations sur mesure.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-04-09/latelier/ --out ../../dist/2026-04-09/latelier",

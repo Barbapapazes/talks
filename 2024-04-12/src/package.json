@@ -1,5 +1,20 @@
 {
   "name": "strasbourgjs",
+  "date": "2024-04-12",
+  "sourceLanguage": "fr",
+  "topics": ["unjs", "typescript", "npm-packages", "developer-tooling", "edge-computing", "cross-runtime"],
+  "locales": {
+    "en": {
+      "id": "23e29cef-bfce-48fa-b742-991e4f272a41",
+      "title": "Discover the UnJS ecosystem",
+      "description": "Explore UnJS, its ecosystem of universal TypeScript libraries, and the tools that simplify building npm packages for every runtime."
+    },
+    "fr": {
+      "id": "9d5155fb-ac25-41ff-ac12-b86e6c880b1d",
+      "title": "Découvrons ensemble l'écosystème UnJS",
+      "description": "Explorez UnJS, son écosystème de bibliothèques TypeScript universelles et les outils qui simplifient la création de packages npm compatibles avec tous les runtimes."
+    }
+  },
   "event": {
     "name": "StrasbourgJS",
     "url": "https://strasbourgjs.org/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Explorez UnJS, son écosystème de bibliothèques TypeScript universelles et les outils qui simplifient la création de packages npm compatibles avec tous les runtimes.",
   "recording": "https://youtu.be/mPcJXqaBLFM",
   "article": "https://soubiran.dev/posts/my-first-meetup-talk-a-dive-into-the-large-unjs-ecosystem",
   "scripts": {

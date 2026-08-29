@@ -1,0 +1,3 @@
+Cette conférence interactive laisse le public choisir le parcours parmi plusieurs exemples de Vite. Elle présente d'abord Vite comme serveur de développement, bundler de production et système de plugins, puis suit les requêtes du navigateur pour montrer comment Vite transforme à la demande le CSS, les images, le JSX et les fichiers de framework en JavaScript.
+
+La démonstration construit ensuite des plugins avec `resolveId`, `load` et `transform`, puis utilise les hooks de cycle de vie et `vite-plugin-inspect`. Elle passe par un plugin de transformation, un chargeur Markdown externe et des modules virtuels avec `vite-plugin-virtual`, avant d'aborder le HMR, les middlewares, Nitro, l'ordre des plugins et les filtres de Rolldown.

@@ -1,5 +1,20 @@
 {
   "name": "devoxxfr",
+  "date": "2025-04-17",
+  "sourceLanguage": "fr",
+  "topics": ["frontend-reactivity", "signals", "dependency-tracking", "computed-values", "effects", "vue"],
+  "locales": {
+    "en": {
+      "id": "48a8a750-8be9-4457-9dfd-588a701fd385",
+      "title": "Reactivity and signals: demystifying frontend magic",
+      "description": "Unpack frontend reactivity: change propagation, dependency tracking, signals, computed values, and effects in modern frameworks."
+    },
+    "fr": {
+      "id": "75d3b3cb-c231-4b87-9cbc-036b3022712e",
+      "title": "La réactivité et les signaux : démystifions la magie du frontend",
+      "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes."
+    }
+  },
   "event": {
     "name": "Devoxx France",
     "url": "https://www.devoxx.fr/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes.",
   "recording": "https://youtu.be/Iyts6NE6bps",
   "article": "https://soubiran.dev/posts/beyond-the-tech-people-who-made-devoxx-france-2025-special",
   "scripts": {

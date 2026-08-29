@@ -1,0 +1,3 @@
+Le cas de `is-string` sert de point de départ pour examiner ce que cachent les installations NPM. Derrière une fonction simple se trouvent des dépendances transitives, des fichiers non exécutables et une part limitée de JavaScript réellement utilisée. Le talk invite à vérifier ce coût avant d’ajouter un paquet.
+
+Avec `e18e`, `pkg-size`, `deptree` et `npmgraph`, il devient possible d’inspecter le contenu installé, de repérer des API natives et de visualiser les dépendances d’un projet. L’exemple de Storybook montre qu’un arbre plus court réduit aussi bien le travail d’installation que la charge de maintenance.

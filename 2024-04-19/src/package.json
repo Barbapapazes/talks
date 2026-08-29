@@ -1,5 +1,20 @@
 {
   "name": "devoxxfr",
+  "date": "2024-04-19",
+  "sourceLanguage": "fr",
+  "topics": ["unjs", "typescript", "npm-packages", "developer-tooling", "edge-computing", "cross-runtime"],
+  "locales": {
+    "en": {
+      "id": "41a590cb-fafa-486d-98d3-8d0b37681ba7",
+      "title": "Unified and universal: JavaScript with UnJS",
+      "description": "Learn how UnJS provides modular, runtime-independent TypeScript tools for building, publishing, and deploying JavaScript applications from the edge to Node.js."
+    },
+    "fr": {
+      "id": "ea6d94ce-12ce-4169-b34d-e003eb34e888",
+      "title": "Unifié et Universel, le JavaScript avec UnJS",
+      "description": "Découvrez la vision d'UnJS : des outils TypeScript modulaires et indépendants du runtime pour créer, publier et déployer des applications JavaScript, de l'edge à Node.js."
+    }
+  },
   "event": {
     "name": "Devoxx France",
     "url": "https://devoxx.fr/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Découvrez la vision d'UnJS : des outils TypeScript modulaires et indépendants du runtime pour créer, publier et déployer des applications JavaScript, de l'edge à Node.js.",
   "recording": "https://youtu.be/0BApl8r1VWc",
   "article": "https://soubiran.dev/posts/speaking-at-devoxx-france-2024-insights-and-highlights",
   "scripts": {

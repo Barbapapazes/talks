@@ -1,5 +1,20 @@
 {
   "name": "strasbourgjs",
+  "date": "2025-10-21",
+  "sourceLanguage": "fr",
+  "topics": ["frontend-reactivity", "signals", "dependency-tracking", "computed-values", "effects", "vue"],
+  "locales": {
+    "en": {
+      "id": "b775ce48-d189-4813-9bfb-4198ad5daf60",
+      "title": "Reactivity and signals: demystifying frontend magic",
+      "description": "Unpack frontend reactivity: change propagation, dependency tracking, signals, computed values, and effects in modern frameworks."
+    },
+    "fr": {
+      "id": "2a3868cb-81ac-4f38-95c0-2b82d36d2a0c",
+      "title": "La réactivité et les signaux : démystifions la magie du frontend",
+      "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes."
+    }
+  },
   "event": {
     "name": "StrasbourgJS",
     "url": "https://strasbourgjs.org/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-10-21/strasbourgjs/ --out ../../dist/2025-10-21/strasbourgjs",

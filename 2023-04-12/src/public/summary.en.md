@@ -1,0 +1,3 @@
+Unpoly offers a simpler alternative to splitting a server-rendered application into an API and a modern frontend. The talk follows Atom as he replaces a MERN stack with HTML attributes such as `up-target`, `up-instant`, `up-preload`, `up-submit`, and `up-layer` to add partial navigation, responsive forms, modals, animations, and preserved page state.
+
+The approach keeps routing, validation, authentication, and authorization on the server while improving the browser experience. With `up.compiler` and the server protocol, Unpoly also handles dynamic components and tailored responses without giving up progressive enhancement.

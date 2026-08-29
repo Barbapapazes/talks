@@ -1,6 +1,3 @@
----
-id: 2024-04-12/strasbourgjs
----
 Bonjour à tous. Ça me fait très plaisir d'être ici, j’espère que vous allez bien. On n’est pas nombreux mais vous êtes très éparpillés.
 
 On va découvrir ensemble ce qu’est UnJS. On va le faire de façon interactive pour deux raisons: poser vos questions à tout moment, et composer le talk ensemble. Préparez vos téléphones pour scanner quelques QR codes pendant la présentation; plus on sera réactifs, plus vite on ira boire des bières.

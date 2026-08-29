@@ -1,0 +1,3 @@
+The talk questions the cost of adding tiny JavaScript packages by following `is-string`, a widely downloaded module that many developers have never installed directly. Tools such as Node Modules Inspector and `pkg-size` reveal its transitive dependencies, installed files, and the small share of code that serves the original purpose.
+
+The `e18e` community addresses this through cleanup, modernization, and performance work. `deptree` helps find native or lighter replacements, while `npmgraph` exposes dependency-heavy projects such as Storybook. The goal is practical: inspect dependencies before adding them and remove unnecessary weight from existing projects.

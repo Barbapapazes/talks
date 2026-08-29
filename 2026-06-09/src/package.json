@@ -1,5 +1,20 @@
 {
   "name": "paris-typescript",
+  "date": "2026-06-09",
+  "sourceLanguage": "fr",
+  "topics": ["vite", "bundlers", "esm", "plugin-development", "module-transforms", "virtual-modules"],
+  "locales": {
+    "en": {
+      "id": "8756d756-4430-4084-b867-d02319db5418",
+      "title": "Inside a pipeline: demystifying Vite and its plugins",
+      "description": "Learn the essentials of Vite: its ESM development server, on-demand transformations, plugin system, and virtual modules."
+    },
+    "fr": {
+      "id": "c1481bd3-8e87-49db-b5de-c399e3d08018",
+      "title": "Au cœur d'une pipeline : démystifions Vite et ses plugins",
+      "description": "Découvrez le fonctionnement essentiel de Vite : serveur de développement ESM, transformations à la demande, système de plugins et modules virtuels."
+    }
+  },
   "type": "module",
   "event": {
     "name": "Paris TypeScript",
@@ -12,7 +27,6 @@
     }
   },
   "private": true,
-  "description": "Découvrez le fonctionnement essentiel de Vite : serveur de développement ESM, transformations à la demande, système de plugins et modules virtuels.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-06-09/paris-typescript/ --out ../../dist/2026-06-09/paris-typescript",

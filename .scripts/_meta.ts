@@ -1,45 +1,40 @@
-import type { MetaEntry, Package, TalkCatalogEntry, TalksCatalog } from './_types'
+import type { Locale, LocalizedTalkMetadata, TalkLinks } from '@soubiran/talks'
+import type { LocalizedTalkMetadataByLocale, MetaEntry, Package } from './_types'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import matter from 'gray-matter'
-
-interface TalkSource {
-  packageJson: Package
-  frontmatter: Record<string, unknown>
-}
+import { validateTalkPackage } from './_validation.ts'
 
 export interface TalkEntries {
   meta: MetaEntry
-  catalog: TalkCatalogEntry
+  localizedMetadata: LocalizedTalkMetadataByLocale
 }
 
 export async function generateMetaEntry(dir: string): Promise<MetaEntry> {
-  const source = await loadTalkSource(dir)
+  const packageJson = await loadTalkPackage(dir)
 
-  return mapTalkMetaEntry(dir, source.packageJson, source.frontmatter)
+  return mapTalkMetaEntry(dir, packageJson)
 }
 
 export async function generateTalkEntries(dir: string): Promise<TalkEntries> {
-  const source = await loadTalkSource(dir)
-  const meta = mapTalkMetaEntry(dir, source.packageJson, source.frontmatter)
+  return generateTalkEntriesFromPackage(dir, await loadTalkPackage(dir))
+}
+
+export function generateTalkEntriesFromPackage(dir: string, pkg: Package): TalkEntries {
+  const meta = mapTalkMetaEntry(dir, pkg)
 
   return {
     meta,
-    catalog: toTalkCatalogEntry(meta, source.frontmatter),
+    localizedMetadata: mapLocalizedTalkMetadataByLocale(dir, pkg),
   }
 }
 
-async function loadTalkSource(dir: string): Promise<TalkSource> {
+async function loadTalkPackage(dir: string): Promise<Package> {
   const pkg = await readFile(join(dir, 'src', 'package.json'), 'utf-8')
-  const slides = await readFile(join(dir, 'src', 'slides.md'), 'utf-8')
 
-  return {
-    packageJson: JSON.parse(pkg) as Package,
-    frontmatter: matter(slides).data,
-  }
+  return validateTalkPackage(dir, JSON.parse(pkg))
 }
 
-export function mapTalkMetaEntry(dir: string, pkg: Package, frontmatter: Record<string, unknown>): MetaEntry {
+export function mapTalkMetaEntry(dir: string, pkg: Package): MetaEntry {
   const prefix = `${dir}/${pkg.name}`
   const url = `https://talks.soubiran.dev/${prefix}`
   const thumbnail_url = `${url}/thumbnail.png`
@@ -52,15 +47,14 @@ export function mapTalkMetaEntry(dir: string, pkg: Package, frontmatter: Record<
   const article_url = `${url}/article`
 
   return {
-    language: toLanguage(frontmatter),
-    name: toOptionalString(frontmatter.title) ?? pkg.name,
-    topics: normalizeTopics(frontmatter.keywords),
+    language: pkg.sourceLanguage,
+    name: pkg.locales[pkg.sourceLanguage].title,
+    topics: sortedTopics(pkg.topics),
     event: pkg.event.name,
     event_url: pkg.event.url,
     prefix,
-    // Keep only the first 10 characters (date) because talks given on the same day are suffixed with -1, -2, ...
-    date: dir.slice(0, 10),
-    description: pkg.description,
+    date: pkg.date,
+    description: pkg.locales[pkg.sourceLanguage].description,
     folder: dir,
     url,
     thumbnail_url,
@@ -75,76 +69,68 @@ export function mapTalkMetaEntry(dir: string, pkg: Package, frontmatter: Record<
   }
 }
 
-export function toTalkCatalogEntry(entry: MetaEntry, frontmatter: Record<string, unknown>): TalkCatalogEntry {
+export function mapLocalizedTalkMetadata<L extends Locale>(dir: string, pkg: Package, locale: L): LocalizedTalkMetadata<L> {
+  const prefix = `${dir}/${pkg.name}`
+  const url = `https://talks.soubiran.dev/${prefix}`
+  const metadata = pkg.locales[locale]
+
   return {
-    id: entry.prefix,
-    type: 'talk',
-    title: entry.name,
-    date: entry.date,
-    url: entry.url,
-    language: entry.language,
-    topics: normalizeTopics(frontmatter.keywords),
+    id: metadata.id,
+    locale,
+    sourceLanguage: pkg.sourceLanguage,
+    slug: prefix,
+    title: metadata.title,
+    description: metadata.description,
+    date: pkg.date,
+    topics: sortedTopics(pkg.topics),
     event: {
-      name: entry.event,
-      url: entry.event_url,
+      name: pkg.event.name,
+      url: pkg.event.url,
       location: {
-        city: entry.location.city,
-        country: entry.location.country,
-        latitude: entry.location.latitude,
-        longitude: entry.location.longitude,
+        city: pkg.event.location.city,
+        country: pkg.event.location.country,
+        latitude: pkg.event.location.latitude,
+        longitude: pkg.event.location.longitude,
       },
     },
-    links: {
-      slides: entry.url,
-      thumbnail: entry.thumbnail_url,
-      thumbnailDark: entry.thumbnail_dark_url,
-      source: entry.github_url ?? `${entry.url}/src`,
-      pdf: entry.pdf_url,
-      ...(entry.recording_url ? { recording: entry.recording_url } : {}),
-      ...(entry.audio_url ? { audio: entry.audio_url } : {}),
-      ...(entry.transcript_url ? { transcript: entry.transcript_url } : {}),
-      ...(entry.article_url ? { article: entry.article_url } : {}),
+    links: createTalkLinks(url, pkg),
+    artifacts: {
+      summary: `summary.${locale}.md`,
+      ...(pkg.recording ? { transcript: `transcript.${locale}.md` } : {}),
     },
-    ...(entry.description ? { description: entry.description } : {}),
   }
 }
 
-export function createTalksCatalog(data: TalkCatalogEntry[], generatedAt = new Date().toISOString()): TalksCatalog {
+function mapLocalizedTalkMetadataByLocale(dir: string, pkg: Package): LocalizedTalkMetadataByLocale {
   return {
-    schemaVersion: '1.0',
-    generatedAt,
-    site: {
-      id: 'talks.soubiran.dev',
-      url: 'https://talks.soubiran.dev',
-    },
-    data,
+    en: mapLocalizedTalkMetadata(dir, pkg, 'en'),
+    fr: mapLocalizedTalkMetadata(dir, pkg, 'fr'),
   }
 }
 
-function toLanguage(frontmatter: Record<string, unknown>): string {
-  const htmlAttrs = frontmatter.htmlAttrs
+function createTalkLinks(url: string, pkg: Package): TalkLinks {
+  const recordingUrl = `${url}/recording`
+  const audioUrl = `${url}/audio`
+  const transcriptUrl = `https://soubiran.dev/talks/${url.slice('https://talks.soubiran.dev/'.length)}`
+  const articleUrl = `${url}/article`
 
-  if (!htmlAttrs || typeof htmlAttrs !== 'object' || Array.isArray(htmlAttrs)) {
-    return 'en'
+  return {
+    slides: url,
+    thumbnail: `${url}/thumbnail.png`,
+    thumbnailDark: `${url}/thumbnail-dark.png`,
+    source: `${url}/src`,
+    pdf: `${url}/pdf`,
+    ...(pkg.recording
+      ? {
+          recording: recordingUrl,
+          audio: audioUrl,
+          transcript: transcriptUrl,
+        }
+      : {}),
+    ...(pkg.article ? { article: articleUrl } : {}),
   }
-
-  return toOptionalString((htmlAttrs as Record<string, unknown>).lang) ?? 'en'
 }
 
-function normalizeTopics(value: unknown): string[] {
-  const topics = Array.isArray(value)
-    ? value
-    : typeof value === 'string'
-      ? value.split(',')
-      : []
-
-  return [...new Set(topics
-    .filter((topic): topic is string => typeof topic === 'string')
-    .map(topic => topic.trim().toLowerCase())
-    .filter(Boolean))]
-    .sort((left, right) => left.localeCompare(right))
-}
-
-function toOptionalString(value: unknown): string | undefined {
-  return typeof value === 'string' && value.length > 0 ? value : undefined
+function sortedTopics(topics: readonly string[]): string[] {
+  return [...topics].sort((left, right) => left.localeCompare(right))
 }

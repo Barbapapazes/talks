@@ -1,23 +1,34 @@
-export interface Location {
-  city: string
-  country: string
-  latitude: number
-  longitude: number
+import type { Event, Locale, LocalizedTalkMetadata, Location, SourceLanguage } from '@soubiran/talks'
+
+export type { Event, Locale, LocalizedTalkMetadata, Location, SourceLanguage, TalkLinks } from '@soubiran/talks'
+
+export const LOCALES = ['en', 'fr'] as const
+
+export interface PackageLocaleMetadata {
+  id: string
+  title: string
+  description: string
 }
 
-export interface Event {
-  name: string
-  url: string
-  location: Location
+export interface PackageLocales {
+  en: PackageLocaleMetadata
+  fr: PackageLocaleMetadata
 }
 
 export interface Package {
   date: string
   name: string
   event: Event
+  sourceLanguage: SourceLanguage
+  topics: string[]
+  locales: PackageLocales
   description?: string
   recording?: string
   article?: string
+}
+
+export type LocalizedTalkMetadataByLocale = {
+  [L in Locale]: LocalizedTalkMetadata<L>
 }
 
 export interface MetaEntry {
@@ -40,45 +51,4 @@ export interface MetaEntry {
   transcript_url?: string
   article_url?: string
   location: Location
-}
-
-export interface TalkCatalogEvent {
-  name: string
-  url: string
-  location: Location
-}
-
-export interface TalkCatalogLinks {
-  slides: string
-  thumbnail: string
-  thumbnailDark: string
-  source: string
-  pdf: string
-  recording?: string
-  audio?: string
-  transcript?: string
-  article?: string
-}
-
-export interface TalkCatalogEntry {
-  id: string
-  type: 'talk'
-  title: string
-  date: string
-  url: string
-  language: string
-  topics: string[]
-  event: TalkCatalogEvent
-  links: TalkCatalogLinks
-  description?: string
-}
-
-export interface TalksCatalog {
-  schemaVersion: '1.0'
-  generatedAt: string
-  site: {
-    id: 'talks.soubiran.dev'
-    url: 'https://talks.soubiran.dev'
-  }
-  data: TalkCatalogEntry[]
 }

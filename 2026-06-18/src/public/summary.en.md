@@ -1,0 +1,3 @@
+Vite connects source files to the browser through a pipeline that resolves, loads, and transforms modules on demand. This talk explains the same pipeline through CSS, images, JSX, Vue files, Markdown, and build-time data, then shows how `vite-plugin-inspect` can make those transformations visible.
+
+The second half focuses on plugin development. It covers the main module hooks, lifecycle hooks, simple transformations, external Markdown loading, automatic imports, virtual modules, generated routes, virtual data, icons, build metadata, HMR, middleware, macros, command execution, Laravel Vite, and Nitro.

@@ -15,13 +15,13 @@
     "clean": "rm -rf dist && rm -rf slides-export",
     "generate:redirects": "node .scripts/generate-redirects.ts",
     "generate:meta": "node .scripts/generate-meta.ts",
-    "test:catalog": "vitest run .scripts/_meta.test.ts",
     "generate:readme": "node .scripts/generate-readme.ts",
     "generate:talk-readme": "node .scripts/generate-talk-readme.ts",
     "generate:tree": "node .scripts/generate-tree.ts",
     "update:timing": "node .scripts/update-timing.ts",
-    "update:transcripts": "node .scripts/update-transcripts-frontmatter.ts",
     "sort:frontmatter": "node .scripts/sort-slides-frontmatter.ts",
+    "typecheck": "tsc -p tsconfig.node.json && pnpm --filter @soubiran/talks run test:types",
+    "release": "bumpp --sign",
     "dev": "node .scripts/select-deck.ts dev --open",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
@@ -45,9 +45,12 @@
     "@slidev/cli": "catalog:build",
     "@slidev/parser": "catalog:scripts",
     "@slidev/theme-default": "catalog:slidev",
+    "@soubiran/talks": "workspace:*",
     "@types/node": "catalog:build",
     "@types/prompts": "catalog:scripts",
     "@unocss/eslint-plugin": "catalog:lint",
+    "bumpp": "catalog:release",
+    "changelogithub": "catalog:release",
     "dotenv": "catalog:scripts",
     "eslint": "catalog:lint",
     "execa": "catalog:scripts",
@@ -62,6 +65,8 @@
     "taze": "catalog:scripts",
     "tiktoken": "catalog:scripts",
     "typescript": "catalog:build",
-    "unocss": "catalog:build"
+    "unocss": "catalog:build",
+    "vitest": "catalog:test",
+    "zod": "catalog:scripts"
   }
 }

@@ -1,6 +1,3 @@
----
-id: 2025-10-17/devfest-nantes
----
 Here we are already at the last session of this Devfest. You are the survivors, and so is the speaker, congratulations to you.
 
 Do you want to discover how to improve your pipelines, shrink your builds, simplify project maintenance, and reduce the attack surface of your apps?

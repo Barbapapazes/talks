@@ -1,5 +1,20 @@
 {
   "name": "nodejs-paris",
+  "date": "2025-03-05",
+  "sourceLanguage": "fr",
+  "topics": ["nodejs", "nodejs-apis", "yagni", "developer-tooling", "package-managers", "runtimes"],
+  "locales": {
+    "en": {
+      "id": "4e7cb9ea-82aa-4d56-b335-002a5420db26",
+      "title": "You don't need these new Node.js APIs",
+      "description": "Take a closer look at newer Node.js APIs, from --watch and node:test to parseArgs, .env, and SQLite, then decide which tools your projects actually need."
+    },
+    "fr": {
+      "id": "9ca534b2-6405-4c1b-855f-e743f3043c93",
+      "title": "Vous n'avez pas besoin de ces nouvelles API Node.js",
+      "description": "Prenez du recul sur les nouvelles API Node.js, de --watch et node:test à parseArgs, .env et SQLite, pour adopter les outils dont vos projets ont réellement besoin."
+    }
+  },
   "event": {
     "name": "Node.js Paris",
     "url": "http://nodejs.paris/meetups",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Prenez du recul sur les nouvelles API Node.js, de --watch et node:test à parseArgs, .env et SQLite, pour adopter les outils dont vos projets ont réellement besoin.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-03-05/nodejs-paris/ --out ../../dist/2025-03-05/nodejs-paris",

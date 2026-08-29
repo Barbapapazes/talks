@@ -1,5 +1,20 @@
 {
   "name": "devfest-dijon",
+  "date": "2025-12-05",
+  "sourceLanguage": "fr",
+  "topics": ["frontend-reactivity", "signals", "dependency-tracking", "computed-values", "effects", "vue"],
+  "locales": {
+    "en": {
+      "id": "f0bd50a5-2abd-4d76-b6de-4705590e0744",
+      "title": "Reactivity and signals: demystifying frontend magic",
+      "description": "Unpack frontend reactivity: change propagation, dependency tracking, signals, computed values, and effects in modern frameworks."
+    },
+    "fr": {
+      "id": "2ceb9345-9e50-475e-a246-6f94c986c13c",
+      "title": "La réactivité et les signaux : démystifions la magie du frontend",
+      "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes."
+    }
+  },
   "event": {
     "name": "DevFest Dijon",
     "url": "https://devfest.developers-group-dijon.fr/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-12-05/devfest-dijon/ --out ../../dist/2025-12-05/devfest-dijon",

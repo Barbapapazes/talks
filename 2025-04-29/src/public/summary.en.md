@@ -1,0 +1,3 @@
+A package’s download count says little about how much of it a project actually needs. Using `is-string` as an example, the talk examines the files, transitive dependencies, installation cost, and bundle impact hidden behind a simple API, then contrasts native expressions such as `typeof value === 'string'`.
+
+The `e18e` ecosystem provides a way to act on these findings. `pkg-size`, `deptree`, and `npmgraph` help developers inspect package weight, discover replacements, and understand dependency graphs. The Storybook example shows how reducing that graph can improve both loading work and long-term maintenance.

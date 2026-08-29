@@ -1,5 +1,20 @@
 {
   "name": "nuxtnation",
+  "date": "2024-11-13",
+  "sourceLanguage": "en",
+  "topics": ["nuxt", "nitro", "nuxthub", "full-stack", "cloudflare", "edge-computing"],
+  "locales": {
+    "en": {
+      "id": "ac5aed5a-f07a-4394-81e9-9d25ad026e7e",
+      "title": "Ship Nuxt apps that scale",
+      "description": "Learn how NuxtHub brings Nuxt applications to production with Cloudflare's edge platform, managed data services, deployment tooling, and a scalable full-stack architecture."
+    },
+    "fr": {
+      "id": "2071049a-5675-4074-b066-6161255dd62d",
+      "title": "Déployez des applications Nuxt qui passent à l'échelle",
+      "description": "Découvrez comment NuxtHub met les applications Nuxt en production avec la plateforme edge de Cloudflare, des services de données gérés, des outils de déploiement et une architecture full-stack évolutive."
+    }
+  },
   "event": {
     "name": "Nuxt Nation",
     "url": "https://nuxtnation.com/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Learn how NuxtHub brings Nuxt applications to production with Cloudflare's edge platform, managed data services, deployment tooling, and a scalable full-stack architecture.",
   "recording": "https://youtu.be/I4-YfEn8K0w",
   "scripts": {
     "dev": "slidev",

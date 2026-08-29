@@ -1,5 +1,20 @@
 {
   "name": "humantalks-paris",
+  "date": "2025-09-09",
+  "sourceLanguage": "fr",
+  "topics": ["inertiajs", "laravel", "vue", "react", "full-stack", "monolith"],
+  "locales": {
+    "en": {
+      "id": "b3d0c40a-96f1-46f9-abb2-76b7e862cdb5",
+      "title": "Inertia: One Ring to rule them all",
+      "description": "Learn how Inertia.js pairs Laravel routes and controllers with Vue or React pages to build rich interfaces without splitting the backend into a REST API."
+    },
+    "fr": {
+      "id": "6f197e2b-9083-4faf-9b9f-e54aa3ea0d84",
+      "title": "Inertia: Un Anneau pour les gouverner tous",
+      "description": "Découvrez comment Inertia.js associe routes et contrôleurs Laravel à des pages Vue ou React pour créer des interfaces riches sans séparer le backend dans une API REST."
+    }
+  },
   "event": {
     "name": "HumanTalks Paris",
     "url": "https://humantalks.paris/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Découvrez comment Inertia.js associe routes et contrôleurs Laravel à des pages Vue ou React pour créer des interfaces riches sans séparer le backend dans une API REST.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-09-09/humantalks-paris/ --out ../../dist/2025-09-09/humantalks-paris",

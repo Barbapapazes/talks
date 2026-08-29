@@ -1,6 +1,3 @@
----
-id: 2024-04-19/devoxxfr
----
 Hello everyone, I hope you’re having a great Devoxx. For the next 15 minutes, we’ll discover what UnJS is and its vision for a unified and universal JavaScript.
 
 Get your phones ready; there will be a few QR codes to scan.

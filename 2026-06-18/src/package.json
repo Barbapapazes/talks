@@ -1,5 +1,20 @@
 {
   "name": "voxxeddays-luxembourg",
+  "date": "2026-06-18",
+  "sourceLanguage": "fr",
+  "topics": ["vite", "bundlers", "esm", "plugin-development", "module-transforms", "virtual-modules", "hot-module-replacement", "middleware"],
+  "locales": {
+    "en": {
+      "id": "a6e200c1-6442-4c97-906f-cb58cf102995",
+      "title": "Inside a pipeline: demystifying Vite and its plugins",
+      "description": "See how Vite processes each request with transformations, plugins, virtual modules, middleware, and HMR to extend modern web development."
+    },
+    "fr": {
+      "id": "b13cb96f-c155-41a2-97e5-1236fbe26f1a",
+      "title": "Au cœur d'une pipeline : démystifions Vite et ses plugins",
+      "description": "Décryptez comment Vite traite chaque requête avec ses transformations, plugins, modules virtuels, middleware et HMR afin d'étendre le développement web moderne."
+    }
+  },
   "type": "module",
   "event": {
     "name": "Voxxed Days Luxembourg",
@@ -12,7 +27,6 @@
     }
   },
   "private": true,
-  "description": "Décryptez comment Vite traite chaque requête avec ses transformations, plugins, modules virtuels, middleware et HMR afin d'étendre le développement web moderne.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-06-18/voxxeddays-luxembourg/ --out ../../dist/2026-06-18/voxxeddays-luxembourg",

@@ -1,5 +1,20 @@
 {
   "name": "paris-typescript",
+  "date": "2025-01-21",
+  "sourceLanguage": "fr",
+  "topics": ["adonisjs", "typescript", "backend", "full-stack", "web-architecture", "testing"],
+  "locales": {
+    "en": {
+      "id": "6a169e55-32dd-4454-878d-d39290607511",
+      "title": "Become full-stack with TypeScript",
+      "description": "Learn how AdonisJS applies TypeScript to backend development with routing, an ORM, validation, authentication, authorization, tests, and application architecture."
+    },
+    "fr": {
+      "id": "2aecfc0c-2767-4a99-ba55-4aa3f92fe376",
+      "title": "Deviens full-stack avec TypeScript",
+      "description": "Découvrez comment AdonisJS met TypeScript au service du backend avec routage, ORM, validation, authentification, autorisation, tests et architecture applicative."
+    }
+  },
   "event": {
     "name": "Paris TypeScript",
     "url": "https://typescript.paris/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Découvrez comment AdonisJS met TypeScript au service du backend avec routage, ORM, validation, authentification, autorisation, tests et architecture applicative.",
   "recording": "https://youtu.be/xKrok6ZtHUk",
   "scripts": {
     "dev": "slidev",

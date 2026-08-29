@@ -1,5 +1,20 @@
 {
   "name": "vuejs-paris",
+  "date": "2026-01-22",
+  "sourceLanguage": "fr",
+  "topics": ["inertiajs", "laravel", "vue", "react", "svelte", "full-stack", "monolith"],
+  "locales": {
+    "en": {
+      "id": "3fb1bd14-9b2d-4ef2-bf11-beededb68db4",
+      "title": "Inertia: One Ring to rule them all",
+      "description": "Learn how Inertia.js modernizes the web monolith by pairing Laravel with Vue, React, or Svelte for reactive interfaces without a separate REST API."
+    },
+    "fr": {
+      "id": "72faa83b-2b8a-4682-b2e7-9a905b12946d",
+      "title": "Inertia: Un Anneau pour les gouverner tous",
+      "description": "Découvrez comment Inertia.js modernise le monolithe web en associant Laravel à Vue, React ou Svelte pour des interfaces réactives sans API REST séparée."
+    }
+  },
   "type": "module",
   "event": {
     "name": "Vue.js Paris",
@@ -12,7 +27,6 @@
     }
   },
   "private": true,
-  "description": "Découvrez comment Inertia.js modernise le monolithe web en associant Laravel à Vue, React ou Svelte pour des interfaces réactives sans API REST séparée.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-01-22/vuejs-paris/ --out ../../dist/2026-01-22/vuejs-paris",

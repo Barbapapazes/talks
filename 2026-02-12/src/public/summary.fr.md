@@ -1,0 +1,3 @@
+Cette conférence entre dans le détail d'`alien-signals`, une implémentation bas niveau et indépendante du langage des systèmes réactifs. Avec `signal`, `computed`, `effect` et `effectScope`, elle explique comment les abonnés mémorisent leurs dépendances et comment les changements circulent dans un graphe orienté.
+
+La théorie des graphes, le tri topologique et les listes doublement chaînées servent ensuite à lire le code de la bibliothèque. La conclusion revient sur les limites des systèmes réactifs et fait le lien avec les effets des composants Vue et la granularité au niveau du DOM envisagée par Vue Vapor.

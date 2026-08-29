@@ -1,0 +1,3 @@
+Unpoly montre comment moderniser une application rendue côté serveur sans lui ajouter une API JSON ni un frontend séparé. La démonstration part d’une plateforme de vote et utilise `up-target`, `up-instant`, `up-preload`, `up-submit` et `up-layer` pour fluidifier la navigation, les filtres, les formulaires et les modales.
+
+La logique reste côté serveur, tandis que `up.compiler` permet d’initialiser les composants dynamiques. Cette approche conserve aussi le fonctionnement HTML de base lorsque JavaScript ou CSS ne sont pas disponibles, ce qui en fait une application progressive plutôt qu’une SPA obligatoire.

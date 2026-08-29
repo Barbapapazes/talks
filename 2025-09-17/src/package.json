@@ -1,5 +1,20 @@
 {
   "name": "nodejs-paris",
+  "date": "2025-09-17",
+  "sourceLanguage": "fr",
+  "topics": ["inertiajs", "adonisjs", "typescript", "full-stack", "monolith", "server-driven-ui"],
+  "locales": {
+    "en": {
+      "id": "df47afd1-7a7e-4aad-8fa9-a1f563785468",
+      "title": "Inertia: One Ring to rule them all",
+      "description": "See how Inertia.js and AdonisJS combine a TypeScript monolith, server-side routing, and a modern interface without the complexity of a separate API."
+    },
+    "fr": {
+      "id": "fbc88667-4546-46cf-a4c8-6815abe105eb",
+      "title": "Inertia: Un Anneau pour les gouverner tous",
+      "description": "Découvrez comment Inertia.js et AdonisJS combinent un monolithe TypeScript, le routage serveur et une interface moderne sans la complexité d'une API séparée."
+    }
+  },
   "event": {
     "name": "Node.js Paris",
     "url": "https://nodejs.paris/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Découvrez comment Inertia.js et AdonisJS combinent un monolithe TypeScript, le routage serveur et une interface moderne sans la complexité d'une API séparée.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-09-17/nodejs-paris/ --out ../../dist/2025-09-17/nodejs-paris",

@@ -1,6 +1,3 @@
----
-id: 2025-04-30/mixit
----
 Bonjour à tous et merci d’être là aujourd’hui. On va parler d’un sujet que j’aime beaucoup et qui est assez peu expliqué sur Internet: la réactivité basée sur des signaux, et essayer de comprendre ce qui se passe dans notre front-end.
 
 Avant d’aller plus loin, je vous invite à scanner le QR code. Vous y trouverez mes réseaux, une question à ne pas ouvrir tout de suite pour garder le fil de la présentation, un lien pour noter le talk à faire plutôt à la fin, ainsi que des réactions en bas de page pour réagir en temps réel.

@@ -1,0 +1,3 @@
+Vite est à la fois un serveur de développement, un bundler de production et un système de plugins organisé autour d'une pipeline de requêtes. Cette présentation suit le traitement de fichiers CSS, d'images, de JSX, de composants Vue et de Markdown avec les hooks `resolveId`, `load` et `transform`.
+
+Elle montre ensuite comment se brancher sur le cycle de vie de Vite et créer des modules virtuels. Les exemples abordent les imports automatiques, les routes générées, les informations de build, le Markdown externe, le HMR, les middlewares, les macros, l'exécution de commandes, l'intégration avec Laravel et Nitro.

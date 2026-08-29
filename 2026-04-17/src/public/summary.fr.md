@@ -1,0 +1,3 @@
+Les agents d'IA automatisent une part croissante du travail logiciel, mais ils ne rendent pas le jugement technique facultatif. Cette conférence examine le déplacement des blocages, la dette cognitive, la formation des développeurs juniors et l'importance persistante des fondamentaux pour comprendre un système, vérifier une réponse et poser les bonnes questions.
+
+Elle ne cherche pas à prédire un avenir unique. Elle invite plutôt les développeurs à conserver leur capacité de décision : utiliser l'IA pour accélérer certaines tâches sans lui abandonner l'esprit critique, l'apprentissage et les choix difficiles.

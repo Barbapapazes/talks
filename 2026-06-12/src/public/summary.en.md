@@ -1,0 +1,3 @@
+This DevLille edition uses familiar browser requests, CSS, assets, and JSX to explain what Vite sends to the browser and what it transforms first. It then builds plugins around `resolveId`, `load`, and `transform`, showing how external Markdown and generated data can become JavaScript modules without corresponding files on disk.
+
+The later examples cover virtual modules, HMR and the Vite client, including WebSocket communication and `handleHotUpdate`. The closing section focuses on plugin ordering with `enforce` and on filtering hooks early enough to avoid unnecessary Rust-to-Node.js calls in Rolldown.

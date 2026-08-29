@@ -1,6 +1,3 @@
----
-id: 2024-11-13/nuxtnation
----
 Bonjour à tous, je suis ravi d’être ici aujourd’hui.
 
 Depuis la sortie de Nuxt 3, la promesse est « créer des applications web full‑stack performantes et prêtes pour la production ». Mais qu’est‑ce que cela signifie vraiment, et où en est‑on aujourd’hui ?

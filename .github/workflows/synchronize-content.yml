@@ -9,6 +9,8 @@ permissions:
 
 jobs:
   synchronize:
+    # Disabled during the localized transcript and metadata refactor.
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

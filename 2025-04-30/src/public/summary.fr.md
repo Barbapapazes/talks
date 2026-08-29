@@ -1,0 +1,3 @@
+À partir de la formule `ui = fn(state)` et d'un exemple inspiré d'Excel, cette conférence explique la réactivité frontend avec `alien-signals`. Elle montre comment `signal`, `computed` et `effect` construisent un graphe de dépendances, puis descend dans l'implémentation avec la théorie des graphes, les listes doublement chaînées et les propagations push, pull et pull-push.
+
+La suite aborde les glitches, les dépendances cycliques, l'état mutable et la mise à jour dynamique du graphe. Elle relie enfin ce fonctionnement bas niveau au rendu des composants Vue et à la granularité envisagée par Vue Vapor.

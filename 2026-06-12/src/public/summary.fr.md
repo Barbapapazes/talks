@@ -1,0 +1,3 @@
+Cette édition présentée à DevLille part de requêtes du navigateur, du CSS, des assets et du JSX pour expliquer ce que Vite envoie au navigateur et ce qu'il transforme à la volée. Elle construit ensuite des plugins avec `resolveId`, `load` et `transform`, notamment pour charger du Markdown externe et produire des modules JavaScript sans fichier correspondant sur le disque.
+
+Les derniers exemples abordent les modules virtuels, le HMR et le client Vite, avec sa communication par WebSocket et le hook `handleHotUpdate`. La conclusion se concentre sur l'ordre des plugins avec `enforce` et sur le filtrage préalable des hooks pour éviter des appels inutiles entre Rust et Node.js dans Rolldown.

@@ -1,5 +1,20 @@
 {
   "name": "ncldays",
+  "date": "2026-06-16",
+  "sourceLanguage": "fr",
+  "topics": ["agency", "decision-making", "adaptability", "professional-development", "uncertainty", "personal-growth"],
+  "locales": {
+    "en": {
+      "id": "ce02a444-1736-451b-a343-8ffc07631655",
+      "title": "Staying in motion in an unstable world: agency as a skill",
+      "description": "Explore agency as a skill for adapting: make intentional decisions, act despite uncertainty, and keep moving in an unstable environment."
+    },
+    "fr": {
+      "id": "a43a2559-c369-46c2-af8e-6f509ad4eb86",
+      "title": "Rester en mouvement dans un monde instable : l'agentivité comme levier",
+      "description": "Explorez l'agentivité comme une compétence d'adaptation : prendre des décisions intentionnelles, agir malgré l'incertitude et rester en mouvement dans un environnement instable."
+    }
+  },
   "type": "module",
   "event": {
     "name": "NCL Days",
@@ -12,7 +27,6 @@
     }
   },
   "private": true,
-  "description": "Explorez l'agentivité comme une compétence d'adaptation : prendre des décisions intentionnelles, agir malgré l'incertitude et rester en mouvement dans un environnement instable.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-06-16/ncldays/ --out ../../dist/2026-06-16/ncldays",

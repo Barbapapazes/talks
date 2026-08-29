@@ -1,5 +1,20 @@
 {
   "name": "takima",
+  "date": "2026-04-13",
+  "sourceLanguage": "fr",
+  "topics": ["vite", "bundlers", "esm", "plugin-development", "module-transforms", "virtual-modules"],
+  "locales": {
+    "en": {
+      "id": "6dbe3ee7-8cf9-4aa1-8385-36842c5a4959",
+      "title": "Inside a pipeline: demystifying Vite and its plugins",
+      "description": "Follow a Vite request through resolution, loading, and transformation to understand and build plugins, virtual modules, and custom integrations."
+    },
+    "fr": {
+      "id": "3dadd49a-56f7-47c2-9bd2-3a72b2f2f993",
+      "title": "Au cœur d'une pipeline : démystifions Vite et ses plugins",
+      "description": "Explorez la pipeline de Vite, où chaque requête traverse résolution, chargement et transformation, pour comprendre et créer des plugins, des modules virtuels et des intégrations sur mesure."
+    }
+  },
   "type": "module",
   "event": {
     "name": "Takima",
@@ -12,7 +27,6 @@
     }
   },
   "private": true,
-  "description": "Explorez la pipeline de Vite, où chaque requête traverse résolution, chargement et transformation, pour comprendre et créer des plugins, des modules virtuels et des intégrations sur mesure.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-04-13/takima/ --out ../../dist/2026-04-13/takima",

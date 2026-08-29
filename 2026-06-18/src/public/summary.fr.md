@@ -1,0 +1,3 @@
+Cette présentation suit le parcours d'un module dans Vite, depuis sa résolution jusqu'à sa transformation pour le navigateur. Les exemples utilisent le CSS, les images, le JSX, les fichiers Vue, le Markdown et les données générées au moment du build. `vite-plugin-inspect` sert à observer cette pipeline.
+
+La suite montre comment développer des plugins avec `resolveId`, `load`, `transform` et les hooks du cycle de vie. Elle aborde les transformations simples, le Markdown externe, les imports automatiques, les modules virtuels, les routes générées, les icônes, les informations de build, le HMR, les middlewares, les macros, Laravel Vite et Nitro.

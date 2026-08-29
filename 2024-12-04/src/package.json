@@ -1,5 +1,20 @@
 {
   "name": "vuejs-paris",
+  "date": "2024-12-04",
+  "sourceLanguage": "fr",
+  "topics": ["nuxt", "nitro", "nuxthub", "full-stack", "cloudflare", "edge-computing"],
+  "locales": {
+    "en": {
+      "id": "7818421b-0273-4c74-8fd5-2c5ed406f690",
+      "title": "Nuxt, NuxtHub, and the full stack",
+      "description": "See how Nuxt and NuxtHub bring together the frontend, API, database, storage, and Cloudflare deployment in one full-stack workflow."
+    },
+    "fr": {
+      "id": "b1a91296-e8cb-47f8-965a-35eeefa3037d",
+      "title": "Nuxt, NuxtHub et le full-stack",
+      "description": "Découvrez comment Nuxt et NuxtHub réunissent frontend, API, base de données, stockage et déploiement Cloudflare dans une expérience full-stack cohérente."
+    }
+  },
   "event": {
     "name": "Vue.js Paris",
     "url": "https://www.meetup.com/fr-FR/vuejs-paris/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Découvrez comment Nuxt et NuxtHub réunissent frontend, API, base de données, stockage et déploiement Cloudflare dans une expérience full-stack cohérente.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-12-04/vuejs-paris/ --out ../../dist/2024-12-04/vuejs-paris",

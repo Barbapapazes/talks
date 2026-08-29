@@ -1,5 +1,20 @@
 {
   "name": "touraine-tech",
+  "date": "2026-02-12",
+  "sourceLanguage": "fr",
+  "topics": ["frontend-reactivity", "signals", "dependency-tracking", "computed-values", "effects", "vue"],
+  "locales": {
+    "en": {
+      "id": "d022fe9a-779c-4ee8-a7aa-e9f6cc358cbe",
+      "title": "Reactivity and signals: demystifying frontend magic",
+      "description": "Unpack frontend reactivity: change propagation, dependency tracking, signals, computed values, and effects in modern frameworks."
+    },
+    "fr": {
+      "id": "c54f4fcd-cb3d-4b74-b93f-a5ffad681bac",
+      "title": "La réactivité et les signaux : démystifions la magie du frontend",
+      "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes."
+    }
+  },
   "event": {
     "name": "Touraine Tech",
     "url": "https://touraine.tech/",
@@ -12,7 +27,6 @@
   },
   "recording": "https://youtu.be/LBc7S0yv9xY",
   "private": true,
-  "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-02-12/touraine-tech/ --out ../../dist/2026-02-12/touraine-tech",

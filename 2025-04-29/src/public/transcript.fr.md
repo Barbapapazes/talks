@@ -1,6 +1,3 @@
----
-id: 2025-04-29/mixit
----
 Bonjour à tous et bienvenue. Je suis très heureux d’être là pour vous parler de JavaScript et, surtout, de ses paquets, les node_modules. Avant de commencer, scannez le QR code: vous y trouverez mes coordonnées, une question à ne pas ouvrir tout de suite, des liens pour poser des questions, noter le talk en fin de session, et des réactions en temps réel.
 
 Je commence avec un graphique: le package is-string atteint 160 millions de téléchargements par mois en 2024 et continue de croître. Sa fonctionnalité est simple: déterminer si une valeur JavaScript est une chaîne de caractères. Pour comparer, React culmine à environ 140 millions, et Tailwind autour de 60 millions. Pourtant, si je vous demande qui l’a installé, la plupart répondront non.

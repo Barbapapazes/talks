@@ -6,6 +6,7 @@ trustPolicy: off
 
 packages:
   - '**/src'
+  - '.packages/@soubiran/*'
   - theme
 patchedDependencies:
   slidev-addon-graph: patches/slidev-addon-graph.patch
@@ -23,6 +24,7 @@ catalogs:
     '@types/node': ^25.9.4
     '@vitejs/plugin-vue': ^6.0.7
     '@vue/tsconfig': ^0.9.1
+    tsdown: ^0.22.14
     typescript: ^6.0.3
     unocss: ^66.6.8
     vite: ^8.0.16
@@ -41,6 +43,9 @@ catalogs:
     '@antfu/eslint-config': ^9.1.0
     '@unocss/eslint-plugin': ^66.7.2
     eslint: ^10.5.0
+  release:
+    bumpp: ^12.2.0
+    changelogithub: ^15.0.4
   scripts:
     '@mermaid-js/mermaid-cli': ^11.15.0
     '@slidev/parser': ^52.15.2
@@ -57,6 +62,7 @@ catalogs:
     prompts: ^2.4.2
     taze: ^19.14.1
     tiktoken: ^1.0.22
+    zod: ^3.25.76
   slidev:
     '@slidev/client': ^52.15.2
     '@slidev/theme-default': ^0.25.0

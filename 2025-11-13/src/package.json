@@ -1,5 +1,20 @@
 {
   "name": "devfest-toulouse",
+  "date": "2025-11-13",
+  "sourceLanguage": "fr",
+  "topics": ["frontend-reactivity", "signals", "dependency-tracking", "computed-values", "effects", "vue"],
+  "locales": {
+    "en": {
+      "id": "42fd99aa-4090-4d02-af22-d47406ddd6e7",
+      "title": "Reactivity and signals: demystifying frontend magic",
+      "description": "Unpack frontend reactivity: change propagation, dependency tracking, signals, computed values, and effects in modern frameworks."
+    },
+    "fr": {
+      "id": "aacbf28b-dab6-43e1-ad04-6234ced1b8e0",
+      "title": "La réactivité et les signaux : démystifions la magie du frontend",
+      "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes."
+    }
+  },
   "event": {
     "name": "DevFest Toulouse",
     "url": "https://devfesttoulouse.fr/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Décortiquez les mécanismes de réactivité du frontend : propagation des changements, suivi des dépendances, signaux, computed values et effects derrière les frameworks modernes.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2025-11-13/devfest-toulouse/ --out ../../dist/2025-11-13/devfest-toulouse",

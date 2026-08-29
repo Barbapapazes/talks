@@ -1,13 +1,21 @@
+import type { LocalizedTalkCatalog } from '@soubiran/talks'
 import type { MetaEntry } from './_types.ts'
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { dirname } from 'node:path'
 import { join } from 'pathe'
-import { createTalksCatalog, generateTalkEntries } from './_meta.ts'
+import { generateTalkEntriesFromPackage } from './_meta.ts'
 import { calculateStatistics } from './_readme.ts'
 import { getPackagesJson } from './_utils.ts'
+import { validateTalkArtifacts, validateTalkPackages } from './_validation.ts'
 
 async function generateMeta() {
   const packagesJson = getPackagesJson()
-  const talks = await Promise.all(packagesJson.map(packageJson => generateTalkEntries(packageJson.split('/')[0])))
+  const sources = validateTalkPackages(packagesJson.map(packageFile => ({
+    dir: dirname(dirname(packageFile)),
+    packageJson: JSON.parse(readFileSync(packageFile, 'utf-8')),
+  })))
+  await Promise.all(sources.map(source => validateTalkArtifacts(source.dir, source.packageJson)))
+  const talks = sources.map(source => generateTalkEntriesFromPackage(source.dir, source.packageJson))
   const meta = talks.map(talk => talk.meta)
   assertUniqueTalks(meta)
 
@@ -18,7 +26,18 @@ async function generateMeta() {
 
   writeJson('meta.json', { data: meta, statistics: serializedStatistics })
   writeJson('statistics.json', serializedStatistics)
-  writeJson('talks.json', createTalksCatalog(talks.map(talk => talk.catalog)))
+
+  for (const talk of talks) {
+    for (const [locale, metadata] of Object.entries(talk.localizedMetadata)) {
+      writeTalkMetadata(talk.meta.prefix, locale, metadata)
+    }
+  }
+
+  const englishTalks: LocalizedTalkCatalog<'en'> = talks.map(talk => talk.localizedMetadata.en)
+  const frenchTalks: LocalizedTalkCatalog<'fr'> = talks.map(talk => talk.localizedMetadata.fr)
+
+  writeJson('talks.en.json', englishTalks)
+  writeJson('talks.fr.json', frenchTalks)
 }
 
 function assertUniqueTalks(entries: MetaEntry[]) {
@@ -50,6 +69,13 @@ function writeJson(fileName: string, data: unknown) {
   const content = JSON.stringify(data)
 
   writeFileSync(join('dist', fileName), content)
+}
+
+function writeTalkMetadata(slug: string, locale: string, metadata: unknown) {
+  const outputDir = join('dist', slug)
+
+  mkdirSync(outputDir, { recursive: true })
+  writeFileSync(join(outputDir, `meta.${locale}.json`), `${JSON.stringify(metadata, null, 2)}\n`)
 }
 
 generateMeta()

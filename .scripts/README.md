@@ -1,12 +1,13 @@
 # `.scripts`
 
-Utility scripts used to maintain talks metadata, assets, and deployment helpers.
+Utility scripts used to maintain talk metadata, assets, and deployment helpers.
 
 ## Helpers
 
-- `_types.ts` — Shared TypeScript types (`Package`, `MetaEntry`, event/location models).
+- `_types.ts` — Shared TypeScript types for talk packages, localized public metadata, and event/location models.
+- `_validation.ts` — Validates talk package metadata, locale UUIDs, dates, and expected prose artifacts.
 - `_utils.ts` — Shared utilities to discover talk `package.json` files and interactively select a deck.
-- `_meta.ts` — Builds one `MetaEntry` from a talk folder (`src/package.json` + `src/slides.md` frontmatter).
+- `_meta.ts` — Builds README metadata and localized public metadata from a talk's `src/package.json`.
 - `_readme.ts` — Generates README content and statistics (global README + per-talk README helpers).
 
 ## Scripts
@@ -21,13 +22,13 @@ Utility scripts used to maintain talks metadata, assets, and deployment helpers.
   4. exports the deck
   5. prints the `rclone` copy command
 
-- `generate-meta.ts` — Generates `dist/meta.json` with:
-  - full talks metadata array
-  - computed statistics (by year, event, title)
-  - duplicate talk guard (`name + event`)
+- `generate-meta.ts` — Validates every talk package, then generates:
+  - each built talk's `dist/<date>/<talk-name>/meta.en.json` and `meta.fr.json`
+    from the localized records in `src/package.json`
+  - `dist/meta.json` with the existing README metadata array and computed statistics
   - `dist/statistics.json`, containing the same computed statistics
-  - `dist/talks.json`, an MCP-friendly catalog of every talk, including
-    normalized topics, event location coordinates, and public links
+  - `dist/talks.en.json` and `dist/talks.fr.json`, each containing the corresponding
+    localized metadata entries
 
 - `generate-readme.ts` — Regenerates the repository root `README.md` from discovered talk metadata.
 
@@ -53,12 +54,21 @@ Utility scripts used to maintain talks metadata, assets, and deployment helpers.
 - `download-recordings.ts` — For talks with a `recording` URL:
   - downloads audio (`yt-dlp`)
   - normalizes/compresses with `ffmpeg`
-  - transcribes chunks with OpenAI (`gpt-4o-transcribe`)
-  - writes/updates `src/public/transcript.en.md`
-
-- `update-transcripts-frontmatter.ts` — Adds or updates each English and French transcript's canonical talk `id` frontmatter from the talk metadata.
+  - transcribes chunks with OpenAI (`gpt-4o-transcribe`) in the package's `sourceLanguage`
+  - writes `src/public/transcript.<sourceLanguage>.md` only after every chunk succeeds
+  - preserves an existing transcript unless run with `--force`
 
 - `redeploy-worker.ts` — Uses Cloudflare API to re-trigger the currently active worker build/deployment.
+
+## Editorial prompts
+
+These prompts handle one-time prose work that the scripts deliberately do not perform. They preserve existing prose unless regeneration is explicitly requested.
+
+- `.github/prompts/clean-transcript.prompt.md` — Cleans the source-language transcript without adding frontmatter, headings, or timestamps.
+- `.github/prompts/translate-transcript.prompt.md` — Creates the missing transcript in the other locale from the finalized source transcript.
+- `.github/prompts/generate-summaries.prompt.md` — Creates missing English and French summaries from `slides.md`, using the finalized source transcript when one exists.
+
+Every talk publishes `summary.en.md` and `summary.fr.md`. Recorded talks also publish `transcript.en.md` and `transcript.fr.md`.
 
 ## Environment variables
 

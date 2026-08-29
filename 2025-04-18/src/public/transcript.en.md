@@ -1,6 +1,3 @@
----
-id: 2025-04-18/devoxxfr
----
 Hello everyone, very happy to be at Devoxx today to talk about a fairly unknown topic that I love: JavaScript packages. Today, we have packages for everything… and very often packages for nothing. That’s exactly what we’re going to explore.
 
 Before we start, please scan the QR code here. You’ll land on a small dashboard with all my socials and a question; for now, don’t click it—we’ll answer later.

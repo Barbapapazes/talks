@@ -1,6 +1,3 @@
----
-id: 2025-04-17/devoxxfr
----
 Bonjour à tous, je suis très heureux aujourd’hui d’être à Devoxx pour vous parler d’un sujet que j’aime beaucoup: la réactivité des signaux dans le front‑end. Vous êtes nombreux, je ne m’attendais pas à un tel intérêt, et c’est très cool.
 
 Avant de commencer, je vous invite à scanner le QR code pour accéder à une page interactive. Vous y trouverez mes réseaux, des questions auxquelles nous répondrons au fur et à mesure, la possibilité de noter le talk à la fin, de poser des questions pour la session Q&A, et de réagir en temps réel si quelque chose vous plaît.

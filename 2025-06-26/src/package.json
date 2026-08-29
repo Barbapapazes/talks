@@ -1,5 +1,20 @@
 {
   "name": "breizhcamp",
+  "date": "2025-06-26",
+  "sourceLanguage": "fr",
+  "topics": ["javascript", "dependencies", "package-management", "bundle-size", "performance", "e18e"],
+  "locales": {
+    "en": {
+      "id": "691f7b68-74eb-438e-8e6a-1cb791599de9",
+      "title": "In JavaScript, there's a package for everything... and often for nothing.",
+      "description": "Examine the cost of unnecessary JavaScript dependencies and learn how to reduce the footprint of packages, bundles, and the delivery pipeline."
+    },
+    "fr": {
+      "id": "a7fb1bde-10f3-48ba-b37e-7ad5f4ba9668",
+      "title": "En JavaScript, il y a un paquet pour tout... et souvent pour rien.",
+      "description": "Analysez le coût des dépendances JavaScript superflues et apprenez à réduire l'empreinte des packages, du bundle et de la chaîne de production."
+    }
+  },
   "event": {
     "name": "BreizhCamp",
     "url": "https://breizhcamp.org/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Analysez le coût des dépendances JavaScript superflues et apprenez à réduire l'empreinte des packages, du bundle et de la chaîne de production.",
   "article": "https://soubiran.dev/posts/breizhcamp-2025-my-first-time-in-brittany-as-a-speaker",
   "scripts": {
     "dev": "slidev",

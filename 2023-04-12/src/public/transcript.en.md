@@ -1,6 +1,3 @@
----
-id: 2023-04-12/devoxxfr
----
 Hello everyone. Today, we’re going to talk about Unpoly, a tool for the web.
 
 Before we start, I’d like to poll the room with two questions. Who here has done web development with modern front-end frameworks like React, Angular, or Vue? OK, a solid majority. And who has done web development with back-end frameworks like Rails or Laravel? Far fewer people.

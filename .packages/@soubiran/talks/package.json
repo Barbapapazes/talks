@@ -1,0 +1,48 @@
+{
+  "name": "@soubiran/talks",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "TypeScript types for the localized talks.soubiran.dev JSON catalogs.",
+  "author": "Estéban Soubiran <esteban@soubiran.dev>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/Barbapapazes",
+  "homepage": "https://github.com/Barbapapazes/talks/tree/main/.packages/@soubiran/talks#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Barbapapazes/talks.git",
+    "directory": ".packages/@soubiran/talks"
+  },
+  "bugs": "https://github.com/Barbapapazes/talks/issues",
+  "keywords": [
+    "metadata",
+    "soubiran",
+    "talks",
+    "typescript"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "test:types": "tsc -p tsconfig.json --noEmit",
+    "prepack": "pnpm run build"
+  },
+  "devDependencies": {
+    "tsdown": "catalog:build",
+    "typescript": "catalog:build"
+  }
+}

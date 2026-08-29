@@ -1,0 +1,3 @@
+Cette présentation explore la vision d’UnJS à travers une série de paquets concrets. `ofetch` uniformise les requêtes entre le serveur et le client, `nypm` choisit le gestionnaire de paquets adapté, et `unbuild` simplifie la production de paquets compatibles CommonJS, ESM et TypeScript.
+
+D’autres exemples montrent la même volonté de réutilisation. `changelogen` automatise les releases, `defu` fusionne les configurations imbriquées, `h3` et `nitro` ciblent les backends portables, tandis que `std-env` et `magic-regexp` adaptent respectivement le comportement à l’environnement et l’écriture des expressions régulières.

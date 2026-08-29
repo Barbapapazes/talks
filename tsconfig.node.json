@@ -8,6 +8,11 @@
     "moduleDetection": "force",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "paths": {
+      "@soubiran/talks": [
+        "./.packages/@soubiran/talks/src/index.ts"
+      ]
+    },
     "types": [
       "node"
     ],

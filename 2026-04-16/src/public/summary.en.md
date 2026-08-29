@@ -1,0 +1,3 @@
+This choose-your-own-adventure talk puts the audience in control of a tour through Vite. It first presents Vite as a development server, a production bundler, and a plugin system, then follows browser requests to show how CSS, images, JSX, and framework files become JavaScript through on-demand transformations.
+
+The audience then explores plugin hooks such as `resolveId`, `load`, and `transform`, along with lifecycle hooks and `vite-plugin-inspect`. The examples build a transform plugin, an external Markdown loader, and virtual modules with `vite-plugin-virtual`, before reaching HMR, middleware, Nitro, plugin ordering, and Rolldown filters.

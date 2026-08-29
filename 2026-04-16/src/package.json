@@ -1,5 +1,20 @@
 {
   "name": "mixit",
+  "date": "2026-04-16",
+  "sourceLanguage": "fr",
+  "topics": ["vite", "bundlers", "esm", "plugin-development", "module-transforms", "virtual-modules"],
+  "locales": {
+    "en": {
+      "id": "5880a44d-a253-470f-8c25-aed834dcd69e",
+      "title": "Inside a pipeline: demystifying Vite and its plugins",
+      "description": "Follow a Vite request through resolution, loading, and transformation to understand and build plugins, virtual modules, and custom integrations."
+    },
+    "fr": {
+      "id": "458184ef-a045-4c4d-9e9a-472c1eea3913",
+      "title": "Au cœur d'une pipeline : démystifions Vite et ses plugins",
+      "description": "Explorez la pipeline de Vite, où chaque requête traverse résolution, chargement et transformation, pour comprendre et créer des plugins, des modules virtuels et des intégrations sur mesure."
+    }
+  },
   "type": "module",
   "event": {
     "name": "MiXiT",
@@ -13,7 +28,6 @@
   },
   "recording": "https://youtu.be/LiA9zksePho",
   "private": true,
-  "description": "Explorez la pipeline de Vite, où chaque requête traverse résolution, chargement et transformation, pour comprendre et créer des plugins, des modules virtuels et des intégrations sur mesure.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-04-16/mixit/ --out ../../dist/2026-04-16/mixit",

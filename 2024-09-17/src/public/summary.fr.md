@@ -1,0 +1,1 @@
+Cette présentation montre comment construire une application full-stack avec Nuxt et Nitro. Elle aborde l'ajout d'une base de données, de l'authentification, du déploiement sur Cloudflare et d'un tableau de bord pour gérer les données.

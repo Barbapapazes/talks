@@ -1,0 +1,3 @@
+AdonisJS 6 propose un framework backend entièrement réécrit en TypeScript, avec les fonctionnalités nécessaires pour commencer directement à développer le métier. La présentation montre la création de routes et de contrôleurs avec Ace, de modèles avec Lucid, de validateurs avec Vine, puis l’ajout de l’authentification, des policies Bouncer et des tests Japa.
+
+Le conteneur d’AdonisJS permet aussi d’injecter des implémentations différentes selon l’environnement et de les remplacer par des fake en test. L’application peut ensuite suivre une structure MVC, une organisation par fonctionnalités ou une architecture hexagonale, et exposer une API, utiliser Edge ou intégrer Inertia.

@@ -1,6 +1,3 @@
----
-id: 2025-04-29/mixit
----
 Hello everyone and welcome. I’m very happy to be here to talk about JavaScript and, above all, its packages—node_modules. Before we begin, scan the QR code: you’ll find my contact details, a question not to open just yet, links to ask questions, rate the talk at the end, and real-time reactions.
 
 I’ll start with a chart: the is-string package reaches 160 million downloads per month in 2024 and keeps growing. Its feature is simple: determine whether a JavaScript value is a string. For comparison, React tops out around 140 million, and Tailwind around 60 million. Yet if I ask who installed it, most of you will say no.

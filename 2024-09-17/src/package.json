@@ -1,5 +1,20 @@
 {
   "name": "pragvue",
+  "date": "2024-09-17",
+  "sourceLanguage": "en",
+  "topics": ["nuxt", "nitro", "nuxthub", "full-stack", "cloudflare", "edge-computing"],
+  "locales": {
+    "en": {
+      "id": "7298c158-7d5c-45db-85fc-253d74c5b534",
+      "title": "You've dreamed it? Create full-stack apps with Nuxt!",
+      "description": "Build a full-stack Nuxt application with Nitro and NuxtHub, from server routes, data, and authentication to an interface deployed on Cloudflare's edge."
+    },
+    "fr": {
+      "id": "1e9396c6-99ac-44b7-b135-7a7ae5c41938",
+      "title": "Vous en avez rêvé ? Créez des applications full-stack avec Nuxt !",
+      "description": "Créez une application Nuxt full-stack avec Nitro et NuxtHub, des routes serveur aux données et à l'authentification, jusqu'à une interface déployée à la périphérie de Cloudflare."
+    }
+  },
   "event": {
     "name": "PragVue",
     "url": "https://pragvue.com/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Build a full-stack Nuxt application with Nitro and NuxtHub, from server routes, data, and authentication to an interface deployed on Cloudflare's edge.",
   "article": "https://soubiran.dev/posts/pragvue-2024-travel-food-people-and-a-lot-of-vue-js",
   "scripts": {
     "dev": "slidev",

@@ -1,7 +1,8 @@
 import type { Package } from './_types.ts'
 import { exec as _exec } from 'node:child_process'
+import { randomUUID } from 'node:crypto'
 import { createReadStream, existsSync, mkdirSync } from 'node:fs'
-import { readFile, writeFile } from 'node:fs/promises'
+import { readFile, rename, rm, writeFile } from 'node:fs/promises'
 import process from 'node:process'
 import { promisify } from 'node:util'
 import OpenAI from 'openai'
@@ -10,6 +11,7 @@ import 'dotenv/config'
 
 const exec = promisify(_exec)
 const SILENCE_END_RE = /silence_end: (\d+\.?\d*)/g
+const shouldReplaceTranscript = process.argv.includes('--force')
 
 const openai = new OpenAI()
 
@@ -45,6 +47,13 @@ async function downloadAudio(packageJson: string) {
     .join('/')
   const folder = `./${date}`
   const tmpFolder = `${folder}/.tmp`
+  const transcriptionFileName = `${folder}/src/public/transcript.${parsedContent.sourceLanguage}.md`
+
+  if (existsSync(transcriptionFileName) && !shouldReplaceTranscript) {
+    // eslint-disable-next-line no-console
+    console.log(`Skipping transcription for ${parsedContent.name}; ${transcriptionFileName} already exists.`)
+    return
+  }
 
   mkdirSync(tmpFolder, { recursive: true })
 
@@ -74,96 +83,90 @@ async function downloadAudio(packageJson: string) {
     )
   }
 
-  const transcriptionFileName = `${folder}/src/public/transcript.en.md`
-  if (!existsSync(transcriptionFileName)) {
-    // ensure directory exists before writing transcription
-    await writeFile(transcriptionFileName, '', { flag: 'a' }).then(() => {})
+  // eslint-disable-next-line no-console
+  console.log(`Transcribing audio for ${parsedContent.name} in chunks...`)
+
+  // We'll split into ~10 minute chunks (600 seconds). Prefer silence near cut points using ffmpeg's silencedetect.
+  // Strategy:
+  // 1. Use ffmpeg to split by fixed 10m segments as fallback.
+  // 2. Try to find nearby silence using ffmpeg's silence detect and adjust cut time +/- up to 10s.
+
+  const chunkDuration = 600 // seconds (10 minutes)
+  const maxSilenceSearch = 30 // seconds to search before/after cut for silence
+
+  // Get duration of file in seconds
+  const { stdout: ffprobeOut } = await exec(`ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "${compressedFileName}"`)
+  const totalDuration = Math.max(0, Math.floor(Number(ffprobeOut.trim()) || 0))
+
+  // compute chunk boundaries (start times)
+  const chunkStarts: number[] = []
+  for (let t = 0; t < totalDuration; t += chunkDuration) {
+    chunkStarts.push(t)
   }
 
-  // If transcript already exists and is non-empty, skip transcription
-  const statExists = existsSync(transcriptionFileName) && (await readFile(transcriptionFileName, 'utf-8')).trim().length > 0
-  if (!statExists) {
-    // eslint-disable-next-line no-console
-    console.log(`Transcribing audio for ${parsedContent.name} in chunks...`)
+  // helper to format seconds to HH:MM:SS
 
-    // We'll split into ~10 minute chunks (600 seconds). Prefer silence near cut points using ffmpeg's silencedetect.
-    // Strategy:
-    // 1. Use ffmpeg to split by fixed 10m segments as fallback.
-    // 2. Try to find nearby silence using ffmpeg's silence detect and adjust cut time +/- up to 10s.
+  // For each chunk, try to detect a silence near the intended end and cut there
+  const chunkFiles: string[] = []
 
-    const chunkDuration = 600 // seconds (10 minutes)
-    const maxSilenceSearch = 30 // seconds to search before/after cut for silence
+  for (let i = 0; i < chunkStarts.length; i++) {
+    const start = chunkStarts[i]
+    const intendedEnd = Math.min(start + chunkDuration, totalDuration)
 
-    // Get duration of file in seconds
-    const { stdout: ffprobeOut } = await exec(`ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "${compressedFileName}"`)
-    const totalDuration = Math.max(0, Math.floor(Number(ffprobeOut.trim()) || 0))
+    // Search window for a silence: from (intendedEnd - maxSilenceSearch) to (intendedEnd + maxSilenceSearch)
+    const windowStart = Math.max(start, intendedEnd - maxSilenceSearch)
+    const windowDuration = Math.min(totalDuration - windowStart, maxSilenceSearch * 2)
 
-    // compute chunk boundaries (start times)
-    const chunkStarts: number[] = []
-    for (let t = 0; t < totalDuration; t += chunkDuration) {
-      chunkStarts.push(t)
+    let cutAt = intendedEnd // default
+
+    try {
+      // Run silencedetect on the window to find silence_end positions
+      // Create a temporary small file for the window
+      const windowFile = `${tmpFolder}/${fileName}.window.${i}.wav`
+      await exec(`ffmpeg -y -ss ${formatSecondsToHuman(windowStart)} -t ${windowDuration} -i "${compressedFileName}" -ac 1 -ar 16000 -c:a pcm_s16le "${windowFile}"`)
+
+      const { stdout: sdOut, stderr: sdErr } = await exec(`ffmpeg -i "${windowFile}" -af silencedetect=noise=-30dB:d=0.3 -f null - 2>&1 | grep silencedetect || true`)
+      const sd = (sdOut + sdErr).toString()
+
+      // parse silence_end lines and pick last silence_end (closest to window end)
+      const silenceEnds: number[] = []
+      let match: RegExpExecArray | null
+      // eslint-disable-next-line no-cond-assign
+      while ((match = SILENCE_END_RE.exec(sd))) {
+        silenceEnds.push(Number(match[1]))
+      }
+
+      if (silenceEnds.length > 0) {
+        // silenceEnd is relative to window file start; convert to absolute seconds
+        const relative = silenceEnds[silenceEnds.length - 1]
+        const absolute = windowStart + Math.floor(relative)
+        // Only accept silence if it's within +/- maxSilenceSearch of intendedEnd
+        if (Math.abs(absolute - intendedEnd) <= maxSilenceSearch) {
+          cutAt = Math.min(absolute, totalDuration)
+        }
+      }
+
+      // cleanup window file
+      await exec(`rm -f "${windowFile}"`)
+    }
+    catch {
+      // ignore silencedetect errors and fall back to fixed chunk end
     }
 
-    // helper to format seconds to HH:MM:SS
+    // Calculate actual duration for this chunk
+    const actualDuration = Math.max(1, cutAt - start)
+    const chunkFile = `${tmpFolder}/${fileName}.part${String(i).padStart(3, '0')}.mp3`
+    chunkFiles.push(chunkFile)
 
-    // For each chunk, try to detect a silence near the intended end and cut there
-    const chunkFiles: string[] = []
-
-    for (let i = 0; i < chunkStarts.length; i++) {
-      const start = chunkStarts[i]
-      const intendedEnd = Math.min(start + chunkDuration, totalDuration)
-
-      // Search window for a silence: from (intendedEnd - maxSilenceSearch) to (intendedEnd + maxSilenceSearch)
-      const windowStart = Math.max(start, intendedEnd - maxSilenceSearch)
-      const windowDuration = Math.min(totalDuration - windowStart, maxSilenceSearch * 2)
-
-      let cutAt = intendedEnd // default
-
-      try {
-        // Run silencedetect on the window to find silence_end positions
-        // Create a temporary small file for the window
-        const windowFile = `${tmpFolder}/${fileName}.window.${i}.wav`
-        await exec(`ffmpeg -y -ss ${formatSecondsToHuman(windowStart)} -t ${windowDuration} -i "${compressedFileName}" -ac 1 -ar 16000 -c:a pcm_s16le "${windowFile}"`)
-
-        const { stdout: sdOut, stderr: sdErr } = await exec(`ffmpeg -i "${windowFile}" -af silencedetect=noise=-30dB:d=0.3 -f null - 2>&1 | grep silencedetect || true`)
-        const sd = (sdOut + sdErr).toString()
-
-        // parse silence_end lines and pick last silence_end (closest to window end)
-        const silenceEnds: number[] = []
-        let match: RegExpExecArray | null
-        // eslint-disable-next-line no-cond-assign
-        while ((match = SILENCE_END_RE.exec(sd))) {
-          silenceEnds.push(Number(match[1]))
-        }
-
-        if (silenceEnds.length > 0) {
-          // silenceEnd is relative to window file start; convert to absolute seconds
-          const relative = silenceEnds.at(-1)
-          const absolute = windowStart + Math.floor(relative)
-          // Only accept silence if it's within +/- maxSilenceSearch of intendedEnd
-          if (Math.abs(absolute - intendedEnd) <= maxSilenceSearch) {
-            cutAt = Math.min(absolute, totalDuration)
-          }
-        }
-
-        // cleanup window file
-        await exec(`rm -f "${windowFile}"`)
-      }
-      catch {
-        // ignore silencedetect errors and fall back to fixed chunk end
-      }
-
-      // Calculate actual duration for this chunk
-      const actualDuration = Math.max(1, cutAt - start)
-      const chunkFile = `${tmpFolder}/${fileName}.part${String(i).padStart(3, '0')}.mp3`
-      chunkFiles.push(chunkFile)
-
-      if (!existsSync(chunkFile)) {
-        // create chunk
-        await exec(`ffmpeg -y -ss ${formatSecondsToHuman(start)} -t ${actualDuration} -i "${compressedFileName}" -ar 16000 -ac 1 -codec:a libmp3lame -b:a 64k "${chunkFile}"`)
-      }
+    if (!existsSync(chunkFile)) {
+      // create chunk
+      await exec(`ffmpeg -y -ss ${formatSecondsToHuman(start)} -t ${actualDuration} -i "${compressedFileName}" -ar 16000 -ac 1 -codec:a libmp3lame -b:a 64k "${chunkFile}"`)
     }
+  }
 
+  const temporaryTranscriptionFileName = `${tmpFolder}/${fileName}.transcript.${parsedContent.sourceLanguage}.${randomUUID()}.md`
+
+  try {
     // sequentially send chunks to OpenAI and append responses
     for (let i = 0; i < chunkFiles.length; i++) {
       const chunkFile = chunkFiles[i]
@@ -173,12 +176,21 @@ async function downloadAudio(packageJson: string) {
       const transcription = await openai.audio.transcriptions.create({
         file: createReadStream(chunkFile),
         chunking_strategy: 'auto',
+        language: parsedContent.sourceLanguage,
         model: 'gpt-4o-transcribe',
       })
 
-      // append only transcription text so final transcript is a single continuous file
-      await writeFile(transcriptionFileName, `${transcription.text}\n`, { flag: 'a' })
+      await writeFile(temporaryTranscriptionFileName, `${transcription.text}\n`, { flag: 'a' })
     }
+
+    if (existsSync(transcriptionFileName) && !shouldReplaceTranscript) {
+      throw new Error(`Cannot write transcript for ${parsedContent.name}; ${transcriptionFileName} was created while transcription ran.`)
+    }
+
+    await rename(temporaryTranscriptionFileName, transcriptionFileName)
+  }
+  finally {
+    await rm(temporaryTranscriptionFileName, { force: true })
   }
 }
 

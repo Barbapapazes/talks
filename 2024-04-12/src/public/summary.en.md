@@ -1,0 +1,3 @@
+This introduction to UnJS presents an ecosystem built around portable JavaScript and TypeScript packages. It explains how extracting runtime-independent pieces from Nuxt led to tools such as `unplugin` for shared plugin APIs, `h3` for lightweight HTTP handlers, `nitro` for deployable backends, and `unstorage` for interchangeable storage drivers.
+
+The talk also covers the practical work of publishing packages. `citty`, `c12`, `unbuild`, `nypm`, `changelogen`, `defu`, `ofetch`, and `magic-regexp` each remove a different piece of tooling friction while keeping packages reusable across runtimes and providers.

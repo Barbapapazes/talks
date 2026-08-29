@@ -1,5 +1,20 @@
 {
   "name": "devoxxfr",
+  "date": "2023-04-12",
+  "sourceLanguage": "fr",
+  "topics": ["unpoly", "progressive-enhancement", "server-rendered-applications", "html-over-the-wire", "web-performance"],
+  "locales": {
+    "en": {
+      "id": "a0982779-2bb2-4900-8034-a2b13415ec6b",
+      "title": "Unpoly: taking back control!",
+      "description": "Learn how Unpoly brings fast navigation, page fragments, forms, and modern interactions to server-rendered applications with an HTML-first approach."
+    },
+    "fr": {
+      "id": "50cc57fb-f69f-4f88-8f7d-5b03b004c182",
+      "title": "Unpoly pour reprendre le contrôle !",
+      "description": "Découvrez Unpoly, une bibliothèque JavaScript HTML-first qui apporte navigation rapide, fragments de page, formulaires et interactions modernes aux applications rendues côté serveur."
+    }
+  },
   "event": {
     "name": "Devoxx France",
     "url": "https://devoxx.fr/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Découvrez Unpoly, une bibliothèque JavaScript HTML-first qui apporte navigation rapide, fragments de page, formulaires et interactions modernes aux applications rendues côté serveur.",
   "recording": "https://youtu.be/MIM6E_XMRHQ",
   "scripts": {
     "dev": "slidev",

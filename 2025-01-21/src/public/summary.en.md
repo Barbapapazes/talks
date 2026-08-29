@@ -1,0 +1,3 @@
+This talk presents AdonisJS as a way to build full-stack applications with TypeScript without assembling every backend capability by hand. It compares low-scope tools such as Express and Fastify with higher-scope frameworks, then demonstrates routes, controllers, Lucid models, Vine validation, authentication, social login, Bouncer policies, and Japa tests.
+
+AdonisJS also supports dependency replacement through its container, making services easy to swap in tests. Its MVC, feature-based, and hexagonal structures leave room for different architectural choices, while Edge, APIs, and Inertia provide several ways to connect the backend to a frontend.

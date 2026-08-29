@@ -1,5 +1,20 @@
 {
   "name": "devoxxfr",
+  "date": "2026-04-23",
+  "sourceLanguage": "fr",
+  "topics": ["vite", "bundlers", "esm", "plugin-development", "module-transforms", "virtual-modules"],
+  "locales": {
+    "en": {
+      "id": "b1fc86a8-d123-4aa0-b8bc-531e611d5740",
+      "title": "Inside a pipeline: demystifying Vite and its plugins",
+      "description": "Follow a Vite request through resolution, loading, and transformation to understand and build plugins, virtual modules, and custom integrations."
+    },
+    "fr": {
+      "id": "2d749464-fc0e-456d-862d-fdcd6cb7973e",
+      "title": "Au cœur d'une pipeline : démystifions Vite et ses plugins",
+      "description": "Explorez la pipeline de Vite, où chaque requête traverse résolution, chargement et transformation, pour comprendre et créer des plugins, des modules virtuels et des intégrations sur mesure."
+    }
+  },
   "type": "module",
   "event": {
     "name": "Devoxx France",
@@ -12,7 +27,6 @@
     }
   },
   "private": true,
-  "description": "Explorez la pipeline de Vite, où chaque requête traverse résolution, chargement et transformation, pour comprendre et créer des plugins, des modules virtuels et des intégrations sur mesure.",
   "recording": "https://youtu.be/mO_QtztG4Sc",
   "scripts": {
     "dev": "slidev",

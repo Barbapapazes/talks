@@ -1,0 +1,3 @@
+Frontend reactivity can be reduced to the relationship `ui = fn(state)`, a model familiar from both React components and Excel formulas. The talk uses `alien-signals` to make that relationship concrete, following how `signal`, `computed`, `effect`, and `effectScope` connect through dependency tracking.
+
+Graphs and doubly linked lists explain how subscriptions are created, removed, and traversed. Alien Signals uses push-pull propagation, lazy computed values, and batched effects, while the presentation also discusses glitches, cycles, mutable state, and dynamic dependency graphs before relating the same ideas to Vue and fine-grained systems such as Vue Vapor.

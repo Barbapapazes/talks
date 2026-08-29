@@ -1,0 +1,3 @@
+À partir de `is-string`, la présentation montre qu’un paquet minuscule peut entraîner l’installation de nombreuses dépendances et de fichiers qui ne servent pas à l’exécution. Node Modules Inspector et `pkg-size` rendent visible cette différence entre le code utile, les métadonnées et le poids finalement ajouté au projet.
+
+Le mouvement `e18e` propose de nettoyer et d’accélérer l’écosystème en modernisant les paquets et en suggérant des remplacements natifs. `deptree` aide à repérer ces alternatives, tandis que `npmgraph` permet de mesurer la complexité d’un arbre comme celui de Storybook. L’audit des dépendances devient ainsi une étape avant et après l’installation.

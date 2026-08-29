@@ -1,6 +1,3 @@
----
-id: 2026-02-12/touraine-tech
----
 Hello everyone, and welcome.
 
 Today, we're going to talk about a topic that's very close to my heart, something we tend to use a lot, but don't necessarily understand deeply. Today, we're going to talk about signals and reactivity.

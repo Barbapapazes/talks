@@ -1,5 +1,20 @@
 {
   "name": "mixit",
+  "date": "2026-04-17",
+  "sourceLanguage": "fr",
+  "topics": ["artificial-intelligence", "software-development", "developer-careers", "professional-skills", "automation", "technology-trends"],
+  "locales": {
+    "en": {
+      "id": "ded45571-9b63-4a75-a1b8-5fb19e0cbcef",
+      "title": "The developer's future: AI, skills, and obsolescence",
+      "description": "Examine how AI changes the developer's job, the skills to maintain, and ways to stay active in your career as automation advances."
+    },
+    "fr": {
+      "id": "4c489781-b12e-444c-be8d-4298c551b638",
+      "title": "Le futur du développeur : IA, compétences et obsolescence",
+      "description": "Examinez comment l'IA redéfinit le métier de développeur, les compétences à entretenir et les façons de rester acteur de son évolution professionnelle face à l'automatisation."
+    }
+  },
   "type": "module",
   "event": {
     "name": "MiXiT",
@@ -13,7 +28,6 @@
   },
   "recording": "https://youtu.be/wL8EbLLGaVo",
   "private": true,
-  "description": "Examinez comment l'IA redéfinit le métier de développeur, les compétences à entretenir et les façons de rester acteur de son évolution professionnelle face à l'automatisation.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2026-04-17/mixit/ --out ../../dist/2026-04-17/mixit",

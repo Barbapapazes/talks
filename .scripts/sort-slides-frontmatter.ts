@@ -21,7 +21,7 @@ const SLIDE_FRONTMATTER_ORDER = [
   'transition',
 ] as const
 
-const slideFrontmatterOrderMap = new Map(
+const slideFrontmatterOrderMap = new Map<string, number>(
   SLIDE_FRONTMATTER_ORDER.map((key, index) => [key, index]),
 )
 
@@ -131,15 +131,16 @@ function resolveSlidesPath(target: string) {
 async function sortSlidesFrontmatter() {
   const target = process.argv[2]
   const selectedDeck = target ? undefined : await selectDeck()
+  const selectedDeckFolder = selectedDeck?.folder
 
-  if (!target && !selectedDeck?.folder) {
+  if (!target && !selectedDeckFolder) {
     console.warn('No deck selected')
     return
   }
 
   const slidesPath = target
     ? resolveSlidesPath(target)
-    : fileURLToPath(new URL(`../${selectedDeck.folder}/src/slides.md`, import.meta.url))
+    : fileURLToPath(new URL(`../${selectedDeckFolder}/src/slides.md`, import.meta.url))
 
   const slidesContent = readFileSync(slidesPath, 'utf-8')
   const { content, updatedBlocks } = reorderSlidesFrontmatterContent(slidesContent, slidesPath)

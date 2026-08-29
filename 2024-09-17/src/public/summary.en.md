@@ -1,0 +1,1 @@
+Nuxt brings Vue and Nitro together to build full-stack applications. This talk follows an application as it gains a database, authentication, deployment on Cloudflare's edge, and a dashboard for managing data.

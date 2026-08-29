@@ -1,0 +1,3 @@
+La réactivité relie l’interface à l’état de l’application, comme le résume l’équation `ui = fn(state)` et comme le montre une formule Excel. Pour comprendre ce mécanisme, la présentation dissèque `alien-signals` et ses primitives `signal`, `computed`, `effect` et `effectScope`.
+
+Les nœuds d’un graphe orienté représentent les valeurs et leurs dépendances, tandis que les listes doublement chaînées gèrent les abonnements. Le modèle push-pull reporte les recalculs jusqu’à la lecture d’une valeur et évite de relancer inutilement les effets. Cette mécanique éclaire ensuite le fonctionnement de Vue, la réactivité fine de Vue Vapor et la proposition `signals` du TC39.

@@ -1,5 +1,20 @@
 {
   "name": "devoxxfr",
+  "date": "2025-04-18",
+  "sourceLanguage": "fr",
+  "topics": ["javascript", "dependencies", "package-management", "bundle-size", "performance", "e18e"],
+  "locales": {
+    "en": {
+      "id": "640c81eb-9d2f-4969-b680-d9708f22f94a",
+      "title": "In JavaScript, there's a package for everything... and often for nothing.",
+      "description": "Examine the cost of unnecessary JavaScript dependencies and learn how to reduce the footprint of packages, bundles, and the delivery pipeline."
+    },
+    "fr": {
+      "id": "904da282-d210-41f1-8b4f-c3c1b2428e75",
+      "title": "En JavaScript, il y a un paquet pour tout... et souvent pour rien.",
+      "description": "Analysez le coût des dépendances JavaScript superflues et apprenez à réduire l'empreinte des packages, du bundle et de la chaîne de production."
+    }
+  },
   "event": {
     "name": "Devoxx France",
     "url": "https://www.devoxx.fr/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Analysez le coût des dépendances JavaScript superflues et apprenez à réduire l'empreinte des packages, du bundle et de la chaîne de production.",
   "recording": "https://youtu.be/oPsMeG9zKmE",
   "article": "https://soubiran.dev/posts/beyond-the-tech-people-who-made-devoxx-france-2025-special",
   "scripts": {

@@ -1,5 +1,20 @@
 {
   "name": "takimeet",
+  "date": "2024-11-20",
+  "sourceLanguage": "fr",
+  "topics": ["user-experience", "optimistic-ui", "loading-states", "skeleton-screens", "pinia-colada", "vue"],
+  "locales": {
+    "en": {
+      "id": "53197fdc-4107-4d5d-8c8e-9b4d856371b6",
+      "title": "Smoother user experiences",
+      "description": "Design responsive, reliable interfaces by choosing among loaders, optimistic UI, and skeleton fallbacks, with practical examples in Vue and Pinia Colada."
+    },
+    "fr": {
+      "id": "188011b9-8c68-406d-bd46-f2de26cf931f",
+      "title": "Fluidifier l'expérience utilisateur",
+      "description": "Concevez des retours d'interface fluides et fiables en choisissant entre loaders, optimistic UI et skeleton fallbacks, avec une mise en pratique dans Vue et Pinia Colada."
+    }
+  },
   "event": {
     "name": "TakiMeet",
     "url": "https://www.takima.fr/",
@@ -11,7 +26,6 @@
     }
   },
   "private": true,
-  "description": "Concevez des retours d'interface fluides et fiables en choisissant entre loaders, optimistic UI et skeleton fallbacks, avec une mise en pratique dans Vue et Pinia Colada.",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /2024-11-20/takimeet/ --out ../../dist/2024-11-20/takimeet",
