@@ -1,8 +1,8 @@
 {
   "name": "@soubiran/talks",
-  "private": false,
   "type": "module",
   "version": "0.0.1",
+  "private": false,
   "description": "TypeScript types for the localized talks.soubiran.dev JSON catalogs.",
   "author": "Estéban Soubiran <esteban@soubiran.dev>",
   "license": "MIT",
