@@ -21,7 +21,7 @@
     "update:timing": "node .scripts/update-timing.ts",
     "sort:frontmatter": "node .scripts/sort-slides-frontmatter.ts",
     "typecheck": "tsc -p tsconfig.node.json && pnpm --filter @soubiran/talks run test:types",
-    "release": "bumpp --sign",
+    "release": "bumpp --sign -r",
     "dev": "node .scripts/select-deck.ts dev --open",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
