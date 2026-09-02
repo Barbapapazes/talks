@@ -113,6 +113,7 @@ function createTalkLinks(url: string, pkg: Package): TalkLinks {
   const audioUrl = `${url}/audio`
   const transcriptUrl = `https://soubiran.dev/talks/${url.slice('https://talks.soubiran.dev/'.length)}`
   const articleUrl = `${url}/article`
+  const youtubeEmbedUrl = pkg.recording ? getYouTubeEmbedUrl(pkg.recording) : undefined
 
   return {
     slides: url,
@@ -123,12 +124,44 @@ function createTalkLinks(url: string, pkg: Package): TalkLinks {
     ...(pkg.recording
       ? {
           recording: recordingUrl,
+          ...(youtubeEmbedUrl ? { youtubeEmbed: youtubeEmbedUrl } : {}),
           audio: audioUrl,
           transcript: transcriptUrl,
         }
       : {}),
     ...(pkg.article ? { article: articleUrl } : {}),
   }
+}
+
+function getYouTubeEmbedUrl(recordingUrl: string): string | undefined {
+  let recording: URL
+
+  try {
+    recording = new URL(recordingUrl)
+  }
+  catch {
+    return undefined
+  }
+
+  const host = recording.hostname.toLowerCase()
+  const pathSegments = recording.pathname.split('/').filter(Boolean)
+  let videoId: string | null = null
+
+  if (host === 'youtu.be') {
+    videoId = pathSegments[0] ?? null
+  }
+  else if (['youtube.com', 'www.youtube.com', 'm.youtube.com', 'music.youtube.com'].includes(host)) {
+    if (recording.pathname === '/watch') {
+      videoId = recording.searchParams.get('v')
+    }
+    else if (['embed', 'shorts', 'live'].includes(pathSegments[0] ?? '')) {
+      videoId = pathSegments[1] ?? null
+    }
+  }
+
+  return videoId && /^[\w-]{11}$/.test(videoId)
+    ? `https://www.youtube.com/embed/${videoId}`
+    : undefined
 }
 
 function sortedTopics(topics: readonly string[]): string[] {

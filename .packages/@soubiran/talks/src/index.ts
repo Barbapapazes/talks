@@ -28,6 +28,7 @@ export const talkMetadataSchema = z.object({
     source: z.string().url(),
     pdf: z.string().url(),
     recording: z.string().url().optional(),
+    youtubeEmbed: z.string().url().optional(),
     audio: z.string().url().optional(),
     transcript: z.string().url().optional(),
     article: z.string().url().optional(),
