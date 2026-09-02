@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "private": false,
-  "description": "TypeScript types for the localized talks.soubiran.dev JSON catalogs.",
+  "description": "TypeScript types and Zod schema for the localized talks.soubiran.dev JSON catalogs.",
   "author": "Estéban Soubiran <esteban@soubiran.dev>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/Barbapapazes",
@@ -41,6 +41,9 @@
     "build": "tsdown",
     "test:types": "tsc -p tsconfig.json --noEmit",
     "prepack": "pnpm run build"
+  },
+  "dependencies": {
+    "zod": "catalog:scripts"
   },
   "devDependencies": {
     "tsdown": "catalog:build",

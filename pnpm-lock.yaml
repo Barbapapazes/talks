@@ -367,6 +367,10 @@ importers:
         version: 3.25.76
 
   .packages/@soubiran/talks:
+    dependencies:
+      zod:
+        specifier: catalog:scripts
+        version: 3.25.76
     devDependencies:
       tsdown:
         specifier: catalog:build
