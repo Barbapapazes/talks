@@ -51,7 +51,7 @@ catalogs:
     '@slidev/parser': ^52.15.2
     '@types/prompts': ^2.4.9
     dotenv: ^17.4.2
-    execa: ^9.6.1
+    execa: ^10.0.0
     fdir: ^6.5.0
     gray-matter: ^4.0.3
     markdown-it: ^14.2.0
