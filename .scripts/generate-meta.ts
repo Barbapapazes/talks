@@ -1,3 +1,4 @@
+import { talkMetadataSchema, talksStatisticsDataSchema } from '@soubiran/talks'
 import type { LocalizedTalkCatalog } from '@soubiran/talks'
 import type { MetaEntry } from './_types.ts'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
@@ -54,7 +55,7 @@ function assertUniqueTalks(entries: MetaEntry[]) {
 }
 
 function serializeStatistics(statistics: ReturnType<typeof calculateStatistics>) {
-  return {
+  return talksStatisticsDataSchema.parse({
     totalTalks: statistics.totalTalks,
     totalTalksWithRecording: statistics.totalTalksWithRecording,
     talksByYear: statistics.talksByYear,
@@ -62,7 +63,7 @@ function serializeStatistics(statistics: ReturnType<typeof calculateStatistics>)
     talksByTitle: statistics.talksByTitle,
     talksWithRecordingByYear: statistics.talksWithRecordingByYear,
     talksByCity: statistics.talksByCity,
-  }
+  })
 }
 
 function writeJson(fileName: string, data: unknown) {
@@ -73,9 +74,10 @@ function writeJson(fileName: string, data: unknown) {
 
 function writeTalkMetadata(slug: string, locale: string, metadata: unknown) {
   const outputDir = join('dist', slug)
+  const content = JSON.stringify(talkMetadataSchema.parse(metadata), null, 2)
 
   mkdirSync(outputDir, { recursive: true })
-  writeFileSync(join(outputDir, `meta.${locale}.json`), `${JSON.stringify(metadata, null, 2)}\n`)
+  writeFileSync(join(outputDir, `meta.${locale}.json`), `${content}\n`)
 }
 
 generateMeta()
