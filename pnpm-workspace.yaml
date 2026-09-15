@@ -20,7 +20,7 @@ allowBuilds:
 
 catalogs:
   build:
-    '@slidev/cli': ^52.15.2
+    '@slidev/cli': 52.19.0
     '@types/node': ^25.9.4
     '@vitejs/plugin-vue': ^6.0.7
     '@vue/tsconfig': ^0.9.1
@@ -48,7 +48,7 @@ catalogs:
     changelogithub: ^15.0.4
   scripts:
     '@mermaid-js/mermaid-cli': ^11.15.0
-    '@slidev/parser': ^52.15.2
+    '@slidev/parser': 52.19.0
     '@types/prompts': ^2.4.9
     dotenv: ^17.4.2
     execa: ^9.6.1
@@ -64,9 +64,9 @@ catalogs:
     tiktoken: ^1.0.22
     zod: ^3.25.76
   slidev:
-    '@slidev/client': ^52.15.2
+    '@slidev/client': 52.19.0
     '@slidev/theme-default': ^0.25.0
-    '@slidev/types': ^52.15.2
+    '@slidev/types': 52.19.0
     slidev-addon-graph: ^1.0.0
     slidev-addon-inalia: ^0.2.9
   test:
