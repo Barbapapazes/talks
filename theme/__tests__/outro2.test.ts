@@ -40,7 +40,7 @@ describe('outro2 language', () => {
 
     expect(wrapper.text()).toContain('C’était')
     expect(wrapper.text()).toContain('Présenté par')
-    expect(wrapper.text()).toContain('Agent Builder chez Takima')
+    expect(wrapper.text()).toContain('Agent Builder et Software Engineer chez Takima')
     expect(wrapper.getComponent(Feedback).props('label')).toBe('Votre feedback')
     expect(wrapper.getComponent(AdditionalContent).props('label')).toBe('Contenu additionnel')
   })
@@ -51,7 +51,7 @@ describe('outro2 language', () => {
 
     expect(wrapper.text()).toContain('That was')
     expect(wrapper.text()).toContain('Presented by')
-    expect(wrapper.text()).toContain('Agent Builder at Takima')
+    expect(wrapper.text()).toContain('Agent Builder and Software Engineer at Takima')
     expect(wrapper.getComponent(Feedback).props('label')).toBe('Your feedback')
     expect(wrapper.getComponent(AdditionalContent).props('label')).toBe('Additional content')
   })
