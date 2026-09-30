@@ -16,7 +16,11 @@ const isUser = computed(() => props.type === 'user')
       <template v-if="isUser">
         {{ props.content }}<span v-if="props.showCursor" class="cursor">|</span>
       </template>
-      <div v-else class="assistant-content" v-html="content" />
+      <div v-else class="assistant-content">
+        <slot>
+          <div v-html="content" />
+        </slot>
+      </div>
     </div>
   </div>
 </template>

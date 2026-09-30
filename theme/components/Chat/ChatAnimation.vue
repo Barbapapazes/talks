@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useIsSlideActive } from '@slidev/client'
-import { computed, ref, watch } from 'vue'
+import { computed, onUnmounted, ref, watch } from 'vue'
 import { useAnimationTimeline } from '../../composables/useAnimationTimeline'
 import ChatHeader from './ChatHeader.vue'
 import ChatInput from './ChatInput.vue'
@@ -10,7 +10,11 @@ import ChatStatusIndicator from './ChatStatusIndicator.vue'
 // Props with defaults
 const props = withDefaults(defineProps<{
   userPrompt: string
-  assistantHtmlFrames: string[]
+  assistantHtmlFrames?: string[]
+  assistantFrameCount?: number
+  followUpPrompt?: string
+  followUpHtmlFrames?: string[]
+  followUpFrameCount?: number
   typewriterCharDelayMs?: number
   searchDurationMs?: number
   thinkingDurationMs?: number
@@ -18,6 +22,8 @@ const props = withDefaults(defineProps<{
   streamFramesPerTick?: number
   timingVariance?: number
 }>(), {
+  assistantHtmlFrames: () => [],
+  followUpHtmlFrames: () => [],
   typewriterCharDelayMs: 50,
   searchDurationMs: 1500,
   thinkingDurationMs: 1000,
@@ -29,6 +35,8 @@ const props = withDefaults(defineProps<{
 // Refs for DOM
 const chatContainerRef = ref<HTMLElement | null>(null)
 const intervals = ref<number[]>([])
+const followUpStarted = ref(false)
+const isActive = useIsSlideActive()
 
 // Animation composable
 const {
@@ -49,14 +57,47 @@ const {
     streamFrameDelayMs: props.streamFrameDelayMs,
     streamFramesPerTick: props.streamFramesPerTick,
     timingVariance: props.timingVariance,
-    totalFrames: props.assistantHtmlFrames.length,
+    totalFrames: props.assistantFrameCount ?? props.assistantHtmlFrames.length,
   },
   chatContainerRef,
   () => {}, // onScroll callback
 )
 
+const {
+  currentPhase: followUpPhase,
+  typedInputText: followUpTypedInputText,
+  sentUserText: followUpSentUserText,
+  currentFrameIndex: followUpFrameIndex,
+  showCursor: followUpShowCursor,
+  startTimeline: startFollowUp,
+  resetAnimation: resetFollowUp,
+  skipToEnd: skipFollowUpToEnd,
+} = useAnimationTimeline(
+  {
+    userPrompt: props.followUpPrompt ?? '',
+    typewriterCharDelayMs: props.typewriterCharDelayMs,
+    searchDurationMs: props.searchDurationMs,
+    thinkingDurationMs: props.thinkingDurationMs,
+    streamFrameDelayMs: props.streamFrameDelayMs,
+    streamFramesPerTick: props.streamFramesPerTick,
+    timingVariance: props.timingVariance,
+    totalFrames: props.followUpFrameCount ?? props.followUpHtmlFrames.length,
+  },
+  chatContainerRef,
+  () => {},
+)
+let followUpEnterListener: ((event: KeyboardEvent) => void) | null = null
+
+function beginFollowUp(event: KeyboardEvent) {
+  if (event.key !== 'Enter' || !isActive.value || currentPhase.value !== 'done' || followUpStarted.value || !props.followUpPrompt)
+    return
+
+  event.preventDefault()
+  followUpStarted.value = true
+  startFollowUp()
+}
+
 // Watch slide active state
-const isActive = useIsSlideActive()
 let enterListener: ((e: KeyboardEvent) => void) | null = null
 
 watch(isActive, () => {
@@ -65,18 +106,25 @@ watch(isActive, () => {
   intervals.value = []
 
   if (isActive.value) {
+    followUpStarted.value = false
     startTimeline()
+    window.addEventListener('keydown', beginFollowUp)
 
     // Cursor blink effect
     const cursorInterval = window.setInterval(() => {
       if (currentPhase.value === 'typingInInput') {
         showCursor.value = !showCursor.value
       }
+      if (followUpPhase.value === 'typingInInput')
+        followUpShowCursor.value = !followUpShowCursor.value
     }, 530)
     intervals.value.push(cursorInterval)
   }
   else {
     resetAnimation()
+    resetFollowUp()
+    followUpStarted.value = false
+    window.removeEventListener('keydown', beginFollowUp)
     removeEnterListener()
   }
 }, { immediate: true })
@@ -113,6 +161,32 @@ watch(currentPhase, (phase) => {
   }
 }, { immediate: true })
 
+watch(followUpPhase, (phase) => {
+  if (phase === 'typingInInput' || phase === 'searching' || phase === 'thinking' || phase === 'streaming') {
+    if (!followUpEnterListener) {
+      followUpEnterListener = (event: KeyboardEvent) => {
+        if (event.key === 'Enter' && isActive.value) {
+          event.preventDefault()
+          skipFollowUpToEnd()
+        }
+      }
+      window.addEventListener('keydown', followUpEnterListener)
+    }
+  }
+  else if (followUpEnterListener) {
+    window.removeEventListener('keydown', followUpEnterListener)
+    followUpEnterListener = null
+  }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', beginFollowUp)
+  if (followUpEnterListener)
+    window.removeEventListener('keydown', followUpEnterListener)
+  removeEnterListener()
+  resetFollowUp()
+})
+
 // Computed current assistant HTML
 const currentAssistantHtml = computed(() => {
   if (currentFrameIndex.value < props.assistantHtmlFrames.length) {
@@ -120,6 +194,8 @@ const currentAssistantHtml = computed(() => {
   }
   return ''
 })
+
+const followUpAssistantHtml = computed(() => props.followUpHtmlFrames[followUpFrameIndex.value] ?? '')
 
 const showAssistant = computed(() =>
   currentPhase.value === 'streaming' || currentPhase.value === 'done',
@@ -134,8 +210,13 @@ const showUserMessage = computed(() =>
 )
 
 const inputDisabled = computed(() =>
-  currentPhase.value !== 'typingInInput',
+  (followUpStarted.value ? followUpPhase.value : currentPhase.value) !== 'typingInInput',
 )
+
+const followUpShowUser = computed(() => followUpStarted.value
+  && !['idle', 'waitingToType', 'typingInInput', 'waitingToSend'].includes(followUpPhase.value))
+
+const followUpShowAssistant = computed(() => followUpPhase.value === 'streaming' || followUpPhase.value === 'done')
 </script>
 
 <template>
@@ -156,17 +237,48 @@ const inputDisabled = computed(() =>
         />
 
         <ChatMessage
-          v-if="showAssistant"
+          v-if="showAssistant && $slots.assistant"
           type="assistant"
           :content="currentAssistantHtml"
+        >
+          <slot name="assistant" :frame-index="currentFrameIndex" :streaming="currentPhase === 'streaming'" />
+        </ChatMessage>
+        <ChatMessage
+          v-else-if="showAssistant"
+          type="assistant"
+          :content="currentAssistantHtml"
+        />
+
+        <ChatMessage
+          v-if="followUpShowUser"
+          type="user"
+          :content="followUpSentUserText"
+        />
+
+        <ChatStatusIndicator
+          v-if="followUpPhase === 'searching' || followUpPhase === 'thinking'"
+          :status="(followUpPhase as 'searching' | 'thinking')"
+        />
+
+        <ChatMessage
+          v-if="followUpShowAssistant && $slots.followUp"
+          type="assistant"
+          :content="followUpAssistantHtml"
+        >
+          <slot name="followUp" :frame-index="followUpFrameIndex" :streaming="followUpPhase === 'streaming'" />
+        </ChatMessage>
+        <ChatMessage
+          v-else-if="followUpShowAssistant"
+          type="assistant"
+          :content="followUpAssistantHtml"
         />
       </div>
     </div>
 
     <ChatInput
       class="w-[70ch] mx-auto absolute bottom-4 left-1/2 transform -translate-x-1/2"
-      :value="typedInputText"
-      :show-cursor="showCursor && currentPhase === 'typingInInput'"
+      :value="followUpStarted ? followUpTypedInputText : typedInputText"
+      :show-cursor="(followUpStarted ? followUpShowCursor : showCursor) && (followUpStarted ? followUpPhase : currentPhase) === 'typingInInput'"
       :disabled="inputDisabled"
     />
   </div>

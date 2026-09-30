@@ -6,6 +6,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 ### 2026
 
+- `en` [A Component Library, Some Markdown, and a Deadline](./2026-09-29) - PragVue
 - `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2026-06-27-1) - Asynconf
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-27-2) - Asynconf
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-18) - Voxxed Days Luxembourg
@@ -60,6 +61,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 <summary>Copy talks list as text</summary>
 
 ```
+2026-09-29 - A Component Library, Some Markdown, and a Deadline - PragVue - Prague, Czech Republic
 2026-06-27 - La réactivité et les signaux : démystifions la magie du frontend - Asynconf - Paris, France
 2026-06-27 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Asynconf - Paris, France
 2026-06-18 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Voxxed Days Luxembourg - Luxembourg, Luxembourg
@@ -110,11 +112,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Year | Number of Talks |
 |------|-----------------|
-| 2026 | 14 |
+| 2026 | 15 |
 | 2025 | 19 |
 | 2024 | 6 |
 | 2023 | 1 |
-| **Total** | **40** |
+| **Total** | **41** |
 
 ### Talks per Event
 
@@ -135,7 +137,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 | Node.js Paris | 2 | 0 | 2 | 0 | 0 |
 | Nuxt Nation | 1 | 0 | 0 | 1 | 0 |
 | Paris TypeScript | 4 | 1 | 3 | 0 | 0 |
-| PragVue | 1 | 0 | 0 | 1 | 0 |
+| PragVue | 2 | 1 | 0 | 1 | 0 |
 | StrasbourgJS | 2 | 0 | 1 | 1 | 0 |
 | Takima | 1 | 1 | 0 | 0 | 0 |
 | TakiMeet | 1 | 0 | 0 | 1 | 0 |
@@ -147,6 +149,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Talk Title | Total | 2026 | 2025 | 2024 | 2023 |
 |------------|-------|------|------|------|------|
+| A Component Library, Some Markdown, and a Deadline | 1 | 1 | 0 | 0 | 0 |
 | Au cœur d'une pipeline : démystifions Vite et ses plugins | 8 | 8 | 0 | 0 | 0 |
 | Découvrons ensemble l'écosystème UnJS | 1 | 0 | 0 | 1 | 0 |
 | Deviens full-stack avec TypeScript | 1 | 0 | 1 | 0 | 0 |
@@ -167,11 +170,11 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 | Year | With Recording | Without Recording | Coverage |
 |------|----------------|-------------------|----------|
-| 2026 | 6 | 8 | 43% |
+| 2026 | 6 | 9 | 40% |
 | 2025 | 6 | 13 | 32% |
 | 2024 | 3 | 3 | 50% |
 | 2023 | 1 | 0 | 100% |
-| **Total** | **16** | **24** | **40%** |
+| **Total** | **16** | **25** | **39%** |
 
 ### Talks per City
 
@@ -185,7 +188,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 | Nantes | 1 | 0 | 1 | 0 | 0 |
 | Online | 2 | 1 | 0 | 1 | 0 |
 | Paris | 20 | 7 | 9 | 3 | 1 |
-| Prague | 1 | 0 | 0 | 1 | 0 |
+| Prague | 2 | 1 | 0 | 1 | 0 |
 | Rennes | 2 | 0 | 2 | 0 | 0 |
 | Strasbourg | 2 | 0 | 1 | 1 | 0 |
 | Toulouse | 1 | 0 | 1 | 0 | 0 |

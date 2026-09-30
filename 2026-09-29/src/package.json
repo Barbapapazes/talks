@@ -1,0 +1,59 @@
+{
+  "name": "pragvue-2026",
+  "date": "2026-09-29",
+  "sourceLanguage": "en",
+  "topics": [
+    "nuxt-ui",
+    "nuxt-content",
+    "comark",
+    "hackathons",
+    "prototyping",
+    "teamwork"
+  ],
+  "locales": {
+    "en": {
+      "id": "cb81771f-2799-4090-8824-f669d0f4a492",
+      "title": "A Component Library, Some Markdown, and a Deadline",
+      "description": "Explore how Nuxt UI, Nuxt Content, and Comark can support a small prototype, then share practical ways to keep a hackathon team focused and get to a demo."
+    },
+    "fr": {
+      "id": "cbc95452-4894-455f-86e4-9d1318220d19",
+      "title": "Une bibliothèque de composants, un peu de Markdown et une deadline",
+      "description": "Découvrez comment Nuxt UI, Nuxt Content et Comark peuvent contribuer à un petit prototype, puis des conseils pratiques pour garder une équipe concentrée et arriver jusqu'à la démo."
+    }
+  },
+  "type": "module",
+  "event": {
+    "name": "PragVue",
+    "url": "https://pragvue.com/",
+    "location": {
+      "city": "Prague",
+      "country": "Czech Republic",
+      "latitude": 50.0909871,
+      "longitude": 14.4434108
+    }
+  },
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2026-09-29/pragvue-2026/ --out ../../dist/2026-09-29/pragvue-2026",
+    "export": "slidev export --per-slide --output ../2026-09-29-pragvue.pdf",
+    "thumbnail:cp": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
+    "thumbnail": "slidev export --per-slide --range 1 --format png",
+    "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
+    "thumbnail:cp:dark": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
+    "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
+  },
+  "dependencies": {
+    "@comark/vue": "catalog:",
+    "@iconify-json/vscode-icons": "catalog:",
+    "@slidev/client": "catalog:slidev",
+    "leaflet": "catalog:",
+    "slidev-theme-personal": "workspace:*"
+  },
+  "devDependencies": {
+    "@slidev/cli": "catalog:build",
+    "@types/leaflet": "catalog:",
+    "typescript": "catalog:build"
+  }
+}

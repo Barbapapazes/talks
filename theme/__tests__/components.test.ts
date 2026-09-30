@@ -481,6 +481,53 @@ describe('modal', () => {
 })
 
 describe('progressiveList', () => {
+  it('keeps rendering legacy string items with HTML and inline code', () => {
+    const wrapper = mount(ProgressiveList, {
+      props: { items: ['<span>Portfolio</span>', 'Build `apps`'] },
+      global: { directives: { click: {} } },
+    })
+
+    const items = wrapper.findAll('[data-progressive-list-item]')
+    expect(items).toHaveLength(2)
+    expect(items[0].get('span span').text()).toBe('Portfolio')
+    expect(items[1].get('code').text()).toBe('apps')
+    expect(items[1].get('code').classes()).toContain('font-mono')
+    expect(wrapper.findAll('.inline-flex')).toHaveLength(0)
+  })
+
+  it('renders mixed items with optional icons and dims them as they are revealed', () => {
+    const items = [
+      'Portfolio',
+      { label: 'SaaS `apps`', icon: 'i-ph-cloud-duotone' },
+      { label: 'Internal tools' },
+    ]
+    const mountProgressiveList = ($clicks: number) => {
+      slideContext.$clicks = $clicks
+
+      return mount(ProgressiveList, {
+        props: { items },
+        global: { directives: { click: {} } },
+      })
+    }
+
+    const wrapper = mountProgressiveList(2)
+    const renderedItems = wrapper.findAll('[data-progressive-list-item]')
+    expect(renderedItems.map(item => item.text())).toEqual(['Portfolio', 'SaaS apps', 'Internal tools'])
+    expect(renderedItems[1].get('.i-ph-cloud-duotone').classes()).toContain('size-6')
+    expect(renderedItems[1].classes()).toContain('flex')
+    expect(renderedItems[1].get('code').text()).toBe('apps')
+    expect(renderedItems[2].find('.inline-flex').exists()).toBe(false)
+    expect(renderedItems[0].classes()).toContain('opacity-20')
+    expect(renderedItems[1].classes()).not.toContain('opacity-20')
+
+    const afterThirdClick = mountProgressiveList(3).findAll('[data-progressive-list-item]')
+    expect(afterThirdClick[1].classes()).toContain('opacity-20')
+    expect(afterThirdClick[2].classes()).not.toContain('opacity-20')
+
+    const afterExtraClick = mountProgressiveList(4).findAll('[data-progressive-list-item]')
+    expect(afterExtraClick.every(item => !item.classes().includes('opacity-20'))).toBe(true)
+  })
+
   it('dims previously revealed items until an extra click clears the dimming', () => {
     const mountProgressiveList = ($clicks: number) => {
       slideContext.$clicks = $clicks

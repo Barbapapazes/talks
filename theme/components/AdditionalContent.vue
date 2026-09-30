@@ -2,13 +2,15 @@
 import { useSlideContext } from '@slidev/client'
 import { InaliaQR } from 'slidev-addon-inalia'
 
+defineProps<{ label?: string }>()
+
 const { $frontmatter } = useSlideContext()
 </script>
 
 <template>
   <div v-if="$frontmatter.additionalContentUrl" class="flex justify-center items-center flex-col space-y-2">
     <div>
-      🎁 Contenu additionnel 🎁
+      🎁 {{ label ?? 'Contenu additionnel' }} 🎁
     </div>
 
     <div

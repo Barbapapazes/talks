@@ -103,3 +103,9 @@ catalogs:
     vite-plugin-info: ^0.4.1
     vite-plugin-inspect: 11.3.3
     vite-plugin-run: ^0.9.0
+
+catalog:
+  '@comark/vue': ^0.7.0
+  '@iconify-json/vscode-icons': ^1.2.82
+  '@types/leaflet': ^1.9.22
+  leaflet: ^1.9.4
