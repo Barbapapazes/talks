@@ -1,7 +1,15 @@
+import { fileURLToPath } from 'node:url'
 import { defineConfig, presetIcons } from 'unocss'
+
+const themeRoot = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
   content: {
+    filesystem: [
+      `${themeRoot}layouts/cover.vue`,
+      `${themeRoot}components/Footer.vue`,
+      `${themeRoot}components/FooterItem.vue`,
+    ],
     pipeline: {
       include: [
         /\.(vue|ts|md)($|\?)/,

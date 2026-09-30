@@ -1,8 +1,14 @@
 <script lang="ts" setup>
 import { useSlideContext } from '@slidev/client'
+import Icon from './Icon.vue'
+
+interface ProgressiveListItem {
+  label: string
+  icon?: string
+}
 
 interface ProgressiveListProps {
-  items: string[]
+  items: (string | ProgressiveListItem)[]
 }
 
 const props = defineProps<ProgressiveListProps>()
@@ -33,13 +39,21 @@ function formatItem(text: string) {
   <div class="font-semibold text-xl leading-10">
     <div
       v-for="(item, index) in props.items"
-      :key="`${index}-${item}`"
+      :key="`${index}-${typeof item === 'string' ? item : item.label}`"
       v-click
       data-progressive-list-item
       :class="{
+        'flex items-center gap-2': typeof item !== 'string' && !!item.icon,
         ['opacity-20']: index < props.items.length - 1 && $clicks > index + 1 && $clicks <= props.items.length,
       }"
-      v-html="formatItem(item)"
-    />
+    >
+      <template v-if="typeof item === 'string'">
+        <span v-html="formatItem(item)" />
+      </template>
+      <template v-else>
+        <Icon v-if="item.icon" :name="item.icon" class="size-6 shrink-0" />
+        <span v-html="formatItem(item.label)" />
+      </template>
+    </div>
   </div>
 </template>

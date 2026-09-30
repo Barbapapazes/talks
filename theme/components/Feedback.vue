@@ -5,6 +5,7 @@ import { computed } from 'vue'
 const props = defineProps<{
   customFeedbackUrl?: string
   enablePlaceholder?: boolean
+  label?: string
 }>()
 
 const { talk } = useInaliaTalk()
@@ -45,7 +46,7 @@ const shortUrl = computed(() => {
 <template>
   <div v-if="talk || props.enablePlaceholder" class="flex justify-center items-center flex-col space-y-2">
     <div class="theme-feedback-label">
-      ⬇️ Votre feedback ⬇️
+      ⬇️ {{ props.label ?? 'Votre feedback' }} ⬇️
     </div>
 
     <div

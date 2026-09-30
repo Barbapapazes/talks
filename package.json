@@ -66,6 +66,7 @@
     "tiktoken": "catalog:scripts",
     "typescript": "catalog:build",
     "unocss": "catalog:build",
+    "vite": "catalog:build",
     "vitest": "catalog:test",
     "zod": "catalog:scripts"
   }

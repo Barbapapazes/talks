@@ -21,6 +21,7 @@ allowBuilds:
 catalogs:
   build:
     '@slidev/cli': 52.19.0
+    '@types/leaflet': ^1.9.22
     '@types/node': ^25.9.4
     '@vitejs/plugin-vue': ^6.0.7
     '@vue/tsconfig': ^0.9.1
@@ -75,6 +76,7 @@ catalogs:
     vitest: ^4.1.9
     vue: ^3.6.0-beta.16
   ui:
+    '@comark/vue': ^0.7.0
     '@dagrejs/dagre': ^3.0.0
     '@formkit/auto-animate': ^0.9.0
     '@shikijs/langs': ^4.2.0
@@ -94,6 +96,7 @@ catalogs:
     alien-signals: ^3.2.1
     cobe: ^2.0.1
     fireworks-js: ^2.10.8
+    leaflet: ^1.9.4
     reka-ui: ^2.9.7
     seedrandom: ^3.0.5
     shiki: ^4.2.0
