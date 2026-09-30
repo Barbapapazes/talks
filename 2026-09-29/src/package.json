@@ -45,15 +45,15 @@
     "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
   "dependencies": {
-    "@comark/vue": "catalog:",
-    "@iconify-json/vscode-icons": "catalog:",
+    "@comark/vue": "catalog:ui",
+    "@iconify-json/vscode-icons": "catalog:icons",
     "@slidev/client": "catalog:slidev",
-    "leaflet": "catalog:",
+    "leaflet": "catalog:ui",
     "slidev-theme-personal": "workspace:*"
   },
   "devDependencies": {
     "@slidev/cli": "catalog:build",
-    "@types/leaflet": "catalog:",
+    "@types/leaflet": "catalog:build",
     "typescript": "catalog:build"
   }
 }
