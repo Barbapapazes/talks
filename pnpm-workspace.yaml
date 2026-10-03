@@ -1,13 +1,12 @@
 catalogMode: prefer
-
-shellEmulator: true
-
 trustPolicy: off
+shellEmulator: true
 
 packages:
   - '**/src'
   - '.packages/@soubiran/*'
   - theme
+
 patchedDependencies:
   slidev-addon-graph: patches/slidev-addon-graph.patch
 
