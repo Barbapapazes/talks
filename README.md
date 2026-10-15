@@ -106,6 +106,30 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 </details>
 
+<details>
+<summary>Copy talks grouped by title as text</summary>
+
+```
+A Component Library, Some Markdown, and a Deadline, PragVue (2026-09-29)
+Au cœur d'une pipeline : démystifions Vite et ses plugins, Asynconf (2026-06-27), Voxxed Days Luxembourg (2026-06-18), DevLille (2026-06-12), Paris TypeScript (2026-06-09), Devoxx France (2026-04-23), MiXiT (2026-04-16), Takima (2026-04-13), L'Atelier (2026-04-09)
+La réactivité et les signaux : démystifions la magie du frontend, Asynconf (2026-06-27), Touraine Tech (2026-02-12), DevFest Dijon (2025-12-05), DevFest Toulouse (2025-11-13), BDX I/O (2025-11-07), StrasbourgJS (2025-10-21), Paris TypeScript (2025-10-14), BreizhCamp (2025-06-25), MiXiT (2025-04-30), Devoxx France (2025-04-17)
+Rester en mouvement dans un monde instable : l'agentivité comme levier, NCL Days (2026-06-16)
+Le futur du développeur : IA, compétences et obsolescence, MiXiT (2026-04-17)
+En JavaScript, il y a un paquet pour tout... et souvent pour rien., Touraine Tech (2026-02-13), Paris TypeScript (2025-12-09), BDX I/O (2025-11-07), Devfest Nantes (2025-10-17), BreizhCamp (2025-06-26), MiXiT (2025-04-29), Devoxx France (2025-04-18)
+Inertia: Un Anneau pour les gouverner tous, Vue.js Paris (2026-01-22), Node.js Paris (2025-09-17), HumanTalks Paris (2025-09-09)
+Ship Nuxt apps that scale, HumanTalks Paris (2025-04-08), Nuxt Nation (2024-11-13)
+Vous n'avez pas besoin de ces nouvelles API Node.js, Node.js Paris (2025-03-05)
+Deviens full-stack avec TypeScript, Paris TypeScript (2025-01-21)
+Nuxt, NuxtHub et le full-stack, Vue.js Paris (2024-12-04)
+Fluidifier l'expérience utilisateur, TakiMeet (2024-11-20)
+You've dreamed it? Create full-stack apps with Nuxt!, PragVue (2024-09-17)
+Unifié et Universel, le JavaScript avec UnJS, Devoxx France (2024-04-19)
+Découvrons ensemble l'écosystème UnJS, StrasbourgJS (2024-04-12)
+Unpoly pour reprendre le contrôle !, Devoxx France (2023-04-12)
+```
+
+</details>
+
 ## Statistics
 
 ### Talks per Year

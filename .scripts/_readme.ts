@@ -155,6 +155,28 @@ Slides from my [talks](https://soubiran.dev/talks).
 
   content += `\`\`\`\n\n</details>\n\n`
 
+  // Add a compact, title-first list that groups repeat appearances
+  const talksByTitleForText = Object.entries(
+    meta.reduce<Record<string, MetaEntry[]>>((acc, talk) => {
+      (acc[talk.name] ??= []).push(talk)
+      return acc
+    }, {}),
+  ).sort(([titleA, talksA], [titleB, talksB]) => {
+    const latestDateA = talksA.reduce((latest, talk) => talk.date > latest ? talk.date : latest, '')
+    const latestDateB = talksB.reduce((latest, talk) => talk.date > latest ? talk.date : latest, '')
+    return latestDateB.localeCompare(latestDateA) || titleA.localeCompare(titleB)
+  })
+
+  content += `<details>\n<summary>Copy talks grouped by title as text</summary>\n\n\`\`\`\n`
+
+  for (const [title, talks] of talksByTitleForText) {
+    talks.sort((a, b) => b.date.localeCompare(a.date))
+    const appearances = talks.map(talk => `${talk.event} (${talk.date})`).join(', ')
+    content += `${title}, ${appearances}\n`
+  }
+
+  content += `\`\`\`\n\n</details>\n\n`
+
   content += `## Statistics
 
 ### Talks per Year
