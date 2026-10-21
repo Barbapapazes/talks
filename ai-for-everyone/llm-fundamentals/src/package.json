@@ -1,0 +1,17 @@
+{
+  "name": "llm-fundamentals",
+  "date": "2026-10-29",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "slidev"
+  },
+  "dependencies": {
+    "@slidev/client": "catalog:slidev",
+    "slidev-theme-personal": "workspace:*"
+  },
+  "devDependencies": {
+    "@slidev/cli": "catalog:build",
+    "typescript": "catalog:build"
+  }
+}
