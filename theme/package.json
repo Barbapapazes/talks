@@ -1,7 +1,7 @@
 {
   "name": "slidev-theme-personal",
-  "description": "Slidev Personal Theme",
   "type": "module",
+  "description": "Slidev Personal Theme",
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest"
