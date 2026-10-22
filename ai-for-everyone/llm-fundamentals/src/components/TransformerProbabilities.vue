@@ -146,7 +146,6 @@ onUnmounted(clearTimers)
         <span class="probability"><span class="bar" :style="{ width: `${candidate.probability}%` }" /><span>{{ candidate.probability }}%</span></span>
       </div>
     </div>
-
   </div>
 </template>
 
