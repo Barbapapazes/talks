@@ -11,7 +11,7 @@ themeConfig:
 codeCopy: false
 transition: fade-out
 theme: slidev-theme-personal
-title: "LLM fundamentals: how they work, text generation, reasoning, tool calling, and our relationship with language"
+title: "LLM fundamentals"
 titleTemplate: '%s - Estéban Soubiran'
 author: Estéban Soubiran
 keywords: llm,ai,machine-learning,tokens,transformer,reasoning,tool-calling,agents
@@ -37,99 +37,155 @@ Potential content:
 - Explain that we'll describe the mechanisms without assuming they work like a human mind.
 -->
 
+
+---
+name: An LLM can only generate the next token
+layout: center-card
+img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+---
+
+<div class="text-xl font-bold">
+  An LLM is a machine<br />that can only generate the next token.
+</div>
+
+
+<!--
+Potential content:
+- Open with the central mechanism of an autoregressive text LLM: given a context, generate the next token, append it, and repeat.
+- Briefly describe a token as a piece of text. The tokenization slide will make this concrete later.
+- Emphasize that "only" describes the generation mechanism, not a limit to simple tasks or memorized answers. Learning to predict text can support complex capabilities.
+- Set up the question for the talk: how does this mechanism lead to translation, code, reasoning, and tool requests?
+- Keep the model separate from the application: the model generates tokens; a runtime can interpret some of those tokens as requests and execute tools.
+
+Transition: before looking at generation, how does the model learn to predict useful continuations?
+-->
+
+<!--
+
+Les LLMs sont des machines à prédire le prochain token. C'est tout. Et c'est déjà beaucoup !
+
+ -->
+
+---
+name: Handwritten rules
+group: Learn
+ready: false
+timing: 0.75
+clicks: 3
+---
+
+# What an LLM is not
+
+<WrittenRules class="mt-12" />
+
+<!--
+- Click 1: reveal a deliberately simple spam filter. A human wrote each decision criterion.
+- Click 2: reveal a genuine message containing "Urgent" above the rules.
+- Click 3: highlight "Urgent" in the message and the matching rule. Explain the false positive aloud. We could keep adding exceptions, but that isn't how we teach an LLM its language skills.
+- This illustrates handwritten symbolic rules, not the limits of all symbolic systems.
+- The architecture, training objective, and software are still designed by people. The distinction concerns learned behavior, not an absence of code or constraints.
+
+Transition: what if we supplied examples instead of writing every decision rule?
+-->
+
 ---
 name: Inductive learning
 group: Learn
 ready: false
-timing: 1.75
+timing: 1
+clicks: 3
 ---
 
-# Learn patterns instead of programming every rule
+# Learn patterns from examples
+
+<LearnedParameters />
 
 <!--
-Potential content:
-- Contrast two diagrams: developer-written rules → result; data + training → model that can make predictions.
-- Explain that training adjusts weights to improve next-token prediction.
-- Show how this objective encourages learning linguistic structures, factual knowledge, and useful representations of the world.
-- Key phrase: "By learning to predict language, LLMs have learned some of the patterns of the world that language describes."
-- Point out that the data is incomplete and imperfect. The model hasn't discovered every rule of the world.
-- Note that humans also learn through induction, but with different experiences, including bodily and social experiences.
+- Begin with labeled spam examples and an illustrative grid of initial parameters.
+- Click 1: training changes the numerical parameters so predictions better match the examples. Colors illustrate values, not real model weights.
+- Click 2: remove the training examples and present a new message. Parameters stay fixed. The goal is generalization to unseen examples, not just remembering training answers. This prediction is illustrative, not a guarantee of success.
+- The model computes a prediction using learned parameters. It doesn't need to query the training examples at inference time.
+- Click 3: transpose to an autoregressive LLM. Given "The capital of France is", predict the next token. During training, the actual next token provides the target, without a person labeling every sentence.
+- For an LLM, training repeatedly measures next-token prediction error and adjusts weights. Predicting text encourages learning linguistic patterns and knowledge expressed in that text.
+- Induction means learning regularities from examples. Connectionist models implement this through networks of learned numerical weights. Induction isn't exclusive to neural networks.
+- Training data is imperfect. Generalization can fail, and models can also memorize some passages.
+- An application may separately connect the model to a database or search tool. That isn't the training dataset being consulted by the model itself.
 
-Transition: how does this learning support translation, coding, or solving certain problems?
+Transition: how does learning to predict text support translation, coding, or solving certain problems?
 -->
-
----
-name: Emergent abilities
-group: Learn
-ready: false
-timing: 2
----
-
-# Capabilities without explicit rules for every task
 
 <!--
-Potential content:
-- Illustrate acquired capabilities with translation, code generation, and some mathematical procedures.
-- Involve the audience with an in-context learning example, to test before the talk:
-  mip → mop
-  lat → lot
-  sik → sok
-  riv → ?
-- Expected answer: rov. The proposed rule replaces the middle vowel with o.
-- Explain that examples in the prompt guide the answer without changing the model's weights.
-- Don't present emergence as a magical size threshold. Architecture, data, scale, and post-training all contribute to capabilities.
-- Keep the caveat about metrics that can create the appearance of a sudden breakthrough for questions.
 
-Reference: Are Emergent Abilities of Large Language Models a Mirage?, Schaeffer et al., 2023.
-https://arxiv.org/abs/2304.15004
--->
+revoir la slide pour supprimer une bonne partie du texte et commencer en ayant le block central (les initial parameters)
+
+ -->
+
+
+<!--
+
+Expliquer la notion de l'induction sur le fait qu'on demande au modèle d'apprendre les règles, de repérer des régularités
+En faisant ça, il corrige ses poids, ces fameux paramètres.
+
+Puis une fois qu'on passe en production, les poids sont fixés et on n'y touche plus. C'est hyper important parce que ça veut dire qu'un modèle n'apprends plus une fois une production, ni ne se met à jour.
+
+Et puis on lui donne des entrées et il fait ce qu'il sait faire de mieux, générer du texte.
+
+Et du coup, comme on ne lui donne pas les règles que nous on pourrait avoir, et c'est mon point de vu, mais on n'a pas vraiment de raisons de comparer l'intelligence artificielle avec l'intelligence humaine
+
+ -->
 
 ---
 name: Tokenization
 group: Generate
 ready: false
 timing: 1
+clicks: 4
+transition: slide-up
 ---
 
-# From text to vectors
+<TextToVectors />
 
 <!--
-Potential content:
-- Show the actual tokenization of "The capital of France is" using https://platform.openai.com/tokenizer.
-- Prepare a screenshot to avoid depending on a live demonstration.
-- Draw the start of the pipeline: text → tokens → IDs → embeddings.
+Animation:
+- Start with "The capital of France is" as a sentence.
+- Click 1: move the five cl100k_base tokens into a column. Dots show leading spaces.
+- Click 2: show a counterexample. "unbelievable" splits into "un", "belie", "vable" with the same tokenizer.
+- Explain that this sentence happens to split along word boundaries, but tokens are pieces of text, not necessarily words.
+- Click 3: hide the counterexample and reveal the actual vocabulary IDs.
+- Click 4: reveal illustrative embedding vectors, not actual model values.
+
+Speaker notes:
 - Explain that a token can be a word, a word fragment, a character, or a sequence of bytes, depending on the tokenizer.
 - IDs are indices in a finite vocabulary. Nearby IDs don't necessarily have similar meanings.
 - An embedding is a learned vector retrieved using the ID. It is neither a complete definition of the token nor a standalone knowledge base.
 -->
-
-<!--
-
-avoir une animation pour le visualizer
-
-une phrase un paragraph et puis en un click sur espace, ça se sépare en plein de morceau, c'est les tokens
-
-mettre un lien avec le tokenizer d'openai pour le visualiser (ou une iframe carrément)
-
-et on les mets en colonne avec une autre animation, puis on associe un id et puis un vector
-
- -->
 
 ---
 name: Transformer and probabilities
 group: Generate
 ready: false
 timing: 1
+clicks: 5
 ---
 
-# From vectors to next-token probabilities
+<TransformerProbabilities />
 
 <!--
-Potential content:
-- Complete the pipeline: embeddings → Transformer → logits → probabilities.
-- Show that the Transformer produces contextualized representations that depend on the preceding tokens.
-- Explain logits as one score per vocabulary token, then softmax as the conversion into a probability distribution.
-- Display P(t[n+1] | t[1], ..., t[n]).
+Animation:
+- Start with only the same five tokens as the previous slide.
+- Click 1: reveal the Transformer and the embedding values represented as colored cells.
+- Click 2: highlight incoming attention to the last position. Only a subset of attention links is shown.
+- Click 3: pass to the MLP in layer 1 and transform each position's representation.
+- Click 4: repeat through illustrative layers 2, 3, …, N. Tokens stay fixed while their representations change.
+- Click 5: isolate the last position and reveal output projection scores, followed by softmax probabilities. Token selection happens on the next slide.
+
+Speaker notes:
+- Color intensity represents magnitude. Purple and teal distinguish positive and negative values. All values and attention links are illustrative.
+- Attention mixes information from accessible positions, including the position itself. The causal mask prevents information from flowing backwards from future tokens.
+- The MLP transforms each position separately. Residual connections and normalization are omitted from this simplified view.
+- Embedding weights stay fixed. The computed representations change through the layers.
+- The output projection produces one logit per vocabulary token. Softmax converts these scores into P(t[n+1] | t[1], ..., t[n]).
+- Only a few candidates are displayed. “Others” groups the rest of the vocabulary, rather than representing a single token.
 
 Notes for questions, not to cover during this minute:
 - The embedding matrix doesn't change during inference. The computed representations change with context.
@@ -151,9 +207,10 @@ name: Autoregressive generation
 group: Generate
 ready: false
 timing: 1
+clicks: 4
 ---
 
-# Choose a token, then repeat
+<NextTokenSelection />
 
 <!--
 Potential content:
@@ -165,34 +222,15 @@ Potential content:
 - Distinguish this generation loop from training: the weights aren't updated with every response.
 -->
 
+---
+name: From tokens to text, reasoning, and tool calling
+---
+
 <!--
 
-je verrais bien l'idée d'aller à la fin, et voir ce qui est générer (en mode plusieurs choix)
+ici, il faut une slide pour mettre les trois capacités qui suivent la génération de tokens
 
  -->
-
----
-name: Relationship to human intelligence
-group: Understand the limits
-ready: false
-timing: 2
----
-
-# Speaking like us doesn't prove thinking like us
-
-<!--
-Potential content:
-- Display a response that starts with "I think" and ask what this wording leads us to assume.
-- Explain that our relationship with language encourages us to attribute intention and understanding to a speaker.
-- Convincing output doesn't prove that the underlying mental processes resemble ours.
-- Acknowledge real problem-solving capabilities, with successes and failures that can differ from our own.
-- Avoid both shortcuts: "it's human" and "it's just memorization".
-- Don't try to settle the philosophical question of intelligence. Describe capabilities and their limits.
-
-Takeaway: understand how an LLM works rather than automatically assuming it works like us.
--->
-
-<!-- je suis pas certains qu'on doivent la garder -->
 
 ---
 name: Reasoning
@@ -200,12 +238,6 @@ group: Reason
 ready: false
 timing: 2
 ---
-
-<!--
-
-je pense qu'il nous faut une slide en amont avec ces trois capacité à partir de l'idée qu'on puisse générer des tokens
-
- -->
 
 # Intermediate tokens as a workspace
 
@@ -228,6 +260,8 @@ Notes for questions:
 Reference: Chain-of-Thought Prompting Elicits Reasoning in Large Language Models, Wei et al., 2022.
 https://arxiv.org/abs/2201.11903
 -->
+
+<!-- faut parler du reasoning -->
 
 ---
 name: Tool calling
@@ -252,6 +286,8 @@ Potential content:
 - Show that the observation brings in external information that generation alone cannot provide.
 -->
 
+<!-- ajouter l'annecdote sur le structure output et le fait que ça passe dans un système déterministe (à voir via l'article d'openai) -->
+
 ---
 name: Agent loop
 group: Act
@@ -259,7 +295,7 @@ ready: false
 timing: 1.5
 ---
 
-<!-- loop (on y reviendra plus tard) -->
+<!-- loop (on y reviendra plus tard), je suis pas certains que ça fasse sens d'en parler ici -->
 
 # Act, observe, then decide what comes next
 
@@ -279,13 +315,14 @@ https://arxiv.org/abs/2210.03629
 -->
 
 ---
-name: Conclusion
-group: Conclusion
+name: Récap
+group: Récap
 ready: false
+layout: recap
 timing: 1
 ---
 
-# Learn → generate → reason → act
+<!-- # Learn → generate → reason → act -->
 
 <!--
 Potential content:
@@ -299,13 +336,47 @@ Potential content:
 Further reading: https://beta.soubiran.dev/ai-for-everyone
 -->
 
+
+---
+name: Reading a model card
+group: Bonus
+ready: false
+layout: image
+img: https://images.unsplash.com/photo-1575573560187-ea323357d550?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+---
+
+<ModelCards class="h-full flex flex-col justify-center" />
+
 <!--
+Bonus slide for questions, outside the main 15-minute thread.
+Current examples selected from the official model documentation, not a performance ranking.
+GPT-6.1 Sol has a 1,050,000-token context window and a 128,000-token maximum output.
+Claude Opus 5.5 lists a 1M-token context window and 128K maximum output for standard requests.
+The slide uses DeepSeek-V4 as the family name. The figures shown are for DeepSeek-V4-Pro: 1.6T total parameters, 49B activated per token, and a 1M-token context window. T means trillion, or 1,000 billion. The V4 family also includes Flash, with different parameter counts. Hosting limits and versions can differ from the downloadable model.
+OpenAI and Anthropic don't disclose parameter counts in the cited model documentation.
 
-ça ne s'est que générer que les tokens suivant et c'est tout
+Sources:
+- https://developers.openai.com/api/docs/models/gpt-6.1-sol
+- https://platform.claude.com/docs/en/models/opus-5-5/overview
+- https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
 
-mais c'est déjà énorme
-
- -->
+Speaker notes:
+- Distinguish developer, model, and application. OpenAI develops GPT models; ChatGPT is an application that provides models and tools. Anthropic uses Claude for both its model family and its application.
+- B means billion parameters. Parameters are learned numerical values, not documents or a count of facts. More parameters don't guarantee better results on every task.
+- For mixture-of-experts models, distinguish total parameters from parameters active per token if asked.
+- Open weights means the weights are available to download. Check the licence and hardware requirements. It doesn't automatically mean open source or that the training data is available.
+- Open-weight models can also be accessed through hosted APIs. Weight availability and hosting are separate questions.
+- Context includes instructions, conversation history, tool results, and generated output, including reasoning tokens where applicable. Providers may impose a separate, smaller output limit. Exact token limits depend on the model and service; context sizes are rounded on the slide.
+- A context window is not permanent memory, nor a guarantee that the model uses every detail reliably.
+- If asked: a frontier lab develops models among the most capable at a given time. The term has no single fixed technical threshold.
+-->
 
 <!-- une slide de récap (qui peut être la slide de conclusion)aj -->
 <!-- slide pour dire qu'il faut voter pour le prochain thème, sans le feu d'artifice (à remove de partout btw) -->
+
+---
+name: Outro
+layout: outro2
+---
+
+<!-- restructurer tout outro2 (j'aime pas l'organisation avec le titre, for X, presented by, trop de parenthèses  , avoir des liens de feedback via inalia (à réfléchir comment), avoir un lien vers la newsletter, pour ne rien manquer des prochains épisodes -->
