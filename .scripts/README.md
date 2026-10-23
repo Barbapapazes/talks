@@ -85,7 +85,7 @@ Set `"publication": "article-resource"` in the deck's `src/package.json` when it
 
 Resources keep their slug, localized metadata, summaries, transcripts, and asset links. They are published in `resources.<locale>.json` and `<slug>/meta.<locale>.json`, not in `talks.<locale>.json`, legacy `meta.json`, or talk statistics. No resource transcript link or redirect points at a nonexistent standalone `/talks/` page.
 
-The article owns its `contentId` and references the deck with `talk: ai-for-everyone/llm-fundamentals` in frontmatter. The website joins by slug and article locale; only the article enters `pages.en.json` or `pages.fr.json`. No UUID needs to be synchronized between repositories.
+The article owns its `contentId` and lives at the corresponding `ai-for-everyone/<slug>` path on the website. The dedicated article route joins resources by URL-derived slug and article locale; no resource reference is needed in frontmatter. Only the article enters `pages.en.json` or `pages.fr.json`. No UUID needs to be synchronized between repositories.
 
 Deploy these resource catalogs before deploying a website version that consumes them.
 
