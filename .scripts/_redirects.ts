@@ -32,7 +32,7 @@ export function talkRedirects(dir: string, pkg: Package): string[] {
     redirects.push(`/${prefix}/audio /${prefix}/${recordingRoute(pkg, pkg.sourceLanguage, 'audio')} 302`)
   }
 
-  if (LOCALES.some(locale => getRecording(pkg, locale))) {
+  if (pkg.publication !== 'article-resource' && LOCALES.some(locale => getRecording(pkg, locale))) {
     redirects.push(`/${prefix}/transcript https://soubiran.dev/talks/${prefix} 302`)
   }
 

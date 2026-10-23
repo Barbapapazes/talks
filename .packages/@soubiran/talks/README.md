@@ -10,6 +10,12 @@ Import `LocalizedTalkMetadata` for a per-talk metadata file, `LocalizedTalkCatal
 
 `sourceLanguage` is the reference language, not necessarily the language of every recording. Each localized entry's recording, audio, and YouTube embed links can point to its own original video. `event.location` is optional for content without a physical venue. Consumers should check for its presence before accessing location fields.
 
+## Article resources
+
+`LocalizedTalkResourceMetadata` and `talkResourceMetadataSchema` describe decks whose canonical content is an article. They reuse talk metadata without `id` and include `publication: 'article-resource'`. `LocalizedTalkResourceCatalog` describes `resources.en.json` or `resources.fr.json`.
+
+Join these resources to an article by `slug` and `locale`. Only the article owns a UUID. Resource entries are absent from standalone talk catalogs and statistics.
+
 ## License
 
 [MIT](./LICENSE) License © 2026-PRESENT [Estéban Soubiran](https://github.com/Barbapapazes)

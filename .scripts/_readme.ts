@@ -105,7 +105,7 @@ export function calculateStatistics(meta: MetaEntry[]) {
  */
 export function generateReadmeContent(entries: MetaEntry[]): string {
   // Keep the series out of the root README, including its statistics, for now.
-  const meta = entries.filter(entry => !entry.folder.startsWith('ai-for-everyone/'))
+  const meta = entries.filter(entry => entry.publication !== 'article-resource' && !entry.folder.startsWith('ai-for-everyone/'))
   const stats = calculateStatistics(meta)
 
   const { talksByYear, talksByEvent, talksByTitle, talksWithRecordingByYear, talksByCity, years, totalTalks, totalTalksWithRecording } = stats
