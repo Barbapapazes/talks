@@ -108,7 +108,7 @@ Présenter l'Excel, la formule et cette idée d'interface dirigée par l'état d
 -->
 
 ---
-name: Alien Signals
+name: Alien Signals-1
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1462332420958-a05d1e002413?q=80&w=3607&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 positionClass: right-2/5
@@ -149,7 +149,7 @@ intro: Ingénieur logiciel Avionique chez <span class="i-custom-maiaspace inline
 ---
 
 ---
-name: Alien Signals
+name: Alien Signals-2
 layout: bottom-left-card
 img: https://images.unsplash.com/photo-1462332420958-a05d1e002413?q=80&w=3607&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 positionClass: right-2/5

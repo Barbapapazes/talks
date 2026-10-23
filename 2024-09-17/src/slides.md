@@ -162,7 +162,7 @@ Then, show the NuxtHub module.
 -->
 
 ---
-name: State of our full-stack app
+name: State of our full-stack app-1
 ---
 
 <img src="./assets/nuxt=vue+nitro+database.svg" w="1/2" m="t-12" mx="auto" />
@@ -199,7 +199,7 @@ npx nuxi module add auth-utils
 </a>
 
 ---
-name: State of our full-stack app
+name: State of our full-stack app-2
 ---
 
 <img src="./assets/nuxt=vue+nitro+database+auth.svg" w="1/2" m="t-12" mx="auto" />
@@ -299,7 +299,7 @@ layout: center
 </a>
 
 ---
-name: State of our full-stack app
+name: State of our full-stack app-3
 class: relative
 ---
 
