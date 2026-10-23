@@ -1,5 +1,5 @@
-import type { Locale, LocalizedTalkMetadata, TalkLinks } from '@soubiran/talks'
-import type { LocalizedTalkMetadataByLocale, MetaEntry, Package } from './_types'
+import type { Locale, TalkLinks } from '@soubiran/talks'
+import type { LocalizedDeckMetadata, LocalizedTalkMetadataByLocale, MetaEntry, Package } from './_types'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { talkPrefix } from './_paths.ts'
@@ -50,6 +50,7 @@ export function mapTalkMetaEntry(dir: string, pkg: Package): MetaEntry {
   const article_url = `${url}/article`
 
   return {
+    publication: pkg.publication,
     language: pkg.sourceLanguage,
     name: pkg.locales[pkg.sourceLanguage].title,
     topics: sortedTopics(pkg.topics),
@@ -66,19 +67,19 @@ export function mapTalkMetaEntry(dir: string, pkg: Package): MetaEntry {
     github_url,
     recording_url: recording ? recording_url : undefined,
     audio_url: recording ? audio_url : undefined,
-    transcript_url: recording ? transcript_url : undefined,
+    transcript_url: recording && pkg.publication !== 'article-resource' ? transcript_url : undefined,
     article_url: pkg.article ? article_url : undefined,
     location: pkg.event.location,
   }
 }
 
-export function mapLocalizedTalkMetadata<L extends Locale>(dir: string, pkg: Package, locale: L): LocalizedTalkMetadata<L> {
+export function mapLocalizedTalkMetadata<L extends Locale>(dir: string, pkg: Package, locale: L): LocalizedDeckMetadata<L> {
   const prefix = talkPrefix(dir, pkg)
   const url = `https://talks.soubiran.dev/${prefix}`
   const metadata = pkg.locales[locale]
 
   return {
-    id: metadata.id,
+    ...(pkg.publication === 'article-resource' ? { publication: 'article-resource' as const } : { id: metadata.id }),
     locale,
     sourceLanguage: pkg.sourceLanguage,
     slug: prefix,
@@ -125,7 +126,7 @@ function createTalkLinks(url: string, pkg: Package, locale: Locale): TalkLinks {
           recording: recordingUrl,
           ...(youtubeEmbedUrl ? { youtubeEmbed: youtubeEmbedUrl } : {}),
           audio: audioUrl,
-          transcript: transcriptUrl,
+          ...(pkg.publication !== 'article-resource' ? { transcript: transcriptUrl } : {}),
         }
       : {}),
     ...(pkg.article ? { article: articleUrl } : {}),

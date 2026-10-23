@@ -1,16 +1,15 @@
 {
   "name": "llm-fundamentals",
+  "publication": "article-resource",
   "date": "2026-10-29",
   "sourceLanguage": "en",
   "topics": ["llm", "ai", "machine-learning", "tokens", "transformer", "reasoning", "tool-calling", "agents"],
   "locales": {
     "en": {
-      "id": "3ee65d32-672e-4f89-9544-5b8daec1e57f",
       "title": "LLM fundamentals",
       "description": "Understand how LLMs predict tokens, learn from data, and use transformers, reasoning, and tools, with examples of their capabilities and limitations."
     },
     "fr": {
-      "id": "0d9e77e2-e06b-4501-bc5c-ca30954e0bc3",
       "title": "Les fondamentaux des LLM",
       "description": "Comprenez comment les LLM prédisent des tokens, apprennent à partir de données et utilisent les transformers, le raisonnement et les outils, avec des exemples de leurs capacités et de leurs limites."
     }

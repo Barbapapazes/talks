@@ -15,13 +15,14 @@ const nonEmptyString = z
   .refine(value => value.trim().length > 0, 'a non-empty string')
 
 const localeMetadataSchema = z.object({
-  id: nonEmptyString.refine(id => UUID_V4_RE.test(id), 'a UUID v4'),
+  id: nonEmptyString.refine(id => UUID_V4_RE.test(id), 'a UUID v4').optional(),
   title: nonEmptyString,
   description: nonEmptyString,
   recording: nonEmptyString.optional(),
 })
 
 const packageSchema = z.object({
+  publication: z.enum(['standalone', 'article-resource']).optional(),
   name: nonEmptyString,
   date: z
     .string({ invalid_type_error: 'a valid date in YYYY-MM-DD format', required_error: 'a valid date in YYYY-MM-DD format' })
@@ -98,6 +99,14 @@ export function validateTalkPackage(dir: string, value: unknown): Package {
   }
 
   const packageJson = result.data
+  for (const locale of LOCALES) {
+    const id = packageJson.locales[locale].id
+    if (packageJson.publication === 'article-resource' ? id !== undefined : id === undefined) {
+      fail(talk, `locales.${locale}.id`, packageJson.publication === 'article-resource'
+        ? 'no UUID: the article owns the content identity'
+        : 'a UUID v4', id)
+    }
+  }
   validateDateMatchesFolder(talk, packageJson.date)
 
   return packageJson
@@ -112,6 +121,9 @@ export function validateUniqueLocaleIds(sources: readonly ValidatedTalkPackageSo
     for (const locale of LOCALES) {
       const field = `locales.${locale}.id`
       const id = source.packageJson.locales[locale].id
+      if (!id)
+        continue
+
       const normalizedId = id.toLowerCase()
       const previous = seen.get(normalizedId)
 
