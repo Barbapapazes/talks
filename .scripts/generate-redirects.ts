@@ -1,6 +1,8 @@
 import type { Package } from './_types.ts'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'pathe'
+import { talkDirectory } from './_paths.ts'
+import { talkRedirects } from './_redirects.ts'
 import { getPackagesJson } from './_utils.ts'
 
 function generateRedirects() {
@@ -10,21 +12,7 @@ function generateRedirects() {
   for (const packageJson of packagesJson) {
     const content = JSON.parse(readFileSync(packageJson, 'utf-8')) as Package
 
-    const date = packageJson.split('/')[0]
-    const name = content.name
-
-    redirects.push(`/${date}/${name}/pdf https://pdf.talks.soubiran.dev/${date}/${date}-${name}.pdf 302`)
-    redirects.push(`/${date}/${name}/src https://github.com/Barbapapazes/talks/tree/main/${date} 302`)
-
-    if (content.recording) {
-      redirects.push(`/${date}/${name}/recording ${content.recording} 302`)
-      redirects.push(`/${date}/${name}/audio https://audio.talks.soubiran.dev/${date}/${date}-${name}.mp3 302`)
-      redirects.push(`/${date}/${name}/transcript https://soubiran.dev/talks/${date}/${name} 302`)
-    }
-
-    if (content.article) {
-      redirects.push(`/${date}/${name}/article ${content.article} 302`)
-    }
+    redirects.push(...talkRedirects(talkDirectory(packageJson), content))
   }
 
   const localRedirects = readFileSync(join('.', '_redirects'), 'utf-8')

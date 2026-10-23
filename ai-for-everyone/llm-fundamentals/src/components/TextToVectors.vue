@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { useSlideContext } from '@slidev/client'
+import TokenChip from '@theme/components/ai/TokenChip.vue'
+import DiagramPanel from '@theme/components/DiagramPanel.vue'
 import { computed } from 'vue'
+import { formatEmbedding, inputTokens, sentence } from '../data/language-model-example'
 
 const { $clicks } = useSlideContext()
 const split = computed(() => $clicks.value >= 1)
@@ -10,16 +13,7 @@ const showCounterexample = computed(() => $clicks.value === 2)
 // Verified with cl100k_base: 359, 32898, 24694.
 const wordPieces = ['un', 'belie', 'vable']
 
-// cl100k_base tokenization, including each token's leading space.
-// Embedding values are illustrative, not extracted from a model.
-const tokens = [
-  { text: 'The', id: 791, vector: '[ 0.12, −0.34,  0.08, … ]' },
-  { text: ' capital', id: 6864, vector: '[−0.21,  0.67,  0.15, … ]' },
-  { text: ' of', id: 315, vector: '[ 0.43,  0.02, −0.56, … ]' },
-  { text: ' France', id: 9822, vector: '[ 0.71, −0.18,  0.39, … ]' },
-  { text: ' is', id: 374, vector: '[−0.09,  0.31,  0.62, … ]' },
-]
-const sentence = tokens.map(token => token.text).join('')
+const tokens = inputTokens.map(token => ({ ...token, vector: formatEmbedding(token.embedding) }))
 const starts = tokens.map((_, index) => tokens.slice(0, index).reduce((sum, token) => sum + token.text.length, 0))
 </script>
 
@@ -41,39 +35,38 @@ const starts = tokens.map((_, index) => tokens.slice(0, index).reduce((sum, toke
       class="token-row"
       :style="{ '--row': index, '--start': starts[index] - sentence.length / 2 }"
     >
-      <div class="token font-mono">
+      <TokenChip class="token" :plain="!split">
         <span class="leading-space" aria-hidden="true">{{ token.text.startsWith(' ') ? '·' : '' }}</span>{{ token.text.trimStart() }}
-      </div>
+      </TokenChip>
       <div class="id-step" :aria-hidden="!showIds">
         <div class="connector">
           <div class="i-ph-arrow-right-thin size-6" />
         </div>
-        <div class="token-id rounded-md border border-neutral-200 bg-neutral-100 shadow-sm font-mono">
+        <DiagramPanel class="token-id font-mono">
           {{ token.id }}
-        </div>
+        </DiagramPanel>
       </div>
       <div class="vector-step" :aria-hidden="!showVectors">
         <div class="connector">
           <div class="i-ph-arrow-right-thin size-6" />
         </div>
-        <div class="vector rounded-md border border-neutral-200 bg-neutral-100 shadow-sm font-mono">
+        <DiagramPanel class="vector font-mono">
           {{ token.vector }}
-        </div>
+        </DiagramPanel>
       </div>
     </div>
 
-    <div class="counterexample rounded-md border border-neutral-200 bg-neutral-100 p-5 shadow-sm" :class="{ visible: showCounterexample }" :aria-hidden="!showCounterexample">
-      <div class="mb-4 text-sm text-neutral-500 font-semibold">
-        One word can be several tokens
-      </div>
+    <DiagramPanel class="counterexample p-5" :class="{ visible: showCounterexample }" :aria-hidden="!showCounterexample">
       <div class="flex items-center gap-4 font-mono">
         <span>unbelievable</span>
         <div class="i-ph-arrow-right-thin size-6 text-neutral-400" />
         <div class="flex gap-1">
-          <span v-for="piece in wordPieces" :key="piece" class="word-piece rounded border px-2 py-1">{{ piece }}</span>
+          <TokenChip v-for="piece in wordPieces" :key="piece" size="sm">
+            {{ piece }}
+          </TokenChip>
         </div>
       </div>
-    </div>
+    </DiagramPanel>
 
     <div class="column-note tokenizer-note" :aria-hidden="!split">
       cl100k_base <span class="mx-2">·</span> <span class="font-mono">·</span> = leading space
@@ -89,13 +82,12 @@ const starts = tokens.map((_, index) => tokens.slice(0, index).reduce((sum, toke
   width: 760px;
   height: 350px;
   transform: translate(-50%, -50%);
-  --accent: var(--slidev-theme-primary, #6c1eb9);
 }
 
 .column-label {
   position: absolute;
   top: 0;
-  color: #737373;
+  --at-apply: text-neutral-500;
   font-size: 14px;
   font-weight: 600;
 }
@@ -117,8 +109,6 @@ const starts = tokens.map((_, index) => tokens.slice(0, index).reduce((sum, toke
   height: 44px;
   padding: 0 12px;
   margin-left: -12px;
-  border: 1px solid transparent;
-  border-radius: 6px;
   font-size: 28px;
   line-height: 42px;
   white-space: pre;
@@ -127,7 +117,7 @@ const starts = tokens.map((_, index) => tokens.slice(0, index).reduce((sum, toke
 }
 
 .leading-space {
-  color: transparent;
+  --at-apply: text-transparent;
   transition: color 400ms;
 }
 
@@ -137,13 +127,10 @@ const starts = tokens.map((_, index) => tokens.slice(0, index).reduce((sum, toke
   min-width: 154px;
   margin-left: 0;
   font-size: 22px;
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 7%, #fafafa);
-  border-color: color-mix(in srgb, var(--accent) 18%, #e5e5e5);
 }
 
 .split .leading-space {
-  color: color-mix(in srgb, var(--accent) 40%, transparent);
+  --at-apply: text-primary/40;
 }
 
 .id-step,
@@ -163,7 +150,7 @@ const starts = tokens.map((_, index) => tokens.slice(0, index).reduce((sum, toke
   justify-content: center;
   width: 56px;
   margin-right: 20px;
-  color: #a3a3a3;
+  --at-apply: text-neutral-400;
 }
 
 .token-id {
@@ -183,7 +170,7 @@ const starts = tokens.map((_, index) => tokens.slice(0, index).reduce((sum, toke
   position: absolute;
   top: 334px;
   font-size: 12px;
-  color: #a3a3a3;
+  --at-apply: text-neutral-400;
 }
 
 .counterexample {
@@ -191,12 +178,6 @@ const starts = tokens.map((_, index) => tokens.slice(0, index).reduce((sum, toke
   top: 112px;
   left: 250px;
   font-size: 20px;
-}
-
-.word-piece {
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 7%, #fafafa);
-  border-color: color-mix(in srgb, var(--accent) 18%, #e5e5e5);
 }
 
 .counterexample,

@@ -1,92 +1,90 @@
 <script setup lang="ts">
 import { useSlideContext } from '@slidev/client'
+import TokenChip from '@theme/components/ai/TokenChip.vue'
+import DiagramPanel from '@theme/components/DiagramPanel.vue'
 import { computed } from 'vue'
+import { sentence } from '../data/language-model-example'
+import { spamMessage } from '../data/spam-example'
+
+const corpus = [
+  'The first railways connected cities and changed how people travelled. Stations became meeting places, and new neighbourhoods grew around them.',
+  'A plant uses light to turn water and carbon dioxide into sugars. Its leaves absorb sunlight while its roots draw water from the soil.',
+  'The capital of France is Paris. The city lies on the Seine. Every morning, people cross its bridges on their way to work.',
+  'function sum(a, b) { return a + b }\nA function can take inputs and return a value. Here, the result is the sum of two numbers.',
+]
 
 const { $clicks } = useSlideContext()
 const trained = computed(() => $clicks.value >= 1)
-const using = computed(() => $clicks.value >= 2)
-const language = computed(() => $clicks.value >= 3)
-const examples = [
-  { text: 'Claim your free prize!', label: 'spam' },
-  { text: 'Urgent, send your slides.', label: 'not spam' },
-  { text: 'Lunch at noon?', label: 'not spam' },
-  { text: 'You won! Click here.', label: 'spam' },
-]
+const isolated = computed(() => $clicks.value === 2)
+const using = computed(() => $clicks.value >= 3)
+const language = computed(() => $clicks.value < 4)
 // Illustrative parameters only. They change during training, not during use.
-function cellColor(index: number, learned: boolean) {
+function cellOpacity(index: number, learned: boolean) {
   const value = learned ? ((index * 17 + 7) % 31) / 31 : ((index * 3 + 2) % 11) / 44
-  return `color-mix(in srgb, ${index % 3 === 0 ? '#0f766e' : '#6c1eb9'} ${15 + value * 70}%, #fff)`
+  return 0.15 + value * 0.7
 }
 </script>
 
 <template>
-  <div class="learned-parameters not-content" :class="{ trained, using, language }">
-    <div class="examples" :aria-hidden="using">
-      <div class="label">
-        Labeled examples
-      </div>
-      <div v-for="example in examples" :key="example.text" class="example">
-        <span>{{ example.text }}</span><span class="tag">{{ example.label }}</span>
+  <div class="learned-parameters not-content" :class="{ trained, isolated, using, language }">
+    <div class="examples" :aria-hidden="isolated || using">
+      <div class="corpus-pages">
+        <DiagramPanel v-for="(text, index) in corpus" :key="text" class="example" :style="{ '--page': index }">
+          {{ text }}
+        </DiagramPanel>
       </div>
     </div>
 
     <div class="input" :aria-hidden="!using">
-      <div class="label">
-        {{ language ? 'Context' : 'New message, not in the examples' }}
-      </div>
       <div class="input-text" :class="{ 'font-mono': language }">
         <template v-if="language">
-          The capital of France is
+          {{ sentence }}
         </template>
         <template v-else>
-          “Urgent, can you call me?”
+          “{{ spamMessage.keyword }}{{ spamMessage.text }}”
         </template>
       </div>
     </div>
 
-    <div class="connector">
+    <div class="connector" :aria-hidden="isolated">
       <span class="arrow">→</span>
     </div>
 
     <div class="model">
-      <div class="label">
-        {{ trained ? 'Learned parameters' : 'Initial parameters' }}
-      </div>
-      <div class="parameter-grid" role="img" aria-label="Illustrative grid of numerical model parameters">
-        <span v-for="index in 48" :key="index" :style="{ background: cellColor(index, trained), transitionDelay: `${(index % 8) * 55}ms` }" />
-      </div>
+      <DiagramPanel class="parameter-grid" role="img" aria-label="Illustrative grid of numerical model parameters">
+        <span v-for="index in 48" :key="index" :class="index % 3 === 0 ? 'bg-teal-700' : 'bg-primary'" :style="{ opacity: cellOpacity(index, trained), transitionDelay: `${(index % 8) * 55}ms` }" />
+      </DiagramPanel>
     </div>
 
     <div class="prediction" :aria-hidden="!using">
       <span class="arrow">→</span>
       <div>
-        <div class="label">
-          Prediction
-        </div>
-        <div class="output font-mono">
-          {{ language ? 'Paris' : 'not spam' }}
-        </div>
+        <TokenChip size="lg">
+          {{ language ? 'Paris' : spamMessage.label }}
+        </TokenChip>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.learned-parameters { --accent: var(--slidev-theme-primary, #6c1eb9); position: relative; width: 100%; height: 400px; }
-.label { color: #737373; font-size: 14px; font-weight: 600; margin-bottom: 16px; }
-.examples, .input { position: absolute; left: 0; top: 82px; width: 310px; transition: opacity 400ms; }
-.example { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px; margin-bottom: 8px; background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 5px; font-size: 14px; }
-.tag { font-size: 11px; color: #737373; white-space: nowrap; }
-.connector { position: absolute; left: 316px; top: 168px; width: 132px; text-align: center; transition: left 500ms; }
-.arrow { color: #a3a3a3; font-size: 28px; }
-.model { position: absolute; left: 468px; top: 82px; width: 200px; text-align: center; transition: left 500ms; }
-.parameter-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; padding: 16px; border: 1px solid #e5e5e5; background: #fafafa; border-radius: 6px; box-shadow: 0 1px 2px #0000000d; }
-.parameter-grid span { aspect-ratio: 1; border-radius: 2px; transition: background 900ms; }
-.input { top: 136px; opacity: 0; }
+.learned-parameters { position: relative; width: 100%; height: 400px; }
+.examples, .input, .connector, .model, .prediction { top: 50%; transform: translateY(-50%); }
+.examples, .input { position: absolute; left: 0; width: 310px; transition: opacity 400ms; }
+.examples { display: flex; flex-direction: column; gap: 12px; }
+.corpus-pages { position: relative; height: 220px; margin-right: 18px; }
+.example { position: absolute; top: calc(var(--page) * 48px); left: calc(var(--page) * 6px); width: 100%; height: 76px; overflow: hidden; padding: 10px 12px; border-radius: 5px; font-size: 12px; line-height: 1.5; white-space: pre-line; --at-apply: text-neutral-500; }
+.connector { position: absolute; left: 316px; width: 132px; text-align: center; transition: left 500ms, opacity 400ms; }
+.arrow { --at-apply: text-neutral-400; font-size: 28px; }
+.model { position: absolute; left: 468px; width: 200px; text-align: center; transition: left 500ms; }
+.parameter-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; padding: 16px; }
+.parameter-grid span { aspect-ratio: 1; border-radius: 2px; transition: opacity 900ms; }
+.input { opacity: 0; }
 .input-text { font-size: 21px; line-height: 1.6; }
-.prediction { position: absolute; left: 640px; top: 136px; display: flex; align-items: center; gap: 28px; opacity: 0; transition: opacity 400ms 300ms; }
-.output { font-size: 22px; color: var(--accent); background: color-mix(in srgb, var(--accent) 7%, #fafafa); border: 1px solid color-mix(in srgb, var(--accent) 18%, #e5e5e5); border-radius: 6px; padding: 8px 16px; white-space: nowrap; }
-.using .examples { opacity: 0; pointer-events: none; }
+.prediction { position: absolute; left: 640px; display: flex; align-items: center; gap: 28px; opacity: 0; transition: opacity 400ms 300ms; }
+.isolated .examples, .using .examples { opacity: 0; pointer-events: none; }
+.isolated .connector { opacity: 0; }
+.isolated .model { left: calc(50% - 100px); }
 .using .input, .using .prediction { opacity: 1; }
 .using .model { left: 412px; }
 .using .connector { left: 322px; width: 70px; }

@@ -10,7 +10,7 @@ Create concise, editorial summaries in English and French that explain what the 
 
 ## Preflight
 
-- Work on one selected talk only. Read its `src/package.json` and `src/slides.md` before writing prose. When available, also read the finalized `src/public/transcript.<sourceLanguage>.md`.
+- Work on one selected talk only. Read its `src/package.json` and `src/slides.md` before writing prose. When available, also read the finalized `src/public/transcript.<sourceLanguage>.md`. For a locale with its own `locales[locale].recording`, use that locale's finalized transcript instead of the reference-language transcript when generating its summary.
 - Require a `sourceLanguage` of `en` or `fr`. If it is missing, stop without writing files and report the reason.
 - Require `slides.md` to exist. A source-language transcript is optional.
 - The destinations are `src/public/summary.en.md` and `src/public/summary.fr.md`.

@@ -66,7 +66,10 @@ export function calculateStatistics(meta: MetaEntry[]) {
   // Group talks by city
   const talksByCity = meta.reduce<Record<string, { total: number, byYear: Record<number, number> }>>((acc, metaEntry) => {
     const year = dateToYear(metaEntry.date)
-    const city = metaEntry.location.city
+    const city = metaEntry.location?.city
+    if (!city) {
+      return acc
+    }
 
     if (!acc[city]) {
       acc[city] = { total: 0, byYear: {} }
@@ -100,7 +103,9 @@ export function calculateStatistics(meta: MetaEntry[]) {
 /**
  * Generate README content from talks metadata
  */
-export function generateReadmeContent(meta: MetaEntry[]): string {
+export function generateReadmeContent(entries: MetaEntry[]): string {
+  // Keep the series out of the root README, including its statistics, for now.
+  const meta = entries.filter(entry => !entry.folder.startsWith('ai-for-everyone/'))
   const stats = calculateStatistics(meta)
 
   const { talksByYear, talksByEvent, talksByTitle, talksWithRecordingByYear, talksByCity, years, totalTalks, totalTalksWithRecording } = stats
@@ -148,8 +153,8 @@ Slides from my [talks](https://soubiran.dev/talks).
   for (const year of years) {
     for (const talk of talksGroupedByYear[year]) {
       // Format: Date - Title - Event - Location
-      const location = `${talk.location.city}, ${talk.location.country}`
-      content += `${talk.date} - ${talk.name} - ${talk.event} - ${location}\n`
+      const location = talk.location ? ` - ${talk.location.city}, ${talk.location.country}` : ''
+      content += `${talk.date} - ${talk.name} - ${talk.event}${location}\n`
     }
   }
 

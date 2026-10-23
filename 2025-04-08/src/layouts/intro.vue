@@ -2,8 +2,6 @@
 import VAfter from '@slidev/client/builtin/VAfter.ts'
 import VClick from '@slidev/client/builtin/VClick.ts'
 import LatestArticles from 'virtual:latest-articles'
-import Footer from '../components/Footer.vue'
-import FooterLink from '../components/FooterLink.vue'
 import { socials, technologies, website } from '../contants'
 
 const links = [website, ...socials]

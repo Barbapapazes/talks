@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`probabilityBar > renders a neutral track with an accessible value 1`] = `
+"<div class="relative overflow-hidden rounded h-2 rounded-full bg-neutral-200" role="meter" aria-label="Probability" aria-valuemin="0" aria-valuemax="100" aria-valuenow="78"><span class="absolute inset-y-0 left-0 origin-left rounded transition-transform duration-700 delay-250 motion-reduce:transition-none bg-neutral-400 scale-x-100" style="width: 78%;"></span>
+  <!--v-if-->
+</div>"
+`;
+
+exports[`probabilityBar > reveals the labelled bar without changing its value 1`] = `"<div class="relative overflow-hidden rounded h-6 text-xs tabular-nums" role="meter" aria-label="Probability" aria-valuemin="0" aria-valuemax="100" aria-valuenow="9"><span class="absolute inset-y-0 left-0 origin-left rounded transition-transform duration-700 delay-250 motion-reduce:transition-none bg-primary/15 scale-x-100" style="width: 9%;"></span><span class="relative flex h-full items-center pl-1.5">9%</span></div>"`;
+
+exports[`tokenChip > renders the lg size 1`] = `"<span class="inline-block whitespace-pre rounded-md border font-mono border-primary/20 bg-primary/7 text-primary px-4 py-2 text-[22px]">Paris</span>"`;
+
+exports[`tokenChip > renders the md size 1`] = `"<span class="inline-block whitespace-pre rounded-md border font-mono border-primary/20 bg-primary/7 text-primary px-2.5 py-1 text-[19px]">Paris</span>"`;
+
+exports[`tokenChip > renders the sm size 1`] = `"<span class="inline-block whitespace-pre rounded-md border font-mono border-primary/20 bg-primary/7 text-primary px-1.5 py-1 text-base">Paris</span>"`;
+
+exports[`tokenChip > renders token text verbatim, including leading whitespace 1`] = `"<span class="inline-block whitespace-pre rounded-md border font-mono border-primary/20 bg-primary/7 text-primary px-2.5 py-1 text-[19px]"> Paris</span>"`;

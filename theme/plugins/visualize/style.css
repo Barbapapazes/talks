@@ -1,0 +1,21 @@
+:root { font-family: system-ui, sans-serif; color: #1f2937; background: #f8fafc; color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; height: 100dvh; display: flex; flex-direction: column; }
+header { padding: 1rem 1.5rem; background: #fff; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+h1 { font-size: 1.1rem; margin: 0 0 0.3rem; }
+header > div { flex: 1 1 20rem; min-width: 0; }
+header h1 { overflow-wrap: anywhere; }
+header p { margin: 0; color: #64748b; font-size: 0.85rem; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+button, nav a { border: 1px solid #cbd5e1; border-radius: 0.35rem; background: #fff; color: inherit; padding: 0.5rem 0.75rem; font: inherit; font-size: 0.85rem; text-decoration: none; cursor: pointer; }
+button:hover, nav a:hover { background: #f1f5f9; }
+:focus-visible { outline: 2px solid #2563eb; outline-offset: 3px; }
+#diagnostics { padding: 1rem 1.5rem; background: #fffbeb; color: #92400e; max-height: 30vh; overflow: auto; }
+#diagnostics ul { margin-bottom: 0; }
+#viewport { position: relative; overflow: hidden; flex: 1; min-height: 0; touch-action: none; cursor: grab; }
+#viewport:active { cursor: grabbing; }
+#canvas { position: absolute; transform-origin: 0 0; }
+#canvas svg { display: block; }
+#canvas a { cursor: pointer; }
+#canvas a:hover .label { text-decoration: underline; }
+footer { padding: 0.6rem 1.5rem; background: #fff; border-top: 1px solid #e2e8f0; color: #64748b; font-size: 0.75rem; }

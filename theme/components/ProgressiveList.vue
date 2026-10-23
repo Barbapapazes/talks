@@ -17,21 +17,8 @@ const { $clicks } = useSlideContext()
 
 const inlineCodeClass = 'font-mono text-[0.9em] rounded bg-black/5 dark:bg-white/10 px-1 py-0.5'
 
-// const htmlEscapeMap: Record<string, string> = {
-//   '&': '&amp;',
-//   '<': '&lt;',
-//   '>': '&gt;',
-//   '"': '&quot;',
-//   "'": '&#39;',
-// }
-
-// function escapeHtml(text: string) {
-//   return text.replace(/[&<>"']/g, char => htmlEscapeMap[char])
-// }
-
 function formatItem(text: string) {
   return text.replace(/`([^`]+)`/g, `<code class="${inlineCodeClass}">$1</code>`)
-  // return escapeHtml(text).replace(/`([^`]+)`/g, `<code class="${inlineCodeClass}">$1</code>`)
 }
 </script>
 

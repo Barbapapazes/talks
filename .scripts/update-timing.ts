@@ -45,23 +45,29 @@ async function updateTiming() {
     const fmStart = slide.start + 1
     const fmEnd = slide.contentStart - 1 // exclusive (this line is the closing ---)
 
-    if (fmStart >= fmEnd)
-      continue
-
     let updated = false
     for (let i = fmStart; i < fmEnd; i++) {
       if (lines[i].startsWith('timing:')) {
         lines[i] = `timing: ${timing}`
         updated = true
-        updatedCount++
         break
       }
     }
 
     if (!updated) {
-      const label = slide.frontmatter.name || slide.title || `#${slide.index + 1}`
-      console.warn(`  ⚠ Slide "${label}" has no timing field — skipped`)
+      if (slide.contentStart > slide.start) {
+        lines.splice(fmEnd, 0, `timing: ${timing}`)
+      }
+      else {
+        // Later slides reuse their existing separator as the opening frontmatter delimiter.
+        const frontmatter = [`timing: ${timing}`, '---']
+        if (slide.index === 0)
+          frontmatter.unshift('---')
+        lines.splice(slide.start, 0, ...frontmatter)
+      }
     }
+
+    updatedCount++
   }
 
   writeFileSync(slidesPath, lines.join('\n'), 'utf-8')

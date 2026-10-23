@@ -1,6 +1,7 @@
 import type { MetaEntry } from './_types.ts'
 import { writeFileSync } from 'node:fs'
 import { generateMetaEntry } from './_meta.ts'
+import { talkDirectory } from './_paths.ts'
 import { generateReadmeContent } from './_readme.ts'
 import { getPackagesJson } from './_utils.ts'
 
@@ -9,7 +10,7 @@ async function generateReadme() {
 
   const metaPromises = [] as Promise<MetaEntry>[]
   for (const packageJSON of packagesJson) {
-    metaPromises.push(generateMetaEntry(packageJSON.split('/')[0]))
+    metaPromises.push(generateMetaEntry(talkDirectory(packageJSON)))
   }
   const meta = await Promise.all(metaPromises)
 

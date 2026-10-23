@@ -1,9 +1,28 @@
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, presetIcons } from 'unocss'
 
 const themeRoot = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
+  theme: {
+    colors: {
+      primary: 'var(--slidev-theme-primary)',
+    },
+  },
+  rules: [
+    // Slidev provides text-primary and bg-primary, but no opacity variants.
+    // UnoCSS cannot apply alpha directly to a CSS variable containing a hex colour.
+    [/^(bg|text|border|ring)-primary\/(\d+)$/, ([, utility, opacity]) => {
+      const property = {
+        bg: 'background-color',
+        text: 'color',
+        border: 'border-color',
+        ring: '--un-ring-color',
+      }[utility!]
+      const percentage = Math.min(100, Number(opacity))
+      return { [property!]: `color-mix(in srgb, var(--slidev-theme-primary) ${percentage}%, transparent)` }
+    }],
+  ],
   content: {
     filesystem: [
       `${themeRoot}layouts/cover.vue`,

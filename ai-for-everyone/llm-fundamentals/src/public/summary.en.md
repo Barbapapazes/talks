@@ -1,0 +1,5 @@
+An LLM generates text one token at a time. This introduction follows that process from training to prediction, showing why a language model is neither a collection of handwritten rules nor a database of its training texts. Training adjusts its parameters; using the trained model does not automatically update them.
+
+The presentation breaks text into tokens, maps their identifiers to embeddings, and follows those numerical representations through a Transformer. Attention brings information from preceding tokens into each representation, while successive layers transform it. The model then calculates probabilities for the next token. Selecting a token, appending it to the context, and repeating the process produces a response.
+
+Examples connect this mechanism to reasoning and tool calling. A model can generate intermediate steps to solve a problem, or produce a structured request for an external function. The surrounding system executes the tool and returns its result. These examples distinguish what the model generates from what software outside the model actually does. A final section introduces model cards as a way to read information about a model.

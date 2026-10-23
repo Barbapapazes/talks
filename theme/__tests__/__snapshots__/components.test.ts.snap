@@ -149,6 +149,12 @@ exports[`cardLayout > renders correctly with position "top-right" 1`] = `
 </div>"
 `;
 
+exports[`diagramPanel > renders its slot and forwards layout classes and accessibility attributes 1`] = `
+"<div class="rounded-md border border-neutral-200 bg-neutral-100 shadow-sm p-4" aria-label="Predictions">
+  <p>Next token</p>
+</div>"
+`;
+
 exports[`footer > renders correctly with default slot 1`] = `"<footer class="absolute left-1/2 -translate-x-1/2 bottom-4"><span>Footer content</span></footer>"`;
 
 exports[`footerItem > renders correctly with default slot 1`] = `"<div class="font-light text-[0.875rem] text-neutral-400 dark:text-neutral-600 flex gap-1"><span>Item content</span></div>"`;

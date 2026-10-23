@@ -8,10 +8,12 @@
   },
   "dependencies": {
     "@slidev/client": "catalog:slidev",
+    "@slidev/parser": "catalog:scripts",
     "@slidev/types": "catalog:slidev",
     "@tsparticles/confetti": "catalog:ui",
     "@vueuse/core": "catalog:ui",
     "fireworks-js": "catalog:ui",
+    "mermaid": "catalog:ui",
     "reka-ui": "catalog:ui",
     "slidev-addon-graph": "catalog:slidev",
     "slidev-addon-inalia": "catalog:slidev",

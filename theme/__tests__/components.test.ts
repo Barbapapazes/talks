@@ -6,6 +6,7 @@ import { defineComponent, h, inject, nextTick, provide } from 'vue'
 import BackgroundImage from '../components/BackgroundImage.vue'
 import Card from '../components/Card.vue'
 import CardLayout from '../components/CardLayout.vue'
+import DiagramPanel from '../components/DiagramPanel.vue'
 import Footer from '../components/Footer.vue'
 import FooterItem from '../components/FooterItem.vue'
 import FooterLink from '../components/FooterLink.vue'
@@ -200,6 +201,19 @@ describe('card', () => {
     const wrapper = mount(Card, {
       slots: { default: '<p>Card content</p>' },
     })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+})
+
+describe('diagramPanel', () => {
+  it('renders its slot and forwards layout classes and accessibility attributes', () => {
+    const wrapper = mount(DiagramPanel, {
+      props: { 'class': 'p-4', 'aria-label': 'Predictions' },
+      slots: { default: '<p>Next token</p>' },
+    })
+    expect(wrapper.get('p').text()).toBe('Next token')
+    expect(wrapper.classes()).toContain('p-4')
+    expect(wrapper.attributes('aria-label')).toBe('Predictions')
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

@@ -2,7 +2,6 @@ import path from 'node:path'
 import { defineConfig } from 'vite'
 import info from 'vite-plugin-info'
 import inspect from 'vite-plugin-inspect'
-import run from 'vite-plugin-run'
 import growthChart from './plugins/growth-chart'
 import viteBuild from './plugins/vite-build'
 import viteFileSystem from './plugins/vite-file-system'
@@ -35,14 +34,6 @@ export default defineConfig({
     viteTransformedFile(),
     viteBuild(),
     info(),
-    run([
-      {
-        name: 'generate-tree',
-        run: ['pnpm', '-w', 'run', 'generate:tree', '2026-06-09'],
-        condition: file => file.endsWith('slides.md'),
-        debounce: 1000,
-      },
-    ]),
   ],
   resolve: {
     alias: {

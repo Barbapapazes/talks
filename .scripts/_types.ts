@@ -8,6 +8,7 @@ export interface PackageLocaleMetadata {
   id: string
   title: string
   description: string
+  recording?: string
 }
 
 export interface PackageLocales {
@@ -50,5 +51,5 @@ export interface MetaEntry {
   audio_url?: string
   transcript_url?: string
   article_url?: string
-  location: Location
+  location?: Location
 }

@@ -48,7 +48,6 @@ catalogs:
     bumpp: ^12.2.0
     changelogithub: ^15.0.4
   scripts:
-    '@mermaid-js/mermaid-cli': ^11.15.0
     '@slidev/parser': 52.19.0
     '@types/prompts': ^2.4.9
     dotenv: ^17.4.2
@@ -97,6 +96,7 @@ catalogs:
     cobe: ^2.0.1
     fireworks-js: ^2.10.8
     leaflet: ^1.9.4
+    mermaid: ^11.16.0
     reka-ui: ^2.9.7
     seedrandom: ^3.0.5
     shiki: ^4.2.0
@@ -105,4 +105,3 @@ catalogs:
   vite-talk:
     vite-plugin-info: ^0.4.1
     vite-plugin-inspect: 11.3.3
-    vite-plugin-run: ^0.9.0

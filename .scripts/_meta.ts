@@ -2,6 +2,8 @@ import type { Locale, LocalizedTalkMetadata, TalkLinks } from '@soubiran/talks'
 import type { LocalizedTalkMetadataByLocale, MetaEntry, Package } from './_types'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
+import { talkPrefix } from './_paths.ts'
+import { getRecording, recordingRoute } from './_recordings.ts'
 import { validateTalkPackage } from './_validation.ts'
 
 export interface TalkEntries {
@@ -35,14 +37,15 @@ async function loadTalkPackage(dir: string): Promise<Package> {
 }
 
 export function mapTalkMetaEntry(dir: string, pkg: Package): MetaEntry {
-  const prefix = `${dir}/${pkg.name}`
+  const prefix = talkPrefix(dir, pkg)
   const url = `https://talks.soubiran.dev/${prefix}`
   const thumbnail_url = `${url}/thumbnail.png`
   const thumbnail_dark_url = `${url}/thumbnail-dark.png`
   const pdf_url = `${url}/pdf`
   const github_url = `${url}/src`
-  const recording_url = `${url}/recording`
-  const audio_url = `${url}/audio`
+  const recording = getRecording(pkg, pkg.sourceLanguage)
+  const recording_url = `${url}/${recordingRoute(pkg, pkg.sourceLanguage, 'recording')}`
+  const audio_url = `${url}/${recordingRoute(pkg, pkg.sourceLanguage, 'audio')}`
   const transcript_url = `https://soubiran.dev/talks/${prefix}`
   const article_url = `${url}/article`
 
@@ -61,16 +64,16 @@ export function mapTalkMetaEntry(dir: string, pkg: Package): MetaEntry {
     thumbnail_dark_url,
     pdf_url,
     github_url,
-    recording_url: pkg.recording ? recording_url : undefined,
-    audio_url: pkg.recording ? audio_url : undefined,
-    transcript_url: pkg.recording ? transcript_url : undefined,
+    recording_url: recording ? recording_url : undefined,
+    audio_url: recording ? audio_url : undefined,
+    transcript_url: recording ? transcript_url : undefined,
     article_url: pkg.article ? article_url : undefined,
     location: pkg.event.location,
   }
 }
 
 export function mapLocalizedTalkMetadata<L extends Locale>(dir: string, pkg: Package, locale: L): LocalizedTalkMetadata<L> {
-  const prefix = `${dir}/${pkg.name}`
+  const prefix = talkPrefix(dir, pkg)
   const url = `https://talks.soubiran.dev/${prefix}`
   const metadata = pkg.locales[locale]
 
@@ -86,17 +89,12 @@ export function mapLocalizedTalkMetadata<L extends Locale>(dir: string, pkg: Pac
     event: {
       name: pkg.event.name,
       url: pkg.event.url,
-      location: {
-        city: pkg.event.location.city,
-        country: pkg.event.location.country,
-        latitude: pkg.event.location.latitude,
-        longitude: pkg.event.location.longitude,
-      },
+      ...(pkg.event.location ? { location: { ...pkg.event.location } } : {}),
     },
-    links: createTalkLinks(url, pkg),
+    links: createTalkLinks(url, pkg, locale),
     artifacts: {
       summary: `summary.${locale}.md`,
-      ...(pkg.recording ? { transcript: `transcript.${locale}.md` } : {}),
+      ...(getRecording(pkg, locale) ? { transcript: `transcript.${locale}.md` } : {}),
     },
   }
 }
@@ -108,12 +106,13 @@ function mapLocalizedTalkMetadataByLocale(dir: string, pkg: Package): LocalizedT
   }
 }
 
-function createTalkLinks(url: string, pkg: Package): TalkLinks {
-  const recordingUrl = `${url}/recording`
-  const audioUrl = `${url}/audio`
+function createTalkLinks(url: string, pkg: Package, locale: Locale): TalkLinks {
+  const recording = getRecording(pkg, locale)
+  const recordingUrl = `${url}/${recordingRoute(pkg, locale, 'recording')}`
+  const audioUrl = `${url}/${recordingRoute(pkg, locale, 'audio')}`
   const transcriptUrl = `https://soubiran.dev/talks/${url.slice('https://talks.soubiran.dev/'.length)}`
   const articleUrl = `${url}/article`
-  const youtubeEmbedUrl = pkg.recording ? getYouTubeEmbedUrl(pkg.recording) : undefined
+  const youtubeEmbedUrl = recording ? getYouTubeEmbedUrl(recording) : undefined
 
   return {
     slides: url,
@@ -121,7 +120,7 @@ function createTalkLinks(url: string, pkg: Package): TalkLinks {
     thumbnailDark: `${url}/thumbnail-dark.png`,
     source: `${url}/src`,
     pdf: `${url}/pdf`,
-    ...(pkg.recording
+    ...(recording
       ? {
           recording: recordingUrl,
           ...(youtubeEmbedUrl ? { youtubeEmbed: youtubeEmbedUrl } : {}),

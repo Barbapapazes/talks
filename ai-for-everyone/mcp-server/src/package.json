@@ -1,0 +1,25 @@
+{
+  "name": "mcp-server",
+  "sourceLanguage": "en",
+  "topics": ["ai", "mcp", "tool-calling", "json-rpc"],
+  "event": {
+    "name": "AI for Everyone",
+    "url": "https://beta.soubiran.dev/ai-for-everyone"
+  },
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /ai-for-everyone/mcp-server/ --out ../../../dist/ai-for-everyone/mcp-server",
+    "export": "slidev export --per-slide --wait-until none --output ../mcp-server.pdf"
+  },
+  "dependencies": {
+    "@slidev/client": "catalog:slidev",
+    "slidev-theme-personal": "workspace:*"
+  },
+  "devDependencies": {
+    "@slidev/cli": "catalog:build",
+    "@vue/tsconfig": "catalog:build",
+    "typescript": "catalog:build"
+  }
+}

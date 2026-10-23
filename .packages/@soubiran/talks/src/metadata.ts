@@ -19,7 +19,7 @@ export const talkMetadataSchema = z.object({
       country: z.string(),
       latitude: z.number(),
       longitude: z.number(),
-    }),
+    }).optional(),
   }),
   links: z.object({
     slides: z.string().url(),
@@ -43,7 +43,7 @@ type TalkMetadata = z.infer<typeof talkMetadataSchema>
 
 export type Locale = TalkMetadata['locale']
 export type SourceLanguage = TalkMetadata['sourceLanguage']
-export type Location = TalkMetadata['event']['location']
+export type Location = NonNullable<TalkMetadata['event']['location']>
 export type Event = TalkMetadata['event']
 export type LocalizedTalkArtifacts = TalkMetadata['artifacts']
 export type TalkLinks = TalkMetadata['links']

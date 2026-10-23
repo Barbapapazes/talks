@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talk visualization</title>
+</head>
+<body>
+  <header>
+    <div><h1 id="title">Talk visualization</h1><p id="stats" aria-live="polite" title="Total timing sums all slides, including every branch.">Loading slides…</p></div>
+    <nav aria-label="Graph controls">
+      <button id="zoom-out" aria-label="Zoom out">−</button>
+      <button id="zoom-in" aria-label="Zoom in">+</button>
+      <button id="fit">Fit graph</button>
+      <a id="presentation" href="../" target="_blank" rel="noopener noreferrer">Open slides ↗</a>
+    </nav>
+  </header>
+  <aside id="diagnostics" role="alert" hidden></aside>
+  <main id="viewport" aria-label="Slide graph. Drag to pan, scroll to zoom." tabindex="0"><div id="canvas"></div></main>
+  <footer>Click a slide to open it in a new tab. Drag to pan, scroll to zoom. Green borders mark ready slides. Yellow marks choices, purple marks recaps.</footer>
+  <script type="module" src="./client.ts"></script>
+</body>
+</html>

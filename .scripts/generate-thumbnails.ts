@@ -1,5 +1,6 @@
 import { resolve } from 'node:path'
 import { execa } from 'execa'
+import { talkDirectory } from './_paths.ts'
 import { getPackagesJson } from './_utils.ts'
 
 async function generateAllThumbnails() {
@@ -8,7 +9,7 @@ async function generateAllThumbnails() {
   console.warn(`Generating thumbnails for ${packagesJson.length} talks...`)
 
   for (const packagePath of packagesJson) {
-    const talkDir = packagePath.split('/')[0]
+    const talkDir = talkDirectory(packagePath)
     const src = resolve(talkDir, 'src')
 
     console.warn(`\nGenerating thumbnails for ${talkDir}...`)

@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { useSlideContext } from '@slidev/client'
+import ProbabilityBar from '@theme/components/ai/ProbabilityBar.vue'
+import DiagramPanel from '@theme/components/DiagramPanel.vue'
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
+import { nextTokenCandidates, sentence } from '../data/language-model-example'
 
 const { $clicks } = useSlideContext()
 const selected = computed(() => $clicks.value >= 2)
@@ -12,12 +15,10 @@ const offset = ref({ x: 0, y: 0 })
 const predictions = [
   {
     click: 1,
-    candidates: [
-      { token: 'Paris', probability: 78 },
-      { token: 'Lyon', probability: 9 },
-      { token: 'the', probability: 5 },
-      { token: '…', probability: 8 },
-    ],
+    candidates: nextTokenCandidates.map(candidate => ({
+      token: candidate.text?.trimStart() ?? '…',
+      probability: candidate.probability,
+    })),
   },
   {
     click: 4,
@@ -53,7 +54,7 @@ watch($clicks, measure)
     :style="{ '--from-x': `${offset.x}px`, '--from-y': `${offset.y}px` }"
   >
     <div class="sentence font-mono">
-      <span>The capital of France is </span><span ref="destination" class="destination"><span v-if="appended" class="chosen-token">Paris</span><span class="cursor" /></span>
+      <span>{{ `${sentence} ` }}</span><span ref="destination" class="destination"><span v-if="appended" class="chosen-token">Paris</span><span class="cursor" /></span>
     </div>
 
     <div
@@ -63,10 +64,7 @@ watch($clicks, measure)
       class="predictions"
       :class="predictionIndex === 0 ? 'first-predictions' : 'next-predictions'"
     >
-      <div class="rounded-md border border-neutral-200 bg-neutral-100 p-4 shadow-sm">
-        <div class="mb-3 text-sm text-neutral-500 font-semibold">
-          Next token
-        </div>
+      <DiagramPanel class="p-4">
         <div class="flex flex-col gap-2">
           <div
             v-for="(item, index) in prediction.candidates"
@@ -76,13 +74,11 @@ watch($clicks, measure)
             :style="{ '--row': index }"
           >
             <span :ref="el => { if (predictionIndex === 0 && index === 0) candidate = el as HTMLElement }" class="candidate-token font-mono">{{ item.token }}</span>
-            <div class="h-2 overflow-hidden rounded-full bg-neutral-200">
-              <div class="probability h-full rounded-full bg-neutral-400" :style="{ width: `${item.probability}%` }" />
-            </div>
+            <ProbabilityBar :value="item.probability" :active="selected && predictionIndex === 0 && index === 0" />
             <span class="text-right text-sm text-neutral-500 tabular-nums">{{ item.probability }}%</span>
           </div>
         </div>
-      </div>
+      </DiagramPanel>
     </div>
   </div>
 </template>
@@ -91,7 +87,6 @@ watch($clicks, measure)
 .next-token {
   position: absolute;
   inset: 42% 0 auto;
-  --accent: var(--slidev-theme-primary, #6c1eb9);
 }
 
 .sentence {
@@ -115,7 +110,7 @@ watch($clicks, measure)
   top: 6px;
   width: 2px;
   height: 28px;
-  background: var(--accent);
+  --at-apply: bg-primary;
   animation: blink-cursor 1s step-end infinite;
 }
 
@@ -141,13 +136,8 @@ watch($clicks, measure)
 }
 
 .selected .selected-candidate {
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  --at-apply: text-primary bg-primary/10;
   transition: background 150ms, color 150ms;
-}
-
-.selected .selected-candidate .probability {
-  background: var(--accent);
 }
 
 .appended .selected-candidate .candidate-token {
@@ -176,17 +166,17 @@ watch($clicks, measure)
     transform: translate(var(--from-x), var(--from-y));
     font-size: 16px;
     line-height: 24px;
-    color: var(--accent);
+    --at-apply: text-primary;
   }
   75% {
     transform: translate(0, 0);
     font-size: 28px;
     line-height: 40px;
-    color: var(--accent);
+    --at-apply: text-primary;
   }
   100% {
     transform: translate(0, 0);
-    color: inherit;
+    --at-apply: text-inherit;
   }
 }
 

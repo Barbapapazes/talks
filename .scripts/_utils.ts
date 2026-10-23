@@ -19,11 +19,19 @@ export function getPackagesJson() {
 }
 
 export async function selectDeck() {
-  const folders = (await readdir(new URL('..', import.meta.url), { withFileTypes: true }))
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name)
-    .filter(folder => TALK_FOLDER_RE.test(folder))
-    .sort((a, b) => -a.localeCompare(b))
+  const [rootEntries, aiEntries] = await Promise.all([
+    readdir(new URL('..', import.meta.url), { withFileTypes: true }),
+    readdir(new URL('../ai-for-everyone/', import.meta.url), { withFileTypes: true }),
+  ])
+
+  const folders = [
+    ...rootEntries
+      .filter(dirent => dirent.isDirectory() && TALK_FOLDER_RE.test(dirent.name))
+      .map(dirent => dirent.name),
+    ...aiEntries
+      .filter(dirent => dirent.isDirectory())
+      .map(dirent => `ai-for-everyone/${dirent.name}`),
+  ].sort((a, b) => -a.localeCompare(b))
 
   return prompts([
     {

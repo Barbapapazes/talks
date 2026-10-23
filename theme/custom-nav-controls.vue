@@ -9,6 +9,8 @@ const {
   toggleThemeSelectionBlock,
 } = useTheme()
 
+const visualizeUrl = `${import.meta.env.BASE_URL}_visualize/`
+
 const title = computed(() => {
   return isThemeSelectionBlocked.value
     ? 'Restore ChooseTheme Theme'
@@ -23,6 +25,9 @@ function onClick() {
 
 <template>
   <div class="w-1px opacity-10 bg-current m-1 lg:m-2" />
+  <a class="slidev-icon-btn" :href="visualizeUrl" target="_blank" rel="noopener noreferrer" title="Visualize talk" aria-label="Visualize talk">
+    <div class="i-carbon:flow" />
+  </a>
   <button class="slidev-icon-btn" :title="title" @click="onClick">
     <div class="i-carbon:bee" />
   </button>

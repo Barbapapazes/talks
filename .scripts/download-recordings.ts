@@ -1,15 +1,19 @@
-import type { Package } from './_types.ts'
-import { exec as _exec } from 'node:child_process'
+import type { Locale, Package } from './_types.ts'
+import { exec as _exec, execFile as _execFile } from 'node:child_process'
 import { randomUUID } from 'node:crypto'
 import { createReadStream, existsSync, mkdirSync } from 'node:fs'
 import { readFile, rename, rm, writeFile } from 'node:fs/promises'
+import { basename } from 'node:path'
 import process from 'node:process'
 import { promisify } from 'node:util'
 import OpenAI from 'openai'
+import { talkDirectory } from './_paths.ts'
+import { audioFileName, getRecordingsToTranscribe } from './_recordings.ts'
 import { getPackagesJson } from './_utils.ts'
 import 'dotenv/config'
 
 const exec = promisify(_exec)
+const execFile = promisify(_execFile)
 const SILENCE_END_RE = /silence_end: (\d+\.?\d*)/g
 const shouldReplaceTranscript = process.argv.includes('--force')
 
@@ -37,17 +41,14 @@ async function downloadAudio(packageJson: string) {
   const content = await readFile(packageJson, 'utf-8')
   const parsedContent = JSON.parse(content) as Package
 
-  if (!parsedContent.recording) {
-    return
+  for (const recording of getRecordingsToTranscribe(parsedContent)) {
+    await transcribeRecording(talkDirectory(packageJson), parsedContent, recording.locale, recording.url)
   }
+}
 
-  const date = packageJson
-    .split('/')
-    .slice(0, 1)
-    .join('/')
-  const folder = `./${date}`
+async function transcribeRecording(folder: string, parsedContent: Package, locale: Locale, recordingUrl: string) {
   const tmpFolder = `${folder}/.tmp`
-  const transcriptionFileName = `${folder}/src/public/transcript.${parsedContent.sourceLanguage}.md`
+  const transcriptionFileName = `${folder}/src/public/transcript.${locale}.md`
 
   if (existsSync(transcriptionFileName) && !shouldReplaceTranscript) {
     // eslint-disable-next-line no-console
@@ -56,14 +57,15 @@ async function downloadAudio(packageJson: string) {
   }
 
   mkdirSync(tmpFolder, { recursive: true })
+  mkdirSync(`${folder}/src/public`, { recursive: true })
 
-  const fileName = `${date}-${parsedContent.name}`
+  const fileName = basename(audioFileName(parsedContent, locale), '.mp3')
 
   const downloadedFileName = `${tmpFolder}/${fileName}.downloaded.mp3`
   if (!existsSync(downloadedFileName)) {
     // eslint-disable-next-line no-console
     console.log(`Downloading audio for ${parsedContent.name}...`)
-    await exec(`yt-dlp -x --audio-format mp3 -o "${downloadedFileName}" ${parsedContent.recording}`)
+    await execFile('yt-dlp', ['-x', '--audio-format', 'mp3', '-o', downloadedFileName, '--', recordingUrl])
   }
 
   const normalizedFileName = `${folder}/${fileName}.mp3`
@@ -164,7 +166,7 @@ async function downloadAudio(packageJson: string) {
     }
   }
 
-  const temporaryTranscriptionFileName = `${tmpFolder}/${fileName}.transcript.${parsedContent.sourceLanguage}.${randomUUID()}.md`
+  const temporaryTranscriptionFileName = `${tmpFolder}/${fileName}.transcript.${locale}.${randomUUID()}.md`
 
   try {
     // sequentially send chunks to OpenAI and append responses
@@ -176,7 +178,7 @@ async function downloadAudio(packageJson: string) {
       const transcription = await openai.audio.transcriptions.create({
         file: createReadStream(chunkFile),
         chunking_strategy: 'auto',
-        language: parsedContent.sourceLanguage,
+        language: locale,
         model: 'gpt-4o-transcribe',
       })
 

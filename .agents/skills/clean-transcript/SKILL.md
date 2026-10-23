@@ -11,18 +11,19 @@ Produce a clean, single-speaker source transcript that reads naturally while pre
 ## Preflight
 
 - Work on one selected talk only. Read its `src/package.json` before reading or writing prose.
-- Require a non-empty `recording` and a `sourceLanguage` of `en` or `fr`. If either is missing, stop without writing files and report the reason.
-- The only source transcript is `src/public/transcript.<sourceLanguage>.md`. Do not infer its language from its contents.
+- Require a `sourceLanguage` of `en` or `fr`.
+- Select the language explicitly requested by the user, or use `sourceLanguage` by default. Require either `locales[selectedLanguage].recording` or a global `recording` with `selectedLanguage === sourceLanguage`. Otherwise, stop without writing files and report the reason.
+- The source transcript is `src/public/transcript.<selectedLanguage>.md`. A localized recording is an independent original, even when its language differs from `sourceLanguage`. Do not infer its language from its contents.
 - Require that source transcript to exist. If it is missing, stop without writing files and report the reason.
 - Replace the source transcript only when the user explicitly asks to clean or regenerate that talk's source transcript. Otherwise, inspect it and report that no file was changed.
-- Never modify `transcript.<otherLanguage>.md`, `summary.en.md`, or `summary.fr.md`.
+- Never modify the other language's transcript, `summary.en.md`, or `summary.fr.md`.
 - Prepare the complete cleaned transcript before replacing the source file. If any step fails, leave the original file unchanged.
 
 ## Output format
 
 - Return only the cleaned transcript text. No headings, explanations, timestamps, or metadata.
 - Use paragraphs separated by a single blank line. Aim for 1-3 sentences per paragraph.
-- Write only to `src/public/transcript.<sourceLanguage>.md` after the preflight succeeds.
+- Write only to `src/public/transcript.<selectedLanguage>.md` after the preflight succeeds.
 - Do not emit YAML frontmatter. If the input contains legacy frontmatter, discard it rather than reproducing it.
 - If preflight prevents a write, return a short explanation instead of transcript text.
 

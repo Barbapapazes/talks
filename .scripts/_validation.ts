@@ -2,6 +2,7 @@ import type { Package } from './_types.ts'
 import { stat } from 'node:fs/promises'
 import { basename, join, resolve } from 'node:path'
 import { z } from 'zod'
+import { getRecording } from './_recordings.ts'
 import { LOCALES } from './_types.ts'
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/
@@ -17,6 +18,7 @@ const localeMetadataSchema = z.object({
   id: nonEmptyString.refine(id => UUID_V4_RE.test(id), 'a UUID v4'),
   title: nonEmptyString,
   description: nonEmptyString,
+  recording: nonEmptyString.optional(),
 })
 
 const packageSchema = z.object({
@@ -56,7 +58,7 @@ const packageSchema = z.object({
       country: nonEmptyString,
       latitude: z.number({ invalid_type_error: 'a finite number', required_error: 'a finite number' }).refine(Number.isFinite, 'a finite number'),
       longitude: z.number({ invalid_type_error: 'a finite number', required_error: 'a finite number' }).refine(Number.isFinite, 'a finite number'),
-    }),
+    }).optional(),
   }),
   locales: z.object({
     en: localeMetadataSchema,
@@ -138,7 +140,8 @@ export async function validateTalkArtifacts(dir: string, packageJson: Package): 
 
   for (const artifact of artifactStates) {
     const isSummary = SUMMARY_ARTIFACTS.includes(artifact.fileName)
-    const expectsArtifact = isSummary || packageJson.recording !== undefined
+    const locale = artifact.fileName.split('.')[1] as typeof LOCALES[number]
+    const expectsArtifact = isSummary || getRecording(packageJson, locale) !== undefined
 
     if (expectsArtifact && !artifact.exists) {
       fail(
@@ -146,7 +149,7 @@ export async function validateTalkArtifacts(dir: string, packageJson: Package): 
         `artifacts.${artifact.fileName}`,
         isSummary
           ? 'an existing summary file'
-          : 'an existing transcript file because "recording" is set',
+          : 'an existing transcript file because a recording is set for this locale',
         'missing',
       )
     }
@@ -155,7 +158,7 @@ export async function validateTalkArtifacts(dir: string, packageJson: Package): 
       fail(
         talk,
         `artifacts.${artifact.fileName}`,
-        'no transcript file because "recording" is not set',
+        'no transcript file because no recording is set for this locale',
         'present',
       )
     }
@@ -164,7 +167,7 @@ export async function validateTalkArtifacts(dir: string, packageJson: Package): 
 
 function validateDateMatchesFolder(talk: string, value: string): void {
   const expectedDate = talk.slice(0, 10)
-  if (value !== expectedDate) {
+  if (DATE_RE.test(expectedDate) && value !== expectedDate) {
     fail(talk, 'date', `the folder date ${describeValue(expectedDate)}`, value)
   }
 }

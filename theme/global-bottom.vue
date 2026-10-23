@@ -21,6 +21,6 @@ const name = computed(() => frontmatter.value.name)
     </div>
   </div>
   <div class="absolute z-50 right-1 bottom-1 text-[0.5rem] text-white/50 font-light mix-blend-difference">
-    Estéban Soubiran
+    Estéban Soubiran - <a href="https://soubiran.dev" target="_blank" class="border-0 text-white/50 font-light">soubiran.dev</a>
   </div>
 </template>

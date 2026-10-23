@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs'
 import { stat } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { execa } from 'execa'
+import { talkDirectory } from './_paths.ts'
 import { getPackagesJson } from './_utils.ts'
 
 async function optimizeThumbnails() {
@@ -14,7 +15,7 @@ async function optimizeThumbnails() {
   console.warn(`Optimizing thumbnails for ${packagesJson.length} talks...`)
 
   for (const packagePath of packagesJson) {
-    const talkDir = packagePath.split('/')[0]
+    const talkDir = talkDirectory(packagePath)
     const publicDir = resolve(talkDir, 'src', 'public')
 
     const thumbnails = [
