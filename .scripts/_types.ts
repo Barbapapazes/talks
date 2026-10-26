@@ -5,7 +5,7 @@ export type { Event, Locale, LocalizedTalkMetadata, Location, SourceLanguage, Ta
 export const LOCALES = ['en', 'fr'] as const
 
 export interface PackageLocaleMetadata {
-  id: string
+  id?: string
   title: string
   description: string
   recording?: string
@@ -17,6 +17,7 @@ export interface PackageLocales {
 }
 
 export interface Package {
+  publication?: 'standalone' | 'article-resource'
   date: string
   name: string
   event: Event
@@ -28,11 +29,17 @@ export interface Package {
   article?: string
 }
 
+export type LocalizedDeckMetadata<L extends Locale = Locale> = Omit<LocalizedTalkMetadata<L>, 'id'> & {
+  id?: string
+  publication?: 'article-resource'
+}
+
 export type LocalizedTalkMetadataByLocale = {
-  [L in Locale]: LocalizedTalkMetadata<L>
+  [L in Locale]: LocalizedDeckMetadata<L>
 }
 
 export interface MetaEntry {
+  publication?: 'standalone' | 'article-resource'
   language: string
   name: string
   topics: string[]

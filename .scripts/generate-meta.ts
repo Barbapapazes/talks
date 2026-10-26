@@ -1,8 +1,7 @@
-import type { LocalizedTalkCatalog } from '@soubiran/talks'
 import type { MetaEntry } from './_types.ts'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname } from 'node:path'
-import { talkMetadataSchema, talksStatisticsDataSchema } from '@soubiran/talks'
+import { talkMetadataSchema, talkResourceMetadataSchema, talksStatisticsDataSchema } from '@soubiran/talks'
 import { join } from 'pathe'
 import { generateTalkEntriesFromPackage } from './_meta.ts'
 import { calculateStatistics } from './_readme.ts'
@@ -17,7 +16,9 @@ async function generateMeta() {
   })))
   await Promise.all(sources.map(source => validateTalkArtifacts(source.dir, source.packageJson)))
   const talks = sources.map(source => generateTalkEntriesFromPackage(source.dir, source.packageJson))
-  const meta = talks.map(talk => talk.meta)
+  const standaloneTalks = talks.filter(talk => talk.meta.publication !== 'article-resource')
+  const resources = talks.filter(talk => talk.meta.publication === 'article-resource')
+  const meta = standaloneTalks.map(talk => talk.meta)
   assertUniqueTalks(meta)
 
   const statistics = calculateStatistics(meta)
@@ -30,15 +31,14 @@ async function generateMeta() {
 
   for (const talk of talks) {
     for (const [locale, metadata] of Object.entries(talk.localizedMetadata)) {
-      writeTalkMetadata(talk.meta.prefix, locale, metadata)
+      writeTalkMetadata(talk.meta.prefix, locale, metadata, talk.meta.publication === 'article-resource')
     }
   }
 
-  const englishTalks: LocalizedTalkCatalog<'en'> = talks.map(talk => talk.localizedMetadata.en)
-  const frenchTalks: LocalizedTalkCatalog<'fr'> = talks.map(talk => talk.localizedMetadata.fr)
-
-  writeJson('talks.en.json', englishTalks)
-  writeJson('talks.fr.json', frenchTalks)
+  for (const locale of ['en', 'fr'] as const) {
+    writeJson(`talks.${locale}.json`, standaloneTalks.map(talk => talkMetadataSchema.parse(talk.localizedMetadata[locale])))
+    writeJson(`resources.${locale}.json`, resources.map(talk => talkResourceMetadataSchema.parse(talk.localizedMetadata[locale])))
+  }
 }
 
 function assertUniqueTalks(entries: MetaEntry[]) {
@@ -72,9 +72,10 @@ function writeJson(fileName: string, data: unknown) {
   writeFileSync(join('dist', fileName), content)
 }
 
-function writeTalkMetadata(slug: string, locale: string, metadata: unknown) {
+function writeTalkMetadata(slug: string, locale: string, metadata: unknown, resource: boolean) {
   const outputDir = join('dist', slug)
-  const content = JSON.stringify(talkMetadataSchema.parse(metadata), null, 2)
+  const schema = resource ? talkResourceMetadataSchema : talkMetadataSchema
+  const content = JSON.stringify(schema.parse(metadata), null, 2)
 
   mkdirSync(outputDir, { recursive: true })
   writeFileSync(join(outputDir, `meta.${locale}.json`), `${content}\n`)

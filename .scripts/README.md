@@ -31,7 +31,8 @@ Utility scripts used to maintain talk metadata, assets, and deployment helpers.
   - `dist/meta.json` with the existing README metadata array and computed statistics
   - `dist/statistics.json`, containing the same computed statistics
   - `dist/talks.en.json` and `dist/talks.fr.json`, each containing the corresponding
-    localized metadata entries
+    localized standalone talk metadata entries
+  - `dist/resources.en.json` and `dist/resources.fr.json`, containing article resources without UUIDs
 
 - `generate-readme.ts` — Regenerates the repository root `README.md` from discovered talk metadata. AI for Everyone decks are temporarily excluded from all lists and statistics in this README.
 
@@ -77,6 +78,16 @@ Keep `sourceLanguage` as the reference language, `en` for AI for Everyone. Add e
 For each locale, `locales.<locale>.recording` takes priority over the global `recording`. Global-only talks retain their existing routes. Localized videos use `/<prefix>/recording/en` and `/<prefix>/recording/fr`, with matching `audio/en` and `audio/fr` routes. The unqualified routes fall back to the reference-language recording when there is no global recording. Localized public metadata selects the correct video, YouTube embed, audio, and transcript artifact for its locale.
 
 AI for Everyone decks use `ai-for-everyone/<deck>` as their prefix, without appending the deck name again. Their dates are validated as calendar dates, but need not match the folder name. `event.location` is optional for content without a physical venue; such entries are omitted from city statistics.
+
+## Article resources
+
+Set `"publication": "article-resource"` in the deck's `src/package.json` when its canonical content is an article on soubiran.dev. Omit `locales.en.id` and `locales.fr.id`: validation rejects UUIDs for article resources. Standalone talks (the default, or explicit `"standalone"`) still require globally unique locale UUIDs.
+
+Resources keep their slug, localized metadata, summaries, transcripts, and asset links. They are published in `resources.<locale>.json` and `<slug>/meta.<locale>.json`, not in `talks.<locale>.json`, legacy `meta.json`, or talk statistics. No resource transcript link or redirect points at a nonexistent standalone `/talks/` page.
+
+The article owns its `contentId` and lives at the corresponding `ai-for-everyone/<slug>` path on the website. The dedicated article route joins resources by URL-derived slug and article locale; no resource reference is needed in frontmatter. Only the article enters `pages.en.json` or `pages.fr.json`. No UUID needs to be synchronized between repositories.
+
+Deploy these resource catalogs before deploying a website version that consumes them.
 
 ## Environment variables
 

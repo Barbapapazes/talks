@@ -1,7 +1,19 @@
 {
   "name": "mcp-server",
+  "publication": "article-resource",
+  "date": "2026-11-05",
   "sourceLanguage": "en",
   "topics": ["ai", "mcp", "tool-calling", "json-rpc"],
+  "locales": {
+    "en": {
+      "title": "The MCP server",
+      "description": "Understand how MCP servers expose tools to LLM applications, how clients discover and call them, and how the protocol relates to APIs and tool calling."
+    },
+    "fr": {
+      "title": "Le serveur MCP",
+      "description": "Comprenez comment les serveurs MCP exposent des outils aux applications utilisant des LLM, comment les clients les découvrent et les appellent, et les liens entre le protocole, les API et le tool calling."
+    }
+  },
   "event": {
     "name": "AI for Everyone",
     "url": "https://beta.soubiran.dev/ai-for-everyone"
@@ -11,7 +23,12 @@
   "scripts": {
     "dev": "slidev",
     "build": "slidev build --base /ai-for-everyone/mcp-server/ --out ../../../dist/ai-for-everyone/mcp-server",
-    "export": "slidev export --per-slide --wait-until none --output ../mcp-server.pdf"
+    "export": "slidev export --per-slide --wait-until none --output ../mcp-server.pdf",
+    "thumbnail": "slidev export --per-slide --range 1 --format png",
+    "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
+    "thumbnail:cp": "mkdir -p ./public && ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
+    "thumbnail:cp:dark": "mkdir -p ./public && ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
+    "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
   },
   "dependencies": {
     "@slidev/client": "catalog:slidev",

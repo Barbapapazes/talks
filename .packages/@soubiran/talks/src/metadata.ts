@@ -39,6 +39,14 @@ export const talkMetadataSchema = z.object({
   }),
 })
 
+// Resources have no page identity. Their owning article supplies the contentId.
+export const talkResourceMetadataSchema = talkMetadataSchema.omit({ id: true }).extend({
+  publication: z.literal('article-resource'),
+})
+
+export type LocalizedTalkResourceMetadata<L extends Locale = Locale> = Omit<z.infer<typeof talkResourceMetadataSchema>, 'locale'> & { locale: L }
+export type LocalizedTalkResourceCatalog<L extends Locale = Locale> = LocalizedTalkResourceMetadata<L>[]
+
 type TalkMetadata = z.infer<typeof talkMetadataSchema>
 
 export type Locale = TalkMetadata['locale']
