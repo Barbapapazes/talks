@@ -1,7 +1,7 @@
 {
   "name": "@soubiran/talks",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "description": "TypeScript types and Zod schema for the localized talks.soubiran.dev JSON catalogs.",
   "author": "Estéban Soubiran <esteban@soubiran.dev>",
