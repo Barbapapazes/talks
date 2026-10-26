@@ -293,7 +293,8 @@ transition: slide-up
 
 <!--
 Saisir / dans la saisie, puis sélectionner /review_pull_request dans les suggestions, ou appuyer sur Entrée.
-La commande affiche un formulaire avec Repository et Pull request, préremplis pour la démo et modifiables.
+La commande ouvre une modale avec Repository et Pull request, préremplis pour la démo et modifiables.
+Cancel ou Échap ferme la modale sans préparer de message.
 Cliquer sur Use prompt pour récupérer le message à partir de ces arguments.
 Le texte apparaît dans la saisie sans lancer le modèle. Appuyer ensuite sur Entrée pour l'envoyer.
 Le prompt ne lit pas la pull request et n'exécute aucune action à lui seul.

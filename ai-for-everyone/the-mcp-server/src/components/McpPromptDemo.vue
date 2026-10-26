@@ -156,15 +156,15 @@ watch(slideActive, () => {
   outline: none;
   box-shadow: none;
 }
-.prompt-arguments-modal {
+:global(.prompt-arguments-modal[role="dialog"]) {
   height: auto;
   width: 440px;
   max-width: calc(100vw - 32px);
   font-size: 14px;
   line-height: 1.45;
 }
-.prompt-arguments-modal :deep(h2) { font-size: 20px; }
-.prompt-arguments-modal :deep(h2 + p) { font-size: 14px; }
+:global(.prompt-arguments-modal[role="dialog"] h2) { font-size: 20px; }
+:global(.prompt-arguments-modal[role="dialog"] h2 + p) { font-size: 14px; }
 .command-arguments {
   display: grid;
   gap: 6px;

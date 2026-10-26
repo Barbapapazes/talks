@@ -94,6 +94,20 @@ describe('mcp capability demos', () => {
     expect(wrapper.text()).not.toContain('pull request #17')
   })
 
+  it('cancels argument entry without changing the composer or sending a message', async () => {
+    const wrapper = render('prompt')
+    await wrapper.get('.command-input').setValue('/')
+    await wrapper.get('.command-option').trigger('click')
+    expect(wrapper.find('[role="dialog"]').exists()).toBe(true)
+    expect(wrapper.find('.prompt-composer .command-arguments').exists()).toBe(false)
+    await wrapper.get('.cancel-arguments').trigger('click')
+    await vi.advanceTimersByTimeAsync(100)
+    expect(wrapper.find('[role="dialog"]').exists()).toBe(false)
+    expect(wrapper.find('.command-input').exists()).toBe(true)
+    await finishConversation()
+    expect(wrapper.text()).not.toContain('Please attach the diff')
+  })
+
   it('requires both arguments before loading the prompt', async () => {
     const wrapper = render('prompt')
     await wrapper.get('.command-input').setValue('/')

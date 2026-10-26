@@ -2,6 +2,7 @@ import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import McpProtocolInspector from '../components/McpProtocolInspector.vue'
 import { mcpExchanges } from '../data/mcp-exchanges'
+import { buildReviewMessage, defaultReviewArguments, reviewPullRequestPrompt } from '../data/mcp-prompts'
 import { mcpResources } from '../data/mcp-resources'
 
 describe('mCP protocol slides', () => {
@@ -34,6 +35,18 @@ describe('mCP protocol slides', () => {
       'Customer feedback',
     ])
     expect(payload.result.resources.every((resource: { uri: string }) => resource.uri.startsWith('docs://project-dashboard/'))).toBe(true)
+  })
+
+  it('uses the same prompt arguments and prepared message as the chat demo', () => {
+    expect(mcpExchanges.prompts[0].response!.result).toEqual({ prompts: [reviewPullRequestPrompt] })
+    expect(reviewPullRequestPrompt.arguments.every(argument => argument.required && argument.description)).toBe(true)
+    expect(mcpExchanges.prompts[1].request.params).toEqual({
+      name: reviewPullRequestPrompt.name,
+      arguments: defaultReviewArguments,
+    })
+    expect(mcpExchanges.prompts[1].response!.result).toEqual({
+      messages: [{ role: 'user', content: { type: 'text', text: buildReviewMessage(defaultReviewArguments) } }],
+    })
   })
 
   it('uses consistent JSON-RPC IDs and retains the demo data', () => {
