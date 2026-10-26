@@ -2,6 +2,7 @@
 import type { ConsoleEntry } from '../../types/console-tab'
 import type { Request } from '../../types/network-tab'
 import { computed, ref, watch } from 'vue'
+import InspectFrame from '../../../../theme/components/Inspect/Inspect.vue'
 import InspectFilters from './InspectFilters.vue'
 import InspectTabs from './InspectTabs.vue'
 import ConsoleTab from './Tabs/ConsoleTab.vue'
@@ -95,28 +96,28 @@ function onSelectTab(tab: string) {
 </script>
 
 <template>
-  <div class="flex min-h-0 flex-col border border-neutral-700 bg-neutral-900 text-white">
-    <InspectTabs
-      :active-tab="currentTab"
-      :enabled-tabs="availableTabs"
-      @select="onSelectTab"
+  <InspectFrame>
+    <template #header>
+      <InspectTabs
+        :active-tab="currentTab"
+        :enabled-tabs="availableTabs"
+        @select="onSelectTab"
+      />
+    </template>
+    <template #filters>
+      <InspectFilters v-if="shouldShowFilters" />
+    </template>
+    <ConsoleTab
+      v-if="currentTab === 'Console' && consoleData"
+      :entries="consoleData.entries"
     />
 
-    <InspectFilters v-if="shouldShowFilters" />
-
-    <div class="relative min-h-0 grow bg-neutral-900 shiki-dark overflow-auto">
-      <ConsoleTab
-        v-if="currentTab === 'Console' && consoleData"
-        :entries="consoleData.entries"
-      />
-
-      <NetworkTab
-        v-else-if="currentTab === 'Network' && networkData"
-        :requests="networkData.requests"
-        :show-details="networkData.showDetails"
-        :selected-request-id="networkData.selectedRequestId"
-        :selected-request-tab="networkData.selectedRequestTab"
-      />
-    </div>
-  </div>
+    <NetworkTab
+      v-else-if="currentTab === 'Network' && networkData"
+      :requests="networkData.requests"
+      :show-details="networkData.showDetails"
+      :selected-request-id="networkData.selectedRequestId"
+      :selected-request-tab="networkData.selectedRequestTab"
+    />
+  </InspectFrame>
 </template>

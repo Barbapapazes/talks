@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
-
 interface TabItem {
   name: string
   active?: boolean
@@ -8,30 +6,14 @@ interface TabItem {
 }
 
 const props = defineProps<{
-  items: (string | TabItem)[]
+  items: TabItem[]
 }>()
 
 const emits = defineEmits<{
   select: [name: string]
 }>()
 
-const normalizedItems = computed(() => props.items.map((item) => {
-  if (typeof item === 'string') {
-    return {
-      name: item,
-      active: false,
-      disabled: true,
-    }
-  }
-
-  return {
-    name: item.name,
-    active: item.active ?? false,
-    disabled: item.disabled ?? false,
-  }
-}))
-
-function onSelect(item: { name: string, disabled: boolean }) {
+function onSelect(item: TabItem) {
   if (item.disabled)
     return
 
@@ -40,13 +22,16 @@ function onSelect(item: { name: string, disabled: boolean }) {
 </script>
 
 <template>
-  <div class="flex flex-row gap-2 text-xs px-4 bg-neutral-800 font-medium">
+  <div class="flex flex-row gap-2 text-xs px-4 bg-neutral-800 font-medium" role="tablist">
     <div
-      v-for="item in normalizedItems"
+      v-for="item in props.items"
       :key="item.name"
     >
       <button
         type="button"
+        role="tab"
+        :aria-selected="item.active ?? false"
+        :disabled="item.disabled"
         class="border-b-2 px-2 py-2 transition-colors"
         :class="{
           'text-violet-500 border-violet-500': item.active,

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { ChatIntegrations } from './ChatHeader.vue'
 import { useIsSlideActive } from '@slidev/client'
 import { computed, onUnmounted, ref, watch } from 'vue'
 import { useAnimationTimeline } from '../../composables/useAnimationTimeline'
@@ -10,6 +11,9 @@ import ChatStatusIndicator from './ChatStatusIndicator.vue'
 // Props with defaults
 const props = withDefaults(defineProps<{
   userPrompt: string
+  enabled?: boolean
+  autoType?: boolean
+  integrations?: ChatIntegrations
   assistantHtmlFrames?: string[]
   assistantFrameCount?: number
   followUpPrompt?: string
@@ -22,6 +26,7 @@ const props = withDefaults(defineProps<{
   streamFramesPerTick?: number
   timingVariance?: number
 }>(), {
+  enabled: true,
   assistantHtmlFrames: () => [],
   followUpHtmlFrames: () => [],
   typewriterCharDelayMs: 50,
@@ -32,11 +37,14 @@ const props = withDefaults(defineProps<{
   timingVariance: 0.2,
 })
 
+const emit = defineEmits<{ toggleIntegrations: [] }>()
+
 // Refs for DOM
 const chatContainerRef = ref<HTMLElement | null>(null)
 const intervals = ref<number[]>([])
 const followUpStarted = ref(false)
-const isActive = useIsSlideActive()
+const slideActive = useIsSlideActive()
+const isActive = computed(() => slideActive.value && props.enabled)
 
 // Animation composable
 const {
@@ -46,6 +54,7 @@ const {
   currentFrameIndex,
   showCursor,
   startTimeline,
+  continueAnimation,
   resetAnimation,
   skipToEnd,
 } = useAnimationTimeline(
@@ -108,6 +117,8 @@ watch(isActive, () => {
   if (isActive.value) {
     followUpStarted.value = false
     startTimeline()
+    if (props.autoType)
+      continueAnimation()
     window.addEventListener('keydown', beginFollowUp)
 
     // Cursor blink effect
@@ -184,6 +195,8 @@ onUnmounted(() => {
   if (followUpEnterListener)
     window.removeEventListener('keydown', followUpEnterListener)
   removeEnterListener()
+  intervals.value.forEach(i => clearInterval(i))
+  resetAnimation()
   resetFollowUp()
 })
 
@@ -221,7 +234,7 @@ const followUpShowAssistant = computed(() => followUpPhase.value === 'streaming'
 
 <template>
   <div class="overflow-hidden flex flex-col h-full">
-    <ChatHeader class="absolute top-0 inset-x-0" />
+    <ChatHeader :integrations="integrations" @toggle-integrations="emit('toggleIntegrations')" />
 
     <div ref="chatContainerRef" class="flex-1 overflow-y-auto pb-16">
       <div class="w-[66ch] mx-auto flex flex-col gap-4">
@@ -229,10 +242,16 @@ const followUpShowAssistant = computed(() => followUpPhase.value === 'streaming'
           v-if="showUserMessage"
           type="user"
           :content="sentUserText"
-        />
+        >
+          <template v-if="$slots.userContext" #attachments>
+            <slot name="userContext" />
+          </template>
+        </ChatMessage>
+
+        <slot name="tool" :phase="currentPhase" />
 
         <ChatStatusIndicator
-          v-if="showStatus"
+          v-if="showStatus && !$slots.tool"
           :status="(currentPhase as 'searching' | 'thinking')"
         />
 
@@ -255,8 +274,10 @@ const followUpShowAssistant = computed(() => followUpPhase.value === 'streaming'
           :content="followUpSentUserText"
         />
 
+        <slot name="followUpTool" :phase="followUpPhase" :started="followUpStarted" />
+
         <ChatStatusIndicator
-          v-if="followUpPhase === 'searching' || followUpPhase === 'thinking'"
+          v-if="!$slots.followUpTool && (followUpPhase === 'searching' || followUpPhase === 'thinking')"
           :status="(followUpPhase as 'searching' | 'thinking')"
         />
 
@@ -280,6 +301,13 @@ const followUpShowAssistant = computed(() => followUpPhase.value === 'streaming'
       :value="followUpStarted ? followUpTypedInputText : typedInputText"
       :show-cursor="(followUpStarted ? followUpShowCursor : showCursor) && (followUpStarted ? followUpPhase : currentPhase) === 'typingInInput'"
       :disabled="inputDisabled"
-    />
+    >
+      <template v-if="$slots.inputMessage" #message>
+        <slot name="inputMessage" :value="followUpStarted ? followUpTypedInputText : typedInputText" :disabled="inputDisabled" :sent="showUserMessage" />
+      </template>
+      <template v-if="$slots.inputContext" #context>
+        <slot name="inputContext" :sent="showUserMessage" />
+      </template>
+    </ChatInput>
   </div>
 </template>

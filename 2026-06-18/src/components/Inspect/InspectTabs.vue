@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import Tabs from './Internal/Tabs.vue'
+import Tabs from '../../../../theme/components/Inspect/InspectTabs.vue'
 
 type InspectorTab = 'Console' | 'Network'
 
@@ -21,22 +21,22 @@ function isEnabled(tab: InspectorTab) {
 }
 
 const tabs = computed(() => [
-  'Elements',
+  { name: 'Elements', disabled: true },
   {
     name: 'Console',
     active: props.activeTab === 'Console',
     disabled: !isEnabled('Console'),
   },
-  'Sources',
+  { name: 'Sources', disabled: true },
   {
     name: 'Network',
     active: props.activeTab === 'Network',
     disabled: !isEnabled('Network'),
   },
-  'Performance',
-  'Memory',
-  'Application',
-  'Security',
+  { name: 'Performance', disabled: true },
+  { name: 'Memory', disabled: true },
+  { name: 'Application', disabled: true },
+  { name: 'Security', disabled: true },
 ])
 </script>
 

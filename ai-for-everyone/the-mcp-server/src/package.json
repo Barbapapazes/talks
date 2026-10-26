@@ -1,5 +1,5 @@
 {
-  "name": "mcp-server",
+  "name": "the-mcp-server",
   "publication": "article-resource",
   "date": "2026-11-05",
   "sourceLanguage": "en",
@@ -22,8 +22,9 @@
   "private": true,
   "scripts": {
     "dev": "slidev",
-    "build": "slidev build --base /ai-for-everyone/mcp-server/ --out ../../../dist/ai-for-everyone/mcp-server",
-    "export": "slidev export --per-slide --wait-until none --output ../mcp-server.pdf",
+    "test": "vitest run",
+    "build": "slidev build --base /ai-for-everyone/the-mcp-server/ --out ../../../dist/ai-for-everyone/the-mcp-server",
+    "export": "slidev export --per-slide --wait-until none --output ../the-mcp-server.pdf",
     "thumbnail": "slidev export --per-slide --range 1 --format png",
     "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
     "thumbnail:cp": "mkdir -p ./public && ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
@@ -36,7 +37,11 @@
   },
   "devDependencies": {
     "@slidev/cli": "catalog:build",
+    "@vitejs/plugin-vue": "catalog:build",
+    "@vue/test-utils": "catalog:test",
     "@vue/tsconfig": "catalog:build",
-    "typescript": "catalog:build"
+    "happy-dom": "catalog:test",
+    "typescript": "catalog:build",
+    "vitest": "catalog:test"
   }
 }

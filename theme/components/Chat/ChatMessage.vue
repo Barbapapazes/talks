@@ -14,6 +14,7 @@ const isUser = computed(() => props.type === 'user')
   <div class="flex" :class="{ 'pt-4 flex-row-reverse justify-start': isUser }">
     <div class="w-4/5" :class="{ 'px-4 py-3 rounded-2xl bg-neutral-100': isUser }">
       <template v-if="isUser">
+        <slot name="attachments" />
         {{ props.content }}<span v-if="props.showCursor" class="cursor">|</span>
       </template>
       <div v-else class="assistant-content">

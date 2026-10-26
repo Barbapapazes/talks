@@ -12,17 +12,22 @@ withDefaults(defineProps<{
   <section class="chat-window not-content" :class="{ 'chat-window-fullscreen': fullscreen }" :aria-label="label">
     <header class="chat-window-header">
       <span class="chat-window-label"><span class="i-ph-chat-circle-text size-4" aria-hidden="true" />{{ label }}</span>
-      <span v-if="status" class="chat-window-status" role="status">{{ status }}</span>
+      <slot name="actions">
+        <span v-if="status" class="chat-window-status" role="status">{{ status }}</span>
+      </slot>
     </header>
     <div class="chat-window-messages" aria-live="polite">
       <slot />
     </div>
+    <slot name="footer" />
   </section>
 </template>
 
 <style scoped>
 .chat-window {
   --at-apply: border border-neutral-200 bg-white rounded-2xl dark:border-neutral-700 dark:bg-neutral-900;
+  display: flex;
+  flex-direction: column;
   height: 382px;
   overflow: hidden;
   font-size: 16px;
@@ -43,6 +48,7 @@ withDefaults(defineProps<{
   padding-top: 16px;
 }
 .chat-window-header {
+  flex-shrink: 0;
   --at-apply: border-b border-neutral-200 dark:border-neutral-700;
   display: flex;
   align-items: center;
@@ -60,6 +66,9 @@ withDefaults(defineProps<{
   --at-apply: text-neutral-500 dark:text-neutral-400;
 }
 .chat-window-messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 12px;

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import Tabs from './Internal/Tabs.vue'
+import Tabs from '../../../../theme/components/Inspect/InspectTabs.vue'
 
 const props = withDefaults(defineProps<{
   modelValue?: string
