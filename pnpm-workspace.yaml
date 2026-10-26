@@ -54,7 +54,7 @@ catalogs:
     execa: ^9.6.1
     fdir: ^6.5.0
     gray-matter: ^4.0.3
-    markdown-it: ^14.2.0
+    markdown-it: ^15.0.0
     ofetch: ^1.5.1
     openai: ^6.44.0
     pathe: ^2.0.3
