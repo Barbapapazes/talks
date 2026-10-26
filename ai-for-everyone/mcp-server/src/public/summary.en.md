@@ -1,0 +1,5 @@
+How does an LLM application go from drafting a GitHub issue to creating one? A simulated GitHub integration illustrates how the Model Context Protocol connects an application to external capabilities, and where the model, MCP client, and server each fit in.
+
+The session follows the connection from initialization through tool discovery and execution, using JSON-RPC 2.0 exchanges to explain what happens behind the chat interface. It compares local connections over stdio with remote connections over Streamable HTTP, and distinguishes MCP from the APIs a server can call and the model's own tool-calling mechanism.
+
+Beyond tools such as `create_issue`, the examples introduce resources for reading repository content and prompts for reusable requests such as pull request reviews. They show why exposing a capability does not grant permission to use it, why resources do not automatically enter the model's context, and how the host application orchestrates these interactions. A brief look at MCP Apps introduces interactive interfaces rendered inside the chat.
