@@ -87,7 +87,9 @@ const requestRows = computed<NetworkRequestRow[]>(() => {
 
     return {
       request,
-      delay: shouldAnimateRows.value ? `calc(${index} * 30ms)` : 0,
+      delay: shouldAnimateRows.value
+        ? `calc(${index} * 30ms)`
+        : 0,
       icon: icon(request.type),
       method: request.method ?? 'GET',
       status: request.status ?? 200,
@@ -105,7 +107,10 @@ const currentRequestTarget = useTemplateRef('currentRequestTarget')
 onClickOutside(currentRequestTarget, () => currentRequest.value = null)
 
 watch(
-  [currentRequestAvailableTabs, () => props.selectedRequestTab] as const,
+  [
+    currentRequestAvailableTabs,
+    () => props.selectedRequestTab,
+  ] as const,
   ([tabs, requestedTab]) => {
     if (requestedTab && tabs.includes(requestedTab)) {
       currentRequestTab.value = requestedTab
@@ -155,7 +160,9 @@ function rowWrapper(index: number) {
   if (!shouldAnimateRows.value)
     return PlainWrapper
 
-  return index === 0 ? VClick : VAfter
+  return index === 0
+    ? VClick
+    : VAfter
 }
 </script>
 

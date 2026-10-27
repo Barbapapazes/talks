@@ -4,7 +4,9 @@ import ChatInput from '../components/Chat/ChatInput.vue'
 
 describe('chat input', () => {
   it('keeps the original rounded input without context', () => {
-    const wrapper = mount(ChatInput, { props: { value: 'Hello' } })
+    const wrapper = mount(ChatInput, {
+      props: { value: 'Hello' },
+    })
     expect(wrapper.classes()).toContain('rounded-full')
     expect(wrapper.text()).toContain('Hello')
   })

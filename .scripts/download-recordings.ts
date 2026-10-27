@@ -65,7 +65,15 @@ async function transcribeRecording(folder: string, parsedContent: Package, local
   if (!existsSync(downloadedFileName)) {
     // eslint-disable-next-line no-console
     console.log(`Downloading audio for ${parsedContent.name}...`)
-    await execFile('yt-dlp', ['-x', '--audio-format', 'mp3', '-o', downloadedFileName, '--', recordingUrl])
+    await execFile('yt-dlp', [
+      '-x',
+      '--audio-format',
+      'mp3',
+      '-o',
+      downloadedFileName,
+      '--',
+      recordingUrl,
+    ])
   }
 
   const normalizedFileName = `${folder}/${fileName}.mp3`

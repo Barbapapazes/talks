@@ -7,8 +7,11 @@ async function startSelectDeck(args: string[]) {
   const deck = await selectDeck()
 
   if (deck.folder) {
-    if (args[0] === 'dev')
-      execa('code', [fileURLToPath(new URL(`../${deck.folder}/src/slides.md`, import.meta.url))])
+    if (args[0] === 'dev') {
+      execa('code', [
+        fileURLToPath(new URL(`../${deck.folder}/src/slides.md`, import.meta.url)),
+      ])
+    }
     await execa('pnpm', ['run', ...args], {
       cwd: new URL(`../${deck.folder}/src`, import.meta.url),
       stdio: 'inherit',

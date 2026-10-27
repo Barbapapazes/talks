@@ -153,7 +153,9 @@ Slides from my [talks](https://soubiran.dev/talks).
   for (const year of years) {
     for (const talk of talksGroupedByYear[year]) {
       // Format: Date - Title - Event - Location
-      const location = talk.location ? ` - ${talk.location.city}, ${talk.location.country}` : ''
+      const location = talk.location
+        ? ` - ${talk.location.city}, ${talk.location.country}`
+        : ''
       content += `${talk.date} - ${talk.name} - ${talk.event}${location}\n`
     }
   }
@@ -167,8 +169,12 @@ Slides from my [talks](https://soubiran.dev/talks).
       return acc
     }, {}),
   ).sort(([titleA, talksA], [titleB, talksB]) => {
-    const latestDateA = talksA.reduce((latest, talk) => talk.date > latest ? talk.date : latest, '')
-    const latestDateB = talksB.reduce((latest, talk) => talk.date > latest ? talk.date : latest, '')
+    const latestDateA = talksA.reduce((latest, talk) => talk.date > latest
+      ? talk.date
+      : latest, '')
+    const latestDateB = talksB.reduce((latest, talk) => talk.date > latest
+      ? talk.date
+      : latest, '')
     return latestDateB.localeCompare(latestDateA) || titleA.localeCompare(titleB)
   })
 

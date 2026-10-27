@@ -13,7 +13,10 @@ const showCounterexample = computed(() => $clicks.value === 2)
 // Verified with cl100k_base: 359, 32898, 24694.
 const wordPieces = ['un', 'belie', 'vable']
 
-const tokens = inputTokens.map(token => ({ ...token, vector: formatEmbedding(token.embedding) }))
+const tokens = inputTokens.map(token => ({
+  ...token,
+  vector: formatEmbedding(token.embedding),
+}))
 const starts = tokens.map((_, index) => tokens.slice(0, index).reduce((sum, token) => sum + token.text.length, 0))
 </script>
 

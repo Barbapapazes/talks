@@ -7,5 +7,7 @@ export function talkDirectory(packageFile: string): string {
 
 export function talkPrefix(dir: string, pkg: Pick<Package, 'name'>): string {
   const folder = dir.replaceAll('\\', '/').replace(/^\.\//, '').replace(/\/$/, '')
-  return folder.startsWith('ai-for-everyone/') ? folder : `${folder}/${pkg.name}`
+  return folder.startsWith('ai-for-everyone/')
+    ? folder
+    : `${folder}/${pkg.name}`
 }

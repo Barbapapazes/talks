@@ -35,8 +35,17 @@ export default function visualize(options: ResolvedSlidevOptions): Plugin {
     name: 'talk-visualize',
     config() {
       return {
-        resolve: { alias: [{ find: /^mermaid$/, replacement: createRequire(import.meta.url).resolve('mermaid') }] },
-        optimizeDeps: { include: ['mermaid'] },
+        resolve: {
+          alias: [
+            {
+              find: /^mermaid$/,
+              replacement: createRequire(import.meta.url).resolve('mermaid'),
+            },
+          ],
+        },
+        optimizeDeps: {
+          include: ['mermaid'],
+        },
       }
     },
     configResolved(config) {
@@ -60,7 +69,9 @@ export default function visualize(options: ResolvedSlidevOptions): Plugin {
       })
       server.middlewares.use(async (req, res, next) => {
         const url = req.url?.split('?')[0]
-        const pathname = base !== '/' && url?.startsWith(base) ? `/${url.slice(base.length)}` : url
+        const pathname = base !== '/' && url?.startsWith(base)
+          ? `/${url.slice(base.length)}`
+          : url
         if (pathname !== '/_visualize' && pathname !== '/_visualize/' && pathname !== '/_visualize/graph.json')
           return next()
         res.setHeader('Cache-Control', 'no-store')
@@ -90,7 +101,11 @@ export default function visualize(options: ResolvedSlidevOptions): Plugin {
         catch (error) {
           res.statusCode = 500
           res.setHeader('Content-Type', 'application/json')
-          res.end(JSON.stringify({ error: error instanceof Error ? error.message : String(error) }))
+          res.end(JSON.stringify({
+            error: error instanceof Error
+              ? error.message
+              : String(error),
+          }))
         }
       })
     },
@@ -107,13 +122,25 @@ export default function visualize(options: ResolvedSlidevOptions): Plugin {
         logLevel: 'warn',
         build: { write: false },
       })
-      const bundles = (Array.isArray(result) ? result : [result]) as Rollup.RollupOutput[]
+      const bundles = (Array.isArray(result)
+        ? result
+        : [result]) as Rollup.RollupOutput[]
       for (const bundle of bundles) {
         for (const file of bundle.output) {
-          this.emitFile({ type: 'asset', fileName: `_visualize/${file.fileName}`, source: file.type === 'asset' ? file.source : file.code })
+          this.emitFile({
+            type: 'asset',
+            fileName: `_visualize/${file.fileName}`,
+            source: file.type === 'asset'
+              ? file.source
+              : file.code,
+          })
         }
       }
-      this.emitFile({ type: 'asset', fileName: '_visualize/graph.json', source: JSON.stringify(graph) })
+      this.emitFile({
+        type: 'asset',
+        fileName: '_visualize/graph.json',
+        source: JSON.stringify(graph),
+      })
     },
   }
 }

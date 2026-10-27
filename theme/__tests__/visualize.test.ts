@@ -14,7 +14,11 @@ function slide(title: string, frontmatter: Record<string, unknown> = {}) {
 
 describe('talk graph', () => {
   it('uses unique IDs for repeated titles and connects linear slides', () => {
-    const graph = buildGraph([slide('Same'), slide('Same'), slide('Last')])
+    const graph = buildGraph([
+      slide('Same'),
+      slide('Same'),
+      slide('Last'),
+    ])
     expect(graph.nodes.map(node => node.id)).toEqual(['slide_1', 'slide_2', 'slide_3'])
     expect(graph.edges).toEqual([
       { from: 'slide_1', to: 'slide_2', label: '' },
@@ -25,8 +29,14 @@ describe('talk graph', () => {
 
   it('supports branches, cycles, and explicit terminal nodes', () => {
     const graph = buildGraph([
-      slide('Start', { name: 'start', choices: ['branch', 'end'] }),
-      slide('Branch', { name: 'branch', choices: ['start'] }),
+      slide('Start', {
+        name: 'start',
+        choices: ['branch', 'end'],
+      }),
+      slide('Branch', {
+        name: 'branch',
+        choices: ['start'],
+      }),
       slide('End', { name: 'end', choices: [] }),
       slide('Unreachable'),
     ])
@@ -40,7 +50,10 @@ describe('talk graph', () => {
 
   it('reports duplicate names, unresolved targets, and invalid choices', () => {
     const graph = buildGraph([
-      slide('A', { name: 'same', choices: ['same', 'missing'] }),
+      slide('A', {
+        name: 'same',
+        choices: ['same', 'missing'],
+      }),
       slide('B', { name: 'same' }),
       slide('C', { choices: 'same' }),
     ])
@@ -52,7 +65,10 @@ describe('talk graph', () => {
 
   it('sums slide timings in minutes across all branches without floating-point artifacts', () => {
     const graph = buildGraph([
-      slide('A', { timing: 1.2, choices: ['end'] }),
+      slide('A', {
+        timing: 1.2,
+        choices: ['end'],
+      }),
       slide('B', { timing: '0.8' }),
       slide('C', { name: 'end', timing: 60.1, choices: [] }),
       slide('D', { timing: 'invalid' }),
@@ -61,11 +77,21 @@ describe('talk graph', () => {
     ])
     expect(formatTotalTiming(graph)).toBe('1h 2m 6s')
     expect(formatTotalTiming(buildGraph([]))).toBe('0m')
-    expect(formatTotalTiming(buildGraph([slide('A', { timing: 0.1 }), slide('B', { timing: 0.2 })]))).toBe('18s')
+    expect(formatTotalTiming(buildGraph([
+      slide('A', { timing: 0.1 }),
+      slide('B', { timing: 0.2 }),
+    ]))).toBe('18s')
   })
 
   it('encodes Mermaid labels and preserves group and status styling', () => {
-    const graph = buildGraph([slide('"<script>alert(1)</script>', { group: 'end"]\nattack', ready: true, layout: 'recap', timing: 30 })])
+    const graph = buildGraph([
+      slide('"<script>alert(1)</script>', {
+        group: 'end"]\nattack',
+        ready: true,
+        layout: 'recap',
+        timing: 30,
+      }),
+    ])
     const text = graphToMermaid(graph)
     expect(text).not.toContain('<script>')
     expect(text).not.toContain('attack')
@@ -85,7 +111,9 @@ async function fixture(run: (root: string, options: ResolvedSlidevOptions) => Pr
     userWorkspaceRoot: root,
     roots: [root],
     mode: 'dev',
-    data: { config: { routerMode: 'history' } },
+    data: {
+      config: { routerMode: 'history' },
+    },
   } as ResolvedSlidevOptions
   try {
     await run(root, options)
@@ -97,7 +125,15 @@ async function fixture(run: (root: string, options: ResolvedSlidevOptions) => Pr
 
 it('serves on demand under a base path and invalidates imported slides', async () => {
   await fixture(async (root, options) => {
-    const server = await createServer({ configFile: false, root, base: '/talk/', plugins: [visualize(options)], server: { port: 0 } })
+    const server = await createServer({
+      configFile: false,
+      root,
+      base: '/talk/',
+      plugins: [
+        visualize(options),
+      ],
+      server: { port: 0 },
+    })
     try {
       await server.listen()
       const address = server.httpServer!.address() as { port: number }
@@ -133,7 +169,15 @@ it('serves on demand under a base path and invalidates imported slides', async (
 it('builds a standalone static page with bundled assets under a base path', async () => {
   await fixture(async (root, options) => {
     await writeFile(join(root, 'index.html'), '<html><body>Presentation</body></html>')
-    await build({ configFile: false, root, base: '/talk/', plugins: [visualize(options)], logLevel: 'silent' })
+    await build({
+      configFile: false,
+      root,
+      base: '/talk/',
+      plugins: [
+        visualize(options),
+      ],
+      logLevel: 'silent',
+    })
     const html = await readFile(join(root, 'dist/_visualize/index.html'), 'utf8')
     expect(html).toContain('/talk/_visualize/assets/')
     expect(html).not.toContain('client.ts')
@@ -148,6 +192,13 @@ it('fails production builds with unresolved choices', async () => {
   await fixture(async (root, options) => {
     await writeFile(join(root, 'index.html'), '<html><body>Presentation</body></html>')
     await writeFile(join(root, 'imported.md'), '---\nchoices: [missing]\n---\n# Broken\n')
-    await expect(build({ configFile: false, root, plugins: [visualize(options)], logLevel: 'silent' })).rejects.toThrow('does not exist')
+    await expect(build({
+      configFile: false,
+      root,
+      plugins: [
+        visualize(options),
+      ],
+      logLevel: 'silent',
+    })).rejects.toThrow('does not exist')
   })
 })

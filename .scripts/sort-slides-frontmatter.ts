@@ -56,12 +56,17 @@ function sortKeysDeep<T>(value: T, compareKeys = compareAlphabetically, depth = 
   if (!isPlainObject(value))
     return value
 
-  const comparator = depth === 0 ? compareKeys : compareAlphabetically
+  const comparator = depth === 0
+    ? compareKeys
+    : compareAlphabetically
 
   return Object.fromEntries(
     Object.entries(value)
       .sort(([left], [right]) => comparator(left, right))
-      .map(([key, nestedValue]) => [key, sortKeysDeep(nestedValue, compareKeys, depth + 1)]),
+      .map(([key, nestedValue]) => [
+        key,
+        sortKeysDeep(nestedValue, compareKeys, depth + 1),
+      ]),
   ) as T
 }
 
@@ -75,11 +80,15 @@ function serializeFrontmatterLines(frontmatter: Frontmatter, compareKeys = compa
   if (!match)
     throw new Error('Unable to serialize frontmatter')
 
-  return match[1] ? match[1].split('\n') : []
+  return match[1]
+    ? match[1].split('\n')
+    : []
 }
 
 export function reorderSlidesFrontmatterContent(content: string, slidesPath = 'slides.md') {
-  const eol = content.includes('\r\n') ? '\r\n' : '\n'
+  const eol = content.includes('\r\n')
+    ? '\r\n'
+    : '\n'
   const parsed = parseSync(content, slidesPath)
   const lines = content.split(/\r?\n/)
 
@@ -117,7 +126,9 @@ function resolveSlidesPath(target: string) {
   if (!looksLikePath)
     return fileURLToPath(new URL(`../${target}/src/slides.md`, import.meta.url))
 
-  const absoluteTarget = isAbsolute(target) ? target : resolve(process.cwd(), target)
+  const absoluteTarget = isAbsolute(target)
+    ? target
+    : resolve(process.cwd(), target)
 
   if (basename(absoluteTarget) === 'slides.md')
     return absoluteTarget
@@ -130,7 +141,9 @@ function resolveSlidesPath(target: string) {
 
 async function sortSlidesFrontmatter() {
   const target = process.argv[2]
-  const selectedDeck = target ? undefined : await selectDeck()
+  const selectedDeck = target
+    ? undefined
+    : await selectDeck()
   const selectedDeckFolder = selectedDeck?.folder
 
   if (!target && !selectedDeckFolder) {

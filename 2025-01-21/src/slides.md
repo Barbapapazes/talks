@@ -621,7 +621,9 @@ import RepositoriesService from '#contracts/repositories_services'
 test('get all repositories', async ({ client }) => {
   class FakeRepositoriesService implements RepositoriesService {
     repositories() {
-      return [{ id: 1, repo: 'barbapapazes/talks' }]
+      return [
+        { id: 1, repo: 'barbapapazes/talks' }
+      ]
     }
   }
 
@@ -632,7 +634,9 @@ test('get all repositories', async ({ client }) => {
   const response = await client.get('repositories')
 
   response.assertBody({
-    data: [{ id: 1, repo: 'barbapapazes/talks' }]
+    data: [
+      { id: 1, repo: 'barbapapazes/talks' }
+    ]
   })
 })
 ```

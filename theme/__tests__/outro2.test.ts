@@ -18,7 +18,10 @@ const slideContext = {
 
 vi.mock('@slidev/client', async () => {
   const actual = await vi.importActual<typeof import('@slidev/client')>('@slidev/client')
-  return { ...actual, useSlideContext: () => slideContext }
+  return {
+    ...actual,
+    useSlideContext: () => slideContext,
+  }
 })
 
 vi.mock('slidev-addon-inalia', () => ({

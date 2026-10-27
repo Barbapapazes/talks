@@ -3,9 +3,37 @@ import TokenChip from '@theme/components/ai/TokenChip.vue'
 import DiagramPanel from '@theme/components/DiagramPanel.vue'
 
 const capabilities = [
-  { label: 'Text', tokens: ['The capital', ' of France', ' is Paris', '.'] },
-  { label: 'Reasoning', tokens: ['17 × 20', ' = 340', ', ', '17 × 4', ' = 68', '…'] },
-  { label: 'Tool calling', tokens: ['get_time', '({', '"city"', ': ', '"Paris"', '})'] },
+  {
+    label: 'Text',
+    tokens: [
+      'The capital',
+      ' of France',
+      ' is Paris',
+      '.',
+    ],
+  },
+  {
+    label: 'Reasoning',
+    tokens: [
+      '17 × 20',
+      ' = 340',
+      ', ',
+      '17 × 4',
+      ' = 68',
+      '…',
+    ],
+  },
+  {
+    label: 'Tool calling',
+    tokens: [
+      'get_time',
+      '({',
+      '"city"',
+      ': ',
+      '"Paris"',
+      '})',
+    ],
+  },
 ]
 </script>
 

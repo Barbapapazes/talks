@@ -101,7 +101,9 @@ export function validateTalkPackage(dir: string, value: unknown): Package {
   const packageJson = result.data
   for (const locale of LOCALES) {
     const id = packageJson.locales[locale].id
-    if (packageJson.publication === 'article-resource' ? id !== undefined : id === undefined) {
+    if (packageJson.publication === 'article-resource'
+      ? id !== undefined
+      : id === undefined) {
       fail(talk, `locales.${locale}.id`, packageJson.publication === 'article-resource'
         ? 'no UUID: the article owns the content identity'
         : 'a UUID v4', id)
@@ -143,7 +145,10 @@ export function validateUniqueLocaleIds(sources: readonly ValidatedTalkPackageSo
 
 export async function validateTalkArtifacts(dir: string, packageJson: Package): Promise<void> {
   const talk = talkName(dir)
-  const artifactStates = await Promise.all([...SUMMARY_ARTIFACTS, ...TRANSCRIPT_ARTIFACTS].map(async (fileName) => {
+  const artifactStates = await Promise.all([
+    ...SUMMARY_ARTIFACTS,
+    ...TRANSCRIPT_ARTIFACTS,
+  ].map(async (fileName) => {
     return {
       exists: await isFile(join(dir, 'src', 'public', fileName)),
       fileName,

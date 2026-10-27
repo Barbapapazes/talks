@@ -15,7 +15,9 @@ describe('chat assistant messages', () => {
   it('renders Vue content instead of HTML when given a slot', () => {
     const wrapper = mount(ChatMessage, {
       props: { type: 'assistant', content: '<strong>Old response</strong>' },
-      slots: { default: () => h('button', 'Vue component') },
+      slots: {
+        default: () => h('button', 'Vue component'),
+      },
     })
 
     expect(wrapper.find('button').text()).toBe('Vue component')

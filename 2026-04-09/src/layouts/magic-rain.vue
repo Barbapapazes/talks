@@ -1,7 +1,16 @@
 <script lang="ts" setup>
 import Rain from '../components/Rain.vue'
 
-const MAGIC_EMOJIS = ['✨', '🪄', '🔮', '⭐', '🌈', '🧙‍♂️', '🐇', '🧽'] as const
+const MAGIC_EMOJIS = [
+  '✨',
+  '🪄',
+  '🔮',
+  '⭐',
+  '🌈',
+  '🧙‍♂️',
+  '🐇',
+  '🧽',
+] as const
 </script>
 
 <template>

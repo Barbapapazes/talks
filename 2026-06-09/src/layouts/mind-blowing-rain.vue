@@ -1,7 +1,16 @@
 <script lang="ts" setup>
 import Rain from '../components/Rain.vue'
 
-const MIND_BLOWING_EMOJIS = ['🤯', '💥', '🧠', '⚡', '🔥', '😲', '🤩', '🚀'] as const
+const MIND_BLOWING_EMOJIS = [
+  '🤯',
+  '💥',
+  '🧠',
+  '⚡',
+  '🔥',
+  '😲',
+  '🤩',
+  '🚀',
+] as const
 </script>
 
 <template>

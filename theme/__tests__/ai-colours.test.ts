@@ -6,7 +6,12 @@ import config from '../uno.config'
 
 describe('aI diagram colours', () => {
   it('generates the primary stroke for animated attention links', async () => {
-    const uno = await createGenerator({ ...config, presets: [presetWind3()] })
+    const uno = await createGenerator({
+      ...config,
+      presets: [
+        presetWind3(),
+      ],
+    })
     const { css } = await uno.generate('stroke-primary', { preflights: false })
     expect(css).toContain('stroke:var(--slidev-theme-primary)')
   })
@@ -18,7 +23,12 @@ describe('aI diagram colours', () => {
     ['text-primary/40', 'color', 40],
     ['ring-primary/12', '--un-ring-color', 12],
   ])('generates %s with its opacity', async (utility, property, opacity) => {
-    const uno = await createGenerator({ ...config, presets: [presetWind3()] })
+    const uno = await createGenerator({
+      ...config,
+      presets: [
+        presetWind3(),
+      ],
+    })
     const { css } = await uno.generate(utility as string, { preflights: false })
     expect(css).toContain(`${property}:color-mix(in srgb, var(--slidev-theme-primary) ${opacity}%, transparent)`)
   })

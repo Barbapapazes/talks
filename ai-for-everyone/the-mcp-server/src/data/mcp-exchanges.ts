@@ -17,7 +17,14 @@ function exchange(
   return {
     id: method,
     method,
-    request: { jsonrpc: '2.0', id, method, ...(params ? { params } : {}) },
+    request: {
+      jsonrpc: '2.0',
+      id,
+      method,
+      ...(params
+        ? { params }
+        : {}),
+    },
     response: { jsonrpc: '2.0', id, result },
     ...details,
   }
@@ -26,19 +33,21 @@ function exchange(
 export const mcpExchanges: Record<'tools' | 'resources' | 'prompts', RpcExchange[]> = {
   tools: [
     exchange('tools/list', 1, undefined, {
-      tools: [{
-        name: 'create_issue',
-        description: 'Create an issue in a GitHub repository.',
-        inputSchema: {
-          type: 'object',
-          properties: {
-            repository: { type: 'string' },
-            title: { type: 'string' },
-            body: { type: 'string' },
+      tools: [
+        {
+          name: 'create_issue',
+          description: 'Create an issue in a GitHub repository.',
+          inputSchema: {
+            type: 'object',
+            properties: {
+              repository: { type: 'string' },
+              title: { type: 'string' },
+              body: { type: 'string' },
+            },
+            required: ['repository', 'title', 'body'],
           },
-          required: ['repository', 'title', 'body'],
         },
-      }],
+      ],
     }, {
       requestNote: 'The app asks which tools the server exposes.',
       responseNote: 'The description and input schema tell the model how to request this tool.',
@@ -48,12 +57,19 @@ export const mcpExchanges: Record<'tools' | 'resources' | 'prompts', RpcExchange
       name: 'create_issue',
       arguments: { repository, title: issueTitle, body: issueBody },
     }, {
-      content: [{ type: 'text', text: `Created issue #42 in ${repository}: ${issueTitle}.` }],
+      content: [
+        { type: 'text', text: `Created issue #42 in ${repository}: ${issueTitle}.` },
+      ],
       isError: false,
     }, {
       requestNote: 'The model requests an action. The app sends this call to the MCP server.',
       responseNote: 'The app passes the result to the model, which writes the reply.',
-      highlightFields: ['name', 'arguments', 'content', 'isError'],
+      highlightFields: [
+        'name',
+        'arguments',
+        'content',
+        'isError',
+      ],
     }),
   ],
   resources: [
@@ -65,11 +81,13 @@ export const mcpExchanges: Record<'tools' | 'resources' | 'prompts', RpcExchange
       highlightFields: ['uri', 'name'],
     }),
     exchange('resources/read', 4, { uri: briefUri }, {
-      contents: [{
-        uri: briefUri,
-        mimeType: 'text/markdown',
-        text: '# Project Dashboard\nManage projects and track their status.',
-      }],
+      contents: [
+        {
+          uri: briefUri,
+          mimeType: 'text/markdown',
+          text: '# Project Dashboard\nManage projects and track their status.',
+        },
+      ],
     }, {
       requestNote: 'The URI identifies content, not an action.',
       responseNote: 'The app chooses what to add to the model\'s context. Reading does not run the model.',
@@ -88,11 +106,25 @@ export const mcpExchanges: Record<'tools' | 'resources' | 'prompts', RpcExchange
       name: reviewPullRequestPrompt.name,
       arguments: { ...defaultReviewArguments },
     }, {
-      messages: [{ role: 'user', content: { type: 'text', text: buildReviewMessage(defaultReviewArguments) } }],
+      messages: [
+        {
+          role: 'user',
+          content: {
+            type: 'text',
+            text: buildReviewMessage(defaultReviewArguments),
+          },
+        },
+      ],
     }, {
       requestNote: 'The app fills the template. All prompt argument values are strings.',
       responseNote: 'The server returns messages, not a model reply. The app decides when to send them.',
-      highlightFields: ['name', 'arguments', 'messages', 'role', 'text'],
+      highlightFields: [
+        'name',
+        'arguments',
+        'messages',
+        'role',
+        'text',
+      ],
     }),
   ],
 }
