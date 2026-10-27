@@ -4,7 +4,9 @@ import { computed } from 'vue'
 const props = withDefaults(defineProps<{
   value: Record<string, unknown>
   highlightFields?: string[]
-}>(), { highlightFields: () => [] })
+}>(), {
+  highlightFields: () => [],
+})
 
 // Render tokens as text, never as HTML. This also keeps server content safe to display.
 const lines = computed(() => JSON.stringify(props.value, null, 2)
@@ -19,8 +21,12 @@ const lines = computed(() => JSON.stringify(props.value, null, 2)
       tokens: tokens.map(match => ({
         text: match[0],
         kind: match[0].startsWith('"')
-          ? (line.slice((match.index ?? 0) + match[0].length).trimStart().startsWith(':') ? 'key' : 'string')
-          : /^(?:true|false|null|-?\d)/.test(match[0]) ? 'literal' : 'punctuation',
+          ? (line.slice((match.index ?? 0) + match[0].length).trimStart().startsWith(':')
+              ? 'key'
+              : 'string')
+          : /^(?:true|false|null|-?\d)/.test(match[0])
+            ? 'literal'
+            : 'punctuation',
       })),
     }
   }))

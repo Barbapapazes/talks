@@ -13,13 +13,16 @@ export default antfu({
 })
   .override('antfu/pnpm/pnpm-workspace-yaml', {
     rules: {
-      'pnpm/yaml-enforce-settings': ['error', {
-        settings: {
-          shellEmulator: true,
-          trustPolicy: 'off',
-          catalogMode: 'prefer',
+      'pnpm/yaml-enforce-settings': [
+        'error',
+        {
+          settings: {
+            shellEmulator: true,
+            trustPolicy: 'off',
+            catalogMode: 'prefer',
+          },
         },
-      }],
+      ],
     },
   })
   .append({

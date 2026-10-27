@@ -22,7 +22,13 @@ let pending = false
 let drag: { x: number, y: number, startX: number, startY: number } | undefined
 let moved = false
 
-mermaid.initialize({ startOnLoad: false, securityLevel: 'strict', theme: 'default', maxEdges: 10000, flowchart: { htmlLabels: true, curve: 'basis' } })
+mermaid.initialize({
+  startOnLoad: false,
+  securityLevel: 'strict',
+  theme: 'default',
+  maxEdges: 10000,
+  flowchart: { htmlLabels: true, curve: 'basis' },
+})
 
 function transform() {
   canvas.style.transform = `translate(${x}px, ${y}px) scale(${scale})`
@@ -95,7 +101,9 @@ async function refresh() {
       const group = rendered.querySelector<SVGGElement>(`.node[id*="flowchart-${node.id}-"]`)
       if (!group)
         continue
-      const target = new URL(graph.routerMode === 'hash' ? `#/${node.index + 1}` : String(node.index + 1), presentation)
+      const target = new URL(graph.routerMode === 'hash'
+        ? `#/${node.index + 1}`
+        : String(node.index + 1), presentation)
       const anchor = document.createElementNS('http://www.w3.org/2000/svg', 'a')
       anchor.setAttribute('href', target.href)
       anchor.setAttribute('target', '_blank')
@@ -107,7 +115,11 @@ async function refresh() {
     fit()
   }
   catch (error) {
-    showDiagnostics([error instanceof Error ? error.message : String(error)])
+    showDiagnostics([
+      error instanceof Error
+        ? error.message
+        : String(error),
+    ])
     stats.textContent = 'Could not update the graph. Fix the error and save to retry.'
   }
   finally {
@@ -130,7 +142,12 @@ viewport.addEventListener('wheel', (event) => {
 viewport.addEventListener('pointerdown', (event) => {
   if (event.button !== 0)
     return
-  drag = { x, y, startX: event.clientX, startY: event.clientY }
+  drag = {
+    x,
+    y,
+    startX: event.clientX,
+    startY: event.clientY,
+  }
   moved = false
 })
 window.addEventListener('pointermove', (event) => {

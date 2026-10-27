@@ -12,7 +12,9 @@ const shouldAnimateRows = computed(() => props.messages.length <= ROW_ANIMATION_
 
 const normalizedMessages = computed(() => props.messages.map((message, index) => ({
   ...message,
-  delay: shouldAnimateRows.value ? `calc(${index} * 30ms)` : 0,
+  delay: shouldAnimateRows.value
+    ? `calc(${index} * 30ms)`
+    : 0,
 })))
 
 function icon(direction: WebSocketMessage['direction']) {
@@ -28,7 +30,9 @@ function badgeClass(direction: WebSocketMessage['direction']) {
 }
 
 function label(direction: WebSocketMessage['direction']) {
-  return direction === 'sent' ? 'Sent' : 'Received'
+  return direction === 'sent'
+    ? 'Sent'
+    : 'Received'
 }
 
 function payloadLength(payload: string) {

@@ -68,13 +68,17 @@ describe('chat animation', () => {
   })
 
   it('forwards integration state and header actions', async () => {
-    const wrapper = animation({ integrations: { connected: true, open: false } })
+    const wrapper = animation({
+      integrations: { connected: true, open: false },
+    })
     const button = wrapper.get('header button')
     expect(button.attributes('aria-expanded')).toBe('false')
     expect(wrapper.find('[aria-label="Connected"]').exists()).toBe(true)
     await button.trigger('click')
     expect(wrapper.emitted('toggleIntegrations')).toHaveLength(1)
-    await wrapper.setProps({ integrations: { connected: true, open: true } })
+    await wrapper.setProps({
+      integrations: { connected: true, open: true },
+    })
     expect(button.attributes('aria-expanded')).toBe('true')
   })
 

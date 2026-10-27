@@ -395,7 +395,9 @@ describe('tree', () => {
 
     await wrapper.get('[role="treeitem"]').trigger('click')
 
-    expect(wrapper.emitted('select')).toEqual([[items[0]]])
+    expect(wrapper.emitted('select')).toEqual([
+      [items[0]],
+    ])
   })
 
   it('infers icons from folder names and file extensions while keeping explicit icons', () => {
@@ -490,15 +492,21 @@ describe('modal', () => {
 
     await wrapper.get('[aria-label="Close modal"]').trigger('click')
 
-    expect(wrapper.emitted('update:open')).toEqual([[false]])
+    expect(wrapper.emitted('update:open')).toEqual([
+      [false],
+    ])
   })
 })
 
 describe('progressiveList', () => {
   it('keeps rendering legacy string items with HTML and inline code', () => {
     const wrapper = mount(ProgressiveList, {
-      props: { items: ['<span>Portfolio</span>', 'Build `apps`'] },
-      global: { directives: { click: {} } },
+      props: {
+        items: ['<span>Portfolio</span>', 'Build `apps`'],
+      },
+      global: {
+        directives: { click: {} },
+      },
     })
 
     const items = wrapper.findAll('[data-progressive-list-item]')
@@ -520,7 +528,9 @@ describe('progressiveList', () => {
 
       return mount(ProgressiveList, {
         props: { items },
-        global: { directives: { click: {} } },
+        global: {
+          directives: { click: {} },
+        },
       })
     }
 

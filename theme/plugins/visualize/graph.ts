@@ -50,8 +50,12 @@ export function buildGraph(slides: GraphSlide[], title = 'Talk visualization', r
   })
   const named = new Map<string, GraphNode[]>()
   for (const node of nodes) {
-    if (node.name)
-      named.set(node.name, [...(named.get(node.name) || []), node])
+    if (node.name) {
+      named.set(node.name, [
+        ...(named.get(node.name) || []),
+        node,
+      ])
+    }
   }
   for (const [name, matches] of named) {
     if (matches.length > 1)
@@ -73,22 +77,36 @@ export function buildGraph(slides: GraphSlide[], title = 'Talk visualization', r
         diagnostics.push(`Slide ${node.index + 1}: choice "${choice}" ${targets ? 'is ambiguous' : 'does not exist'}.`)
     }
   }
-  return { title, routerMode, nodes, edges, diagnostics }
+  return {
+    title,
+    routerMode,
+    nodes,
+    edges,
+    diagnostics,
+  }
 }
 
 export function formatTotalTiming(graph: TalkGraph) {
   const minutes = graph.nodes.reduce((total, node) => {
     const timing = Number(node.timing)
-    return total + (Number.isFinite(timing) && timing > 0 ? timing : 0)
+    return total + (Number.isFinite(timing) && timing > 0
+      ? timing
+      : 0)
   }, 0)
   const seconds = Math.round(minutes * 60)
   const hours = Math.floor(seconds / 3600)
   const remainderMinutes = Math.floor(seconds % 3600 / 60)
   const remainderSeconds = seconds % 60
   return [
-    hours ? `${hours}h` : '',
-    remainderMinutes || !seconds ? `${remainderMinutes}m` : '',
-    remainderSeconds ? `${remainderSeconds}s` : '',
+    hours
+      ? `${hours}h`
+      : '',
+    remainderMinutes || !seconds
+      ? `${remainderMinutes}m`
+      : '',
+    remainderSeconds
+      ? `${remainderSeconds}s`
+      : '',
   ].filter(Boolean).join(' ')
 }
 
@@ -106,16 +124,24 @@ export function graphToMermaid(graph: TalkGraph) {
     'classDef ready stroke:#2e7d32,stroke-width:4px',
   ]
   const groups = new Map<string, GraphNode[]>()
-  for (const node of graph.nodes)
-    groups.set(node.group || '', [...(groups.get(node.group || '') || []), node])
+  for (const node of graph.nodes) {
+    groups.set(node.group || '', [
+      ...(groups.get(node.group || '') || []),
+      node,
+    ])
+  }
   let groupIndex = 0
   for (const [group, nodes] of groups) {
     if (group)
       lines.push(`subgraph group_${groupIndex++}["${label(group)}"]`)
     for (const node of nodes) {
-      const timing = node.timing === undefined ? '' : ` · ${node.timing}`
+      const timing = node.timing === undefined
+        ? ''
+        : ` · ${node.timing}`
       const text = label(`#${node.index + 1} ${node.name || node.title}${timing}`)
-      const style = node.layout === 'recap' ? 'recap' : node.choices?.length ? 'choice' : 'main'
+      const style = node.layout === 'recap'
+        ? 'recap'
+        : node.choices?.length ? 'choice' : 'main'
       lines.push(`${node.id}["${text}"]:::${style}`)
       if (node.ready)
         lines.push(`class ${node.id} ready`)

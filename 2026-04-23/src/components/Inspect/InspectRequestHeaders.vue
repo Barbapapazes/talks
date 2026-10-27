@@ -360,7 +360,11 @@ const sections = computed<HeaderSection[]>(() => [
       },
       {
         label: 'Status Code',
-        value: props.request.status ? `${props.request.status} ${props.request.status === 101 ? 'Switching Protocols' : 'OK'}` : '200 OK',
+        value: props.request.status
+          ? `${props.request.status} ${props.request.status === 101
+            ? 'Switching Protocols'
+            : 'OK'}`
+          : '200 OK',
       },
       {
         label: 'Remote Address',

@@ -58,7 +58,9 @@ describe('confetti', () => {
 
     useTheme().clearCurrentTheme()
     mockConfetti.mockReset()
-    mockConfetti.mockResolvedValue({ destroy: vi.fn() })
+    mockConfetti.mockResolvedValue({
+      destroy: vi.fn(),
+    })
   })
 
   afterEach(() => {
@@ -119,10 +121,32 @@ describe('confetti', () => {
     await flushMicrotasks()
 
     expect(mockConfetti).toHaveBeenNthCalledWith(1, 'recap-confetti', expect.objectContaining({
-      colors: ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722'],
+      colors: [
+        '#f44336',
+        '#e91e63',
+        '#9c27b0',
+        '#3f51b5',
+        '#2196f3',
+        '#00bcd4',
+        '#4caf50',
+        '#ffeb3b',
+        '#ff9800',
+        '#ff5722',
+      ],
     }))
     expect(mockConfetti).toHaveBeenNthCalledWith(2, 'recap-confetti', expect.objectContaining({
-      colors: ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722'],
+      colors: [
+        '#f44336',
+        '#e91e63',
+        '#9c27b0',
+        '#3f51b5',
+        '#2196f3',
+        '#00bcd4',
+        '#4caf50',
+        '#ffeb3b',
+        '#ff9800',
+        '#ff5722',
+      ],
     }))
   })
 
@@ -137,7 +161,18 @@ describe('confetti', () => {
     await flushMicrotasks()
 
     expect(mockConfetti).toHaveBeenNthCalledWith(1, 'recap-confetti', expect.objectContaining({
-      colors: ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722'],
+      colors: [
+        '#f44336',
+        '#e91e63',
+        '#9c27b0',
+        '#3f51b5',
+        '#2196f3',
+        '#00bcd4',
+        '#4caf50',
+        '#ffeb3b',
+        '#ff9800',
+        '#ff5722',
+      ],
     }))
   })
 })

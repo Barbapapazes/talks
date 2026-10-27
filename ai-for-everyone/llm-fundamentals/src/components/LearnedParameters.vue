@@ -20,7 +20,9 @@ const using = computed(() => $clicks.value >= 3)
 const language = computed(() => $clicks.value < 4)
 // Illustrative parameters only. They change during training, not during use.
 function cellOpacity(index: number, learned: boolean) {
-  const value = learned ? ((index * 17 + 7) % 31) / 31 : ((index * 3 + 2) % 11) / 44
+  const value = learned
+    ? ((index * 17 + 7) % 31) / 31
+    : ((index * 3 + 2) % 11) / 44
   return 0.15 + value * 0.7
 }
 </script>

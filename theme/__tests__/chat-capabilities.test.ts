@@ -54,7 +54,13 @@ describe('chat capability components', () => {
 
   it('shows a compact tool event without arguments or results', async () => {
     const wrapper = mount(ChatToolCall, {
-      props: { name: 'create_issue', compact: true, status: 'running', arguments: 'secret arguments', result: 'secret result' },
+      props: {
+        name: 'create_issue',
+        compact: true,
+        status: 'running',
+        arguments: 'secret arguments',
+        result: 'secret result',
+      },
     })
     expect(wrapper.text()).toContain('create_issue')
     expect(wrapper.get('[role="status"]').classes()).toContain('sr-only')

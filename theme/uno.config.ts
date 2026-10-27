@@ -12,16 +12,19 @@ export default defineConfig({
   rules: [
     // Slidev provides text-primary and bg-primary, but no opacity variants.
     // UnoCSS cannot apply alpha directly to a CSS variable containing a hex colour.
-    [/^(bg|text|border|ring)-primary\/(\d+)$/, ([, utility, opacity]) => {
-      const property = {
-        bg: 'background-color',
-        text: 'color',
-        border: 'border-color',
-        ring: '--un-ring-color',
-      }[utility!]
-      const percentage = Math.min(100, Number(opacity))
-      return { [property!]: `color-mix(in srgb, var(--slidev-theme-primary) ${percentage}%, transparent)` }
-    }],
+    [
+      /^(bg|text|border|ring)-primary\/(\d+)$/,
+      ([, utility, opacity]) => {
+        const property = {
+          bg: 'background-color',
+          text: 'color',
+          border: 'border-color',
+          ring: '--un-ring-color',
+        }[utility!]
+        const percentage = Math.min(100, Number(opacity))
+        return { [property!]: `color-mix(in srgb, var(--slidev-theme-primary) ${percentage}%, transparent)` }
+      },
+    ],
   ],
   content: {
     filesystem: [

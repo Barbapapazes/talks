@@ -23,7 +23,9 @@ const showTransformer = computed(() => $clicks.value >= 1)
 const output = computed(() => $clicks.value >= 5)
 const contextual = computed(() => stage.value > 0)
 const candidates = nextTokenCandidates.map(candidate => ({
-  token: candidate.text === null ? 'Others' : visibleToken(candidate.text),
+  token: candidate.text === null
+    ? 'Others'
+    : visibleToken(candidate.text),
   score: candidate.logit,
   probability: candidate.probability,
 }))
@@ -41,9 +43,27 @@ function schedule(delay: number, action: () => void) {
 watch($clicks, (rawClick) => {
   clearTimers()
   const click = Math.max(0, rawClick - 1)
-  stage.value = click < 2 ? 0 : click === 2 ? 1 : click === 3 ? 2 : 10
-  layer.value = click === 0 ? '' : click <= 2 ? '1' : click === 3 ? '2' : 'N'
-  phase.value = click === 0 ? 'embedding' : click >= 4 ? 'output' : click === 2 ? 'mlp' : 'attention'
+  stage.value = click < 2
+    ? 0
+    : click === 2
+      ? 1
+      : click === 3
+        ? 2
+        : 10
+  layer.value = click === 0
+    ? ''
+    : click <= 2
+      ? '1'
+      : click === 3
+        ? '2'
+        : 'N'
+  phase.value = click === 0
+    ? 'embedding'
+    : click >= 4
+      ? 'output'
+      : click === 2
+        ? 'mlp'
+        : 'attention'
   if (click === 1) {
     schedule(850, () => {
       stage.value = 1

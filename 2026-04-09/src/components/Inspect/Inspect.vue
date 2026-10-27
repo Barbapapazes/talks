@@ -70,7 +70,10 @@ const availableTabs = computed<InspectTab[]>(() => {
 const currentTab = ref<InspectTab>('Network')
 
 watch(
-  [availableTabs, () => props.activeTab],
+  [
+    availableTabs,
+    () => props.activeTab,
+  ],
   ([tabs, requestedTab]) => {
     if (!tabs.length)
       return

@@ -15,14 +15,18 @@ function countWords(text: string | undefined): number {
 
 async function updateTiming() {
   const folder = process.argv[2]
-  const allDecks = folder ? { folder } : await selectDeck()
+  const allDecks = folder
+    ? { folder }
+    : await selectDeck()
 
   if (!allDecks.folder) {
     console.warn('No deck selected')
     return
   }
 
-  const wpm = process.argv[3] ? Number(process.argv[3]) : DEFAULT_WPM
+  const wpm = process.argv[3]
+    ? Number(process.argv[3])
+    : DEFAULT_WPM
 
   const deckPath = fileURLToPath(new URL(`../${allDecks.folder}/src`, import.meta.url))
   const slidesPath = join(deckPath, 'slides.md')

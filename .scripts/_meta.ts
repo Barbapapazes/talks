@@ -67,7 +67,9 @@ export function mapTalkMetaEntry(dir: string, pkg: Package): MetaEntry {
     github_url,
     recording_url: recording ? recording_url : undefined,
     audio_url: recording ? audio_url : undefined,
-    transcript_url: recording && pkg.publication !== 'article-resource' ? transcript_url : undefined,
+    transcript_url: recording && pkg.publication !== 'article-resource'
+      ? transcript_url
+      : undefined,
     article_url: pkg.article ? article_url : undefined,
     location: pkg.event.location,
   }
@@ -79,7 +81,9 @@ export function mapLocalizedTalkMetadata<L extends Locale>(dir: string, pkg: Pac
   const metadata = pkg.locales[locale]
 
   return {
-    ...(pkg.publication === 'article-resource' ? { publication: 'article-resource' as const } : { id: metadata.id }),
+    ...(pkg.publication === 'article-resource'
+      ? { publication: 'article-resource' as const }
+      : { id: metadata.id }),
     locale,
     sourceLanguage: pkg.sourceLanguage,
     slug: prefix,
@@ -90,12 +94,18 @@ export function mapLocalizedTalkMetadata<L extends Locale>(dir: string, pkg: Pac
     event: {
       name: pkg.event.name,
       url: pkg.event.url,
-      ...(pkg.event.location ? { location: { ...pkg.event.location } } : {}),
+      ...(pkg.event.location
+        ? {
+            location: { ...pkg.event.location },
+          }
+        : {}),
     },
     links: createTalkLinks(url, pkg, locale),
     artifacts: {
       summary: `summary.${locale}.md`,
-      ...(getRecording(pkg, locale) ? { transcript: `transcript.${locale}.md` } : {}),
+      ...(getRecording(pkg, locale)
+        ? { transcript: `transcript.${locale}.md` }
+        : {}),
     },
   }
 }
@@ -113,7 +123,9 @@ function createTalkLinks(url: string, pkg: Package, locale: Locale): TalkLinks {
   const audioUrl = `${url}/${recordingRoute(pkg, locale, 'audio')}`
   const transcriptUrl = `https://soubiran.dev/talks/${url.slice('https://talks.soubiran.dev/'.length)}`
   const articleUrl = `${url}/article`
-  const youtubeEmbedUrl = recording ? getYouTubeEmbedUrl(recording) : undefined
+  const youtubeEmbedUrl = recording
+    ? getYouTubeEmbedUrl(recording)
+    : undefined
 
   return {
     slides: url,
@@ -124,12 +136,18 @@ function createTalkLinks(url: string, pkg: Package, locale: Locale): TalkLinks {
     ...(recording
       ? {
           recording: recordingUrl,
-          ...(youtubeEmbedUrl ? { youtubeEmbed: youtubeEmbedUrl } : {}),
+          ...(youtubeEmbedUrl
+            ? { youtubeEmbed: youtubeEmbedUrl }
+            : {}),
           audio: audioUrl,
-          ...(pkg.publication !== 'article-resource' ? { transcript: transcriptUrl } : {}),
+          ...(pkg.publication !== 'article-resource'
+            ? { transcript: transcriptUrl }
+            : {}),
         }
       : {}),
-    ...(pkg.article ? { article: articleUrl } : {}),
+    ...(pkg.article
+      ? { article: articleUrl }
+      : {}),
   }
 }
 
@@ -150,7 +168,12 @@ function getYouTubeEmbedUrl(recordingUrl: string): string | undefined {
   if (host === 'youtu.be') {
     videoId = pathSegments[0] ?? null
   }
-  else if (['youtube.com', 'www.youtube.com', 'm.youtube.com', 'music.youtube.com'].includes(host)) {
+  else if ([
+    'youtube.com',
+    'www.youtube.com',
+    'm.youtube.com',
+    'music.youtube.com',
+  ].includes(host)) {
     if (recording.pathname === '/watch') {
       videoId = recording.searchParams.get('v')
     }

@@ -13,10 +13,17 @@ const props = defineProps<{
 const selected = ref('')
 const tab = ref('Request')
 const exchange = computed(() => props.exchanges.find(item => item.id === selected.value))
-const payload = computed(() => tab.value === 'Response' ? exchange.value?.response : exchange.value?.request)
-const note = computed(() => tab.value === 'Response' ? exchange.value?.responseNote : exchange.value?.requestNote)
+const payload = computed(() => tab.value === 'Response'
+  ? exchange.value?.response
+  : exchange.value?.request)
+const note = computed(() => tab.value === 'Response'
+  ? exchange.value?.responseNote
+  : exchange.value?.requestNote)
 
-watch([() => props.exchanges, () => props.selectedId], () => {
+watch([
+  () => props.exchanges,
+  () => props.selectedId,
+], () => {
   selected.value = props.exchanges.find(item => item.id === props.selectedId)?.id ?? props.exchanges[0]?.id ?? ''
   tab.value = 'Request'
 }, { immediate: true })

@@ -6,11 +6,15 @@ export function getRecording(pkg: Package, locale: Locale): string | undefined {
 }
 
 export function recordingRoute(pkg: Package, locale: Locale, kind: 'recording' | 'audio'): string {
-  return pkg.locales[locale].recording ? `${kind}/${locale}` : kind
+  return pkg.locales[locale].recording
+    ? `${kind}/${locale}`
+    : kind
 }
 
 export function audioFileName(pkg: Package, locale: Locale): string {
-  const suffix = pkg.locales[locale].recording ? `.${locale}` : ''
+  const suffix = pkg.locales[locale].recording
+    ? `.${locale}`
+    : ''
   return `${pkg.date}-${pkg.name}${suffix}.mp3`
 }
 
@@ -19,7 +23,13 @@ export function audioFileName(pkg: Package, locale: Locale): string {
 export function getRecordingsToTranscribe(pkg: Package): { locale: Locale, url: string }[] {
   return LOCALES.flatMap((locale) => {
     const url = pkg.locales[locale].recording
-      ?? (locale === pkg.sourceLanguage ? pkg.recording : undefined)
-    return url ? [{ locale, url }] : []
+      ?? (locale === pkg.sourceLanguage
+        ? pkg.recording
+        : undefined)
+    return url
+      ? [
+          { locale, url },
+        ]
+      : []
   })
 }

@@ -8,11 +8,27 @@ import { useTheme } from '../composables/useTheme'
 
 type ConfettiContainer = NonNullable<Awaited<ReturnType<typeof confetti>>>
 
-const DEFAULT_COLORS = ['#f44336', '#e91e63', '#9c27b0', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800', '#ff5722']
+const DEFAULT_COLORS = [
+  '#f44336',
+  '#e91e63',
+  '#9c27b0',
+  '#3f51b5',
+  '#2196f3',
+  '#00bcd4',
+  '#4caf50',
+  '#ffeb3b',
+  '#ff9800',
+  '#ff5722',
+]
 const THEME_CONFETTI_COLORS: Record<SupportedSlideTheme, string[]> = {
   default: DEFAULT_COLORS,
   flowers: DEFAULT_COLORS,
-  brutalism: ['#0f0f0f', '#f5f5f4', '#facc15', '#ef4444'],
+  brutalism: [
+    '#0f0f0f',
+    '#f5f5f4',
+    '#facc15',
+    '#ef4444',
+  ],
 }
 const CONFETTI_ID = 'recap-confetti'
 const FIRE_COOLDOWN_MS = 350

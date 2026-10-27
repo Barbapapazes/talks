@@ -46,7 +46,9 @@ const enhancedChoices = computed(() => {
   return choices.value.map((choice) => {
     const entry = (data.value as SelectData).find(entry => entry.label === choice.meta.name)
     const count = entry ? entry.count : 0
-    const percentage = total.value > 0 ? (count / total.value) * 100 : 0
+    const percentage = total.value > 0
+      ? (count / total.value) * 100
+      : 0
     const color = entry ? entry.color : undefined
 
     return {
@@ -54,7 +56,9 @@ const enhancedChoices = computed(() => {
       count,
       fillStyle: {
         backgroundColor: color,
-        opacity: percentage > 0 ? Math.min(0.18 + percentage / 100 * 0.4, 0.58) : 0,
+        opacity: percentage > 0
+          ? Math.min(0.18 + percentage / 100 * 0.4, 0.58)
+          : 0,
         width: `${percentage}%`,
       },
       percentage,
@@ -66,7 +70,9 @@ const enhancedChoices = computed(() => {
 })
 
 const cols = computed(() => {
-  return choices.value.length === 3 ? 1 : 2
+  return choices.value.length === 3
+    ? 1
+    : 2
 })
 
 const gridStyle = computed(() => {

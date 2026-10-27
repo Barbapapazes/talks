@@ -8,7 +8,13 @@ type DownloadsByMonth = Record<string, number>
 type DataRecord = [string, number]
 
 const datasetsDir = fileURLToPath(new URL('../.npm/', import.meta.url))
-const preferredOrder = ['webpack', 'vite', 'rspack-core', 'snowpack', 'swc-core']
+const preferredOrder = [
+  'webpack',
+  'vite',
+  'rspack-core',
+  'snowpack',
+  'swc-core',
+]
 
 function groupByMonth(data: DownloadsByDay): DownloadsByMonth {
   const result: DownloadsByMonth = {}
@@ -65,7 +71,9 @@ export default function growthChart() {
           }
         }))
 
-        const months = [...new Set(datasets.flatMap(dataset => Object.keys(dataset.valuesByMonth)))].sort()
+        const months = [
+          ...new Set(datasets.flatMap(dataset => Object.keys(dataset.valuesByMonth))),
+        ].sort()
 
         const series = datasets.map(dataset => ({
           id: dataset.id,

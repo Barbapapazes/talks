@@ -227,7 +227,12 @@ const inputDisabled = computed(() =>
 )
 
 const followUpShowUser = computed(() => followUpStarted.value
-  && !['idle', 'waitingToType', 'typingInInput', 'waitingToSend'].includes(followUpPhase.value))
+  && ![
+    'idle',
+    'waitingToType',
+    'typingInInput',
+    'waitingToSend',
+  ].includes(followUpPhase.value))
 
 const followUpShowAssistant = computed(() => followUpPhase.value === 'streaming' || followUpPhase.value === 'done')
 </script>

@@ -49,8 +49,12 @@ const hasDescription = computed(() => Boolean(props.description || slots.descrip
 const hasHeader = computed(() => hasTitle.value || hasDescription.value)
 const contentAttrs = computed(() => ({
   ...attrs,
-  ...(hasDescription.value ? {} : { 'aria-describedby': undefined }),
-  ...(hasTitle.value ? {} : { 'aria-labelledby': undefined }),
+  ...(hasDescription.value
+    ? {}
+    : { 'aria-describedby': undefined }),
+  ...(hasTitle.value
+    ? {}
+    : { 'aria-labelledby': undefined }),
 }))
 </script>
 

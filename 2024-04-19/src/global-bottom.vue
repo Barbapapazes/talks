@@ -49,7 +49,10 @@ function distributionToLimits(distribution: Distribution) {
   let y: Range = [min, max]
 
   function intersection(a: Range, b: Range): Range {
-    return [Math.max(a[0], b[0]), Math.min(a[1], b[1])]
+    return [
+      Math.max(a[0], b[0]),
+      Math.min(a[1], b[1]),
+    ]
   }
 
   const limits = distribution.split('-')
@@ -103,7 +106,9 @@ function usePloy(number = 16) {
     }
     function applyOverflow(random: number, overflow: number) {
       random = random * (1 + overflow * 2) - overflow
-      return rng() < disturbChance ? random + (rng() - 0.5) * disturb : random
+      return rng() < disturbChance
+        ? random + (rng() - 0.5) * disturb
+        : random
     }
     return Array.from({ length: number })
       .fill(0)

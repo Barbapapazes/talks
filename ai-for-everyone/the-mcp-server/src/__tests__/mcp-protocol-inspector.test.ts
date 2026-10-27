@@ -11,7 +11,9 @@ describe('mCP protocol slides', () => {
     ['resources', 'resources/read', 'docs://project-dashboard/project-brief'],
     ['prompts', 'prompts/get', 'review_pull_request'],
   ] as const)('opens the main %s call and reveals its response', async (kind, method, content) => {
-    const wrapper = mount(McpProtocolInspector, { props: { kind } })
+    const wrapper = mount(McpProtocolInspector, {
+      props: { kind },
+    })
     expect(wrapper.get('[aria-pressed="true"]').text()).toBe(method)
     expect(wrapper.get('code').text()).toContain(content)
     expect(wrapper.findAll('.rpc-call').map(button => button.text())).toEqual(mcpExchanges[kind].map(item => item.method))
@@ -24,7 +26,9 @@ describe('mCP protocol slides', () => {
   })
 
   it('lists every resource offered in the chat context picker', async () => {
-    const wrapper = mount(McpProtocolInspector, { props: { kind: 'resources' } })
+    const wrapper = mount(McpProtocolInspector, {
+      props: { kind: 'resources' },
+    })
     await wrapper.get('.rpc-call').trigger('click')
     await wrapper.get('[role="tab"][aria-selected="false"]').trigger('click')
     const payload = JSON.parse(wrapper.get('code').element.textContent!)
@@ -38,14 +42,24 @@ describe('mCP protocol slides', () => {
   })
 
   it('uses the same prompt arguments and prepared message as the chat demo', () => {
-    expect(mcpExchanges.prompts[0].response!.result).toEqual({ prompts: [reviewPullRequestPrompt] })
+    expect(mcpExchanges.prompts[0].response!.result).toEqual({
+      prompts: [reviewPullRequestPrompt],
+    })
     expect(reviewPullRequestPrompt.arguments.every(argument => argument.required && argument.description)).toBe(true)
     expect(mcpExchanges.prompts[1].request.params).toEqual({
       name: reviewPullRequestPrompt.name,
       arguments: defaultReviewArguments,
     })
     expect(mcpExchanges.prompts[1].response!.result).toEqual({
-      messages: [{ role: 'user', content: { type: 'text', text: buildReviewMessage(defaultReviewArguments) } }],
+      messages: [
+        {
+          role: 'user',
+          content: {
+            type: 'text',
+            text: buildReviewMessage(defaultReviewArguments),
+          },
+        },
+      ],
     })
   })
 
@@ -58,6 +72,8 @@ describe('mCP protocol slides', () => {
     }
     const toolResult = mcpExchanges.tools[1].response!.result as { content: { text: string }[] }
     expect(toolResult.content[0].text).toContain('Created issue #42')
-    expect(mcpExchanges.prompts[1].request.params).toMatchObject({ arguments: { pull_request: '17' } })
+    expect(mcpExchanges.prompts[1].request.params).toMatchObject({
+      arguments: { pull_request: '17' },
+    })
   })
 })

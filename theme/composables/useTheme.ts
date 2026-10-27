@@ -97,7 +97,9 @@ export function useTheme() {
    * logical/theme-resolution purposes.
    */
   const visualTheme = computed<SupportedSlideTheme>(() => {
-    return isSupportedSlideTheme(activeTheme.value) ? activeTheme.value : 'default'
+    return isSupportedSlideTheme(activeTheme.value)
+      ? activeTheme.value
+      : 'default'
   })
 
   function resolveThemeValue<T>(value: MaybeThemedValue<T> | undefined): T | undefined {
@@ -113,7 +115,9 @@ export function useTheme() {
       return undefined
 
     const defaultValue = value.default
-    return themedValue ?? (defaultValue === false ? undefined : defaultValue)
+    return themedValue ?? (defaultValue === false
+      ? undefined
+      : defaultValue)
   }
 
   return {

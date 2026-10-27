@@ -22,7 +22,13 @@ interface SeriesMeta {
 const x = (d: DataRecord, i: number) => i
 const y = (d: DataRecord) => d[1]
 
-const palette = ['#A156FE', '#8ED6FB', '#FA3A1F', '#2D9D78', '#F882AF']
+const palette = [
+  '#A156FE',
+  '#8ED6FB',
+  '#FA3A1F',
+  '#2D9D78',
+  '#F882AF',
+]
 
 const seriesMeta: Record<string, SeriesMeta> = {
   'webpack': {
@@ -55,7 +61,9 @@ const seriesMeta: Record<string, SeriesMeta> = {
 function formatLabel(packageName: string) {
   return packageName
     .split(/[-/]/g)
-    .map(part => part ? part[0].toUpperCase() + part.slice(1) : part)
+    .map(part => part
+      ? part[0].toUpperCase() + part.slice(1)
+      : part)
     .join(' ')
 }
 

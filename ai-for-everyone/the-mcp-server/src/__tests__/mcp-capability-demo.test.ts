@@ -9,7 +9,14 @@ import McpToolDemo from '../components/McpToolDemo.vue'
 const wrappers: ReturnType<typeof mount>[] = []
 function render(capability: 'tool' | 'resource' | 'prompt') {
   const components = { tool: McpToolDemo, resource: McpResourceDemo, prompt: McpPromptDemo }
-  const wrapper = mount(components[capability], { attachTo: document.body, global: { stubs: { DialogPortal: { template: '<div><slot /></div>' } } } })
+  const wrapper = mount(components[capability], {
+    attachTo: document.body,
+    global: {
+      stubs: {
+        DialogPortal: { template: '<div><slot /></div>' },
+      },
+    },
+  })
   wrappers.push(wrapper)
   return wrapper
 }

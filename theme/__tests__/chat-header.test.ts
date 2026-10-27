@@ -11,13 +11,19 @@ describe('chat header', () => {
   })
 
   it('shows integration state and emits the toggle action', async () => {
-    const wrapper = mount(ChatHeader, { props: { integrations: { connected: false, open: false } } })
+    const wrapper = mount(ChatHeader, {
+      props: {
+        integrations: { connected: false, open: false },
+      },
+    })
     const button = wrapper.get('button')
     expect(button.attributes('aria-expanded')).toBe('false')
     expect(wrapper.find('[aria-label="Connected"]').exists()).toBe(false)
     await button.trigger('click')
     expect(wrapper.emitted('toggleIntegrations')).toHaveLength(1)
-    await wrapper.setProps({ integrations: { connected: true, open: true } })
+    await wrapper.setProps({
+      integrations: { connected: true, open: true },
+    })
     expect(button.attributes('aria-expanded')).toBe('true')
     expect(wrapper.find('[aria-label="Connected"]').exists()).toBe(true)
   })
