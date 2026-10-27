@@ -34,6 +34,8 @@ Utility scripts used to maintain talk metadata, assets, and deployment helpers.
     localized standalone talk metadata entries
   - `dist/resources.en.json` and `dist/resources.fr.json`, containing article resources without UUIDs
 
+- `generate-notes.ts` — Run `pnpm run generate:notes` to choose a deck with the shared `selectDeck()` prompt (including AI for Everyone), then extract all its speaker notes using the Slidev parser into the git-ignored root `notes.md`. Groups notes by original slide number, skips slides without notes, and overwrites the output on each run. Cancelling the selection leaves any existing output untouched.
+
 - `generate-readme.ts` — Regenerates the repository root `README.md` from discovered talk metadata. AI for Everyone decks are temporarily excluded from all lists and statistics in this README.
 
 - `generate-talk-readme.ts` — Regenerates each talk folder's `README.md` from metadata, including `ai-for-everyone/<deck>/README.md`. This does not add these decks to the root README.

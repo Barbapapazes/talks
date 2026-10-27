@@ -7,3 +7,4 @@ dist
 *.pdf
 *.mp3
 *.tsbuildinfo
+/notes.md
