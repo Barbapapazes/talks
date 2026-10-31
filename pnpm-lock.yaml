@@ -107,8 +107,8 @@ catalogs:
       specifier: ^1.5.1
       version: 1.5.1
     openai:
-      specifier: ^6.44.0
-      version: 6.45.0
+      specifier: ^7.0.0
+      version: 7.45.1
     pathe:
       specifier: ^2.0.3
       version: 2.0.3
@@ -340,7 +340,7 @@ importers:
         version: 1.5.1
       openai:
         specifier: catalog:scripts
-        version: 6.45.0(ws@8.21.0)(zod@3.25.76)
+        version: 7.45.1(ws@8.21.0)(zod@3.25.76)
       pathe:
         specifier: catalog:scripts
         version: 2.0.3
@@ -7488,13 +7488,16 @@ packages:
     resolution: {integrity: sha512-smsWv2LzFjP03xmvFoJ331ss6h+jixfA4UUV/Bsiyuu4YJPfN+FIQGOIiv4w9/+MoHkfkJ22UIaQWRVFRfH6Vw==}
     engines: {node: '>=20'}
 
-  openai@6.45.0:
-    resolution: {integrity: sha512-5DQVNErssk0afNpTTHUm/qZPU4iKR9OYdNid8Ib4puq4gHNNvGWZht2zY4h9a8JMF949Ik6m8gQutllVPbjdnw==}
+  openai@7.45.1:
+    resolution: {integrity: sha512-mutrJXwhJIMZ24Lab2COFtNp44OcpZSnV4O2O7q38wAHUa2m2fQqUO5pj1XS3PqLfOTeODBUS9YoadqDnnGk5A==}
+    engines: {node: '>=22.0.0'}
     peerDependencies:
       '@aws-sdk/credential-provider-node': '>=3.972.0 <4'
       '@smithy/hash-node': '>=4.3.0 <5'
       '@smithy/signature-v4': '>=5.4.0 <6'
-      ws: ^8.18.0
+      google-auth-library: '>=9.15.1 <12'
+      undici: '>=5 <9'
+      ws: ^8.21.0
       zod: ^3.25 || ^4.0
     peerDependenciesMeta:
       '@aws-sdk/credential-provider-node':
@@ -7502,6 +7505,10 @@ packages:
       '@smithy/hash-node':
         optional: true
       '@smithy/signature-v4':
+        optional: true
+      google-auth-library:
+        optional: true
+      undici:
         optional: true
       ws:
         optional: true
@@ -18342,7 +18349,7 @@ snapshots:
       powershell-utils: 0.1.0
       wsl-utils: 0.3.1
 
-  openai@6.45.0(ws@8.21.0)(zod@3.25.76):
+  openai@7.45.1(ws@8.21.0)(zod@3.25.76):
     optionalDependencies:
       ws: 8.21.0
       zod: 3.25.76
