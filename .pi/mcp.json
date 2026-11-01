@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "inalia": {
+      "url": "https://api.inalia.app/mcp"
+    },
+    "soubiran-admin": {
+      "url": "https://api.soubiran.dev/api/mcp/admin"
+    }
+  }
+}

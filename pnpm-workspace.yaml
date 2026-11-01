@@ -1,8 +1,7 @@
 catalogMode: prefer
-
 shellEmulator: true
-
 trustPolicy: off
+minimumReleaseAge: 0d
 
 packages:
   - '**/src'
@@ -68,7 +67,7 @@ catalogs:
     '@slidev/theme-default': ^0.25.0
     '@slidev/types': 52.19.0
     slidev-addon-graph: ^1.0.0
-    slidev-addon-inalia: ^0.2.9
+    slidev-addon-inalia: ^0.2.11
   test:
     '@vue/test-utils': ^2.4.11
     happy-dom: ^20.10.6
@@ -105,3 +104,7 @@ catalogs:
   vite-talk:
     vite-plugin-info: ^0.4.1
     vite-plugin-inspect: 11.3.3
+
+minimumReleaseAgeExclude:
+  - slidev-addon-inalia@0.2.10
+  - slidev-addon-inalia@0.2.11

@@ -6,6 +6,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 
 ### 2026
 
+- `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-10-29) - BDX I/O
 - `en` [A Component Library, Some Markdown, and a Deadline](./2026-09-29) - PragVue
 - `fr` [La réactivité et les signaux : démystifions la magie du frontend](./2026-06-27-1) - Asynconf
 - `fr` [Au cœur d'une pipeline : démystifions Vite et ses plugins](./2026-06-27-2) - Asynconf
@@ -61,6 +62,7 @@ Slides from my [talks](https://soubiran.dev/talks).
 <summary>Copy talks list as text</summary>
 
 ```
+2026-10-29 - Au cœur d'une pipeline : démystifions Vite et ses plugins - BDX I/O - Talence, France
 2026-09-29 - A Component Library, Some Markdown, and a Deadline - PragVue - Prague, Czech Republic
 2026-06-27 - La réactivité et les signaux : démystifions la magie du frontend - Asynconf - Paris, France
 2026-06-27 - Au cœur d'une pipeline : démystifions Vite et ses plugins - Asynconf - Paris, France
@@ -110,8 +112,8 @@ Slides from my [talks](https://soubiran.dev/talks).
 <summary>Copy talks grouped by title as text</summary>
 
 ```
+Au cœur d'une pipeline : démystifions Vite et ses plugins, BDX I/O (2026-10-29), Asynconf (2026-06-27), Voxxed Days Luxembourg (2026-06-18), DevLille (2026-06-12), Paris TypeScript (2026-06-09), Devoxx France (2026-04-23), MiXiT (2026-04-16), Takima (2026-04-13), L'Atelier (2026-04-09)
 A Component Library, Some Markdown, and a Deadline, PragVue (2026-09-29)
-Au cœur d'une pipeline : démystifions Vite et ses plugins, Asynconf (2026-06-27), Voxxed Days Luxembourg (2026-06-18), DevLille (2026-06-12), Paris TypeScript (2026-06-09), Devoxx France (2026-04-23), MiXiT (2026-04-16), Takima (2026-04-13), L'Atelier (2026-04-09)
 La réactivité et les signaux : démystifions la magie du frontend, Asynconf (2026-06-27), Touraine Tech (2026-02-12), DevFest Dijon (2025-12-05), DevFest Toulouse (2025-11-13), BDX I/O (2025-11-07), StrasbourgJS (2025-10-21), Paris TypeScript (2025-10-14), BreizhCamp (2025-06-25), MiXiT (2025-04-30), Devoxx France (2025-04-17)
 Rester en mouvement dans un monde instable : l'agentivité comme levier, NCL Days (2026-06-16)
 Le futur du développeur : IA, compétences et obsolescence, MiXiT (2026-04-17)
@@ -136,18 +138,18 @@ Unpoly pour reprendre le contrôle !, Devoxx France (2023-04-12)
 
 | Year | Number of Talks |
 |------|-----------------|
-| 2026 | 15 |
+| 2026 | 16 |
 | 2025 | 19 |
 | 2024 | 6 |
 | 2023 | 1 |
-| **Total** | **41** |
+| **Total** | **42** |
 
 ### Talks per Event
 
 | Event | Total | 2026 | 2025 | 2024 | 2023 |
 |-------|-------|------|------|------|------|
 | Asynconf | 2 | 2 | 0 | 0 | 0 |
-| BDX I/O | 2 | 0 | 2 | 0 | 0 |
+| BDX I/O | 3 | 1 | 2 | 0 | 0 |
 | BreizhCamp | 2 | 0 | 2 | 0 | 0 |
 | DevFest Dijon | 1 | 0 | 1 | 0 | 0 |
 | Devfest Nantes | 1 | 0 | 1 | 0 | 0 |
@@ -174,7 +176,7 @@ Unpoly pour reprendre le contrôle !, Devoxx France (2023-04-12)
 | Talk Title | Total | 2026 | 2025 | 2024 | 2023 |
 |------------|-------|------|------|------|------|
 | A Component Library, Some Markdown, and a Deadline | 1 | 1 | 0 | 0 | 0 |
-| Au cœur d'une pipeline : démystifions Vite et ses plugins | 8 | 8 | 0 | 0 | 0 |
+| Au cœur d'une pipeline : démystifions Vite et ses plugins | 9 | 9 | 0 | 0 | 0 |
 | Découvrons ensemble l'écosystème UnJS | 1 | 0 | 0 | 1 | 0 |
 | Deviens full-stack avec TypeScript | 1 | 0 | 1 | 0 | 0 |
 | En JavaScript, il y a un paquet pour tout... et souvent pour rien. | 7 | 1 | 6 | 0 | 0 |
@@ -194,11 +196,11 @@ Unpoly pour reprendre le contrôle !, Devoxx France (2023-04-12)
 
 | Year | With Recording | Without Recording | Coverage |
 |------|----------------|-------------------|----------|
-| 2026 | 6 | 9 | 40% |
+| 2026 | 6 | 10 | 38% |
 | 2025 | 6 | 13 | 32% |
 | 2024 | 3 | 3 | 50% |
 | 2023 | 1 | 0 | 100% |
-| **Total** | **16** | **25** | **39%** |
+| **Total** | **16** | **26** | **38%** |
 
 ### Talks per City
 
@@ -215,6 +217,7 @@ Unpoly pour reprendre le contrôle !, Devoxx France (2023-04-12)
 | Prague | 2 | 1 | 0 | 1 | 0 |
 | Rennes | 2 | 0 | 2 | 0 | 0 |
 | Strasbourg | 2 | 0 | 1 | 1 | 0 |
+| Talence | 1 | 1 | 0 | 0 | 0 |
 | Toulouse | 1 | 0 | 1 | 0 | 0 |
 | Tours | 2 | 2 | 0 | 0 | 0 |
 

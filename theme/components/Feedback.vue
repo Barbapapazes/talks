@@ -44,7 +44,7 @@ const shortUrl = computed(() => {
 </script>
 
 <template>
-  <div v-if="talk || props.enablePlaceholder" class="flex justify-center items-center flex-col space-y-2">
+  <div v-if="talk || props.customFeedbackUrl || props.enablePlaceholder" class="flex justify-center items-center flex-col space-y-2">
     <div class="theme-feedback-label">
       ⬇️ {{ props.label ?? 'Votre feedback' }} ⬇️
     </div>

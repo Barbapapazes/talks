@@ -25,6 +25,7 @@ export default defineConfig({
   ],
   content: {
     filesystem: [
+      `${themeRoot}global-bottom.vue`,
       `${themeRoot}layouts/cover.vue`,
       `${themeRoot}components/Footer.vue`,
       `${themeRoot}components/FooterItem.vue`,

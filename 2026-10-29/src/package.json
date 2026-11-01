@@ -1,0 +1,70 @@
+{
+  "name": "bdx-io",
+  "date": "2026-10-29",
+  "sourceLanguage": "fr",
+  "topics": ["vite", "bundlers", "esm", "plugin-development", "module-transforms", "virtual-modules", "hot-module-replacement", "middleware"],
+  "locales": {
+    "en": {
+      "id": "2c1283c4-5123-4b3c-a4d2-18c33f309d74",
+      "title": "Inside a pipeline: demystifying Vite and its plugins",
+      "description": "See how Vite processes each request with transformations, plugins, virtual modules, middleware, and HMR to extend modern web development."
+    },
+    "fr": {
+      "id": "a74b3d96-d475-40c2-a156-8364e0898b65",
+      "title": "Au cœur d'une pipeline : démystifions Vite et ses plugins",
+      "description": "Décryptez comment Vite traite chaque requête avec ses transformations, plugins, modules virtuels, middleware et HMR afin d'étendre le développement web moderne."
+    }
+  },
+  "type": "module",
+  "event": {
+    "name": "BDX I/O",
+    "url": "https://bdxio.fr/",
+    "location": {
+      "city": "Talence",
+      "country": "France",
+      "latitude": 44.8066,
+      "longitude": -0.6055
+    }
+  },
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2026-10-29/bdx-io/ --out ../../dist/2026-10-29/bdx-io",
+    "export": "slidev export --per-slide --wait-until none --output ../2026-10-29-bdx-io.pdf",
+    "thumbnail:cp": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
+    "thumbnail": "slidev export --per-slide --range 1 --format png",
+    "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
+    "thumbnail:cp:dark": "ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
+    "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
+  },
+  "dependencies": {
+    "@dagrejs/dagre": "catalog:ui",
+    "@shikijs/langs": "catalog:ui",
+    "@shikijs/themes": "catalog:ui",
+    "@shikijs/transformers": "catalog:ui",
+    "@slidev/client": "catalog:slidev",
+    "@tsparticles/engine": "catalog:ui",
+    "@tsparticles/plugin-emitters": "catalog:ui",
+    "@tsparticles/slim": "catalog:ui",
+    "@unovis/ts": "catalog:ui",
+    "@unovis/vue": "catalog:ui",
+    "@vue-flow/background": "catalog:ui",
+    "@vue-flow/core": "catalog:ui",
+    "@vueuse/core": "catalog:ui",
+    "@vueuse/shared": "catalog:ui",
+    "reka-ui": "catalog:ui",
+    "shiki": "catalog:ui",
+    "slidev-addon-inalia": "catalog:slidev",
+    "slidev-theme-personal": "workspace:*",
+    "tailwind-variants": "catalog:ui",
+    "vue-demi": "catalog:ui"
+  },
+  "devDependencies": {
+    "@slidev/cli": "catalog:build",
+    "@vue/tsconfig": "catalog:build",
+    "typescript": "catalog:build",
+    "vite": "catalog:build",
+    "vite-plugin-info": "catalog:vite-talk",
+    "vite-plugin-inspect": "catalog:vite-talk"
+  }
+}

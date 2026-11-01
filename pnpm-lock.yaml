@@ -141,8 +141,8 @@ catalogs:
       specifier: ^1.0.0
       version: 1.0.0
     slidev-addon-inalia:
-      specifier: ^0.2.9
-      version: 0.2.9
+      specifier: ^0.2.11
+      version: 0.2.11
   test:
     '@vue/test-utils':
       specifier: ^2.4.11
@@ -404,7 +404,7 @@ importers:
         version: 3.0.5
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
     devDependencies:
       '@slidev/cli':
         specifier: catalog:build
@@ -429,7 +429,7 @@ importers:
         version: 3.0.5
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
     devDependencies:
       '@slidev/cli':
         specifier: catalog:build
@@ -445,7 +445,7 @@ importers:
     dependencies:
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
     devDependencies:
       '@slidev/cli':
         specifier: catalog:build
@@ -467,7 +467,7 @@ importers:
         version: 2.0.1
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
     devDependencies:
       '@slidev/cli':
         specifier: catalog:build
@@ -492,7 +492,7 @@ importers:
         version: 3.0.5
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
     devDependencies:
       '@slidev/cli':
         specifier: catalog:build
@@ -511,7 +511,7 @@ importers:
         version: 2.0.1
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
     devDependencies:
       '@slidev/cli':
         specifier: catalog:build
@@ -530,7 +530,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -549,7 +549,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -580,7 +580,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -608,7 +608,7 @@ importers:
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -630,7 +630,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -649,7 +649,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -671,7 +671,7 @@ importers:
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -696,7 +696,7 @@ importers:
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -718,7 +718,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -737,7 +737,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -756,7 +756,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -778,7 +778,7 @@ importers:
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -800,7 +800,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -822,7 +822,7 @@ importers:
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -844,7 +844,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -866,7 +866,7 @@ importers:
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -891,7 +891,7 @@ importers:
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -916,7 +916,7 @@ importers:
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -938,7 +938,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -957,7 +957,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -982,7 +982,7 @@ importers:
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -1004,7 +1004,7 @@ importers:
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -1068,7 +1068,7 @@ importers:
         version: 4.3.0
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -1150,7 +1150,7 @@ importers:
         version: 4.3.0
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -1229,7 +1229,7 @@ importers:
         version: 4.3.0
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -1324,7 +1324,7 @@ importers:
         version: 4.3.0
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -1406,7 +1406,7 @@ importers:
         version: 4.3.0
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -1488,7 +1488,7 @@ importers:
         version: 4.3.0
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -1586,7 +1586,7 @@ importers:
         version: 4.3.0
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -1632,7 +1632,7 @@ importers:
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -1702,7 +1702,7 @@ importers:
         version: 4.3.0
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       slidev-theme-personal:
         specifier: workspace:*
         version: link:../../theme
@@ -1759,6 +1759,88 @@ importers:
       typescript:
         specifier: catalog:build
         version: 6.0.3
+
+  2026-10-29/src:
+    dependencies:
+      '@dagrejs/dagre':
+        specifier: catalog:ui
+        version: 3.0.0
+      '@shikijs/langs':
+        specifier: catalog:ui
+        version: 4.3.0
+      '@shikijs/themes':
+        specifier: catalog:ui
+        version: 4.3.0
+      '@shikijs/transformers':
+        specifier: catalog:ui
+        version: 4.3.0
+      '@slidev/client':
+        specifier: catalog:slidev
+        version: 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      '@tsparticles/engine':
+        specifier: catalog:ui
+        version: 4.3.0
+      '@tsparticles/plugin-emitters':
+        specifier: catalog:ui
+        version: 4.3.0(@tsparticles/engine@4.3.0)(@tsparticles/plugin-interactivity@4.3.0(@tsparticles/engine@4.3.0))
+      '@tsparticles/slim':
+        specifier: catalog:ui
+        version: 4.3.0
+      '@unovis/ts':
+        specifier: catalog:ui
+        version: 1.4.3-beta.0
+      '@unovis/vue':
+        specifier: catalog:ui
+        version: 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.6.0-beta.17(typescript@6.0.3))
+      '@vue-flow/background':
+        specifier: catalog:ui
+        version: 1.3.2(@vue-flow/core@1.48.2(vue@3.6.0-beta.17(typescript@6.0.3)))(vue@3.6.0-beta.17(typescript@6.0.3))
+      '@vue-flow/core':
+        specifier: catalog:ui
+        version: 1.48.2(vue@3.6.0-beta.17(typescript@6.0.3))
+      '@vueuse/core':
+        specifier: catalog:ui
+        version: 14.3.0(vue@3.6.0-beta.17(typescript@6.0.3))
+      '@vueuse/shared':
+        specifier: catalog:ui
+        version: 14.3.0(vue@3.6.0-beta.17(typescript@6.0.3))
+      reka-ui:
+        specifier: catalog:ui
+        version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
+      shiki:
+        specifier: catalog:ui
+        version: 4.3.0
+      slidev-addon-inalia:
+        specifier: catalog:slidev
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+      slidev-theme-personal:
+        specifier: workspace:*
+        version: link:../../theme
+      tailwind-variants:
+        specifier: catalog:ui
+        version: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.1)
+      vue-demi:
+        specifier: catalog:ui
+        version: 0.14.10(vue@3.6.0-beta.17(typescript@6.0.3))
+    devDependencies:
+      '@slidev/cli':
+        specifier: catalog:build
+        version: 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(terser@5.51.2)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+      '@vue/tsconfig':
+        specifier: catalog:build
+        version: 0.9.1(typescript@6.0.3)(vue@3.6.0-beta.17(typescript@6.0.3))
+      typescript:
+        specifier: catalog:build
+        version: 6.0.3
+      vite:
+        specifier: catalog:build
+        version: 8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
+      vite-plugin-info:
+        specifier: catalog:vite-talk
+        version: 0.4.1(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vite-plugin-inspect:
+        specifier: catalog:vite-talk
+        version: 11.3.3(@nuxt/kit@3.21.8)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
 
   ai-for-everyone/llm-fundamentals/src:
     dependencies:
@@ -1841,7 +1923,7 @@ importers:
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
       slidev-addon-inalia:
         specifier: catalog:slidev
-        version: 0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.2.0)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+        version: 0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.2.0)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       tailwind-variants:
         specifier: catalog:ui
         version: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.1)
@@ -2073,11 +2155,6 @@ packages:
   '@babel/helpers@7.29.7':
     resolution: {integrity: sha512-1k2lAGRMfHTcwuNYcCNUmaUffmQv8KWMfh2iJUUeRlwlwH4FdNG7mfPI10NPfLHJFThE4Tyr4mv7kTNZOiPuBg==}
     engines: {node: '>=6.9.0'}
-
-  '@babel/parser@7.29.7':
-    resolution: {integrity: sha512-hnORnjP/1P/zFEndoeX+n+t1RwWRJiJpM/jO7FW32Kn9r5+sJB2JWOdYo4L6k78j15eCwY3Gm/7364B1EMwtNg==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
 
   '@babel/parser@7.29.8':
     resolution: {integrity: sha512-E8lTAYNB1KW+FH+VGJuZM1ioAx2E6oVlvQFRrf5P8ZZmsiJXYAD9vTFV7yyEURNzgh1dFqMZuO6tUwcARbqFCA==}
@@ -2491,10 +2568,6 @@ packages:
     resolution: {integrity: sha512-I5z7H3bf/41ktsNVLtpN0wAa336HkqIHQ5BuPLEhTkt1jVSyZpeNKIzTgEWmlxjdg81R0IgUCcaE+Ok3NvrfZg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.29.7':
-    resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/types@7.29.8':
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
@@ -2505,15 +2578,9 @@ packages:
   '@chevrotain/types@11.1.2':
     resolution: {integrity: sha512-U+HFai5+zmJCkK86QsaJtoITlboZHBqrVketcO2ROv865xfCMSFpELQoz1GkX5GzME8pTa+3kbKrZHQtI0gdbw==}
 
-  '@clack/core@0.5.0':
-    resolution: {integrity: sha512-p3y0FIOwaYRUPRcMO7+dlmLh8PSRcrjuTndsiA0WAFbWES0mLZlrjVoBRZ9DzkPFJZG6KGkJmoEAY0ZcVWTkow==}
-
   '@clack/core@1.4.2':
     resolution: {integrity: sha512-0Ty/1Gfm+Kb07sXcuESjyKfwEhSy4Ns1AgeEisHb/bDY5fWme0tTeTkU14T1Gmcs17YIjB/teiDe4uaCghbYqQ==}
     engines: {node: '>= 20.12.0'}
-
-  '@clack/prompts@0.11.0':
-    resolution: {integrity: sha512-pMN5FcrEw9hUkZA4f+zLlzivQSeQf5dRGJjSUbvVYDLvpKCdQx5OaknvKzgbtXOizhP+SJJJjqEbOe55uKKfAw==}
 
   '@clack/prompts@1.6.0':
     resolution: {integrity: sha512-EYlRokl8szrP9Z25qT5aepMdBjzBvHF9ZEhzIiUBc9guz/T31EqRgvD0QSgZcpE93xiwrr+OkB4nz0BZyF6fSA==}
@@ -3813,6 +3880,50 @@ packages:
   '@swc/helpers@0.5.23':
     resolution: {integrity: sha512-5lSsMOTXURePglDfvuAQUqkGek9Hg2kksOYay2m0+XR++b2NWYL/4sWyuvVBIs8oKnJaxkdi9whaL/sqN13afw==}
 
+  '@tanstack/charts@1.1.0':
+    resolution: {integrity: sha512-0mb05yZMrBUzjHBohcKtK1XcTKJH9b8LS2uT0iYjDiLU+QR2jo0hrUJramAgg/AfBLMu2DY5fOgKe5bsqd6z4Q==}
+    peerDependencies:
+      '@angular/core': '>=19'
+      '@angular/platform-browser': '>=19'
+      alpinejs: '>=3.15'
+      lit: '>=3.1.3'
+      octane: ^0.1.13
+      preact: '>=10'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+      react-native: ^0.86.0
+      react-native-svg: '>=15.15.4 <16'
+      solid-js: '>=1.8'
+      svelte: ^5.20.0
+      vue: '>=3.5'
+    peerDependenciesMeta:
+      '@angular/core':
+        optional: true
+      '@angular/platform-browser':
+        optional: true
+      alpinejs:
+        optional: true
+      lit:
+        optional: true
+      octane:
+        optional: true
+      preact:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+      react-native-svg:
+        optional: true
+      solid-js:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+
   '@tanstack/virtual-core@3.17.2':
     resolution: {integrity: sha512-w43MvWvmShpb6kIC9MOoLyUkLmRTLPjt61bHWs+X29hACSpX+n8DvgZ3qM7cUfflKlRRcHR9KVJE6TmcqnQvcA==}
 
@@ -4158,6 +4269,9 @@ packages:
 
   '@types/d3-sankey@0.11.2':
     resolution: {integrity: sha512-U6SrTWUERSlOhnpSrgvMX64WblX1AxX6nEjI2t3mLK2USpQrnbwYYK+AS9SwiE7wgYmOsSSKoSdr8aoKBH0HgQ==}
+
+  '@types/d3-sankey@0.12.5':
+    resolution: {integrity: sha512-/3RZSew0cLAtzGQ+C89hq/Rp3H20QJuVRSqFy6RKLe7E0B8kd2iOS1oBsodrgds4PcNVpqWhdUEng/SHvBcJ6Q==}
 
   '@types/d3-scale-chromatic@3.1.0':
     resolution: {integrity: sha512-iWMJgwkK7yTRmWqRB5plb1kadXyQ5Sj8V/zYlFGMUBbIPKQScw+Dku9cAAMgJG+z5GYDoMjWGLVOvjghDEFnKQ==}
@@ -4724,17 +4838,11 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@vue/compiler-core@3.5.39':
-    resolution: {integrity: sha512-16KBTEXAJCpDr0mwlw+AZyhu8iyC7R3S2vBwsI7QnWJU6X3WKc9VKeNEZpiMdZ569qWhz9574L3vV55qRL0Vtw==}
-
   '@vue/compiler-core@3.5.42':
     resolution: {integrity: sha512-2Ye1ilMtKXxl8qZUrQ5j0CdgenFp/HFQmta6rfRyfEsTG69L6Wk+tWuNoHYHMx9E8tF2Slvdg1FuwDvAXdy1LQ==}
 
   '@vue/compiler-core@3.6.0-beta.17':
     resolution: {integrity: sha512-4xB2W8+00h7bfHbVeHD+zI+bmyF+XgQBKCCWLjFJ/VCJ/1tBjnlzWpX0OqcOE78LktGiCGcKgNk+eZAuav5cqg==}
-
-  '@vue/compiler-dom@3.5.39':
-    resolution: {integrity: sha512-oQPigALqYbNxTNPvNgSOe+czwVExfbVF02lz8jP0S3AXJiu3jxYDygNUiqSep4ezzW8XgnubqH63My2A7JR/vg==}
 
   '@vue/compiler-dom@3.5.42':
     resolution: {integrity: sha512-qbhQZEFmycr+ni/qyuccS4sucNN7VAbDfbkvNxWOX2VfgFm90MNs3/UhRNKoPMEIVn0F8gdlYjLPvqxHwHeQOA==}
@@ -4742,17 +4850,11 @@ packages:
   '@vue/compiler-dom@3.6.0-beta.17':
     resolution: {integrity: sha512-viCM7YwHK6HuQ9rY8O27ET1xLi9WeJ+EmMWlwvtggpqb2j+l7DZOATkCRXOivjTOqtt8h5MIGnlB7tQlupQgeA==}
 
-  '@vue/compiler-sfc@3.5.39':
-    resolution: {integrity: sha512-d0ki86iOyN8LoZPBmk5SJWNwHP19CnDDCfuo//+2WJa2g5Ke0Jay983PIBIcSSzldC68I8DrD5GrHV3OSDfodg==}
-
   '@vue/compiler-sfc@3.5.42':
     resolution: {integrity: sha512-fkCAFB4okcAANGMThboWnScp/gzWjU0ZSkVnjTIiplmMDq2uq0tIB3j+xVu4rhv5rvOgBySCysudmbMd6xRRqw==}
 
   '@vue/compiler-sfc@3.6.0-beta.17':
     resolution: {integrity: sha512-L3KGWeWDCqm1tL03m09IXKRhIEh0Ij2gEIax9W0smDtlCAQt4gc8dmeTbjTOg4+1N2qAFEaAs+0xVu9y1j7Sng==}
-
-  '@vue/compiler-ssr@3.5.39':
-    resolution: {integrity: sha512-Ce7/wvwMHai74bdszfXExdazFigYnlF9zgCmEQUcM1j0fOymlouZ7XilTYNo8oUjhlnjYOZbGrcYKuqjz89Ucw==}
 
   '@vue/compiler-ssr@3.5.42':
     resolution: {integrity: sha512-xmLk3wLkbizPAiLyomjgFFosf2ys9b5Ghb+oh/k2tnvipNz8OFrQOiTcWCzyK7MpBp9KkyGtfvgfLUivbmuGYA==}
@@ -4775,26 +4877,17 @@ packages:
   '@vue/language-core@3.3.5':
     resolution: {integrity: sha512-UkKu5nhX89fg4VhlG/FOeI10G3cj/7radKT/cy9BT4Q9qJmJlSTAc/dP63Xqs29aypN4f39xUV6PsLNk/dcD6g==}
 
-  '@vue/reactivity@3.5.39':
-    resolution: {integrity: sha512-TpsuBJ9gGlZa5d23XcM2y8EXanz9dZeVDQBXRwzy46ItgvM+rWpzs+UVM0wcRLxGvcav0HE5jz2gNL53xlRAog==}
-
   '@vue/reactivity@3.5.42':
     resolution: {integrity: sha512-TzNNfKpb7hDxbQltwAut8VDQA5YP+BuRlxntHUuRjyKwlMvmAPbs3unhCvieijifY6vFfVBwsS7wG/C7uq+bEQ==}
 
   '@vue/reactivity@3.6.0-beta.17':
     resolution: {integrity: sha512-oKLiLZRomHyJ++367F286Er49TXazWofj1PbNFUBoRxNNLne8xlDHAypN+C9Yr+JfAIN9cRp8l1PdjwfwMsV8g==}
 
-  '@vue/runtime-core@3.5.39':
-    resolution: {integrity: sha512-9GLtNyRvPAUMbX+7ono0RC2j0guo2LXVi8LvcmAooImACUKm0oFf0jjwbX8/H0AE/t1nxhAkn8RSl9PMCzzxZw==}
-
   '@vue/runtime-core@3.5.42':
     resolution: {integrity: sha512-9uACtuHs7vJGkm5Bp3xu4xRDLFTIYy5DgxpToVjqGIAhAEKwQfsaLvKINhM6nFVp6bZPRFGdDqd1g52MqKsotA==}
 
   '@vue/runtime-core@3.6.0-beta.17':
     resolution: {integrity: sha512-JDPvmiyLpXtTnpG6I9URF88bOF+7KVgpDvPvZVl9AMboQj+LW4Pp19QOhGzxGoKES6wBts8c4xM1zjtr0xHcQw==}
-
-  '@vue/runtime-dom@3.5.39':
-    resolution: {integrity: sha512-7Y6aAGboKcXAZ3ECuUy7RrS5yy2r47dhTp2SKaJmYxjopImaVFaNa5Ne66NwGovsrxVAl5S5rwc7m22UG7Lmww==}
 
   '@vue/runtime-dom@3.5.42':
     resolution: {integrity: sha512-rsCmhiWLaRxGltLwhlCWyYkFn7WAbKRh0q17eZ1A6Dq6eqc2ACQ61IIryxz0LrsvCzHSilLA9JHovVwM8CNE2g==}
@@ -4807,11 +4900,6 @@ packages:
     peerDependencies:
       '@vue/runtime-dom': 3.6.0-beta.17
 
-  '@vue/server-renderer@3.5.39':
-    resolution: {integrity: sha512-yZSakiAGw85rZfG7UM8akMnIF+FmeiNk47uvHf2nVBBSe+dIKUhZuZq9+XgJhbV3nS5Z4ALH23/MpXofW+mbcw==}
-    peerDependencies:
-      vue: 3.5.39
-
   '@vue/server-renderer@3.5.42':
     resolution: {integrity: sha512-2++5dUyYS4gvo7xQXSECUDhB7TS0aOl5SeVfC5qSq1Jgfhjvegw1zqhwTIR3imZ+QYPJQw9gfcFvXGAjGZ7ajQ==}
 
@@ -4819,9 +4907,6 @@ packages:
     resolution: {integrity: sha512-C7YpoWxewo01cG+S51MouH1v6taXBU5XvmxPjPAI3E9Zn3gpzb49e/ikShA5ov8ijE9R7tyIOUk4QU2xoDiT+Q==}
     peerDependencies:
       vue: 3.6.0-beta.17
-
-  '@vue/shared@3.5.39':
-    resolution: {integrity: sha512-l1rrBtBfTnmxvtsvdQDXltUUy8S1Y+ZaqdfUzmAnJkTd8Z8rv5v/ytW+TKiqEOWyHPoqtPlNFSs0lhRmYVSHVA==}
 
   '@vue/shared@3.5.42':
     resolution: {integrity: sha512-2rPxex1jQf4jvl9MOHl6YaXCPcrNqz/FstMOEh3QWY+/OME9nQTvl9WYeCwhW7AFjaR0SnngZGlp/wkR6rkI6g==}
@@ -5262,10 +5347,6 @@ packages:
       magicast:
         optional: true
 
-  cac@6.7.14:
-    resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
-    engines: {node: '>=8'}
-
   cac@7.0.0:
     resolution: {integrity: sha512-tixWYgm5ZoOD+3g6UTea91eow5z6AAHaho3g0V9CNSNb45gM8SmflpAc+GRd1InC4AqN/07Unrgp56Y94N9hJQ==}
     engines: {node: '>=20.19.0'}
@@ -5591,6 +5672,9 @@ packages:
   d3-geo@3.1.1:
     resolution: {integrity: sha512-637ln3gXKXOwhalDzinUgY83KzNWZRKbYubaG+fGVuc/dxO64RRljtCTnf5ecMyE1RIdtqpkVcq0IbtU2S8j2Q==}
     engines: {node: '>=12'}
+
+  d3-hexbin@0.2.2:
+    resolution: {integrity: sha512-KS3fUT2ReD4RlGCjvCEm1RgMtp2NFZumdMu4DBzQK8AZv3fXRM6Xm8I4fSU07UXvH4xxg03NwWKWdvxfS/yc4w==}
 
   d3-hierarchy@3.1.2:
     resolution: {integrity: sha512-FX/9frcub54beBdugHjDCdikxThEqjnR93Qt7PvQTOHxyiNCAlvMrHhclk3cD5VeAaq9fxmfRp+CnWw9rEMBuA==}
@@ -7423,11 +7507,6 @@ packages:
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
 
-  nypm@0.4.1:
-    resolution: {integrity: sha512-1b9mihliBh8UCcKtcGRu//G50iHpjxIQVUqkdhPT/SDVE7KdJKoHXLS0heuYTQCx95dFqiyUbXZB9r8ikn+93g==}
-    engines: {node: ^14.16.0 || >=16.10.0}
-    hasBin: true
-
   nypm@0.5.4:
     resolution: {integrity: sha512-X0SNNrZiGU8/e/zAB7sCTtdxWTMSIO73q+xuKgglm2Yvzwlo8UoC5FNySQFCvl84uPaeADkqHUZUkWy4aH4xOA==}
     engines: {node: ^14.16.0 || >=16.10.0}
@@ -8081,10 +8160,9 @@ packages:
       vite: '>=5.0'
       vue: ^3.0.0
 
-  slidev-addon-inalia@0.2.9:
-    resolution: {integrity: sha512-R+G8QcPSCMarDWHSmCduugFnibmUO4guDffebUOnImCIA17TdurAvpeM2F8uXNVm95QiCxOxEqUJ0uxq26YU5g==}
+  slidev-addon-inalia@0.2.11:
+    resolution: {integrity: sha512-1t+DX95uDwTCboGhuVCtA5jnOlD49Kj+07T2PbEus3slgaZuWvOwuRpFzRC9jIJzeytt9GDrAjV6A3Ptf5rZ0A==}
     engines: {slidev: '>=0.49.29'}
-    hasBin: true
 
   smob@1.6.2:
     resolution: {integrity: sha512-RQsvleCbF8cVHEv+xuDGaA4pOizFqJ0GgjtMSRo6oP8pnN7WsigHgVGey6aILRBKv4W2YOMHLqbKdnB6hpB9fw==}
@@ -8967,14 +9045,6 @@ packages:
       vite:
         optional: true
 
-  vue@3.5.39:
-    resolution: {integrity: sha512-xmZCYabFGcirU8r0fTuvl/LICc1OU620rnqepaJDL/a141ZigkG7AyaxQLdqJ02ZRYzWe6YPaDHeQx7MfknQfA==}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
   vue@3.5.42:
     resolution: {integrity: sha512-4RyHQTbQvOPs3MfvUO1Sg0YRrKNnA0mAVtvpd12Tg1fKDN7OHBUl1IqSn8zGJjK9nI3NkNp8cgTpVrSZC5TTcA==}
     peerDependencies:
@@ -9422,10 +9492,6 @@ snapshots:
     dependencies:
       '@babel/template': 7.29.7
       '@babel/types': 7.29.8
-
-  '@babel/parser@7.29.7':
-    dependencies:
-      '@babel/types': 7.29.7
 
   '@babel/parser@7.29.8':
     dependencies:
@@ -10015,11 +10081,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/types@7.29.7':
-    dependencies:
-      '@babel/helper-string-parser': 7.29.7
-      '@babel/helper-validator-identifier': 7.29.7
-
   '@babel/types@7.29.8':
     dependencies:
       '@babel/helper-string-parser': 7.29.7
@@ -10029,20 +10090,9 @@ snapshots:
 
   '@chevrotain/types@11.1.2': {}
 
-  '@clack/core@0.5.0':
-    dependencies:
-      picocolors: 1.1.1
-      sisteransi: 1.0.5
-
   '@clack/core@1.4.2':
     dependencies:
       fast-wrap-ansi: 0.2.2
-      sisteransi: 1.0.5
-
-  '@clack/prompts@0.11.0':
-    dependencies:
-      '@clack/core': 0.5.0
-      picocolors: 1.1.1
       sisteransi: 1.0.5
 
   '@clack/prompts@1.6.0':
@@ -10079,17 +10129,6 @@ snapshots:
 
   '@dagrejs/graphlib@4.0.1': {}
 
-  '@devframes/hub@0.8.2(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4))':
-    dependencies:
-      '@standard-schema/spec': 1.1.0
-      destr: 2.0.5
-      devframe: 0.8.2(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4)
-      nostics: 1.2.0
-      pathe: 2.0.3
-      perfect-debounce: 2.1.0
-      tinyexec: 1.3.1
-      zigpty: 0.2.1
-
   '@devframes/hub@0.8.2(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4))':
     dependencies:
       '@standard-schema/spec': 1.1.0
@@ -10115,15 +10154,6 @@ snapshots:
     transitivePeerDependencies:
       - crossws
       - ocache
-
-  '@devframes/json-render@0.8.2(@devframes/hub@0.8.2(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4)))(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4))':
-    dependencies:
-      '@json-render/core': 0.19.0(zod@4.6.5)
-      devframe: 0.8.2(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4)
-      nostics: 1.2.0
-      zod: 4.6.5
-    optionalDependencies:
-      '@devframes/hub': 0.8.2(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4))
 
   '@devframes/json-render@0.8.2(@devframes/hub@0.8.2(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)))(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4))':
     dependencies:
@@ -10384,11 +10414,11 @@ snapshots:
 
   '@floating-ui/utils@0.2.11': {}
 
-  '@floating-ui/vue@1.1.11(vue@3.5.39(typescript@6.0.3))':
+  '@floating-ui/vue@1.1.11(vue@3.5.42(typescript@6.0.3))':
     dependencies:
       '@floating-ui/dom': 1.7.6
       '@floating-ui/utils': 0.2.11
-      vue-demi: 0.14.10(vue@3.5.39(typescript@6.0.3))
+      vue-demi: 0.14.10(vue@3.5.42(typescript@6.0.3))
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -11312,7 +11342,7 @@ snapshots:
       - unloader
       - webpack
 
-  '@slidev/cli@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.2.0)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(terser@5.51.2)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))':
+  '@slidev/cli@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.2.0)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(terser@5.51.2)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))':
     dependencies:
       '@antfu/ni': 30.5.0
       '@antfu/utils': 9.3.0
@@ -11327,9 +11357,9 @@ snapshots:
       '@shikijs/markdown-it': 4.4.3
       '@shikijs/twoslash': 4.4.3(typescript@6.0.3)
       '@shikijs/vitepress-twoslash': 4.4.3(@nuxt/kit@3.21.8)(typescript@6.0.3)
-      '@slidev/client': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@slidev/parser': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@slidev/types': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      '@slidev/client': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      '@slidev/parser': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      '@slidev/types': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       '@unocss/extractor-mdc': 66.10.2
       '@unocss/reset': 66.10.2
       '@vitejs/plugin-vue': 6.0.9(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
@@ -11373,144 +11403,14 @@ snapshots:
       source-map-js: 1.2.1
       typescript: 6.0.3
       unhead: 3.4.0(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      unocss: 66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      unocss: 66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       unplugin-icons: 23.0.1(@vue/compiler-sfc@3.5.42)
       unplugin-vue-components: 32.1.0(@nuxt/kit@3.21.8)(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
       unplugin-vue-markdown: 32.0.0(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       untun: 0.2.2
       uqr: 0.1.3
       vite: 8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
-      vite-plugin-inspect: 12.0.2(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(cac@6.7.14)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vite-plugin-remote-assets: 2.1.0(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vite-plugin-static-copy: 4.1.1(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vite-plugin-vue-server-ref: 1.0.0(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      vitefu: 1.1.3(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vue: 3.5.42(typescript@6.0.3)
-      yaml: 2.9.0
-      yargs: 18.1.0
-      zod: 4.6.5
-    optionalDependencies:
-      playwright-chromium: 1.61.1
-      vite-plugin-pwa: 1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)
-    transitivePeerDependencies:
-      - '@devframes/hub'
-      - '@devframes/hub-ui'
-      - '@farmfe/core'
-      - '@modelcontextprotocol/client'
-      - '@nuxt/kit'
-      - '@oxc-project/types'
-      - '@pinia/colada'
-      - '@rspack/core'
-      - '@svgr/core'
-      - '@svgx/core'
-      - '@types/markdown-it'
-      - '@types/node'
-      - '@unhead/cli'
-      - '@unocss/astro'
-      - '@unocss/postcss'
-      - '@unocss/webpack'
-      - '@vitejs/devtools'
-      - '@vitejs/devtools-kit'
-      - '@vue/compiler-sfc'
-      - bun-types-no-globals
-      - cac
-      - crossws
-      - esbuild
-      - hono
-      - less
-      - lightningcss
-      - magicast
-      - markdown-it
-      - markdown-it-async
-      - ocache
-      - oxc-parser
-      - pinia
-      - postcss
-      - react
-      - rolldown
-      - rollup
-      - sass
-      - sass-embedded
-      - solid-js
-      - srvx
-      - stylus
-      - sugarss
-      - supports-color
-      - svelte
-      - terser
-      - tsx
-      - unloader
-      - webpack
-
-  '@slidev/cli@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(terser@5.51.2)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))':
-    dependencies:
-      '@antfu/ni': 30.5.0
-      '@antfu/utils': 9.3.0
-      '@comark/markdown-it': 0.3.4(@types/markdown-it@14.1.2)(markdown-it@14.3.2)
-      '@iconify-json/carbon': 1.2.27
-      '@iconify-json/ph': 1.2.2
-      '@iconify-json/svg-spinners': 1.2.4
-      '@lillallol/outline-pdf': 4.0.0
-      '@modelcontextprotocol/node': 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.7)
-      '@modelcontextprotocol/server': 2.0.0
-      '@shikijs/magic-move': 4.4.3(react@19.2.7)(shiki@4.4.3)(vue@3.5.42(typescript@6.0.3))
-      '@shikijs/markdown-it': 4.4.3
-      '@shikijs/twoslash': 4.4.3(typescript@6.0.3)
-      '@shikijs/vitepress-twoslash': 4.4.3(@nuxt/kit@3.21.8)(typescript@6.0.3)
-      '@slidev/client': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@slidev/parser': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@slidev/types': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@unocss/extractor-mdc': 66.10.2
-      '@unocss/reset': 66.10.2
-      '@vitejs/plugin-vue': 6.0.9(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      '@vitejs/plugin-vue-jsx': 5.1.6(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      ansis: 4.3.1
-      chokidar: 5.0.0
-      cli-progress: 3.12.0
-      connect: 3.7.0
-      fast-deep-equal: 3.1.3
-      fast-glob: 3.3.3
-      get-port-please: 3.2.0
-      global-directory: 5.0.0
-      htmlparser2: 12.0.0
-      is-installed-globally: 1.0.0
-      jiti: 2.7.0
-      katex: 0.18.7
-      local-pkg: 1.2.1
-      lz-string: 1.5.0
-      magic-string: 1.3.1
-      magic-string-stack: 2.0.0
-      markdown-exit: 1.3.0
-      markdown-it-footnote: 4.0.0
-      markdown-it-github-alerts: 1.0.1(markdown-it@14.3.2)
-      mlly: 1.8.2
-      monaco-editor: 0.56.0
-      obug: 2.1.4
-      open: 11.0.0
-      pathe: 2.0.3
-      pdf-lib: 1.17.1
-      picomatch: 4.0.7
-      plantuml-encoder: 1.4.0
-      postcss-nested: 8.0.1(postcss@8.5.28)
-      pptxgenjs: 4.0.1
-      prompts: 2.4.2
-      public-ip: 8.0.0
-      resolve-from: 5.0.0
-      resolve-global: 2.0.0
-      semver: 7.8.5
-      shiki: 4.4.3
-      sirv: 3.0.2
-      source-map-js: 1.2.1
-      typescript: 6.0.3
-      unhead: 3.4.0(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      unocss: 66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      unplugin-icons: 23.0.1(@vue/compiler-sfc@3.5.42)
-      unplugin-vue-components: 32.1.0(@nuxt/kit@3.21.8)(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      unplugin-vue-markdown: 32.0.0(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      untun: 0.2.2
-      uqr: 0.1.3
-      vite: 8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
-      vite-plugin-inspect: 12.0.2(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(cac@6.7.14)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
+      vite-plugin-inspect: 12.0.2(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(cac@7.0.0)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       vite-plugin-remote-assets: 2.1.0(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       vite-plugin-static-copy: 4.1.1(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       vite-plugin-vue-server-ref: 1.0.0(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
@@ -11782,136 +11682,6 @@ snapshots:
     optionalDependencies:
       playwright-chromium: 1.61.1
       vite-plugin-pwa: 1.3.0(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)
-    transitivePeerDependencies:
-      - '@devframes/hub'
-      - '@devframes/hub-ui'
-      - '@farmfe/core'
-      - '@modelcontextprotocol/client'
-      - '@nuxt/kit'
-      - '@oxc-project/types'
-      - '@pinia/colada'
-      - '@rspack/core'
-      - '@svgr/core'
-      - '@svgx/core'
-      - '@types/markdown-it'
-      - '@types/node'
-      - '@unhead/cli'
-      - '@unocss/astro'
-      - '@unocss/postcss'
-      - '@unocss/webpack'
-      - '@vitejs/devtools'
-      - '@vitejs/devtools-kit'
-      - '@vue/compiler-sfc'
-      - bun-types-no-globals
-      - cac
-      - crossws
-      - esbuild
-      - hono
-      - less
-      - lightningcss
-      - magicast
-      - markdown-it
-      - markdown-it-async
-      - ocache
-      - oxc-parser
-      - pinia
-      - postcss
-      - react
-      - rolldown
-      - rollup
-      - sass
-      - sass-embedded
-      - solid-js
-      - srvx
-      - stylus
-      - sugarss
-      - supports-color
-      - svelte
-      - terser
-      - tsx
-      - unloader
-      - webpack
-
-  '@slidev/cli@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(terser@5.51.2)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))':
-    dependencies:
-      '@antfu/ni': 30.5.0
-      '@antfu/utils': 9.3.0
-      '@comark/markdown-it': 0.3.4(@types/markdown-it@14.1.2)(markdown-it@14.3.2)
-      '@iconify-json/carbon': 1.2.27
-      '@iconify-json/ph': 1.2.2
-      '@iconify-json/svg-spinners': 1.2.4
-      '@lillallol/outline-pdf': 4.0.0
-      '@modelcontextprotocol/node': 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.7)
-      '@modelcontextprotocol/server': 2.0.0
-      '@shikijs/magic-move': 4.4.3(react@19.2.7)(shiki@4.4.3)(vue@3.5.42(typescript@6.0.3))
-      '@shikijs/markdown-it': 4.4.3
-      '@shikijs/twoslash': 4.4.3(typescript@6.0.3)
-      '@shikijs/vitepress-twoslash': 4.4.3(@nuxt/kit@3.21.8)(typescript@6.0.3)
-      '@slidev/client': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(oxc-parser@0.131.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@slidev/parser': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@slidev/types': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@unocss/extractor-mdc': 66.10.2
-      '@unocss/reset': 66.10.2
-      '@vitejs/plugin-vue': 6.0.9(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      '@vitejs/plugin-vue-jsx': 5.1.6(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      ansis: 4.3.1
-      chokidar: 5.0.0
-      cli-progress: 3.12.0
-      connect: 3.7.0
-      fast-deep-equal: 3.1.3
-      fast-glob: 3.3.3
-      get-port-please: 3.2.0
-      global-directory: 5.0.0
-      htmlparser2: 12.0.0
-      is-installed-globally: 1.0.0
-      jiti: 2.7.0
-      katex: 0.18.7
-      local-pkg: 1.2.1
-      lz-string: 1.5.0
-      magic-string: 1.3.1
-      magic-string-stack: 2.0.0
-      markdown-exit: 1.3.0
-      markdown-it-footnote: 4.0.0
-      markdown-it-github-alerts: 1.0.1(markdown-it@14.3.2)
-      mlly: 1.8.2
-      monaco-editor: 0.56.0
-      obug: 2.1.4
-      open: 11.0.0
-      pathe: 2.0.3
-      pdf-lib: 1.17.1
-      picomatch: 4.0.7
-      plantuml-encoder: 1.4.0
-      postcss-nested: 8.0.1(postcss@8.5.28)
-      pptxgenjs: 4.0.1
-      prompts: 2.4.2
-      public-ip: 8.0.0
-      resolve-from: 5.0.0
-      resolve-global: 2.0.0
-      semver: 7.8.5
-      shiki: 4.4.3
-      sirv: 3.0.2
-      source-map-js: 1.2.1
-      typescript: 6.0.3
-      unhead: 3.4.0(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      unocss: 66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      unplugin-icons: 23.0.1(@vue/compiler-sfc@3.5.42)
-      unplugin-vue-components: 32.1.0(@nuxt/kit@3.21.8)(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      unplugin-vue-markdown: 32.0.0(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      untun: 0.2.2
-      uqr: 0.1.3
-      vite: 8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
-      vite-plugin-inspect: 12.0.2(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(cac@6.7.14)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vite-plugin-remote-assets: 2.1.0(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vite-plugin-static-copy: 4.1.1(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vite-plugin-vue-server-ref: 1.0.0(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      vitefu: 1.1.3(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vue: 3.5.42(typescript@6.0.3)
-      yaml: 2.9.0
-      yargs: 18.1.0
-      zod: 4.6.5
-    optionalDependencies:
-      playwright-chromium: 1.61.1
-      vite-plugin-pwa: 1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)
     transitivePeerDependencies:
       - '@devframes/hub'
       - '@devframes/hub-ui'
@@ -12302,86 +12072,6 @@ snapshots:
       - vite
       - webpack
 
-  '@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
-    dependencies:
-      '@antfu/utils': 9.3.0
-      '@fix-webm-duration/fix': 1.0.1
-      '@iconify-json/carbon': 1.2.27
-      '@iconify-json/ph': 1.2.2
-      '@iconify-json/svg-spinners': 1.2.4
-      '@shikijs/engine-javascript': 4.4.3
-      '@shikijs/magic-move': 4.4.3(react@19.2.7)(shiki@4.4.3)(vue@3.5.42(typescript@6.0.3))
-      '@shikijs/monaco': 4.4.3
-      '@shikijs/vitepress-twoslash': 4.4.3(@nuxt/kit@3.21.8)(typescript@6.0.3)
-      '@slidev/parser': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@slidev/rough-notation': 0.1.0
-      '@slidev/types': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@typescript/ata': 0.9.8(typescript@6.0.3)
-      '@unhead/vue': 3.4.0(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(lightningcss@1.33.0)(oxc-parser@0.137.0)(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      '@unocss/extractor-mdc': 66.10.2
-      '@unocss/preset-mini': 66.10.2
-      '@unocss/reset': 66.10.2
-      '@vueuse/core': 14.4.0(vue@3.5.42(typescript@6.0.3))
-      '@vueuse/math': 14.4.0(vue@3.5.42(typescript@6.0.3))
-      '@vueuse/motion': 3.0.3(vue@3.5.42(typescript@6.0.3))
-      ansis: 4.3.1
-      drauu: 1.0.0
-      file-saver: 2.0.5
-      fitty: 2.4.2
-      floating-vue: 5.2.2(@nuxt/kit@3.21.8)(vue@3.5.42(typescript@6.0.3))
-      fuse.js: 7.5.0
-      katex: 0.18.7
-      lz-string: 1.5.0
-      mermaid: 11.16.0
-      monaco-editor: 0.56.0
-      nanotar: 0.3.0
-      pptxgenjs: 4.0.1
-      recordrtc: 5.6.2
-      shiki: 4.4.3
-      typescript: 6.0.3
-      unocss: 66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vue: 3.5.42(typescript@6.0.3)
-      vue-router: 5.3.1(@vue/compiler-sfc@3.5.42)(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      yaml: 2.9.0
-    transitivePeerDependencies:
-      - '@devframes/hub'
-      - '@devframes/hub-ui'
-      - '@farmfe/core'
-      - '@modelcontextprotocol/client'
-      - '@modelcontextprotocol/server'
-      - '@nuxt/kit'
-      - '@oxc-project/types'
-      - '@pinia/colada'
-      - '@rspack/core'
-      - '@svgr/core'
-      - '@svgx/core'
-      - '@unhead/cli'
-      - '@unocss/astro'
-      - '@unocss/postcss'
-      - '@unocss/webpack'
-      - '@vitejs/devtools-kit'
-      - '@vue/compiler-sfc'
-      - bun-types-no-globals
-      - cac
-      - crossws
-      - esbuild
-      - lightningcss
-      - magicast
-      - markdown-it-async
-      - ocache
-      - oxc-parser
-      - pinia
-      - react
-      - rolldown
-      - rollup
-      - solid-js
-      - srvx
-      - supports-color
-      - svelte
-      - unloader
-      - vite
-      - webpack
-
   '@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
     dependencies:
       '@antfu/utils': 9.3.0
@@ -12622,86 +12312,6 @@ snapshots:
       - vite
       - webpack
 
-  '@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(oxc-parser@0.131.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
-    dependencies:
-      '@antfu/utils': 9.3.0
-      '@fix-webm-duration/fix': 1.0.1
-      '@iconify-json/carbon': 1.2.27
-      '@iconify-json/ph': 1.2.2
-      '@iconify-json/svg-spinners': 1.2.4
-      '@shikijs/engine-javascript': 4.4.3
-      '@shikijs/magic-move': 4.4.3(react@19.2.7)(shiki@4.4.3)(vue@3.5.42(typescript@6.0.3))
-      '@shikijs/monaco': 4.4.3
-      '@shikijs/vitepress-twoslash': 4.4.3(@nuxt/kit@3.21.8)(typescript@6.0.3)
-      '@slidev/parser': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@slidev/rough-notation': 0.1.0
-      '@slidev/types': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@typescript/ata': 0.9.8(typescript@6.0.3)
-      '@unhead/vue': 3.4.0(oxc-parser@0.131.0)(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      '@unocss/extractor-mdc': 66.10.2
-      '@unocss/preset-mini': 66.10.2
-      '@unocss/reset': 66.10.2
-      '@vueuse/core': 14.4.0(vue@3.5.42(typescript@6.0.3))
-      '@vueuse/math': 14.4.0(vue@3.5.42(typescript@6.0.3))
-      '@vueuse/motion': 3.0.3(vue@3.5.42(typescript@6.0.3))
-      ansis: 4.3.1
-      drauu: 1.0.0
-      file-saver: 2.0.5
-      fitty: 2.4.2
-      floating-vue: 5.2.2(@nuxt/kit@3.21.8)(vue@3.5.42(typescript@6.0.3))
-      fuse.js: 7.5.0
-      katex: 0.18.7
-      lz-string: 1.5.0
-      mermaid: 11.16.0
-      monaco-editor: 0.56.0
-      nanotar: 0.3.0
-      pptxgenjs: 4.0.1
-      recordrtc: 5.6.2
-      shiki: 4.4.3
-      typescript: 6.0.3
-      unocss: 66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vue: 3.5.42(typescript@6.0.3)
-      vue-router: 5.3.1(@vue/compiler-sfc@3.5.42)(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      yaml: 2.9.0
-    transitivePeerDependencies:
-      - '@devframes/hub'
-      - '@devframes/hub-ui'
-      - '@farmfe/core'
-      - '@modelcontextprotocol/client'
-      - '@modelcontextprotocol/server'
-      - '@nuxt/kit'
-      - '@oxc-project/types'
-      - '@pinia/colada'
-      - '@rspack/core'
-      - '@svgr/core'
-      - '@svgx/core'
-      - '@unhead/cli'
-      - '@unocss/astro'
-      - '@unocss/postcss'
-      - '@unocss/webpack'
-      - '@vitejs/devtools-kit'
-      - '@vue/compiler-sfc'
-      - bun-types-no-globals
-      - cac
-      - crossws
-      - esbuild
-      - lightningcss
-      - magicast
-      - markdown-it-async
-      - ocache
-      - oxc-parser
-      - pinia
-      - react
-      - rolldown
-      - rollup
-      - solid-js
-      - srvx
-      - supports-color
-      - svelte
-      - unloader
-      - vite
-      - webpack
-
   '@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(oxc-parser@0.131.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
     dependencies:
       '@antfu/utils': 9.3.0
@@ -12824,44 +12434,6 @@ snapshots:
     dependencies:
       '@antfu/utils': 9.3.0
       '@slidev/types': 52.19.0(@devframes/hub@0.8.2(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.6.0-beta.17)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@25.9.4)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      pathe: 2.0.3
-      yaml: 2.9.0
-    transitivePeerDependencies:
-      - '@devframes/hub'
-      - '@devframes/hub-ui'
-      - '@farmfe/core'
-      - '@modelcontextprotocol/client'
-      - '@modelcontextprotocol/server'
-      - '@nuxt/kit'
-      - '@pinia/colada'
-      - '@rspack/core'
-      - '@svgr/core'
-      - '@svgx/core'
-      - '@unocss/astro'
-      - '@unocss/postcss'
-      - '@unocss/webpack'
-      - '@vue/compiler-sfc'
-      - bun-types-no-globals
-      - cac
-      - crossws
-      - esbuild
-      - markdown-it-async
-      - ocache
-      - pinia
-      - rolldown
-      - rollup
-      - srvx
-      - supports-color
-      - svelte
-      - typescript
-      - unloader
-      - vite
-      - webpack
-
-  '@slidev/parser@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
-    dependencies:
-      '@antfu/utils': 9.3.0
-      '@slidev/types': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
       pathe: 2.0.3
       yaml: 2.9.0
     transitivePeerDependencies:
@@ -13086,57 +12658,6 @@ snapshots:
       - vite
       - webpack
 
-  '@slidev/types@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
-    dependencies:
-      '@antfu/utils': 9.3.0
-      '@shikijs/markdown-it': 4.4.3
-      '@vitejs/plugin-vue': 6.0.9(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      '@vitejs/plugin-vue-jsx': 5.1.6(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      katex: 0.18.7
-      mermaid: 11.16.0
-      monaco-editor: 0.56.0
-      shiki: 4.4.3
-      unocss: 66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      unplugin-icons: 23.0.1(@vue/compiler-sfc@3.5.42)
-      unplugin-vue-markdown: 32.0.0(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vite-plugin-inspect: 12.0.2(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(cac@6.7.14)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vite-plugin-remote-assets: 2.1.0(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vite-plugin-static-copy: 4.1.1(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      vite-plugin-vue-server-ref: 1.0.0(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-      vue: 3.5.42(typescript@6.0.3)
-      vue-router: 5.3.1(@vue/compiler-sfc@3.5.42)(rolldown@1.2.6)(rollup@4.63.2)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.5.42(typescript@6.0.3))
-    transitivePeerDependencies:
-      - '@devframes/hub'
-      - '@devframes/hub-ui'
-      - '@farmfe/core'
-      - '@modelcontextprotocol/client'
-      - '@modelcontextprotocol/server'
-      - '@nuxt/kit'
-      - '@pinia/colada'
-      - '@rspack/core'
-      - '@svgr/core'
-      - '@svgx/core'
-      - '@unocss/astro'
-      - '@unocss/postcss'
-      - '@unocss/webpack'
-      - '@vue/compiler-sfc'
-      - bun-types-no-globals
-      - cac
-      - crossws
-      - esbuild
-      - markdown-it-async
-      - ocache
-      - pinia
-      - rolldown
-      - rollup
-      - srvx
-      - supports-color
-      - svelte
-      - typescript
-      - unloader
-      - vite
-      - webpack
-
   '@slidev/types@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(typescript@6.0.3)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
     dependencies:
       '@antfu/utils': 9.3.0
@@ -13255,12 +12776,37 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+  '@tanstack/charts@1.1.0(react@19.2.7)(vue@3.5.42(typescript@6.0.3))':
+    dependencies:
+      '@types/d3-force': 3.0.10
+      '@types/d3-geo': 3.1.0
+      '@types/d3-hierarchy': 3.1.7
+      '@types/d3-sankey': 0.12.5
+      '@types/d3-shape': 3.1.8
+      d3-array: 3.2.4
+      d3-brush: 3.0.0
+      d3-contour: 4.0.2
+      d3-delaunay: 6.0.4
+      d3-force: 3.0.0
+      d3-geo: 3.1.1
+      d3-hexbin: 0.2.2
+      d3-hierarchy: 3.1.2
+      d3-sankey: 0.12.3
+      d3-scale: 4.0.2
+      d3-selection: 3.0.0
+      d3-shape: 3.2.0
+      d3-zoom: 3.0.0
+      tslib: 2.8.1
+    optionalDependencies:
+      react: 19.2.7
+      vue: 3.5.42(typescript@6.0.3)
+
   '@tanstack/virtual-core@3.17.2': {}
 
-  '@tanstack/vue-virtual@3.13.30(vue@3.5.39(typescript@6.0.3))':
+  '@tanstack/vue-virtual@3.13.30(vue@3.5.42(typescript@6.0.3))':
     dependencies:
       '@tanstack/virtual-core': 3.17.2
-      vue: 3.5.39(typescript@6.0.3)
+      vue: 3.5.42(typescript@6.0.3)
 
   '@tanstack/vue-virtual@3.13.30(vue@3.6.0-beta.17(typescript@6.0.3))':
     dependencies:
@@ -13621,6 +13167,10 @@ snapshots:
   '@types/d3-random@3.0.3': {}
 
   '@types/d3-sankey@0.11.2':
+    dependencies:
+      '@types/d3-shape': 1.3.12
+
+  '@types/d3-sankey@0.12.5':
     dependencies:
       '@types/d3-shape': 1.3.12
 
@@ -14271,28 +13821,6 @@ snapshots:
       - srvx
       - vite
 
-  '@unocss/inspector@66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
-    dependencies:
-      '@devframes/service-shiki': 0.9.19(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4))
-      '@devframes/vite': 0.9.19(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4))(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      '@unocss/config': 66.10.2
-      '@unocss/core': 66.10.2
-      '@unocss/rule-utils': 66.10.2
-      '@vitejs/devtools-kit': 0.7.3(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      colorette: 2.0.20
-      devframe: 0.9.19(cac@6.7.14)(srvx@1.0.4)
-      tinyglobby: 0.2.17
-      unplugin-utils: 0.3.2
-    transitivePeerDependencies:
-      - '@devframes/hub'
-      - '@devframes/hub-ui'
-      - '@modelcontextprotocol/client'
-      - cac
-      - crossws
-      - ocache
-      - srvx
-      - vite
-
   '@unocss/inspector@66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
     dependencies:
       '@devframes/service-shiki': 0.9.19(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4))
@@ -14557,27 +14085,6 @@ snapshots:
       - ocache
       - srvx
 
-  '@unocss/vite@66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
-    dependencies:
-      '@jridgewell/remapping': 2.3.5
-      '@unocss/config': 66.10.2
-      '@unocss/core': 66.10.2
-      '@unocss/inspector': 66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      chokidar: 5.0.0
-      magic-string: 1.3.1
-      pathe: 2.0.3
-      tinyglobby: 0.2.17
-      unplugin-utils: 0.3.2
-      vite: 8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
-    transitivePeerDependencies:
-      - '@devframes/hub'
-      - '@devframes/hub-ui'
-      - '@modelcontextprotocol/client'
-      - cac
-      - crossws
-      - ocache
-      - srvx
-
   '@unocss/vite@66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
     dependencies:
       '@jridgewell/remapping': 2.3.5
@@ -14692,11 +14199,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@unovis/vue@1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.39(typescript@6.0.3))':
-    dependencies:
-      '@unovis/ts': 1.4.3-beta.0
-      vue: 3.5.39(typescript@6.0.3)
-
   '@unovis/vue@1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.6.0-beta.17(typescript@6.0.3))':
     dependencies:
       '@unovis/ts': 1.4.3-beta.0
@@ -14706,23 +14208,6 @@ snapshots:
     optionalDependencies:
       d3-selection: 3.0.0
       d3-transition: 3.0.1(d3-selection@3.0.0)
-
-  '@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
-    dependencies:
-      '@devframes/hub': 0.8.2(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4))
-      '@devframes/json-render': 0.8.2(@devframes/hub@0.8.2(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4)))(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4))
-      devframe: 0.8.2(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4)
-      local-pkg: 1.2.1
-      mlly: 1.8.2
-      nostics: 1.2.0
-      nypm: 0.6.10
-      vite: 8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
-    transitivePeerDependencies:
-      - '@modelcontextprotocol/client'
-      - '@modelcontextprotocol/server'
-      - cac
-      - ocache
-      - srvx
 
   '@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@25.9.4)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
     dependencies:
@@ -14789,23 +14274,6 @@ snapshots:
       - '@modelcontextprotocol/client'
       - '@modelcontextprotocol/server'
       - cac
-      - ocache
-      - srvx
-
-  '@vitejs/devtools-kit@0.7.3(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))':
-    dependencies:
-      '@devframes/hub': 0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4))
-      '@devframes/json-render': 0.9.19(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4))
-      devframe: 0.9.19(cac@6.7.14)(srvx@1.0.4)
-      local-pkg: 1.2.1
-      mlly: 1.8.2
-      nostics: 1.2.0
-      nypm: 0.6.10
-      vite: 8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
-    transitivePeerDependencies:
-      - '@modelcontextprotocol/client'
-      - cac
-      - crossws
       - ocache
       - srvx
 
@@ -15091,14 +14559,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vue/compiler-core@3.5.39':
-    dependencies:
-      '@babel/parser': 7.29.8
-      '@vue/shared': 3.5.39
-      entities: 7.0.1
-      estree-walker: 2.0.2
-      source-map-js: 1.2.1
-
   '@vue/compiler-core@3.5.42':
     dependencies:
       '@babel/parser': 7.29.8
@@ -15115,11 +14575,6 @@ snapshots:
       estree-walker: 2.0.2
       source-map-js: 1.2.1
 
-  '@vue/compiler-dom@3.5.39':
-    dependencies:
-      '@vue/compiler-core': 3.5.39
-      '@vue/shared': 3.5.39
-
   '@vue/compiler-dom@3.5.42':
     dependencies:
       '@vue/compiler-core': 3.5.42
@@ -15129,18 +14584,6 @@ snapshots:
     dependencies:
       '@vue/compiler-core': 3.6.0-beta.17
       '@vue/shared': 3.6.0-beta.17
-
-  '@vue/compiler-sfc@3.5.39':
-    dependencies:
-      '@babel/parser': 7.29.7
-      '@vue/compiler-core': 3.5.39
-      '@vue/compiler-dom': 3.5.39
-      '@vue/compiler-ssr': 3.5.39
-      '@vue/shared': 3.5.39
-      estree-walker: 2.0.2
-      magic-string: 0.30.21
-      postcss: 8.5.28
-      source-map-js: 1.2.1
 
   '@vue/compiler-sfc@3.5.42':
     dependencies:
@@ -15166,11 +14609,6 @@ snapshots:
       magic-string: 0.30.21
       postcss: 8.5.28
       source-map-js: 1.2.1
-
-  '@vue/compiler-ssr@3.5.39':
-    dependencies:
-      '@vue/compiler-dom': 3.5.39
-      '@vue/shared': 3.5.39
 
   '@vue/compiler-ssr@3.5.42':
     dependencies:
@@ -15213,10 +14651,6 @@ snapshots:
       path-browserify: 1.0.1
       picomatch: 4.0.7
 
-  '@vue/reactivity@3.5.39':
-    dependencies:
-      '@vue/shared': 3.5.39
-
   '@vue/reactivity@3.5.42':
     dependencies:
       '@vue/shared': 3.5.42
@@ -15224,11 +14658,6 @@ snapshots:
   '@vue/reactivity@3.6.0-beta.17':
     dependencies:
       '@vue/shared': 3.6.0-beta.17
-
-  '@vue/runtime-core@3.5.39':
-    dependencies:
-      '@vue/reactivity': 3.5.39
-      '@vue/shared': 3.5.39
 
   '@vue/runtime-core@3.5.42':
     dependencies:
@@ -15239,13 +14668,6 @@ snapshots:
     dependencies:
       '@vue/reactivity': 3.6.0-beta.17
       '@vue/shared': 3.6.0-beta.17
-
-  '@vue/runtime-dom@3.5.39':
-    dependencies:
-      '@vue/reactivity': 3.5.39
-      '@vue/runtime-core': 3.5.39
-      '@vue/shared': 3.5.39
-      csstype: 3.2.3
 
   '@vue/runtime-dom@3.5.42':
     dependencies:
@@ -15267,12 +14689,6 @@ snapshots:
       '@vue/runtime-dom': 3.6.0-beta.17
       '@vue/shared': 3.6.0-beta.17
 
-  '@vue/server-renderer@3.5.39(vue@3.5.39(typescript@6.0.3))':
-    dependencies:
-      '@vue/compiler-ssr': 3.5.39
-      '@vue/shared': 3.5.39
-      vue: 3.5.39(typescript@6.0.3)
-
   '@vue/server-renderer@3.5.42':
     dependencies:
       '@vue/compiler-ssr': 3.5.42
@@ -15284,8 +14700,6 @@ snapshots:
       '@vue/compiler-ssr': 3.6.0-beta.17
       '@vue/shared': 3.6.0-beta.17
       vue: 3.6.0-beta.17(typescript@6.0.3)
-
-  '@vue/shared@3.5.39': {}
 
   '@vue/shared@3.5.42': {}
 
@@ -15334,12 +14748,12 @@ snapshots:
       '@vueuse/shared': 13.9.0(vue@3.6.0-beta.17(typescript@6.0.3))
       vue: 3.6.0-beta.17(typescript@6.0.3)
 
-  '@vueuse/core@14.3.0(vue@3.5.39(typescript@6.0.3))':
+  '@vueuse/core@14.3.0(vue@3.5.42(typescript@6.0.3))':
     dependencies:
       '@types/web-bluetooth': 0.0.21
       '@vueuse/metadata': 14.3.0
-      '@vueuse/shared': 14.3.0(vue@3.5.39(typescript@6.0.3))
-      vue: 3.5.39(typescript@6.0.3)
+      '@vueuse/shared': 14.3.0(vue@3.5.42(typescript@6.0.3))
+      vue: 3.5.42(typescript@6.0.3)
 
   '@vueuse/core@14.3.0(vue@3.6.0-beta.17(typescript@6.0.3))':
     dependencies:
@@ -15397,9 +14811,9 @@ snapshots:
     dependencies:
       vue: 3.6.0-beta.17(typescript@6.0.3)
 
-  '@vueuse/shared@14.3.0(vue@3.5.39(typescript@6.0.3))':
+  '@vueuse/shared@14.3.0(vue@3.5.42(typescript@6.0.3))':
     dependencies:
-      vue: 3.5.39(typescript@6.0.3)
+      vue: 3.5.42(typescript@6.0.3)
 
   '@vueuse/shared@14.3.0(vue@3.6.0-beta.17(typescript@6.0.3))':
     dependencies:
@@ -15704,8 +15118,6 @@ snapshots:
       perfect-debounce: 2.1.0
       pkg-types: 2.3.1
       rc9: 3.0.1
-
-  cac@6.7.14: {}
 
   cac@7.0.0: {}
 
@@ -16021,6 +15433,8 @@ snapshots:
     dependencies:
       d3-array: 3.2.4
 
+  d3-hexbin@0.2.2: {}
+
   d3-hierarchy@3.1.2: {}
 
   d3-interpolate-path@2.3.0: {}
@@ -16209,24 +15623,6 @@ snapshots:
 
   detect-libc@2.1.2: {}
 
-  devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4):
-    dependencies:
-      '@standard-schema/spec': 1.1.0
-      birpc: 4.2.0
-      crossws: 0.4.12(srvx@1.0.4)
-      destr: 2.0.5
-      h3: 2.0.1-rc.31(crossws@0.4.12(srvx@1.0.4))
-      mrmime: 2.0.1
-      nostics: 1.2.0
-      pathe: 2.0.3
-      ufo: 1.6.4
-    optionalDependencies:
-      '@modelcontextprotocol/server': 2.0.0
-      cac: 6.7.14
-    transitivePeerDependencies:
-      - ocache
-      - srvx
-
   devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4):
     dependencies:
       '@standard-schema/spec': 1.1.0
@@ -16241,23 +15637,6 @@ snapshots:
     optionalDependencies:
       '@modelcontextprotocol/server': 2.0.0
       cac: 7.0.0
-    transitivePeerDependencies:
-      - ocache
-      - srvx
-
-  devframe@0.9.19(cac@6.7.14)(srvx@1.0.4):
-    dependencies:
-      '@modelcontextprotocol/server': 2.0.0
-      '@standard-schema/spec': 1.1.0
-      birpc: 4.2.0
-      crossws: 0.4.12(srvx@1.0.4)
-      h3: 2.0.1-rc.31(crossws@0.4.12(srvx@1.0.4))
-      mrmime: 2.0.1
-      nostics: 1.2.0
-      pathe: 2.0.3
-      ufo: 1.6.4
-    optionalDependencies:
-      cac: 6.7.14
     transitivePeerDependencies:
       - ocache
       - srvx
@@ -18256,15 +17635,6 @@ snapshots:
     dependencies:
       boolbase: 1.0.0
 
-  nypm@0.4.1:
-    dependencies:
-      citty: 0.1.6
-      consola: 3.4.2
-      pathe: 1.1.2
-      pkg-types: 1.3.1
-      tinyexec: 0.3.2
-      ufo: 1.6.4
-
   nypm@0.5.4:
     dependencies:
       citty: 0.1.6
@@ -18753,19 +18123,19 @@ snapshots:
     dependencies:
       jsesc: 3.1.0
 
-  reka-ui@2.10.1(vue@3.5.39(typescript@6.0.3)):
+  reka-ui@2.10.1(vue@3.5.42(typescript@6.0.3)):
     dependencies:
       '@floating-ui/dom': 1.7.6
-      '@floating-ui/vue': 1.1.11(vue@3.5.39(typescript@6.0.3))
+      '@floating-ui/vue': 1.1.11(vue@3.5.42(typescript@6.0.3))
       '@internationalized/date': 3.12.2
       '@internationalized/number': 3.6.7
-      '@tanstack/vue-virtual': 3.13.30(vue@3.5.39(typescript@6.0.3))
-      '@vueuse/core': 14.3.0(vue@3.5.39(typescript@6.0.3))
-      '@vueuse/shared': 14.3.0(vue@3.5.39(typescript@6.0.3))
+      '@tanstack/vue-virtual': 3.13.30(vue@3.5.42(typescript@6.0.3))
+      '@vueuse/core': 14.3.0(vue@3.5.42(typescript@6.0.3))
+      '@vueuse/shared': 14.3.0(vue@3.5.42(typescript@6.0.3))
       aria-hidden: 1.2.6
       defu: 6.1.7
       ohash: 2.0.11
-      vue: 3.5.39(typescript@6.0.3)
+      vue: 3.5.42(typescript@6.0.3)
     transitivePeerDependencies:
       - '@vue/composition-api'
 
@@ -19093,26 +18463,24 @@ snapshots:
       - keycharm
       - uuid
 
-  slidev-addon-inalia@0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.2.0)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)):
+  slidev-addon-inalia@0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.2.0)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)):
     dependencies:
-      '@clack/prompts': 0.11.0
-      '@slidev/cli': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.2.0)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(terser@5.51.2)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+      '@slidev/cli': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.2.0)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(terser@5.51.2)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       '@slidev/theme-default': 0.25.0
-      '@unovis/ts': 1.4.3-beta.0
-      '@unovis/vue': 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.39(typescript@6.0.3))
-      cac: 6.7.14
+      '@tanstack/charts': 1.1.0(react@19.2.7)(vue@3.5.42(typescript@6.0.3))
       laravel-echo: 2.3.7(pusher-js@8.4.0-rc2)
-      nypm: 0.4.1
       ofetch: 1.5.1
       pusher-js: 8.4.0-rc2
       rc9: 2.1.2
-      reka-ui: 2.10.1(vue@3.5.39(typescript@6.0.3))
+      reka-ui: 2.10.1(vue@3.5.42(typescript@6.0.3))
       tailwind-merge: 3.6.0
       tailwind-variants: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.1)
       uncrypto: 0.1.3
       uqr: 0.1.3
-      vue: 3.5.39(typescript@6.0.3)
+      vue: 3.5.42(typescript@6.0.3)
     transitivePeerDependencies:
+      - '@angular/core'
+      - '@angular/platform-browser'
       - '@devframes/hub'
       - '@devframes/hub-ui'
       - '@farmfe/core'
@@ -19133,21 +18501,29 @@ snapshots:
       - '@vitejs/devtools-kit'
       - '@vue/compiler-sfc'
       - '@vue/composition-api'
+      - alpinejs
       - bun-types-no-globals
+      - cac
       - crossws
       - esbuild
       - hono
       - less
       - lightningcss
+      - lit
       - magicast
       - markdown-it
       - markdown-it-async
       - ocache
+      - octane
       - oxc-parser
       - pinia
       - playwright-chromium
       - postcss
+      - preact
       - react
+      - react-dom
+      - react-native
+      - react-native-svg
       - rolldown
       - rollup
       - sass
@@ -19167,26 +18543,24 @@ snapshots:
       - vite-plugin-pwa
       - webpack
 
-  slidev-addon-inalia@0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)):
+  slidev-addon-inalia@0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)):
     dependencies:
-      '@clack/prompts': 0.11.0
-      '@slidev/cli': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(terser@5.51.2)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+      '@slidev/cli': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(lightningcss@1.33.0)(markdown-it@14.3.2)(oxc-parser@0.137.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(terser@5.51.2)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       '@slidev/theme-default': 0.25.0
-      '@unovis/ts': 1.4.3-beta.0
-      '@unovis/vue': 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.39(typescript@6.0.3))
-      cac: 6.7.14
+      '@tanstack/charts': 1.1.0(react@19.2.7)(vue@3.5.42(typescript@6.0.3))
       laravel-echo: 2.3.7(pusher-js@8.4.0-rc2)
-      nypm: 0.4.1
       ofetch: 1.5.1
       pusher-js: 8.4.0-rc2
       rc9: 2.1.2
-      reka-ui: 2.10.1(vue@3.5.39(typescript@6.0.3))
+      reka-ui: 2.10.1(vue@3.5.42(typescript@6.0.3))
       tailwind-merge: 3.6.0
       tailwind-variants: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.1)
       uncrypto: 0.1.3
       uqr: 0.1.3
-      vue: 3.5.39(typescript@6.0.3)
+      vue: 3.5.42(typescript@6.0.3)
     transitivePeerDependencies:
+      - '@angular/core'
+      - '@angular/platform-browser'
       - '@devframes/hub'
       - '@devframes/hub-ui'
       - '@farmfe/core'
@@ -19207,21 +18581,29 @@ snapshots:
       - '@vitejs/devtools-kit'
       - '@vue/compiler-sfc'
       - '@vue/composition-api'
+      - alpinejs
       - bun-types-no-globals
+      - cac
       - crossws
       - esbuild
       - hono
       - less
       - lightningcss
+      - lit
       - magicast
       - markdown-it
       - markdown-it-async
       - ocache
+      - octane
       - oxc-parser
       - pinia
       - playwright-chromium
       - postcss
+      - preact
       - react
+      - react-dom
+      - react-native
+      - react-native-svg
       - rolldown
       - rollup
       - sass
@@ -19241,26 +18623,24 @@ snapshots:
       - vite-plugin-pwa
       - webpack
 
-  slidev-addon-inalia@0.2.9(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)):
+  slidev-addon-inalia@0.2.11(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(tailwindcss@4.3.1)(terser@5.51.2)(typescript@6.0.3)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1)):
     dependencies:
-      '@clack/prompts': 0.11.0
-      '@slidev/cli': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(terser@5.51.2)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
+      '@slidev/cli': 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@nuxt/kit@3.21.8)(@types/markdown-it@14.1.2)(@types/node@26.0.1)(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(hono@4.13.7)(markdown-it@14.3.2)(oxc-parser@0.131.0)(playwright-chromium@1.61.1)(postcss@8.5.28)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(terser@5.51.2)(vite-plugin-pwa@1.3.0(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(workbox-build@7.4.1)(workbox-window@7.4.1))
       '@slidev/theme-default': 0.25.0
-      '@unovis/ts': 1.4.3-beta.0
-      '@unovis/vue': 1.4.3-beta.0(@unovis/ts@1.4.3-beta.0)(vue@3.5.39(typescript@6.0.3))
-      cac: 6.7.14
+      '@tanstack/charts': 1.1.0(react@19.2.7)(vue@3.5.42(typescript@6.0.3))
       laravel-echo: 2.3.7(pusher-js@8.4.0-rc2)
-      nypm: 0.4.1
       ofetch: 1.5.1
       pusher-js: 8.4.0-rc2
       rc9: 2.1.2
-      reka-ui: 2.10.1(vue@3.5.39(typescript@6.0.3))
+      reka-ui: 2.10.1(vue@3.5.42(typescript@6.0.3))
       tailwind-merge: 3.6.0
       tailwind-variants: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.1)
       uncrypto: 0.1.3
       uqr: 0.1.3
-      vue: 3.5.39(typescript@6.0.3)
+      vue: 3.5.42(typescript@6.0.3)
     transitivePeerDependencies:
+      - '@angular/core'
+      - '@angular/platform-browser'
       - '@devframes/hub'
       - '@devframes/hub-ui'
       - '@farmfe/core'
@@ -19281,21 +18661,29 @@ snapshots:
       - '@vitejs/devtools-kit'
       - '@vue/compiler-sfc'
       - '@vue/composition-api'
+      - alpinejs
       - bun-types-no-globals
+      - cac
       - crossws
       - esbuild
       - hono
       - less
       - lightningcss
+      - lit
       - magicast
       - markdown-it
       - markdown-it-async
       - ocache
+      - octane
       - oxc-parser
       - pinia
       - playwright-chromium
       - postcss
+      - preact
       - react
+      - react-dom
+      - react-native
+      - react-native-svg
       - rolldown
       - rollup
       - sass
@@ -19913,38 +19301,6 @@ snapshots:
       - srvx
       - vite
 
-  unocss@66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)):
-    dependencies:
-      '@unocss/cli': 66.10.2
-      '@unocss/core': 66.10.2
-      '@unocss/preset-attributify': 66.10.2
-      '@unocss/preset-icons': 66.10.2
-      '@unocss/preset-mini': 66.10.2
-      '@unocss/preset-tagify': 66.10.2
-      '@unocss/preset-typography': 66.10.2
-      '@unocss/preset-uno': 66.10.2
-      '@unocss/preset-web-fonts': 66.10.2
-      '@unocss/preset-wind': 66.10.2
-      '@unocss/preset-wind3': 66.10.2
-      '@unocss/preset-wind4': 66.10.2
-      '@unocss/rollup': 66.10.2(rolldown@1.2.6)(rollup@4.63.2)
-      '@unocss/transformer-attributify-jsx': 66.10.2
-      '@unocss/transformer-compile-class': 66.10.2
-      '@unocss/transformer-directives': 66.10.2
-      '@unocss/transformer-variant-group': 66.10.2
-      '@unocss/vite': 66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@6.7.14)(crossws@0.4.12(srvx@1.0.4))(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-    transitivePeerDependencies:
-      - '@devframes/hub'
-      - '@devframes/hub-ui'
-      - '@modelcontextprotocol/client'
-      - cac
-      - crossws
-      - ocache
-      - rolldown
-      - rollup
-      - srvx
-      - vite
-
   unocss@66.10.2(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)):
     dependencies:
       '@unocss/cli': 66.10.2
@@ -20358,27 +19714,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-inspect@12.0.2(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(cac@6.7.14)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)):
-    dependencies:
-      '@vitejs/devtools-kit': 0.4.12(@modelcontextprotocol/server@2.0.0)(cac@6.7.14)(srvx@1.0.4)(vite@8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
-      ansis: 4.3.1
-      error-stack-parser-es: 2.0.1
-      obug: 2.1.4
-      ohash: 2.0.11
-      open: 11.0.0
-      perfect-debounce: 2.1.0
-      sirv: 3.0.2
-      unplugin-utils: 0.3.2
-      vite: 8.3.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
-    optionalDependencies:
-      '@nuxt/kit': 3.21.8
-    transitivePeerDependencies:
-      - '@modelcontextprotocol/client'
-      - '@modelcontextprotocol/server'
-      - cac
-      - ocache
-      - srvx
-
   vite-plugin-inspect@12.0.2(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@25.9.4)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)):
     dependencies:
       '@vitejs/devtools-kit': 0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@25.9.4)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
@@ -20771,9 +20106,9 @@ snapshots:
 
   vue-component-type-helpers@3.3.5: {}
 
-  vue-demi@0.14.10(vue@3.5.39(typescript@6.0.3)):
+  vue-demi@0.14.10(vue@3.5.42(typescript@6.0.3)):
     dependencies:
-      vue: 3.5.39(typescript@6.0.3)
+      vue: 3.5.42(typescript@6.0.3)
 
   vue-demi@0.14.10(vue@3.6.0-beta.17(typescript@6.0.3)):
     dependencies:
@@ -20922,16 +20257,6 @@ snapshots:
       - rollup
       - unloader
       - webpack
-
-  vue@3.5.39(typescript@6.0.3):
-    dependencies:
-      '@vue/compiler-dom': 3.5.39
-      '@vue/compiler-sfc': 3.5.39
-      '@vue/runtime-dom': 3.5.39
-      '@vue/server-renderer': 3.5.39(vue@3.5.39(typescript@6.0.3))
-      '@vue/shared': 3.5.39
-    optionalDependencies:
-      typescript: 6.0.3
 
   vue@3.5.42(typescript@6.0.3):
     dependencies:

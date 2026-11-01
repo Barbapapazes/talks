@@ -5,6 +5,8 @@ import { getPackagesJson } from './_utils.ts'
 
 async function generateAllThumbnails() {
   const packagesJson = getPackagesJson()
+  // Give CSS and fonts extra time to settle before Slidev captures each thumbnail.
+  const exportArgs = ['--wait', '2000']
 
   console.warn(`Generating thumbnails for ${packagesJson.length} talks...`)
 
@@ -16,11 +18,11 @@ async function generateAllThumbnails() {
 
     try {
       // Generate light thumbnail
-      await execa('pnpm', ['run', 'thumbnail'], { cwd: src })
+      await execa('pnpm', ['run', 'thumbnail', ...exportArgs], { cwd: src })
       await execa('pnpm', ['run', 'thumbnail:cp'], { cwd: src })
 
       // Generate dark thumbnail
-      await execa('pnpm', ['run', 'thumbnail:dark'], { cwd: src })
+      await execa('pnpm', ['run', 'thumbnail:dark', ...exportArgs], { cwd: src })
       await execa('pnpm', ['run', 'thumbnail:cp:dark'], { cwd: src })
 
       console.warn(`✓ Generated thumbnails for ${talkDir}`)

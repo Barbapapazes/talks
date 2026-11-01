@@ -56,6 +56,19 @@ describe('outro2 language', () => {
     expect(wrapper.getComponent(AdditionalContent).props('label')).toBe('Additional content')
   })
 
+  it('allows a deck to hide the placeholder feedback QR until Inalia is connected', () => {
+    slideContext.$frontmatter.feedbackPlaceholder = false
+    const wrapper = shallowMount(Outro2)
+
+    expect(wrapper.getComponent(Feedback).props('enablePlaceholder')).toBe(false)
+  })
+
+  it('keeps the placeholder enabled by default for existing decks', () => {
+    const wrapper = shallowMount(Outro2)
+
+    expect(wrapper.getComponent(Feedback).props('enablePlaceholder')).toBe(true)
+  })
+
   it('respects the existing feedback opt-out', () => {
     slideContext.$slidev.configs.htmlAttrs = { lang: 'en' }
     slideContext.$frontmatter.feedback = false

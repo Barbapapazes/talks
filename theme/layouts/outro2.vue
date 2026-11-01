@@ -63,7 +63,7 @@ const date = computed(() => ($slidev.configs as any).date)
       >
         <Feedback
           v-if="$frontmatter.feedback !== false"
-          enable-placeholder
+          :enable-placeholder="$frontmatter.feedbackPlaceholder !== false"
           :custom-feedback-url="$frontmatter.customFeedbackUrl"
           :label="labels.feedback"
         />

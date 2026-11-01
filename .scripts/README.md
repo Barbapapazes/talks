@@ -42,7 +42,7 @@ Utility scripts used to maintain talk metadata, assets, and deployment helpers.
 
 - `generate-redirects.ts` — Builds `dist/_redirects` for talk routes (`pdf`, `src`, and optional `recording/audio/transcript/article`) and appends root `_redirects` entries.
 
-- `generate-thumbnails.ts` — Loops through all talks and runs each deck's thumbnail generation/copy commands (light + dark).
+- `generate-thumbnails.ts` — Loops through all talks and runs each deck's thumbnail generation/copy commands (light + dark), with an extra two-second wait before each capture to allow CSS and fonts to settle.
 
 - `optimize-thumbnails.ts` — Runs `optipng` on generated thumbnails and prints per-file + total size savings.
 
