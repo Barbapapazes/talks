@@ -1,8 +1,11 @@
 catalogMode: prefer
-shellEmulator: true
-trustPolicy: off
 minimumReleaseAge: 0d
 
+minimumReleaseAgeExclude:
+  - slidev-addon-inalia@0.2.10
+  - slidev-addon-inalia@0.2.11
+shellEmulator: true
+trustPolicy: off
 packages:
   - '**/src'
   - '.packages/@soubiran/*'
@@ -104,7 +107,3 @@ catalogs:
   vite-talk:
     vite-plugin-info: ^0.4.1
     vite-plugin-inspect: 11.3.3
-
-minimumReleaseAgeExclude:
-  - slidev-addon-inalia@0.2.10
-  - slidev-addon-inalia@0.2.11
