@@ -6,13 +6,14 @@ import type {
   ExplainedVisuallySelectedFile,
   ExplainedVisuallySelectedResponse,
 } from './ExplainedVisually/types'
-import { ref } from 'vue'
+import { useSlideContext } from '@slidev/client'
+import { computed, ref } from 'vue'
+import MessageLog from '../../../theme/components/MessageLog.vue'
 import viteIconColorDark from '../assets/vite-icon-color-dark.svg'
 import ExplainedVisuallyBrowser from './ExplainedVisually/ExplainedVisuallyBrowser.vue'
 import ExplainedVisuallyCodeModal from './ExplainedVisually/ExplainedVisuallyCodeModal.vue'
 import ExplainedVisuallyEdge from './ExplainedVisually/ExplainedVisuallyEdge.vue'
 import ExplainedVisuallyFileExplorer from './ExplainedVisually/ExplainedVisuallyFileExplorer.vue'
-import ExplainedVisuallyHttpLogs from './ExplainedVisually/ExplainedVisuallyHttpLogs.vue'
 import ExplainedVisuallyHttpResponseModal from './ExplainedVisually/ExplainedVisuallyHttpResponseModal.vue'
 import ExplainedVisuallyServer from './ExplainedVisually/ExplainedVisuallyServer.vue'
 
@@ -56,6 +57,14 @@ const props = withDefaults(defineProps<{
 defineSlots<{
   server?: () => any
 }>()
+
+const { $clicks } = useSlideContext()
+const logEntries = computed(() => props.httpLogs.map((log, index) => ({
+  ...log,
+  id: `http-${index}`,
+  revealAt: (props.httpLogsClick ?? 0) + 1,
+  actionLabel: log.response ? 'View response' : undefined,
+})))
 
 function findFileByTitle(
   title: string,
@@ -137,14 +146,20 @@ function onSelectHttpLog(log: ExplainedVisuallyHttpLog) {
     />
   </div>
 
-  <ExplainedVisuallyHttpLogs
+  <!-- Register the log reveal step even before its entries are mounted. -->
+  <span v-click="(props.httpLogsClick ?? 0) + 1" aria-hidden="true" class="sr-only" />
+  <MessageLog
     v-click="props.httpLogsClick"
-    :click="props.httpLogsClick ? props.httpLogsClick + 1 : undefined"
-    :items="props.httpLogs"
+    :items="logEntries"
+    :step="$clicks"
     :title="props.httpLogsTitle"
     class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 h-3/5"
     @select="onSelectHttpLog"
-  />
+  >
+    <template #default="{ item }">
+      <div v-html="item.request" />
+    </template>
+  </MessageLog>
 
   <ExplainedVisuallyCodeModal v-model="file" />
 

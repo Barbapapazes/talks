@@ -1,6 +1,28 @@
 <script setup lang="ts">
-import TokenChip from '@theme/components/ai/TokenChip.vue'
-import DiagramPanel from '@theme/components/DiagramPanel.vue'
+import { useResizeObserver } from '@vueuse/core'
+import { ref } from 'vue'
+import TokenChip from './ai/TokenChip.vue'
+import DiagramPanel from './DiagramPanel.vue'
+
+withDefaults(defineProps<{
+  revealAt?: number
+  loop?: boolean
+  revealTogether?: boolean
+}>(), {
+  revealAt: 1,
+  loop: false,
+  revealTogether: false,
+})
+
+const tokenRows = ref<HTMLElement[]>([])
+const loopStarts = ref<{ x: number, y: number }[]>([])
+
+useResizeObserver(tokenRows, () => {
+  loopStarts.value = tokenRows.value.map((row, index) => ({
+    x: 400 + row.offsetWidth,
+    y: index * 115 + 13 + row.offsetTop + row.offsetHeight / 2,
+  }))
+})
 
 const capabilities = [
   { label: 'Text', tokens: ['The capital', ' of France', ' is Paris', '.'] },
@@ -12,14 +34,14 @@ const capabilities = [
 <template>
   <div class="token-capabilities not-content">
     <div class="diagram">
-      <DiagramPanel v-click="1" class="source">
+      <DiagramPanel v-click="revealAt" class="source">
         <span>Generate the<br>next token</span>
       </DiagramPanel>
 
       <div
         v-for="(capability, index) in capabilities"
         :key="capability.label"
-        v-click="index + 2"
+        v-click="revealTogether || revealAt === 0 ? revealAt : revealAt + index + 1"
         class="branch"
         :style="{ top: `${index * 115}px` }"
       >
@@ -31,12 +53,27 @@ const capabilities = [
           <div class="label">
             {{ capability.label }}
           </div>
-          <div class="tokens font-mono">
+          <div :ref="el => { if (el) tokenRows[index] = el as HTMLElement }" class="tokens font-mono">
             <TokenChip v-for="(token, tokenIndex) in capability.tokens" :key="tokenIndex" size="sm">
               {{ token }}
             </TokenChip>
           </div>
         </div>
+      </div>
+
+      <div v-if="loop" v-click="revealTogether || revealAt === 0 ? revealAt + 1 : revealAt + 4">
+        <svg
+          class="loop-connectors"
+          viewBox="0 0 900 410"
+          aria-hidden="true"
+        >
+          <path
+            v-for="(start, index) in loopStarts"
+            :key="index"
+            :d="`M ${start.x} ${start.y} H 875 V 390 H 110 V 223`"
+          />
+          <path d="M 105 229 L 110 223 L 115 229" />
+        </svg>
       </div>
     </div>
   </div>
@@ -84,6 +121,17 @@ const capabilities = [
   fill: none;
   --at-apply: stroke-neutral-400;
   stroke-width: 1.5;
+}
+.loop-connectors {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 900px;
+  height: 410px;
+  fill: none;
+  --at-apply: stroke-neutral-400;
+  stroke-width: 1.5;
+  pointer-events: none;
 }
 .capability {
   position: absolute;

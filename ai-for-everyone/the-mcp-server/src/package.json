@@ -22,7 +22,6 @@
   "private": true,
   "scripts": {
     "dev": "slidev",
-    "test": "vitest run",
     "build": "slidev build --base /ai-for-everyone/the-mcp-server/ --out ../../../dist/ai-for-everyone/the-mcp-server",
     "export": "slidev export --per-slide --wait-until none --output ../the-mcp-server.pdf",
     "thumbnail": "slidev export --per-slide --range 1 --format png",
@@ -38,10 +37,7 @@
   "devDependencies": {
     "@slidev/cli": "catalog:build",
     "@vitejs/plugin-vue": "catalog:build",
-    "@vue/test-utils": "catalog:test",
     "@vue/tsconfig": "catalog:build",
-    "happy-dom": "catalog:test",
-    "typescript": "catalog:build",
-    "vitest": "catalog:test"
+    "typescript": "catalog:build"
   }
 }

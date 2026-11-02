@@ -36,7 +36,11 @@ describe('outro2', () => {
     expect(wrapper.getComponent(Feedback).props('label')).toBe('Share your feedback')
     expect(wrapper.getComponent(AdditionalContent).props('label')).toBe('Get the next episodes')
     expect(wrapper.findComponent(Fireworks).exists()).toBe(false)
-    expect(wrapper.find('img').exists()).toBe(false)
+    const avatar = wrapper.get('img')
+    expect(avatar.attributes('src')).toBe('https://github.com/barbapapazes.png')
+    expect(avatar.attributes('alt')).toBe('')
+    expect(avatar.classes()).toContain('rounded-full')
+    expect(avatar.element.nextSibling?.textContent).toContain('Estéban Soubiran')
     expect(wrapper.text()).not.toContain('Presented by')
   })
 

@@ -1,0 +1,48 @@
+{
+  "name": "introduction-to-ai-agents",
+  "publication": "article-resource",
+  "date": "2026-11-02",
+  "sourceLanguage": "en",
+  "topics": [
+    "ai",
+    "llm",
+    "agents",
+    "tool-calling",
+    "permissions"
+  ],
+  "locales": {
+    "en": {
+      "title": "How AI agents work",
+      "description": "Understand how an agent works, how its runtime controls tools and execution, and how different configurations change what the same model can do."
+    },
+    "fr": {
+      "title": "Comment fonctionnent les agents IA",
+      "description": "Comprendre le fonctionnement d'un agent, le rôle du système qui contrôle ses outils et leur exécution, et ce que différentes configurations permettent à un même modèle de faire."
+    }
+  },
+  "event": {
+    "name": "AI for Everyone",
+    "url": "https://beta.soubiran.dev/ai-for-everyone"
+  },
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /ai-for-everyone/introduction-to-ai-agents/ --out ../../../dist/ai-for-everyone/introduction-to-ai-agents",
+    "export": "slidev export --per-slide --wait-until none --output ../introduction-to-ai-agents.pdf",
+    "thumbnail": "slidev export --per-slide --range 1 --format png",
+    "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
+    "thumbnail:cp": "mkdir -p ./public && ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
+    "thumbnail:cp:dark": "mkdir -p ./public && ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
+    "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
+  },
+  "dependencies": {
+    "@slidev/client": "catalog:slidev",
+    "slidev-theme-personal": "workspace:*"
+  },
+  "devDependencies": {
+    "@slidev/cli": "catalog:build",
+    "@vue/tsconfig": "catalog:build",
+    "typescript": "catalog:build"
+  }
+}

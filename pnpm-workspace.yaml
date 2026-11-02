@@ -1,5 +1,5 @@
 catalogMode: prefer
-minimumReleaseAge: 0d
+minimumReleaseAge: 0
 
 minimumReleaseAgeExclude:
   - slidev-addon-inalia@0.2.10

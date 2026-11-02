@@ -32,7 +32,7 @@ function selectExchange(id: string) {
     <template #header>
       <div class="rpc-heading">
         <span>MCP Inspector</span>
-        <span class="rpc-protocol">JSON-RPC 2.0 · simulated exchange</span>
+        <span class="rpc-protocol">JSON-RPC 2.0</span>
       </div>
     </template>
     <div class="rpc-layout">

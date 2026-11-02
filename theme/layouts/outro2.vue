@@ -15,7 +15,8 @@ const { $frontmatter } = useSlideContext()
         <h1 class="!mb-4 !text-6xl font-mono">
           Thank you!
         </h1>
-        <div class="text-xl font-medium">
+        <div class="flex items-center justify-center gap-2 text-xl font-medium">
+          <img src="https://github.com/barbapapazes.png" alt="" class="size-6 rounded-full">
           Estéban Soubiran
         </div>
         <div class="theme-muted-text mt-1 text-base">
