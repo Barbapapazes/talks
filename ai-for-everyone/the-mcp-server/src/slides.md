@@ -18,8 +18,8 @@ keywords: ai,mcp,tool-calling,json-rpc
 event: AI for Everyone
 name: The MCP server
 group: Introduction
-ready: false
-timing: 0.6
+ready: true
+timing: 0.5
 ---
 
 # The MCP server
@@ -27,17 +27,17 @@ timing: 0.6
 <!--
 Bonjour tout le monde !
 
-Aujourd'hui, on continue AI for Everyone avec les serveurs MCP.
+Aujourd'hui, on va s'intéresser aux serveurs MCP.
 
 Dans la session sur les LLM, on a vu qu'un modèle pouvait demander l'appel d'un outil. Mais cet outil, comment est-ce qu'on le rend disponible dans notre application ?
 
-C'est ce qu'on va regarder ensemble. Et pour commencer, on va partir d'une conversation toute simple.
+C'est ce qu'on va regarder ensemble. Et pour commencer, partons d'une simple conversation.
 -->
 
 ---
 name: A conversation without tools
 group: Demo
-ready: false
+ready: true
 layout: ai
 transition: slide-up
 timing: 1.3
@@ -46,29 +46,29 @@ timing: 1.3
 <McpGitHubDemo />
 
 <!--
-Imaginons qu'on travaille sur une application de suivi de projets. On aimerait éviter que les utilisateurs suppriment un projet par accident.
+Imaginons qu'on travaille sur une application de suivi de projets et qu'on aimerait une nouvelle feature, éviter que l'utilisateur supprime accidentellement un projet.
 
 [Entrée pour envoyer le message, puis laisser apparaître la réponse]
 
-L'assistant nous propose une modale de confirmation dans laquelle il faut saisir le nom du projet avant de pouvoir le supprimer. Ok, ça me va.
+L'assistant nous propose une modale de confirmation dans laquelle il faut saisir le nom du projet avant de pouvoir le supprimer. Moi, ça me va.
 
 [Entrée pour passer à la demande de création d'issue, puis l'envoyer]
 
-Maintenant, je lui demande d'en faire une issue sur GitHub.
+Du coup, je lui demande d'en faire une issue sur GitHub.
 
-Et là, il nous dit qu'il peut rédiger le contenu, mais qu'il ne peut pas créer l'issue. Il n'a pas accès à notre dépôt.
+Et là, il nous dit qu'il peut rédiger le contenu, mais que bah il peut pas créer l'issue.
 
-C'est assez logique. Le modèle peut produire du texte, mais ça ne lui donne pas un accès à GitHub.
+Et en vrai, c'est assez logique. Le modèle peut produire du texte, mais ça ne lui donne pas un accès à GitHub.
 
-Alors, on va lui ajouter cet accès et reprendre exactement la même conversation.
+Il faudrait qu'on lui rajoute ce accès.
 -->
 
 ---
 name: From conversation to action
 group: Demo
-ready: false
+ready: true
 layout: ai
-timing: 1.9
+timing: 1.5
 ---
 
 <McpGitHubDemo with-server />
@@ -76,41 +76,39 @@ timing: 1.9
 <!--
 [Ouvrir Integrations, puis Add MCP server]
 
-Ici, notre application permet de connecter un serveur MCP. Je lui donne un nom, GitHub, et l'URL du serveur.
+Pour ça, on va recommencer l'échange avec notre agent mais au préalable, on va lui connecter un serveur MCP.
 
 [Saisir GitHub et https://github-mcp.example.com/mcp, puis cliquer sur Connect]
 
-Toute cette démo est simulée. On ne se connecte pas vraiment à GitHub et on ne crée rien sur un vrai dépôt. Dans une vraie application, il faudrait aussi gérer l'authentification et les permissions.
-
-Là, notre application a découvert un outil, create_issue. Attention, pour le moment, elle sait seulement que cet outil est disponible. Elle ne l'a pas encore appelé.
+Ok, trop bien, notre MCP nous met à disposition un nouvel outil, create_issue.
 
 [Cliquer sur Start conversation, puis rejouer les deux échanges avec Entrée]
 
-On repart sur une nouvelle conversation. Même demande, même proposition. Et maintenant, je lui demande de créer l'issue.
+Donc on va lui faire la même demande et une fois de plus, lui demande de créer l'issue.
 
 Cette fois, on voit un appel à create_issue, puis la confirmation. Notre issue numéro 42 a été créée.
 
 [Ouvrir l'appel d'outil pour montrer les arguments et le résultat, puis le refermer]
 
-On retrouve le dépôt, le titre et le contenu de l'issue, puis le résultat de l'opération.
+Et si on se penche sur le tool call, on y retrouve le dépôt, le titre et le contenu de l'issue avec le résultat de l'opération.
 
-Ok, mais on n'a pas changé le modèle. Qu'est-ce qu'on lui a donné de plus, et qu'est-ce que MCP vient faire là-dedans ?
+Magnifique ! Simplement avec un serveur MCP ! Mais concrètement, comment ça fonctionne ?
 -->
 
 ---
 name: Connecting a tool to a model
 group: Connect
-ready: false
+ready: true
 layout: center-card
 img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
 positionClass: w-200
-timing: 1.4
+timing: 1.2
 ---
 
 ````md magic-move
 ```jsonc
 {
-  "model": "gpt-4.1",
+  "model": "gpt-6.1-sol",
   "input": "Create an issue in acme/project-dashboard to confirm project deletion.",
   "tools": [{ /* create_issue definition */ }]
 }
@@ -136,53 +134,41 @@ timing: 1.4
 ````
 
 <!--
-Pour comprendre ce qui vient de se passer, on va commencer sans MCP.
+Pour comprendre ça, il faut qu'on revienne à la base.
 
-Ici, vous avez un exemple de requête envoyée à l'API d'OpenAI. On retrouve le modèle, notre demande et une liste d'outils.
+Ça, c'est la requête envoyée à l'API d'OpenAI pour demander la génération de texte. On retrouve pleins d'infos dont une liste de tools.
 
-[click] Si on regarde create_issue, on lui donne un nom, une description et les arguments attendus. Dans notre cas, le dépôt, le titre et le contenu de l'issue.
+[click] Si on regarde d'un peu plus proche, on y retrouve notre tool `create_issue` et tout sa définition : nom, description et schéma JSON. C'est ce contenu qu'est dans le système prompt pour permettre au LLM de demander un appel.
 
-C'est cette définition qui permet au modèle de demander un appel avec des arguments structurés. Le mode strict contraint leur format, mais ça ne garantit pas que le contenu de l'issue soit pertinent.
+Et cette notion de "demander" elle est hyper important parce que si c'est le modèle qui produit la demande, c'est l'application qui l'exécute et renvoie le résultat dans le context.
 
-Et surtout, cette définition ne contient pas le code qui crée l'issue.
-
-Le modèle produit une demande. L'application fait exécuter l'opération, récupère le résultat et le redonne au modèle pour qu'il puisse nous répondre.
-
-On peut faire tout ça sans MCP. Alors, pourquoi ajouter un protocole ?
+Alors tout ça, c'est très chouette, mais ça nous explique pas pourquoi ajouter un protocol.
 -->
 
 ---
 name: Why MCP?
 group: Connect
-ready: false
+ready: true
 layout: full
-timing: 1.7
+timing: 1.4
 ---
 
 <McpWhyProtocol />
 
 <!--
-Plaçons-nous du côté de GitHub. On veut que des applications d'IA puissent créer des issues.
+Imaginons, on est GitHub et on a des API qu'on aimerait bien appeler depuis différents systèmes que ce soit [click] ChatGPT, [click] Notion ou même [click] Cursor.
 
-[click] On commence par une intégration avec ChatGPT. Il faut écrire le code qui relie les deux.
+Bah l'opération ce sera toujours la même. Pour créer une issue, on va devoir à chaque fois créer un tool qui appellera nos API.
 
-[click] Ensuite, on veut aussi être disponible dans Claude. Une autre intégration.
+Le truc c'est que bah il est pas tout seul. [click] Notion, on va devoir faire la même chose, Slack aussi et vos applications aussi.
 
-[click] Puis dans Cursor. Encore une.
+L'idée avec Model Context Protocol, MCP, c'est d'utiliser un protocole commun pour ces échanges.
 
-L'opération est toujours la même, créer une issue, mais on multiplie les intégrations à développer et à maintenir.
+[click] Vous développez vos tools une fois et vous pouvez les utiliser partout.
 
-[click] Et GitHub n'est pas seul. Pour Notion ou Slack, on retrouve le même problème.
+GitHub, Notion ou Slack implémentent la spec MCP côté serveur et des applications comme ChatGPT, Claude ou Cursor suivent la spec MCP côté client.
 
-Ce schéma illustre ce travail d'intégration, ce n'est pas une liste de connexions réellement disponibles.
-
-[click] L'idée de MCP, pour Model Context Protocol, c'est d'utiliser un protocole commun pour ces échanges.
-
-L'équipe de GitHub expose ses capacités à travers un serveur MCP. Les applications qui prennent en charge MCP peuvent alors communiquer avec ce serveur sans réinventer un protocole spécifique à GitHub.
-
-Le code qui parle à l'API GitHub existe toujours. Il est derrière le serveur.
-
-Mais ce serveur, il tourne où ?
+Concrètement, ça permet un développeur pour plusieurs usages.
 -->
 
 ---
@@ -273,38 +259,19 @@ https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle
 ---
 name: MCP server capabilities
 group: Primitives
-ready: false
+ready: true
 clicks: 10
 layout: center-card
 img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
-timing: 1.8
+timing: 0.5
 ---
 
 <McpToolDefinition />
 
 <!--
-Alors, qu'est-ce qu'un serveur MCP peut proposer à notre application ?
+Un serveur MCP, ça ne paraît pas que d'exposer [click] des tools, ça permet aussi d'exposer [click] des ressources, [click] des prompts, [click] de la completions, [click] des apps, [click] des tasks et même [click] des skills.
 
-[click] Des tools, des opérations à exécuter. C'est ce qu'on vient de voir avec create_issue.
-
-[click] Des resources, du contenu que l'application peut récupérer.
-
-[click] Et des prompts, des modèles de demande prêts à utiliser.
-
-Ce sont ces trois possibilités qu'on va explorer aujourd'hui.
-
-[click x6 pour faire apparaître la suite de la liste, puis click pour réafficher l'ensemble]
-
-Mais un serveur MCP peut proposer encore plus que ça. Vous voyez qu'il y a d'autres possibilités, dans le protocole et ses extensions. On ne va pas toutes les détailler, et toutes les applications ne les prennent pas forcément en charge.
-
-L'idée à retenir ici, c'est que MCP, ça ne se limite pas à donner des tools à un modèle.
-
-On va commencer par ceux-là, justement, et regarder comment notre issue a été créée.
-
-[Références techniques, hors texte oral]
-La liste mélange des capacités du cœur du protocole et des extensions. Authorization n'est pas une capacité annoncée comme tools. Revérifier les statuts avant la présentation, sans les détailler à l'oral.
-https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle
-https://modelcontextprotocol.io/extensions/overview
+Nous on va plutôt explorer les trois premiers aujourd'hui.
 -->
 
 ---
@@ -489,9 +456,9 @@ On retrouve donc la même logique de découverte, puis d'utilisation, mais ce qu
 ---
 name: What to remember
 group: Recap
-ready: false
+ready: true
 layout: recap
-timing: 1.1
+timing: 0.1
 ---
 
 <RecapList
@@ -515,11 +482,7 @@ timing: 1.1
 <!--
 Ok, qu'est-ce qu'on retient de tout ça ?
 
-D'abord, MCP donne un protocole commun aux applications et aux serveurs pour échanger autour de capacités externes. Le code qui accède à GitHub existe toujours, mais on peut l'exposer à travers ce protocole.
-
-Ensuite, le modèle demande, et l'application agit. C'est elle qui organise les échanges avec le modèle et utilise son client MCP pour communiquer avec le serveur.
-
-Enfin, un serveur MCP, ce n'est pas seulement des tools. On a vu une opération avec create_issue, du contenu avec Project brief, et un modèle de demande avec review_pull_request.
+[Lire le contenu]
 -->
 
 ---
@@ -530,13 +493,13 @@ customFeedbackUrl: https://api.inalia.app/f/QDA48c
 additionalContentUrl: https://beta.soubiran.dev/newsletter
 additionalContentLabel: Get the next episodes
 timing: 0.4
-ready: false
+ready: true
 ---
 
 <!--
 Merci à tous, c'était Estéban.
 
-Si vous avez un feedback, c'est sur le premier QR code que ça se passe ! Le second QR code vous permet de vous abonner à la newsletter pour ne rien manquer des prochains épisodes !
+Si vous avez un feedback, c'est sur le premier QR code et le second vous permet de vous abonner à la newsletter pour ne rien manquer des prochains épisodes !
 
 Merci !
 -->

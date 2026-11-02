@@ -6,9 +6,7 @@ const items = [
   'Resources <span class="text-neutral-500">(core)</span>',
   'Prompts <span class="text-neutral-500">(core)</span>',
   'Completions <span class="text-neutral-500">(core)</span>',
-  'Logging <span class="text-neutral-500">(core)</span>',
   'MCP Apps <span class="text-neutral-500">(extension)</span>',
-  'Authorization <span class="text-neutral-500">(extension)</span>',
   'Tasks <span class="text-neutral-500">(extension)</span>',
   'Skills over MCP <span class="text-neutral-500">(extension)</span>',
 ]
