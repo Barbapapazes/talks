@@ -126,7 +126,7 @@ Donc, on est parti d'une phrase, on l'a découpée en tokens, et maintenant, on 
 ---
 name: From Transformer to probabilities
 group: Generate
-ready: false
+ready: true
 timing: 2
 clicks: 5
 ---
@@ -152,7 +152,7 @@ Et donc, à partir de là, en vulgarisant le plus possible, Paris et 78% chance 
 ---
 name: Autoregressive generation
 group: Generate
-ready: false
+ready: true
 timing: 0.7
 clicks: 4
 ---
@@ -170,7 +170,7 @@ Et cette opération, on la recommence [click] jusqu'à ce que le LLM décide de 
 ---
 name: Model capabilities
 group: Generate
-ready: false
+ready: true
 timing: 0.6
 clicks: 4
 transition: slide-up
@@ -191,7 +191,7 @@ Ce qui est intéressant, c'est qu'à partir de cette propriété, on peut lui fa
 ---
 name: Reasoning
 group: Reason
-ready: false
+ready: true
 timing: 0.9
 clicks: 4
 ---
@@ -222,7 +222,7 @@ Et puis, une fois qu'il a suffsament réfléchi [click], il génère le texte po
 ---
 name: Tool calling
 group: Act
-ready: false
+ready: true
 timing: 0.6
 clicks: 3
 ---
@@ -252,7 +252,7 @@ Le point intéressant c'est que c'est de la donnée qu'est structurée.
 ---
 name: Key takeaways
 group: Recap
-ready: false
+ready: true
 layout: recap
 timing: 0.8
 ---
@@ -284,7 +284,7 @@ Ok, trop chouette ! On a vu beaucoup de choses. Qu'est ce qu'on en retiens ?
 ---
 name: Reading a model card
 group: Bonus
-ready: false
+ready: true
 layout: image
 img: https://images.unsplash.com/photo-1575573560187-ea323357d550?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 timing: 0.6
@@ -310,6 +310,7 @@ customFeedbackUrl: https://api.inalia.app/f/QiA48c
 additionalContentUrl: https://beta.soubiran.dev/newsletter
 additionalContentLabel: Get the next episodes
 timing: 0.9
+ready: true
 ---
 
 <!--
