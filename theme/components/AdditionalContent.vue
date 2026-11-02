@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useSlideContext } from '@slidev/client'
-import { InaliaQR } from 'slidev-addon-inalia'
+import { InaliaQR, InaliaShortUrl } from 'slidev-addon-inalia'
 
 defineProps<{ label?: string }>()
 
@@ -10,7 +10,7 @@ const { $frontmatter } = useSlideContext()
 <template>
   <div v-if="$frontmatter.additionalContentUrl" class="flex justify-center items-center flex-col space-y-2">
     <div>
-      🎁 {{ label ?? 'Contenu additionnel' }} 🎁
+      {{ label ?? '🎁 Contenu additionnel 🎁' }}
     </div>
 
     <div
@@ -20,5 +20,6 @@ const { $frontmatter } = useSlideContext()
         :url="$frontmatter.additionalContentUrl" class="block border-0!"
       />
     </div>
+    <InaliaShortUrl :url="$frontmatter.additionalContentUrl" class="border-0! text-xs mx-auto" />
   </div>
 </template>

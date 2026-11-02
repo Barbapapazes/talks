@@ -23,12 +23,6 @@ ready: true
 timing: 0.5
 ---
 
-<!--
-TODO: Restructurer tout outro2. Je n'aime pas l'organisation avec le titre, for X, presented by, ni les trop nombreuses parenthèses. Avoir des liens de feedback via Inalia, réfléchir à comment le faire. Avoir un lien vers la newsletter pour ne rien manquer des prochains épisodes.
-
-TODO: Revoir la partie sur le chat dans la mesure où on peut unifier ça et avoir un chat pour le coup.
- -->
-
 # LLM fundamentals
 
 <!--
@@ -312,13 +306,16 @@ Donc là, vous avez 3 cartes d'identité. La question, c'est : comment ça se li
 name: Thank you
 group: Closing
 layout: outro2
+customFeedbackUrl: https://api.inalia.app/f/QiA48c
+additionalContentUrl: https://beta.soubiran.dev/newsletter
+additionalContentLabel: Get the next episodes
 timing: 0.9
 ---
 
 <!--
 Merci à tous, c'était Estéban.
 
-Si vous avez un feedback, c'est sur le premier QR code que ça se passe ! Vous pouvez aussi choisir la prochaine thématique ou simplement vous abonner à la newsletter pour ne rien manquer !
+Si vous avez un feedback, c'est sur le premier QR code que ça se passe ! Le second QR code vous permet de vous abonner à la newsletter pour ne rien manquer des prochains épisodes !
 
 Merci !
 -->
