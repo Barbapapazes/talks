@@ -20,14 +20,16 @@ author: Estéban Soubiran
 keywords: unjs,typescript,npm-packages,developer-tooling,edge-computing,cross-runtime
 ---
 
-<h1 flex="~ col">
-  <span>Unifié et Universel,</span>
-  <span flex="~ row gap-4">le <span v-mark.yellow.underline.delay300="{at:1,padding:-8,seed:42}">JavaScript</span><span flex="~ items-center"> avec <img src="./assets/unjs.svg" h-12 ml-6 mr-2 />UnJS</span></span>
-</h1>
+<div class="absolute inset-0 flex flex-col items-center justify-center px-14 text-center">
+  <h1 class="flex flex-col items-center">
+    <span>Unifié et Universel,</span>
+    <span class="flex flex-row justify-center gap-4">le <span v-mark.yellow.underline.delay300="{at:1,padding:-8,seed:42}">JavaScript</span><span class="flex items-center"> avec <img src="./assets/unjs.svg" class="h-12 ml-6 mr-2" />UnJS</span></span>
+  </h1>
+</div>
 
-<div abs-br mx-10 my-11 flex="~ col gap-4 items-end" text-left>
+<div class="absolute bottom-0 right-0 mx-10 my-11 flex flex-col gap-4 items-end text-left">
   <span>DevoxxFR</span>
-  <div text-xs opacity-75 mt--4>19 avril 2024</div>
+  <div class="text-xs opacity-75 mt--4">19 avril 2024</div>
 </div>
 
 <!--

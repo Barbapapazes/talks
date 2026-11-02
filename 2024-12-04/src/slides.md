@@ -19,16 +19,16 @@ author: Estéban Soubiran
 keywords: nuxt,nitro,nuxthub,full-stack,cloudflare,edge-computing
 ---
 
-<div class="relative">
-  <h1 class="text-center font-serif pb-36">Nuxt, Nuxt<span class="text-primary">Hub</span> et le full-stack</h1>
-  <p class="absolute left-1/2 transform translate -translate-x-1/2 top-24 op-60">
+<div class="absolute inset-x-14 top-20 z-10 flex flex-col items-center text-center">
+  <h1 class="font-serif">Nuxt, Nuxt<span class="text-[var(--slidev-theme-primary)]">Hub</span> et le full-stack</h1>
+  <p class="op-60">
     Présenté par Estéban
   </p>
 </div>
 
-<Globe class="absolute z-10 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/5" :size="1000" :speed="0.001" :markers="[{ location: [44.833328, -0.56667], size: 0.02 }]" />
+<Globe class="absolute z-0 left-1/2 top-20 -translate-x-1/2" :size="1000" :speed="0.001" :markers="[{ location: [44.833328, -0.56667], size: 0.02 }]" />
 
-<div class="absolute right-6 bottom-6 flex flex-col gap-4 items-end">
+<div class="absolute z-10 right-6 bottom-6 flex flex-col gap-4 items-end">
   <span class="text-sm op-40">Vue.js Paris</span>
   <span class="text-xs op-20 mt--4">4 décembre 2024</span>
 </div>

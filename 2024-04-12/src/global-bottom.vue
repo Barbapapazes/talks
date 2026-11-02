@@ -152,15 +152,15 @@ const poly3 = usePloy(3)
     aria-hidden="true"
   >
     <div
-      class="clip from-[#fde047] to-white/10 bg-gradient-to-r"
+      class="clip clip-yellow-right"
       :style="{ 'clip-path': `polygon(${poly1})`, 'opacity': opacity }"
     />
     <div
-      class="clip from-[#fde047] to-white/10 bg-gradient-to-l"
+      class="clip clip-yellow-left"
       :style="{ 'clip-path': `polygon(${poly2})`, 'opacity': opacity }"
     />
     <div
-      class="clip from-lime to-white/10 bg-gradient-to-t"
+      class="clip clip-lime-top"
       :style="{ 'clip-path': `polygon(${poly3})`, 'opacity': 0.2 }"
     />
   </div>
@@ -183,6 +183,18 @@ const poly3 = usePloy(3)
   aspect-ratio: 16 / 9;
   position: absolute;
   inset: 0;
+}
+
+.clip-yellow-right {
+  background-image: linear-gradient(to right, #fde047, rgb(255 255 255 / 10%));
+}
+
+.clip-yellow-left {
+  background-image: linear-gradient(to left, #fde047, rgb(255 255 255 / 10%));
+}
+
+.clip-lime-top {
+  background-image: linear-gradient(to top, #a3e635, rgb(255 255 255 / 10%));
 }
 
 .light .clip {

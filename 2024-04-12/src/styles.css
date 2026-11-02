@@ -1,3 +1,8 @@
+/* Keep negative-z-index backgrounds above the slide's solid background. */
+#slide-content {
+  isolation: isolate;
+}
+
 .dark #slide-content {
   background-color: #111827 !important;
 }

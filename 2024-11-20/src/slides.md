@@ -19,13 +19,15 @@ author: Estéban Soubiran
 keywords: user-experience,optimistic-ui,loading-states,skeleton-screens,pinia-colada,vue
 ---
 
-<h1 class="text-center font-serif">
-  Fluidifier<br>l'expérience utilisateur
-</h1>
+<div class="absolute inset-0 flex flex-col items-center justify-center px-14 text-center">
+  <h1 class="font-serif">
+    Fluidifier<br>l'expérience utilisateur
+  </h1>
 
-<p class="text-center">
-  Par Estéban Soubiran
-</p>
+  <p>
+    Par Estéban Soubiran
+  </p>
+</div>
 
 <div class="absolute right-6 bottom-6 flex flex-col gap-4 items-end">
   <span class="text-sm op-40">TakiMeet</span>

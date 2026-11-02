@@ -23,14 +23,16 @@ author: Estéban Soubiran
 keywords: unjs,typescript,npm-packages,developer-tooling,edge-computing,cross-runtime
 ---
 
-<h1 flex="~ col">
-  <span>Découvrons <span v-mark.yellow.underline.delay300="{at:1,padding:-8,seed:42}">ensemble</span></span>
-  <span flex="~ items-center">l'écosystème <img src="./assets/unjs.svg" h-12 ml-6 mr-2 />UnJS</span>
-</h1>
+<div class="absolute inset-0 flex flex-col items-center justify-center px-14 text-center">
+  <h1 class="flex flex-col items-center">
+    <span>Découvrons <span v-mark.yellow.underline.delay300="{at:1,padding:-8,seed:42}">ensemble</span></span>
+    <span class="flex items-center justify-center">l'écosystème <img src="./assets/unjs.svg" class="h-12 ml-6 mr-2" />UnJS</span>
+  </h1>
+</div>
 
-<div abs-br mx-10 my-11 flex="~ col gap-4 items-end" text-left>
+<div class="absolute bottom-0 right-0 mx-10 my-11 flex flex-col gap-4 items-end text-left">
   <span>StrasbourgJS</span>
-  <div text-xs opacity-75 mt--4>12 avril 2024</div>
+  <div class="text-xs opacity-75 mt--4">12 avril 2024</div>
 </div>
 
 <!--

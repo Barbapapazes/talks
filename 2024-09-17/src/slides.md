@@ -18,22 +18,24 @@ author: Estéban Soubiran
 keywords: nuxt,nitro,nuxthub,full-stack,cloudflare,edge-computing
 ---
 
-<div op="60" font="400">
-  You've dreamed it?
+<div class="absolute inset-0 flex flex-col items-center justify-center px-14 text-center">
+  <div class="op-60 font-400">
+    You've dreamed it?
+  </div>
+
+  <h1 class="font-serif font-500">
+    Create full-stack apps<br>with <span class="text-[var(--slidev-theme-primary)]">Nuxt</span>
+  </h1>
 </div>
 
-<h1 font="serif 500" p="b-20">
-  Create full-stack apps<br>with <span text="primary">Nuxt</span>
-</h1>
-
-<div absolute left="14" bottom="10" flex="~ col gap-4 items-start">
+<div class="absolute left-14 bottom-10 flex flex-col gap-4 items-start">
   <span>Estéban Soubiran</span>
-  <a href="https://soubiran.dev" target="_blank" op="60" m="t--4" class="text-xs">soubiran.dev</a>
+  <a href="https://soubiran.dev" target="_blank" class="text-xs op-60 mt--4">soubiran.dev</a>
 </div>
 
-<div absolute right="14" bottom="10" flex="~ col gap-4 items-end">
+<div class="absolute right-14 bottom-10 flex flex-col gap-4 items-end">
   <span>PragVue</span>
-  <span text="xs" op="60" m="t--4">September, 17 2024</span>
+  <span class="text-xs op-60 mt--4">September, 17 2024</span>
 </div>
 
 ---

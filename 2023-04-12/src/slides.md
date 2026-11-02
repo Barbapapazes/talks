@@ -16,8 +16,9 @@ author: Estéban Soubiran
 keywords: unpoly,progressive-enhancement,server-rendered-applications,html-over-the-wire,web-performance
 ---
 
-<h1 relative z-1>
-  <div text-primary font-semibold>
+<div class="absolute inset-0 flex flex-col justify-center px-14">
+<h1 class="relative z-1">
+  <div class="text-[var(--slidev-theme-primary)] font-semibold">
     Unpoly
   </div>
   <div>
@@ -25,19 +26,20 @@ keywords: unpoly,progressive-enhancement,server-rendered-applications,html-over-
   </div>
 </h1>
 
-<div uppercase text-lg tracking-wider>
+<div class="uppercase text-lg tracking-wider">
   Estéban Soubiran
 </div>
+</div>
 
-<div abs-br class="-right-12 -bottom-12">
+<div class="absolute -right-12 -bottom-12">
   <img src="./assets/green-cloud.png" />
 </div>
 
-<div abs-br mx-10 my-12 flex="~ col" text-sm text-right>
+<div class="absolute bottom-0 right-0 mx-10 my-12 flex flex-col text-sm text-right">
   <span>
     Devoxx · web
   </span>
-  <span opacity-80>
+  <span class="opacity-80">
     12 avril 2023
   </span>
 </div>
