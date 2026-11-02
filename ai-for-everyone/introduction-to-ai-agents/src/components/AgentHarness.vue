@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import piLogo from '../assets/harness/pi.svg'
 import hermesLogo from '../assets/harness/hermes.svg'
 import openclawLogo from '../assets/harness/openclaw.svg'
+import piLogo from '../assets/harness/pi.svg'
 
 const modelProviders = [
   { name: 'Anthropic', icon: 'i-simple-icons-anthropic', color: 'currentColor' },
@@ -41,13 +41,13 @@ const responsibilities = [
       </div>
 
       <div v-click="2" class="model-column">
-      <div class="model rounded-md border border-neutral-200 bg-neutral-100 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
-        <span class="i-lucide-brain text-3xl text-purple-600 dark:text-purple-400" aria-hidden="true" />
-        <strong>Model</strong>
-      </div>
-      <div class="model-brands" aria-label="Model providers">
-        <span v-for="brand in modelProviders" :key="brand.name" :title="brand.name" role="img" :aria-label="brand.name" :class="brand.icon" class="brand-icon" :style="{ color: brand.color }" />
-      </div>
+        <div class="model rounded-md border border-neutral-200 bg-neutral-100 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+          <span class="i-lucide-brain text-3xl text-purple-600 dark:text-purple-400" aria-hidden="true" />
+          <strong>Model</strong>
+        </div>
+        <div class="model-brands" aria-label="Model providers">
+          <span v-for="brand in modelProviders" :key="brand.name" :title="brand.name" role="img" :aria-label="brand.name" :class="brand.icon" class="brand-icon" :style="{ color: brand.color }" />
+        </div>
       </div>
 
       <div v-click="4" class="model-link text-neutral-500">
@@ -69,8 +69,12 @@ const responsibilities = [
           <div v-for="item in responsibilities" :key="item.name" v-click="item.reveal" class="responsibility rounded-md border border-neutral-200 bg-neutral-100 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
             <span :class="item.icon" class="shrink-0 text-lg text-purple-600 dark:text-purple-400" aria-hidden="true" />
             <div>
-              <div class="font-semibold">{{ item.name }}</div>
-              <div class="detail text-neutral-500">{{ item.detail }}</div>
+              <div class="font-semibold">
+                {{ item.name }}
+              </div>
+              <div class="detail text-neutral-500">
+                {{ item.detail }}
+              </div>
             </div>
           </div>
         </div>
@@ -84,7 +88,9 @@ const responsibilities = [
       </div>
       <div class="environment rounded-md border border-neutral-300 bg-white dark:border-neutral-700 dark:bg-neutral-900">
         <div><strong>Tools and execution environment</strong><span class="ml-4 text-neutral-500">Files · Terminal · Browser · APIs</span></div>
-        <div class="runtime text-neutral-500"><span class="i-lucide-lock-keyhole mr-1 inline-block align-middle" aria-hidden="true" />Runtime enforces filesystem, network, and process restrictions</div>
+        <div class="runtime text-neutral-500">
+          <span class="i-lucide-lock-keyhole mr-1 inline-block align-middle" aria-hidden="true" />Runtime enforces filesystem, network, and process restrictions
+        </div>
       </div>
     </div>
   </div>
