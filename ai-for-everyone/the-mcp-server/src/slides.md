@@ -46,7 +46,7 @@ timing: 1.3
 <McpGitHubDemo />
 
 <!--
-Imaginons qu'on travaille sur une application de suivi de projets et qu'on aimerait une nouvelle feature, éviter que l'utilisateur supprime accidentellement un projet.
+Imaginons qu'on travaille sur une application de suivi de projets et qu'on veuille ajouter une fonctionnalité pour éviter que l'utilisateur supprime un projet par accident.
 
 [Entrée pour envoyer le message, puis laisser apparaître la réponse]
 
@@ -56,11 +56,11 @@ L'assistant nous propose une modale de confirmation dans laquelle il faut saisir
 
 Du coup, je lui demande d'en faire une issue sur GitHub.
 
-Et là, il nous dit qu'il peut rédiger le contenu, mais que bah il peut pas créer l'issue.
+Et là, il nous dit qu'il peut rédiger le contenu, mais qu'il ne peut pas créer l'issue.
 
-Et en vrai, c'est assez logique. Le modèle peut produire du texte, mais ça ne lui donne pas un accès à GitHub.
+Et en vrai, c'est assez logique. Le modèle peut produire du texte, mais ça ne lui donne pas accès à GitHub.
 
-Il faudrait qu'on lui rajoute ce accès.
+Il faudrait donc lui donner cet accès.
 -->
 
 ---
@@ -68,31 +68,27 @@ name: From conversation to action
 group: Demo
 ready: true
 layout: ai
-timing: 1.5
+timing: 0.8
 ---
 
 <McpGitHubDemo with-server />
 
 <!--
-[Ouvrir Integrations, puis Add MCP server]
+On reprend la même conversation, mais cette fois, on connecte l'application à un serveur MCP.
 
-Pour ça, on va recommencer l'échange avec notre agent mais au préalable, on va lui connecter un serveur MCP.
+[Ouvrir Integrations, puis Add MCP server]
 
 [Saisir GitHub et https://github-mcp.example.com/mcp, puis cliquer sur Connect]
 
-Ok, trop bien, notre MCP nous met à disposition un nouvel outil, create_issue.
+Le serveur fournit l'outil create_issue.
 
 [Cliquer sur Start conversation, puis rejouer les deux échanges avec Entrée]
 
-Donc on va lui faire la même demande et une fois de plus, lui demande de créer l'issue.
-
-Cette fois, on voit un appel à create_issue, puis la confirmation. Notre issue numéro 42 a été créée.
+Cette fois, l'application peut l'appeler et notre issue est créée.
 
 [Ouvrir l'appel d'outil pour montrer les arguments et le résultat, puis le refermer]
 
-Et si on se penche sur le tool call, on y retrouve le dépôt, le titre et le contenu de l'issue avec le résultat de l'opération.
-
-Magnifique ! Simplement avec un serveur MCP ! Mais concrètement, comment ça fonctionne ?
+On retrouve les arguments et le résultat. Alors, comment ça fonctionne ?
 -->
 
 ---
@@ -101,7 +97,6 @@ group: Connect
 ready: true
 layout: center-card
 img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
-positionClass: w-200
 timing: 1.2
 ---
 
@@ -136,13 +131,13 @@ timing: 1.2
 <!--
 Pour comprendre ça, il faut qu'on revienne à la base.
 
-Ça, c'est la requête envoyée à l'API d'OpenAI pour demander la génération de texte. On retrouve pleins d'infos dont une liste de tools.
+Ça, c'est la requête envoyée à l'API d'OpenAI pour demander une génération de texte. On y retrouve plusieurs informations, dont une liste d'outils.
 
-[click] Si on regarde d'un peu plus proche, on y retrouve notre tool `create_issue` et tout sa définition : nom, description et schéma JSON. C'est ce contenu qu'est dans le système prompt pour permettre au LLM de demander un appel.
+[click] Si on regarde de plus près, on retrouve notre outil `create_issue` et sa définition complète : son nom, sa description et le schéma JSON de ses paramètres. Cette définition est fournie au LLM pour lui permettre de demander un appel d'outil.
 
-Et cette notion de "demander" elle est hyper important parce que si c'est le modèle qui produit la demande, c'est l'application qui l'exécute et renvoie le résultat dans le context.
+Et cette notion de "demander" est très importante. Le modèle produit la demande, mais c'est l'application qui exécute l'appel et ajoute le résultat au contexte.
 
-Alors tout ça, c'est très chouette, mais ça nous explique pas pourquoi ajouter un protocol.
+Alors tout ça, c'est très chouette, mais ça ne nous explique pas pourquoi ajouter un protocole.
 -->
 
 ---
@@ -156,104 +151,80 @@ timing: 1.4
 <McpWhyProtocol />
 
 <!--
-Imaginons, on est GitHub et on a des API qu'on aimerait bien appeler depuis différents systèmes que ce soit [click] ChatGPT, [click] Notion ou même [click] Cursor.
+Imaginons qu'on soit GitHub et qu'on veuille rendre nos API accessibles depuis différentes applications, que ce soit [click] ChatGPT, [click] Notion ou même [click] Cursor.
 
-Bah l'opération ce sera toujours la même. Pour créer une issue, on va devoir à chaque fois créer un tool qui appellera nos API.
+L'opération reste la même. Pour créer une issue, on va devoir développer, pour chaque application, un outil qui appelle nos API.
 
-Le truc c'est que bah il est pas tout seul. [click] Notion, on va devoir faire la même chose, Slack aussi et vos applications aussi.
+Et GitHub n'est pas le seul service concerné. [click] Pour Notion, il faut faire la même chose. Pour Slack aussi, et pour vos applications aussi.
 
-L'idée avec Model Context Protocol, MCP, c'est d'utiliser un protocole commun pour ces échanges.
+L'idée du Model Context Protocol, ou MCP, c'est d'utiliser un protocole commun pour ces échanges.
 
-[click] Vous développez vos tools une fois et vous pouvez les utiliser partout.
+[click] Vous développez vos outils une fois et vous pouvez les réutiliser dans toutes les applications compatibles.
 
-GitHub, Notion ou Slack implémentent la spec MCP côté serveur et des applications comme ChatGPT, Claude ou Cursor suivent la spec MCP côté client.
+Des services comme GitHub, Notion ou Slack implémentent la spécification MCP côté serveur. Des applications comme ChatGPT, Claude ou Cursor la suivent côté client.
 
-Concrètement, ça permet un développeur pour plusieurs usages.
+Concrètement, on développe une seule intégration pour plusieurs usages.
 -->
 
 ---
 name: Connecting over stdio
 group: Connect
-ready: false
+ready: true
 transition: slide-up
-timing: 0.9
+timing: 0.3
 ---
 
 <McpServerConnection transport="stdio" />
 
 <!--
-Première possibilité, il tourne sur notre ordinateur.
-
-Dans l'application, on a un client MCP. C'est lui qui communique avec le serveur, pas le modèle.
-
-Avec stdio, l'application lance un processus serveur et échange des messages avec lui par son entrée et sa sortie standard.
-
-[click] C'est donc l'application qui gère le lancement et l'arrêt de ce processus.
-
-Local ne veut pas dire sans réseau. Notre serveur peut très bien appeler l'API GitHub sur Internet.
-
-Et si on ne veut pas lancer ce serveur sur notre machine ?
+Pour connecter le client et le serveur, on a deux possibilités. Avec stdio, l'application lance le serveur sur la même machine et communique avec lui via son entrée et sa sortie standard.
 -->
 
 ---
 name: Connecting over Streamable HTTP
 group: Connect
-ready: false
-timing: 1
+ready: true
+timing: 0.4
 ---
 
 <McpServerConnection transport="http" />
 
 <!--
-On peut aussi déployer le serveur séparément et s'y connecter avec Streamable HTTP.
+Avec Streamable HTTP, le serveur peut être hébergé à distance, comme celui de GitHub.
 
-C'est le cas qu'on a illustré dans la démo. On saisit une URL, et le client MCP de l'application se connecte à cette adresse. Il ne lance pas le serveur.
+[click]
 
-[click] Et notre application peut elle-même être hébergée en ligne, comme ChatGPT ici. Le serveur distant n'est pas réservé aux applications installées sur notre ordinateur.
+Ça permet aussi aux applications en ligne, comme ChatGPT, de s'y connecter. C'est ce qu'on a fait dans la démo.
 
-Dans les deux cas, le modèle ne parle pas directement au serveur MCP. C'est toujours le client, dans l'application, qui s'en charge.
-
-Alors, quand on clique sur Connect, qu'est-ce qu'ils se disent ?
+Maintenant, qu'est-ce qu'ils s'échangent ?
 -->
 
 ---
 name: The first exchange
 group: Connect
-ready: false
+ready: true
 clicks: 2
-timing: 2
+timing: 0.5
 ---
 
 <McpInitialization />
 
 <!--
-Avant de récupérer les outils, le client et le serveur commencent par initialiser leur connexion.
+La connexion commence par trois messages.
 
-[Ouvrir View message sur initialize]
+[View message]
 
-Le client envoie initialize. On peut lire le message sans connaître tout JSON-RPC.
+Le client demande l'initialisation. C'est du JSON-RPC : le champ `method` indique l'opération demandée.
 
-method indique l'opération demandée, params contient ses paramètres, et id permettra de retrouver la réponse correspondante.
+[click]
 
-Ici, le client annonce la version de MCP qu'il prend en charge, son identité et ses capacités. La version de JSON-RPC, tout en haut, est une autre information.
+Le serveur répond avec ses capacités et la version du protocole.
 
-[Fermer la modale, puis click. Ouvrir la réponse du serveur]
+[click]
 
-Le serveur répond avec le même id. Il annonce lui aussi une version et ses capacités. Pour continuer, les deux doivent pouvoir utiliser la même version du protocole.
+Le client confirme qu'il est prêt. La connexion est établie.
 
-Dans cet exemple, le serveur annonce tools. Ça veut dire qu'il propose des outils. On n'a pas encore leur liste, et ça ne nous donne pas une autorisation sur GitHub.
-
-[Fermer la modale, puis click. Ouvrir notifications/initialized]
-
-Enfin, le client signale qu'il est prêt. Cette fois, il n'y a pas d'id. C'est une notification, elle n'attend pas de réponse.
-
-[Fermer la modale, puis click]
-
-Maintenant, on peut découvrir ce que le serveur propose.
-
-[Référence technique, hors texte oral]
-Exemples basés sur MCP 2025-11-25. project-chat et github-mcp sont fictifs.
-https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle
+Alors, quelles capacités peut proposer le serveur ?
 -->
 
 ---
@@ -263,48 +234,44 @@ ready: true
 clicks: 10
 layout: center-card
 img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
-timing: 0.5
+timing: 0.6
 ---
 
 <McpToolDefinition />
 
 <!--
-Un serveur MCP, ça ne paraît pas que d'exposer [click] des tools, ça permet aussi d'exposer [click] des ressources, [click] des prompts, [click] de la completions, [click] des apps, [click] des tasks et même [click] des skills.
+Oui, il y en a même beaucoup d'autres !
 
-Nous on va plutôt explorer les trois premiers aujourd'hui.
+Un serveur MCP ne propose pas seulement [click] des outils. Il peut aussi proposer [click] des ressources, [click] des prompts, [click] de la complétion, [click] des apps, [click] des tâches et même [click] des skills.
+
+Aujourd'hui, on va explorer les trois premières capacités, qui sont les plus utilisées.
 -->
 
 ---
 name: Calling a tool
 group: Primitives
-ready: false
+ready: true
 layout: ai
 transition: slide-up
-timing: 0.9
+timing: 0.6
 ---
 
 <McpToolDemo />
 
 <!--
-On retrouve notre demande de création d'issue, avec le dépôt, le titre et la description.
+Commençons par les outils. Demandons à notre assistant de créer une issue. [Entrée pour envoyer le message]
 
-[Entrée pour envoyer le message, puis Entrée pour terminer l'animation si nécessaire]
+On voit que le modèle demande un appel à l'outil create_issue avec des paramètres. L'application exécute l'appel, puis reçoit le résultat. C'est fait, l'issue est créée.
 
-Le modèle demande create_issue. L'application peut demander une confirmation selon l'opération et ses réglages, puis elle fait exécuter l'appel par son client MCP.
-
-Le serveur crée l'issue et renvoie un résultat. L'application transmet ensuite ce résultat au modèle, qui peut nous confirmer la création.
-
-Ici, ça reste bien sûr une simulation.
-
-Mais à quoi ressemble l'échange entre le client et le serveur ?
+Sympa et vraiment pratique ! Mais qu'est-ce qui se passe sous le capot ?
 -->
 
 ---
 name: 'Behind the scenes: tools/call'
 group: Primitives
-ready: false
+ready: true
 img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
-timing: 1.3
+timing: 0.8
 ---
 
 <BackgroundImage />
@@ -312,60 +279,46 @@ timing: 1.3
 <McpProtocolInspector kind="tools" class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
-[Montrer la requête tools/call]
+D'abord, notre client demande au serveur la liste des outils disponibles pour transmettre leurs définitions au LLM. Dans la réponse du serveur, on découvre create_issue.
 
-On retrouve une requête JSON-RPC, comme pendant l'initialisation. Cette fois, la méthode s'appelle tools/call.
+Ensuite, quand le LLM demande un appel d'outil, le client transmet la demande au serveur MCP avec le nom de l'outil et ses arguments. C'est ce qu'on voit ici.
 
-Dans les paramètres, on a le nom de l'outil et ses arguments. repository, title et body viennent de notre outil fictif. MCP ne nous impose pas ces noms.
-
-Attention à la différence. Le modèle a demandé un appel d'outil. C'est le client MCP qui construit et envoie cette requête au serveur.
-
-[Passer sur Response]
-
-Le serveur fait l'opération auprès de GitHub, puis renvoie le résultat. Le même id permet de l'associer à la requête.
-
-[Ouvrir tools/list, puis montrer Request et Response]
-
-Et pour découvrir l'outil au départ, le client utilise tools/list. Le serveur lui donne les définitions disponibles, que l'application peut ensuite présenter au modèle.
-
-On a donc deux moments distincts, découvrir l'outil et l'appeler.
+Le serveur reçoit la demande, exécute la fonction et renvoie une réponse. Le client ajoute le résultat au contexte, et l'agent peut continuer.
 -->
 
 ---
 name: 'Resources: expose content'
 group: Primitives
-ready: false
+ready: true
 layout: ai
 transition: slide-up
-timing: 1.3
+timing: 1
 ---
 
 <McpResourceDemo />
 
 <!--
-Deuxième possibilité, les resources.
+Deuxième capacité, les ressources.
 
-Cette fois, on ne veut pas créer une issue. On veut donner à l'assistant des informations sur notre produit.
+Cette fois, on ne veut pas créer une issue. On veut donner à l'assistant des informations supplémentaires sur notre produit.
 
 [Cliquer sur Add context, puis sélectionner Project brief]
 
-Je choisis Project brief. C'est un document qui décrit notre application, Project Dashboard. Il apparaît en pièce jointe, et je peux le retirer si je change d'avis.
+Je choisis le document Project brief. Il apparaît un peu comme une pièce jointe, et je peux le retirer si je change d'avis.
 
 [Entrée pour lancer la conversation]
 
-L'application récupère le contenu de ce document auprès du serveur et l'ajoute au contexte envoyé au modèle.
+Ce qui est intéressant, c'est que ce document ne fait pas partie des fichiers sources de notre projet. C'est un document exposé par le serveur MCP.
 
-Le serveur ne glisse donc pas automatiquement ses documents dans toutes nos conversations. C'est l'application qui décide comment les utiliser. Ici, elle me laisse choisir.
-
-On pourrait aussi exposer la lecture d'un document comme un outil. Avec une resource, on le présente comme du contenu à récupérer.
+On peut donc utiliser un serveur MCP pour centraliser des documents communs à plusieurs projets.
 -->
 
 ---
 name: 'Behind the scenes: resources/read'
 group: Primitives
-ready: false
+ready: true
 img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
-timing: 1.1
+timing: 0.3
 ---
 
 <BackgroundImage />
@@ -373,62 +326,44 @@ timing: 1.1
 <McpProtocolInspector kind="resources" class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
-[Montrer la requête resources/read]
-
-Pour lire notre document, le client envoie resources/read avec son URI.
-
-Ici, elle commence par docs://. C'est un choix de notre serveur fictif, pas un format que toutes les resources MCP doivent utiliser.
-
-[Passer sur Response]
-
-Le serveur renvoie le contenu du document. On retrouve contents, au pluriel, qui contient ici du texte.
-
-Cette réponse n'est pas une réponse du modèle. On a seulement récupéré des données. C'est ensuite l'application qui peut les ajouter au contexte.
-
-[Ouvrir resources/list, puis montrer Response]
-
-Et comme pour les outils, on peut d'abord découvrir les ressources disponibles avec resources/list. On retrouve leur URI, leur nom et éventuellement leur type de contenu.
+Même logique de découverte : le client liste les ressources, puis récupère le contenu de celle qu'on a choisie pour l'ajouter au contexte du LLM.
 -->
 
 ---
 name: 'Prompts: expose templates'
 group: Primitives
-ready: false
+ready: true
 layout: ai
 transition: slide-up
-timing: 1.4
+timing: 1.2
 ---
 
 <McpPromptDemo />
 
 <!--
-Troisième possibilité, les prompts.
+Troisième capacité, et dernière pour aujourd'hui, les prompts.
 
 Imaginons qu'on veuille proposer une façon commune de demander une revue de pull request, sans réécrire les consignes à chaque fois.
 
 [Saisir /, puis sélectionner /review_pull_request]
 
-Notre application présente les prompts sous forme de commandes. C'est un choix d'interface, MCP n'impose pas cette présentation.
+Notre application présente les prompts sous forme de commandes. Ça ressemble à l'utilisation d'un skill dans notre projet, sauf qu'ici, le prompt est fourni à distance. On peut le retrouver dans les applications compatibles qu'on connecte à ce serveur MCP.
 
 [Situer les champs Repository et Pull request, puis cliquer sur Use prompt]
 
-Je précise le dépôt et le numéro de la pull request. Le serveur utilise ces arguments pour préparer le message.
-
-Et là, regardez, le texte est dans la saisie. On n'a encore rien envoyé au modèle.
+Je précise le dépôt et le numéro de la pull request comme arguments du prompt. Le serveur me renvoie alors un message prêt à envoyer, sans que j'aie à le rédiger.
 
 [Entrée pour envoyer le message]
 
-L'assistant nous demande le diff. C'est normal, notre prompt contient des consignes de revue, mais pas le contenu de la pull request.
-
-Récupérer un prompt, ça ne lit pas automatiquement le dépôt et ça ne lance pas une revue tout seul.
+Magnifique !
 -->
 
 ---
 name: 'Behind the scenes: prompts/get'
 group: Primitives
-ready: false
+ready: true
 img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
-timing: 1.1
+timing: 0.7
 ---
 
 <BackgroundImage />
@@ -436,21 +371,11 @@ timing: 1.1
 <McpProtocolInspector kind="prompts" class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
-[Montrer la requête prompts/get]
+Ici aussi, le client liste les prompts, puis récupère celui qu'on a choisi en lui passant les arguments. Le serveur renvoie le message complété.
 
-Côté protocole, on appelle prompts/get avec le nom du prompt et les arguments.
+La différence entre ces trois capacités tient surtout à qui décide de les utiliser. Le modèle demande les appels d'outils, l'application gère les ressources et l'utilisateur choisit les prompts.
 
-Les valeurs sont des chaînes de caractères, même pour le numéro de la pull request.
-
-[Passer sur Response]
-
-Le serveur renvoie des messages préparés à partir de ces arguments. Il ne renvoie pas une réponse du modèle, et il n'a pas démarré de génération.
-
-[Ouvrir prompts/list, puis montrer Response]
-
-Pour découvrir les prompts disponibles et les arguments qu'ils attendent, le client utilise prompts/list.
-
-On retrouve donc la même logique de découverte, puis d'utilisation, mais ce qu'on récupère n'est pas la même chose. Ici, ce sont des messages prêts à utiliser.
+Les ressources apportent du contexte. Les prompts fournissent des messages prêts à compléter.
 -->
 
 ---
@@ -480,7 +405,7 @@ timing: 0.1
 />
 
 <!--
-Ok, qu'est-ce qu'on retient de tout ça ?
+OK, qu'est-ce qu'on retient de tout ça ?
 
 [Lire le contenu]
 -->
@@ -499,7 +424,7 @@ ready: true
 <!--
 Merci à tous, c'était Estéban.
 
-Si vous avez un feedback, c'est sur le premier QR code et le second vous permet de vous abonner à la newsletter pour ne rien manquer des prochains épisodes !
+Pour me faire un retour, vous pouvez scanner le premier QR code. Le second vous permet de vous abonner à la newsletter pour suivre les prochains épisodes !
 
 Merci !
 -->
