@@ -1,5 +1,15 @@
 <script setup lang="ts">
-import { computed, ref, useId } from 'vue'
+import { computed, ref } from 'vue'
+import Badge from '../ui/badge/Badge.vue'
+import CodeBlock from '../ui/code-block/CodeBlock.vue'
+import CodeBlockContent from '../ui/code-block/CodeBlockContent.vue'
+import Trace from '../ui/trace/Trace.vue'
+import TraceCollapsible from '../ui/trace/TraceCollapsible.vue'
+import TraceCollapsibleContent from '../ui/trace/TraceCollapsibleContent.vue'
+import TraceCollapsibleTrigger from '../ui/trace/TraceCollapsibleTrigger.vue'
+import TraceIcon from '../ui/trace/TraceIcon.vue'
+import TraceLine from '../ui/trace/TraceLine.vue'
+import TraceTitle from '../ui/trace/TraceTitle.vue'
 
 const props = withDefaults(defineProps<{
   name: string
@@ -12,7 +22,6 @@ const props = withDefaults(defineProps<{
 })
 
 const expanded = ref(false)
-const detailsId = useId()
 const expandable = computed(() => props.compact && (props.arguments !== undefined || props.result !== undefined))
 const showDetails = computed(() => !props.compact || expanded.value)
 
@@ -24,98 +33,115 @@ const labels = {
 </script>
 
 <template>
-  <div class="chat-tool-call" :class="{ 'tool-compact': compact }">
-    <component
-      :is="expandable ? 'button' : 'div'"
-      class="tool-heading"
-      :type="expandable ? 'button' : undefined"
-      :aria-expanded="expandable ? expanded : undefined"
-      :aria-controls="expandable ? detailsId : undefined"
-      @click.stop="expanded = !expanded"
-      @keydown.stop
-    >
-      <span class="tool-name">
-        <span
-          class="size-4"
-          :class="status === 'running' ? 'i-ph-spinner-gap animate-spin' : 'i-ph-wrench'"
-          aria-hidden="true"
-        />
-        {{ name }}
-      </span>
-      <span class="sr-only" role="status">{{ labels[status] }}</span>
-      <span v-if="expandable" class="size-4" :class="expanded ? 'i-ph-caret-up' : 'i-ph-caret-down'" aria-hidden="true" />
-    </component>
-    <div v-if="showDetails" :id="detailsId">
-      <div v-if="arguments !== undefined" class="tool-section">
-        <div class="tool-label">
-          Input
-        </div>
-        <pre class="tool-code">{{ arguments }}</pre>
+  <Trace class="chat-tool-call chat-ui" :data-status="status" :class="{ 'tool-compact': compact }">
+    <TraceCollapsible :open="showDetails" @update:open="expanded = $event">
+      <TraceCollapsibleTrigger v-if="expandable" class="tool-heading" @keydown.stop>
+        <TraceLine class="tool-name" :status="status === 'running' ? 'running' : undefined">
+          <TraceIcon>
+            <span class="size-4" :class="status === 'running' ? 'i-ph-spinner-gap animate-spin' : 'i-ph-wrench'" />
+          </TraceIcon>
+          <TraceTitle>{{ name }}</TraceTitle>
+        </TraceLine>
+        <Badge class="tool-status" :variant="status === 'completed' ? 'secondary' : 'outline'" role="status">
+          {{ labels[status] }}
+        </Badge>
+        <template #indicator>
+          <span class="i-ph-caret-down size-4" />
+        </template>
+      </TraceCollapsibleTrigger>
+      <div v-else class="tool-heading">
+        <TraceLine class="tool-name" :status="status === 'running' ? 'running' : undefined">
+          <TraceIcon>
+            <span class="size-4" :class="status === 'running' ? 'i-ph-spinner-gap animate-spin' : 'i-ph-wrench'" />
+          </TraceIcon>
+          <TraceTitle>{{ name }}</TraceTitle>
+        </TraceLine>
+        <Badge class="tool-status" :variant="status === 'completed' ? 'secondary' : 'outline'" role="status">
+          {{ labels[status] }}
+        </Badge>
       </div>
-      <div v-if="status === 'completed' && result !== undefined" class="tool-section tool-result">
-        <div class="tool-label">
-          Output
-        </div>
-        <pre class="tool-code">{{ result }}</pre>
-      </div>
-    </div>
-  </div>
+      <TraceCollapsibleContent v-if="showDetails">
+        <CodeBlock v-if="arguments !== undefined" size="sm" class="tool-section">
+          <div class="tool-label">
+            Input
+          </div>
+          <CodeBlockContent :code="arguments" language="json" wrap class="tool-code" @keydown.stop />
+        </CodeBlock>
+        <CodeBlock v-if="status === 'completed' && result !== undefined" size="sm" class="tool-section tool-result">
+          <div class="tool-label">
+            Output
+          </div>
+          <CodeBlockContent :code="result" language="json" wrap class="tool-code" @keydown.stop />
+        </CodeBlock>
+      </TraceCollapsibleContent>
+    </TraceCollapsible>
+  </Trace>
 </template>
 
 <style scoped>
 .chat-tool-call {
-  --at-apply: border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800;
-  border-radius: 12px;
+  border: 1px solid var(--ui-border);
+  background: var(--ui-background);
+  border-radius: var(--ui-radius-lg);
   overflow: hidden;
 }
 .tool-heading {
-  --at-apply: border-b border-neutral-200 dark:border-neutral-700;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 14px;
   gap: 12px;
   width: 100%;
+  height: auto;
   text-align: left;
   color: inherit;
   font: inherit;
-  background: transparent;
-}
-button.tool-heading {
-  cursor: pointer;
+  border-radius: 0;
+  background: var(--ui-elevated);
 }
 button.tool-heading:focus-visible {
-  outline: 2px solid #9b65d0;
   outline-offset: -3px;
 }
-.tool-compact .tool-heading {
-  border-bottom: 0;
+.tool-heading[aria-expanded='true'] :deep(.trace-indicator) { transform: rotate(180deg); }
+.tool-status { margin-left: auto; }
+.chat-tool-call[data-status='completed'] :deep(.tool-status) {
+  color: var(--ui-primary);
+  background: color-mix(in srgb, var(--ui-primary) 10%, var(--ui-background));
 }
+.chat-tool-call[data-status='running'] :deep([data-slot='trace-icon']) { color: var(--ui-primary); }
 .tool-name {
   display: flex;
   align-items: center;
   gap: 8px;
+  color: inherit;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
   font-family: var(--slidev-code-font-family);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
 }
 .tool-label {
-  --at-apply: text-neutral-500 dark:text-neutral-400;
+  color: var(--ui-muted-foreground);
   font-size: 11px;
 }
 .tool-section {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  border-top: 1px solid var(--ui-border);
   padding: 10px 14px;
-}
-.tool-result {
-  --at-apply: border-t border-neutral-200 dark:border-neutral-700;
 }
 .tool-code {
   margin: 5px 0 0;
   padding: 0;
   background: transparent;
-  font-size: 15px;
-  line-height: 1.4;
+  font-size: 13px;
+  line-height: 1.6;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin { animation: none; }
 }
 </style>

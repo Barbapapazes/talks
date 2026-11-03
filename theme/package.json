@@ -15,6 +15,7 @@
     "fireworks-js": "catalog:ui",
     "mermaid": "catalog:ui",
     "reka-ui": "catalog:ui",
+    "shiki": "catalog:ui",
     "slidev-addon-graph": "catalog:slidev",
     "slidev-addon-inalia": "catalog:slidev",
     "tailwind-variants": "catalog:ui"

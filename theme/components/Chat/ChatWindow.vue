@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Badge from '../ui/badge/Badge.vue'
+
 withDefaults(defineProps<{
   label?: string
   status?: string
@@ -9,11 +11,13 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <section class="chat-window not-content" :class="{ 'chat-window-fullscreen': fullscreen }" :aria-label="label">
+  <section class="chat-window chat-ui not-content" :class="{ 'chat-window-fullscreen': fullscreen }" :aria-label="label">
     <header class="chat-window-header">
       <span class="chat-window-label"><span class="i-ph-chat-circle-text size-4" aria-hidden="true" />{{ label }}</span>
       <slot name="actions">
-        <span v-if="status" class="chat-window-status" role="status">{{ status }}</span>
+        <Badge v-if="status" variant="secondary" role="status">
+          {{ status }}
+        </Badge>
       </slot>
     </header>
     <div class="chat-window-messages" aria-live="polite">
@@ -25,13 +29,16 @@ withDefaults(defineProps<{
 
 <style scoped>
 .chat-window {
-  --at-apply: border border-neutral-200 bg-white rounded-2xl dark:border-neutral-700 dark:bg-neutral-900;
+  border: 1px solid var(--ui-border);
+  background: var(--ui-background);
+  border-radius: var(--ui-radius-lg);
+  box-shadow: var(--ui-shadow);
   display: flex;
   flex-direction: column;
   height: 382px;
   overflow: hidden;
   font-size: 16px;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 .chat-window-fullscreen {
   position: absolute;
@@ -41,6 +48,7 @@ withDefaults(defineProps<{
   border: 0;
   border-radius: 0;
   background: transparent;
+  box-shadow: none;
 }
 .chat-window-fullscreen .chat-window-messages {
   width: min(100%, 72ch);
@@ -49,21 +57,20 @@ withDefaults(defineProps<{
 }
 .chat-window-header {
   flex-shrink: 0;
-  --at-apply: border-b border-neutral-200 dark:border-neutral-700;
+  border-bottom: 1px solid var(--ui-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  font-size: 12px;
+  font-size: 14px;
+  background: var(--ui-elevated);
 }
 .chat-window-label {
   display: flex;
   align-items: center;
   gap: 8px;
   font-weight: 600;
-}
-.chat-window-status {
-  --at-apply: text-neutral-500 dark:text-neutral-400;
+  color: var(--ui-highlighted);
 }
 .chat-window-messages {
   flex: 1;
@@ -72,12 +79,9 @@ withDefaults(defineProps<{
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 0 24px 16px;
+  padding: 20px 24px;
 }
 .chat-window-messages :deep(.assistant-content p:last-child) {
   margin-bottom: 0;
-}
-.chat-window-messages :deep(.bg-neutral-100) {
-  --at-apply: dark:bg-neutral-800;
 }
 </style>

@@ -1,5 +1,9 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
+import Bubble from '../ui/bubble/Bubble.vue'
+import BubbleContent from '../ui/bubble/BubbleContent.vue'
+import Message from '../ui/message/Message.vue'
+import MessageContent from '../ui/message/MessageContent.vue'
 
 const props = defineProps<{
   type: 'user' | 'assistant'
@@ -11,33 +15,50 @@ const isUser = computed(() => props.type === 'user')
 </script>
 
 <template>
-  <div class="flex" :class="{ 'pt-4 flex-row-reverse justify-start': isUser }">
-    <div class="w-4/5" :class="{ 'px-4 py-3 rounded-2xl bg-neutral-100': isUser }">
-      <template v-if="isUser">
-        <slot name="attachments" />
-        {{ props.content }}<span v-if="props.showCursor" class="cursor">|</span>
-      </template>
+  <Message class="chat-ui" :align="isUser ? 'end' : 'start'" :class="{ 'pt-4': isUser }">
+    <MessageContent class="chat-message-content">
+      <Bubble v-if="isUser" align="end" variant="muted" class="user-message px-4 py-3">
+        <BubbleContent>
+          <slot name="attachments" />
+          {{ props.content }}<span v-if="props.showCursor" class="chat-cursor">|</span>
+        </BubbleContent>
+      </Bubble>
       <div v-else class="assistant-content">
         <slot>
           <div v-html="content" />
         </slot>
       </div>
-    </div>
-  </div>
+    </MessageContent>
+  </Message>
 </template>
 
 <style scoped>
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  animation: blink 0.75s infinite;
+.chat-message-content { width: 100%; }
+[data-align='end'] > .chat-message-content { width: fit-content; max-width: 80%; }
+.user-message {
+  border-radius: var(--ui-radius-lg);
+  background: var(--ui-muted);
+  color: var(--ui-highlighted);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+.assistant-content { line-height: 1.65; }
+.assistant-content :deep(a) { color: var(--ui-primary); text-decoration: underline; text-underline-offset: 3px; }
+.assistant-content :deep(:not(pre) > code) {
+  background: var(--ui-muted);
+  color: var(--ui-highlighted);
+  border-radius: calc(var(--ui-radius) / 2);
+  padding: 2px 5px;
+  font-size: 0.875em;
 }
-
+.assistant-content :deep(ol) { list-style: decimal; margin: 0 0 0.75rem 1.5rem; }
+.assistant-content :deep(blockquote) {
+  border-left: 2px solid var(--ui-border);
+  margin: 0 0 0.75rem;
+  padding-left: 1rem;
+  color: var(--ui-muted-foreground);
+}
 .assistant-content :deep(h1) {
   font-size: 1.5rem;
   font-weight: 700;
@@ -78,31 +99,19 @@ const isUser = computed(() => props.type === 'user')
 }
 
 .assistant-content :deep(thead) {
-  border-bottom: 2px solid #d1d5db;
-}
-
-.dark .assistant-content :deep(thead) {
-  border-bottom-color: #4b5563;
+  border-bottom: 2px solid var(--ui-border);
 }
 
 .assistant-content :deep(th) {
   padding: 0.75rem;
   text-align: left;
   font-weight: 600;
-  background-color: #f9fafb;
-}
-
-.dark .assistant-content :deep(th) {
-  background-color: #1f2937;
+  background-color: var(--ui-muted);
 }
 
 .assistant-content :deep(td) {
   padding: 0.75rem;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.dark .assistant-content :deep(td) {
-  border-bottom-color: #374151;
+  border-bottom: 1px solid var(--ui-border);
 }
 
 .assistant-content :deep(tr:last-child td) {
@@ -111,8 +120,9 @@ const isUser = computed(() => props.type === 'user')
 
 .assistant-content :deep(pre) {
   font-size: 0.875rem;
-  background-color: #f3f4f6 !important;
-  border-radius: 0.375rem;
+  background-color: var(--ui-muted) !important;
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius);
   padding: 1rem;
   overflow-x: auto;
   margin-bottom: 1rem;

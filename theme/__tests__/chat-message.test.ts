@@ -4,6 +4,17 @@ import { h } from 'vue'
 import ChatMessage from '../components/Chat/ChatMessage.vue'
 
 describe('chat assistant messages', () => {
+  it('escapes user text and preserves attachments and the simulated cursor', () => {
+    const wrapper = mount(ChatMessage, {
+      props: { type: 'user', content: '<strong>User text</strong>', showCursor: true },
+      slots: { attachments: '<span>README.md</span>' },
+    })
+    expect(wrapper.find('strong').exists()).toBe(false)
+    expect(wrapper.text()).toContain('<strong>User text</strong>')
+    expect(wrapper.text()).toContain('README.md')
+    expect(wrapper.find('.user-message .chat-cursor').exists()).toBe(true)
+  })
+
   it('keeps rendering existing HTML responses', () => {
     const wrapper = mount(ChatMessage, {
       props: { type: 'assistant', content: '<strong>Existing response</strong>' },

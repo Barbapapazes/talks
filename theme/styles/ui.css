@@ -1,0 +1,50 @@
+/* Nuxt UI-inspired tokens, scoped to local UI roots. Nested components inherit
+   the same palette so a chat can override tokens without child resets. */
+:where(.chat-ui, [class^='ui-']):not(:where(.chat-ui *, [class^='ui-'] *)) {
+  --ui-background: #fff;
+  --ui-foreground: #3f3f46;
+  --ui-highlighted: #18181b;
+  --ui-muted: #f4f4f5;
+  --ui-muted-foreground: #71717a;
+  --ui-elevated: #fafafa;
+  --ui-accent: #e4e4e7;
+  --ui-border: #e4e4e7;
+  --ui-primary: #000;
+  --ui-primary-foreground: #fff;
+  --ui-primary-hover: #27272a;
+  --ui-ring: var(--ui-primary);
+  --ui-radius: 6px;
+  --ui-radius-lg: calc(var(--ui-radius) * 2);
+  --ui-shadow: 0 1px 3px #18181b0a, 0 1px 2px #18181b08;
+  color: var(--ui-foreground);
+  color-scheme: light;
+}
+
+:where(.dark .chat-ui, .dark [class^='ui-']):not(:where(.chat-ui *, [class^='ui-'] *)) {
+  --ui-background: #18181b;
+  --ui-foreground: #d4d4d8;
+  --ui-highlighted: #fafafa;
+  --ui-muted: #27272a;
+  --ui-muted-foreground: #a1a1aa;
+  --ui-elevated: #202023;
+  --ui-accent: #3f3f46;
+  --ui-border: #3f3f46;
+  --ui-primary: #fff;
+  --ui-primary-foreground: #000;
+  --ui-primary-hover: #d4d4d8;
+  --ui-shadow: 0 1px 3px #00000026, 0 1px 2px #0000001a;
+  color-scheme: dark;
+}
+
+.chat-ui .chat-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--ui-primary);
+  animation: chat-cursor-blink 1s step-end infinite;
+}
+@keyframes chat-cursor-blink {
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chat-ui .chat-cursor { animation: none; }
+}

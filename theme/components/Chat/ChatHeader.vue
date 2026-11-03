@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import Button from '../ui/button/Button.vue'
+
 export interface ChatIntegrations {
   connected: boolean
   open: boolean
@@ -9,28 +11,28 @@ const emit = defineEmits<{ toggleIntegrations: [] }>()
 </script>
 
 <template>
-  <header class="chat-header" @keydown.stop>
+  <header class="chat-header chat-ui" @keydown.stop>
     <span class="chat-label">
       <span class="i-logos-openai-icon size-5" aria-hidden="true" />
       AI Assistant
     </span>
-    <button v-if="integrations" type="button" class="integration-button" :aria-expanded="integrations.open" @click="emit('toggleIntegrations')">
+    <Button v-if="integrations" variant="ghost" size="sm" class="integration-button" :aria-expanded="integrations.open" @click="emit('toggleIntegrations')">
       <span class="i-ph-plugs-connected size-4" aria-hidden="true" />
       Integrations <span v-if="integrations.connected" class="connected-dot" aria-label="Connected" />
-    </button>
+    </Button>
   </header>
 </template>
 
 <style scoped>
 .chat-header {
-  --at-apply: border-b border-neutral-200 dark:border-neutral-700;
+  border-bottom: 1px solid var(--ui-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  margin-bottom: 16px;
   flex-shrink: 0;
-  font-size: 12px;
+  font-size: 14px;
+  background: var(--ui-elevated);
 }
 .chat-label, .integration-button {
   display: flex;
@@ -38,20 +40,16 @@ const emit = defineEmits<{ toggleIntegrations: [] }>()
   gap: 8px;
 }
 .chat-label {
+  min-height: 32px;
   font-weight: 600;
+  color: var(--ui-highlighted);
 }
-.integration-button {
-  cursor: pointer;
-  font: inherit;
-}
-.integration-button:focus-visible {
-  outline: 2px solid #9b65d0;
-  outline-offset: 3px;
-}
+.chat-label .i-logos-openai-icon { filter: brightness(0); }
+:global(.dark) .chat-label .i-logos-openai-icon { filter: brightness(0) invert(1); }
 .connected-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #14b8a6;
+  background: var(--ui-primary);
 }
 </style>

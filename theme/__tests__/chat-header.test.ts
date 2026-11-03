@@ -1,8 +1,16 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import ChatHeader from '../components/Chat/ChatHeader.vue'
+import headerSource from '../components/Chat/ChatHeader.vue?raw'
+import buttonSource from '../components/ui/button/Button.vue?raw'
 
 describe('chat header', () => {
+  it('reserves the small button height even without optional controls', () => {
+    const buttonHeight = buttonSource.match(/\[data-size='sm'\]\s*\{\s*height:\s*(\d+px)/)?.[1]
+    expect(buttonHeight).toBeDefined()
+    expect(headerSource).toMatch(new RegExp(`\\.chat-label\\s*\\{\\s*min-height: ${buttonHeight};`))
+  })
+
   it('uses the same assistant name and OpenAI logo without optional controls', () => {
     const wrapper = mount(ChatHeader)
     expect(wrapper.text()).toBe('AI Assistant')

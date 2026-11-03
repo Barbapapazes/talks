@@ -130,6 +130,38 @@ it('serves on demand under a base path and invalidates imported slides', async (
   })
 }, 30000)
 
+it('updates only the current entry through a same-origin POST and refreshes the graph', async () => {
+  await fixture(async (root, options) => {
+    await writeFile(options.entry, '---\ntitle: Test\ntiming: 9\n---\n# First\n\n<!--\none two three four five six seven eight nine ten\n-->\n\n---\nsrc: ./imported.md\n---\n')
+    const imported = await readFile(join(root, 'imported.md'), 'utf8')
+    const server = await createServer({ configFile: false, root, base: '/talk/', plugins: [visualize(options)], server: { port: 0 } })
+    try {
+      await server.listen()
+      const address = server.httpServer!.address() as { port: number }
+      const origin = `http://localhost:${address.port}`
+      const url = `${origin}/talk/_visualize/`
+      const graph = () => fetch(`${url}graph.json`).then(response => response.json())
+      expect((await graph()).nodes[0].timing).toBe(9)
+      expect((await fetch(`${url}update-timing`)).status).toBe(405)
+      expect((await fetch(`${url}update-timing`, { method: 'POST', headers: { Origin: 'https://other.example' } })).status).toBe(403)
+      expect((await fetch(`${url}update-timing`, { method: 'POST' })).status).toBe(403)
+      expect(await readFile(options.entry, 'utf8')).toContain('timing: 9')
+      const response = await fetch(`${url}update-timing`, { method: 'POST', headers: { Origin: origin } })
+      expect(response.status).toBe(200)
+      expect(await response.json()).toMatchObject({ updatedCount: 2, totalWords: 10, wpm: 100 })
+      expect((await graph()).nodes[0].timing).toBe(0.1)
+      expect(await readFile(join(root, 'imported.md'), 'utf8')).toBe(imported)
+      await rm(options.entry)
+      expect((await fetch(`${url}update-timing`, { method: 'POST', headers: { Origin: origin } })).status).toBe(500)
+      await writeFile(options.entry, '# Restored\n')
+      expect((await fetch(`${url}update-timing`, { method: 'POST', headers: { Origin: origin } })).status).toBe(200)
+    }
+    finally {
+      await server.close()
+    }
+  })
+}, 30000)
+
 it('builds a standalone static page with bundled assets under a base path', async () => {
   await fixture(async (root, options) => {
     await writeFile(join(root, 'index.html'), '<html><body>Presentation</body></html>')

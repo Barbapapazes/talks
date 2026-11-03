@@ -1,7 +1,9 @@
+import { readFileSync } from 'node:fs'
 import { mount } from '@vue/test-utils'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { nextTick } from 'vue'
+import { h, nextTick } from 'vue'
 import ChatAnimation from '../components/Chat/ChatAnimation.vue'
+import ChatToolCall from '../components/Chat/ChatToolCall.vue'
 import { isSlideActive } from './mocks/slidev-client'
 
 const wrappers: ReturnType<typeof mount>[] = []
@@ -37,6 +39,24 @@ afterEach(() => {
 })
 
 describe('chat animation', () => {
+  it('keeps message spacing inside the scroller and reserves space for a growing composer', () => {
+    const wrapper = animation({}, { inputContext: '<div>Attached context</div>' })
+    const scroller = wrapper.get('.animation-messages')
+    expect(scroller.classes()).toContain('min-h-0')
+    expect(scroller.classes()).toContain('overflow-y-auto')
+    expect(scroller.get(':scope > div').classes()).toContain('py-4')
+    expect(scroller.find('.animation-composer').exists()).toBe(false)
+    expect(wrapper.get('.animation-composer').element.parentElement).toBe(wrapper.element)
+
+    // happy-dom does not calculate layout, so guard the CSS responsible for overlap.
+    const animationSource = readFileSync(`${import.meta.dirname}/../components/Chat/ChatAnimation.vue`, 'utf8')
+    const composerStyle = animationSource.match(/\.chat-animation > \.animation-composer \{([^}]+)\}/)![1]
+    expect(composerStyle).toContain('flex-shrink: 0')
+    expect(composerStyle).not.toMatch(/position:\s*absolute|transform:/)
+    const headerSource = readFileSync(`${import.meta.dirname}/../components/Chat/ChatHeader.vue`, 'utf8')
+    expect(headerSource).not.toContain('margin-bottom:')
+  })
+
   it('uses Enter to type and skip, then repeats the shortcut for the follow-up', async () => {
     const wrapper = animation()
     expect(wrapper.get('header').text()).toBe('AI Assistant')
@@ -101,6 +121,50 @@ describe('chat animation', () => {
     await nextTick()
     await enter()
     expect(wrapper.find('.assistant-content').exists()).toBe(false)
+  })
+
+  it('does not advance the timeline when Enter is used on chat controls', async () => {
+    const wrapper = mount(ChatAnimation, {
+      attachTo: document.body,
+      props: {
+        userPrompt: 'Prompt',
+        integrations: { connected: true, open: false },
+        assistantHtmlFrames: ['Finished response'],
+      },
+      slots: {
+        tool: () => h(ChatToolCall, { name: 'get_time', compact: true, arguments: '{}' }),
+      },
+    })
+    wrappers.push(wrapper)
+    await enter()
+    for (const button of wrapper.findAll('header button, .tool-heading, .chat-input button')) {
+      await button.trigger('keydown', { key: 'Enter', code: 'Enter' })
+    }
+    expect(wrapper.find('.assistant-content').exists()).toBe(false)
+    await wrapper.get('.tool-heading').trigger('click')
+    expect(wrapper.get('.tool-heading').attributes('aria-expanded')).toBe('true')
+    await wrapper.get('pre').trigger('keydown', { key: 'Enter', code: 'Enter' })
+    expect(wrapper.find('.assistant-content').exists()).toBe(false)
+    expect(wrapper.get('pre').text()).toBe('{}')
+    await enter()
+    expect(wrapper.text()).toContain('Finished response')
+  })
+
+  it('resets and replays when returning to the slide', async () => {
+    const wrapper = animation()
+    await enter()
+    await enter()
+    expect(wrapper.text()).toContain('A confirmation dialog')
+    isSlideActive.value = false
+    await nextTick()
+    expect(wrapper.find('.assistant-content').exists()).toBe(false)
+    isSlideActive.value = true
+    await nextTick()
+    expect(wrapper.find('.assistant-content').exists()).toBe(false)
+    await enter()
+    await enter()
+    expect(wrapper.text()).toContain('A confirmation dialog')
+    expect(wrapper.text()).not.toContain('Created issue #42')
   })
 
   it('cleans up timers and keyboard handlers when unmounted', async () => {

@@ -233,11 +233,11 @@ const followUpShowAssistant = computed(() => followUpPhase.value === 'streaming'
 </script>
 
 <template>
-  <div class="overflow-hidden flex flex-col h-full">
+  <div class="chat-animation chat-ui overflow-hidden flex flex-col h-full">
     <ChatHeader :integrations="integrations" @toggle-integrations="emit('toggleIntegrations')" />
 
-    <div ref="chatContainerRef" class="flex-1 overflow-y-auto pb-16">
-      <div class="w-[66ch] mx-auto flex flex-col gap-4">
+    <div ref="chatContainerRef" class="animation-messages flex-1 min-h-0 overflow-y-auto">
+      <div class="w-[66ch] max-w-full px-6 py-4 mx-auto flex flex-col gap-4">
         <ChatMessage
           v-if="showUserMessage"
           type="user"
@@ -297,7 +297,7 @@ const followUpShowAssistant = computed(() => followUpPhase.value === 'streaming'
     </div>
 
     <ChatInput
-      class="w-[70ch] mx-auto absolute bottom-4 left-1/2 transform -translate-x-1/2"
+      class="animation-composer"
       :value="followUpStarted ? followUpTypedInputText : typedInputText"
       :show-cursor="(followUpStarted ? followUpShowCursor : showCursor) && (followUpStarted ? followUpPhase : currentPhase) === 'typingInInput'"
       :disabled="inputDisabled"
@@ -311,3 +311,13 @@ const followUpShowAssistant = computed(() => followUpPhase.value === 'streaming'
     </ChatInput>
   </div>
 </template>
+
+<style scoped>
+.chat-animation { position: relative; }
+.chat-animation > .animation-composer {
+  flex-shrink: 0;
+  align-self: center;
+  width: min(70ch, calc(100% - 48px));
+  margin: 0 0 16px;
+}
+</style>
