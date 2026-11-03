@@ -7,11 +7,12 @@
 </head>
 <body>
   <header>
-    <div><h1 id="title">Talk visualization</h1><p id="stats" aria-live="polite" title="Total timing sums all slides, including every branch.">Loading slides…</p></div>
+    <div><h1 id="title">Talk visualization</h1><p id="timing-status" role="status" hidden></p><p id="stats" aria-live="polite" title="Total timing sums all slides, including every branch.">Loading slides…</p></div>
     <nav aria-label="Graph controls">
       <button id="zoom-out" aria-label="Zoom out">−</button>
       <button id="zoom-in" aria-label="Zoom in">+</button>
       <button id="fit">Fit graph</button>
+      <button id="update-timing" hidden title="Overwrite timings in the entry Markdown file from speaker notes at 100 words/min. Slides without notes get 0. Imported files are unchanged.">Update timings</button>
       <a id="presentation" href="../" target="_blank" rel="noopener noreferrer">Open slides ↗</a>
     </nav>
   </header>

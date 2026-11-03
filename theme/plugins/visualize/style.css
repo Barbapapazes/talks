@@ -9,6 +9,8 @@ header p { margin: 0; color: #64748b; font-size: 0.85rem; }
 nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; flex-shrink: 0; }
 button, nav a { border: 1px solid #cbd5e1; border-radius: 0.35rem; background: #fff; color: inherit; padding: 0.5rem 0.75rem; font: inherit; font-size: 0.85rem; text-decoration: none; cursor: pointer; }
 button:hover, nav a:hover { background: #f1f5f9; }
+button:disabled { opacity: 0.6; cursor: wait; }
+#timing-status { margin-bottom: 0.3rem; }
 :focus-visible { outline: 2px solid #2563eb; outline-offset: 3px; }
 #diagnostics { padding: 1rem 1.5rem; background: #fffbeb; color: #92400e; max-height: 30vh; overflow: auto; }
 #diagnostics ul { margin-bottom: 0; }

@@ -119,6 +119,33 @@ async function refresh() {
   }
 }
 
+const updateTiming = element<HTMLButtonElement>('update-timing')
+const timingStatus = element('timing-status')
+if (import.meta.hot) {
+  updateTiming.hidden = false
+  updateTiming.addEventListener('click', async () => {
+    updateTiming.disabled = true
+    updateTiming.textContent = 'Updating…'
+    timingStatus.hidden = false
+    timingStatus.textContent = 'Updating slide timings…'
+    try {
+      const response = await fetch(new URL('update-timing', window.location.href), { method: 'POST' })
+      const result = await response.json()
+      if (!response.ok)
+        throw new Error(result.error || `Timing update failed: ${response.status}`)
+      timingStatus.textContent = `Updated ${result.updatedCount} slides at ${result.wpm} words/min. Imported files unchanged.`
+      await refresh()
+    }
+    catch (error) {
+      timingStatus.textContent = `Could not update timings: ${error instanceof Error ? error.message : String(error)}`
+    }
+    finally {
+      updateTiming.disabled = false
+      updateTiming.textContent = 'Update timings'
+    }
+  })
+}
+
 element('fit').addEventListener('click', fit)
 element('zoom-in').addEventListener('click', () => zoom(1.25))
 element('zoom-out').addEventListener('click', () => zoom(0.8))

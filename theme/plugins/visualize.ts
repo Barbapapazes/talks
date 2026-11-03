@@ -7,12 +7,14 @@ import { fileURLToPath } from 'node:url'
 import { load } from '@slidev/parser/fs'
 import { build, normalizePath } from 'vite'
 import { buildGraph } from './visualize/graph'
+import { updateSlideTimings } from './visualize/timing'
 
 const clientRoot = fileURLToPath(new URL('./visualize', import.meta.url))
 
 export default function visualize(options: ResolvedSlidevOptions): Plugin {
   let base = '/'
   let cache: ReturnType<typeof getGraph> | undefined
+  let updatingTiming = false
   const watched = new Set([options.entry])
 
   async function getGraph() {
@@ -61,7 +63,7 @@ export default function visualize(options: ResolvedSlidevOptions): Plugin {
       server.middlewares.use(async (req, res, next) => {
         const url = req.url?.split('?')[0]
         const pathname = base !== '/' && url?.startsWith(base) ? `/${url.slice(base.length)}` : url
-        if (pathname !== '/_visualize' && pathname !== '/_visualize/' && pathname !== '/_visualize/graph.json')
+        if (pathname !== '/_visualize' && pathname !== '/_visualize/' && pathname !== '/_visualize/graph.json' && pathname !== '/_visualize/update-timing')
           return next()
         res.setHeader('Cache-Control', 'no-store')
         if (pathname === '/_visualize') {
@@ -70,7 +72,38 @@ export default function visualize(options: ResolvedSlidevOptions): Plugin {
           return
         }
         try {
-          if (pathname.endsWith('/graph.json')) {
+          if (pathname.endsWith('/update-timing')) {
+            res.setHeader('Content-Type', 'application/json')
+            if (req.method !== 'POST') {
+              res.writeHead(405, { Allow: 'POST' })
+              res.end(JSON.stringify({ error: 'Use POST to update timings' }))
+              return
+            }
+            // Browser requests must come from this dev server, never another site.
+            const origin = req.headers.origin
+            const expectedOrigin = `${server.config.server.https ? 'https' : 'http'}://${req.headers.host}`
+            if (origin !== expectedOrigin || req.headers['sec-fetch-site'] === 'cross-site') {
+              res.statusCode = 403
+              res.end(JSON.stringify({ error: 'Timing updates require a same-origin request' }))
+              return
+            }
+            if (updatingTiming) {
+              res.statusCode = 409
+              res.end(JSON.stringify({ error: 'A timing update is already running' }))
+              return
+            }
+            updatingTiming = true
+            try {
+              const result = await updateSlideTimings(options.entry)
+              cache = undefined
+              server.ws.send({ type: 'custom', event: 'talk-visualize:update' })
+              res.end(JSON.stringify(result))
+            }
+            finally {
+              updatingTiming = false
+            }
+          }
+          else if (pathname.endsWith('/graph.json')) {
             cache ??= getGraph().catch((error) => {
               cache = undefined
               throw error
