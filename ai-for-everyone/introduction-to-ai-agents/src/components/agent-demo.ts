@@ -15,6 +15,32 @@ export const sources: Record<Revision, string> = {
   'final': 'return Math.max(0, subtotal - discount)',
 }
 
+export const investigations = [
+  { agent: 'Code investigator', file: 'cart.ts', finding: 'The discount is subtracted twice.' },
+  { agent: 'Test investigator', file: 'cart.test.ts', finding: 'The total must never be negative.' },
+]
+
+export const delegationToolCalls = [
+  ...investigations.map(({ agent, file, finding }) => ({
+    requestedAt: 1,
+    completedAt: 2,
+    request: { actor: 'Model request', title: `Delegate to ${agent}`, detail: `delegate(${JSON.stringify({ agent, task: `Inspect ${file} and report findings.`, permissions: 'read only' })})` },
+    result: { actor: 'Harness → tool result', title: `${agent} report`, detail: finding },
+  })),
+  {
+    requestedAt: 3,
+    completedAt: 4,
+    request: { actor: 'Model request', title: 'Apply the combined findings', detail: 'edit("cart.ts", "return Math.max(0, subtotal - discount)")' },
+    result: { actor: 'Harness → tool result', title: 'Edit allowed → file updated', detail: 'Subtract the discount once and clamp the total to zero. The edit succeeded.' },
+  },
+  {
+    requestedAt: 4,
+    completedAt: 4,
+    request: { actor: 'Model request', title: 'Verify the correction', detail: 'test("cart.test.ts")' },
+    result: { actor: 'Harness → tool result', title: 'Test allowed → 2 passed', detail: 'Both specified cases pass. The fix is ready for review, not deployed.' },
+  },
+]
+
 export const scenarios: Record<DemoMode, { label: string, tools: string, takeaway: string, events: DemoEvent[] }> = {
   conversation: {
     label: 'Conversational',
@@ -50,8 +76,8 @@ export const scenarios: Record<DemoMode, { label: string, tools: string, takeawa
     takeaway: 'The job continues without an open conversation. Completed does not mean deployed.',
     events: [
       { actor: 'Harness', title: 'Queued', detail: 'New run from the original buggy project. Same goal, model and project permissions.' },
-      { actor: 'Harness', title: 'Running', detail: 'The worker starts the same read → edit → test loop.' },
-      { actor: 'User', title: 'Leave the task view', detail: 'The user opens their task list. The background job is still running.' },
+      { actor: 'Harness', title: 'Running · reading files', detail: 'A worker starts the same read → edit → test loop. The user does not need to stay in the conversation.' },
+      { actor: 'User', title: 'Close the conversation', detail: 'The user opens My tasks. The worker has read the files, applied the fix and is now running tests.' },
       { actor: 'Notification', title: 'Completed · ready for review', detail: 'Checkout fix ready for review. 2 tests passed.', revision: 'final', tests: 'passed' },
       { actor: 'User', title: 'Open the result', detail: 'Review the change and test results. Nothing has been deployed.' },
     ],

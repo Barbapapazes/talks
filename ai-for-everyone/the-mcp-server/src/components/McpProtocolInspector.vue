@@ -6,7 +6,7 @@ defineProps<{
   kind: keyof typeof mcpExchanges
 }>()
 
-const mainCalls = { tools: 'tools/call', resources: 'resources/read', prompts: 'prompts/get' }
+const mainCalls = { resources: 'resources/read', prompts: 'prompts/get' }
 </script>
 
 <template>

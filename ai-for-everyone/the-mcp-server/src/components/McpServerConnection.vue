@@ -2,6 +2,7 @@
 import { useSlideContext } from '@slidev/client'
 import DiagramPanel from '@theme/components/DiagramPanel.vue'
 import { computed } from 'vue'
+import { protocolVersion } from '../data/mcp-protocol'
 
 const props = defineProps<{
   transport: 'stdio' | 'http'

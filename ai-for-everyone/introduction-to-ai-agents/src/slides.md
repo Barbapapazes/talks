@@ -19,7 +19,7 @@ event: AI for Everyone
 name: How AI agents work
 group: Introduction
 ready: true
-timing: 1
+timing: 0.6
 ---
 
 # How AI agents work
@@ -27,13 +27,11 @@ timing: 1
 <!--
 Bonjour tout le monde !
 
-Dans LLM fundamentals, on a vu comment un modèle produit des tokens pour nous répondre, raisonner ou demander un appel d'outil.
+Dans LLM fundamentals, on a vu comment un modèle génère des tokens pour répondre, raisonner ou demander un outil.
 
-Aujourd'hui, on va regarder ce qui lui permet d'enchaîner les actions pour accomplir une tâche. Si vous utilisez déjà un agent, vous allez reconnaître ce qui se passe dans votre outil. Sinon, on va le construire étape par étape.
+Aujourd'hui, comment passe-t-on de cette demande à un système capable d'enchaîner les actions ?
 
-On gardera le même exemple : trouver un bug et le corriger. Puis on changera les outils et la façon d'exécuter le travail, sans changer le modèle.
-
-Mais d'abord, qu'est-ce qu'on appelle un agent ?
+On va suivre un exemple : trouver un bug et le corriger. Même modèle, même objectif, mais des outils et des modes d'exécution différents.
 -->
 
 ---
@@ -43,7 +41,7 @@ layout: center-card
 img: https://images.unsplash.com/photo-1565638469233-8347def1fa4b?q=80&w=3540&auto=format&fit=crop
 positionClass: w-160
 ready: true
-timing: 0.7
+timing: 0.4
 ---
 
 <div class="text-xl font-bold">
@@ -52,66 +50,58 @@ timing: 0.7
 </div>
 
 <!--
-Un agent IA, c'est un système logiciel qui utilise un modèle pour choisir et réaliser des actions vers un objectif.
+Un agent utilise un modèle pour choisir des actions et atteindre un objectif. Il observe les résultats et décide de la suite, sans qu'on lui dicte chaque étape.
 
-Il peut utiliser des outils et adapter la suite en fonction des résultats, sans qu'on lui dise quoi faire à chaque étape.
-
-Ça ne veut pas dire qu'il a tous les droits ou qu'il travaille toujours seul. Son autonomie dépend des outils, des permissions et des validations qu'on configure.
+Son autonomie dépend des outils et des permissions qu'on lui donne.
 -->
 
 ---
 name: From tokens to actions
 group: Understand
 ready: true
-timing: 1.7
+timing: 1.3
 clicks: 2
 ---
 
 <TokenCapabilities reveal-together loop />
 
 <!--
-[click] Dans la session précédente, on a vu qu'un LLM génère des tokens. Avec ça, il peut nous répondre, raisonner ou demander un appel d'outil.
+[click] On retrouve les capacités du LLM qu'on avait vu dans un épisode précédent : répondre, raisonner ou demander l'appel à un outil.
 
-Pour les outils, la distinction reste importante : le modèle génère une demande structurée. C'est le système autour de lui qui exécute l'action et lui renvoie le résultat.
+[click] Ce qu'est intéressant, c'est qu'on peut faire boucler cette génération. Dans ce cas, le résultat d'un outil par example rejoint le contexte et permet au modèle de continuer et de choisir à nouveau : répondre, raisonner ou demander l'apple à un outil.
 
-[click] Maintenant, on relie chaque branche au début. On fait une boucle : le texte généré, le raisonnement ou le résultat d'un outil peuvent alimenter la suite. Le modèle peut alors continuer à partir de ces nouvelles informations.
+Il peut ainsi lire du code, demander une correction, puis des tests. Une réponse finale peut arrêter la boucle. Ce qui compte, c'est que le modèle choisit la prochaine action à partir des informations disponibles, plutôt que de suivre une liste d'étapes entièrement fixée à l'avance comme le fait un workflow.
 
-C'est une bonne chose pour un agent : il peut enchaîner plusieurs décisions et plusieurs actions au lieu de s'arrêter à une seule réponse. La flèche de retour ne veut pas dire qu'on continue toujours, une réponse finale peut aussi arrêter la boucle.
-
-Mais le modèle ne fait pas tourner cette boucle tout seul. Il faut du logiciel autour pour lui donner le contexte, exécuter les appels autorisés et lui renvoyer les résultats. C'est ce qu'on va regarder maintenant.
+Mais qui exécute les demandes et rappelle le modèle ? Le modèle lui même ?
 -->
 
 ---
 name: The model and its harness
 group: Understand
 ready: true
-timing: 2.5
-clicks: 7
+timing: 1.9
+clicks: 8
 ---
 
 <AgentHarness />
 
 <!--
-[click] Voici la frontière de l'agent.
+Non et pour s'en rendre compte, rentrons dans ce qu'est [click] un agent.
 
-[click] Le modèle choisit la prochaine étape, mais il n'accède pas directement aux fichiers ou au terminal. Les logos en dessous représentent quelques fournisseurs de modèles.
+Pour faire un agent, on a besoin [click] d'un modèle, peut-importe [click] le provider.
 
-[click] Le système autour de lui, c'est le harness. Ensemble, ils forment l'agent.
+On a aussi besoin [click] d'un harness. C'est donc cet ensemble modèle et harness qui forme l'agent.
 
-[click] Le harness prépare les instructions et l'historique envoyés au modèle. Il gère la boucle : appeler le modèle, continuer après un résultat ou s'arrêter. Le modèle peut proposer un plan, mais c'est le harness qui organise les appels.
+Dans le harness, on trouve :
 
-[click] Quand le modèle demande un outil, le harness valide la demande, vérifie les permissions et demande une approbation si nécessaire. Il transmet l'appel autorisé à l'exécuteur, puis récupère le résultat ou l'erreur. Les restrictions sur les fichiers, le réseau et les processus sont imposées par le runtime, pas par une simple consigne au modèle.
+- [click] La bouche agentique qui permet justement au modèle de looper arpès chacune de ses actions
+- La création du contexte avec le prompt système, l'agents.md, les skills, les tools, ...
+- [click] L'exécution des tools demandé par l'agent, qui s'execute dans un environnement, en dehors de l'agent, comme votre machine par example.
+- La gestion des permissions pour éviter que le modèle puisse demander tout et n'importe quoi
+- [click] On peut aussi avoir dans l'agent une notion d'était persistant, de mémoire entre les prompts ou entre les agents.
+- Enfin, on retrouve le contrôle de l'éxecution avec la gestion des logs et des limites. C'est là qu'on retrouve la compaction par example.
 
-[click] On peut aussi conserver l'état du travail entre les étapes ou les sessions, et ajouter des retours de tests, des logs, des limites de tours ou de budget. Toutes ces capacités ne sont pas obligatoires : on les configure selon le besoin.
-
-[click] Vous avez peut-être déjà utilisé Claude Code ou Codex. Ces produits fournissent ce logiciel autour du modèle. D'autres exemples sont affichés ici, dont LangChain, qui permet de construire son propre système. Ils n'offrent pas tous les mêmes capacités.
-
-Ici, on sépare visuellement le harness de l'environnement d'exécution pour distinguer coordination et isolation. Les frontières du terme varient selon les sources.
-
-Sources :
-https://en.wikipedia.org/wiki/Agent_harness
-https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
-https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/
+Côté harness, on retrouve Claude Code, OpenCode, Codex, Pi. Et ce qui va les différenciers, c'est la manière dont il approche chacunes de ses problématiques.
 -->
 
 ---
@@ -119,100 +109,91 @@ name: A brain and hands
 group: Understand
 layout: center-y
 ready: true
-timing: 1.5
+timing: 0.6
 ---
 
 <BrainAndHands />
 
 <!--
-Pour retenir la séparation, on peut utiliser cette image : un cerveau et des mains.
+Pour retenir cette séparation, imaginez un cerveau et des mains.
 
-Le cerveau comprend le modèle et le harness. Le modèle choisit la prochaine étape, et le harness prépare le contexte, organise la boucle et transmet les appels autorisés.
+Le cerveau, ici, c'est le modèle et le harness : choisir la suite et organiser la boucle.
 
-Les mains, ce sont les outils et l'environnement d'exécution. C'est là qu'on lit un fichier, qu'on lance un test ou qu'on ouvre un navigateur. Le runtime impose les restrictions sur ces actions.
+Les mains, ce sont les outils et leur environnement d'exécution : lire, modifier, tester avec un runtime qui limite leurs actions.
 
-Ces mains sont en dehors de la frontière modèle + harness dessinée sur la slide précédente. Ici, on montre les deux parties nécessaires pour agir sur un environnement.
-
-Guillermo Rauch distingue aussi les fichiers, qui regroupent notamment les mémoires, les skills et les dépôts. On ne les détaille pas ici pour garder le focus sur la décision et l'exécution.
-
-Voyons maintenant comment le cerveau et les mains échangent pendant un tour de boucle.
-
-Sources :
-https://www.anthropic.com/research/managed-agents
-https://x.com/rauchg/status/2102820148629614685
+Maintenant qu'on a bien compris cette séparation, regardons leurs échanges.
 -->
 
 ---
 name: Decide, act, observe
 group: Understand
 ready: true
-timing: 4.2
+timing: 1.7
 clicks: 13
 ---
 
 <AgentLoop :step="$clicks" />
 
 <!--
-On garde le même objectif : trouver un bug dans un projet et le corriger. C'est une trace scénarisée, pas une exécution réelle.
-En haut, on suit l'étape active et qui en est responsable. En dessous, le contexte envoyé au modèle : les instructions, les outils disponibles et l'historique. Pour le moment, aucun message n'a été envoyé.
+Objectif : corriger un bug. Cette trace est scénarisée, y compris les résumés de raisonnement. En dessous, on suit le contexte envoyé au modèle.
 
-[click] L'utilisateur envoie son objectif. Le harness ajoute ce message au contexte, puis appelle le modèle.
+[click] Le harness ajoute l'objectif de l'utilisateur, puis appelle le modèle.
 
-[click] Le modèle commence par choisir d'inspecter le calcul du panier. Le bloc de raisonnement est un résumé scénarisé pour expliquer la démo, pas une trace interne réelle du modèle.
+[click] Le modèle choisit d'inspecter le calcul du panier.
 
-[click] Le modèle génère une demande de lecture. Le bloc assistant contient un appel d'outil, pas une réponse destinée à l'utilisateur. À ce stade, aucun fichier n'a encore été lu.
+[click] Il demande une lecture. Aucun fichier n'est encore lu.
 
-[click] Le harness valide les arguments et vérifie les permissions. Ici, la lecture dans le projet est autorisée. Selon la configuration, certaines actions demanderaient une approbation. Ce contrôle n'ajoute pas un message à la conversation.
+[click] Le harness vérifie les arguments et les permissions.
 
-[click] Le harness transmet la demande à l'outil de lecture. C'est l'outil qui accède au fichier, dans un environnement dont le runtime impose les restrictions.
+[click] L'outil exécute la lecture dans les limites du runtime.
 
-[click] Le résultat apparaît dans un bloc outil. On voit que la remise est soustraite deux fois. Le harness ajoute ce résultat à l'historique, puis rappelle le modèle avec le contexte mis à jour. Voilà un premier tour complet.
+[click] La remise est soustraite deux fois. Le résultat rejoint l'historique et le harness rappelle le modèle. Premier tour complet.
 
-[click] À partir du code retourné, le modèle identifie la correction : ne soustraire la remise qu'une seule fois. On affiche à nouveau un résumé de raisonnement scénarisé.
+[click] Le modèle identifie la correction.
 
-[click] Le modèle utilise ce résultat pour choisir la suite : demander de ne soustraire la remise qu'une seule fois.
+[click] Il demande de retirer la deuxième soustraction.
 
-[click] On passe plus vite sur le même mécanisme : validation, permissions, exécution de la modification, ajout du résultat au contexte et nouvel appel au modèle.
+[click] Même mécanisme : contrôles, édition, résultat, nouvel appel.
 
-[click] Le modèle prépare la vérification. Le fichier a été modifié, mais il faut encore vérifier le comportement.
+[click] Maintenant, il prépare la vérification.
 
-[click] Le modèle demande maintenant les tests. Une modification réussie ne prouve pas que le bug est corrigé.
+[click] Il demande les tests. Modifier le fichier ne suffit pas.
 
-[click] Après les contrôles et l'exécution, le résultat des tests rejoint lui aussi l'historique. Le modèle reçoit donc la trace de ses demandes et les résultats correspondants.
+[click] Leur résultat rejoint aussi le contexte.
 
-[click] Le modèle génère une réponse finale et le harness arrête cette exécution. Les douze tests passent dans cet exemple, mais ça ne garantit pas l'absence d'autres bugs.
-On peut aussi s'arrêter pour demander de l'aide, atteindre une limite de tours ou de budget, recevoir une annulation ou rencontrer une erreur non récupérable.
+[click] Les douze tests passent ici. Le modèle répond et le harness arrête l'exécution, sans garantie d'absence d'autres bugs.
+
+Une erreur, une annulation ou une limite de budget peuvent aussi arrêter la boucle.
 -->
 
 ---
 name: Four ways to run an agent
 group: Configure
 ready: true
-timing: 3.4
+timing: 1.7
 clicks: 5
 ---
 
 <HarnessLoadout :step="$clicks" />
 
 <!--
-On a vu comment la boucle fonctionne. Maintenant, comment est-ce qu'on veut travailler avec cet agent ?
+La question qu'on peut se poser maintenant, c'est la manière dont on veut travailler avec ces agents. On ne veut pas toujours être dernière sa machine à regarder l'agent tourner, c'est pas toujours pertinant et justement, il exsite différentes configurations pour un agent qui utiliserait un même harness.
 
-Voici quatre configurations possibles. Ce ne sont pas quatre niveaux d'intelligence, et elles peuvent se combiner. On va les retrouver dans la démo.
+Le point important sur ces quatres configurations, c'est qu'elle ne sont pas mutiellement exclusive.
 
-[click] D'abord, la configuration conversationnelle. On échange avec l'agent, on lui donne des précisions, on guide la suite. L'historique lui permet de reprendre les échanges précédents dans son contexte.
-On peut lui connecter des outils. Conversationnel ne veut pas dire sans outils, ça décrit surtout notre façon de travailler avec lui.
+Prenons la première.
 
-[click] Avec une configuration de code, on lui donne accès au projet : lire des fichiers, les modifier, lancer des tests. Il peut alors vérifier une correction au lieu de seulement nous la proposer.
-Mais un terminal donne aussi la possibilité de faire des dégâts. Il faut définir ce qui est accessible, ce qui est autorisé et ce qui demande notre confirmation. Une consigne comme « ne supprime rien » ne remplace pas ces contrôles.
+[click] En conversation, on échange et on guide la suite. On peut aussi connecter des outils.
 
-[click] En arrière-plan, on peut soumettre une tâche puis fermer la session. Une file attend les travaux, un suivi indique leur état et une notification nous prévient à la fin.
-La boucle peut être la même que pour le code. Ce qui change, c'est qu'on n'est plus devant pour voir chaque erreur. Il faut pouvoir retrouver ce qui s'est passé. Reprendre après une interruption demande aussi un mécanisme prévu pour ça.
+[click] Pour le code, on donne accès aux fichiers et aux tests. Il faut encadrer ces accès, surtout avec un terminal.
 
-[click] Enfin, on peut déléguer une partie du travail à d'autres agents. Chacun a son contexte et ses permissions. Un coordinateur récupère leurs résultats pour décider de la suite.
-Ça peut aider à séparer des tâches, mais il faut transmettre les bonnes informations et gérer les désaccords. Plusieurs agents ne donnent pas automatiquement un meilleur résultat.
+[click] En arrière-plan, une file de tâches et des notifications permettent de partir faire autre chose. Il faut conserver la trace du travail.
 
-[click] Ces choix se combinent. Un agent de code peut discuter avec nous, travailler en arrière-plan et déléguer.
-Pour la démo, on garde le même modèle et le même objectif. On va changer les outils et le mode d'exécution pour voir concrètement la différence.
+[click] Avec la délégation, plusieurs agents ont chacun leur contexte et leurs permissions. Un coordinateur rassemble leurs résultats. Ça ajoute aussi du travail de coordination.
+
+[click] Un agent peut combiner tout ça.
+
+Je vous propose qu'on se plonge concrètement dans différentes situations pour visualiser ces différentes modes de fonctionnement.
 -->
 
 ---
@@ -220,20 +201,18 @@ name: Without repository tools
 group: Demo
 layout: full
 ready: true
-timing: 1.2
+timing: 0.5
 clicks: 2
 ---
 
 <AgentDemo mode="conversation" :step="$clicks" />
 
 <!--
-On garde le même objectif pendant toute la démo : trouver un bug et le corriger.
-C'est une simulation pilotée au clavier. Il n'y a aucun appel à un modèle, aucun accès à un vrai dépôt, aucune commande exécutée.
-Les réponses sont préparées pour illustrer les configurations, pas pour mesurer les performances d'un modèle.
+[click] Sans moyen d'accéder au code source, l'assistant nous demande le code et les tests.
 
-[click] Dans cette première configuration, l'assistant demande le code et les tests. Il peut proposer une démarche, mais il ne voit pas les fichiers.
+[click] Il n'a rien lu ni modifié. Et ça, c'est parce que dans ce mode conversation, celui qu'on retrouve sur ChatGPT par example, manque d'outils pour le faire.
 
-[click] Aucun fichier n'a été lu ou modifié. Ce n'est pas une limite du chat : on n'a simplement connecté aucun outil de dépôt. On pourrait copier les fichiers à la main, mais ici on va plutôt équiper le harness.
+Alors ajoutons-les !
 -->
 
 ---
@@ -241,26 +220,40 @@ name: Read, edit, test, repeat
 group: Demo
 layout: full
 ready: true
-timing: 2.6
+timing: 1.5
 clicks: 10
 ---
 
 <AgentDemo mode="repository" :step="$clicks" />
 
 <!--
-Même modèle, même objectif. On lui donne maintenant des outils de lecture, d'édition et de test, limités à ce projet fictif. Ici ces actions sont autorisées sans confirmation humaine. Les permissions restent contrôlées avant chaque exécution.
-À gauche, la conversation. À droite, les fichiers, les tests et les derniers événements de la trace. On distingue la demande du modèle de l'exécution et du résultat.
+Même modèle, même objectif. On ajoute lecture, édition et tests. Ici, ces actions sont autorisées sans confirmation humaine, mais contrôlées à chaque appel.
 
-[click] Le modèle demande le code et les tests. Il ne les a pas encore lus.
-[click] Le harness autorise la lecture et l'outil retourne les fichiers. La remise est soustraite deux fois. Les tests attendent aussi qu'un total ne soit jamais négatif.
-[click] Le modèle demande de retirer la deuxième soustraction.
-[click] L'édition est autorisée et le fichier change. Ça ne prouve pas encore que la correction suffit.
-[click] Le modèle demande les tests.
-[click] L'exécution est autorisée. Le panier de cent euros passe, mais celui de vingt euros avec trente euros de remise donne moins dix au lieu de zéro. Laisser l'échec visible quelques secondes. Le modèle n'a pas respecté toutes les attentes au premier essai.
-[click] Avec ce résultat dans son contexte, le modèle demande une deuxième correction : borner le total à zéro.
-[click] L'édition est autorisée et appliquée. Le dernier résultat de test reste celui de l'ancienne version jusqu'à une nouvelle vérification.
-[click] Le modèle demande à nouveau les tests.
-[click] Les deux cas passent. La correction est prête à être revue, elle n'est pas déployée. Ces deux tests ne prouvent pas l'absence de tout autre bug.
+À gauche, la conversation. À droite, le projet et les résultats.
+
+[click] Le modèle demande les fichiers.
+
+[click] L'outil les retourne. Remise en double, et total attendu positif ou nul.
+
+[click] Le modèle demande une première correction.
+
+[click] L'édition est appliquée.
+
+[click] Il demande les tests.
+
+[click] Échec : vingt euros moins trente donne moins dix, au lieu de zéro.
+
+[Laisser l'échec visible.]
+
+[click] Avec ce résultat, il demande de borner le total à zéro.
+
+[click] La deuxième édition est appliquée. Le test affiché correspond encore à l'ancienne version. Il faut le relancer pour vérifier le nouveau code.
+
+[click] Il redemande les tests.
+
+[click] Les deux cas passent. Le code est prêt à être revu, pas déployé.
+
+Le résultat d'un outil a donc changé la décision suivante.
 -->
 
 ---
@@ -268,19 +261,24 @@ name: Keep working in the background
 group: Demo
 layout: full
 ready: true
-timing: 1.3
+timing: 1.2
 clicks: 4
 ---
 
 <AgentDemo mode="background" :step="$clicks" />
 
 <!--
-On repart du projet initial avec le même bug. On conserve le modèle, les outils et les permissions de la configuration précédente. On ajoute une file de tâches, un suivi d'état et une notification.
+On repart du bug initial, avec les mêmes outils et permissions. Cette fois, la tâche attend dans une file.
 
-[click] Le job passe de queued à running. La même boucle de lecture, correction et tests commence dans le worker.
-[click] L'utilisateur quitte la vue du travail et ouvre sa liste de tâches. Le job continue sans conversation ouverte. Pas besoin de rejouer toutes les étapes de correction.
-[click] Une notification annonce la fin : les deux tests passent et le résultat est prêt à être revu.
-[click] On ouvre le résultat pour retrouver le fichier corrigé et les tests. Completed veut dire que le job s'est terminé, pas que le code est déployé.
+[click] Le worker démarre la même boucle de lecture, correction et tests.
+
+[click] Je quitte la conversation pour ma liste de tâches. Le worker continue sans moi. En revanche, reprendre après une panne demande un mécanisme prévu pour conserver l'état. Fermer la conversation et interrompre le worker sont deux choses différentes.
+
+[click] Une notification annonce la fin. Les tests passent, le résultat attend ma revue.
+
+[click] J'ouvre le résultat. On retrouve les appels et leurs résultats, y compris le test en échec et la deuxième correction.
+
+La conversation fermée n'a pas arrêté le travail. Completed veut dire terminé, pas déployé.
 -->
 
 ---
@@ -288,21 +286,26 @@ name: Delegate part of the work
 group: Demo
 layout: full
 ready: true
-timing: 1.7
+timing: 1.1
 clicks: 4
 ---
 
 <AgentDemo mode="delegation" :step="$clicks" />
 
 <!--
-Dernière configuration, en repartant encore du bug initial. Le coordinateur et les deux sous-agents utilisent le même modèle, mais chacun a son contexte et ses permissions.
+Dernière configuration. Même bug, même modèle pour le coordinateur et les deux sous-agents.
 
-[click] Le coordinateur délègue l'inspection du code à un agent et celle des tests à l'autre. Ils ont seulement le droit de lire, pas de modifier. Chaque sous-agent a sa propre boucle, qu'on ne détaille pas ici.
-[click] Les deux rapports reviennent. Le premier repère la remise en double. Le deuxième rappelle que le total doit rester positif ou nul.
-[click] Le coordinateur rassemble ces informations et demande la correction, puis la vérification. Lui seul a les droits nécessaires à l'édition.
-[click] Le harness autorise et exécute les actions. Les deux tests passent. Sur un exemple aussi petit, un seul agent suffisait : on illustre la répartition du travail, pas une garantie de vitesse ou de qualité. La coordination a aussi un coût.
+[click] Le coordinateur délègue la lecture du code et celle des tests. Chaque sous-agent a son contexte et peut seulement lire.
 
-Même modèle. Même objectif. Un harness différent. C'est ce qui change les possibilités qu'on vient de voir.
+[click] Les rapports reviennent : remise en double d'un côté, total positif ou nul de l'autre. Les cartes permettent de retrouver les appels.
+
+[click] Le coordinateur rassemble les informations et demande l'édition. Lui seul peut modifier les fichiers.
+
+[click] La correction est appliquée, puis les deux tests passent.
+
+Sur ce petit exemple, un seul agent suffisait. Déléguer ne garantit ni vitesse ni qualité.
+
+Même modèle, même objectif. Le harness change les possibilités.
 -->
 
 ---
@@ -310,7 +313,7 @@ name: What to remember
 group: Recap
 ready: true
 layout: recap
-timing: 1.2
+timing: 0.1
 ---
 
 <RecapList
@@ -322,7 +325,7 @@ timing: 1.2
     },
     {
       title: 'The model asks, the harness checks and dispatches',
-      description: 'Tools execute allowed actions. The runtime enforces isolation. A prompt is not a security barrier.'
+      description: 'Tools execute allowed actions. The runtime enforces isolation.'
     },
     {
       title: 'Same LLM. Same objective. Different harness.',
@@ -332,13 +335,9 @@ timing: 1.2
 />
 
 <!--
-Qu'est-ce qu'on garde en tête ?
+Qu'est-ce qu'on retient ?
 
-Un agent utilise un modèle pour choisir des actions vers un objectif. Il observe les résultats pour décider de la suite. Il peut aussi s'arrêter, demander de l'aide ou atteindre une limite sans avoir réussi.
-
-Ensuite, le modèle demande, mais c'est le harness qui organise l'exécution et applique les permissions. Une consigne dans le prompt ne remplace pas un contrôle avant l'action.
-
-Enfin, on l'a vu dans la démo : même LLM, même objectif, mais des possibilités différentes selon le harness. Les outils, les permissions et le mode d'exécution changent ce que l'agent peut faire. Et une réponse finale ne prouve pas que le bug est corrigé, il faut vérifier le résultat.
+[lecture des différents éléments]
 -->
 
 ---
@@ -348,14 +347,14 @@ layout: outro2
 customFeedbackUrl: https://api.inalia.app/f/8cR0I7
 additionalContentUrl: https://beta.soubiran.dev/newsletter
 additionalContentLabel: Get the next episodes
-timing: 0.6
+timing: 0.2
 ready: true
 ---
 
 <!--
-Merci à tous, c'était Estéban.
+Merci à tous, c'était Estéban !
 
-Le premier QR code vous permet de laisser un feedback sur cette session. Le second vous permet de vous abonner à la newsletter pour recevoir les prochains épisodes.
+Le premier QR code est pour vos retours. Le second, pour recevoir les prochains épisodes.
 
-On peut maintenant prendre le temps de discuter. Dans vos usages, quels outils donneriez-vous à un agent, et quelles actions voudriez-vous garder sous votre contrôle ?
+Merci !
 -->
