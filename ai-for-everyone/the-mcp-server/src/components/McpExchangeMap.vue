@@ -3,6 +3,7 @@ import { useId } from 'vue'
 
 withDefaults(defineProps<{
   withMcp?: boolean
+  static?: boolean
   focus?: 'model' | 'server' | 'api' | 'all'
 }>(), { focus: 'all' })
 
@@ -10,7 +11,7 @@ const arrowId = useId()
 </script>
 
 <template>
-  <div class="exchange-map not-content" :class="`focus-${focus}`" role="img" :aria-label="withMcp ? 'The user talks to the application. The application exchanges messages with the model and calls the MCP server. The server calls the GitHub API.' : 'The user talks to the application. The application exchanges messages with the model and calls the GitHub API directly.'">
+  <div class="exchange-map not-content" :class="[static ? 'static-map' : `focus-${focus}`]" role="img" :aria-label="withMcp ? 'The user talks to the application. The application exchanges messages with the model and calls the MCP server. The server calls the GitHub API.' : 'The user talks to the application. The application exchanges messages with the model and calls the GitHub API directly.'">
     <svg viewBox="0 0 880 140" aria-hidden="true">
       <defs>
         <marker :id="arrowId" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -54,6 +55,7 @@ const arrowId = useId()
 .exchange-map { position: relative; width: 880px; height: 140px; color: #a3a3a3; }
 .exchange-map svg { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.5; }
 .map-node { position: absolute; left: 25px; width: 160px; height: 50px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid; border-radius: 6px; font-size: 15px; font-weight: 600; transition: border-color 200ms, background-color 200ms; --at-apply: border-neutral-200 bg-neutral-100 text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300; }
+.static-map .map-node { transition: none; }
 .user-node { left: 0; top: 76px; }
 .model-node { left: 230px; top: 0; }
 .application-node { left: 230px; top: 76px; }

@@ -36,13 +36,20 @@ const tool = {
   },
   strict: true,
 }
-// Keep the schema readable without scrolling during the presentation.
+// OpenAI Responses API request and function schema:
+// https://github.com/openai/openai-openapi/blob/main/openapi.json
+const request = {
+  model: 'gpt-4.1',
+  input: [{ role: 'user', content: prompt }],
+  tools: [tool],
+}
+// Keep parameter types compact in the full request.
 function formatSchema(value: Record<string, unknown>) {
   return JSON.stringify(value, null, 2)
     .replace(/\{\n\s*"type": "string"\n\s*\}/g, '{ "type": "string" }')
     .replace(/\[\n\s*"repository",\n\s*"title",\n\s*"body"\n\s*\]/, '["repository", "title", "body"]')
 }
-const toolJson = formatSchema(tool)
+const requestJson = formatSchema(request)
 
 const call = {
   type: 'function_call',
@@ -54,8 +61,8 @@ const reply = 'Created issue #42: Confirm project deletion.'
 const directSteps = [
   {
     direction: 'Application → model API',
-    label: 'Tool definition · sent with the user message',
-    payload: tool,
+    label: 'POST /v1/responses · model, user message and tools',
+    payload: request,
   },
   {
     direction: 'Model API → application',
@@ -74,9 +81,14 @@ const directSteps = [
   },
   {
     direction: 'Application → model API',
-    label: 'Next request · input added to the conversation',
+    label: 'POST /v1/responses · conversation with the tool result',
     payload: {
-      input: [{ type: 'function_call_output', call_id: 'call_42', output: JSON.stringify(issue) }],
+      ...request,
+      input: [
+        ...request.input,
+        call,
+        { type: 'function_call_output', call_id: 'call_42', output: JSON.stringify(issue) },
+      ],
     },
   },
   {
@@ -163,7 +175,7 @@ const schema = computed(() => !props.withMcp && step.value === 0)
           {{ current.label }}
         </div>
       </template>
-      <CodeBlockContent v-if="schema" :code="toolJson" language="json" wrap class="tool-schema" />
+      <CodeBlockContent v-if="schema" :code="requestJson" language="json" wrap class="tool-schema" />
       <InspectJson v-else :value="current.payload" />
     </Inspect>
   </div>
