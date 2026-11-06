@@ -55,7 +55,7 @@ const tokens = computed(() => {
   background: transparent;
 }
 .syntax-token { color: var(--shiki-light); }
-:global(.dark) .syntax-token { color: var(--shiki-dark); }
+.dark .syntax-token { color: var(--shiki-dark); }
 .ui-code-block-content[data-wrap] { white-space: pre-wrap; overflow-wrap: anywhere; }
 .ui-code-block-content:focus-visible { outline: 2px solid var(--ui-ring); outline-offset: -2px; }
 </style>

@@ -45,7 +45,7 @@ const emit = defineEmits<{ toggleIntegrations: [] }>()
   color: var(--ui-highlighted);
 }
 .chat-label .i-logos-openai-icon { filter: brightness(0); }
-:global(.dark) .chat-label .i-logos-openai-icon { filter: brightness(0) invert(1); }
+.dark .chat-label .i-logos-openai-icon { filter: brightness(0) invert(1); }
 .connected-dot {
   width: 7px;
   height: 7px;

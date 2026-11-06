@@ -19,7 +19,7 @@ event: AI for Everyone
 name: The MCP server
 group: Introduction
 ready: true
-timing: 0.3
+timing: 0.4
 ---
 
 # The MCP server
@@ -27,23 +27,23 @@ timing: 0.3
 <!--
 Bonjour tout le monde !
 
-Aujourd'hui, on va parler serveurs MCP.
+Aujourd'hui, on va parler des serveurs MCP.
 
-Déjà parce que c'est super intéressant et puis parce c'est une brique dont on va avoir besoin pour construire des  petits agents.
+Déjà parce que c'est super intéressant, et puis parce que c'est une brique dont on va avoir besoin pour construire de petits agents.
 -->
 
 ---
 name: A conversation without tools
 group: The limits of text
 ready: true
-layout: ai
 timing: 1.1
+layout: ai
 ---
 
 <McpConversationDemo />
 
 <!--
-Imaginons qu'on travaile sur une application de suivi de projets et c'qu'on veut, c'est que les utilisateurs évitent éviter les suppressions accidentelles. Pour savoir comment faire, je demande à une IA.
+Imaginons qu'on travaille sur une application de suivi de projets. Ce qu'on veut, c'est éviter que les utilisateurs suppriment des projets par accident. Pour savoir comment faire, je demande à une IA.
 
 [Entrée pour envoyer le message, puis laisser apparaître la réponse]
 
@@ -53,15 +53,15 @@ L'assistant propose de saisir le nom du projet avant de le supprimer. Ça me va.
 
 Du coup, je lui demande d'en faire une issue sur GitHub. Il me rédige le contenu et il s'arrête. Il ne va pas plus loin. Il ne peut pas me créer l'issue.
 
-C'est évidemment un problème mais qu'on peut corriger, on va voir comment !
+C'est évidemment un problème, mais on peut le corriger. On va voir comment !
 -->
 
 ---
 name: Tokens can request actions
 group: Tool calling
 ready: true
-clicks: 1
 timing: 0.5
+clicks: 1
 ---
 
 <TokenCapabilities reveal-together />
@@ -69,35 +69,35 @@ timing: 0.5
 <!--
 Revenons à notre LLM. [click]
 
-Son objectif c'est générer le prochain token. Il peut s'en servir pour répondre, raisonner et demande l'appel d'un outil.
+Son objectif, c'est de générer le prochain token. Il peut s'en servir pour répondre, raisonner et demander l'appel d'un outil.
 
-Et justement, on pourrait se servir de cette capacté pour le faire appeller GitHub pour qu'il créé notre issue. Intéressant !
+Et justement, on pourrait se servir de cette capacité pour lui faire demander un appel à GitHub afin de créer notre issue. Intéressant !
 -->
 
 ---
 name: A conversation with a tool
 group: Tool calling
 ready: true
-layout: ai
 timing: 0.3
+layout: ai
 ---
 
 <McpToolConversationDemo />
 
 <!--
-En faite ce qu'on aimerait, c'est ce workflow.
+En fait, ce qu'on aimerait, c'est ce workflow.
 
 [Entrée pour saisir le message, puis Entrée pour l'envoyer]
 
-Où l'agent va appeler le tool create_issue pour créer l'issue à notre place.
+L'agent appelle le tool create_issue pour créer l'issue à notre place.
 -->
 
 ---
 name: Who talks to whom
 group: Tool calling
 ready: true
-layout: full
 timing: 0.8
+layout: full
 ---
 
 <div class="absolute inset-0 flex items-center justify-center">
@@ -105,147 +105,141 @@ timing: 0.8
 </div>
 
 <!--
-Prenons un peu de hauteur sur le système et regardons ce qu'il se passe.
+Prenons un peu de hauteur sur le système et regardons ce qui se passe.
 
 L'utilisateur échange avec l'application. L'application envoie les messages au modèle et reçoit ses réponses, dont les demandes d'appel d'outil.
 
 Quand la demande contient create_issue, alors l'application appelle l'API de GitHub en HTTP pour faire l'action. L'application transmet le résultat au modèle et la conversation reprend.
 
-Maintenant qu'on a cette overview, on peut se pencher sur du plus concret. Les échanges, il ressemble à quoi ?
+Maintenant qu'on a cette vue d'ensemble, on peut se pencher sur quelque chose de plus concret. Les échanges, ils ressemblent à quoi ?
 -->
 
 ---
-name: The model asks, the application calls
+name: 'The model asks, the application calls'
 group: Tool calling
+ready: true
+timing: 1.6
 layout: full
 clicks: 5
-timing: 1.7
 ---
 
 <McpToolCallWalkthrough />
 
 <!--
-En bas, on retrouve le graph qu'on a vu juste avant. Il va nous permettre de visualiser les intéractions entre les systèmes. À gauche, on va avoir le chat de notre application et à droite, le contenu des échanges entre les systèmes. C'est ça qui va nous intéresser.
+En bas, on retrouve le graphe qu'on a vu juste avant. Il va nous permettre de visualiser les interactions entre les systèmes. À gauche, on a le chat de notre application et, à droite, le contenu des échanges entre les systèmes. C'est ça qui va nous intéresser.
 
-Le premier truc qui se passe, c'est une requête avec notre message de l'application vers le provider. Dans cette requête, on y trouve le modèle, le message et surtout, la définition d'un tool qu'on met à disposition de l'IA pour qu'elle puisse l'appeler.
+Le premier truc qui se passe, c'est que l'application envoie une requête avec notre message au provider. Dans cette requête, on trouve le modèle, le message et surtout la définition d'un tool qu'on met à disposition de l'IA pour qu'elle puisse l'appeler.
 
-[click] Ensuite, le modèle nous répond avec avec justement, une demande de tool call pour create_issue. D'ailleurs, on y voit les différents paramètres pour le tool call. [click] Notre application l'intercept et execute une fonction qui va appeler l'API de GitHub. [click] L'API de GitHub nous retourne une réponse [click]  qu'on vient réintégrer dans l'appel à notre LLM, qu'on va appeler [click] et il va pouvoir nous répondre. Il a réussi à créer l'issue.
+[click] Ensuite, le modèle nous répond justement avec une demande de tool call pour create_issue. D'ailleurs, on y voit les différents paramètres du tool call. [click] Notre application l'intercepte et exécute une fonction qui va appeler l'API de GitHub. [click] L'API de GitHub nous retourne une réponse [click] qu'on vient réintégrer dans une nouvelle requête à notre LLM. [click] Il peut alors nous répondre que l'issue a bien été créée.
 -->
 
 ---
 name: A shared interface for tools
 group: MCP servers
+ready: true
+timing: 1.2
 clicks: 1
-timing: 1.6
 ---
 
 <McpSharedInterface />
 
 <!--
-Regardons justement plusieurs applications. Chacune veut proposer la même action : créer une issue sur GitHub.
+Imaginons que je développe ChatGPT. Je dois écrire mon tool et son implémentation pour que mon application puisse se connecter à GitHub. Et si je développe Claude, ou même Cursor, je dois aussi le faire. En fait, ça veut dire que chaque application doit développer sa propre intégration.
 
-Sans interface commune, chacune peut écrire son propre code d'intégration. Les cadres montrent que ce code appartient à chaque application. Il faut comprendre l'API GitHub, gérer ses réponses et maintenir cette intégration.
+On sent bien que c'est pas optimal.
 
-Et ce travail revient pour les autres services qu'on veut connecter. Une intégration GitHub ne permet pas d'appeler Slack.
+Et c'est précisément là que [click] MCP, le Model Context Protocol, fait son apparition !
 
-[click] MCP propose une interface commune entre les applications et les serveurs. Son nom complet est Model Context Protocol.
+L'idée, c'est d'avoir une interface commune entre les applications et les serveurs. Le serveur est développé une fois, souvent par le service qui veut se faire appeler, et les applications n'ont plus qu'à se connecter.
 
-Le code qui sait appeler GitHub se trouve maintenant dans un serveur MCP. Plusieurs applications compatibles peuvent utiliser ce même serveur. Elles savent découvrir ses outils et lui demander de les exécuter.
-
-Ça ne supprime pas le travail d'intégration. Quelqu'un doit toujours écrire le code qui appelle GitHub. Mais on peut le réutiliser au lieu de le réécrire dans chaque application.
-
-Reprenons exactement notre demande pour voir ce qui change.
+D'ailleurs, on l'a vu, la responsabilité de développer l'intégration est passée des applications au service.
 -->
 
 ---
 name: The same action through MCP
 group: MCP servers
+timing: 1.4
 layout: full
 clicks: 5
-timing: 2.5
 ---
 
 <McpToolCallWalkthrough with-mcp />
 
 <!--
-Même utilisateur, même demande, même dépôt GitHub. Cette fois, un serveur MCP apparaît entre l'application et GitHub. Le modèle, lui, reste à la même place.
+De retour sur notre visualisation avec le même scénario que tout à l'heure.
 
-L'application commence par demander au serveur quels outils il propose. Elle n'a pas besoin de connaître à l'avance tous leurs noms et leurs paramètres.
+Cette fois, on va regarder comment le système se comporte quand on place un serveur MCP.
 
-[click] Le serveur décrit create_issue. L'application transmet cette description au modèle, comme elle le faisait tout à l'heure. Pour le modèle, il s'agit toujours d'un outil disponible pour répondre à la demande.
+Dans un premier temps, l'application demande au serveur MCP quels tools il peut mettre à sa disposition. [click] Le serveur lui répond, et on le voit ici, avec un tool create_issue.
 
-[click] Le modèle demande de créer l'issue avec le titre et la description. Avant, l'application exécutait directement son intégration GitHub. Maintenant, elle transmet la demande au serveur MCP.
+[click] Ensuite, le modèle demande à appeler le tool et donc l'application transmet la demande au serveur. On y retrouve bien le nom du tool et les paramètres fournis par le modèle.
 
-C'est cette liaison que MCP standardise. Le modèle ne se connecte pas lui-même au serveur. L'application fait le lien entre sa conversation avec le modèle et les outils du serveur.
+[click] Le serveur MCP s'occupe de faire un appel à l'API de GitHub.
 
-[click] Le serveur utilise son code pour contacter GitHub. L'opération reste la même : créer une issue dans le dépôt choisi. On a déplacé le code d'intégration, pas remplacé l'API GitHub.
-
-[click] GitHub crée l'issue. Le serveur renvoie le résultat à l'application, qui le transmet au modèle. On peut suivre le retour jusqu'à notre conversation.
-
-[click] Et voilà notre confirmation, avec l'issue numéro 42. Pour l'utilisateur, le résultat est identique. Il a demandé une issue et obtenu son lien.
-
-La différence apparaît quand on branche une autre application compatible. Elle peut utiliser le même serveur, sans réécrire la création d'issue. C'est ce qu'on gagne avec MCP.
+[click] Le serveur MCP renvoie la réponse de l'API à l'application, [click] qui vient la réinjecter dans la conversation. Ça permet au modèle de nous répondre que c'est bon, l'issue est créée.
 -->
 
 ---
 name: A local server over stdio
 group: MCP servers
+ready: true
+timing: 0.4
 transition: slide-up
-timing: 0.6
 ---
 
 <McpServerConnection transport="stdio" />
 
 <!--
-Le serveur MCP peut tourner sur notre machine. Avec stdio, l'application le lance comme un programme local et communique directement avec lui.
+Le serveur MCP peut tourner sur notre machine. Avec stdio, l'application le lance comme un programme local et communique directement avec lui via l'entrée et la sortie standard.
 
-C'est utile pour un serveur qui travaille sur nos fichiers, par exemple. Pas besoin de déployer un service en ligne.
-
-Il peut aussi contacter GitHub à distance. Local décrit l'endroit où le programme tourne, pas tout ce à quoi il peut accéder.
+C'est l'ancienne manière de faire. Elle n'est plus trop utilisée.
 -->
 
 ---
 name: A remote server over Streamable HTTP
 group: MCP servers
-timing: 0.7
+ready: true
+timing: 0.6
 ---
 
 <McpServerConnection transport="http" />
 
 <!--
-Le serveur peut aussi être hébergé à distance. Avec Streamable HTTP, l'application se connecte à son URL au lieu de lancer un programme sur notre machine.
+La nouvelle manière de faire, c'est avec Streamable HTTP. L'application se connecte à l'URL du serveur et c'est tout !
 
-[click] Une application en ligne, comme ChatGPT, peut alors l'utiliser aussi.
+L'avantage, c'est que l'application n'a plus besoin d'avoir une machine à disposition. [click]
 
-Dans les deux cas, le principe reste le même. L'application découvre ce que le serveur propose et lui transmet ses demandes. Il faut simplement vérifier que le client prend en charge les fonctionnalités qu'on veut utiliser.
+Ça veut dire qu'une application comme ChatGPT peut l'utiliser !
+
+Après, dans les deux cas, via stdio ou Streamable HTTP, ça fonctionne de la même manière.
 -->
 
 ---
 name: Discovering an MCP server
 group: MCP servers
-clicks: 1
-timing: 0.9
 ready: true
+timing: 1.2
+clicks: 1
 ---
 
 <McpDiscovery />
 
 <!--
-Avant de pouvoir commencer à utiliser un serveur MCP, il faut qu'il se dise bonjour avec le client.
+Avant de pouvoir commencer à utiliser un serveur MCP, il faut que le client et le serveur se disent bonjour.
 
 Dans la première requête, le client appelle la méthode server/discover et la communication avec le serveur est en RPC, donc un seul endpoint à taper, et on précise la méthode dans le JSON.
 
-[click] Ensuite, le serveur va répondre avec ses différentes capacités. On y voit les tools, et deux nouvelles, resources et prompts. L'intérêt c'est que ça permet au client d'adapter son interface en fonction de ce que supportent les MCP.
+[click] Ensuite, le serveur va répondre avec ses différentes capacités. On y voit les tools et deux nouvelles capacités, les resources et les prompts. L'intérêt, c'est que ça permet au client d'adapter son interface en fonction de ce que prend en charge le serveur MCP.
 
-On y découvre aussi la version supportée. Ça c'est pour s'assurer qu'on parle bien le même language.
+On y découvre aussi la version prise en charge. Ça, c'est pour s'assurer qu'on parle bien le même langage.
 -->
 
 ---
 name: Resources provide context
 group: Beyond tools
 ready: true
-layout: ai
 timing: 1.2
+layout: ai
 ---
 
 <McpResourceDemo />
@@ -253,23 +247,24 @@ timing: 1.2
 <!--
 On l'a découvert dans la slide précédente. Un serveur MCP peut mettre à disposition des ressources.
 
-C'qu'on peut faire c'est de donner à notre chat le brief du projet pour qu'il tienne compte des besoins du produit, et lui poser une question sur le projet.
+Ce qu'on peut faire, c'est donner à notre chat le brief du projet pour qu'il tienne compte des besoins du produit, puis lui poser une question sur le projet.
 
 [Cliquer sur Add context, puis sélectionner Project brief]
 
 [Entrée pour lancer la conversation]
 
-Le document qu'on a ajouté il permet d'ajouter du context pour que l'IA est une réponse plus pertinente.
+Le document qu'on a ajouté apporte du contexte pour que l'IA donne une réponse plus pertinente.
 
-C'qu'est intéressant avec ça c'est qu'on peut imaginer une serveur MCP, centralisé, à disposition d'une équipe, pour permettre à chacun d'avoir accès aux mêmes documents et de garder une source de vérité, plutôt que d'avoir des documents un peu partout, potentiellent dans différent repo ou dossiers.
+Ce qui est intéressant avec ça, c'est qu'on peut imaginer un serveur MCP centralisé, à disposition d'une équipe. Chacun peut alors accéder aux mêmes documents et garder une source de vérité commune, plutôt que d'avoir des documents un peu partout, potentiellement dans différents dépôts ou dossiers.
 -->
 
 ---
 name: 'Behind the scenes: resources/read'
 group: Beyond tools
-img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
 ready: true
 timing: 0.7
+img: >-
+  https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
 ---
 
 <BackgroundImage />
@@ -277,39 +272,40 @@ timing: 0.7
 <McpProtocolInspector kind="resources" class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
-D'un point de vu du protocol, ça fonctionne exactement comme le tool call.
+Du point de vue du protocole, ça fonctionne exactement comme le tool call.
 
-On va commencer par demander au serveur toutes les resources disposnibles avec un resources/list. Ça permet de les afficher dans le dropdown qu'on a vu dans notre chat. Et puis dès qu'on en utilise un, un fait un demande au serveur avec resources/read et le serveur nous retourne le contenu du fichier.
+On va commencer par demander au serveur toutes les ressources disponibles avec resources/list. Ça permet de les afficher dans le menu déroulant qu'on a vu dans notre chat. Et puis, dès qu'on en utilise une, on fait une demande au serveur avec resources/read et le serveur nous retourne le contenu du fichier.
 -->
 
 ---
 name: Prompts provide reusable messages
 group: Beyond tools
-layout: ai
 ready: true
-timing: 1.2
+timing: 1.1
+layout: ai
 ---
 
 <McpPromptDemo />
 
 <!--
-Le serveur MCP il peut aussi exposer des prompts. Là où la ressource permet d'ajouter du context, le prompt c'est des instructions. Dans l'interface, ça apparait comme les commandes, avec le slash.
+Le serveur MCP peut aussi exposer des prompts. Là où la ressource permet d'ajouter du contexte, le prompt fournit des instructions. Dans l'interface, ça apparaît comme les commandes, avec le slash.
 
-[Entrer /, puis sélectionner review_pull_request, paraméterer]
+[Entrer /, puis sélectionner review_pull_request et renseigner les paramètres]
 
 [Entrée pour lancer la conversation]
 
-Ce qu'on voit, c'est que le prompt apparait dans l'input, avec les paramètres que j'avais passé, et l'IA s'est du coup mise en action. Trop pratique.
+Ce qu'on voit, c'est que le prompt apparaît dans le champ de saisie, avec les paramètres que j'avais passés, et l'IA s'est du coup mise en action. Trop pratique.
 
-Et là, comme pour les ressrouces, ça peut permettre de partager des prompts à tout une équipe, une organisation, pour éviter d'avoir à les dupliquer dans tous les projets, entre tous les utiliateurs.
+Et là, comme pour les ressources, ça peut permettre de partager des prompts avec toute une équipe ou une organisation, pour éviter d'avoir à les dupliquer dans tous les projets et pour tous les utilisateurs.
 -->
 
 ---
 name: 'Behind the scenes: prompts/get'
 group: Beyond tools
-img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
 ready: true
 timing: 0.5
+img: >-
+  https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
 ---
 
 <BackgroundImage />
@@ -317,17 +313,18 @@ timing: 0.5
 <McpProtocolInspector kind="prompts" class="absolute top-20 left-40 -right-px -bottom-px" />
 
 <!--
-Là pour le coup, c'est exactement comme ce qu'on a vu juste avant. On demande au serveur tous les prompts de disponible. Il nous les renvoient.
+Là, pour le coup, c'est exactement comme ce qu'on a vu juste avant. On demande au serveur tous les prompts disponibles. Il nous les renvoie.
 
-Ensuite, quand on a besoin d'un, on envoie les différentes paramètres demandés et il nous le envoie le prompt !
+Ensuite, quand on a besoin de l'un d'eux, on envoie les différents paramètres demandés et il nous renvoie le prompt !
 -->
 
 ---
 name: More MCP capabilities
 group: Beyond tools
-img: https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
 ready: true
 timing: 0.3
+img: >-
+  https://images.unsplash.com/photo-1579792685643-a4bb28186899?auto=format&fit=crop&w=2340&q=80
 ---
 
 <BackgroundImage />
@@ -335,15 +332,15 @@ timing: 0.3
 <McpCapabilities />
 
 <!--
-Nous, on a vu 3 des capacités du MCP, les 3 principales, mais il en existe pleins d'autres comme la complétion, l'authentification, les MCP Apps, les tâches et mêmes les skills.
+Nous, on a vu trois des capacités de MCP, les trois principales, mais il en existe plein d'autres comme la complétion, l'authentification, les MCP Apps, les tâches et même les skills.
 -->
 
 ---
 name: What to remember
 group: Key takeaways
-layout: recap
 ready: true
 timing: 0.1
+layout: recap
 ---
 
 <RecapList
@@ -373,12 +370,12 @@ Qu'est-ce qu'on retient ?
 ---
 name: Thank you
 group: Closing
-layout: outro2
-customFeedbackUrl: https://api.inalia.app/f/QDA48c
-additionalContentUrl: https://beta.soubiran.dev/newsletter
-additionalContentLabel: Get the next episodes
-timing: 0.4
 ready: true
+timing: 0.4
+layout: outro2
+additionalContentLabel: Get the next episodes
+additionalContentUrl: 'https://beta.soubiran.dev/newsletter'
+customFeedbackUrl: 'https://api.inalia.app/f/QDA48c'
 ---
 
 <!--

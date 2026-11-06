@@ -7,10 +7,12 @@
   "locales": {
     "en": {
       "title": "LLM fundamentals",
+      "recording": "https://youtu.be/eyChRqRsOuI",
       "description": "Understand how LLMs predict tokens, learn from data, and use transformers, reasoning, and tools, with examples of their capabilities and limitations."
     },
     "fr": {
       "title": "Les fondamentaux des LLM",
+      "recording": "https://youtu.be/YiqZbUbYjpg",
       "description": "Comprenez comment les LLM prédisent des tokens, apprennent à partir de données et utilisent les transformers, le raisonnement et les outils, avec des exemples de leurs capacités et de leurs limites."
     }
   },
