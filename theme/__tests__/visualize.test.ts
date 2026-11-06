@@ -1,6 +1,6 @@
 // @vitest-environment node
 import type { ResolvedSlidevOptions } from '@slidev/types'
-import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
+import { mkdtemp, readFile, realpath, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { build, createServer } from 'vite'
@@ -76,7 +76,8 @@ describe('talk graph', () => {
 })
 
 async function fixture(run: (root: string, options: ResolvedSlidevOptions) => Promise<void>) {
-  const root = await mkdtemp(join(tmpdir(), 'talk-visualize-'))
+  // Vite resolves entry symlinks, so its root must use the same canonical path.
+  const root = await realpath(await mkdtemp(join(tmpdir(), 'talk-visualize-')))
   await writeFile(join(root, 'slides.md'), '---\ntitle: Test talk\n---\n# First\n\n---\nsrc: ./imported.md\n---\n')
   await writeFile(join(root, 'imported.md'), '# Imported\n\n---\nchoices: []\n---\n# End\n')
   const options = {

@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { mount } from '@vue/test-utils'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { h, nextTick } from 'vue'
@@ -49,11 +50,11 @@ describe('chat animation', () => {
     expect(wrapper.get('.animation-composer').element.parentElement).toBe(wrapper.element)
 
     // happy-dom does not calculate layout, so guard the CSS responsible for overlap.
-    const animationSource = readFileSync(`${import.meta.dirname}/../components/Chat/ChatAnimation.vue`, 'utf8')
+    const animationSource = readFileSync(join(import.meta.dirname, '../components/Chat/ChatAnimation.vue'), 'utf8')
     const composerStyle = animationSource.match(/\.chat-animation > \.animation-composer \{([^}]+)\}/)![1]
     expect(composerStyle).toContain('flex-shrink: 0')
     expect(composerStyle).not.toMatch(/position:\s*absolute|transform:/)
-    const headerSource = readFileSync(`${import.meta.dirname}/../components/Chat/ChatHeader.vue`, 'utf8')
+    const headerSource = readFileSync(join(import.meta.dirname, '../components/Chat/ChatHeader.vue'), 'utf8')
     expect(headerSource).not.toContain('margin-bottom:')
   })
 

@@ -1,0 +1,3 @@
+An AI agent uses a model to choose actions toward a goal, then uses the results to decide what to do next. This talk separates the model's requests from the software that checks permissions, executes tools, builds context, and controls the execution loop.
+
+A staged bug fix shows that loop in practice: read the code, apply a change, run tests, and revise the fix when a test fails. The same task then illustrates conversational assistance, repository access, background execution, and delegation to read-only sub-agents. Each configuration changes what the agent can do and how its work is reviewed. Passing tests does not guarantee bug-free code, and delegating work does not guarantee better or faster results.
