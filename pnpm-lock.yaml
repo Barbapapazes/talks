@@ -89,8 +89,8 @@ catalogs:
       specifier: ^2.4.9
       version: 2.4.9
     dotenv:
-      specifier: ^17.4.2
-      version: 17.4.2
+      specifier: ^18.0.0
+      version: 18.0.10
     execa:
       specifier: ^9.6.1
       version: 9.6.1
@@ -319,7 +319,7 @@ importers:
         version: 15.0.5
       dotenv:
         specifier: catalog:scripts
-        version: 17.4.2
+        version: 18.0.10
       eslint:
         specifier: catalog:lint
         version: 10.6.0(jiti@2.7.0)
@@ -1904,9 +1904,6 @@ importers:
 
   theme:
     dependencies:
-      shiki:
-        specifier: catalog:ui
-        version: 4.3.0
       '@slidev/client':
         specifier: catalog:slidev
         version: 52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))
@@ -1931,6 +1928,9 @@ importers:
       reka-ui:
         specifier: catalog:ui
         version: 2.10.1(vue@3.6.0-beta.17(typescript@6.0.3))
+      shiki:
+        specifier: catalog:ui
+        version: 4.3.0
       slidev-addon-graph:
         specifier: catalog:slidev
         version: 1.0.0(patch_hash=7b1835a607e00a8e66d3af77e0761debd030570abcf4f674389ccd6789988ce7)(@egjs/hammerjs@2.0.17)(@slidev/client@52.19.0(@devframes/hub@0.9.19(crossws@0.4.12(srvx@1.0.4))(devframe@0.9.19(cac@7.0.0)(srvx@1.0.4)))(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.8)(@oxc-project/types@0.147.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(crossws@0.4.12(srvx@1.0.4))(lightningcss@1.33.0)(oxc-parser@0.137.0)(react@19.2.7)(rolldown@1.2.6)(rollup@4.63.2)(srvx@1.0.4)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)))(component-emitter@2.0.0)(keycharm@0.4.0)(uuid@14.0.1)(vite@8.1.0(@types/node@26.0.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0))(vue@3.6.0-beta.17(typescript@6.0.3))
@@ -5927,6 +5927,11 @@ packages:
   dotenv@17.4.2:
     resolution: {integrity: sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw==}
     engines: {node: '>=12'}
+
+  dotenv@18.0.10:
+    resolution: {integrity: sha512-89FAA1xchzK2mxVWdr5F/0rldwiueXs6zJM86rO66EzekR1iBdiXRthyG+m5GvkJaFH3C2LESzamTkgndmLT2A==}
+    engines: {node: '>=12'}
+    hasBin: true
 
   drauu@1.0.0:
     resolution: {integrity: sha512-K3a1cbP2l4i0H/bmNM4nyGsY5/hiH5a10sEHlksqKue0+TPQCHrV9DwPad+St06CJwpkdzVJ/FyOYTIAm82rgg==}
@@ -15708,6 +15713,8 @@ snapshots:
   dotenv@16.6.1: {}
 
   dotenv@17.4.2: {}
+
+  dotenv@18.0.10: {}
 
   drauu@1.0.0:
     dependencies:
