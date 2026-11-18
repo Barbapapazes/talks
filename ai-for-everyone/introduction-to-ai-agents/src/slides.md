@@ -19,7 +19,8 @@ event: AI for Everyone
 name: How AI agents work
 group: Introduction
 ready: true
-timing: 0.6
+status: must be done once and recorded to improve the notes
+timing: 0.5
 ---
 
 # How AI agents work
@@ -29,9 +30,7 @@ Bonjour tout le monde !
 
 Dans LLM fundamentals, on a vu comment un modèle génère des tokens pour répondre, raisonner ou demander un outil.
 
-Aujourd'hui, comment passe-t-on de cette demande à un système capable d'enchaîner les actions ?
-
-On va suivre un exemple : trouver un bug et le corriger. Même modèle, même objectif, mais des outils et des modes d'exécution différents.
+Aujourd'hui, comment passe-t-on de cette demande à un système capable d'enchaîner les actions ? Et bien ça tombe bien que vous soyez là aujourd'hui parce que c'est précisément notre sujet.
 -->
 
 ---
