@@ -1,0 +1,49 @@
+{
+  "name": "under-the-hood-of-an-llm",
+  "publication": "article-resource",
+  "date": "2026-11-18",
+  "sourceLanguage": "en",
+  "topics": [
+    "ai",
+    "llm",
+    "transformer",
+    "attention",
+    "inference",
+    "sampling"
+  ],
+  "locales": {
+    "en": {
+      "title": "Under the hood of an LLM",
+      "description": "See where an LLM's parameters live, how attention and MLP layers process context, and how inference, KV caching and sampling produce the next token."
+    },
+    "fr": {
+      "title": "Sous le capot d'un LLM",
+      "description": "Comprendre où se trouvent les paramètres d'un LLM, comment l'attention et les couches MLP traitent le contexte, et comment l'inférence, le KV cache et le sampling produisent le prochain token."
+    }
+  },
+  "event": {
+    "name": "AI for Everyone",
+    "url": "https://beta.soubiran.dev/ai-for-everyone"
+  },
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /ai-for-everyone/under-the-hood-of-an-llm/ --out ../../../dist/ai-for-everyone/under-the-hood-of-an-llm",
+    "export": "slidev export --per-slide --wait-until none --output ../under-the-hood-of-an-llm.pdf",
+    "thumbnail": "slidev export --per-slide --range 1 --format png",
+    "thumbnail:dark": "slidev export --per-slide --range 1 --dark --format png",
+    "thumbnail:cp": "mkdir -p ./public && ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail.png",
+    "thumbnail:cp:dark": "mkdir -p ./public && ffmpeg -y -i slides-export/01.png -vf scale=-1:720 -compression_level 100 ./public/thumbnail-dark.png",
+    "optimize:thumbnails": "optipng -o2 -quiet ./public/thumbnail*.png"
+  },
+  "dependencies": {
+    "@slidev/client": "catalog:slidev",
+    "slidev-theme-personal": "workspace:*"
+  },
+  "devDependencies": {
+    "@slidev/cli": "catalog:build",
+    "@vue/tsconfig": "catalog:build",
+    "typescript": "catalog:build"
+  }
+}

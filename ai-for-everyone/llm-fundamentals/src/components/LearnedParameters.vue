@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useSlideContext } from '@slidev/client'
+import ModelParameters from '@theme/components/ai/ModelParameters.vue'
 import TokenChip from '@theme/components/ai/TokenChip.vue'
 import DiagramPanel from '@theme/components/DiagramPanel.vue'
 import { computed } from 'vue'
@@ -18,11 +19,6 @@ const trained = computed(() => $clicks.value >= 1)
 const isolated = computed(() => $clicks.value === 2)
 const using = computed(() => $clicks.value >= 3)
 const language = computed(() => $clicks.value < 4)
-// Illustrative parameters only. They change during training, not during use.
-function cellOpacity(index: number, learned: boolean) {
-  const value = learned ? ((index * 17 + 7) % 31) / 31 : ((index * 3 + 2) % 11) / 44
-  return 0.15 + value * 0.7
-}
 </script>
 
 <template>
@@ -51,9 +47,7 @@ function cellOpacity(index: number, learned: boolean) {
     </div>
 
     <div class="model">
-      <DiagramPanel class="parameter-grid" role="img" aria-label="Illustrative grid of numerical model parameters">
-        <span v-for="index in 48" :key="index" :class="index % 3 === 0 ? 'bg-teal-700' : 'bg-primary'" :style="{ opacity: cellOpacity(index, trained), transitionDelay: `${(index % 8) * 55}ms` }" />
-      </DiagramPanel>
+      <ModelParameters :trained="trained" />
     </div>
 
     <div class="prediction" :aria-hidden="!using">
@@ -77,8 +71,6 @@ function cellOpacity(index: number, learned: boolean) {
 .connector { position: absolute; left: 316px; width: 132px; text-align: center; transition: left 500ms, opacity 400ms; }
 .arrow { --at-apply: text-neutral-400; font-size: 28px; }
 .model { position: absolute; left: 468px; width: 200px; text-align: center; transition: left 500ms; }
-.parameter-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; padding: 16px; }
-.parameter-grid span { aspect-ratio: 1; border-radius: 2px; transition: opacity 900ms; }
 .input { opacity: 0; }
 .input-text { font-size: 21px; line-height: 1.6; }
 .prediction { position: absolute; left: 640px; display: flex; align-items: center; gap: 28px; opacity: 0; transition: opacity 400ms 300ms; }
