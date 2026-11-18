@@ -26,6 +26,7 @@
       "longitude": -0.6055
     }
   },
+  "recording": "https://youtu.be/tbn-V95hs8U",
   "private": true,
   "scripts": {
     "dev": "slidev",
