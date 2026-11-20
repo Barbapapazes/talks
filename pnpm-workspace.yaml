@@ -68,7 +68,7 @@ catalogs:
   slidev:
     '@slidev/client': 52.19.0
     '@slidev/theme-default': ^0.25.0
-    '@slidev/types': 52.19.0
+    '@slidev/types': 53.1.0
     slidev-addon-graph: ^1.0.0
     slidev-addon-inalia: ^0.2.11
   test:
