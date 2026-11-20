@@ -50,7 +50,7 @@ catalogs:
     bumpp: ^12.2.0
     changelogithub: ^15.0.4
   scripts:
-    '@slidev/parser': 52.19.0
+    '@slidev/parser': 53.1.0
     '@types/prompts': ^2.4.9
     dotenv: ^17.4.2
     execa: ^9.6.1
